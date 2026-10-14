@@ -28,7 +28,7 @@ import java.util.Set;
 public class VikingVillageStructure extends Structure {
     public static final Codec<VikingVillageStructure> CODEC = simpleCodec(VikingVillageStructure::new);
 
-    private static final int MAX_SLOPE = 22;
+    private static final int MAX_SLOPE = 34;
 
     public VikingVillageStructure(StructureSettings settings) {
         super(settings);
@@ -44,35 +44,38 @@ public class VikingVillageStructure extends Structure {
         RandomSource rand = ctx.random();
         int cx = ctx.chunkPos().getMiddleBlockX();
         int cz = ctx.chunkPos().getMiddleBlockZ();
-        double radius = 50 + rand.nextInt(13);
-        Ring ring = new Ring(cx, cz, radius, rand);
-
-        // site check: reasonably flat, mostly dry ground
-        List<Integer> heights = new ArrayList<>();
-        int wet = 0;
-        for (int i = 0; i < 16; i++) {
-            double a = i * Math.PI / 8;
-            for (double f : new double[]{0.95, 0.5}) {
-                int x = (int) Math.round(cx + Math.cos(a) * ring.radiusAt(a) * f);
-                int z = (int) Math.round(cz + Math.sin(a) * ring.radiusAt(a) * f);
-                int y = height(ctx, x, z);
-                heights.add(y);
-                if (f == 0.5 && isWater(ctx, x, y, z)) {
-                    wet++;
+        int centreY = height(ctx, cx, cz);
+        if (isWater(ctx, cx, centreY, cz)) {
+            return Optional.empty();
+        }
+        double big = 50 + rand.nextInt(13);
+        Ring ringShape = new Ring(cx, cz, big, rand);
+        // try a large village first, then shrink to fit rougher ground
+        for (double radius : new double[]{big, big - 10, big - 18}) {
+            Ring ring = new Ring(cx, cz, radius, ringShape.a1, ringShape.p1, ringShape.a2, ringShape.p2);
+            List<Integer> heights = new ArrayList<>();
+            int wet = 0;
+            for (int i = 0; i < 16; i++) {
+                double a = i * Math.PI / 8;
+                for (double f : new double[]{0.95, 0.5}) {
+                    int x = (int) Math.round(cx + Math.cos(a) * ring.radiusAt(a) * f);
+                    int z = (int) Math.round(cz + Math.sin(a) * ring.radiusAt(a) * f);
+                    int y = height(ctx, x, z);
+                    heights.add(y);
+                    if (f == 0.5 && isWater(ctx, x, y, z)) {
+                        wet++;
+                    }
                 }
             }
+            Collections.sort(heights);
+            if (wet > 5 || heights.get(heights.size() - 3) - heights.get(2) > MAX_SLOPE) {
+                continue;
+            }
+            int groundY = heights.get(heights.size() / 2);
+            return Optional.of(new GenerationStub(new BlockPos(cx, groundY, cz),
+                    builder -> new Planner(ctx, ring, groundY).build(builder)));
         }
-        int centreY = height(ctx, cx, cz);
-        if (isWater(ctx, cx, centreY, cz) || wet > 3) {
-            return Optional.empty();
-        }
-        Collections.sort(heights);
-        if (heights.get(heights.size() - 2) - heights.get(1) > MAX_SLOPE) {
-            return Optional.empty();
-        }
-        int groundY = heights.get(heights.size() / 2);
-        return Optional.of(new GenerationStub(new BlockPos(cx, groundY, cz),
-                builder -> new Planner(ctx, ring, groundY).build(builder)));
+        return Optional.empty();
     }
 
     static int height(GenerationContext ctx, int x, int z) {
