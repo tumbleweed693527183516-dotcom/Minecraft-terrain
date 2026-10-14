@@ -1,0 +1,18 @@
+area: 1296x1296 blocks
+land surface height  p5/p25/p50/p75/p95/max: 68 / 86 / 95 / 112 / 151 / 214
+water share: 21.9%
+blocks above y=300: 0.00%  above y=200: 0.06%
+
+biomes by area:
+  vividlands:endless_steppe                  9.8%
+  vividlands:highland_moors                  9.0%
+  vividlands:cloud_forest                    8.8%
+  vividlands:caledonian_pinewood             8.0%
+  vividlands:old_growth_oakwood              8.0%
+  vividlands:salt_flats                      8.0%
+  vividlands:tropical_beach                  8.0%
+  vividlands:volcanic_cones                  8.0%
+  vividlands:oasis                           8.0%
+  vividlands:basalt_highlands                8.0%
+  vividlands:redwood_giants                  8.0%
+  vividlands:basalt_shore                    8.0%
