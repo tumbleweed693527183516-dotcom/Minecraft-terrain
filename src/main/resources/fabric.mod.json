@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "vividlands",
+  "version": "${version}",
+  "name": "Vivid Lands",
+  "description": "Huge, vivid world generation: towering mountains, volcanic highlands, heather moors, endless dunes, oases and ancient forests.",
+  "authors": ["tumbleweed693527183516-dotcom"],
+  "contact": {
+    "sources": "https://github.com/tumbleweed693527183516-dotcom/Minecraft-terrain"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/vividlands/icon.png",
+  "environment": "*",
+  "depends": {
+    "fabricloader": ">=0.14.21",
+    "minecraft": "1.20.1",
+    "fabric-resource-loader-v0": "*"
+  },
+  "conflicts": {
+    "terralith": "*",
+    "tectonic": "*"
+  }
+}
