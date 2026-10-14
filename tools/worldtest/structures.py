@@ -148,6 +148,9 @@ def main(world, log, out):
         for sid, st in c.get("structures", {}).get("starts", {}).items():
             if st.get("id", "INVALID") != "INVALID" and "vividlands" in sid:
                 starts.append({"structure": sid, "chunk": [px, pz]})
+    for st in starts:
+        if st["structure"] == "vividlands:viking_village":
+            targets.append(("natural", st["structure"], st["chunk"][0] * 16 + 8, st["chunk"][1] * 16 + 8, 0))
     ents = entity_list(world)
     summary = {"targets": [], "natural_starts": {}, "failures": failures}
     for s in starts:

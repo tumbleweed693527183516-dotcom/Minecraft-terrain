@@ -75,10 +75,9 @@ jobs:
           if [ "${{ inputs.structures }}" = "true" ]; then
             for st in viking_village longhouse turf_house longship runestone; do echo "locate structure vividlands:$st"; done > commands.txt
             i=0
-            for st in viking_village viking_village longhouse turf_house longship; do
-              x=$((3000 + i * 600)); z=3000
-              echo "forceload add $((x - 112)) $((z - 112)) $((x + 112)) $((z + 112))"
-              echo "place structure vividlands:$st $x 80 $z"; i=$((i + 1))
+            for xz in "400 400" "-400 400" "400 -400" "-400 -400" "0 600" "600 0"; do
+              set -- $xz
+              echo "place structure vividlands:viking_village $1 80 $2"
             done >> commands.txt
             cat commands.txt
           fi
