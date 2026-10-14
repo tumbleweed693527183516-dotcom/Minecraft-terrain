@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Builds build/VividLands-TestPack-<version>.mrpack: a Modrinth modpack for testing.
-Import it in the Modrinth App (or Prism Launcher). It downloads Fabric API, Sodium,
+Import it in the Modrinth App (or Prism Launcher). It downloads Fabric API, Sodium, Indium,
 Iris and Distant Horizons for 1.20.1 and includes the Vivid Lands jar.
 
     python3 tools/build.py && python3 tools/testpack.py
@@ -23,6 +23,10 @@ MODS = [
      "https://cdn.modrinth.com/data/AANobbMI/versions/OihdIimA/sodium-fabric-0.5.13%2Bmc1.20.1.jar", 971552,
      "bcdbf37d9494e405cba210d7a80ed58e756297b5",
      "81c64f9c2d3402dfa43ee54d8f5a054f5243bfb08984e3addcab9fe885073c79c43c1c8c41e8f30b625d26a656f82a8e5f370bbbbf222ff1c08f4b324edb7ea4"),
+    ("indium-1.0.36+mc1.20.1.jar",
+     "https://cdn.modrinth.com/data/Orvt0mRa/versions/nQHYSjxO/indium-1.0.36%2Bmc1.20.1.jar", 105382,
+     "d824614e7a173d273167969f427702f51846aca7",
+     "7c5a1851f1fc08ae69318e151d07151fabba6cda2a24616c9251e1a4e5b969453e88b97d60f926271d60e3511bfc6fa05a64a108466efb7f29bec4519547e0c9"),
     ("iris-1.7.6+mc1.20.1.jar",
      "https://cdn.modrinth.com/data/YL57xq9U/versions/s5eFLITc/iris-1.7.6%2Bmc1.20.1.jar", 2726899,
      "880c0b9ce38bb4997645793407c1801df83f4233",
@@ -41,7 +45,7 @@ def main():
         assert len(sha1) == 40 and len(sha512) == 128, name
         int(sha1, 16), int(sha512, 16)
         files.append({"path": f"mods/{name}", "hashes": {"sha1": sha1, "sha512": sha512},
-                      "env": {"client": "required", "server": "optional" if name.startswith(("sodium", "iris"))
+                      "env": {"client": "required", "server": "optional" if name.startswith(("sodium", "iris", "indium"))
                               else "required"},
                       "downloads": [url], "fileSize": size})
     index = {
