@@ -45,7 +45,8 @@ def volume(chunks, cx, cz):
     x0, x1, z0, z1 = cx - R, cx + R, cz - R, cz + R
     tops = []
     for (px, pz), c in chunks.items():
-        if px * 16 + 15 >= x0 and px * 16 <= x1 and pz * 16 + 15 >= z0 and pz * 16 <= z1:
+        if px * 16 + 15 >= x0 and px * 16 <= x1 and pz * 16 + 15 >= z0 and pz * 16 <= z1 \
+                and "WORLD_SURFACE" in c.get("Heightmaps", {}):
             tops.append(unpack(c["Heightmaps"]["WORLD_SURFACE"], 10, 256) + MIN_Y)
     if not tops:
         return None
@@ -57,6 +58,8 @@ def volume(chunks, cx, cz):
     vol = np.zeros((x1 - x0 + 1, y1 - y0 + 1, z1 - z0 + 1), np.uint16)
     for (px, pz), c in chunks.items():
         if not (px * 16 + 15 >= x0 and px * 16 <= x1 and pz * 16 + 15 >= z0 and pz * 16 <= z1):
+            continue
+        if not c.get("Status", "").endswith("full"):
             continue
         for s in c["sections"]:
             sy = s["Y"]

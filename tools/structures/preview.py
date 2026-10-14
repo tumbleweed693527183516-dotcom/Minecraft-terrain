@@ -17,7 +17,11 @@ COLORS = {
     "yellow_wall_banner": (240, 200, 50), "red_wall_banner": (180, 40, 40), "white_wall_banner": (230, 230, 230),
     "black_wall_banner": (30, 30, 34), "campfire": (220, 120, 40), "lantern": (240, 200, 110), "chain": (60, 64, 72),
     "bell": (230, 190, 60), "glass_pane": (190, 220, 230), "chest": (160, 110, 40), "barrel": (130, 95, 55),
-    "torch": (250, 210, 100), "jigsaw": (240, 0, 240),
+    "torch": (250, 210, 100), "jigsaw": (240, 0, 240), "snow": (238, 242, 248), "snow_block": (238, 242, 248),
+    "stone": (125, 125, 125), "ice": (150, 185, 250), "packed_ice": (141, 180, 250), "sand": (219, 207, 163),
+    "spruce_leaves": (60, 90, 60), "tuff": (108, 109, 102), "blackstone": (42, 35, 40), "basalt": (73, 72, 77),
+    "black_sand": (40, 38, 46), "moss_block": (89, 109, 45), "podzol": (91, 63, 24), "peat": (56, 40, 26),
+    "pine_log": (170, 96, 54), "pine_leaves": (56, 102, 82), "heather": (150, 90, 170),
 }
 
 
