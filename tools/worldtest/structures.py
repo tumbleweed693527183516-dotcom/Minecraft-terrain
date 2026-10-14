@@ -156,7 +156,7 @@ def main(world, log, out):
     for s in starts:
         summary["natural_starts"][s["structure"]] = summary["natural_starts"].get(s["structure"], 0) + 1
     for kind, name, x, z, dist in targets:
-        big = "village" in name or "trelleborg" in name
+        big = "village" in name or "trelleborg" in name or "drakkar" in name
         res = volume(chunks, x, z, 92 if big else R)
         near = [e for e in ents if e[1] and abs(e[1][0] - x) <= R and abs(e[1][2] - z) <= R]
         counts = {}

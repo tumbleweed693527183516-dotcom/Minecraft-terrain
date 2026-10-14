@@ -8,7 +8,7 @@ Taller worlds (build limit y=511), continent-sized landmasses, and new biomes in
 
 Palisade stakes, thatch (block, stairs, slab), wattle and daub, carved posts, painted wall shields, black sand, volcanic ash, salt crust, peat, heather, dry grass, and three woods - palm, redwood and Scots pine (log, leaves, planks) - with matching trees: drooping-frond palms, giant redwoods, orange-barked Scots pines and spreading giant oaks. All textures are drawn by `tools/textures.py`; blocks are defined once in `tools/blocks.py`.
 
-## Viking structures (v0.12)
+## Viking structures (v0.13)
 
 - **Walled Viking villages** (moors, pinewoods, lakelands, lava fields, outwash plains, tundra, basalt highlands): a ring palisade of sharpened logs that follows the ground, 2-3 gatehouses with walkways, watchtowers, a central plaza with a covered well, bell and runestones, a chieftain's great hall (45 blocks long), longhouses in three sizes with shingle, thatch or turf roofs, Glaumbær-style turf farmsteads, a forge with a chimney, a temple, a market, stabbur storehouses, a granary, a byre, a weaving pit-house, a training yard, paths to every door, and fields and sheep folds outside the walls. Built by a custom generator (`com.vividlands.village`) so every village is laid out differently, inhabited by villagers. They replace vanilla villages in these biomes.
 - **Level sites:** before a village or fortress is built its ground is graded into a level plateau (hills cut, hollows and ponds filled, with the local surface blocks), blending back into the land outside the walls.
@@ -22,6 +22,7 @@ Palisade stakes, thatch (block, stairs, slab), wattle and daub, carved posts, pa
 - **Thing sites**: open-air assemblies with a stepped law rock, rings of stone seats, coloured booths, fires and banner poles.
 - **Shielings** (summer huts with a dry-stone sheep fold) and **beacon cairns** on the hills.
 - **Longhouses**, **turf farmsteads** and **cottages** standing alone as homesteads.
+- **Giant dragon warships** (drekar, rare, on deep northern seas): a 100-block sea-king's flagship with two masts and an 80-block war drakkar, with carved dragon heads and curled tails, billowing striped sails, shields and oars, rigging and crow's nests, a captain's cabin under a raised stern deck, a seer's hut, and a dark three-part hold. Spawners for draugr zombies and skeletons, spiders, strays, vindicators, a witch and zombie villagers, an armoured draugr crew and a Draugr Jarl.
 - **Longships** and **knarr** cargo ships out on northern seas, **shipwrecks** on the sea floor, and **frozen longships** locked in glacier ice with draugr guarding the treasure.
 - **Runestones**, stone circles and cairns across the north.
 

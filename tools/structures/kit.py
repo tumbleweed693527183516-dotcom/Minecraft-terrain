@@ -348,10 +348,11 @@ def weather(b, salt=0, vines=True):
 # ---------------------------------------------------------------------------
 # Dungeons
 # ---------------------------------------------------------------------------
-def spawner(b, x, y, z, mob, delay=(240, 600)):
+def spawner(b, x, y, z, mob, delay=(240, 600), entity=None):
     from .nbtio import Short
+    ent = dict({"id": f"minecraft:{mob}"}, **(entity or {}))
     b.set(x, y, z, "spawner", nbt={
-        "id": "minecraft:mob_spawner", "SpawnData": {"entity": {"id": f"minecraft:{mob}"}},
+        "id": "minecraft:mob_spawner", "SpawnData": {"entity": ent},
         "SpawnCount": Short(2), "SpawnRange": Short(4), "Delay": Short(20), "MinSpawnDelay": Short(delay[0]),
         "MaxSpawnDelay": Short(delay[1]), "MaxNearbyEntities": Short(5), "RequiredPlayerRange": Short(14)})
 

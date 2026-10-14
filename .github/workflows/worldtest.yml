@@ -73,7 +73,7 @@ jobs:
             cat world/datapacks/biometest/data/minecraft/dimension/overworld.json
           fi
           if [ "${{ inputs.structures }}" = "true" ]; then
-            ALL="viking_village trelleborg longhouse turf_house longship runestone burial_mound ship_burial stave_church mead_hall fishing_hamlet thing_site shieling beacon_cairn knarr shipwreck frozen_longship"
+            ALL="viking_village trelleborg longhouse turf_house longship runestone burial_mound ship_burial stave_church mead_hall fishing_hamlet thing_site shieling beacon_cairn knarr shipwreck frozen_longship drakkar"
             for st in $ALL; do echo "locate structure vividlands:$st"; done > commands.txt
             place() {   # structure x z forceload-radius
               echo "forceload add $(($2-$4)) $(($3-$4)) $(($2+$4)) $(($3+$4))"

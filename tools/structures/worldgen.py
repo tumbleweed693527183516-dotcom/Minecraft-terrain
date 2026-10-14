@@ -9,6 +9,7 @@ from pathlib import Path
 from .designs import all_designs
 from .viking import catalogue
 from .viking2 import DEPTH_MOUND, DEPTH_SHIP, catalogue2
+from .warship import WATER as WARSHIP_WATER, catalogue3
 
 CATALOGUE_OUT = Path(__file__).resolve().parents[2] / "src/main/resources/vividlands_villages/catalogue.json"
 
@@ -42,6 +43,8 @@ STRUCTURE_BIOMES = {
     "knarr": ["northern_ocean", "deep_northern_ocean", "temperate_ocean", "deep_temperate_ocean", "glacial_ocean"],
     "shipwreck": ["northern_ocean", "deep_northern_ocean", "temperate_ocean", "deep_temperate_ocean",
                   "glacial_ocean", "deep_glacial_ocean"],
+    "drakkar": ["deep_northern_ocean", "deep_temperate_ocean", "deep_glacial_ocean", "northern_ocean",
+                "temperate_ocean"],
     "trelleborg": ["highland_moors", "glacial_outwash", "endless_steppe", "taiga_lakelands", "wildflower_prairie",
                    "tundra", "alpine_meadow"],
     "frozen_longship": ["glacier", "tundra", "snowy_shore", "glacial_outwash"],
@@ -61,6 +64,8 @@ STRUCTURES = {
     "burial_mound": ("burial_mound/start", 1, -(DEPTH_MOUND + 1), "none", 20, 8, 1946157318),
     "ship_burial": ("ship_burial/start", 1, -(DEPTH_SHIP + 1), "none", 40, 16, 1946157319),
     "beacon_cairn": ("beacon_cairn/start", 1, -1, "beard_thin", 24, 8, 1946157325),
+    # giant warships: keel one block below template y=0, so the sea surface sits at WATER + 1
+    "drakkar": ("drakkar/start", 1, -(WARSHIP_WATER + 2), "none", 44, 18, 1946157330),
     "knarr": ("knarr/start", 1, -4, "none", 28, 10, 1946157326),
     "shipwreck": ("shipwreck/start", 1, -2, "none", 18, 7, 1946157327),
     "frozen_longship": ("frozen_longship/start", 1, -4, "beard_thin", 36, 12, 1946157328),
@@ -108,6 +113,7 @@ def pools():
         "ship_burial/start": ("minecraft:empty", [element("dungeon/ship_burial", 1)]),
         "beacon_cairn/start": ("minecraft:empty", [element("site/beacon_cairn", 1)]),
         "knarr/start": ("minecraft:empty", [element("sea/knarr", 1)]),
+        "drakkar/start": ("minecraft:empty", [element("sea/sea_king_drakkar", 1), element("sea/war_drakkar", 2)]),
         "shipwreck/start": ("minecraft:empty", [element("sea/shipwreck", 1)]),
         "frozen_longship/start": ("minecraft:empty", [element("sea/frozen_longship", 1)]),
     }
@@ -196,6 +202,20 @@ LOOT = {
         item("iron_axe", 3, extra=ENCHANT), item("rotten_flesh", 6, 1, 4), item("prismarine_crystals", 4, 1, 4),
         item("nautilus_shell", 2), item("heart_of_the_sea", 1), item("compass", 3), item("map", 3),
         item("diamond", 1, 1, 2)]),
+    "warship": table((4, 8), [
+        item("gold_ingot", 8, 2, 6), item("iron_ingot", 8, 2, 8), item("emerald", 6, 2, 6), item("arrow", 6, 8, 24),
+        item("iron_axe", 5, extra=ENCHANT), item("iron_sword", 4, extra=ENCHANT), item("shield", 5),
+        item("chainmail_chestplate", 3), item("iron_helmet", 3), item("cooked_cod", 6, 2, 8), item("bread", 5, 2, 5),
+        item("amethyst_shard", 4, 2, 6), item("diamond", 2, 1, 3), item("trident", 1), item("saddle", 1)],
+        bonus={"rolls": 1, "entries": [{"type": "minecraft:empty", "weight": 3}, item("golden_apple", 2),
+                                       item("enchanted_book", 2, extra=ENCHANT)]}),
+    "warship_captain": table((6, 10), [
+        item("gold_ingot", 10, 3, 9), item("gold_block", 3, 1, 2), item("emerald", 8, 3, 10), item("diamond", 5, 1, 4),
+        item("diamond_axe", 3, extra=ENCHANT), item("diamond_sword", 2, extra=ENCHANT), item("golden_apple", 4),
+        item("enchanted_golden_apple", 1), item("heart_of_the_sea", 2), item("nautilus_shell", 4, 1, 3),
+        item("experience_bottle", 6, 2, 8), item("map", 3), item("spyglass", 3), item("totem_of_undying", 1)],
+        bonus={"rolls": 2, "entries": [item("enchanted_book", 4, extra=ENCHANT), item("trident", 1, extra=ENCHANT),
+                                       item("music_disc_pigstep", 1)]}),
     "guard": table((3, 6), [
         item("arrow", 10, 4, 16), item("bow", 4), item("crossbow", 2), item("iron_axe", 4), item("iron_sword", 3),
         item("shield", 4), item("chainmail_helmet", 3), item("leather_chestplate", 3), item("bread", 6, 1, 3),
@@ -243,7 +263,7 @@ def write(data_dir, biome_exists):
         if role == "wall":
             role = "wall_gate" if "gate" in name else "wall_tower"
         cat.append({"id": f"{NS}:{name}", "role": role, "size": list(sizes[name])})
-    for name, b in catalogue2().items():
+    for name, b in list(catalogue2().items()) + list(catalogue3().items()):
         sizes[name] = b.save(out / "structures" / f"{name}.nbt")
     CATALOGUE_OUT.parent.mkdir(parents=True, exist_ok=True)
     CATALOGUE_OUT.write_text(json.dumps(cat, indent=2))
