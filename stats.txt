@@ -1,0 +1,15 @@
+area: 1296x1296 blocks
+land surface height  p5/p25/p50/p75/p95/max: 73 / 105 / 151 / 183 / 224 / 310
+water share: 13.4%
+blocks above y=300: 0.01%  above y=200: 14.94%
+
+biomes by area:
+  vividlands:basalt_highlands               11.9%
+  vividlands:hot_springs                    11.2%
+  vividlands:mossy_lava_fields              11.0%
+  vividlands:black_sand_desert              11.0%
+  vividlands:highland_crags                 11.0%
+  vividlands:volcanic_cones                 11.0%
+  vividlands:glacial_outwash                11.0%
+  vividlands:rhyolite_highlands             11.0%
+  vividlands:caledonian_pinewood            11.0%
