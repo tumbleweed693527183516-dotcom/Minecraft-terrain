@@ -188,13 +188,17 @@ public class VikingVillageStructure extends Structure {
             plan.add(cat.pick("core", rand));
             plan.addAll(cat.pickSome("civic", 1 + rand.nextInt(2), rand));
             plan.addAll(cat.pickSome("craft", 4 + rand.nextInt(3), rand));
-            List<String> houses = cat.all("house");
-            Collections.shuffle(houses, new java.util.Random(rand.nextLong()));
-            plan.addAll(houses);
-            plan.addAll(cat.pickSome("craft", 2, rand));
+            java.util.Random shuffler = new java.util.Random(rand.nextLong());
+            for (int pass = 0; pass < 2; pass++) {          // two rounds of houses fill the village
+                List<String> houses = cat.all("house");
+                Collections.shuffle(houses, shuffler);
+                plan.addAll(houses);
+            }
+            plan.addAll(cat.pickSome("craft", 3, rand));
+            plan.addAll(cat.pickSome("house", 4, rand));
             int placed = 0;
             for (String id : plan) {
-                if (tryPlaceInside(out, id, 90)) {
+                if (tryPlaceInside(out, id, 120)) {
                     placed++;
                 }
             }
@@ -293,7 +297,7 @@ public class VikingVillageStructure extends Structure {
                     height(ctx, rect[0], rect[3]), height(ctx, rect[2], rect[3])};
             int[] sorted = ys.clone();
             java.util.Arrays.sort(sorted);
-            if (!force && (sorted[4] - sorted[0] > 9 || isWater(ctx, bx, ys[0], bz))) {
+            if (!force && (sorted[4] - sorted[0] > 12 || isWater(ctx, bx, ys[0], bz))) {
                 return false;
             }
             int y = sorted[2];
