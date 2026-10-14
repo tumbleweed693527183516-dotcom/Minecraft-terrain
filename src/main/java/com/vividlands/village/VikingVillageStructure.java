@@ -80,6 +80,20 @@ public class VikingVillageStructure extends Structure {
                 continue;
             }
             int groundY = heights.get(heights.size() / 2);
+            // the land just outside the wall must not tower over (or drop far below) the plateau,
+            // or grading would sink the village into a pit or perch it on a mound
+            int steep = 0;
+            for (int i = 0; i < 16; i++) {
+                double a = i * Math.PI / 8 + Math.PI / 16;
+                double r = ring.radiusAt(a) + (fort ? 10 : 3) + GradePiece.SKIRT * 0.7;
+                int y = height(ctx, (int) Math.round(cx + Math.cos(a) * r), (int) Math.round(cz + Math.sin(a) * r));
+                if (Math.abs(y - groundY) > 12) {
+                    steep++;
+                }
+            }
+            if (steep > 3) {
+                continue;
+            }
             return Optional.of(new GenerationStub(new BlockPos(cx, groundY, cz),
                     builder -> new Planner(ctx, ring, groundY, fort).build(builder)));
         }

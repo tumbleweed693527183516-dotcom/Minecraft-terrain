@@ -103,9 +103,13 @@ public class GradePiece extends StructurePiece {
                 }
                 // find the real ground (skipping trees, plants and snow), and any water on top of it
                 int top = Integer.MIN_VALUE, waterTop = Integer.MIN_VALUE;
+                boolean snowy = false;
                 for (int y = groundY + 70; y > groundY - 46; y--) {
                     p.set(x, y, z);
                     BlockState s = level.getBlockState(p);
+                    if (s.is(Blocks.SNOW)) {
+                        snowy = true;
+                    }
                     if (!s.getFluidState().isEmpty()) {
                         if (waterTop == Integer.MIN_VALUE) {
                             waterTop = y;
@@ -156,6 +160,12 @@ public class GradePiece extends StructurePiece {
                     }
                     if (y <= top || full || clutter(s) || !s.getFluidState().isEmpty()) {
                         level.setBlock(p, air, 2);
+                    }
+                }
+                if (snowy || surface.is(Blocks.SNOW_BLOCK)) {           // put the snow cover back
+                    p.set(x, g + 1, z);
+                    if (level.getBlockState(p).isAir()) {
+                        level.setBlock(p, Blocks.SNOW.defaultBlockState(), 2);
                     }
                 }
             }
