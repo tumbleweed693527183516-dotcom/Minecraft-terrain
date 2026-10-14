@@ -527,7 +527,7 @@ def features():
     tree("palm", "vividlands:palm_log", "vividlands:palm_leaves",
          {"type": mc("bending_trunk_placer"), "base_height": 7, "height_rand_a": 3, "height_rand_b": 0,
           "min_height_for_leaves": 6, "bend_length": uniform(1, 2)},
-         {"type": mc("cherry_foliage_placer"), "radius": 3, "offset": 0, "height": 3,
+         {"type": mc("cherry_foliage_placer"), "radius": 3, "offset": 0, "height": 4,
           "wide_bottom_layer_hole_chance": 0.5, "corner_hole_chance": 0.4, "hanging_leaves_chance": 0.7,
           "hanging_leaves_extension_chance": 0.4}, TWO_LAYERS, dirt="sand")
     tree("bush", "oak_log", "oak_leaves", straight(1, 0),
