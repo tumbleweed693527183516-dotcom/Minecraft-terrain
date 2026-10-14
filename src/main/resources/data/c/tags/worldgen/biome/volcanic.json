@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
+    "vividlands:hot_springs",
+    "vividlands:mossy_lava_fields",
+    "vividlands:rhyolite_highlands",
     "vividlands:volcanic_cones"
   ]
 }

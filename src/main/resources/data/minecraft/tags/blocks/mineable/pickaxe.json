@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "vividlands:salt_crust"
+    "vividlands:salt_crust",
+    "vividlands:sinter",
+    "vividlands:travertine",
+    "vividlands:sulfur_crust"
   ]
 }

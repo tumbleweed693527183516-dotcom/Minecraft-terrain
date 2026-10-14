@@ -42,6 +42,12 @@ RANGE_SIDE_RIDGES = 0.22     # side ridges and spurs
 HORN_PEAKS = 0.50            # pointed summits along the crest (Matterhorn-style)
 WARP_BLOCKS = 110.0          # how far ranges bend and wander
 
+# Creeks: a finer stream network carved into lowlands (fills to sea level), gullies in hills
+CREEK_FLOOR = -0.547         # creek bed height (depth units): about y=58, so channels hold water
+CREEK_WIDTH = 0.06           # wider = broader creeks (main network)
+BROOK_WIDTH = 0.045          # smaller brooks (second, finer network)
+CREEK_MAX_OFFSET = -0.25     # creeks fade out above about y=120
+
 # Real-world mountain stamps (Java density function vividlands:stamps)
 STAMP_CELL = 1792            # one possible stamp per cell this wide (blocks)
 STAMP_CHANCE = 0.55          # share of cells that get a real mountain
@@ -127,9 +133,11 @@ def density_functions():
     van = mc("overworld_large_biomes/offset")
     base = add({"type": mc("min"), "argument1": van, "argument2": BASE_SOFT_CAP},
                mul(BASE_SOFT_KEEP, {"type": mc("max"), "argument1": add(van, -BASE_SOFT_CAP), "argument2": 0.0}))
+    write(f"{MODID}/worldgen/density_function/overworld/land.json",
+          {"type": mc("cache_2d"), "argument": add(base, vl("overworld/mountains/height"))})
+    creeks()
     write(f"{MODID}/worldgen/density_function/overworld/offset.json", {
-        "type": mc("flat_cache"), "argument": {"type": mc("cache_2d"), "argument":
-                                               add(base, vl("overworld/mountains/height"))}})
+        "type": mc("flat_cache"), "argument": {"type": mc("cache_2d"), "argument": vl("overworld/creeks/carved")}})
     write(f"{MODID}/worldgen/density_function/overworld/depth.json", add(gradient, vl("overworld/offset")))
     write(f"{MODID}/worldgen/density_function/overworld/factor.json",
           mul(VERTICAL_SCALE * SMOOTHING, mc("overworld_large_biomes/factor")))
@@ -159,6 +167,35 @@ def density_functions():
                       "min_inclusive": -1000000.0, "max_exclusive": 0.03, "when_in_range": -1000000.0,
                       "when_out_of_range": mc("overworld/caves/pillars")},
     })
+
+
+def creeks():
+    """
+    Two winding stream networks (zero-lines of warped noise). Along them the land is
+    pulled down to CREEK_FLOOR, just under sea level, so lowland channels fill with water;
+    the effect fades out with height, leaving dry gullies on hillsides and none on peaks.
+    """
+    for name, octave in (("creek_network", -8), ("brook_network", -7), ("creek_warp_x", -7), ("creek_warp_z", -7)):
+        write(f"{MODID}/worldgen/noise/{name}.json", {"firstOctave": octave, "amplitudes": [1.0, 0.4]})
+
+    def n(name):
+        return {"type": mc("noise"), "noise": vl(name), "xz_scale": 1.0, "y_scale": 0.0}
+
+    def channel(name, width):
+        warped = {"type": mc("shifted_noise"), "noise": vl(name), "xz_scale": 1.0, "y_scale": 0.0,
+                  "shift_x": mul(40.0, n("creek_warp_x")), "shift_y": 0.0, "shift_z": mul(40.0, n("creek_warp_z"))}
+        # flat-bottomed channel: 1 in the middle half, sloping banks outside it
+        return clamp(mul(2.0, add(1.0, mul(-1.0 / width, abs_(warped)))), 0.0, 1.0)
+
+    d = f"{MODID}/worldgen/density_function/overworld/creeks"
+    land = vl("overworld/land")
+    write(f"{d}/channel.json", {"type": mc("cache_2d"), "argument": {
+        "type": mc("max"), "argument1": channel("creek_network", CREEK_WIDTH),
+        "argument2": mul(0.85, channel("brook_network", BROOK_WIDTH))}})
+    lowland = clamp(mul(-6.0, add(land, -CREEK_MAX_OFFSET)), 0.0, 1.0)
+    depth_above_floor = {"type": mc("max"), "argument1": add(land, -CREEK_FLOOR), "argument2": 0.0}
+    write(f"{d}/carved.json", {"type": mc("cache_2d"), "argument": add(
+        land, mul(-1.0, mul(mul(vl("overworld/creeks/channel"), lowland), depth_above_floor)))})
 
 
 def mountains():
@@ -565,6 +602,10 @@ def features():
     column_patch("terracotta_spires", weighted((2, state("terracotta")), (1, state("orange_terracotta")),
                                                (1, state("red_terracotta"))), 4, 10, tries=8, xz=4)
     configured("mossy_boulder", "forest_rock", {"state": state("mossy_cobblestone")})
+    configured("moss_mound", "forest_rock", {"state": state("moss_block")})
+    configured("smooth_basalt_rock", "forest_rock", {"state": state("smooth_basalt")})
+    configured("deepslate_rock", "forest_rock", {"state": state("cobbled_deepslate")})
+    configured("hot_spring_pool", "lake", {"fluid": simple("water", level=0), "barrier": simple("vividlands:sinter")})
     configured("stone_boulder", "forest_rock", {"state": state("cobblestone")})
     configured("lava_pool", "lake", {"fluid": simple("lava", level=0), "barrier": simple("blackstone")})
     configured("water_lake", "lake", {"fluid": simple("water", level=0), "barrier": simple("stone")})
@@ -586,8 +627,13 @@ def features():
     p("lava_pools", "lava_pool", surface(rarity(5), hm="WORLD_SURFACE_WG"))
     p("lakes", "water_lake", surface(rarity(3), hm="WORLD_SURFACE_WG"))
     p("fen_pools", "water_lake", surface(rarity(2), hm="WORLD_SURFACE_WG"))
+    p("hot_spring_pools", "hot_spring_pool", surface(count(3), hm="WORLD_SURFACE_WG"))
     p("boulders_mossy", "mossy_boulder", surface(rarity(3)))
     p("boulders_stone", "stone_boulder", surface(rarity(4)))
+    p("mounds_moss", "moss_mound", surface(count(4)))
+    p("mounds_moss_few", "moss_mound", surface(rarity(2)))
+    p("rocks_smooth_basalt", "smooth_basalt_rock", surface(rarity(2)))
+    p("rocks_deepslate", "deepslate_rock", surface(rarity(2)))
     p("spires_basalt", "basalt_spires", surface(rarity(2)))
     p("spires_basalt_rare", "basalt_spires", surface(rarity(6)))
     p("spires_ice", "ice_spikes", surface(rarity(3)))
@@ -704,7 +750,7 @@ VANILLA_ORES = [mc(f"ore_{x}") for x in [
 
 BIOMES = {}
 LOCAL = {"iceberg_packed", "iceberg_blue"}
-LAKES = {"lava_pools", "lakes", "fen_pools"}
+LAKES = {"lava_pools", "lakes", "fen_pools", "hot_spring_pools"}
 
 
 def B(name, *, temp, downfall, colors, surface, under=DIRT, underwater=DIRT, sandy=False, ceiling=None, rain=None,
@@ -799,20 +845,25 @@ def define_biomes():
     B("volcanic_cones", temp=0.36, downfall=0.3, colors=colors("#8fa3d1", "#b9aa9c", "#2fb8c9", "#0a3a44", "#7a9a3a", "#5e8a2e"),
       surface=seq(cond(y_above(330), cond(not_(STEEP), block("snow_block"))), cond(STEEP, block("basalt", axis="y")),
                   cond(noise("surface", -0.06, 0.06), block("magma_block")),
+                  cond(noise("surface_secondary", -0.04, 0.04), block("obsidian")),
                   cond(noise("surface", 0.3), block("vividlands:volcanic_ash")),
+                  cond(noise("surface", -10.0, -0.55), block("smooth_basalt")),
                   cond(noise("surface_secondary", 0.25), BLACK_SAND),
                   cond(noise("surface_secondary", -10.0, -0.4), block("tuff")), block("blackstone")),
       under=block("blackstone"), underwater=BLACK_SAND, ceiling=block("blackstone"), mobs="mountain",
-      veg=["lava_pools", "spires_basalt"], particle=("white_ash", 0.004),
+      veg=["lava_pools", "spires_basalt", "rocks_smooth_basalt"], particle=("white_ash", 0.004),
       tags=["mountain", "peak", "cold", "dry", "volcanic", "rocky"])
     B("highland_crags", temp=0.33, downfall=0.7, colors=colors("#9fbbe0", "#c8d2dc", "#3a90c8", "#0e3048", "#8f8f5a", "#6f7f3a"),
-      surface=snowcap(300, patches((0.6, GRAVEL), default=GRASS)), mobs="mountain",
-      veg=["boulders_mossy", "heather", "grass"], tags=["mountain", "peak", "cold", "rocky"])
+      surface=snowcap(300, patches((0.6, GRAVEL), (0.4, block("moss_block")), default=GRASS),
+                      steep=seq(cond(noise("surface_secondary", 0.2), block("deepslate", axis="y")), STONE)),
+      mobs="mountain", veg=["rocks_deepslate", "boulders_mossy", "heather", "grass"],
+      tags=["mountain", "peak", "cold", "rocky"])
     B("basalt_highlands", temp=0.3, downfall=0.6, colors=colors("#9ec4ff", "#c9d6e0", "#1ec8d8", "#0b4a55", "#8fd14f", "#6fbf3f"),
       surface=seq(cond(STEEP, block("basalt", axis="y")), cond(noise("surface", 0.05), block("moss_block")),
-                  cond(noise("surface_secondary", 0.3), block("tuff")), BLACK_SAND),
+                  cond(noise("surface_secondary", 0.3), block("tuff")),
+                  cond(noise("surface_secondary", -10.0, -0.45), block("smooth_basalt")), BLACK_SAND),
       under=block("tuff"), underwater=BLACK_SAND, ceiling=block("tuff"), mobs="highland",
-      veg=["spires_basalt", "moss_carpet", "grass"], tags=["hill", "cold", "rocky"])
+      veg=["spires_basalt", "mounds_moss_few", "moss_carpet", "grass"], tags=["hill", "cold", "rocky"])
     B("highland_moors", temp=0.45, downfall=0.8, colors=colors("#a9bcd6", "#c4ccd6", "#3a5f7a", "#1d2b33", "#8f8a5e", "#6b7d3a"),
       surface=seq(cond(STEEP, STONE), patches((0.55, PODZOL), default=seq(
           cond(noise("surface", -10.0, -0.55), block("vividlands:peat")), GRASS))),
@@ -820,13 +871,50 @@ def define_biomes():
       mobs="highland", veg=["boulders_mossy", "trees_highland_pine_rare", "shrubs", "heather", "grass"],
       tags=["hill", "cold", "wet", "plains"])
     B("caledonian_pinewood", temp=0.35, downfall=0.8, colors=colors("#9fbbe0", "#c8d2dc", "#2f6f9f", "#0e2a40", "#8a8a62", "#5f7a3a"),
-      surface=patches((0.3, PODZOL), (-0.3, GRASS), default=block("coarse_dirt")), mobs="taiga",
-      veg=["boulders_mossy", "trees_highland_pine_dense", "shrubs", "heather", "ferns"],
+      surface=patches((0.45, block("moss_block")), (0.2, PODZOL), (-0.3, GRASS), default=block("coarse_dirt")),
+      mobs="taiga", veg=["boulders_mossy", "mounds_moss_few", "trees_highland_pine_dense", "shrubs", "heather",
+                         "moss_carpet", "ferns"],
       tags=["forest", "taiga", "cold", "wet", "conifer"])
     B("taiga_lakelands", temp=0.3, downfall=0.9, colors=colors("#90b8ff", "#c8d8ec", "#2a9fe8", "#0c3a5c", "#7aa868", "#5a9048"),
-      surface=patches((0.35, PODZOL), default=GRASS), mobs="taiga",
-      veg=["lakes", "trees_spruce", "trees_pine", "sweet_berries", "ferns"],
+      surface=patches((0.5, block("moss_block")), (0.35, PODZOL), default=GRASS), mobs="taiga",
+      veg=["lakes", "boulders_mossy", "trees_spruce", "trees_pine", "sweet_berries", "moss_carpet", "ferns"],
       tags=["forest", "taiga", "cold", "wet", "conifer"])
+
+    # ---------------- Iceland ----------------
+    B("hot_springs", temp=0.4, downfall=0.7, colors=colors("#a4bedc", "#d6dde4", "#5ad8e0", "#1a8a92", "#a8b050", "#8a9a40"),
+      surface=seq(cond(STEEP, block("vividlands:travertine")),
+                  cond(noise("surface_secondary", 0.55), block("vividlands:sulfur_crust")),
+                  cond(noise("surface", -0.12, 0.12), block("vividlands:thermal_mat")),
+                  cond(noise("surface", 0.12, 0.4), block("vividlands:sinter")),
+                  cond(noise("surface", -0.4, -0.12), block("vividlands:travertine")),
+                  cond(noise("surface", 0.6), block("moss_block")), GRASS),
+      under=block("vividlands:sinter"), underwater=block("vividlands:sinter"), mobs="highland",
+      veg=["hot_spring_pools", "grass_sparse", "moss_carpet"], particle=("white_ash", 0.002),
+      tags=["hill", "cold", "wet", "volcanic", "rocky"])
+    B("mossy_lava_fields", temp=0.35, downfall=0.85, colors=colors("#a0bad8", "#cdd6de", "#2ab8c8", "#0b4250", "#8fc85a", "#6fae48"),
+      surface=seq(cond(STEEP, block("basalt", axis="y")),
+                  cond(noise("surface", 0.62), block("smooth_basalt")),
+                  cond(noise("surface", -10.0, -0.62), block("blackstone")),
+                  block("moss_block")),
+      under=block("blackstone"), underwater=BLACK_SAND, ceiling=block("blackstone"), mobs="highland",
+      veg=["mounds_moss", "boulders_mossy", "moss_carpet", "grass_sparse"],
+      tags=["plains", "cold", "wet", "volcanic", "rocky"])
+    B("black_sand_desert", temp=0.3, downfall=0.3, colors=colors("#9ab4d4", "#c4c8cc", "#3ab0c4", "#0e3a48", "#8a9a5a", "#6a7a40"),
+      surface=seq(cond(STEEP, block("basalt", axis="y")),
+                  patches((0.5, block("vividlands:volcanic_ash")), (0.38, GRAVEL), default=seq(
+                      cond(noise("surface_secondary", 0.5), block("tuff")), BLACK_SAND))),
+      under=BLACK_SAND, underwater=BLACK_SAND, ceiling=block("tuff"), mobs="none",
+      veg=["spires_basalt_rare", "rocks_smooth_basalt"], tags=["plains", "cold", "dry", "rocky"])
+    B("glacial_outwash", temp=0.25, downfall=0.6, colors=colors("#a4c4e8", "#d2dce6", "#7fd6e0", "#2a6a7a", "#8ab060", "#6a9a48"),
+      surface=patches((0.55, block("moss_block")), (0.3, GRAVEL), default=BLACK_SAND),
+      under=BLACK_SAND, underwater=GRAVEL, ceiling=block("tuff"), mobs="none",
+      veg=["mounds_moss_few", "grass_sparse"], tags=["plains", "cold", "wet"])
+    B("rhyolite_highlands", temp=0.35, downfall=0.5, colors=colors("#a4bedc", "#d8dce0", "#4ab8c8", "#0e3a48", "#94b84a", "#74a03a"),
+      surface=seq(cond(y_above(300), cond(not_(STEEP), block("snow_block"))), cond(STEEP, BANDS),
+                  cond(noise("surface", 0.35), block("moss_block")),
+                  cond(noise("surface", -10.0, -0.5), block("vividlands:volcanic_ash")), BANDS),
+      under=BANDS, mobs="mountain", veg=["mounds_moss_few", "rocks_smooth_basalt"],
+      tags=["hill", "cold", "rocky", "badlands", "volcanic"])
 
     # ---------------- temperate ----------------
     B("alpine_peaks", temp=0.375, downfall=0.6, colors=colors("#7fb2ff", "#d0e0f5", "#40b8ff", "#0e3a5e", "#7fc04a", "#5fa83a"),
@@ -1002,21 +1090,21 @@ OCEAN_BY_T = ["glacial_ocean", "northern_ocean", "temperate_ocean", "tropical_oc
 RIVER_BY_T = ["glacial_river", "glacial_river", "clearwater_river", "clearwater_river", "tropical_river"]
 LOWLAND = [
     ["tundra", "tundra", "tundra", "boreal_snowwoods", "boreal_snowwoods"],
-    ["basalt_highlands", "highland_moors", "highland_moors", "caledonian_pinewood", "taiga_lakelands"],
+    ["basalt_highlands", "mossy_lava_fields", "highland_moors", "caledonian_pinewood", "taiga_lakelands"],
     ["endless_steppe", "wildflower_prairie", "mixed_woodland", "old_growth_oakwood", "redwood_giants"],
     ["golden_savanna", "golden_savanna", "wildflower_prairie", "rainforest", "rainforest"],
     ["great_erg", "great_erg", "rocky_hamada", "rainforest", "rainforest"],
 ]
 HIGHLAND = [
     ["glacier", "glacier", "glacier", "boreal_snowwoods", "boreal_snowwoods"],
-    ["basalt_highlands", "basalt_highlands", "highland_moors", "caledonian_pinewood", "taiga_lakelands"],
+    ["basalt_highlands", "rhyolite_highlands", "highland_moors", "caledonian_pinewood", "taiga_lakelands"],
     ["alpine_meadow", "alpine_meadow", "highland_moors", "old_growth_oakwood", "redwood_giants"],
     ["golden_savanna", "golden_savanna", "wildflower_prairie", "cloud_forest", "cloud_forest"],
     ["great_erg", "rocky_hamada", "red_canyonlands", "cloud_forest", "rainforest"],
 ]
 MOUNTAIN = [
     ["glacier_peaks"] * 5,
-    ["volcanic_cones", "volcanic_cones", "highland_crags", "glacier_peaks", "glacier_peaks"],
+    ["volcanic_cones", "rhyolite_highlands", "highland_crags", "glacier_peaks", "glacier_peaks"],
     ["highland_crags", "alpine_peaks", "alpine_peaks", "alpine_peaks", "alpine_peaks"],
     ["red_canyonlands", "red_canyonlands", "alpine_peaks", "cloud_forest", "cloud_forest"],
     ["red_canyonlands", "red_canyonlands", "red_canyonlands", "cloud_forest", "cloud_forest"],
@@ -1040,7 +1128,9 @@ def pick(t, h, c, e, w):
                 return "basalt_shore"
             return "rocky_hamada" if (t == 4 and h <= 2) else "rocky_cliffs"
         if t == 1:
-            return "basalt_shore" if h <= 2 else "golden_beach"
+            if h <= 1:
+                return "glacial_outwash" if w.startswith("high") else "basalt_shore"
+            return "basalt_shore" if h == 2 else "golden_beach"
         if t == 4 and h <= 1:
             return "great_erg"
         return "tropical_beach" if (t >= 3 and h >= 2) else "golden_beach"
@@ -1051,6 +1141,8 @@ def pick(t, h, c, e, w):
             return "jagged_spires"
         return name
     if e in (1, 2):
+        if t == 1 and h == 2 and w == "high_neg":
+            return "hot_springs"
         return HIGHLAND[t][h]
     if e == 6 and c == "near" and h >= 2:
         if t == 2:
@@ -1062,6 +1154,15 @@ def pick(t, h, c, e, w):
     name = LOWLAND[t][h]
     if name == "mixed_woodland" and w.endswith("neg"):
         return "autumn_woodland"
+    if t == 1:  # Iceland variants across the cold lowlands
+        if h == 0 and w.endswith("neg"):
+            return "black_sand_desert"
+        if h == 0 and e >= 5:
+            return "glacial_outwash"
+        if h == 1 and w == "high_pos":
+            return "highland_moors"
+        if h == 2 and w == "high_pos":
+            return "hot_springs"
     return name
 
 

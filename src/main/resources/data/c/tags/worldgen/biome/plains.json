@@ -2,9 +2,12 @@
   "replace": false,
   "values": [
     "vividlands:alpine_meadow",
+    "vividlands:black_sand_desert",
     "vividlands:endless_steppe",
+    "vividlands:glacial_outwash",
     "vividlands:golden_savanna",
     "vividlands:highland_moors",
+    "vividlands:mossy_lava_fields",
     "vividlands:salt_flats",
     "vividlands:tundra",
     "vividlands:wildflower_prairie"

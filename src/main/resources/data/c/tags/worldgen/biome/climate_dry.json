@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "vividlands:black_sand_desert",
     "vividlands:endless_steppe",
     "vividlands:golden_savanna",
     "vividlands:great_erg",

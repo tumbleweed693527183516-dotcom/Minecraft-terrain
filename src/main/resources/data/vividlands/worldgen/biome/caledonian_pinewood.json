@@ -187,10 +187,12 @@
     ],
     [
       "vividlands:boulders_mossy",
+      "vividlands:mounds_moss_few",
       "vividlands:trees_highland_pine_dense",
       "vividlands:shrubs",
       "vividlands:heather",
-      "vividlands:ferns"
+      "vividlands:ferns",
+      "vividlands:moss_carpet"
     ],
     [
       "minecraft:freeze_top_layer"

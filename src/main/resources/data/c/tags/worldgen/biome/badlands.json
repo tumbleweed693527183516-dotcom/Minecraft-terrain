@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "vividlands:red_canyonlands"
+    "vividlands:red_canyonlands",
+    "vividlands:rhyolite_highlands"
   ]
 }

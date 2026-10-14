@@ -195,7 +195,41 @@ def dry_grass():
     return a
 
 
+def layered(name, bands, pore=None, pore_p=0.0, wobble=1):
+    """Horizontal mineral layers (sinter, travertine), slightly wavy, with optional pores."""
+    r = rng(name)
+    a = canvas()
+    offs = r.integers(-wobble, wobble + 1, S)
+    for y in range(S):
+        for x in range(S):
+            band = bands[((y + offs[x]) // 2) % len(bands)]
+            jitter = r.integers(-6, 7)
+            a[y, x, :3] = np.clip(np.array(band) + jitter, 0, 255)
+    if pore:
+        m = r.random((S, S)) < pore_p
+        a[m, :3] = pore
+    return a
+
+
+def thermal_mat():
+    """Orange bacterial mat around hot springs: slimy rust and saffron streaks."""
+    r = rng("thermal_mat")
+    a = speckle("thermal_mat", [(214, 112, 38), (190, 92, 30), (232, 146, 52), (168, 76, 28)], [4, 3, 3, 2])
+    for _ in range(6):
+        y, x = int(r.integers(0, S)), int(r.integers(0, S))
+        for i in range(int(r.integers(3, 8))):
+            a[y, (x + i) % S, :3] = (238, 190, 70)
+    return a
+
+
 TEXTURES = {
+    "sinter": lambda: layered("sinter", [(222, 220, 212), (206, 204, 196), (232, 230, 224), (196, 194, 188)],
+                              pore=(176, 172, 164), pore_p=0.04),
+    "travertine": lambda: layered("travertine", [(226, 206, 168), (212, 188, 146), (236, 220, 186), (198, 172, 130)],
+                                  pore=(160, 136, 100), pore_p=0.07, wobble=0),
+    "thermal_mat": thermal_mat,
+    "sulfur_crust": lambda: speckle("sulfur", [(226, 206, 58), (204, 182, 40), (240, 226, 98), (180, 160, 36),
+                                               (250, 240, 150)], [5, 4, 3, 2, 1]),
     "black_sand": black_sand,
     "volcanic_ash": volcanic_ash,
     "salt_crust": salt_crust,

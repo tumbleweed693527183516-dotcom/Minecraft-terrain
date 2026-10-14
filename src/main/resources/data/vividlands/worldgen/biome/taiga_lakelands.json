@@ -187,9 +187,11 @@
       "minecraft:spring_lava"
     ],
     [
+      "vividlands:boulders_mossy",
       "vividlands:trees_spruce",
       "vividlands:trees_pine",
       "vividlands:ferns",
+      "vividlands:moss_carpet",
       "vividlands:sweet_berries"
     ],
     [

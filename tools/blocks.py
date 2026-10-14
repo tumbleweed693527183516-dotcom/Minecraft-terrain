@@ -18,6 +18,10 @@ BLOCKS = {
     "volcanic_ash": ("sand", "Volcanic Ash", {"dust": 0x75736F, "copy": "GRAVEL", "map": "COLOR_GRAY"}),
     "salt_crust": ("cube", "Salt Crust", {"copy": "CALCITE", "tool": "pickaxe"}),
     "peat": ("cube", "Peat", {"copy": "COARSE_DIRT", "tool": "shovel"}),
+    "sinter": ("cube", "Sinter", {"copy": "CALCITE", "tool": "pickaxe"}),
+    "travertine": ("cube", "Travertine", {"copy": "CALCITE", "tool": "pickaxe"}),
+    "thermal_mat": ("cube", "Thermal Mat", {"copy": "MUD", "tool": "shovel"}),
+    "sulfur_crust": ("cube", "Sulfur Crust", {"copy": "CALCITE", "tool": "pickaxe"}),
     "heather": ("flower", "Heather", {}),
     "dry_grass": ("dry_plant", "Dry Grass", {}),
     "palm_log": ("log", "Palm Log", {}),
@@ -166,8 +170,10 @@ def assets_and_data(data_dir):
         "minecraft:sand": ["vividlands:black_sand"],
         "minecraft:mineable/axe": of("log", "planks"),
         "minecraft:mineable/hoe": of("leaves", "flower", "dry_plant") + ["vividlands:peat"],
-        "minecraft:mineable/shovel": ["vividlands:black_sand", "vividlands:volcanic_ash", "vividlands:peat"],
-        "minecraft:mineable/pickaxe": ["vividlands:salt_crust"],
+        "minecraft:mineable/shovel": ["vividlands:black_sand", "vividlands:volcanic_ash", "vividlands:peat",
+                                      "vividlands:thermal_mat"],
+        "minecraft:mineable/pickaxe": ["vividlands:salt_crust", "vividlands:sinter", "vividlands:travertine",
+                                       "vividlands:sulfur_crust"],
         "minecraft:dirt": ["vividlands:peat"],
     }
     item_tags = {

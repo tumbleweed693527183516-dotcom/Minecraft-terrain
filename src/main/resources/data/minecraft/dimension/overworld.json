@@ -25441,7 +25441,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_shore",
+          "biome": "vividlands:glacial_outwash",
           "parameters": {
             "temperature": [
               -0.45,
@@ -25461,14 +25461,14 @@
             ],
             "weirdness": [
               -1.0,
-              -0.05
+              -0.26
             ],
             "depth": 0.0,
             "offset": 0.0
           }
         },
         {
-          "biome": "vividlands:basalt_shore",
+          "biome": "vividlands:glacial_outwash",
           "parameters": {
             "temperature": [
               -0.45,
@@ -25488,61 +25488,7 @@
             ],
             "weirdness": [
               -1.0,
-              -0.05
-            ],
-            "depth": 1.0,
-            "offset": 0.0
-          }
-        },
-        {
-          "biome": "vividlands:glacial_river",
-          "parameters": {
-            "temperature": [
-              -0.45,
-              -0.15
-            ],
-            "humidity": [
-              -1.0,
-              -0.35
-            ],
-            "continentalness": [
-              -0.19,
-              -0.11
-            ],
-            "erosion": [
-              -0.2225,
-              0.05
-            ],
-            "weirdness": [
-              -0.05,
-              0.05
-            ],
-            "depth": 0.0,
-            "offset": 0.0
-          }
-        },
-        {
-          "biome": "vividlands:glacial_river",
-          "parameters": {
-            "temperature": [
-              -0.45,
-              -0.15
-            ],
-            "humidity": [
-              -1.0,
-              -0.35
-            ],
-            "continentalness": [
-              -0.19,
-              -0.11
-            ],
-            "erosion": [
-              -0.2225,
-              0.05
-            ],
-            "weirdness": [
-              -0.05,
-              0.05
+              -0.26
             ],
             "depth": 1.0,
             "offset": 0.0
@@ -25568,8 +25514,116 @@
               0.05
             ],
             "weirdness": [
+              -0.26,
+              -0.05
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:basalt_shore",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              -0.26,
+              -0.05
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_river",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              -0.05,
+              0.05
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_river",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              -0.05,
+              0.05
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:basalt_shore",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -25596,7 +25650,115 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              0.26,
               1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              -1.0,
+              -0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              -1.0,
+              -0.26
             ],
             "depth": 1.0,
             "offset": 0.0
@@ -25622,7 +25784,7 @@
               0.45
             ],
             "weirdness": [
-              -1.0,
+              -0.26,
               -0.05
             ],
             "depth": 0.0,
@@ -25649,7 +25811,7 @@
               0.45
             ],
             "weirdness": [
-              -1.0,
+              -0.26,
               -0.05
             ],
             "depth": 1.0,
@@ -25731,7 +25893,7 @@
             ],
             "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -25758,7 +25920,115 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              0.26,
               1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              -1.0,
+              -0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              -1.0,
+              -0.26
             ],
             "depth": 1.0,
             "offset": 0.0
@@ -25784,7 +26054,7 @@
               0.55
             ],
             "weirdness": [
-              -1.0,
+              -0.26,
               -0.05
             ],
             "depth": 0.0,
@@ -25811,7 +26081,7 @@
               0.55
             ],
             "weirdness": [
-              -1.0,
+              -0.26,
               -0.05
             ],
             "depth": 1.0,
@@ -25893,7 +26163,7 @@
             ],
             "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -25920,7 +26190,115 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              0.26,
               1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              -0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              -0.26
             ],
             "depth": 1.0,
             "offset": 0.0
@@ -25946,7 +26324,7 @@
               1.0
             ],
             "weirdness": [
-              -1.0,
+              -0.26,
               -0.05
             ],
             "depth": 0.0,
@@ -25973,7 +26351,7 @@
               1.0
             ],
             "weirdness": [
-              -1.0,
+              -0.26,
               -0.05
             ],
             "depth": 1.0,
@@ -26055,7 +26433,7 @@
             ],
             "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -26082,6 +26460,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -1.0,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -26359,7 +26791,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -26386,7 +26818,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -26521,7 +26953,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -26548,7 +26980,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -26683,7 +27115,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -26710,7 +27142,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -26791,7 +27223,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:glacial_outwash",
           "parameters": {
             "temperature": [
               -0.45,
@@ -26818,7 +27250,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:glacial_outwash",
           "parameters": {
             "temperature": [
               -0.45,
@@ -26845,7 +27277,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -26872,7 +27304,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -26953,7 +27385,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:glacial_outwash",
           "parameters": {
             "temperature": [
               -0.45,
@@ -26980,7 +27412,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:glacial_outwash",
           "parameters": {
             "temperature": [
               -0.45,
@@ -27277,7 +27709,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -27304,7 +27736,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -27439,7 +27871,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -27466,7 +27898,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -27601,7 +28033,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -27628,7 +28060,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -27709,7 +28141,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:glacial_outwash",
           "parameters": {
             "temperature": [
               -0.45,
@@ -27736,7 +28168,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:glacial_outwash",
           "parameters": {
             "temperature": [
               -0.45,
@@ -27763,7 +28195,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -27790,7 +28222,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -27871,7 +28303,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:glacial_outwash",
           "parameters": {
             "temperature": [
               -0.45,
@@ -27898,7 +28330,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:glacial_outwash",
           "parameters": {
             "temperature": [
               -0.45,
@@ -28195,7 +28627,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -28222,7 +28654,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -28357,7 +28789,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -28384,7 +28816,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -28519,7 +28951,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -28546,7 +28978,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -28627,7 +29059,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:glacial_outwash",
           "parameters": {
             "temperature": [
               -0.45,
@@ -28654,7 +29086,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:glacial_outwash",
           "parameters": {
             "temperature": [
               -0.45,
@@ -28681,7 +29113,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -28708,7 +29140,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:black_sand_desert",
           "parameters": {
             "temperature": [
               -0.45,
@@ -28789,7 +29221,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:glacial_outwash",
           "parameters": {
             "temperature": [
               -0.45,
@@ -28816,7 +29248,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:glacial_outwash",
           "parameters": {
             "temperature": [
               -0.45,
@@ -30247,7 +30679,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_shore",
+          "biome": "vividlands:glacial_outwash",
           "parameters": {
             "temperature": [
               -0.45,
@@ -30267,14 +30699,14 @@
             ],
             "weirdness": [
               -1.0,
-              -0.05
+              -0.26
             ],
             "depth": 0.0,
             "offset": 0.0
           }
         },
         {
-          "biome": "vividlands:basalt_shore",
+          "biome": "vividlands:glacial_outwash",
           "parameters": {
             "temperature": [
               -0.45,
@@ -30294,61 +30726,7 @@
             ],
             "weirdness": [
               -1.0,
-              -0.05
-            ],
-            "depth": 1.0,
-            "offset": 0.0
-          }
-        },
-        {
-          "biome": "vividlands:glacial_river",
-          "parameters": {
-            "temperature": [
-              -0.45,
-              -0.15
-            ],
-            "humidity": [
-              -0.35,
-              -0.1
-            ],
-            "continentalness": [
-              -0.19,
-              -0.11
-            ],
-            "erosion": [
-              -0.2225,
-              0.05
-            ],
-            "weirdness": [
-              -0.05,
-              0.05
-            ],
-            "depth": 0.0,
-            "offset": 0.0
-          }
-        },
-        {
-          "biome": "vividlands:glacial_river",
-          "parameters": {
-            "temperature": [
-              -0.45,
-              -0.15
-            ],
-            "humidity": [
-              -0.35,
-              -0.1
-            ],
-            "continentalness": [
-              -0.19,
-              -0.11
-            ],
-            "erosion": [
-              -0.2225,
-              0.05
-            ],
-            "weirdness": [
-              -0.05,
-              0.05
+              -0.26
             ],
             "depth": 1.0,
             "offset": 0.0
@@ -30374,8 +30752,116 @@
               0.05
             ],
             "weirdness": [
+              -0.26,
+              -0.05
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:basalt_shore",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              -0.26,
+              -0.05
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_river",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              -0.05,
+              0.05
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_river",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              -0.05,
+              0.05
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:basalt_shore",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -30402,7 +30888,115 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              0.26,
               1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              -1.0,
+              -0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              -1.0,
+              -0.26
             ],
             "depth": 1.0,
             "offset": 0.0
@@ -30428,7 +31022,7 @@
               0.45
             ],
             "weirdness": [
-              -1.0,
+              -0.26,
               -0.05
             ],
             "depth": 0.0,
@@ -30455,7 +31049,7 @@
               0.45
             ],
             "weirdness": [
-              -1.0,
+              -0.26,
               -0.05
             ],
             "depth": 1.0,
@@ -30537,7 +31131,7 @@
             ],
             "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -30564,7 +31158,115 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              0.26,
               1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              -1.0,
+              -0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              -1.0,
+              -0.26
             ],
             "depth": 1.0,
             "offset": 0.0
@@ -30590,7 +31292,7 @@
               0.55
             ],
             "weirdness": [
-              -1.0,
+              -0.26,
               -0.05
             ],
             "depth": 0.0,
@@ -30617,7 +31319,7 @@
               0.55
             ],
             "weirdness": [
-              -1.0,
+              -0.26,
               -0.05
             ],
             "depth": 1.0,
@@ -30699,7 +31401,7 @@
             ],
             "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -30726,7 +31428,115 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              0.26,
               1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              -0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              -0.26
             ],
             "depth": 1.0,
             "offset": 0.0
@@ -30752,7 +31562,7 @@
               1.0
             ],
             "weirdness": [
-              -1.0,
+              -0.26,
               -0.05
             ],
             "depth": 0.0,
@@ -30779,7 +31589,7 @@
               1.0
             ],
             "weirdness": [
-              -1.0,
+              -0.26,
               -0.05
             ],
             "depth": 1.0,
@@ -30861,7 +31671,7 @@
             ],
             "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -30888,6 +31698,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:glacial_outwash",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -30895,7 +31759,7 @@
           }
         },
         {
-          "biome": "vividlands:volcanic_cones",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -30922,7 +31786,7 @@
           }
         },
         {
-          "biome": "vividlands:volcanic_cones",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -30949,7 +31813,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -30976,7 +31840,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31003,7 +31867,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31030,7 +31894,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31111,7 +31975,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31138,7 +32002,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31165,7 +32029,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31192,7 +32056,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31273,7 +32137,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31293,6 +32157,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:mossy_lava_fields",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:highland_moors",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 0.0,
@@ -31319,7 +32237,7 @@
               0.05
             ],
             "weirdness": [
-              0.05,
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -31327,7 +32245,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31354,7 +32272,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31435,7 +32353,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31455,6 +32373,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:mossy_lava_fields",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:highland_moors",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 0.0,
@@ -31481,7 +32453,7 @@
               0.45
             ],
             "weirdness": [
-              0.05,
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -31489,7 +32461,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31516,7 +32488,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31597,7 +32569,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31617,6 +32589,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:mossy_lava_fields",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:highland_moors",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 0.0,
@@ -31643,7 +32669,7 @@
               0.55
             ],
             "weirdness": [
-              0.05,
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -31651,7 +32677,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31678,7 +32704,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31759,7 +32785,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31779,6 +32805,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:mossy_lava_fields",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:highland_moors",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 0.0,
@@ -31805,7 +32885,7 @@
               1.0
             ],
             "weirdness": [
-              0.05,
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -31813,7 +32893,7 @@
           }
         },
         {
-          "biome": "vividlands:volcanic_cones",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31840,7 +32920,7 @@
           }
         },
         {
-          "biome": "vividlands:volcanic_cones",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31867,7 +32947,7 @@
           }
         },
         {
-          "biome": "vividlands:volcanic_cones",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31894,7 +32974,7 @@
           }
         },
         {
-          "biome": "vividlands:volcanic_cones",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31921,7 +33001,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -31948,7 +33028,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32029,7 +33109,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32056,7 +33136,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32083,7 +33163,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32110,7 +33190,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32191,7 +33271,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32211,6 +33291,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:mossy_lava_fields",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              0.03,
+              0.3
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:highland_moors",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              0.03,
+              0.3
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 0.0,
@@ -32237,7 +33371,7 @@
               0.05
             ],
             "weirdness": [
-              0.05,
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -32245,7 +33379,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32272,7 +33406,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32353,7 +33487,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32373,6 +33507,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:mossy_lava_fields",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              0.03,
+              0.3
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:highland_moors",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              0.03,
+              0.3
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 0.0,
@@ -32399,7 +33587,7 @@
               0.45
             ],
             "weirdness": [
-              0.05,
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -32407,7 +33595,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32434,7 +33622,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32515,7 +33703,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32535,6 +33723,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:mossy_lava_fields",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              0.03,
+              0.3
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:highland_moors",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              0.03,
+              0.3
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 0.0,
@@ -32561,7 +33803,7 @@
               0.55
             ],
             "weirdness": [
-              0.05,
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -32569,7 +33811,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32596,7 +33838,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32677,7 +33919,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32697,6 +33939,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:mossy_lava_fields",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              0.03,
+              0.3
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:highland_moors",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              0.03,
+              0.3
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 0.0,
@@ -32723,7 +34019,7 @@
               1.0
             ],
             "weirdness": [
-              0.05,
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -32731,7 +34027,7 @@
           }
         },
         {
-          "biome": "vividlands:volcanic_cones",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32758,7 +34054,7 @@
           }
         },
         {
-          "biome": "vividlands:volcanic_cones",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32785,7 +34081,7 @@
           }
         },
         {
-          "biome": "vividlands:volcanic_cones",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32812,7 +34108,7 @@
           }
         },
         {
-          "biome": "vividlands:volcanic_cones",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32839,7 +34135,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32866,7 +34162,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32947,7 +34243,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -32974,7 +34270,7 @@
           }
         },
         {
-          "biome": "vividlands:basalt_highlands",
+          "biome": "vividlands:rhyolite_highlands",
           "parameters": {
             "temperature": [
               -0.45,
@@ -33001,7 +34297,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -33028,7 +34324,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -33109,7 +34405,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -33129,6 +34425,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:mossy_lava_fields",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              0.3,
+              1.0
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:highland_moors",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              0.3,
+              1.0
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 0.0,
@@ -33155,7 +34505,7 @@
               0.05
             ],
             "weirdness": [
-              0.05,
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -33163,7 +34513,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -33190,7 +34540,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -33271,7 +34621,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -33291,6 +34641,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:mossy_lava_fields",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              0.3,
+              1.0
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:highland_moors",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              0.3,
+              1.0
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 0.0,
@@ -33317,7 +34721,7 @@
               0.45
             ],
             "weirdness": [
-              0.05,
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -33325,7 +34729,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -33352,7 +34756,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -33433,7 +34837,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -33453,6 +34857,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:mossy_lava_fields",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              0.3,
+              1.0
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:highland_moors",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              0.3,
+              1.0
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 0.0,
@@ -33479,7 +34937,7 @@
               0.55
             ],
             "weirdness": [
-              0.05,
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -33487,7 +34945,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -33514,7 +34972,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -33595,7 +35053,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:mossy_lava_fields",
           "parameters": {
             "temperature": [
               -0.45,
@@ -33615,6 +35073,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:mossy_lava_fields",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              0.3,
+              1.0
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:highland_moors",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              0.3,
+              1.0
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 0.0,
@@ -33641,7 +35153,7 @@
               1.0
             ],
             "weirdness": [
-              0.05,
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -35755,7 +37267,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:hot_springs",
           "parameters": {
             "temperature": [
               -0.45,
@@ -35775,6 +37287,60 @@
             ],
             "weirdness": [
               -1.0,
+              -0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              -0.78,
+              -0.375
+            ],
+            "weirdness": [
+              -1.0,
+              -0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:highland_moors",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              -0.78,
+              -0.375
+            ],
+            "weirdness": [
+              -0.26,
               1.0
             ],
             "depth": 0.0,
@@ -35801,8 +37367,62 @@
               -0.375
             ],
             "weirdness": [
-              -1.0,
+              -0.26,
               1.0
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              -0.375,
+              -0.2225
+            ],
+            "weirdness": [
+              -1.0,
+              -0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              -0.375,
+              -0.2225
+            ],
+            "weirdness": [
+              -1.0,
+              -0.26
             ],
             "depth": 1.0,
             "offset": 0.0
@@ -35828,7 +37448,7 @@
               -0.2225
             ],
             "weirdness": [
-              -1.0,
+              -0.26,
               -0.05
             ],
             "depth": 0.0,
@@ -35855,7 +37475,7 @@
               -0.2225
             ],
             "weirdness": [
-              -1.0,
+              -0.26,
               -0.05
             ],
             "depth": 1.0,
@@ -36099,7 +37719,7 @@
             ],
             "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -36126,6 +37746,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -36261,7 +37935,7 @@
             ],
             "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -36288,6 +37962,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -36423,7 +38151,7 @@
             ],
             "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -36450,6 +38178,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -36585,7 +38367,7 @@
             ],
             "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -36612,6 +38394,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              -0.11,
+              0.03
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -36727,7 +38563,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:hot_springs",
           "parameters": {
             "temperature": [
               -0.45,
@@ -36747,6 +38583,60 @@
             ],
             "weirdness": [
               -1.0,
+              -0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.03,
+              0.3
+            ],
+            "erosion": [
+              -0.375,
+              -0.2225
+            ],
+            "weirdness": [
+              -1.0,
+              -0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:highland_moors",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.03,
+              0.3
+            ],
+            "erosion": [
+              -0.375,
+              -0.2225
+            ],
+            "weirdness": [
+              -0.26,
               -0.05
             ],
             "depth": 0.0,
@@ -36773,7 +38663,7 @@
               -0.2225
             ],
             "weirdness": [
-              -1.0,
+              -0.26,
               -0.05
             ],
             "depth": 1.0,
@@ -37017,7 +38907,7 @@
             ],
             "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -37044,6 +38934,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.03,
+              0.3
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.03,
+              0.3
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -37179,7 +39123,7 @@
             ],
             "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -37206,6 +39150,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.03,
+              0.3
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.03,
+              0.3
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -37341,7 +39339,7 @@
             ],
             "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -37368,6 +39366,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.03,
+              0.3
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.03,
+              0.3
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -37503,7 +39555,7 @@
             ],
             "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -37530,6 +39582,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.03,
+              0.3
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.03,
+              0.3
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -37645,7 +39751,7 @@
           }
         },
         {
-          "biome": "vividlands:highland_moors",
+          "biome": "vividlands:hot_springs",
           "parameters": {
             "temperature": [
               -0.45,
@@ -37665,6 +39771,60 @@
             ],
             "weirdness": [
               -1.0,
+              -0.26
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.3,
+              1.0
+            ],
+            "erosion": [
+              -0.375,
+              -0.2225
+            ],
+            "weirdness": [
+              -1.0,
+              -0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:highland_moors",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.3,
+              1.0
+            ],
+            "erosion": [
+              -0.375,
+              -0.2225
+            ],
+            "weirdness": [
+              -0.26,
               -0.05
             ],
             "depth": 0.0,
@@ -37691,7 +39851,7 @@
               -0.2225
             ],
             "weirdness": [
-              -1.0,
+              -0.26,
               -0.05
             ],
             "depth": 1.0,
@@ -37935,7 +40095,7 @@
             ],
             "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -37962,6 +40122,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.3,
+              1.0
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.3,
+              1.0
+            ],
+            "erosion": [
+              -0.2225,
+              0.05
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -38097,7 +40311,7 @@
             ],
             "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -38124,6 +40338,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.3,
+              1.0
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.3,
+              1.0
+            ],
+            "erosion": [
+              0.05,
+              0.45
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -38259,7 +40527,7 @@
             ],
             "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -38286,6 +40554,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.3,
+              1.0
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.3,
+              1.0
+            ],
+            "erosion": [
+              0.45,
+              0.55
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 1.0,
@@ -38421,7 +40743,7 @@
             ],
             "weirdness": [
               0.05,
-              1.0
+              0.26
             ],
             "depth": 0.0,
             "offset": 0.0
@@ -38448,6 +40770,60 @@
             ],
             "weirdness": [
               0.05,
+              0.26
+            ],
+            "depth": 1.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.3,
+              1.0
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              0.26,
+              1.0
+            ],
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "vividlands:hot_springs",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.15
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              0.3,
+              1.0
+            ],
+            "erosion": [
+              0.55,
+              1.0
+            ],
+            "weirdness": [
+              0.26,
               1.0
             ],
             "depth": 1.0,

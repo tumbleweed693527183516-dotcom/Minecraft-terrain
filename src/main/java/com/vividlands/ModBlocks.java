@@ -22,6 +22,10 @@ public final class ModBlocks {
     public static final Block VOLCANIC_ASH = register("volcanic_ash", new SandBlock(0x75736F, BlockBehaviour.Properties.copy(Blocks.GRAVEL).mapColor(MapColor.COLOR_GRAY)));
     public static final Block SALT_CRUST = register("salt_crust", new Block(BlockBehaviour.Properties.copy(Blocks.CALCITE)));
     public static final Block PEAT = register("peat", new Block(BlockBehaviour.Properties.copy(Blocks.COARSE_DIRT)));
+    public static final Block SINTER = register("sinter", new Block(BlockBehaviour.Properties.copy(Blocks.CALCITE)));
+    public static final Block TRAVERTINE = register("travertine", new Block(BlockBehaviour.Properties.copy(Blocks.CALCITE)));
+    public static final Block THERMAL_MAT = register("thermal_mat", new Block(BlockBehaviour.Properties.copy(Blocks.MUD)));
+    public static final Block SULFUR_CRUST = register("sulfur_crust", new Block(BlockBehaviour.Properties.copy(Blocks.CALCITE)));
     public static final Block HEATHER = register("heather", new FlowerBlock(MobEffects.REGENERATION, 5, BlockBehaviour.Properties.copy(Blocks.POPPY)));
     public static final Block DRY_GRASS = register("dry_grass", new DeadBushBlock(BlockBehaviour.Properties.copy(Blocks.DEAD_BUSH).mapColor(MapColor.SAND)));
     public static final Block PALM_LOG = register("palm_log", new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)));
