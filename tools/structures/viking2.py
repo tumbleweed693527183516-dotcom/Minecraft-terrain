@@ -596,6 +596,11 @@ def knarr():
                 b.barrel(x, 3, z, loot=f"{NS}:chests/ship_cargo" if h(z, x) < 0.25 else None)
             elif h(x, z, 3) < 0.5:
                 b.set(x, 3, z, "hay_block", axis="z")
+    for (x, y, z), v in list(b.blocks.items()):           # seal the hull below the waterline
+        if v[0] == "minecraft:air" and y <= 3:
+            for dx, dy, dz in ((1, 0, 0), (-1, 0, 0), (0, 0, 1), (0, 0, -1), (0, -1, 0)):
+                if b.get(x + dx, y + dy, z + dz) is None:
+                    b.set(x + dx, y + dy, z + dz, "oak_planks")
     b.chest(C, 3, L - 4, "north", f"{NS}:chests/longship")
     animals(b, "sheep", [(C - 1, 3, 4), (C + 1, 3, 5)], Color=Byte(0))
     b.set(C, 4, L - 3, "lantern", hanging=False, waterlogged=False)

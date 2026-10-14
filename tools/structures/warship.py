@@ -80,6 +80,13 @@ def warship(name, L, B, masts, salt, sail=("red", "white")):
                     b.set(x, y, z, "air")
         if 3 <= z <= L - 4:
             b.set(C, -1, z, "dark_oak_log", axis="z")            # keel
+    # make the hull watertight: every open cell below deck must be boxed in by planks
+    for (x, y, z), v in list(b.blocks.items()):
+        if v[0] != "minecraft:air" or y >= DECK:
+            continue
+        for dx, dy, dz in ((1, 0, 0), (-1, 0, 0), (0, 0, 1), (0, 0, -1), (0, -1, 0)):
+            if b.get(x + dx, y + dy, z + dz) is None:
+                b.set(x + dx, y + dy, z + dz, "dark_oak_planks")
     # keelson and deck beams below deck
     for z in range(4, L - 4):
         if bm(z) >= 1.6:
