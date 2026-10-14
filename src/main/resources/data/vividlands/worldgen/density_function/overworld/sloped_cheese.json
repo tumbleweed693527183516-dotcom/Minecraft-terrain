@@ -12,7 +12,11 @@
           "argument1": "vividlands:overworld/depth",
           "argument2": {
             "type": "minecraft:mul",
-            "argument1": "minecraft:overworld_large_biomes/jaggedness",
+            "argument1": {
+              "type": "minecraft:mul",
+              "argument1": 0.5,
+              "argument2": "minecraft:overworld_large_biomes/jaggedness"
+            },
             "argument2": {
               "type": "minecraft:half_negative",
               "argument": {

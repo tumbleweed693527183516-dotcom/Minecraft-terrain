@@ -20,14 +20,20 @@ DATA = RES / "data"
 # Tunables
 # ---------------------------------------------------------------------------
 MIN_Y = -64
-HEIGHT = 512                 # world goes from y=-64 to y=447
+HEIGHT = 576                 # world goes from y=-64 to y=511
 SEA_LEVEL = 63
 VERTICAL_SCALE = 1.75        # how much taller land above sea level gets vs vanilla
 SMOOTHING = 1.3              # >1 = smoother slopes, fewer overhangs and floating bits
 DETAIL_NOISE = 0.7           # strength of small-scale 3D terrain noise (vanilla = 1.0)
-RIDGE_STRENGTH = 0.30        # how strongly inland terrain forms ridges and valleys
-RIDGE_LIFT = 0.12            # keeps ridge valleys above sea level
-TOP_SLIDE = (424, 440)       # terrain fades out between these heights
+JAGGEDNESS = 0.5             # vanilla spiky peak noise, scaled down so our ridges lead
+TOP_SLIDE = (488, 504)       # terrain fades out between these heights
+
+# Earth-style mountains (heights in "depth units": 1.0 is about 224 blocks above sea level)
+BASE_SOFT_CAP = -0.2         # vanilla terrain above this height is compressed (removes plateaus)
+BASE_SOFT_KEEP = 0.3         # how much of vanilla height above the cap survives
+MASSIF_UPLIFT = 0.22         # broad raised ground the ranges sit on
+RIDGE_WEIGHTS = (0.62, 0.30, 0.14)  # main ridges, side ridges, spurs
+WARP_BLOCKS = 110.0          # how far ranges bend and wander
 
 
 def mc(x):
@@ -104,15 +110,15 @@ def density_functions():
                    {"type": mc("y_clamped_gradient"), "from_y": 64, "to_y": top,
                     "from_value": 0.0, "to_value": above})
 
-    # Peaks & valleys: 1 on ridge crests, -1 in valley floors (vanilla "ridges_folded" maths).
-    peaks_valleys = mul(-3.0, add(-0.3333333333333333,
-                                  abs_(add(-0.6666666666666666, abs_(mc("overworld/ridges"))))))
-    inland = clamp(mul(2.5, add(mc("overworld_large_biomes/continents"), -0.05)), 0.0, 1.0)
-    rugged = clamp(mul(-1.5, add(mc("overworld_large_biomes/erosion"), -0.25)), 0.0, 1.0)
-    ridge_term = mul(mul(inland, rugged), add(RIDGE_LIFT, mul(RIDGE_STRENGTH, peaks_valleys)))
+    mountains()
+    # Vanilla land shape, with everything above BASE_SOFT_CAP squashed so it can't form
+    # long flat-topped plateaus; real height comes from the mountain ranges.
+    van = mc("overworld_large_biomes/offset")
+    base = add({"type": mc("min"), "argument1": van, "argument2": BASE_SOFT_CAP},
+               mul(BASE_SOFT_KEEP, {"type": mc("max"), "argument1": add(van, -BASE_SOFT_CAP), "argument2": 0.0}))
     write(f"{MODID}/worldgen/density_function/overworld/offset.json", {
         "type": mc("flat_cache"), "argument": {"type": mc("cache_2d"), "argument":
-                                               add(mc("overworld_large_biomes/offset"), ridge_term)}})
+                                               add(base, vl("overworld/mountains/height"))}})
     write(f"{MODID}/worldgen/density_function/overworld/depth.json", add(gradient, vl("overworld/offset")))
     write(f"{MODID}/worldgen/density_function/overworld/factor.json",
           mul(VERTICAL_SCALE * SMOOTHING, mc("overworld_large_biomes/factor")))
@@ -122,7 +128,7 @@ def density_functions():
     write(f"{MODID}/worldgen/density_function/overworld/sloped_cheese.json", add(
         mul(4.0, {"type": mc("quarter_negative"), "argument": mul(
             add(vl("overworld/depth"),
-                mul(mc("overworld_large_biomes/jaggedness"),
+                mul(mul(JAGGEDNESS, mc("overworld_large_biomes/jaggedness")),
                     {"type": mc("half_negative"), "argument": {"type": mc("noise"), "noise": mc("jagged"),
                                                               "xz_scale": 1500.0, "y_scale": 0.0}})),
             vl("overworld/factor"))}),
@@ -142,6 +148,61 @@ def density_functions():
                       "min_inclusive": -1000000.0, "max_exclusive": 0.03, "when_in_range": -1000000.0,
                       "when_out_of_range": mc("overworld/caves/pillars")},
     })
+
+
+def mountains():
+    """
+    Earth-style mountain ranges: a warped ridged multifractal on top of broad massifs.
+
+    Each ridge layer is (1 - |noise|)^2, so noise crossing zero traces long winding
+    ridgelines with the concave profile of real mountains. Each finer layer is weighted
+    by the one before it, so side ridges and spurs branch off high ground while valley
+    floors stay smooth. Coordinates are warped so ranges bend naturally, a slow "massif"
+    noise decides which ranges are giants, and river lines cut gorges through them.
+    """
+    noises = {
+        "mountain_ridges": (-9, [1.0, 0.3]),    # ~500 blocks between main ridges
+        "mountain_ridges_detail": (-8, [1.0]),  # side ridges
+        "mountain_ridges_fine": (-7, [1.0]),    # spurs and gullies
+        "mountain_massif": (-10, [1.0, 0.5]),   # broad uplift; which ranges are giants
+        "mountain_warp_x": (-8, [1.0, 0.5]),
+        "mountain_warp_z": (-8, [1.0, 0.5]),
+    }
+    for name, (octave, amps) in noises.items():
+        write(f"{MODID}/worldgen/noise/{name}.json", {"firstOctave": octave, "amplitudes": amps})
+
+    def n(name):
+        return {"type": mc("noise"), "noise": vl(name), "xz_scale": 1.0, "y_scale": 0.0}
+
+    def warped(name):
+        return {"type": mc("shifted_noise"), "noise": vl(name), "xz_scale": 1.0, "y_scale": 0.0,
+                "shift_x": mul(WARP_BLOCKS, n("mountain_warp_x")), "shift_y": 0.0,
+                "shift_z": mul(WARP_BLOCKS, n("mountain_warp_z"))}
+
+    def signal(name):
+        return {"type": mc("square"),
+                "argument": clamp(add(1.0, mul(-1.0, abs_(warped(name)))), 0.0, 1.0)}
+
+    def cached(x):
+        return {"type": mc("cache_2d"), "argument": x}
+
+    d = f"{MODID}/worldgen/density_function/overworld/mountains"
+    ref = lambda x: vl(f"overworld/mountains/{x}")  # noqa: E731
+    write(f"{d}/ridge.json", cached(signal("mountain_ridges")))
+    write(f"{d}/ridge_detail.json", cached(mul(signal("mountain_ridges_detail"),
+                                               clamp(mul(2.0, ref("ridge")), 0.0, 1.0))))
+    write(f"{d}/ridge_fine.json", cached(mul(signal("mountain_ridges_fine"),
+                                             clamp(mul(2.0, ref("ridge_detail")), 0.0, 1.0))))
+    a, b, c = RIDGE_WEIGHTS
+    ridged = add(mul(a, ref("ridge")), add(mul(b, ref("ridge_detail")), mul(c, ref("ridge_fine"))))
+    massif = clamp(add(0.55, mul(0.7, n("mountain_massif"))), 0.15, 1.0)
+    shape = mul(massif, add(MASSIF_UPLIFT, ridged))
+    # Where ranges rise: rugged land (low erosion) away from the coast.
+    rugged = clamp(mul(-1.6, mc("overworld_large_biomes/erosion")), 0.0, 1.0)
+    inland = clamp(mul(3.0, add(mc("overworld_large_biomes/continents"), 0.05)), 0.0, 1.0)
+    # River lines (vanilla weirdness near zero) carve gorges through the ranges.
+    gorge = clamp(mul(8.0, add(abs_(mc("overworld/ridges")), -0.03)), 0.0, 1.0)
+    write(f"{d}/height.json", cached(mul(mul(mul(rugged, inland), gorge), shape)))
 
 
 def slides(inner):
@@ -686,14 +747,14 @@ def define_biomes():
 
     # ---------------- cold (Iceland & Scotland) ----------------
     B("volcanic_cones", temp=0.2, downfall=0.3, colors=colors("#8fa3d1", "#b9aa9c", "#2fb8c9", "#0a3a44", "#7a9a3a", "#5e8a2e"),
-      surface=seq(cond(y_above(300), cond(not_(STEEP), block("snow_block"))), cond(STEEP, block("basalt", axis="y")),
+      surface=seq(cond(y_above(330), cond(not_(STEEP), block("snow_block"))), cond(STEEP, block("basalt", axis="y")),
                   cond(noise("surface", -0.06, 0.06), block("magma_block")),
                   cond(noise("surface_secondary", 0.25), block("tuff")), block("blackstone")),
       under=block("blackstone"), underwater=block("blackstone"), mobs="mountain",
       veg=["lava_pools", "spires_basalt"], particle=("white_ash", 0.004),
       tags=["mountain", "peak", "cold", "dry", "volcanic", "rocky"])
     B("highland_crags", temp=0.25, downfall=0.7, colors=colors("#9fbbe0", "#c8d2dc", "#3a90c8", "#0e3048", "#8f8f5a", "#6f7f3a"),
-      surface=snowcap(250, patches((0.6, GRAVEL), default=GRASS)), mobs="mountain",
+      surface=snowcap(300, patches((0.6, GRAVEL), default=GRASS)), mobs="mountain",
       veg=["boulders_mossy", "heather", "grass"], tags=["mountain", "peak", "cold", "rocky"])
     B("basalt_highlands", temp=0.3, downfall=0.6, colors=colors("#9ec4ff", "#c9d6e0", "#1ec8d8", "#0b4a55", "#8fd14f", "#6fbf3f"),
       surface=seq(cond(STEEP, block("basalt", axis="y")), cond(noise("surface", 0.05), block("moss_block")),
@@ -717,13 +778,13 @@ def define_biomes():
     # ---------------- temperate ----------------
     B("alpine_peaks", temp=0.1, downfall=0.6, colors=colors("#7fb2ff", "#d0e0f5", "#40b8ff", "#0e3a5e", "#7fc04a", "#5fa83a"),
       surface=seq(cond(STEEP, seq(cond(noise("calcite", -0.02, 0.02), block("calcite")), STONE)),
-                  cond(y_above(260), block("snow_block")), cond(y_above(215), patches((0.0, GRAVEL), default=STONE)),
+                  cond(y_above(320), block("snow_block")), cond(y_above(250), patches((0.0, GRAVEL), default=STONE)),
                   GRASS),
-      under=seq(cond(STEEP, STONE), cond(y_above(215), STONE), DIRT), mobs="mountain",
+      under=seq(cond(STEEP, STONE), cond(y_above(250), STONE), DIRT), mobs="mountain",
       veg=["trees_spruce_rare", "flowers_meadow", "grass"], tags=["mountain", "peak", "temperate", "snowy"])
     B("jagged_spires", temp=0.0, downfall=0.6, colors=colors("#7fb2ff", "#d0e0f5", "#40b8ff", "#0e3a5e", "#7fc04a", "#5fa83a"),
       surface=seq(cond(STEEP, seq(cond(noise("calcite", -0.03, 0.03), block("calcite")), STONE)),
-                  cond(y_above(240), block("snow_block")), STONE),
+                  cond(y_above(290), block("snow_block")), STONE),
       under=STONE, mobs="mountain", tags=["mountain", "peak", "temperate", "snowy", "rocky"])
     B("alpine_meadow", temp=0.4, downfall=0.7, colors=colors("#7fb2ff", "#d0e0f5", "#3fc8ff", "#0e3a5e", "#83d148", "#63bb38"),
       surface=seq(cond(STEEP, STONE), GRASS), mobs="mountain",
