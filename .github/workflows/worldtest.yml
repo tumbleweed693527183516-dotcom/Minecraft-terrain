@@ -3,16 +3,16 @@ name: World test
 # Generates a real world with Vivid Lands on a Fabric 1.20.1 server and saves maps of it.
 on:
   workflow_dispatch:
-
-permissions:
-  contents: write
     inputs:
       seed:
         description: World seed
         default: "vividlands"
       radius:
         description: Radius to generate, in blocks
-        default: "2048"
+        default: "1536"
+
+permissions:
+  contents: write
 
 jobs:
   worldtest:
