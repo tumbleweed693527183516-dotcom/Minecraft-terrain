@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "vividlands:caledonian_pinewood",
+    "vividlands:taiga_lakelands",
+    "vividlands:mixed_woodland",
+    "vividlands:autumn_woodland",
+    "vividlands:boreal_snowwoods",
+    "vividlands:alpine_meadow"
+  ]
+}

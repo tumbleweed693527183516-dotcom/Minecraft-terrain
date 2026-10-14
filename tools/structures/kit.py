@@ -221,3 +221,184 @@ def bowed(cx_half_mid, cx_half_end, z0, z1):
         t = (z - zc) / ((z1 - z0) / 2 + 0.5)
         return int(round(cx_half_end + (cx_half_mid - cx_half_end) * math.cos(t * math.pi / 2)))
     return hw
+
+
+# ---------------------------------------------------------------------------
+# Exterior detail
+# ---------------------------------------------------------------------------
+DIRS = {"north": (0, -1), "south": (0, 1), "east": (1, 0), "west": (-1, 0)}
+SIDE = {"north": ("east", "west"), "south": ("east", "west"), "east": ("north", "south"), "west": ("north", "south")}
+OPP = {"north": "south", "south": "north", "east": "west", "west": "east"}
+
+
+def window(b, x, y, z, out, wood="spruce"):
+    """Glass window in a wall cell with open shutters on the outside."""
+    b.set(x, y, z, "glass_pane", **FENCE)
+    dx, dz = DIRS[out]
+    for side in SIDE[out]:
+        sx, sz = DIRS[side]
+        cx, cz = x + dx + sx, z + dz + sz
+        if b.get(cx, y, cz) is None:
+            b.set(cx, y, cz, f"{wood}_trapdoor", facing=side, half="bottom", open=True, powered=False,
+                  waterlogged=False)
+    if b.get(x + dx, y - 1, z + dz) is None:     # flower box under the window
+        b.set(x + dx, y - 1, z + dz, f"{wood}_trapdoor", facing=out, half="top", open=False, powered=False,
+              waterlogged=False)
+
+
+def cart(b, x, y, z, axis="x", cargo="hay_block"):
+    along = (1, 0) if axis == "x" else (0, 1)
+    across = (0, 1) if axis == "x" else (1, 0)
+    for i in range(2):
+        cx, cz = x + along[0] * i, z + along[1] * i
+        slab(b, cx, y, cz, "spruce_slab", "top")
+        for s in (-1, 1):
+            wx, wz = cx + across[0] * s, cz + across[1] * s
+            face = ("south" if s > 0 else "north") if axis == "x" else ("east" if s > 0 else "west")
+            if i == 0 and b.get(wx, y, wz) is None:
+                b.set(wx, y, wz, "dark_oak_trapdoor", facing=face, half="bottom", open=True, powered=False,
+                      waterlogged=False)
+        if cargo == "hay_block":
+            b.set(cx, y + 1, cz, "hay_block", axis="y")
+        else:
+            b.barrel(cx, y + 1, cz)
+    fx, fz = x - along[0], z - along[1]
+    b.set(fx, y, fz, "spruce_fence", **FENCE)
+
+
+def chopping_block(b, x, y, z):
+    b.set(x, y, z, "stripped_spruce_log", axis="y")
+    b.set(x + 1, y, z, "spruce_log", axis="x")
+    b.set(x + 1, y + 1, z, "spruce_log", axis="x")
+    b.set(x, y, z + 1, "spruce_slab", type="bottom", waterlogged=False)
+
+
+def hide_frame(b, x, y, z, axis="x", colour="brown"):
+    along = (1, 0) if axis == "x" else (0, 1)
+    for i in (0, 3):
+        b.fill(x + along[0] * i, y, z + along[1] * i, x + along[0] * i, y + 2, z + along[1] * i, "spruce_fence",
+               **FENCE)
+    for i in (1, 2):
+        b.set(x + along[0] * i, y + 1, z + along[1] * i, f"{colour}_wool")
+        b.set(x + along[0] * i, y + 2, z + along[1] * i, "spruce_fence", **FENCE)
+
+
+def kitchen_garden(b, x0, z0, w, d, y=1, salt=0):
+    crops = [("carrots", 7), ("potatoes", 7), ("beetroots", 3), ("sweet_berry_bush", 3)]
+    for x in range(x0, x0 + w):
+        for z in range(z0, z0 + d):
+            edge = x in (x0, x0 + w - 1) or z in (z0, z0 + d - 1)
+            b.set(x, y - 1, z, "dirt")
+            if edge:
+                b.set(x, y, z, "spruce_fence", **FENCE)
+            else:
+                name, top = crops[int(h(x, z, salt) * 4)]
+                if name == "sweet_berry_bush":
+                    b.set(x, y - 1, z, "grass_block", snowy=False)
+                    b.set(x, y, z, name, age=top)
+                else:
+                    b.set(x, y - 1, z, "farmland", moisture=7)
+                    b.set(x, y, z, name, age=top)
+    b.set(x0 + w // 2, y, z0, "spruce_fence_gate", facing="north", open=False, in_wall=False, powered=False)
+    b.set(x0, y + 1, z0, "torch")
+
+
+def water_barrel(b, x, y, z):
+    b.set(x, y, z, "water_cauldron", level=3)
+
+
+def potted(b, x, y, z, salt=0):
+    plants = ["potted_cornflower", "potted_allium", "potted_fern", "potted_oxeye_daisy", "potted_spruce_sapling"]
+    b.set(x, y, z, plants[int(h(x, y, z, salt) * len(plants))])
+
+
+def stepping_stones(b, x0, z0, x1, z1, y=0, salt=0):
+    n = max(abs(x1 - x0), abs(z1 - z0))
+    for i in range(n + 1):
+        x = x0 + round((x1 - x0) * i / max(n, 1))
+        z = z0 + round((z1 - z0) * i / max(n, 1))
+        if b.get(x, y, z) is None and h(x, z, salt) < 0.8:
+            b.set(x, y, z, "dirt_path" if h(z, x) < 0.6 else "gravel")
+
+
+def animals(b, kind, spots, **extra):
+    for x, y, z in spots:
+        b.animal(x, y, z, kind, **extra)
+
+
+def weather(b, salt=0, vines=True):
+    """Age a finished build: mossy stone, cracked bricks, vines on shady (north) faces."""
+    for (x, y, z), (name, props, nbt) in list(b.blocks.items()):
+        r = h(x, y, z, salt, 77)
+        if name == "minecraft:cobblestone" and r < 0.3:
+            b.blocks[(x, y, z)] = ("minecraft:mossy_cobblestone", props, nbt)
+        elif name == "minecraft:stone_bricks" and r < 0.35:
+            b.blocks[(x, y, z)] = ("minecraft:mossy_stone_bricks" if r < 0.2 else "minecraft:cracked_stone_bricks",
+                                   props, nbt)
+        if not vines or y < 1 or y > 6:
+            continue
+        solid = name.endswith(("cobblestone", "stone_bricks", "_log", "packed_mud", "mud_bricks", "rooted_dirt",
+                               "wattle_daub", "planks"))
+        if solid and b.get(x, y, z - 1) is None and r > 0.86:
+            for dy in range(0, 1 + int(h(x, z, salt) * 3)):
+                if b.get(x, y - dy, z - 1) is None and y - dy >= 1:
+                    b.set(x, y - dy, z - 1, "vine", north=False, south=True, east=False, west=False, up=False)
+
+
+# ---------------------------------------------------------------------------
+# Dungeons
+# ---------------------------------------------------------------------------
+def spawner(b, x, y, z, mob, delay=(240, 600)):
+    from .nbtio import Short
+    b.set(x, y, z, "spawner", nbt={
+        "id": "minecraft:mob_spawner", "SpawnData": {"entity": {"id": f"minecraft:{mob}"}},
+        "SpawnCount": Short(2), "SpawnRange": Short(4), "Delay": Short(20), "MinSpawnDelay": Short(delay[0]),
+        "MaxSpawnDelay": Short(delay[1]), "MaxNearbyEntities": Short(5), "RequiredPlayerRange": Short(14)})
+
+
+def draugr(b, x, y, z, kind="zombie", gear="iron", boss=False, yaw=0):
+    """Undead Norse warrior: an armoured, persistent zombie/skeleton/stray."""
+    from .nbtio import Float, FloatList
+    sets = {"iron": ("iron_boots", "chainmail_leggings", "iron_chestplate", "iron_helmet"),
+            "chain": ("chainmail_boots", "chainmail_leggings", "chainmail_chestplate", "chainmail_helmet"),
+            "leather": ("leather_boots", "leather_leggings", "leather_chestplate", "iron_helmet"),
+            "jarl": ("iron_boots", "iron_leggings", "diamond_chestplate", "golden_helmet")}[gear]
+    hand = "bow" if kind in ("skeleton", "stray") else ("iron_axe" if not boss else "diamond_axe")
+
+    def it(i):
+        return {"id": f"minecraft:{i}", "Count": Byte(1)}
+    nbt = {"id": f"minecraft:{kind}", "PersistenceRequired": Byte(1),
+           "ArmorItems": [it(p) for p in sets], "HandItems": [it(hand), it("shield") if kind == "zombie" else {}],
+           "ArmorDropChances": FloatList([0.05, 0.05, 0.05, 0.05]),
+           "HandDropChances": FloatList([0.1, 0.05]), "Rotation": FloatList([float(yaw), 0.0]),
+           "CustomName": '{"text":"Draugr Jarl","color":"dark_aqua","bold":true}' if boss else '{"text":"Draugr"}'}
+    if boss:
+        nbt["Attributes"] = [{"Name": "minecraft:generic.max_health", "Base": 80.0},
+                             {"Name": "minecraft:generic.attack_damage", "Base": 8.0}]
+        nbt["Health"] = Float(80.0)
+        nbt["HandDropChances"] = FloatList([1.0, 0.5])
+    b.entity(x + 0.5, y, z + 0.5, nbt)
+
+
+def arrow_trap(b, plate, dispensers):
+    """Stone pressure plate wired straight into flanking dispensers loaded with arrows."""
+    b.set(*plate, "stone_pressure_plate", powered=False)
+    for (x, y, z, facing) in dispensers:
+        b.set(x, y, z, "dispenser", nbt={"id": "minecraft:dispenser", "Items": [
+            {"Slot": Byte(0), "id": "minecraft:arrow", "Count": Byte(24)}]}, facing=facing, triggered=False)
+
+
+def cobweb(b, x, y, z):
+    b.set(x, y, z, "cobweb")
+
+
+def skull(b, x, y, z, rot=0):
+    b.set(x, y, z, "skeleton_skull", rotation=rot)
+
+
+def compose(b, other, dx=0, dy=0, dz=0):
+    """Copy another build's blocks and entities into b at an offset."""
+    for (x, y, z), v in other.blocks.items():
+        b.blocks[(x + dx, y + dy, z + dz)] = v
+    for (x, y, z, nbt) in other.entities:
+        b.entities.append((x + dx, y + dy, z + dz, nbt))

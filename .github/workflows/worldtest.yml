@@ -73,12 +73,24 @@ jobs:
             cat world/datapacks/biometest/data/minecraft/dimension/overworld.json
           fi
           if [ "${{ inputs.structures }}" = "true" ]; then
-            for st in viking_village longhouse turf_house longship runestone; do echo "locate structure vividlands:$st"; done > commands.txt
-            i=0
-            for xz in "400 400" "-400 400" "400 -400" "-400 -400" "0 600" "600 0"; do
-              set -- $xz
-              echo "place structure vividlands:viking_village $1 80 $2"
-            done >> commands.txt
+            ALL="viking_village trelleborg longhouse turf_house longship runestone burial_mound ship_burial stave_church mead_hall fishing_hamlet thing_site shieling beacon_cairn knarr shipwreck frozen_longship"
+            for st in $ALL; do echo "locate structure vividlands:$st"; done > commands.txt
+            place() {   # structure x z forceload-radius
+              echo "forceload add $(($2-$4)) $(($3-$4)) $(($2+$4)) $(($3+$4))"
+              echo "place structure vividlands:$1 $2 80 $3"
+              echo "forceload remove all"
+            }
+            {
+              place trelleborg 500 0 112
+              place trelleborg -500 0 112
+              place viking_village 0 500 96
+              place viking_village 0 -500 96
+              x=-480
+              for st in burial_mound ship_burial stave_church mead_hall fishing_hamlet thing_site shieling beacon_cairn frozen_longship; do
+                place $st $x 260 48
+                x=$((x+120))
+              done
+            } >> commands.txt
             cat commands.txt
           fi
           echo "eula=true" > eula.txt

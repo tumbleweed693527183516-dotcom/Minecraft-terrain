@@ -8,14 +8,22 @@ Taller worlds (build limit y=511), continent-sized landmasses, and new biomes in
 
 Palisade stakes, thatch (block, stairs, slab), wattle and daub, carved posts, painted wall shields, black sand, volcanic ash, salt crust, peat, heather, dry grass, and three woods - palm, redwood and Scots pine (log, leaves, planks) - with matching trees: drooping-frond palms, giant redwoods, orange-barked Scots pines and spreading giant oaks. All textures are drawn by `tools/textures.py`; blocks are defined once in `tools/blocks.py`.
 
-## Viking structures (v0.10)
+## Viking structures (v0.11)
 
 - **Walled Viking villages** (moors, pinewoods, lakelands, lava fields, outwash plains, tundra, basalt highlands): a ring palisade of sharpened logs that follows the ground, 2-3 gatehouses with walkways, watchtowers, a central plaza with a covered well, bell and runestones, a chieftain's great hall (45 blocks long), longhouses in three sizes with shingle, thatch or turf roofs, Glaumbær-style turf farmsteads, a forge with a chimney, a temple, a market, stabbur storehouses, a granary, a byre, a weaving pit-house, a training yard, paths to every door, and fields and sheep folds outside the walls. Built by a custom generator (`com.vividlands.village`) so every village is laid out differently, inhabited by villagers. They replace vanilla villages in these biomes.
+- **Trelleborg ring fortresses** (rare): a perfectly round earthen rampart with a palisade on its crest and a ditch outside, four gates on the compass points, cross streets, watchtowers and rows of garrison halls in the four quarters.
+- **Burial mounds** (dungeons): a grassy mound ringed by standing stones; a timbered passage with an arrow trap leads down to a stone chamber with a bier, grave goods, a caged spawner and armoured *Draugr*.
+- **Ship burials** (rare dungeons): a whole longship laid in a timber chamber under a great mound, guarded by draugr, two spawners and the **Draugr Jarl** (80 health, diamond axe), with the richest loot in the mod.
+- **Stave churches**: tiered dark-wood roofs, a covered gallery, dragon heads on every roof edge, a bell spire, benches and an altar, with runestones in the churchyard.
+- **Mead halls**: a chieftain's great hall standing alone in a fenced yard with carved gate posts, a cart, woodpile, hide frame, kitchen garden, horses and chickens.
+- **Fishing hamlets** on northern shores: turf and thatch huts, a boathouse with a boat, fish-drying racks and a jetty.
+- **Thing sites**: open-air assemblies with a stepped law rock, rings of stone seats, coloured booths, fires and banner poles.
+- **Shielings** (summer huts with a dry-stone sheep fold) and **beacon cairns** on the hills.
 - **Longhouses**, **turf farmsteads** and **cottages** standing alone as homesteads.
-- **Longships** with striped sails, shields and a captain's chest, out on northern seas.
+- **Longships** and **knarr** cargo ships out on northern seas, **shipwrecks** on the sea floor, and **frozen longships** locked in glacier ice with draugr guarding the treasure.
 - **Runestones**, stone circles and cairns across the north.
 
-Building designs live in `tools/structures/viking.py` (helpers in `kit.py`); they are written to structure templates by `tools/generate.py`.
+Building designs live in `tools/structures/viking.py` and `viking2.py` (helpers in `kit.py`); they are written to structure templates by `tools/generate.py`.
 
 ## Biomes
 

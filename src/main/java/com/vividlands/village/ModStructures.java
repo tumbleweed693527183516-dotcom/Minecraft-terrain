@@ -10,6 +10,8 @@ import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceType;
 public final class ModStructures {
     public static final StructureType<VikingVillageStructure> VIKING_VILLAGE = Registry.register(
             BuiltInRegistries.STRUCTURE_TYPE, id("viking_village"), () -> VikingVillageStructure.CODEC);
+    public static final StructureType<TrelleborgStructure> TRELLEBORG = Registry.register(
+            BuiltInRegistries.STRUCTURE_TYPE, id("trelleborg"), () -> TrelleborgStructure.CODEC);
 
     public static final StructurePieceType TEMPLATE_PIECE = Registry.register(BuiltInRegistries.STRUCTURE_PIECE,
             id("village_template"), (StructurePieceType.StructureTemplateType) TemplatePiece::new);

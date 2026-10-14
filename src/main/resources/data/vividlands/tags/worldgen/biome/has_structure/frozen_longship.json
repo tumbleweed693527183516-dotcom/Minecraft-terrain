@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "vividlands:glacier",
+    "vividlands:tundra",
+    "vividlands:snowy_shore",
+    "vividlands:glacial_outwash"
+  ]
+}

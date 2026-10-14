@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "vividlands:highland_moors",
+    "vividlands:caledonian_pinewood",
+    "vividlands:taiga_lakelands",
+    "vividlands:glacial_outwash",
+    "vividlands:mossy_lava_fields",
+    "vividlands:tundra",
+    "vividlands:basalt_highlands",
+    "vividlands:alpine_meadow",
+    "vividlands:endless_steppe",
+    "vividlands:mixed_woodland",
+    "vividlands:boreal_snowwoods",
+    "vividlands:wildflower_prairie"
+  ]
+}

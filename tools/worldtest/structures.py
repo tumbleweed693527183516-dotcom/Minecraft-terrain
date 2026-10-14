@@ -149,14 +149,15 @@ def main(world, log, out):
             if st.get("id", "INVALID") != "INVALID" and "vividlands" in sid:
                 starts.append({"structure": sid, "chunk": [px, pz]})
     for st in starts:
-        if st["structure"] == "vividlands:viking_village":
+        if st["structure"] in ("vividlands:viking_village", "vividlands:trelleborg"):
             targets.append(("natural", st["structure"], st["chunk"][0] * 16 + 8, st["chunk"][1] * 16 + 8, 0))
     ents = entity_list(world)
     summary = {"targets": [], "natural_starts": {}, "failures": failures}
     for s in starts:
         summary["natural_starts"][s["structure"]] = summary["natural_starts"].get(s["structure"], 0) + 1
     for kind, name, x, z, dist in targets:
-        res = volume(chunks, x, z, 92 if "village" in name else R)
+        big = "village" in name or "trelleborg" in name
+        res = volume(chunks, x, z, 92 if big else R)
         near = [e for e in ents if e[1] and abs(e[1][0] - x) <= R and abs(e[1][2] - z) <= R]
         counts = {}
         for eid, _ in near:
@@ -166,9 +167,9 @@ def main(world, log, out):
         if res is not None:
             vol, names, origin = res
             short = name.split(":")[1]
-            fname = f"struct_{kind}_{short}.png"
+            fname = f"struct_{kind}_{short}_{x}_{z}.png"
             render(vol, names, out / fname, f"{name} ({kind}) at {x}, {z}")
-            if "village" in name:
+            if big:
                 np.savez_compressed(out / f"vol_{kind}_{short}.npz", vol=vol, origin=np.array(origin))
                 (out / f"vol_{kind}_{short}.json").write_text(json.dumps(names))
             entry["image"] = fname

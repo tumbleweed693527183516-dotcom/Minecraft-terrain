@@ -8,6 +8,7 @@ from pathlib import Path
 
 from .designs import all_designs
 from .viking import catalogue
+from .viking2 import DEPTH_MOUND, DEPTH_SHIP, catalogue2
 
 CATALOGUE_OUT = Path(__file__).resolve().parents[2] / "src/main/resources/vividlands_villages/catalogue.json"
 
@@ -25,10 +26,30 @@ STRUCTURE_BIOMES = {
     "runestone": VILLAGE_BIOMES + ["boreal_snowwoods", "mixed_woodland", "autumn_woodland", "alpine_meadow",
                                    "endless_steppe", "wildflower_prairie", "black_sand_desert", "rhyolite_highlands"],
     "longship": ["northern_ocean", "deep_northern_ocean", "temperate_ocean", "deep_temperate_ocean"],
+    "burial_mound": VILLAGE_BIOMES + ["alpine_meadow", "endless_steppe", "mixed_woodland", "boreal_snowwoods",
+                                      "wildflower_prairie"],
+    "ship_burial": ["highland_moors", "glacial_outwash", "endless_steppe", "taiga_lakelands", "tundra",
+                    "wildflower_prairie"],
+    "stave_church": ["caledonian_pinewood", "taiga_lakelands", "mixed_woodland", "autumn_woodland",
+                     "boreal_snowwoods", "alpine_meadow"],
+    "mead_hall": ["highland_moors", "endless_steppe", "taiga_lakelands", "alpine_meadow", "mixed_woodland",
+                  "glacial_outwash", "wildflower_prairie"],
+    "fishing_hamlet": ["snowy_shore", "basalt_shore", "rocky_cliffs", "taiga_lakelands", "golden_beach"],
+    "thing_site": ["highland_moors", "endless_steppe", "wildflower_prairie", "glacial_outwash", "mossy_lava_fields"],
+    "shieling": ["highland_moors", "alpine_meadow", "highland_crags", "rhyolite_highlands", "basalt_highlands"],
+    "beacon_cairn": ["highland_crags", "rocky_cliffs", "highland_moors", "basalt_highlands", "rhyolite_highlands",
+                     "alpine_meadow"],
+    "knarr": ["northern_ocean", "deep_northern_ocean", "temperate_ocean", "deep_temperate_ocean", "glacial_ocean"],
+    "shipwreck": ["northern_ocean", "deep_northern_ocean", "temperate_ocean", "deep_temperate_ocean",
+                  "glacial_ocean", "deep_glacial_ocean"],
+    "trelleborg": ["highland_moors", "glacial_outwash", "endless_steppe", "taiga_lakelands", "wildflower_prairie",
+                   "tundra", "alpine_meadow"],
+    "frozen_longship": ["glacier", "tundra", "snowy_shore", "glacial_outwash"],
 }
 
 # Walled villages use the Java structure type vividlands:viking_village (see VikingVillageStructure).
 VILLAGE_SPACING = (34, 14, 1946157313)
+TRELLEBORG_SPACING = (72, 30, 1946157329)
 
 # name: (start pool, size, start height, terrain adaptation, spacing, separation, salt)
 STRUCTURES = {
@@ -36,7 +57,20 @@ STRUCTURES = {
     "turf_house": ("turf_house/start", 1, -1, "beard_thin", 20, 7, 1946157315),
     "runestone": ("runestone/start", 1, -1, "beard_thin", 18, 7, 1946157316),
     "longship": ("longship/start", 1, -4, "none", 22, 8, 1946157317),
+    # batch 2 -- dungeons sink so their template ground level (DEPTH) meets the surface
+    "burial_mound": ("burial_mound/start", 1, -(DEPTH_MOUND + 1), "none", 20, 8, 1946157318),
+    "ship_burial": ("ship_burial/start", 1, -(DEPTH_SHIP + 1), "none", 40, 16, 1946157319),
+    "stave_church": ("stave_church/start", 1, -1, "beard_thin", 36, 14, 1946157320),
+    "mead_hall": ("mead_hall/start", 1, -1, "beard_thin", 40, 16, 1946157321),
+    "fishing_hamlet": ("fishing_hamlet/start", 1, -4, "beard_thin", 22, 8, 1946157322),
+    "thing_site": ("thing_site/start", 1, -1, "beard_thin", 40, 16, 1946157323),
+    "shieling": ("shieling/start", 1, -1, "beard_thin", 18, 6, 1946157324),
+    "beacon_cairn": ("beacon_cairn/start", 1, -1, "beard_thin", 24, 8, 1946157325),
+    "knarr": ("knarr/start", 1, -4, "none", 28, 10, 1946157326),
+    "shipwreck": ("shipwreck/start", 1, -2, "none", 18, 7, 1946157327),
+    "frozen_longship": ("frozen_longship/start", 1, -4, "beard_thin", 36, 12, 1946157328),
 }
+HEIGHTMAP = {"shipwreck": "OCEAN_FLOOR_WG"}
 
 
 def element(location, weight, projection="rigid"):
@@ -54,6 +88,17 @@ def pools():
         "runestone/start": ("minecraft:empty", [element("runestone/single", 3), element("runestone/trio", 1),
                                                 element("runestone/cairn", 2)]),
         "longship/start": ("minecraft:empty", [element("longship/longship", 1)]),
+        "burial_mound/start": ("minecraft:empty", [element("dungeon/burial_mound", 1), element("dungeon/burial_mound_b", 1)]),
+        "ship_burial/start": ("minecraft:empty", [element("dungeon/ship_burial", 1)]),
+        "stave_church/start": ("minecraft:empty", [element("site/stave_church", 1)]),
+        "mead_hall/start": ("minecraft:empty", [element("site/mead_hall", 1)]),
+        "fishing_hamlet/start": ("minecraft:empty", [element("site/fishing_hamlet", 1)]),
+        "thing_site/start": ("minecraft:empty", [element("site/thing_site", 1)]),
+        "shieling/start": ("minecraft:empty", [element("site/shieling", 1)]),
+        "beacon_cairn/start": ("minecraft:empty", [element("site/beacon_cairn", 1)]),
+        "knarr/start": ("minecraft:empty", [element("sea/knarr", 1)]),
+        "shipwreck/start": ("minecraft:empty", [element("sea/shipwreck", 1)]),
+        "frozen_longship/start": ("minecraft:empty", [element("sea/frozen_longship", 1)]),
     }
 
 
@@ -117,6 +162,29 @@ LOOT = {
         bonus={"rolls": 1, "entries": [{"type": "minecraft:empty", "weight": 3},
                                        item("golden_apple", 2), item("iron_sword", 1, extra=ENCHANT),
                                        item("diamond_axe", 1)]}),
+    "burial": table((4, 7), [
+        item("bone", 10, 2, 6), item("rotten_flesh", 8, 2, 6), item("gold_nugget", 8, 3, 12), item("gold_ingot", 5, 1, 4),
+        item("iron_axe", 4, extra=ENCHANT), item("iron_sword", 3, extra=ENCHANT), item("chainmail_helmet", 3),
+        item("amethyst_shard", 5, 1, 5), item("emerald", 4, 1, 4), item("candle", 4, 1, 3), item("goat_horn", 1),
+        item("experience_bottle", 3, 1, 4), item("golden_apple", 2), item("name_tag", 2)],
+        bonus={"rolls": 1, "entries": [{"type": "minecraft:empty", "weight": 2}, item("enchanted_book", 2, extra=ENCHANT),
+                                       item("diamond", 1, 1, 2)]}),
+    "ship_burial": table((7, 11), [
+        item("gold_ingot", 10, 2, 8), item("gold_block", 2), item("emerald", 8, 2, 8), item("diamond", 4, 1, 4),
+        item("golden_apple", 4), item("enchanted_golden_apple", 1), item("diamond_axe", 2, extra=ENCHANT),
+        item("iron_sword", 4, extra=ENCHANT), item("golden_helmet", 3, extra=ENCHANT), item("shield", 3),
+        item("amethyst_shard", 6, 2, 8), item("experience_bottle", 5, 2, 6), item("totem_of_undying", 1)],
+        bonus={"rolls": 2, "entries": [item("enchanted_book", 3, extra=ENCHANT), item("music_disc_otherside", 1),
+                                       item("trident", 1)]}),
+    "fishing": table((3, 7), [
+        item("cod", 10, 2, 8), item("salmon", 8, 2, 6), item("dried_kelp", 8, 3, 10), item("string", 6, 2, 6),
+        item("fishing_rod", 4), item("ink_sac", 5, 1, 4), item("nautilus_shell", 1), item("kelp", 5, 2, 6),
+        item("lead", 3, 1, 2), item("prismarine_shard", 3, 1, 3), item("emerald", 2, 1, 2)]),
+    "shipwreck": table((4, 8), [
+        item("gold_nugget", 10, 3, 10), item("gold_ingot", 5, 1, 4), item("iron_ingot", 5, 1, 4), item("emerald", 4, 1, 4),
+        item("iron_axe", 3, extra=ENCHANT), item("rotten_flesh", 6, 1, 4), item("prismarine_crystals", 4, 1, 4),
+        item("nautilus_shell", 2), item("heart_of_the_sea", 1), item("compass", 3), item("map", 3),
+        item("diamond", 1, 1, 2)]),
     "ship_cargo": table((3, 6), [
         item("wheat", 6, 4, 12), item("white_wool", 6, 2, 8), item("leather", 6, 2, 6), item("cod", 6, 3, 9),
         item("salmon", 5, 3, 8), item("iron_ingot", 4, 1, 4), item("honeycomb", 3, 1, 4), item("barrel", 2),
@@ -137,6 +205,8 @@ def write(data_dir, biome_exists):
         if role == "wall":
             role = "wall_gate" if "gate" in name else "wall_tower"
         cat.append({"id": f"{NS}:{name}", "role": role, "size": list(sizes[name])})
+    for name, b in catalogue2().items():
+        sizes[name] = b.save(out / "structures" / f"{name}.nbt")
     CATALOGUE_OUT.parent.mkdir(parents=True, exist_ok=True)
     CATALOGUE_OUT.write_text(json.dumps(cat, indent=2))
     # walled village: custom structure type
@@ -149,6 +219,16 @@ def write(data_dir, biome_exists):
         "placement": {"type": "minecraft:random_spread", "spacing": sp, "separation": se, "salt": salt}})
     _w(out / "tags/worldgen/biome/has_structure/viking_village.json",
        {"replace": False, "values": [f"{NS}:{b}" for b in STRUCTURE_BIOMES["viking_village"] if biome_exists(b)]})
+    # Trelleborg ring fortress: custom structure type vividlands:trelleborg
+    _w(out / "worldgen/structure/trelleborg.json", {
+        "type": f"{NS}:trelleborg", "biomes": f"#{NS}:has_structure/trelleborg",
+        "step": "top_layer_modification", "spawn_overrides": {}, "terrain_adaptation": "none"})
+    sp, se, salt = TRELLEBORG_SPACING
+    _w(out / "worldgen/structure_set/trelleborg.json", {
+        "structures": [{"structure": f"{NS}:trelleborg", "weight": 1}],
+        "placement": {"type": "minecraft:random_spread", "spacing": sp, "separation": se, "salt": salt}})
+    _w(out / "tags/worldgen/biome/has_structure/trelleborg.json",
+       {"replace": False, "values": [f"{NS}:{b}" for b in STRUCTURE_BIOMES["trelleborg"] if biome_exists(b)]})
     for name, (fallback, elements) in pools().items():
         path = out / "worldgen/template_pool" / f"{name}.json"
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -157,7 +237,7 @@ def write(data_dir, biome_exists):
         _w(out / "worldgen/structure" / f"{name}.json", {
             "type": "minecraft:jigsaw", "biomes": f"#{NS}:has_structure/{name}", "step": "surface_structures",
             "spawn_overrides": {}, "terrain_adaptation": adapt, "start_pool": f"{NS}:{pool}", "size": size,
-            "start_height": {"absolute": start_y}, "project_start_to_heightmap": "WORLD_SURFACE_WG",
+            "start_height": {"absolute": start_y}, "project_start_to_heightmap": HEIGHTMAP.get(name, "WORLD_SURFACE_WG"),
             "max_distance_from_center": 80, "use_expansion_hack": False})
         _w(out / "worldgen/structure_set" / f"{name}.json", {
             "structures": [{"structure": f"{NS}:{name}", "weight": 1}],

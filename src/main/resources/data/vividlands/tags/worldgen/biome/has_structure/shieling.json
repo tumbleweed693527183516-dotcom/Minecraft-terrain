@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "vividlands:highland_moors",
+    "vividlands:alpine_meadow",
+    "vividlands:highland_crags",
+    "vividlands:rhyolite_highlands",
+    "vividlands:basalt_highlands"
+  ]
+}

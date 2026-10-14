@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "vividlands:trelleborg",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 72,
+    "separation": 30,
+    "salt": 1946157329
+  }
+}

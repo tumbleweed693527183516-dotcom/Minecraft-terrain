@@ -39,6 +39,11 @@ public class VikingVillageStructure extends Structure {
         return ModStructures.VIKING_VILLAGE;
     }
 
+    /** Trelleborg-style ring fortresses override this: perfect circle, rampart, four gates, grid layout. */
+    protected boolean fortress() {
+        return false;
+    }
+
     @Override
     protected Optional<GenerationStub> findGenerationPoint(GenerationContext ctx) {
         RandomSource rand = ctx.random();
@@ -48,10 +53,13 @@ public class VikingVillageStructure extends Structure {
         if (isWater(ctx, cx, centreY, cz)) {
             return Optional.empty();
         }
-        double big = 50 + rand.nextInt(13);
-        Ring ringShape = new Ring(cx, cz, big, rand);
+        boolean fort = fortress();
+        double big = fort ? 54 + rand.nextInt(5) : 50 + rand.nextInt(13);
+        Ring ringShape = fort ? new Ring(cx, cz, big, 0, 0, 0, 0) : new Ring(cx, cz, big, rand);
+        double[] radii = fort ? new double[]{big, big - 8} : new double[]{big, big - 10, big - 18};
+        int maxSlope = fort ? 26 : MAX_SLOPE;
         // try a large village first, then shrink to fit rougher ground
-        for (double radius : new double[]{big, big - 10, big - 18}) {
+        for (double radius : radii) {
             Ring ring = new Ring(cx, cz, radius, ringShape.a1, ringShape.p1, ringShape.a2, ringShape.p2);
             List<Integer> heights = new ArrayList<>();
             int wet = 0;
@@ -68,12 +76,12 @@ public class VikingVillageStructure extends Structure {
                 }
             }
             Collections.sort(heights);
-            if (wet > 5 || heights.get(heights.size() - 3) - heights.get(2) > MAX_SLOPE) {
+            if (wet > (fort ? 3 : 5) || heights.get(heights.size() - 3) - heights.get(2) > maxSlope) {
                 continue;
             }
             int groundY = heights.get(heights.size() / 2);
             return Optional.of(new GenerationStub(new BlockPos(cx, groundY, cz),
-                    builder -> new Planner(ctx, ring, groundY).build(builder)));
+                    builder -> new Planner(ctx, ring, groundY, fort).build(builder)));
         }
         return Optional.empty();
     }
@@ -133,12 +141,14 @@ public class VikingVillageStructure extends Structure {
         private final List<int[]> doors = new ArrayList<>();      // x, z, target x, target z, outside?
         private final List<int[]> gates = new ArrayList<>();
         private final Set<Long> paths = new HashSet<>();
+        private final boolean fort;
 
-        Planner(GenerationContext ctx, Ring ring, int groundY) {
+        Planner(GenerationContext ctx, Ring ring, int groundY, boolean fort) {
             this.ctx = ctx;
             this.rand = ctx.random();
             this.ring = ring;
             this.groundY = groundY;
+            this.fort = fort;
         }
 
         void build(StructurePiecesBuilder out) {
@@ -152,7 +162,7 @@ public class VikingVillageStructure extends Structure {
             // gates on 2-3 of the 4 sides
             List<Integer> sides = new ArrayList<>(List.of(0, 1, 2, 3));
             Collections.shuffle(sides, new java.util.Random(rand.nextLong()));
-            int gateCount = 2 + rand.nextInt(2);
+            int gateCount = fort ? 4 : 2 + rand.nextInt(2);
             for (int i = 0; i < gateCount; i++) {
                 int side = sides.get(i);                         // 0 east, 1 south, 2 west, 3 north
                 double a = side * Math.PI / 2;
@@ -172,12 +182,18 @@ public class VikingVillageStructure extends Structure {
                 int iz = (int) Math.round(cz + Math.sin(a) * (r - 5));
                 road(ix, iz, cx, cz, 1, plazaHalf);
             }
+            if (fort) {
+                // the cross streets stay clear: buildings line up along them in four quarters
+                int R = (int) ring.radius;
+                rects.add(new int[]{cx - 3, cz - R, cx + 3, cz + R});
+                rects.add(new int[]{cx - R, cz - 3, cx + R, cz + 3});
+            }
 
             // watchtowers on the diagonals, just inside the wall
             for (int i = 0; i < 4; i++) {
-                if (rand.nextFloat() < 0.6f) {
+                if (fort || rand.nextFloat() < 0.6f) {
                     double a = Math.PI / 4 + i * Math.PI / 2 + (rand.nextDouble() - 0.5) * 0.3;
-                    double r = ring.radiusAt(a) - 9;
+                    double r = ring.radiusAt(a) - (fort ? 12 : 9);
                     place(out, cat.pick("wall_tower", rand), (int) Math.round(cx + Math.cos(a) * r),
                             (int) Math.round(cz + Math.sin(a) * r), Rotation.getRandom(rand), false);
                 }
@@ -187,6 +203,13 @@ public class VikingVillageStructure extends Structure {
             List<String> plan = new ArrayList<>();
             plan.add(cat.pick("core", rand));
             plan.addAll(cat.pickSome("civic", 1 + rand.nextInt(2), rand));
+            if (fort) {                                      // a garrison: barracks halls first
+                List<String> halls = cat.all("house");
+                halls.removeIf(id -> !id.contains("longhouse_large") && !id.contains("longhouse_medium"));
+                for (int i = 0; i < 3; i++) {
+                    plan.addAll(halls);
+                }
+            }
             plan.addAll(cat.pickSome("craft", 4 + rand.nextInt(3), rand));
             java.util.Random shuffler = new java.util.Random(rand.nextLong());
             for (int pass = 0; pass < 2; pass++) {          // two rounds of houses fill the village
@@ -225,7 +248,7 @@ public class VikingVillageStructure extends Structure {
             List<int[]> gateList = new ArrayList<>(gates);
             for (int i = 0; i < segments; i++) {
                 double a0 = i * Math.PI * 2 / segments, a1 = (i + 1) * Math.PI * 2 / segments;
-                out.addPiece(new PalisadePiece(ring, a0, a1, gateList, groundY));
+                out.addPiece(new PalisadePiece(ring, a0, a1, gateList, groundY, fort));
             }
         }
 
@@ -233,7 +256,7 @@ public class VikingVillageStructure extends Structure {
             Vec3i size = size(id);
             for (int i = 0; i < attempts; i++) {
                 double a = rand.nextDouble() * Math.PI * 2;
-                double maxR = ring.radiusAt(a) - Math.min(size.getX(), size.getZ()) / 2.0 - 4;
+                double maxR = ring.radiusAt(a) - Math.min(size.getX(), size.getZ()) / 2.0 - (fort ? 8 : 4);
                 if (maxR < 15) {
                     continue;
                 }
@@ -244,9 +267,15 @@ public class VikingVillageStructure extends Structure {
                 Rotation[] options = size.getZ() >= 20
                         ? new Rotation[]{facing, facing.getRotated(Rotation.CLOCKWISE_90), facing.getRotated(Rotation.COUNTERCLOCKWISE_90)}
                         : new Rotation[]{facing};
+                if (fort) {
+                    // doors face the nearer cross street, so the halls stand in ordered rows
+                    boolean nearZStreet = Math.abs(bx - ring.cx) < Math.abs(bz - ring.cz);
+                    options = new Rotation[]{nearZStreet ? faceToward(bx, bz, ring.cx, bz) : faceToward(bx, bz, bx, ring.cz),
+                            nearZStreet ? faceToward(bx, bz, bx, ring.cz) : faceToward(bx, bz, ring.cx, bz)};
+                }
                 for (Rotation rot : options) {
                     int[] rect = rect(bx, bz, size, rot, 2);
-                    if (!cornersInside(rect, 3) || overlaps(rect)) {
+                    if (!cornersInside(rect, fort ? 8 : 3) || overlaps(rect)) {
                         continue;
                     }
                     if (place(out, id, bx, bz, rot, false)) {
@@ -275,12 +304,12 @@ public class VikingVillageStructure extends Structure {
             double ga = ring.angleOf(gate[0], gate[1]);
             for (int i = 0; i < attempts; i++) {
                 double a = ga + (rand.nextDouble() - 0.5) * 1.4;
-                double r = ring.radiusAt(a) + 8 + rand.nextDouble() * 22;
+                double r = ring.radiusAt(a) + (fort ? 16 : 8) + rand.nextDouble() * 22;
                 int bx = (int) Math.round(ring.cx + Math.cos(a) * r);
                 int bz = (int) Math.round(ring.cz + Math.sin(a) * r);
                 Rotation rot = Rotation.getRandom(rand);
                 int[] rect = rect(bx, bz, size, rot, 2);
-                if (anyCornerInside(rect, -3) || overlaps(rect)) {
+                if (anyCornerInside(rect, fort ? -11 : -3) || overlaps(rect)) {
                     continue;
                 }
                 if (place(out, id, bx, bz, rot, false)) {
