@@ -4,18 +4,18 @@ Huge, vivid world generation for Minecraft **1.20.1** (Fabric).
 
 Taller worlds (build limit y=511), continent-sized landmasses, and new biomes inspired by Iceland, Scotland and the great deserts.
 
-## Blocks (v0.7)
+## Blocks
 
-Black sand, volcanic ash, salt crust, peat, heather, dry grass, and three woods - palm, redwood and Scots pine (log, leaves, planks) - with matching trees: drooping-frond palms, giant redwoods, orange-barked Scots pines and spreading giant oaks. All textures are drawn by `tools/textures.py`; blocks are defined once in `tools/blocks.py`.
+Palisade stakes, thatch (block, stairs, slab), wattle and daub, carved posts, painted wall shields, black sand, volcanic ash, salt crust, peat, heather, dry grass, and three woods - palm, redwood and Scots pine (log, leaves, planks) - with matching trees: drooping-frond palms, giant redwoods, orange-barked Scots pines and spreading giant oaks. All textures are drawn by `tools/textures.py`; blocks are defined once in `tools/blocks.py`.
 
-## Viking structures (v0.9)
+## Viking structures (v0.10)
 
-- **Viking villages** (moors, pinewoods, lakelands, lava fields, outwash plains, tundra, basalt highlands): a plaza with a bell and fire pit, winding paths, longhouses (shingle or turf roofs), Icelandic turf houses, a smithy, raised storehouses, farms and sheep pens - assembled differently every time, inhabited by villagers. They replace vanilla villages in these biomes.
-- **Longhouses** and **turf houses** standing alone as homesteads, with villagers.
+- **Walled Viking villages** (moors, pinewoods, lakelands, lava fields, outwash plains, tundra, basalt highlands): a ring palisade of sharpened logs that follows the ground, 2-3 gatehouses with walkways, watchtowers, a central plaza with a covered well, bell and runestones, a chieftain's great hall (45 blocks long), longhouses in three sizes with shingle, thatch or turf roofs, Glaumbær-style turf farmsteads, a forge with a chimney, a temple, a market, stabbur storehouses, a granary, a byre, a weaving pit-house, a training yard, paths to every door, and fields and sheep folds outside the walls. Built by a custom generator (`com.vividlands.village`) so every village is laid out differently, inhabited by villagers. They replace vanilla villages in these biomes.
+- **Longhouses**, **turf farmsteads** and **cottages** standing alone as homesteads.
 - **Longships** with striped sails, shields and a captain's chest, out on northern seas.
 - **Runestones**, stone circles and cairns across the north.
 
-Structures are defined in `tools/structures/designs.py` and spawn by biome tag, so other structure mods keep working.
+Building designs live in `tools/structures/viking.py` (helpers in `kit.py`); they are written to structure templates by `tools/generate.py`.
 
 ## Biomes
 
