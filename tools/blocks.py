@@ -102,7 +102,7 @@ def java_source():
         elif kind == "pillar":
             ctor = "new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG))"
         elif kind == "stake":
-            ctor = "new StakeBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion())"
+            ctor = "new StakeBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS).mapColor(MapColor.PODZOL).noOcclusion())"
         elif kind == "shield":
             ctor = "new WallShieldBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS).noOcclusion())"
         else:

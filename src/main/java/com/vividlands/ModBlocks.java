@@ -42,7 +42,7 @@ public final class ModBlocks {
     public static final Block THATCH_SLAB = register("thatch_slab", new SlabBlock(BlockBehaviour.Properties.copy(THATCH)));
     public static final Block WATTLE_DAUB = register("wattle_daub", new Block(BlockBehaviour.Properties.copy(Blocks.MUD_BRICKS)));
     public static final Block CARVED_POST = register("carved_post", new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG)));
-    public static final Block PALISADE_STAKE = register("palisade_stake", new StakeBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion()));
+    public static final Block PALISADE_STAKE = register("palisade_stake", new StakeBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS).mapColor(MapColor.PODZOL).noOcclusion()));
     public static final Block SHIELD_RED = register("shield_red", new WallShieldBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS).noOcclusion()));
     public static final Block SHIELD_BLUE = register("shield_blue", new WallShieldBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS).noOcclusion()));
     public static final Block SHIELD_YELLOW = register("shield_yellow", new WallShieldBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS).noOcclusion()));
