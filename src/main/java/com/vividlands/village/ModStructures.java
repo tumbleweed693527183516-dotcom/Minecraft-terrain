@@ -13,6 +13,11 @@ public final class ModStructures {
     public static final StructureType<TrelleborgStructure> TRELLEBORG = Registry.register(
             BuiltInRegistries.STRUCTURE_TYPE, id("trelleborg"), () -> TrelleborgStructure.CODEC);
 
+    public static final StructureType<SiteStructure> SITE = Registry.register(
+            BuiltInRegistries.STRUCTURE_TYPE, id("site"), () -> SiteStructure.CODEC);
+
+    public static final StructurePieceType SITE_PIECE = Registry.register(BuiltInRegistries.STRUCTURE_PIECE,
+            id("site_template"), (StructurePieceType.StructureTemplateType) SitePiece::new);
     public static final StructurePieceType TEMPLATE_PIECE = Registry.register(BuiltInRegistries.STRUCTURE_PIECE,
             id("village_template"), (StructurePieceType.StructureTemplateType) TemplatePiece::new);
     public static final StructurePieceType PALISADE_PIECE = Registry.register(BuiltInRegistries.STRUCTURE_PIECE,

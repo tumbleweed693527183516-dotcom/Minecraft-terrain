@@ -1,15 +1,13 @@
 {
-  "type": "minecraft:jigsaw",
+  "type": "vividlands:site",
   "biomes": "#vividlands:has_structure/fishing_hamlet",
   "step": "surface_structures",
   "spawn_overrides": {},
   "terrain_adaptation": "beard_thin",
-  "start_pool": "vividlands:fishing_hamlet/start",
-  "size": 1,
-  "start_height": {
-    "absolute": -4
-  },
-  "project_start_to_heightmap": "WORLD_SURFACE_WG",
-  "max_distance_from_center": 80,
-  "use_expansion_hack": false
+  "templates": [
+    "vividlands:site/fishing_hamlet"
+  ],
+  "sink": 3,
+  "max_slope": 7,
+  "min_water": 6
 }

@@ -60,17 +60,22 @@ STRUCTURES = {
     # batch 2 -- dungeons sink so their template ground level (DEPTH) meets the surface
     "burial_mound": ("burial_mound/start", 1, -(DEPTH_MOUND + 1), "none", 20, 8, 1946157318),
     "ship_burial": ("ship_burial/start", 1, -(DEPTH_SHIP + 1), "none", 40, 16, 1946157319),
-    "stave_church": ("stave_church/start", 1, -1, "beard_thin", 36, 14, 1946157320),
-    "mead_hall": ("mead_hall/start", 1, -1, "beard_thin", 40, 16, 1946157321),
-    "fishing_hamlet": ("fishing_hamlet/start", 1, -4, "beard_thin", 22, 8, 1946157322),
-    "thing_site": ("thing_site/start", 1, -1, "beard_thin", 40, 16, 1946157323),
-    "shieling": ("shieling/start", 1, -1, "beard_thin", 18, 6, 1946157324),
     "beacon_cairn": ("beacon_cairn/start", 1, -1, "beard_thin", 24, 8, 1946157325),
     "knarr": ("knarr/start", 1, -4, "none", 28, 10, 1946157326),
     "shipwreck": ("shipwreck/start", 1, -2, "none", 18, 7, 1946157327),
     "frozen_longship": ("frozen_longship/start", 1, -4, "beard_thin", 36, 12, 1946157328),
 }
 HEIGHTMAP = {"shipwreck": "OCEAN_FLOOR_WG"}
+
+# Standalone sites placed by the Java type vividlands:site (dry, level ground; some beside water)
+# name: (templates, sink, max slope, min water samples, spacing, separation, salt)
+SITES = {
+    "stave_church": (["site/stave_church"], 0, 9, 0, 36, 14, 1946157320),
+    "mead_hall": (["site/mead_hall"], 0, 9, 0, 40, 16, 1946157321),
+    "fishing_hamlet": (["site/fishing_hamlet"], 3, 7, 6, 22, 8, 1946157322),
+    "thing_site": (["site/thing_site"], 0, 7, 0, 40, 16, 1946157323),
+    "shieling": (["site/shieling"], 0, 10, 0, 18, 6, 1946157324),
+}
 
 
 def element(location, weight, projection="rigid"):
@@ -90,11 +95,6 @@ def pools():
         "longship/start": ("minecraft:empty", [element("longship/longship", 1)]),
         "burial_mound/start": ("minecraft:empty", [element("dungeon/burial_mound", 1), element("dungeon/burial_mound_b", 1)]),
         "ship_burial/start": ("minecraft:empty", [element("dungeon/ship_burial", 1)]),
-        "stave_church/start": ("minecraft:empty", [element("site/stave_church", 1)]),
-        "mead_hall/start": ("minecraft:empty", [element("site/mead_hall", 1)]),
-        "fishing_hamlet/start": ("minecraft:empty", [element("site/fishing_hamlet", 1)]),
-        "thing_site/start": ("minecraft:empty", [element("site/thing_site", 1)]),
-        "shieling/start": ("minecraft:empty", [element("site/shieling", 1)]),
         "beacon_cairn/start": ("minecraft:empty", [element("site/beacon_cairn", 1)]),
         "knarr/start": ("minecraft:empty", [element("sea/knarr", 1)]),
         "shipwreck/start": ("minecraft:empty", [element("sea/shipwreck", 1)]),
@@ -229,6 +229,16 @@ def write(data_dir, biome_exists):
         "placement": {"type": "minecraft:random_spread", "spacing": sp, "separation": se, "salt": salt}})
     _w(out / "tags/worldgen/biome/has_structure/trelleborg.json",
        {"replace": False, "values": [f"{NS}:{b}" for b in STRUCTURE_BIOMES["trelleborg"] if biome_exists(b)]})
+    for name, (templates, sink, slope, water, spacing, sep, salt) in SITES.items():
+        _w(out / "worldgen/structure" / f"{name}.json", {
+            "type": f"{NS}:site", "biomes": f"#{NS}:has_structure/{name}", "step": "surface_structures",
+            "spawn_overrides": {}, "terrain_adaptation": "beard_thin",
+            "templates": [f"{NS}:{t}" for t in templates], "sink": sink, "max_slope": slope, "min_water": water})
+        _w(out / "worldgen/structure_set" / f"{name}.json", {
+            "structures": [{"structure": f"{NS}:{name}", "weight": 1}],
+            "placement": {"type": "minecraft:random_spread", "spacing": spacing, "separation": sep, "salt": salt}})
+        _w(out / "tags/worldgen/biome/has_structure" / f"{name}.json",
+           {"replace": False, "values": [f"{NS}:{b}" for b in STRUCTURE_BIOMES[name] if biome_exists(b)]})
     for name, (fallback, elements) in pools().items():
         path = out / "worldgen/template_pool" / f"{name}.json"
         path.parent.mkdir(parents=True, exist_ok=True)
