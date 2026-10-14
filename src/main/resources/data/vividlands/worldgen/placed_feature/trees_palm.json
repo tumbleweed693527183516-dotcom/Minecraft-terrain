@@ -27,7 +27,8 @@
         ],
         "blocks": [
           "minecraft:sand",
-          "minecraft:grass_block"
+          "minecraft:grass_block",
+          "vividlands:black_sand"
         ]
       }
     },

@@ -9,7 +9,11 @@ values here and re-run it rather than editing the JSON by hand.
 """
 import json
 import shutil
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import blocks  # noqa: E402
 
 MODID = "vividlands"
 ROOT = Path(__file__).resolve().parent.parent
@@ -359,6 +363,7 @@ ON_CEILING = {"type": mc("stone_depth"), "offset": 0, "surface_type": "ceiling",
 ABOVE_WATER = {"type": mc("water"), "offset": -1, "surface_depth_multiplier": 0, "add_stone_depth": False}
 
 GRASS = block("grass_block", snowy=False)
+BLACK_SAND = block("vividlands:black_sand")
 PODZOL = block("podzol", snowy=False)
 DIRT = block("dirt")
 SAND = block("sand")
@@ -474,7 +479,8 @@ def features():
     jungle_ok = survives("jungle_sapling", stage=0)
     acacia_ok = survives("acacia_sapling", stage=0)
     birch_ok = survives("birch_sapling", stage=0)
-    sand_or_grass = {"type": mc("matching_blocks"), "offset": [0, -1, 0], "blocks": [mc("sand"), mc("grass_block")]}
+    sand_or_grass = {"type": mc("matching_blocks"), "offset": [0, -1, 0],
+                     "blocks": [mc("sand"), mc("grass_block"), vl("black_sand")]}
 
     # ---- trees ----
     tree("oak", "oak_log", "oak_leaves", straight(4, 2), blob(2), TWO_LAYERS)
@@ -483,9 +489,12 @@ def features():
          {"type": mc("fancy_foliage_placer"), "radius": 2, "offset": 4, "height": 4},
          {"type": mc("two_layers_feature_size"), "limit": 0, "lower_size": 0, "upper_size": 0,
           "min_clipped_height": 4})
+    # giant spreading oak: an oversized fancy oak with a broad crown
     tree("ancient_oak", "oak_log", "oak_leaves",
-         {"type": mc("mega_jungle_trunk_placer"), "base_height": 16, "height_rand_a": 6, "height_rand_b": 6},
-         {"type": mc("jungle_foliage_placer"), "radius": 2, "offset": 0, "height": 2}, GIANT_SIZE)
+         {"type": mc("fancy_trunk_placer"), "base_height": 12, "height_rand_a": 10, "height_rand_b": 0},
+         {"type": mc("fancy_foliage_placer"), "radius": 3, "offset": 4, "height": 5},
+         {"type": mc("two_layers_feature_size"), "limit": 1, "lower_size": 0, "upper_size": 2,
+          "min_clipped_height": 6})
     tree("swamp_oak", "oak_log", "oak_leaves", straight(5, 3), blob(3), TWO_LAYERS,
          decorators=[{"type": mc("leave_vine"), "probability": 0.25}])
     tree("birch", "birch_log", "birch_leaves", straight(5, 2), blob(2), TWO_LAYERS)
@@ -497,8 +506,11 @@ def features():
     tree("pine", "spruce_log", "spruce_leaves", straight(7, 4),
          {"type": mc("pine_foliage_placer"), "radius": 1, "offset": 1, "height": uniform(3, 4)},
          {"type": mc("two_layers_feature_size"), "limit": 2, "lower_size": 0, "upper_size": 2})
-    tree("highland_pine", "spruce_log", "spruce_leaves", straight(9, 4), blob(2), TWO_LAYERS)
-    tree("redwood", "spruce_log", "spruce_leaves",
+    # Scots pine: tall bare orange trunk with an irregular, flat-topped crown
+    tree("highland_pine", "vividlands:pine_log", "vividlands:pine_leaves", straight(10, 5),
+         {"type": mc("random_spread_foliage_placer"), "radius": 3, "offset": 0, "foliage_height": 2,
+          "leaf_placement_attempts": 45}, TWO_LAYERS)
+    tree("redwood", "vividlands:redwood_log", "vividlands:redwood_leaves",
          {"type": mc("giant_trunk_placer"), "base_height": 26, "height_rand_a": 10, "height_rand_b": 8},
          {"type": mc("mega_pine_foliage_placer"), "radius": 0, "offset": 0, "crown_height": uniform(13, 17)},
          GIANT_SIZE, decorators=[{"type": mc("alter_ground"), "provider": simple("podzol", snowy=False)}])
@@ -511,14 +523,17 @@ def features():
          {"type": mc("mega_jungle_trunk_placer"), "base_height": 10, "height_rand_a": 2, "height_rand_b": 19},
          {"type": mc("jungle_foliage_placer"), "radius": 2, "offset": 0, "height": 2}, GIANT_SIZE,
          decorators=VINES)
-    tree("palm", "jungle_log", "jungle_leaves",
-         {"type": mc("bending_trunk_placer"), "base_height": 6, "height_rand_a": 3, "height_rand_b": 0,
-          "min_height_for_leaves": 3, "bend_length": uniform(1, 2)},
-         {"type": mc("acacia_foliage_placer"), "radius": 3, "offset": 0}, TWO_LAYERS, dirt="sand")
+    # palm: leaning trunk with a drooping crown of fronds
+    tree("palm", "vividlands:palm_log", "vividlands:palm_leaves",
+         {"type": mc("bending_trunk_placer"), "base_height": 7, "height_rand_a": 3, "height_rand_b": 0,
+          "min_height_for_leaves": 6, "bend_length": uniform(1, 2)},
+         {"type": mc("cherry_foliage_placer"), "radius": 3, "offset": 0, "height": 3,
+          "wide_bottom_layer_hole_chance": 0.5, "corner_hole_chance": 0.4, "hanging_leaves_chance": 0.7,
+          "hanging_leaves_extension_chance": 0.4}, TWO_LAYERS, dirt="sand")
     tree("bush", "oak_log", "oak_leaves", straight(1, 0),
          {"type": mc("bush_foliage_placer"), "radius": 2, "offset": 1, "height": 2},
          {"type": mc("two_layers_feature_size"), "limit": 0, "lower_size": 0, "upper_size": 0})
-    tree("jungle_bush", "jungle_log", "oak_leaves", straight(1, 0),
+    tree("jungle_bush", "jungle_log", "jungle_leaves", straight(1, 0),
          {"type": mc("bush_foliage_placer"), "radius": 2, "offset": 1, "height": 2},
          {"type": mc("two_layers_feature_size"), "limit": 0, "lower_size": 0, "upper_size": 0})
 
@@ -526,7 +541,7 @@ def features():
     patch("grass", weighted((5, state("grass")), (1, state("fern"))), tries=32)
     patch("tall_grass", weighted((3, state("tall_grass")), (2, state("grass"))), tries=64, xz=8)
     patch("ferns", weighted((3, state("fern")), (2, state("large_fern")), (1, state("grass"))), tries=48)
-    patch("steppe_grass", weighted((6, state("grass")), (5, state("tall_grass")), (1, state("dead_bush"))),
+    patch("steppe_grass", weighted((5, state("grass")), (4, state("tall_grass")), (5, state("vividlands:dry_grass"))),
           tries=96, xz=9)
     patch("prairie_flowers", flowers("poppy", "cornflower", "oxeye_daisy", "dandelion", "azure_bluet",
                                      "orange_tulip", "red_tulip", "allium"), tries=96, xz=9)
@@ -535,8 +550,7 @@ def features():
                                     "white_tulip"), tries=64, xz=8)
     patch("forest_flowers", flowers("lily_of_the_valley", "dandelion", "poppy", "white_tulip"), tries=32)
     patch("jungle_flowers", flowers("blue_orchid", "poppy"), tries=24)
-    petals = [(3, state("pink_petals", facing=f, flower_amount=4)) for f in ("north", "east", "south", "west")]
-    patch("heather", weighted(*petals, (2, state("allium"))), tries=96, xz=9)
+    patch("heather", weighted((8, state("vividlands:heather")), (1, state("grass"))), tries=96, xz=9)
     patch("shrubs", weighted((3, state("azalea")), (2, state("flowering_azalea"))), tries=12, xz=6)
     patch("moss_carpet", simple("moss_carpet"), tries=64)
     patch("sweet_berries", simple("sweet_berry_bush", age=3), tries=24, needs=survives("sweet_berry_bush", age=3))
@@ -693,9 +707,9 @@ LOCAL = {"iceberg_packed", "iceberg_blue"}
 LAKES = {"lava_pools", "lakes", "fen_pools"}
 
 
-def B(name, *, temp, downfall, colors, surface, under=DIRT, underwater=DIRT, sandy=False, rain=None,
+def B(name, *, temp, downfall, colors, surface, under=DIRT, underwater=DIRT, sandy=False, ceiling=None, rain=None,
       frozen=False, mobs="farm", monster="normal", water="none", veg=(), tail=(), particle=None, tags=()):
-    BIOMES[name] = dict(temp=temp, downfall=downfall, colors=colors, surface=surface, under=under,
+    BIOMES[name] = dict(temp=temp, downfall=downfall, colors=colors, surface=surface, under=under, ceiling=ceiling,
                         underwater=underwater, sandy=sandy, rain=temp < 1.5 if rain is None else rain,
                         frozen=frozen, mobs=mobs, monster=monster, water=water, veg=list(veg), tail=list(tail),
                         particle=particle, tags=list(tags))
@@ -738,8 +752,8 @@ def define_biomes():
       tags=["beach", "cold", "snowy"])
     B("basalt_shore", temp=0.3, downfall=0.6, colors=colors("#9ec4ff", "#c9d6e0", "#1ec8d8", "#0b4a55", "#8fd14f", "#6fbf3f"),
       surface=seq(cond(STEEP, block("basalt", axis="y")),
-                  patches((0.3, GRAVEL), (-0.3, block("blackstone")), default=block("basalt", axis="y"))),
-      under=block("blackstone"), underwater=GRAVEL, mobs="none", veg=["spires_basalt_rare"],
+                  patches((0.55, GRAVEL), (0.35, block("basalt", axis="y")), default=BLACK_SAND)),
+      under=BLACK_SAND, underwater=BLACK_SAND, ceiling=block("tuff"), mobs="none", veg=["spires_basalt_rare"],
       tags=["beach", "cold", "rocky"])
     B("golden_beach", temp=0.8, downfall=0.4, colors=colors("#78a7ff", "#c0d8ff", "#2fb0ff", "#0d3a66", "#8eb971", "#71a74d"),
       surface=SAND, under=SAND, underwater=SAND, sandy=True, mobs="beach", tags=["beach", "temperate"])
@@ -785,8 +799,10 @@ def define_biomes():
     B("volcanic_cones", temp=0.36, downfall=0.3, colors=colors("#8fa3d1", "#b9aa9c", "#2fb8c9", "#0a3a44", "#7a9a3a", "#5e8a2e"),
       surface=seq(cond(y_above(330), cond(not_(STEEP), block("snow_block"))), cond(STEEP, block("basalt", axis="y")),
                   cond(noise("surface", -0.06, 0.06), block("magma_block")),
-                  cond(noise("surface_secondary", 0.25), block("tuff")), block("blackstone")),
-      under=block("blackstone"), underwater=block("blackstone"), mobs="mountain",
+                  cond(noise("surface", 0.3), block("vividlands:volcanic_ash")),
+                  cond(noise("surface_secondary", 0.25), BLACK_SAND),
+                  cond(noise("surface_secondary", -10.0, -0.4), block("tuff")), block("blackstone")),
+      under=block("blackstone"), underwater=BLACK_SAND, ceiling=block("blackstone"), mobs="mountain",
       veg=["lava_pools", "spires_basalt"], particle=("white_ash", 0.004),
       tags=["mountain", "peak", "cold", "dry", "volcanic", "rocky"])
     B("highland_crags", temp=0.33, downfall=0.7, colors=colors("#9fbbe0", "#c8d2dc", "#3a90c8", "#0e3048", "#8f8f5a", "#6f7f3a"),
@@ -794,12 +810,13 @@ def define_biomes():
       veg=["boulders_mossy", "heather", "grass"], tags=["mountain", "peak", "cold", "rocky"])
     B("basalt_highlands", temp=0.3, downfall=0.6, colors=colors("#9ec4ff", "#c9d6e0", "#1ec8d8", "#0b4a55", "#8fd14f", "#6fbf3f"),
       surface=seq(cond(STEEP, block("basalt", axis="y")), cond(noise("surface", 0.05), block("moss_block")),
-                  cond(noise("surface_secondary", 0.3), block("tuff")), block("blackstone")),
-      under=block("tuff"), underwater=block("blackstone"), mobs="highland",
+                  cond(noise("surface_secondary", 0.3), block("tuff")), BLACK_SAND),
+      under=block("tuff"), underwater=BLACK_SAND, ceiling=block("tuff"), mobs="highland",
       veg=["spires_basalt", "moss_carpet", "grass"], tags=["hill", "cold", "rocky"])
-    B("highland_moors", temp=0.45, downfall=0.8, colors=colors("#a9bcd6", "#c4ccd6", "#3a5f7a", "#1d2b33", "#9a7598", "#6b7d3a"),
+    B("highland_moors", temp=0.45, downfall=0.8, colors=colors("#a9bcd6", "#c4ccd6", "#3a5f7a", "#1d2b33", "#8f8a5e", "#6b7d3a"),
       surface=seq(cond(STEEP, STONE), patches((0.55, PODZOL), default=seq(
-          cond(noise("surface", -10.0, -0.6), block("coarse_dirt")), GRASS))),
+          cond(noise("surface", -10.0, -0.55), block("vividlands:peat")), GRASS))),
+      underwater=block("vividlands:peat"),
       mobs="highland", veg=["boulders_mossy", "trees_highland_pine_rare", "shrubs", "heather", "grass"],
       tags=["hill", "cold", "wet", "plains"])
     B("caledonian_pinewood", temp=0.35, downfall=0.8, colors=colors("#9fbbe0", "#c8d2dc", "#2f6f9f", "#0e2a40", "#8a8a62", "#5f7a3a"),
@@ -882,7 +899,8 @@ def define_biomes():
       under=patches((0.1, block("red_sand")), default=SAND), underwater=GRAVEL, mobs="desert", monster="desert",
       veg=["boulders_stone", "dead_bush"], tags=["desert", "hot", "dry", "rocky"])
     B("salt_flats", temp=2.0, downfall=0.0, rain=False, colors=colors("#62b0ff", "#fff6e8", "#9ff0ff", "#3aa0b0", "#d0c890", "#c0b880"),
-      surface=block("calcite"), under=block("calcite"), underwater=block("calcite"), mobs="desert", monster="desert",
+      surface=block("vividlands:salt_crust"), under=block("vividlands:salt_crust"),
+      underwater=block("vividlands:salt_crust"), mobs="desert", monster="desert",
       veg=["dead_bush"], tags=["desert", "hot", "dry", "plains"])
 
 
@@ -937,13 +955,15 @@ def write_biomes():
 
 
 def surface_rule():
-    top, under, underwater, sandy = [], [], [], []
+    top, under, underwater, sandy, ceilings = [], [], [], [], []
     for name, s in BIOMES.items():
         top.append(cond(biome_is(vl(name)), s["surface"]))
         under.append(cond(biome_is(vl(name)), s["under"]))
         underwater.append(cond(biome_is(vl(name)), s["underwater"]))
         if s["sandy"]:
             sandy.append(vl(name))
+        if s["ceiling"]:
+            ceilings.append(cond(biome_is(vl(name)), s["ceiling"]))
     # vanilla biomes still in the map
     top += [cond(biome_is(mc("mushroom_fields")), block("mycelium", snowy=False)),
             cond(biome_is(mc("mangrove_swamp")), block("mud"))]
@@ -956,7 +976,7 @@ def surface_rule():
             cond(ON_FLOOR, seq(cond(ABOVE_WATER, seq(*top, GRASS)), seq(*underwater, DIRT))),
             cond(UNDER_FLOOR, seq(*under, DIRT)),
             cond(DEEP_UNDER_FLOOR, cond(biome_is(*sandy), block("sandstone"))),
-            cond(ON_CEILING, cond(biome_is(*sandy), block("sandstone"))),
+            cond(ON_CEILING, seq(cond(biome_is(*sandy), block("sandstone")), *ceilings)),
         )),
         cond({"type": mc("vertical_gradient"), "random_name": mc("deepslate"),
               "true_at_and_below": {"absolute": 0}, "false_at_and_above": {"absolute": 8}},
@@ -1149,9 +1169,10 @@ def tags():
         write(f"{ns}/tags/worldgen/biome/{path}.json", {"replace": False, "values": sorted(members)})
 
 
-def lang():
+def lang(extra):
     names = {f"biome.{MODID}.{n}": n.replace("_", " ").title().replace("Old Growth", "Old-Growth")
              for n in BIOMES}
+    names.update(extra)
     p = RES / "assets" / MODID / "lang" / "en_us.json"
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(json.dumps(names, indent=2) + "\n")
@@ -1168,7 +1189,7 @@ def main():
     write_biomes()
     entries = biome_layout()
     tags()
-    lang()
+    lang(blocks.assets_and_data(DATA))
     print(f"Generated {len(BIOMES)} biomes, {len(ORDER)} placed features, {len(entries)} biome map entries")
 
 

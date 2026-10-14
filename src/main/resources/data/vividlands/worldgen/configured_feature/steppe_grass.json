@@ -12,21 +12,21 @@
             "type": "minecraft:weighted_state_provider",
             "entries": [
               {
-                "weight": 6,
+                "weight": 5,
                 "data": {
                   "Name": "minecraft:grass"
                 }
               },
               {
-                "weight": 5,
+                "weight": 4,
                 "data": {
                   "Name": "minecraft:tall_grass"
                 }
               },
               {
-                "weight": 1,
+                "weight": 5,
                 "data": {
-                  "Name": "minecraft:dead_bush"
+                  "Name": "vividlands:dry_grass"
                 }
               }
             ]

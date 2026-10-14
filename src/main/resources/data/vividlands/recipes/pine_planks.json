@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "vividlands:pine_log"
+    }
+  ],
+  "result": {
+    "item": "vividlands:pine_planks",
+    "count": 4
+  }
+}

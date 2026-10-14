@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "vividlands:block/palm_log"
+    },
+    "axis=z": {
+      "model": "vividlands:block/palm_log_horizontal",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "vividlands:block/palm_log_horizontal",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

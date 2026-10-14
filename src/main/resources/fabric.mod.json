@@ -12,12 +12,13 @@
   "icon": "assets/vividlands/icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": ["com.vividlands.VividLands"]
+    "main": ["com.vividlands.VividLands"],
+    "client": ["com.vividlands.VividLandsClient"]
   },
   "depends": {
     "fabricloader": ">=0.14.21",
     "minecraft": "1.20.1",
-    "fabric-resource-loader-v0": "*"
+    "fabric-api": "*"
   },
   "conflicts": {
     "terralith": "*",
