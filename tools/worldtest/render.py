@@ -38,7 +38,9 @@ BLOCK_COLORS = {
     "black_sand": (40, 38, 46), "volcanic_ash": (118, 116, 113), "salt_crust": (236, 232, 224), "peat": (56, 40, 26),
     "heather": (150, 90, 170), "dry_grass": (200, 170, 95), "palm_log": (165, 135, 95), "palm_leaves": (70, 160, 52),
     "redwood_log": (120, 56, 40), "redwood_leaves": (40, 85, 45), "pine_log": (170, 96, 54),
-    "pine_leaves": (56, 102, 82),
+    "pine_leaves": (56, 102, 82), "sinter": (220, 218, 210), "travertine": (222, 202, 160),
+    "thermal_mat": (212, 112, 40), "sulfur_crust": (224, 204, 60), "smooth_basalt": (72, 72, 78),
+    "obsidian": (20, 18, 30), "cobbled_deepslate": (77, 77, 80), "moss_block": (89, 109, 45),
 }
 FLOWERS = (215, 190, 90)
 
