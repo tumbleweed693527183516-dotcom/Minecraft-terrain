@@ -10,6 +10,9 @@ on:
       radius:
         description: Radius to generate, in blocks
         default: "1536"
+      stamp_test:
+        description: Put a real-world mountain in every cell (to inspect stamps)
+        default: "false"
 
 permissions:
   contents: write
@@ -51,6 +54,12 @@ jobs:
           dl chunky
           dl lithium
           cp ../build/libs/vividlands-$(cat ../VERSION).jar mods/
+          if [ "${{ inputs.stamp_test }}" = "true" ]; then
+            mkdir -p world/datapacks/stamptest/data/vividlands/worldgen/density_function/overworld/mountains
+            echo '{"pack":{"pack_format":15,"description":"stamp test"}}' > world/datapacks/stamptest/pack.mcmeta
+            echo '{"type":"minecraft:cache_2d","argument":{"type":"vividlands:stamps","seed_noise":"vividlands:stamp_seed","cell_size":1792,"chance":1.0}}' \
+              > world/datapacks/stamptest/data/vividlands/worldgen/density_function/overworld/mountains/stamps.json
+          fi
           echo "eula=true" > eula.txt
           printf "level-seed=%s\nonline-mode=false\nview-distance=4\nsimulation-distance=4\nspawn-protection=0\nmax-tick-time=-1\nsync-chunk-writes=false\n" "$SEED" > server.properties
       - name: Generate world
@@ -80,4 +89,4 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A && git commit -qm "World test ${{ github.run_id }} (seed ${{ inputs.seed }})"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" worldtest-results
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:worldtest-${{ inputs.stamp_test == 'true' && 'stamps' || 'normal' }}
