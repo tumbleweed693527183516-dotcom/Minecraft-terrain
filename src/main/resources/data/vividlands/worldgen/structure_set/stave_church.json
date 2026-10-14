@@ -9,6 +9,10 @@
     "type": "minecraft:random_spread",
     "spacing": 34,
     "separation": 14,
-    "salt": 1946157320
+    "salt": 1946157320,
+    "exclusion_zone": {
+      "other_set": "vividlands:viking_village",
+      "chunk_count": 7
+    }
   }
 }

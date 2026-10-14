@@ -67,6 +67,17 @@ STRUCTURES = {
 }
 HEIGHTMAP = {"shipwreck": "OCEAN_FLOOR_WG"}
 
+# Big sites keep clear of walled villages (chunks)
+EXCLUDE = {"trelleborg": 12, "mead_hall": 8, "stave_church": 7, "thing_site": 8, "fishing_hamlet": 6,
+           "ship_burial": 7, "shieling": 5, "longhouse": 5, "turf_house": 5}
+
+
+def placement(name, spacing, sep, salt):
+    p = {"type": "minecraft:random_spread", "spacing": spacing, "separation": sep, "salt": salt}
+    if name in EXCLUDE:
+        p["exclusion_zone"] = {"other_set": f"{NS}:viking_village", "chunk_count": EXCLUDE[name]}
+    return p
+
 # Standalone sites placed by the Java type vividlands:site (dry, level ground; some beside water)
 # name: (templates, sink, max slope, min water samples, spacing, separation, salt)
 SITES = {
@@ -226,7 +237,7 @@ def write(data_dir, biome_exists):
     sp, se, salt = TRELLEBORG_SPACING
     _w(out / "worldgen/structure_set/trelleborg.json", {
         "structures": [{"structure": f"{NS}:trelleborg", "weight": 1}],
-        "placement": {"type": "minecraft:random_spread", "spacing": sp, "separation": se, "salt": salt}})
+        "placement": placement("trelleborg", sp, se, salt)})
     _w(out / "tags/worldgen/biome/has_structure/trelleborg.json",
        {"replace": False, "values": [f"{NS}:{b}" for b in STRUCTURE_BIOMES["trelleborg"] if biome_exists(b)]})
     for name, (templates, sink, slope, water, spacing, sep, salt) in SITES.items():
@@ -236,7 +247,7 @@ def write(data_dir, biome_exists):
             "templates": [f"{NS}:{t}" for t in templates], "sink": sink, "max_slope": slope, "min_water": water})
         _w(out / "worldgen/structure_set" / f"{name}.json", {
             "structures": [{"structure": f"{NS}:{name}", "weight": 1}],
-            "placement": {"type": "minecraft:random_spread", "spacing": spacing, "separation": sep, "salt": salt}})
+            "placement": placement(name, spacing, sep, salt)})
         _w(out / "tags/worldgen/biome/has_structure" / f"{name}.json",
            {"replace": False, "values": [f"{NS}:{b}" for b in STRUCTURE_BIOMES[name] if biome_exists(b)]})
     for name, (fallback, elements) in pools().items():
@@ -251,7 +262,7 @@ def write(data_dir, biome_exists):
             "max_distance_from_center": 80, "use_expansion_hack": False})
         _w(out / "worldgen/structure_set" / f"{name}.json", {
             "structures": [{"structure": f"{NS}:{name}", "weight": 1}],
-            "placement": {"type": "minecraft:random_spread", "spacing": spacing, "separation": sep, "salt": salt}})
+            "placement": placement(name, spacing, sep, salt)})
         biomes = [f"{NS}:{b}" for b in STRUCTURE_BIOMES[name] if biome_exists(b)]
         _w(out / "tags/worldgen/biome/has_structure" / f"{name}.json", {"replace": False, "values": biomes})
     for name, t in LOOT.items():
