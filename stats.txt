@@ -1,0 +1,20 @@
+area: 2064x2064 blocks
+land surface height  p5/p25/p50/p75/p95/max: 66 / 81 / 111 / 190 / 319 / 420
+water share: 13.0%
+blocks above y=300: 7.68%  above y=200: 22.45%
+
+biomes by area:
+  vividlands:alpine_peaks                   27.1%
+  vividlands:rainforest                     18.5%
+  vividlands:cloud_forest                   16.0%
+  vividlands:red_canyonlands                10.4%
+  vividlands:jagged_spires                   6.4%
+  vividlands:wildflower_prairie              5.7%
+  vividlands:rocky_cliffs                    3.7%
+  vividlands:golden_savanna                  3.5%
+  vividlands:tropical_beach                  3.1%
+  vividlands:tropical_river                  2.6%
+  vividlands:clearwater_river                1.6%
+  vividlands:tropical_ocean                  1.3%
+  minecraft:dripstone_caves                  0.0%
+  minecraft:lush_caves                       0.0%
