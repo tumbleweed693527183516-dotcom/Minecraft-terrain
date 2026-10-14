@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:cache_2d",
+  "argument": {
+    "type": "minecraft:max",
+    "argument1": "vividlands:overworld/mountains/presence",
+    "argument2": {
+      "type": "minecraft:clamp",
+      "input": {
+        "type": "minecraft:mul",
+        "argument1": 3.0,
+        "argument2": "vividlands:overworld/mountains/stamps"
+      },
+      "min": 0.0,
+      "max": 1.0
+    }
+  }
+}

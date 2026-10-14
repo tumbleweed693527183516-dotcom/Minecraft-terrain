@@ -5,7 +5,7 @@ Import it in the Modrinth App (or Prism Launcher). It downloads performance mods
 Iris + Complementary Reimagined shaders, Distant Horizons and two vanilla-style
 resource packs, and includes the Vivid Lands jar with everything pre-enabled.
 
-    python3 tools/build.py && python3 tools/testpack.py
+    gradle build && python3 tools/testpack.py
 """
 import json
 import zipfile
@@ -110,7 +110,8 @@ def main():
         "files": files,
         "dependencies": {"minecraft": "1.20.1", "fabric-loader": "0.16.10"},
     }
-    jar = OUT / f"vividlands-{VERSION}.jar"
+    jar = ROOT / "build" / "libs" / f"vividlands-{VERSION}.jar"
+    OUT.mkdir(exist_ok=True)
     out = OUT / f"VividLands-TestPack-{VERSION}.mrpack"
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
         z.writestr("modrinth.index.json", json.dumps(index, indent=2))

@@ -1,8 +1,11 @@
 name: Fetch mountain stamps
 
-# Downloads real elevation data and bakes mountain stamps (run by hand when stamps change).
+# Downloads real elevation data, bakes mountain stamps and commits them into the mod.
 on:
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   stamps:
@@ -14,7 +17,14 @@ jobs:
           python-version: "3.12"
       - run: pip install numpy pillow
       - run: python3 tools/stamps/fetch_stamps.py out/stamps
-      - uses: actions/upload-artifact@v4
-        with:
-          name: stamps
-          path: out/stamps/
+      - name: Commit stamps
+        run: |
+          mkdir -p src/main/resources/vividlands_stamps docs/stamp_previews
+          cp out/stamps/*.bin out/stamps/stamps.json src/main/resources/vividlands_stamps/
+          cp out/stamps/*_preview.png docs/stamp_previews/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/main/resources/vividlands_stamps docs/stamp_previews
+          git commit -m "Update real-world mountain stamps" || exit 0
+          git pull --rebase origin main
+          git push origin HEAD:main

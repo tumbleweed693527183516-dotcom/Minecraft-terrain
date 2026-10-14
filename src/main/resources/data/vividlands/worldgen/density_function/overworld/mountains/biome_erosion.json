@@ -10,7 +10,7 @@
     "argument2": {
       "type": "minecraft:mul",
       "argument1": -2.0,
-      "argument2": "vividlands:overworld/mountains/presence"
+      "argument2": "vividlands:overworld/mountains/mountain_presence"
     }
   }
 }

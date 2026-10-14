@@ -1,0 +1,100 @@
+{
+  "type": "minecraft:cache_2d",
+  "argument": {
+    "type": "minecraft:mul",
+    "argument1": {
+      "type": "minecraft:mul",
+      "argument1": "vividlands:overworld/mountains/presence",
+      "argument2": {
+        "type": "minecraft:clamp",
+        "input": {
+          "type": "minecraft:mul",
+          "argument1": 8.0,
+          "argument2": {
+            "type": "minecraft:add",
+            "argument1": {
+              "type": "minecraft:abs",
+              "argument": "minecraft:overworld/ridges"
+            },
+            "argument2": -0.03
+          }
+        },
+        "min": 0.0,
+        "max": 1.0
+      }
+    },
+    "argument2": {
+      "type": "minecraft:mul",
+      "argument1": {
+        "type": "minecraft:clamp",
+        "input": {
+          "type": "minecraft:add",
+          "argument1": 0.75,
+          "argument2": {
+            "type": "minecraft:mul",
+            "argument1": 0.6,
+            "argument2": {
+              "type": "minecraft:noise",
+              "noise": "vividlands:mountain_massif",
+              "xz_scale": 1.0,
+              "y_scale": 0.0
+            }
+          }
+        },
+        "min": 0.4,
+        "max": 1.0
+      },
+      "argument2": {
+        "type": "minecraft:add",
+        "argument1": 0.16,
+        "argument2": {
+          "type": "minecraft:add",
+          "argument1": {
+            "type": "minecraft:mul",
+            "argument1": 0.8,
+            "argument2": {
+              "type": "minecraft:mul",
+              "argument1": {
+                "type": "minecraft:square",
+                "argument": "vividlands:overworld/mountains/axis"
+              },
+              "argument2": {
+                "type": "minecraft:add",
+                "argument1": 0.5,
+                "argument2": {
+                  "type": "minecraft:mul",
+                  "argument1": 0.5,
+                  "argument2": "vividlands:overworld/mountains/ridge"
+                }
+              }
+            }
+          },
+          "argument2": {
+            "type": "minecraft:add",
+            "argument1": {
+              "type": "minecraft:mul",
+              "argument1": 0.22,
+              "argument2": {
+                "type": "minecraft:mul",
+                "argument1": "vividlands:overworld/mountains/ridge_detail",
+                "argument2": "vividlands:overworld/mountains/axis"
+              }
+            },
+            "argument2": {
+              "type": "minecraft:mul",
+              "argument1": 0.5,
+              "argument2": {
+                "type": "minecraft:mul",
+                "argument1": "vividlands:overworld/mountains/horn",
+                "argument2": {
+                  "type": "minecraft:square",
+                  "argument": "vividlands:overworld/mountains/axis"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

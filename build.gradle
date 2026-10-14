@@ -1,0 +1,30 @@
+plugins {
+    id 'fabric-loom' version '1.7-SNAPSHOT'
+}
+
+version = file('VERSION').text.trim()
+group = 'com.vividlands'
+base { archivesName = 'vividlands' }
+
+dependencies {
+    minecraft 'com.mojang:minecraft:1.20.1'
+    mappings loom.officialMojangMappings()
+    modImplementation 'net.fabricmc:fabric-loader:0.16.10'
+}
+
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('fabric.mod.json') {
+        expand 'version': project.version
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 17
+    it.options.encoding = 'UTF-8'
+}

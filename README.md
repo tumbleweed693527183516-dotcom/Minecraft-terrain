@@ -20,7 +20,7 @@ Terrain: basin-and-range mountains, like the Wasatch rising out of the Salt Lake
 ## Installing for testing
 
 - **Mod:** put `vividlands-<version>.jar` in your Fabric 1.20.1 `mods` folder with **Fabric API**.
-- **Datapack:** add `VividLands-datapack-<version>.zip` when creating a world (works without any mod loader).
+- **Test pack:** import `VividLands-TestPack-<version>.mrpack` into the Modrinth App.
 
 Always create a **new world**. Do not add this to an existing world.
 
@@ -33,12 +33,8 @@ Always create a **new world**. Do not add this to an existing world.
 
 ## Development
 
-All data is generated. Edit `tools/generate.py`, then:
+World data is generated: edit `tools/generate.py`, then run `python3 tools/generate.py` and `python3 tools/check.py`. The Java part (real-world mountain stamps) builds with `gradle build` (Fabric Loom, Java 17).
 
-```
-python3 tools/generate.py   # write the JSON
-python3 tools/check.py      # validate references
-python3 tools/build.py      # package jar + datapack into build/
-```
+Real mountains come from `tools/stamps/fetch_stamps.py` (run by the "Fetch mountain stamps" workflow) and live in `src/main/resources/vividlands_stamps/`. See `STAMPS_ATTRIBUTION.md`.
 
 Every push builds automatically on GitHub (Actions tab → latest run → `vivid-lands` artifact).

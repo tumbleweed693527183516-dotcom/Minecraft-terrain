@@ -2,7 +2,11 @@ name: Build
 
 on:
   push:
+    branches: [main]
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -12,15 +16,36 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.10.2"
       - name: Generate world data
         run: python3 tools/generate.py
       - name: Check references
         run: python3 tools/check.py
-      - name: Package mod and datapack
+      - name: Compile mod
         run: |
-          python3 tools/build.py
-          python3 tools/testpack.py
+          set -o pipefail
+          gradle build --no-daemon --console=plain 2>&1 | tee build.log
+      - name: Test pack
+        run: python3 tools/testpack.py
       - uses: actions/upload-artifact@v4
         with:
           name: vivid-lands
-          path: build/*
+          path: |
+            build/libs/vividlands-*.jar
+            build/*.mrpack
+      - name: Publish build log to the build-logs branch
+        if: always()
+        run: |
+          mkdir -p logs && cp build.log logs/ 2>/dev/null || echo "no build log" > logs/build.log
+          echo "${{ job.status }} $(git rev-parse --short HEAD)" > logs/status.txt
+          cd logs && git init -q && git checkout -q -b build-logs
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -qm "Build log ${{ github.run_id }}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" build-logs

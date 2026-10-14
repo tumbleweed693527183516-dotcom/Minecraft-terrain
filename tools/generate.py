@@ -38,6 +38,10 @@ RANGE_SIDE_RIDGES = 0.22     # side ridges and spurs
 HORN_PEAKS = 0.50            # pointed summits along the crest (Matterhorn-style)
 WARP_BLOCKS = 110.0          # how far ranges bend and wander
 
+# Real-world mountain stamps (Java density function vividlands:stamps)
+STAMP_CELL = 1792            # one possible stamp per cell this wide (blocks)
+STAMP_CHANCE = 0.55          # share of cells that get a real mountain
+
 
 def mc(x):
     return f"minecraft:{x}"
@@ -218,13 +222,23 @@ def mountains():
     write(f"{d}/presence.json", cached(mul(mul(rugged, inland), ref("front"))))
     # River lines (vanilla weirdness near zero) carve gorges through the ranges.
     gorge = clamp(mul(8.0, add(abs_(mc("overworld/ridges")), -0.03)), 0.0, 1.0)
-    write(f"{d}/height.json", cached(mul(mul(ref("presence"), gorge), mul(size, shape))))
+    write(f"{d}/procedural.json", cached(mul(mul(ref("presence"), gorge), mul(size, shape))))
+    # Real-world mountains, placed in rugged inland regions (a little more widely than ranges).
+    write(f"{MODID}/worldgen/noise/stamp_seed.json", {"firstOctave": 0, "amplitudes": [1.0]})
+    stamp_region = mul(clamp(add(1.2, mul(-1.3, mc("overworld_large_biomes/erosion"))), 0.0, 1.0), inland)
+    write(f"{d}/stamps.json", cached(mul(stamp_region, {
+        "type": vl("stamps"), "seed_noise": vl("stamp_seed"), "cell_size": STAMP_CELL, "chance": STAMP_CHANCE})))
+    write(f"{d}/height.json", cached({"type": mc("max"), "argument1": ref("procedural"),
+                                      "argument2": ref("stamps")}))
+    # anything mountainous (range or real stamp) counts as mountain country for biomes
+    write(f"{d}/mountain_presence.json", cached({"type": mc("max"), "argument1": ref("presence"),
+                                                 "argument2": clamp(mul(3.0, ref("stamps")), 0.0, 1.0)}))
     # Biomes read this instead of raw erosion, so mountain biomes sit on the actual ranges.
     # Flat basins never count as mountain country (erosion floored at -0.2 = lowland);
     # the ranges themselves push erosion down into highland and mountain biomes.
     write(f"{d}/biome_erosion.json", cached(add(
         {"type": mc("max"), "argument1": mc("overworld_large_biomes/erosion"), "argument2": -0.2},
-        mul(-2.0, ref("presence")))))
+        mul(-2.0, ref("mountain_presence")))))
 
 
 def slides(inner):
