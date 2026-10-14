@@ -32,9 +32,9 @@ if [ -f commands.txt ]; then
   while IFS= read -r cmd; do
     [ -z "$cmd" ] && continue
     echo "$cmd" > console
-    sleep 25
+    case "$cmd" in forceload*) sleep 20 ;; *) sleep 25 ;; esac
   done < commands.txt
-  grep -E "Generated structure|nearest|Could not find|Failed|Unknown|Incorrect" server.log | tail -n 40 || true
+  grep -E "Generated structure|nearest|Could not find|Failed|Unknown|Incorrect|not loaded|forceload|Marked" server.log | tail -n 40 || true
 fi
 echo "save-all flush" > console
 sleep 15

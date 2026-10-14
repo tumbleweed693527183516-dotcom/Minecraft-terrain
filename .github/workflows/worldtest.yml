@@ -41,7 +41,7 @@ jobs:
           gradle-version: "8.10.2"
       - name: Build mod
         run: |
-          pip install numpy
+          pip install numpy pillow matplotlib
           python3 tools/generate.py
           python3 tools/check.py
           gradle build --no-daemon
@@ -76,7 +76,9 @@ jobs:
             for st in viking_village longhouse turf_house longship runestone; do echo "locate structure vividlands:$st"; done > commands.txt
             i=0
             for st in viking_village longhouse turf_house longship runestone; do
-              echo "place structure vividlands:$st $((3000 + i * 300)) 80 3000"; i=$((i + 1))
+              x=$((3000 + i * 400)); z=3000
+              echo "forceload add $((x - 112)) $((z - 112)) $((x + 112)) $((z + 112))"
+              echo "place structure vividlands:$st $x 80 $z"; i=$((i + 1))
             done >> commands.txt
             cat commands.txt
           fi
@@ -96,7 +98,7 @@ jobs:
         run: |
           python3 tools/worldtest/extract.py server/world out
           if [ "${{ inputs.structures }}" = "true" ]; then
-            python3 tools/worldtest/structures.py server/world server/server.log out
+            python3 tools/worldtest/structures.py server/world server/server.log out 2>&1 | tee out/structures_log.txt || true
           fi
       - name: Render maps
         if: always()
