@@ -42,6 +42,13 @@ RANGE_SIDE_RIDGES = 0.22     # side ridges and spurs
 HORN_PEAKS = 0.50            # pointed summits along the crest (Matterhorn-style)
 WARP_BLOCKS = 110.0          # how far ranges bend and wander
 
+# Cave entrances: how strongly openings are held back (higher = fewer, smaller holes)
+CAVE_ENTRANCE_BASE = 0.0       # everywhere (0 = vanilla)
+CAVE_ENTRANCE_LOWLAND = 0.0    # extra in plains and basins (0 = vanilla caves in lowlands)
+CAVE_ENTRANCE_PEAKS = 0.7      # extra high up on mountains: no openings piercing the tops
+CAVE_ENTRANCE_TOP = (160, 230)  # height band where the peak suppression fades in
+CAVE_SOLID_TOP = (190, 270)    # big caves fade out in this band, so upper mountains stay solid
+
 # Creeks: a finer stream network carved into lowlands (fills to sea level), gullies in hills
 CREEK_FLOOR = -0.547         # creek bed height (depth units): about y=58, so channels hold water
 CREEK_WIDTH = 0.06           # wider = broader creeks (main network)
@@ -153,7 +160,7 @@ def density_functions():
             vl("overworld/factor"))}),
         vl("overworld/base_3d_noise")))
     # Caves kept as a separate, swappable piece (vanilla cave system).
-    write(f"{MODID}/worldgen/density_function/overworld/caves.json", {
+    write(f"{MODID}/worldgen/density_function/overworld/caves_vanilla.json", {
         "type": mc("max"),
         "argument1": {"type": mc("min"), "argument1": {"type": mc("min"), "argument1": add(
             mul(4.0, {"type": mc("square"), "argument": {"type": mc("noise"), "noise": mc("cave_layer"),
@@ -282,6 +289,14 @@ def mountains():
         mul(-2.0, ref("mountain_presence")))))
 
 
+def solid_mountain_tops():
+    # caves = vanilla caves, pushed toward solid rock high up so peaks aren't hollowed out
+    write(f"{MODID}/worldgen/density_function/overworld/caves.json", add(
+        vl("overworld/caves_vanilla"),
+        mul(0.8, {"type": mc("y_clamped_gradient"), "from_y": CAVE_SOLID_TOP[0], "to_y": CAVE_SOLID_TOP[1],
+                  "from_value": 0.0, "to_value": 1.0})))
+
+
 def slides(inner):
     return add(0.1171875, mul(
         {"type": mc("y_clamped_gradient"), "from_y": MIN_Y, "to_y": MIN_Y + 24, "from_value": 0.0, "to_value": 1.0},
@@ -303,17 +318,38 @@ def climate(noise):
             "shift_x": mc("shift_x"), "shift_y": 0.0, "shift_z": mc("shift_z")}
 
 
+def cave_entrances():
+    """
+    Where caves may break through the surface. Vanilla's entrance noise is shifted toward
+    "solid" by a suppression term: strong in open lowlands and high on peaks, weak on
+    mountain bases and lower flanks - so openings appear where hills meet the land,
+    not as craters in the plains. Underground caves are unchanged.
+    """
+    presence = vl("overworld/mountains/mountain_presence")
+    not_mountain = add(1.0, mul(-1.0, clamp(mul(3.0, presence), 0.0, 1.0)))
+    high_up = {"type": mc("y_clamped_gradient"), "from_y": CAVE_ENTRANCE_TOP[0], "to_y": CAVE_ENTRANCE_TOP[1],
+               "from_value": 0.0, "to_value": 1.0}
+    suppression = add(CAVE_ENTRANCE_BASE, add(mul(CAVE_ENTRANCE_LOWLAND, not_mountain),
+                                              mul(CAVE_ENTRANCE_PEAKS, high_up)))
+    write(f"{MODID}/worldgen/density_function/overworld/caves/entrances.json",
+          add(mc("overworld/caves/entrances"), suppression))
+
+
 def noise_settings():
+    cave_entrances()
+    solid_mountain_tops()
     sloped = vl("overworld/sloped_cheese")
     terrain = {"type": mc("range_choice"), "input": sloped, "min_inclusive": -1000000.0, "max_exclusive": 1.5625,
                "when_in_range": {"type": mc("min"), "argument1": sloped,
-                                 "argument2": mul(5.0, mc("overworld/caves/entrances"))},
+                                 "argument2": mul(5.0, vl("overworld/caves/entrances"))},
                "when_out_of_range": vl("overworld/caves")}
     final_density = {"type": mc("min"),
                      "argument1": {"type": mc("squeeze"), "argument": mul(0.64, {
                          "type": mc("interpolated"), "argument": {"type": mc("blend_density"),
                                                                   "argument": slides(terrain)}})},
-                     "argument2": mc("overworld/caves/noodle")}
+                     "argument2": add(mc("overworld/caves/noodle"), mul(0.8, {
+                         "type": mc("y_clamped_gradient"), "from_y": CAVE_SOLID_TOP[0], "to_y": CAVE_SOLID_TOP[1],
+                         "from_value": 0.0, "to_value": 1.0}))}
     initial = slides(clamp(add(-0.703125, mul(4.0, {"type": mc("quarter_negative"), "argument": mul(
         vl("overworld/depth"), {"type": mc("cache_2d"), "argument": vl("overworld/factor")})})), -64.0, 64.0))
     router = {
