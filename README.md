@@ -8,6 +8,15 @@ Taller worlds (build limit y=511), continent-sized landmasses, and new biomes in
 
 Black sand, volcanic ash, salt crust, peat, heather, dry grass, and three woods - palm, redwood and Scots pine (log, leaves, planks) - with matching trees: drooping-frond palms, giant redwoods, orange-barked Scots pines and spreading giant oaks. All textures are drawn by `tools/textures.py`; blocks are defined once in `tools/blocks.py`.
 
+## Viking structures (v0.9)
+
+- **Viking villages** (moors, pinewoods, lakelands, lava fields, outwash plains, tundra, basalt highlands): a plaza with a bell and fire pit, winding paths, longhouses (shingle or turf roofs), Icelandic turf houses, a smithy, raised storehouses, farms and sheep pens - assembled differently every time, inhabited by villagers. They replace vanilla villages in these biomes.
+- **Longhouses** and **turf houses** standing alone as homesteads, with villagers.
+- **Longships** with striped sails, shields and a captain's chest, out on northern seas.
+- **Runestones**, stone circles and cairns across the north.
+
+Structures are defined in `tools/structures/designs.py` and spawn by biome tag, so other structure mods keep working.
+
 ## Biomes
 
 44 biomes replace the vanilla overworld (vanilla caves, mushroom islands and mangroves stay). Every biome has its own water, sky, fog, grass and foliage colours.

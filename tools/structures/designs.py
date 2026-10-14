@@ -170,7 +170,6 @@ def longhouse(turf_roof=False):
 
     b.villager(C - 1, 2, 6, "butcher")
     b.villager(C + 1, 2, 17)
-    b.villager(C - 1, 2, 19)
     return b
 
 
@@ -237,7 +236,6 @@ def turf_house(station, salt):
     for z in (3, 7):
         hanging_lantern(b, 4, 6, z, length=1)
     b.villager(4, 2, 3)
-    b.villager(3, 2, 6)
     return b
 
 

@@ -27,7 +27,7 @@ STRUCTURES = {
     "viking_village": ("village/plaza", 6, -1, "beard_thin", 32, 12, 1946157313),
     "longhouse": ("longhouse/start", 1, -1, "beard_thin", 24, 8, 1946157314),
     "turf_house": ("turf_house/start", 1, -1, "beard_thin", 20, 7, 1946157315),
-    "runestone": ("runestone/start", 1, -1, "beard_thin", 10, 4, 1946157316),
+    "runestone": ("runestone/start", 1, -1, "beard_thin", 18, 7, 1946157316),
     "longship": ("longship/start", 1, -4, "none", 22, 8, 1946157317),
 }
 
