@@ -31,8 +31,9 @@ TOP_SLIDE = (488, 504)       # terrain fades out between these heights
 # Earth-style mountains (heights in "depth units": 1.0 is about 224 blocks above sea level)
 BASE_SOFT_CAP = -0.2         # vanilla terrain above this height is compressed (removes plateaus)
 BASE_SOFT_KEEP = 0.3         # how much of vanilla height above the cap survives
-MASSIF_UPLIFT = 0.22         # broad raised ground the ranges sit on
-RIDGE_WEIGHTS = (0.62, 0.30, 0.14)  # main ridges, side ridges, spurs
+MASSIF_UPLIFT = 0.15         # broad raised ground the ranges sit on
+RIDGE_WEIGHTS = (0.48, 0.23, 0.11)  # main ridges, side ridges, spurs
+HORN_PEAKS = 0.55            # pointed summits where two ridge systems cross (Matterhorn-style)
 WARP_BLOCKS = 110.0          # how far ranges bend and wander
 
 
@@ -165,6 +166,8 @@ def mountains():
         "mountain_ridges_detail": (-8, [1.0]),  # side ridges
         "mountain_ridges_fine": (-7, [1.0]),    # spurs and gullies
         "mountain_massif": (-10, [1.0, 0.5]),   # broad uplift; which ranges are giants
+        "mountain_horn_a": (-8, [1.0]),          # two crossing ridge systems for horn peaks
+        "mountain_horn_b": (-8, [1.0]),
         "mountain_warp_x": (-8, [1.0, 0.5]),
         "mountain_warp_z": (-8, [1.0, 0.5]),
     }
@@ -193,10 +196,17 @@ def mountains():
                                                clamp(mul(2.0, ref("ridge")), 0.0, 1.0))))
     write(f"{d}/ridge_fine.json", cached(mul(signal("mountain_ridges_fine"),
                                              clamp(mul(2.0, ref("ridge_detail")), 0.0, 1.0))))
+    # Horn peaks: where both horn ridge systems crest at once, a sharp point forms with
+    # ridges radiating from it. Raised to the 4th power so the summit is narrow, and only
+    # allowed on main ridges.
+    horn_cross = clamp(mul(clamp(add(1.0, mul(-1.0, abs_(warped("mountain_horn_a")))), 0.0, 1.0),
+                           clamp(add(1.0, mul(-1.0, abs_(warped("mountain_horn_b")))), 0.0, 1.0)), 0.0, 1.0)
+    write(f"{d}/horn.json", cached(mul({"type": mc("square"), "argument": {"type": mc("square"), "argument": horn_cross}},
+                                       clamp(mul(2.0, ref("ridge")), 0.0, 1.0))))
     a, b, c = RIDGE_WEIGHTS
     ridged = add(mul(a, ref("ridge")), add(mul(b, ref("ridge_detail")), mul(c, ref("ridge_fine"))))
     massif = clamp(add(0.55, mul(0.7, n("mountain_massif"))), 0.15, 1.0)
-    shape = mul(massif, add(MASSIF_UPLIFT, ridged))
+    shape = mul(massif, add(MASSIF_UPLIFT, add(ridged, mul(HORN_PEAKS, ref("horn")))))
     # Where ranges rise: rugged land (low erosion) away from the coast.
     rugged = clamp(mul(-1.6, mc("overworld_large_biomes/erosion")), 0.0, 1.0)
     inland = clamp(mul(3.0, add(mc("overworld_large_biomes/continents"), 0.05)), 0.0, 1.0)

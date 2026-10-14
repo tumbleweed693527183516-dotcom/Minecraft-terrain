@@ -72,26 +72,34 @@
       },
       "argument2": {
         "type": "minecraft:add",
-        "argument1": 0.22,
+        "argument1": 0.15,
         "argument2": {
           "type": "minecraft:add",
           "argument1": {
-            "type": "minecraft:mul",
-            "argument1": 0.62,
-            "argument2": "vividlands:overworld/mountains/ridge"
-          },
-          "argument2": {
             "type": "minecraft:add",
             "argument1": {
               "type": "minecraft:mul",
-              "argument1": 0.3,
-              "argument2": "vividlands:overworld/mountains/ridge_detail"
+              "argument1": 0.48,
+              "argument2": "vividlands:overworld/mountains/ridge"
             },
             "argument2": {
-              "type": "minecraft:mul",
-              "argument1": 0.14,
-              "argument2": "vividlands:overworld/mountains/ridge_fine"
+              "type": "minecraft:add",
+              "argument1": {
+                "type": "minecraft:mul",
+                "argument1": 0.23,
+                "argument2": "vividlands:overworld/mountains/ridge_detail"
+              },
+              "argument2": {
+                "type": "minecraft:mul",
+                "argument1": 0.11,
+                "argument2": "vividlands:overworld/mountains/ridge_fine"
+              }
             }
+          },
+          "argument2": {
+            "type": "minecraft:mul",
+            "argument1": 0.55,
+            "argument2": "vividlands:overworld/mountains/horn"
           }
         }
       }
