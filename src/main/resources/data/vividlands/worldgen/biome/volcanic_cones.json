@@ -31,12 +31,6 @@
         "maxCount": 4
       },
       {
-        "type": "minecraft:skeleton",
-        "weight": 100,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
         "type": "minecraft:creeper",
         "weight": 100,
         "minCount": 4,
@@ -71,14 +65,26 @@
         "weight": 5,
         "minCount": 1,
         "maxCount": 1
+      },
+      {
+        "type": "minecraft:skeleton",
+        "weight": 100,
+        "minCount": 4,
+        "maxCount": 4
       }
     ],
     "creature": [
       {
         "type": "minecraft:goat",
-        "weight": 5,
+        "weight": 8,
         "minCount": 1,
         "maxCount": 3
+      },
+      {
+        "type": "minecraft:sheep",
+        "weight": 4,
+        "minCount": 2,
+        "maxCount": 4
       }
     ],
     "ambient": [
@@ -114,7 +120,7 @@
     [],
     [
       "minecraft:lake_lava_underground",
-      "vividlands:volcanic_lava_pool"
+      "vividlands:lava_pools"
     ],
     [
       "minecraft:amethyst_geode"
@@ -157,7 +163,7 @@
       "minecraft:spring_lava"
     ],
     [
-      "vividlands:volcanic_basalt_spires"
+      "vividlands:spires_basalt"
     ],
     [
       "minecraft:freeze_top_layer"

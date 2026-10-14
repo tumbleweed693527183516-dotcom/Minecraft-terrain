@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "vividlands:clearwater_river",
+    "vividlands:deep_glacial_ocean",
+    "vividlands:deep_northern_ocean",
+    "vividlands:deep_temperate_ocean",
+    "vividlands:deep_tropical_ocean",
+    "vividlands:fen",
+    "vividlands:glacial_ocean",
+    "vividlands:glacial_river",
+    "vividlands:northern_ocean",
+    "vividlands:oasis",
+    "vividlands:temperate_ocean",
+    "vividlands:tropical_ocean",
+    "vividlands:tropical_river"
+  ]
+}

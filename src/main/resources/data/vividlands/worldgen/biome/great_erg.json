@@ -25,12 +25,6 @@
         "maxCount": 4
       },
       {
-        "type": "minecraft:skeleton",
-        "weight": 100,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
         "type": "minecraft:creeper",
         "weight": 100,
         "minCount": 4,
@@ -69,6 +63,12 @@
       {
         "type": "minecraft:husk",
         "weight": 80,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:skeleton",
+        "weight": 100,
         "minCount": 4,
         "maxCount": 4
       }
@@ -162,8 +162,9 @@
       "minecraft:spring_lava"
     ],
     [
-      "vividlands:erg_hoodoos",
-      "vividlands:erg_dead_bush"
+      "vividlands:hoodoos_sandstone",
+      "vividlands:dead_bush",
+      "vividlands:cactus"
     ],
     [
       "minecraft:freeze_top_layer"

@@ -1,7 +1,22 @@
 {
   "replace": false,
   "values": [
-    "vividlands:volcanic_cones",
-    "vividlands:basalt_highlands"
+    "vividlands:basalt_highlands",
+    "vividlands:basalt_shore",
+    "vividlands:boreal_snowwoods",
+    "vividlands:caledonian_pinewood",
+    "vividlands:deep_glacial_ocean",
+    "vividlands:deep_northern_ocean",
+    "vividlands:glacial_ocean",
+    "vividlands:glacial_river",
+    "vividlands:glacier",
+    "vividlands:glacier_peaks",
+    "vividlands:highland_crags",
+    "vividlands:highland_moors",
+    "vividlands:northern_ocean",
+    "vividlands:snowy_shore",
+    "vividlands:taiga_lakelands",
+    "vividlands:tundra",
+    "vividlands:volcanic_cones"
   ]
 }

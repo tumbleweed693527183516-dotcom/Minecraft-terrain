@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "vividlands:basalt_shore",
+    "vividlands:golden_beach",
+    "vividlands:rocky_cliffs",
+    "vividlands:snowy_shore",
+    "vividlands:tropical_beach"
+  ]
+}

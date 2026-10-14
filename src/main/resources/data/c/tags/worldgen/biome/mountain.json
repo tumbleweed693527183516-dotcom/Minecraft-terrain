@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
+    "vividlands:alpine_peaks",
+    "vividlands:glacier_peaks",
+    "vividlands:highland_crags",
+    "vividlands:jagged_spires",
     "vividlands:volcanic_cones"
   ]
 }

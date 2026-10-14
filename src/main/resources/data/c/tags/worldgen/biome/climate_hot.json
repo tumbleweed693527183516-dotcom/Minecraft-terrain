@@ -1,7 +1,17 @@
 {
   "replace": false,
   "values": [
+    "vividlands:cloud_forest",
+    "vividlands:deep_tropical_ocean",
+    "vividlands:golden_savanna",
     "vividlands:great_erg",
-    "vividlands:oasis"
+    "vividlands:oasis",
+    "vividlands:rainforest",
+    "vividlands:red_canyonlands",
+    "vividlands:rocky_hamada",
+    "vividlands:salt_flats",
+    "vividlands:tropical_beach",
+    "vividlands:tropical_ocean",
+    "vividlands:tropical_river"
   ]
 }

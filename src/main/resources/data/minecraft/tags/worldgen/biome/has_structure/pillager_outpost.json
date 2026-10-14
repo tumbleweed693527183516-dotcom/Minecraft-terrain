@@ -1,8 +1,12 @@
 {
   "replace": false,
   "values": [
+    "vividlands:alpine_meadow",
+    "vividlands:endless_steppe",
+    "vividlands:golden_savanna",
     "vividlands:highland_moors",
-    "vividlands:great_erg",
-    "vividlands:basalt_highlands"
+    "vividlands:salt_flats",
+    "vividlands:tundra",
+    "vividlands:wildflower_prairie"
   ]
 }

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "vividlands:deep_glacial_ocean",
+    "vividlands:glacial_ocean",
+    "vividlands:glacial_river",
+    "vividlands:glacier",
+    "vividlands:glacier_peaks"
+  ]
+}

@@ -1,6 +1,12 @@
 {
   "replace": false,
   "values": [
-    "vividlands:old_growth_oakwood"
+    "vividlands:autumn_woodland",
+    "vividlands:boreal_snowwoods",
+    "vividlands:caledonian_pinewood",
+    "vividlands:mixed_woodland",
+    "vividlands:old_growth_oakwood",
+    "vividlands:redwood_giants",
+    "vividlands:taiga_lakelands"
   ]
 }

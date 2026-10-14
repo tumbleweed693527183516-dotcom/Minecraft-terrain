@@ -1,7 +1,13 @@
 {
   "replace": false,
   "values": [
+    "vividlands:endless_steppe",
+    "vividlands:golden_savanna",
     "vividlands:great_erg",
+    "vividlands:oasis",
+    "vividlands:red_canyonlands",
+    "vividlands:rocky_hamada",
+    "vividlands:salt_flats",
     "vividlands:volcanic_cones"
   ]
 }

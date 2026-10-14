@@ -25,12 +25,6 @@
         "maxCount": 4
       },
       {
-        "type": "minecraft:skeleton",
-        "weight": 100,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
         "type": "minecraft:creeper",
         "weight": 100,
         "minCount": 4,
@@ -71,6 +65,12 @@
         "weight": 80,
         "minCount": 4,
         "maxCount": 4
+      },
+      {
+        "type": "minecraft:skeleton",
+        "weight": 100,
+        "minCount": 4,
+        "maxCount": 4
       }
     ],
     "creature": [
@@ -109,8 +109,22 @@
         "maxCount": 6
       }
     ],
-    "water_creature": [],
-    "water_ambient": [],
+    "water_creature": [
+      {
+        "type": "minecraft:squid",
+        "weight": 2,
+        "minCount": 1,
+        "maxCount": 4
+      }
+    ],
+    "water_ambient": [
+      {
+        "type": "minecraft:salmon",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 5
+      }
+    ],
     "axolotls": [],
     "misc": []
   },
@@ -168,10 +182,10 @@
       "minecraft:spring_lava"
     ],
     [
-      "vividlands:oasis_palms",
-      "vividlands:oasis_grass",
-      "vividlands:oasis_lily_pads",
-      "minecraft:patch_sugar_cane"
+      "vividlands:trees_palm",
+      "vividlands:grass",
+      "vividlands:sugar_cane",
+      "vividlands:lily_pads"
     ],
     [
       "minecraft:freeze_top_layer"

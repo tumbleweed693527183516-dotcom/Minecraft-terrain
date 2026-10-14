@@ -17,5 +17,5 @@
       "to_value": -1.7142857142857142
     }
   },
-  "argument2": "minecraft:overworld_large_biomes/offset"
+  "argument2": "vividlands:overworld/offset"
 }

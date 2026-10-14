@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "vividlands:clearwater_river",
+    "vividlands:glacial_river",
+    "vividlands:oasis",
+    "vividlands:tropical_river"
+  ]
+}

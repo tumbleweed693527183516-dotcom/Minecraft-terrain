@@ -79,6 +79,20 @@ def main():
                 if (ns == "vividlands" and path in own.get("density_function", set())) or \
                         (ns == "minecraft" and path in VANILLA["density_function"]):
                     need("density_function", ident, rel)
+    # Feature order: within each generation step, every pair of features must appear in the same
+    # relative order in every biome, or Minecraft refuses to load the world.
+    before = {}
+    for p, obj in files.items():
+        rel = p.relative_to(DATA).as_posix()
+        if rel.startswith("vividlands/worldgen/biome/"):
+            for step, feats in enumerate(obj["features"]):
+                for i, a in enumerate(feats):
+                    for b in feats[i + 1:]:
+                        if (step, b, a) in before:
+                            errors.append(f"feature order conflict in step {step}: {a} / {b} "
+                                          f"({rel} vs {before[(step, b, a)]})")
+                        before.setdefault((step, a, b), rel)
+
     biomes_used = {e["biome"] for e in files[DATA / "minecraft/dimension/overworld.json"]["generator"]
                    ["biome_source"]["biomes"]}
     for b in sorted(biomes_used):

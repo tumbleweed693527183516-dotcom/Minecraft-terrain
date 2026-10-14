@@ -2,6 +2,12 @@
   "replace": false,
   "values": [
     "vividlands:basalt_highlands",
+    "vividlands:basalt_shore",
+    "vividlands:highland_crags",
+    "vividlands:jagged_spires",
+    "vividlands:red_canyonlands",
+    "vividlands:rocky_cliffs",
+    "vividlands:rocky_hamada",
     "vividlands:volcanic_cones"
   ]
 }

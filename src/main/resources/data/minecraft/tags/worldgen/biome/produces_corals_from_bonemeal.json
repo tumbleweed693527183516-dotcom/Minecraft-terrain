@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "vividlands:cloud_forest",
+    "vividlands:deep_tropical_ocean",
+    "vividlands:golden_savanna",
+    "vividlands:rainforest",
+    "vividlands:tropical_beach",
+    "vividlands:tropical_ocean",
+    "vividlands:tropical_river"
+  ]
+}

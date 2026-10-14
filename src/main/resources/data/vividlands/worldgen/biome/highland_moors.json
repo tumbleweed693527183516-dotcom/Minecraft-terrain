@@ -25,12 +25,6 @@
         "maxCount": 4
       },
       {
-        "type": "minecraft:skeleton",
-        "weight": 100,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
         "type": "minecraft:creeper",
         "weight": 100,
         "minCount": 4,
@@ -65,6 +59,12 @@
         "weight": 5,
         "minCount": 1,
         "maxCount": 1
+      },
+      {
+        "type": "minecraft:skeleton",
+        "weight": 100,
+        "minCount": 4,
+        "maxCount": 4
       }
     ],
     "creature": [
@@ -85,6 +85,12 @@
         "weight": 4,
         "minCount": 1,
         "maxCount": 2
+      },
+      {
+        "type": "minecraft:goat",
+        "weight": 3,
+        "minCount": 1,
+        "maxCount": 3
       }
     ],
     "ambient": [
@@ -162,11 +168,11 @@
       "minecraft:spring_lava"
     ],
     [
-      "vividlands:moors_boulder",
-      "vividlands:moors_pines",
-      "vividlands:moors_shrubs",
-      "vividlands:moors_heather",
-      "vividlands:moors_grass"
+      "vividlands:boulders_mossy",
+      "vividlands:trees_highland_pine_rare",
+      "vividlands:shrubs",
+      "vividlands:heather",
+      "vividlands:grass"
     ],
     [
       "minecraft:freeze_top_layer"

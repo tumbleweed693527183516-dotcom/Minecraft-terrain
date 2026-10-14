@@ -1,7 +1,8 @@
 {
   "replace": false,
   "values": [
-    "vividlands:old_growth_oakwood",
-    "vividlands:highland_moors"
+    "vividlands:autumn_woodland",
+    "vividlands:mixed_woodland",
+    "vividlands:old_growth_oakwood"
   ]
 }

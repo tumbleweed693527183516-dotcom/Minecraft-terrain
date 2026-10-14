@@ -4,18 +4,18 @@ Huge, vivid world generation for Minecraft **1.20.1** (Fabric).
 
 Taller worlds (build limit y=447), continent-sized landmasses, and new biomes inspired by Iceland, Scotland and the great deserts.
 
-## Biomes (v0.1)
+## Biomes (v0.2)
 
-| Biome | Feel |
-|---|---|
-| Volcanic Cones | Blackstone and basalt peaks, magma veins, lava pools, ash in the air, snow caps above y=300 |
-| Basalt Highlands | Black rock and bright moss, basalt column clusters, glacial-teal water |
-| Highland Moors | Heather-purple grass, pink heather carpets, azalea shrubs, mossy boulders, lone pines |
-| Great Erg | Endless sand, sandstone hoodoos |
-| Oasis | Palm-lined water channels winding through the Erg |
-| Old-Growth Oakwood | Giant branching oaks, mossy floor, ferns |
+44 biomes replace the vanilla overworld (vanilla caves, mushroom islands and mangroves stay). Every biome has its own water, sky, fog, grass and foliage colours.
 
-Vanilla biomes fill the rest of the world and all of them are reshaped by the taller terrain.
+- **Oceans:** glacial (icebergs), northern (kelp), temperate, tropical (turquoise, coral) - each with a deep variant
+- **Coasts & rivers:** snowy shore, basalt shore, golden beach, tropical beach, rocky cliffs, glacial river (milky teal), clearwater river, tropical river, oasis
+- **Frozen:** glacier peaks, glacier (blue ice, ice spires), tundra, boreal snowwoods
+- **Iceland & Scotland:** volcanic cones, highland crags, basalt highlands, highland moors, Caledonian pinewood, taiga lakelands
+- **Temperate:** alpine peaks, jagged spires, alpine meadow, endless steppe, wildflower prairie, mixed woodland, autumn woodland, old-growth oakwood, redwood giants, fen
+- **Warm & hot:** golden savanna, rainforest, cloud forest, red canyonlands, great erg, rocky hamada, salt flats
+
+Terrain: inland mountains form long ridges with valleys between them, slopes are smoother, and land above sea level is about 1.75x taller than vanilla.
 
 ## Installing for testing
 

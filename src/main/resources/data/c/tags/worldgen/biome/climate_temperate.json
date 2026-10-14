@@ -1,7 +1,19 @@
 {
   "replace": false,
   "values": [
-    "vividlands:highland_moors",
-    "vividlands:old_growth_oakwood"
+    "vividlands:alpine_meadow",
+    "vividlands:alpine_peaks",
+    "vividlands:autumn_woodland",
+    "vividlands:clearwater_river",
+    "vividlands:deep_temperate_ocean",
+    "vividlands:endless_steppe",
+    "vividlands:fen",
+    "vividlands:golden_beach",
+    "vividlands:jagged_spires",
+    "vividlands:mixed_woodland",
+    "vividlands:old_growth_oakwood",
+    "vividlands:redwood_giants",
+    "vividlands:temperate_ocean",
+    "vividlands:wildflower_prairie"
   ]
 }

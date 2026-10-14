@@ -1,7 +1,11 @@
 {
   "replace": false,
   "values": [
+    "vividlands:alpine_meadow",
     "vividlands:basalt_highlands",
-    "vividlands:highland_moors"
+    "vividlands:cloud_forest",
+    "vividlands:glacier",
+    "vividlands:highland_moors",
+    "vividlands:rocky_cliffs"
   ]
 }

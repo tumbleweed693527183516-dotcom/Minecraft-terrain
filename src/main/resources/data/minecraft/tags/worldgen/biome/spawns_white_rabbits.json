@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "vividlands:alpine_peaks",
+    "vividlands:boreal_snowwoods",
+    "vividlands:glacier",
+    "vividlands:glacier_peaks",
+    "vividlands:jagged_spires",
+    "vividlands:snowy_shore",
+    "vividlands:tundra"
+  ]
+}

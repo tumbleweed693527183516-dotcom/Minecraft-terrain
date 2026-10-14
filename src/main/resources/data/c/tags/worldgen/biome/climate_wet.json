@@ -1,7 +1,13 @@
 {
   "replace": false,
   "values": [
+    "vividlands:caledonian_pinewood",
+    "vividlands:cloud_forest",
+    "vividlands:fen",
     "vividlands:highland_moors",
-    "vividlands:old_growth_oakwood"
+    "vividlands:old_growth_oakwood",
+    "vividlands:rainforest",
+    "vividlands:redwood_giants",
+    "vividlands:taiga_lakelands"
   ]
 }

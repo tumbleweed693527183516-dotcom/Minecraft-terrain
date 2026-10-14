@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "vividlands:glacial_ocean",
+    "vividlands:northern_ocean",
+    "vividlands:temperate_ocean",
+    "vividlands:tropical_ocean"
+  ]
+}
