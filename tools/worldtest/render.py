@@ -34,6 +34,11 @@ BLOCK_COLORS = {
     "sugar_cane": (148, 192, 101), "pink_petals": (230, 150, 200), "allium": (180, 120, 220),
     "azalea": (100, 125, 45), "flowering_azalea": (150, 110, 160), "sweet_berry_bush": (60, 100, 50),
     "melon": (111, 145, 30), "bedrock": (85, 85, 85),
+    # Vivid Lands blocks
+    "black_sand": (40, 38, 46), "volcanic_ash": (118, 116, 113), "salt_crust": (236, 232, 224), "peat": (56, 40, 26),
+    "heather": (150, 90, 170), "dry_grass": (200, 170, 95), "palm_log": (165, 135, 95), "palm_leaves": (70, 160, 52),
+    "redwood_log": (120, 56, 40), "redwood_leaves": (40, 85, 45), "pine_log": (170, 96, 54),
+    "pine_leaves": (56, 102, 82),
 }
 FLOWERS = (215, 190, 90)
 
