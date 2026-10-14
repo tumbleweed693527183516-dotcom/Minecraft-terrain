@@ -14,6 +14,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import blocks  # noqa: E402
+from structures import worldgen as structures  # noqa: E402
 
 MODID = "vividlands"
 ROOT = Path(__file__).resolve().parent.parent
@@ -1299,6 +1300,8 @@ def tags():
         # ocean-only structures stay in oceans
         if "ocean" not in s["tags"]:
             tag_list = [t for t in tag_list if "ocean_ruin" not in t and "shipwreck" not in t]
+        if name in structures.VILLAGE_BIOMES:
+            tag_list = [t for t in tag_list if not t.startswith("minecraft:has_structure/village_")]
         for t in set(tag_list):
             out.setdefault(t, set()).add(vl(name))
     for t, members in out.items():
@@ -1326,6 +1329,7 @@ def main():
     write_biomes()
     entries = biome_layout()
     tags()
+    structures.write(DATA, lambda b: b in BIOMES)
     lang(blocks.assets_and_data(DATA))
     print(f"Generated {len(BIOMES)} biomes, {len(ORDER)} placed features, {len(entries)} biome map entries")
 

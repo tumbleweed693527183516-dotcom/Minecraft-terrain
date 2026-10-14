@@ -27,6 +27,15 @@ echo "chunky radius ${RADIUS}" > console
 echo "chunky start" > console
 wait_for 'task finished' 5400
 grep -i 'chunky' server.log | tail -n 3
+if [ -f commands.txt ]; then
+  echo "Running test commands..."
+  while IFS= read -r cmd; do
+    [ -z "$cmd" ] && continue
+    echo "$cmd" > console
+    sleep 25
+  done < commands.txt
+  grep -E "Generated structure|nearest|Could not find|Failed|Unknown|Incorrect" server.log | tail -n 40 || true
+fi
 echo "save-all flush" > console
 sleep 15
 echo "stop" > console

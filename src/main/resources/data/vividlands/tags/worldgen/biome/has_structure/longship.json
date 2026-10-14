@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "vividlands:northern_ocean",
+    "vividlands:deep_northern_ocean",
+    "vividlands:temperate_ocean",
+    "vividlands:deep_temperate_ocean"
+  ]
+}

@@ -13,6 +13,9 @@ on:
       biomes:
         description: Optional comma-separated biomes to tile as a checkerboard (tests specific biomes)
         default: ""
+      structures:
+        description: Locate and place Vivid Lands structures, then capture them
+        default: "false"
       stamp_test:
         description: Put a real-world mountain in every cell (to inspect stamps)
         default: "false"
@@ -69,6 +72,14 @@ jobs:
             python3 -c "import json,sys; b=[x.strip() for x in sys.argv[1].split(',') if x.strip()]; print(json.dumps({'type':'minecraft:overworld','generator':{'type':'minecraft:noise','settings':'vividlands:overworld','biome_source':{'type':'minecraft:checkerboard','biomes':b,'scale':3}}}))" "${{ inputs.biomes }}" > world/datapacks/biometest/data/minecraft/dimension/overworld.json
             cat world/datapacks/biometest/data/minecraft/dimension/overworld.json
           fi
+          if [ "${{ inputs.structures }}" = "true" ]; then
+            for st in viking_village longhouse turf_house longship runestone; do echo "locate structure vividlands:$st"; done > commands.txt
+            i=0
+            for st in viking_village longhouse turf_house longship runestone; do
+              echo "place structure vividlands:$st $((3000 + i * 300)) 80 3000"; i=$((i + 1))
+            done >> commands.txt
+            cat commands.txt
+          fi
           echo "eula=true" > eula.txt
           printf "level-seed=%s\nonline-mode=false\nview-distance=4\nsimulation-distance=4\nspawn-protection=0\nmax-tick-time=-1\nsync-chunk-writes=false\n" "$SEED" > server.properties
       - name: Generate world
@@ -82,7 +93,11 @@ jobs:
           wc -l out/problems.txt || true
           head -n 60 out/problems.txt || true
       - name: Extract maps
-        run: python3 tools/worldtest/extract.py server/world out
+        run: |
+          python3 tools/worldtest/extract.py server/world out
+          if [ "${{ inputs.structures }}" = "true" ]; then
+            python3 tools/worldtest/structures.py server/world server/server.log out
+          fi
       - name: Render maps
         if: always()
         run: |
@@ -91,7 +106,7 @@ jobs:
       - name: Publish results to the worldtest-results branch
         if: always()
         run: |
-          mkdir -p results && cp out/*.png out/*.txt out/*.npz out/names.json results/ 2>/dev/null || true
+          mkdir -p results && cp out/*.png out/*.txt out/*.npz out/*.json results/ 2>/dev/null || true
           tail -n 400 out/server.log > results/server_tail.log 2>/dev/null || true
           cd results
           git init -q && git checkout -q -b worldtest-results

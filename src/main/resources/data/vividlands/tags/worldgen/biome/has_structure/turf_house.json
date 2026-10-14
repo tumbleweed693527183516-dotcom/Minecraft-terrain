@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "vividlands:glacial_outwash",
+    "vividlands:mossy_lava_fields",
+    "vividlands:basalt_highlands",
+    "vividlands:highland_moors",
+    "vividlands:black_sand_desert",
+    "vividlands:tundra",
+    "vividlands:hot_springs"
+  ]
+}

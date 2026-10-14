@@ -2,8 +2,6 @@
   "replace": false,
   "values": [
     "vividlands:boreal_snowwoods",
-    "vividlands:caledonian_pinewood",
-    "vividlands:redwood_giants",
-    "vividlands:taiga_lakelands"
+    "vividlands:redwood_giants"
   ]
 }
