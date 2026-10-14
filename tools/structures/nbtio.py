@@ -31,6 +31,10 @@ class DoubleList(list):
     """List of TAG_Double."""
 
 
+class FloatList(list):
+    """List of TAG_Float."""
+
+
 def _tag_id(v):
     if isinstance(v, bool):
         return 1
@@ -77,6 +81,8 @@ def _payload(out, v):
             et = 3
         elif isinstance(v, DoubleList):
             et = 6
+        elif isinstance(v, FloatList):
+            et = 5
         else:
             et = _tag_id(v[0]) if v else 0
         out += struct.pack(">bi", et, len(v))
@@ -85,6 +91,8 @@ def _payload(out, v):
                 out += struct.pack(">i", int(item))
             elif et == 6:
                 out += struct.pack(">d", float(item))
+            elif et == 5:
+                out += struct.pack(">f", float(item))
             else:
                 _payload(out, item)
     elif t == 10:

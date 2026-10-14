@@ -22,6 +22,16 @@ COLORS = {
     "spruce_leaves": (60, 90, 60), "tuff": (108, 109, 102), "blackstone": (42, 35, 40), "basalt": (73, 72, 77),
     "black_sand": (40, 38, 46), "moss_block": (89, 109, 45), "podzol": (91, 63, 24), "peat": (56, 40, 26),
     "pine_log": (170, 96, 54), "pine_leaves": (56, 102, 82), "heather": (150, 90, 170),
+    "thatch": (200, 164, 86), "thatch_stairs": (200, 164, 86), "thatch_slab": (200, 164, 86),
+    "wattle_daub": (216, 202, 174), "carved_post": (122, 84, 48), "palisade_stake": (170, 96, 54),
+    "shield_red": (176, 36, 32), "shield_blue": (40, 70, 150), "shield_yellow": (226, 182, 52),
+    "shield_green": (52, 110, 58), "pine_planks": (192, 152, 106), "stripped_dark_oak_log": (96, 76, 49),
+    "polished_andesite_slab": (132, 134, 133), "spruce_pressure_plate": (115, 85, 49), "candle": (230, 220, 190),
+    "brown_carpet": (114, 72, 41), "white_carpet": (233, 236, 236), "light_gray_carpet": (142, 142, 135),
+    "gray_carpet": (62, 68, 71), "smoker": (90, 85, 80), "cauldron": (70, 70, 74), "water_cauldron": (60, 110, 220),
+    "lava_cauldron": (220, 100, 30), "blast_furnace": (100, 100, 104), "ladder": (120, 90, 50),
+    "dried_kelp_block": (50, 60, 35), "target": (230, 210, 200), "lectern": (160, 120, 70),
+    "dark_oak_door": (66, 43, 20), "stone_bricks": (122, 121, 122), "coal_block": (20, 20, 20),
 }
 
 

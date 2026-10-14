@@ -222,7 +222,86 @@ def thermal_mat():
     return a
 
 
+def thatch():
+    """Straw thatch: long golden strands with weathered darker bundles."""
+    r = rng("thatch")
+    a = canvas((196, 160, 82))
+    golds = [(214, 178, 96), (196, 160, 82), (176, 140, 68), (228, 196, 116), (150, 116, 56)]
+    for x in range(S):
+        base = int(r.integers(0, 5))
+        for y in range(S):
+            c = golds[(base + (y // 3 + x) % 2) % 5] if r.random() < 0.8 else golds[int(r.integers(0, 5))]
+            a[y, x, :3] = c
+    for y in (4, 12):  # tied bundle lines
+        for x in range(S):
+            if r.random() < 0.7:
+                a[y, x, :3] = (134, 100, 48)
+    return a
+
+
+def wattle_daub():
+    r = rng("wattle")
+    a = speckle("daub", [(214, 200, 172), (202, 188, 160), (224, 212, 186), (190, 174, 146)], [5, 4, 3, 2])
+    for _ in range(5):  # cracks showing the woven wattle beneath
+        x, y = int(r.integers(1, S - 1)), int(r.integers(1, S - 1))
+        for i in range(int(r.integers(2, 5))):
+            a[(y + i // 2) % S, (x + i) % S, :3] = (132, 96, 58)
+    a[0, :, :3] = (92, 64, 38)
+    a[S - 1, :, :3] = (92, 64, 38)
+    return a
+
+
+def carved_post():
+    """Pine post with an interlaced Norse knotwork band carved into it."""
+    a = log_side("carved_base", [(120, 82, 46), (108, 72, 40), (132, 92, 52), (70, 46, 26)], "redwood")
+    for y in range(S):
+        for x in range(S):
+            u, v = (x + y) % 8, (x - y) % 8
+            if u == 0 or v == 0:
+                a[y, x, :3] = (186, 140, 86)          # carved groove highlight
+            elif u == 1 or v == 1:
+                a[y, x, :3] = (60, 38, 20)            # groove shadow
+    a[0:2, :, :3] = (64, 42, 24)
+    a[S - 2:, :, :3] = (64, 42, 24)
+    return a
+
+
+def shield(name, field, accent, pattern):
+    a = canvas((0, 0, 0), 0)
+    yy, xx = np.mgrid[0:S, 0:S] + 0.5
+    rr = np.hypot(xx - 8, yy - 8)
+    disc = rr <= 7.0
+    ang = np.arctan2(yy - 8, xx - 8)
+    for y in range(S):
+        for x in range(S):
+            if not disc[y, x]:
+                continue
+            if pattern == "halves":
+                c = field if x < 8 else accent
+            elif pattern == "quarters":
+                c = field if (x < 8) == (y < 8) else accent
+            elif pattern == "cross":
+                c = accent if abs(x - 7.5) < 1.6 or abs(y - 7.5) < 1.6 else field
+            else:  # spiral swirl
+                c = accent if int((ang[y, x] + np.pi) / (np.pi / 3) + rr[y, x] / 2.5) % 2 else field
+            a[y, x] = (*c, 255)
+    rim = disc & (rr > 6.0)
+    a[rim, :3] = (84, 60, 40)
+    boss = rr <= 2.0
+    a[boss, :3] = (170, 172, 178)
+    a[(rr <= 1.0), :3] = (210, 212, 218)
+    return a
+
+
 TEXTURES = {
+    "thatch": thatch,
+    "wattle_daub": wattle_daub,
+    "carved_post": carved_post,
+    "carved_post_top": lambda: log_top("carved_top", (96, 64, 36), (176, 136, 90), (150, 112, 70)),
+    "shield_red": lambda: shield("shield_red", (176, 36, 32), (232, 226, 210), "halves"),
+    "shield_blue": lambda: shield("shield_blue", (40, 70, 150), (230, 196, 60), "cross"),
+    "shield_yellow": lambda: shield("shield_yellow", (226, 182, 52), (30, 28, 30), "quarters"),
+    "shield_green": lambda: shield("shield_green", (52, 110, 58), (226, 222, 206), "swirl"),
     "sinter": lambda: layered("sinter", [(222, 220, 212), (206, 204, 196), (232, 230, 224), (196, 194, 188)],
                               pore=(176, 172, 164), pore_p=0.04),
     "travertine": lambda: layered("travertine", [(226, 206, 168), (212, 188, 146), (236, 220, 186), (198, 172, 130)],

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "vividlands:block/thatch",
+    "top": "vividlands:block/thatch",
+    "side": "vividlands:block/thatch"
+  }
+}

@@ -4,7 +4,12 @@ structures, structure sets (spacing), biome tags and loot tables.
 """
 import json
 
+from pathlib import Path
+
 from .designs import all_designs
+from .viking import catalogue
+
+CATALOGUE_OUT = Path(__file__).resolve().parents[2] / "src/main/resources/vividlands_villages/catalogue.json"
 
 NS = "vividlands"
 
@@ -22,9 +27,11 @@ STRUCTURE_BIOMES = {
     "longship": ["northern_ocean", "deep_northern_ocean", "temperate_ocean", "deep_temperate_ocean"],
 }
 
+# Walled villages use the Java structure type vividlands:viking_village (see VikingVillageStructure).
+VILLAGE_SPACING = (34, 14, 1946157313)
+
 # name: (start pool, size, start height, terrain adaptation, spacing, separation, salt)
 STRUCTURES = {
-    "viking_village": ("village/plaza", 6, -1, "beard_thin", 32, 12, 1946157313),
     "longhouse": ("longhouse/start", 1, -1, "beard_thin", 24, 8, 1946157314),
     "turf_house": ("turf_house/start", 1, -1, "beard_thin", 20, 7, 1946157315),
     "runestone": ("runestone/start", 1, -1, "beard_thin", 18, 7, 1946157316),
@@ -39,21 +46,11 @@ def element(location, weight, projection="rigid"):
 
 
 def pools():
-    turf = [f"village/turf_house_{s}" for s in ("farmer", "shepherd", "fletcher", "librarian", "cleric", "fisherman")]
-    farms = [f"village/farm_{i}" for i in range(3)]
+    longhouses = [n for n in catalogue() if n.startswith("viking/longhouse_")]
+    turf = ["viking/farmstead_a", "viking/farmstead_b", "viking/turf_cottage_a", "viking/turf_cottage_b"]
     return {
-        "village/plaza": ("minecraft:empty", [element("village/plaza", 1)]),
-        "village/streets": (f"{NS}:village/street_ends", [
-            element("village/street_13", 4, "terrain_matching"), element("village/street_19", 3, "terrain_matching"),
-            element("village/street_junction", 2, "terrain_matching"),
-            element("village/street_end", 1, "terrain_matching")]),
-        "village/street_ends": ("minecraft:empty", [element("village/street_end", 1, "terrain_matching")]),
-        "village/buildings": ("minecraft:empty", [element("village/longhouse", 2), element("village/longhouse_turf", 2),
-                                                  element("village/smithy", 2), element("village/sheep_pen", 2),
-                                                  element("village/storehouse", 2)]
-                              + [element(t, 2) for t in turf] + [element(f, 2) for f in farms]),
-        "longhouse/start": ("minecraft:empty", [element("village/longhouse", 1), element("village/longhouse_turf", 1)]),
-        "turf_house/start": ("minecraft:empty", [element(t, 1) for t in turf]),
+        "longhouse/start": ("minecraft:empty", [element(n, 1) for n in longhouses]),
+        "turf_house/start": ("minecraft:empty", [element(n, 1) for n in turf]),
         "runestone/start": ("minecraft:empty", [element("runestone/single", 3), element("runestone/trio", 1),
                                                 element("runestone/cairn", 2)]),
         "longship/start": ("minecraft:empty", [element("longship/longship", 1)]),
@@ -82,6 +79,17 @@ def table(rolls, entries, bonus=None):
 ENCHANT = [{"function": "minecraft:enchant_randomly"}]
 
 LOOT = {
+    "great_hall": table((6, 10), [
+        item("gold_ingot", 8, 2, 6), item("emerald", 6, 2, 6), item("diamond", 3, 1, 3), item("iron_ingot", 6, 2, 6),
+        item("golden_apple", 3), item("iron_axe", 4, extra=ENCHANT), item("iron_sword", 4, extra=ENCHANT),
+        item("shield", 4), item("chainmail_helmet", 2), item("chainmail_chestplate", 2), item("honey_bottle", 5, 1, 3),
+        item("cooked_beef", 6, 2, 6), item("bread", 6, 2, 6), item("goat_horn", 1), item("amethyst_shard", 4, 2, 6)],
+        bonus={"rolls": 1, "entries": [{"type": "minecraft:empty", "weight": 2}, item("enchanted_book", 2, extra=ENCHANT),
+                                       item("diamond_axe", 1, extra=ENCHANT)]}),
+    "hof": table((3, 6), [
+        item("candle", 8, 1, 4), item("gold_nugget", 8, 3, 10), item("amethyst_shard", 6, 1, 4),
+        item("experience_bottle", 4, 1, 4), item("glow_berries", 5, 2, 6), item("bone", 5, 2, 6),
+        item("golden_carrot", 3, 1, 3), item("enchanted_book", 2, extra=ENCHANT), item("totem_of_undying", 1)]),
     "longhouse": table((4, 8), [
         item("bread", 10, 1, 4), item("cooked_cod", 8, 2, 6), item("cooked_salmon", 6, 2, 5), item("mutton", 6, 1, 4),
         item("wheat", 6, 3, 9), item("white_wool", 5, 1, 4), item("leather", 6, 1, 4), item("iron_ingot", 5, 1, 4),
@@ -120,7 +128,27 @@ def write(data_dir, biome_exists):
     out = data_dir / NS
     sizes = {}
     for name, b in all_designs().items():
+        if name.startswith(("runestone/", "longship/")):
+            sizes[name] = b.save(out / "structures" / f"{name}.nbt")
+    cat = []
+    role_map = {"wall": None}
+    for name, (b, role) in catalogue().items():
         sizes[name] = b.save(out / "structures" / f"{name}.nbt")
+        if role == "wall":
+            role = "wall_gate" if "gate" in name else "wall_tower"
+        cat.append({"id": f"{NS}:{name}", "role": role, "size": list(sizes[name])})
+    CATALOGUE_OUT.parent.mkdir(parents=True, exist_ok=True)
+    CATALOGUE_OUT.write_text(json.dumps(cat, indent=2))
+    # walled village: custom structure type
+    _w(out / "worldgen/structure/viking_village.json", {
+        "type": f"{NS}:viking_village", "biomes": f"#{NS}:has_structure/viking_village",
+        "step": "top_layer_modification", "spawn_overrides": {}, "terrain_adaptation": "none"})
+    sp, se, salt = VILLAGE_SPACING
+    _w(out / "worldgen/structure_set/viking_village.json", {
+        "structures": [{"structure": f"{NS}:viking_village", "weight": 1}],
+        "placement": {"type": "minecraft:random_spread", "spacing": sp, "separation": se, "salt": salt}})
+    _w(out / "tags/worldgen/biome/has_structure/viking_village.json",
+       {"replace": False, "values": [f"{NS}:{b}" for b in STRUCTURE_BIOMES["viking_village"] if biome_exists(b)]})
     for name, (fallback, elements) in pools().items():
         path = out / "worldgen/template_pool" / f"{name}.json"
         path.parent.mkdir(parents=True, exist_ok=True)

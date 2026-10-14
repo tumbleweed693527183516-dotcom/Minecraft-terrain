@@ -67,5 +67,15 @@
   "block.vividlands.pine_log": "Scots Pine Log",
   "block.vividlands.pine_leaves": "Scots Pine Leaves",
   "block.vividlands.pine_planks": "Scots Pine Planks",
+  "block.vividlands.thatch": "Thatch",
+  "block.vividlands.thatch_stairs": "Thatch Stairs",
+  "block.vividlands.thatch_slab": "Thatch Slab",
+  "block.vividlands.wattle_daub": "Wattle and Daub",
+  "block.vividlands.carved_post": "Carved Post",
+  "block.vividlands.palisade_stake": "Palisade Stake",
+  "block.vividlands.shield_red": "Red Shield",
+  "block.vividlands.shield_blue": "Blue Shield",
+  "block.vividlands.shield_yellow": "Yellow Shield",
+  "block.vividlands.shield_green": "Green Shield",
   "itemGroup.vividlands": "Vivid Lands"
 }

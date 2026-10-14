@@ -6,6 +6,9 @@
     "vividlands:palm_leaves",
     "vividlands:redwood_leaves",
     "vividlands:pine_leaves",
+    "vividlands:thatch",
+    "vividlands:thatch_stairs",
+    "vividlands:thatch_slab",
     "vividlands:peat"
   ]
 }

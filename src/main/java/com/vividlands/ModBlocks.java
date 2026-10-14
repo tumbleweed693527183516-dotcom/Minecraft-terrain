@@ -37,8 +37,18 @@ public final class ModBlocks {
     public static final Block PINE_LOG = register("pine_log", new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)));
     public static final Block PINE_LEAVES = register("pine_leaves", new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
     public static final Block PINE_PLANKS = register("pine_planks", new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    public static final Block THATCH = register("thatch", new Block(BlockBehaviour.Properties.copy(Blocks.HAY_BLOCK).mapColor(MapColor.COLOR_YELLOW)));
+    public static final Block THATCH_STAIRS = register("thatch_stairs", new ModStairBlock(THATCH.defaultBlockState(), BlockBehaviour.Properties.copy(THATCH)));
+    public static final Block THATCH_SLAB = register("thatch_slab", new SlabBlock(BlockBehaviour.Properties.copy(THATCH)));
+    public static final Block WATTLE_DAUB = register("wattle_daub", new Block(BlockBehaviour.Properties.copy(Blocks.MUD_BRICKS)));
+    public static final Block CARVED_POST = register("carved_post", new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG)));
+    public static final Block PALISADE_STAKE = register("palisade_stake", new StakeBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LOG).noOcclusion()));
+    public static final Block SHIELD_RED = register("shield_red", new WallShieldBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS).noOcclusion()));
+    public static final Block SHIELD_BLUE = register("shield_blue", new WallShieldBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS).noOcclusion()));
+    public static final Block SHIELD_YELLOW = register("shield_yellow", new WallShieldBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS).noOcclusion()));
+    public static final Block SHIELD_GREEN = register("shield_green", new WallShieldBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS).noOcclusion()));
 
-    public static final List<Block> CUTOUT = List.of(HEATHER, DRY_GRASS);
+    public static final List<Block> CUTOUT = List.of(HEATHER, DRY_GRASS, SHIELD_RED, SHIELD_BLUE, SHIELD_YELLOW, SHIELD_GREEN);
     public static final List<Block> CUTOUT_MIPPED = List.of(PALM_LEAVES, REDWOOD_LEAVES, PINE_LEAVES);
 
     private ModBlocks() {
@@ -65,5 +75,14 @@ public final class ModBlocks {
         fire.add(PINE_LOG, 5, 5);
         fire.add(PINE_LEAVES, 30, 60);
         fire.add(PINE_PLANKS, 5, 20);
+        fire.add(THATCH, 60, 20);
+        fire.add(THATCH_STAIRS, 60, 20);
+        fire.add(THATCH_SLAB, 60, 20);
+        fire.add(CARVED_POST, 5, 5);
+        fire.add(PALISADE_STAKE, 5, 5);
+        fire.add(SHIELD_RED, 5, 20);
+        fire.add(SHIELD_BLUE, 5, 20);
+        fire.add(SHIELD_YELLOW, 5, 20);
+        fire.add(SHIELD_GREEN, 5, 20);
     }
 }

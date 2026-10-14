@@ -106,7 +106,7 @@ def main():
             fb = obj["fallback"]
             if fb.startswith("vividlands:") and fb.split(":")[1] not in own.get("template_pool", set()):
                 errors.append(f"{rel}: missing fallback pool {fb}")
-        if rel.startswith("vividlands/worldgen/structure/"):
+        if rel.startswith("vividlands/worldgen/structure/") and obj["type"] == "minecraft:jigsaw":
             need("template_pool", obj["start_pool"], rel)
             tag = obj["biomes"].lstrip("#").split(":", 1)[1]
             if not (DATA / "vividlands/tags/worldgen/biome" / f"{tag}.json").exists():
@@ -117,9 +117,20 @@ def main():
     import gzip, re as _re
     for name in nbts:
         raw = gzip.decompress((DATA / "vividlands/structures" / f"{name}.nbt").read_bytes())
-        for pool in set(_re.findall(rb"vividlands:village/[a-z_]+", raw)):
+        for pool in set(_re.findall(rb"vividlands:village/[a-z_]+", raw)) - {b"vividlands:village/x"}:
             if pool.decode().split(":")[1] not in own.get("template_pool", set()):
                 errors.append(f"structure {name}: jigsaw pool {pool.decode()} missing")
+
+    cat_file = DATA.parent / "vividlands_villages/catalogue.json"
+    if cat_file.exists():
+        roles = {}
+        for e in json.loads(cat_file.read_text()):
+            roles[e["role"]] = roles.get(e["role"], 0) + 1
+            if e["id"].split(":", 1)[1] not in nbts:
+                errors.append(f"village catalogue: missing template {e['id']}")
+        for r in ("plaza", "core", "civic", "craft", "house", "field", "wall_gate", "wall_tower"):
+            if not roles.get(r):
+                errors.append(f"village catalogue: no buildings with role {r}")
 
     biomes_used = {e["biome"] for e in files[DATA / "minecraft/dimension/overworld.json"]["generator"]
                    ["biome_source"]["biomes"]}

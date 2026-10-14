@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "vividlands:block/shield_yellow",
+      "y": 0
+    },
+    "facing=east": {
+      "model": "vividlands:block/shield_yellow",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "vividlands:block/shield_yellow",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "vividlands:block/shield_yellow",
+      "y": 270
+    }
+  }
+}

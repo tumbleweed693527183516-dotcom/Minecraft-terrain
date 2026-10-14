@@ -17,6 +17,7 @@ public class VividLands implements ModInitializer {
     @Override
     public void onInitialize() {
         ModBlocks.init();
+        com.vividlands.village.ModStructures.init();
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID, "main"),
                 FabricItemGroup.builder()
                         .title(Component.translatable("itemGroup.vividlands"))

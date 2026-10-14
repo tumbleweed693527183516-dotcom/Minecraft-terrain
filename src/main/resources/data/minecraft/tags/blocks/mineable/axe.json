@@ -6,6 +6,12 @@
     "vividlands:redwood_log",
     "vividlands:redwood_planks",
     "vividlands:pine_log",
-    "vividlands:pine_planks"
+    "vividlands:pine_planks",
+    "vividlands:carved_post",
+    "vividlands:palisade_stake",
+    "vividlands:shield_red",
+    "vividlands:shield_blue",
+    "vividlands:shield_yellow",
+    "vividlands:shield_green"
   ]
 }

@@ -41,7 +41,7 @@ def entity_list(world):
     return ents
 
 
-def volume(chunks, cx, cz):
+def volume(chunks, cx, cz, R=R):
     x0, x1, z0, z1 = cx - R, cx + R, cz - R, cz + R
     tops = []
     for (px, pz), c in chunks.items():
@@ -103,7 +103,7 @@ def render(vol, names, path, title):
         vis |= solid & ~nb
     xs, ys, zs = np.nonzero(vis)
     order = np.lexsort((ys, xs + zs))
-    s = 5
+    s = 5 if vol.shape[0] < 150 else 3
     W = int((vol.shape[0] + vol.shape[2]) * s * 0.87) + 40
     H = int((vol.shape[0] + vol.shape[2]) * s * 0.5 + vol.shape[1] * s) + 60
     img = Image.new("RGB", (W, H), (226, 232, 238))
@@ -153,7 +153,7 @@ def main(world, log, out):
     for s in starts:
         summary["natural_starts"][s["structure"]] = summary["natural_starts"].get(s["structure"], 0) + 1
     for kind, name, x, z, dist in targets:
-        res = volume(chunks, x, z)
+        res = volume(chunks, x, z, 92 if "village" in name else R)
         near = [e for e in ents if e[1] and abs(e[1][0] - x) <= R and abs(e[1][2] - z) <= R]
         counts = {}
         for eid, _ in near:
