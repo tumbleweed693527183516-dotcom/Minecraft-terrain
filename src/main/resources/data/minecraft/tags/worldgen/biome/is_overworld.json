@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "vividlands:volcanic_cones",
+    "vividlands:basalt_highlands",
+    "vividlands:highland_moors",
+    "vividlands:great_erg",
+    "vividlands:oasis",
+    "vividlands:old_growth_oakwood"
+  ]
+}

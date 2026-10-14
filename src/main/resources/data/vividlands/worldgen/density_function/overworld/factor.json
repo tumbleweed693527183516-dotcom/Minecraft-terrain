@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:mul",
+  "argument1": 1.75,
+  "argument2": "minecraft:overworld_large_biomes/factor"
+}
