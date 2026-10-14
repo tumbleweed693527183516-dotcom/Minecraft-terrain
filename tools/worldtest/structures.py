@@ -165,6 +165,9 @@ def main(world, log, out):
             short = name.split(":")[1]
             fname = f"struct_{kind}_{short}.png"
             render(vol, names, out / fname, f"{name} ({kind}) at {x}, {z}")
+            if "village" in name:
+                np.savez_compressed(out / f"vol_{kind}_{short}.npz", vol=vol, origin=np.array(origin))
+                (out / f"vol_{kind}_{short}.json").write_text(json.dumps(names))
             entry["image"] = fname
             entry["block_types"] = sorted({names[i] for i in np.unique(vol)} - AIRS)[:60]
         summary["targets"].append(entry)

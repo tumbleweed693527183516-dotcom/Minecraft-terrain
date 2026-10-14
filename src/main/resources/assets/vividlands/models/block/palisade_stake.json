@@ -1,9 +1,9 @@
 {
   "parent": "minecraft:block/block",
   "textures": {
-    "side": "vividlands:block/pine_log",
-    "end": "vividlands:block/pine_log_top",
-    "particle": "vividlands:block/pine_log"
+    "side": "minecraft:block/stripped_spruce_log",
+    "end": "minecraft:block/stripped_spruce_log_top",
+    "particle": "minecraft:block/stripped_spruce_log"
   },
   "elements": [
     {

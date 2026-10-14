@@ -106,8 +106,8 @@ public class PalisadePiece extends StructurePiece {
     public void postProcess(WorldGenLevel level, StructureManager structureManager, ChunkGenerator generator,
                             RandomSource random, BoundingBox chunkBox, ChunkPos chunkPos, BlockPos pivot) {
         BlockPos.MutableBlockPos p = new BlockPos.MutableBlockPos();
-        BlockState log = ModBlocks.PINE_LOG.defaultBlockState();
-        BlockState dark = Blocks.SPRUCE_LOG.defaultBlockState();
+        BlockState log = Blocks.SPRUCE_LOG.defaultBlockState();
+        BlockState dark = Blocks.STRIPPED_SPRUCE_LOG.defaultBlockState();
         BlockState stake = ModBlocks.PALISADE_STAKE.defaultBlockState();
         for (int x = Math.max(boundingBox.minX(), chunkBox.minX()); x <= Math.min(boundingBox.maxX(), chunkBox.maxX()); x++) {
             for (int z = Math.max(boundingBox.minZ(), chunkBox.minZ()); z <= Math.min(boundingBox.maxZ(), chunkBox.maxZ()); z++) {

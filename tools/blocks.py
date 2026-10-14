@@ -201,7 +201,7 @@ def assets_and_data(data_dir):
                                      "type=top": {"model": f"vividlands:block/{name}_top"},
                                      "type=double": {"model": base}}})
         elif kind == "stake":
-            side, end = "vividlands:block/pine_log", "vividlands:block/pine_log_top"
+            side, end = "minecraft:block/stripped_spruce_log", "minecraft:block/stripped_spruce_log_top"
 
             def el(a, b, top_tex):
                 faces = {f: {"texture": "#side"} for f in ("north", "south", "east", "west")}

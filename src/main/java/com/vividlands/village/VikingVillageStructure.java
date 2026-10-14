@@ -28,7 +28,7 @@ import java.util.Set;
 public class VikingVillageStructure extends Structure {
     public static final Codec<VikingVillageStructure> CODEC = simpleCodec(VikingVillageStructure::new);
 
-    private static final int MAX_SLOPE = 18;
+    private static final int MAX_SLOPE = 22;
 
     public VikingVillageStructure(StructureSettings settings) {
         super(settings);
@@ -44,7 +44,7 @@ public class VikingVillageStructure extends Structure {
         RandomSource rand = ctx.random();
         int cx = ctx.chunkPos().getMiddleBlockX();
         int cz = ctx.chunkPos().getMiddleBlockZ();
-        double radius = 36 + rand.nextInt(12);
+        double radius = 50 + rand.nextInt(13);
         Ring ring = new Ring(cx, cz, radius, rand);
 
         // site check: reasonably flat, mostly dry ground
@@ -189,9 +189,14 @@ public class VikingVillageStructure extends Structure {
             Collections.shuffle(houses, new java.util.Random(rand.nextLong()));
             plan.addAll(houses);
             plan.addAll(cat.pickSome("craft", 2, rand));
+            int placed = 0;
             for (String id : plan) {
-                tryPlaceInside(out, id, 60);
+                if (tryPlaceInside(out, id, 90)) {
+                    placed++;
+                }
             }
+            com.vividlands.VividLands.LOG.debug("Viking village at {}, {}: radius {}, {} buildings", cx, cz,
+                    (int) ring.radius, placed);
 
             // fields and folds outside the walls, near the gates
             List<String> fields = cat.all("field");
@@ -217,26 +222,32 @@ public class VikingVillageStructure extends Structure {
             }
         }
 
-        private void tryPlaceInside(StructurePiecesBuilder out, String id, int attempts) {
+        private boolean tryPlaceInside(StructurePiecesBuilder out, String id, int attempts) {
             Vec3i size = size(id);
             for (int i = 0; i < attempts; i++) {
                 double a = rand.nextDouble() * Math.PI * 2;
-                double maxR = ring.radiusAt(a) - Math.max(size.getX(), size.getZ()) / 2.0 - 4;
-                if (maxR < 14) {
+                double maxR = ring.radiusAt(a) - Math.min(size.getX(), size.getZ()) / 2.0 - 4;
+                if (maxR < 15) {
                     continue;
                 }
-                double r = 14 + rand.nextDouble() * (maxR - 14);
+                double r = 15 + rand.nextDouble() * (maxR - 15);
                 int bx = (int) Math.round(ring.cx + Math.cos(a) * r);
                 int bz = (int) Math.round(ring.cz + Math.sin(a) * r);
-                Rotation rot = faceToward(bx, bz, ring.cx, ring.cz);
-                int[] rect = rect(bx, bz, size, rot, 2);
-                if (!cornersInside(rect, 3) || overlaps(rect)) {
-                    continue;
-                }
-                if (place(out, id, bx, bz, rot, false)) {
-                    return;
+                Rotation facing = faceToward(bx, bz, ring.cx, ring.cz);
+                Rotation[] options = size.getZ() >= 20
+                        ? new Rotation[]{facing, facing.getRotated(Rotation.CLOCKWISE_90), facing.getRotated(Rotation.COUNTERCLOCKWISE_90)}
+                        : new Rotation[]{facing};
+                for (Rotation rot : options) {
+                    int[] rect = rect(bx, bz, size, rot, 2);
+                    if (!cornersInside(rect, 3) || overlaps(rect)) {
+                        continue;
+                    }
+                    if (place(out, id, bx, bz, rot, false)) {
+                        return true;
+                    }
                 }
             }
+            return false;
         }
 
         private int[] nearestGate(int x, int z) {
@@ -279,7 +290,7 @@ public class VikingVillageStructure extends Structure {
                     height(ctx, rect[0], rect[3]), height(ctx, rect[2], rect[3])};
             int[] sorted = ys.clone();
             java.util.Arrays.sort(sorted);
-            if (!force && (sorted[4] - sorted[0] > 7 || isWater(ctx, bx, ys[0], bz))) {
+            if (!force && (sorted[4] - sorted[0] > 9 || isWater(ctx, bx, ys[0], bz))) {
                 return false;
             }
             int y = sorted[2];

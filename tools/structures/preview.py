@@ -23,7 +23,7 @@ COLORS = {
     "black_sand": (40, 38, 46), "moss_block": (89, 109, 45), "podzol": (91, 63, 24), "peat": (56, 40, 26),
     "pine_log": (170, 96, 54), "pine_leaves": (56, 102, 82), "heather": (150, 90, 170),
     "thatch": (200, 164, 86), "thatch_stairs": (200, 164, 86), "thatch_slab": (200, 164, 86),
-    "wattle_daub": (216, 202, 174), "carved_post": (122, 84, 48), "palisade_stake": (170, 96, 54),
+    "wattle_daub": (216, 202, 174), "carved_post": (122, 84, 48), "palisade_stake": (116, 89, 52),
     "shield_red": (176, 36, 32), "shield_blue": (40, 70, 150), "shield_yellow": (226, 182, 52),
     "shield_green": (52, 110, 58), "pine_planks": (192, 152, 106), "stripped_dark_oak_log": (96, 76, 49),
     "polished_andesite_slab": (132, 134, 133), "spruce_pressure_plate": (115, 85, 49), "candle": (230, 220, 190),
