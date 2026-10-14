@@ -89,4 +89,4 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A && git commit -qm "World test ${{ github.run_id }} (seed ${{ inputs.seed }})"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:worldtest-${{ inputs.stamp_test == 'true' && 'stamps' || 'normal' }}
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:worldtest-${{ inputs.seed }}
