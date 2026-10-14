@@ -63,7 +63,7 @@
       "shift_z": "minecraft:shift_z"
     },
     "continents": "minecraft:overworld_large_biomes/continents",
-    "erosion": "minecraft:overworld_large_biomes/erosion",
+    "erosion": "vividlands:overworld/mountains/biome_erosion",
     "depth": "vividlands:overworld/depth",
     "ridges": "minecraft:overworld/ridges",
     "initial_density_without_jaggedness": {

@@ -4,7 +4,7 @@ Huge, vivid world generation for Minecraft **1.20.1** (Fabric).
 
 Taller worlds (build limit y=511), continent-sized landmasses, and new biomes inspired by Iceland, Scotland and the great deserts.
 
-## Biomes (v0.4)
+## Biomes (v0.5)
 
 44 biomes replace the vanilla overworld (vanilla caves, mushroom islands and mangroves stay). Every biome has its own water, sky, fog, grass and foliage colours.
 
@@ -15,7 +15,7 @@ Taller worlds (build limit y=511), continent-sized landmasses, and new biomes in
 - **Temperate:** alpine peaks, jagged spires, alpine meadow, endless steppe, wildflower prairie, mixed woodland, autumn woodland, old-growth oakwood, redwood giants, fen
 - **Warm & hot:** golden savanna, rainforest, cloud forest, red canyonlands, great erg, rocky hamada, salt flats
 
-Terrain: Earth-style mountain ranges built from a warped ridged multifractal - broad massifs, branching ridgelines, pointed horn summits (Matterhorn-style, where two ridge systems cross) up to about y=455, V-shaped valleys and river gorges cutting through. Vanilla plateaus are flattened out, and slopes are smoother than vanilla.
+Terrain: basin-and-range mountains, like the Wasatch rising out of the Salt Lake valley - flat basins, steep mountain fronts leaping straight out of them, long winding ranges with a jagged crest and pointed horn summits up to about y=385, and river gorges cutting through. Mountain biomes follow the actual ranges; basins keep lowland biomes.
 
 ## Installing for testing
 

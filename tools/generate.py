@@ -28,12 +28,14 @@ DETAIL_NOISE = 0.7           # strength of small-scale 3D terrain noise (vanilla
 JAGGEDNESS = 0.5             # vanilla spiky peak noise, scaled down so our ridges lead
 TOP_SLIDE = (488, 504)       # terrain fades out between these heights
 
-# Earth-style mountains (heights in "depth units": 1.0 is about 224 blocks above sea level)
-BASE_SOFT_CAP = -0.2         # vanilla terrain above this height is compressed (removes plateaus)
-BASE_SOFT_KEEP = 0.3         # how much of vanilla height above the cap survives
-MASSIF_UPLIFT = 0.15         # broad raised ground the ranges sit on
-RIDGE_WEIGHTS = (0.48, 0.23, 0.11)  # main ridges, side ridges, spurs
-HORN_PEAKS = 0.55            # pointed summits where two ridge systems cross (Matterhorn-style)
+# Basin-and-range mountains (heights in "depth units": 1.0 is about 224 blocks above sea level)
+BASE_SOFT_CAP = -0.40        # vanilla terrain above ~y82 is squashed, so basins stay flat
+BASE_SOFT_KEEP = 0.12        # how much of vanilla height above the cap survives
+RANGE_WIDTH = 0.22           # wider = broader ranges (and less basin between them)
+RANGE_BODY = 0.16            # height of the range's base block above the flats
+RANGE_CREST = 0.80           # height of the main crest along the range axis
+RANGE_SIDE_RIDGES = 0.22     # side ridges and spurs
+HORN_PEAKS = 0.50            # pointed summits along the crest (Matterhorn-style)
 WARP_BLOCKS = 110.0          # how far ranges bend and wander
 
 
@@ -153,20 +155,20 @@ def density_functions():
 
 def mountains():
     """
-    Earth-style mountain ranges: a warped ridged multifractal on top of broad massifs.
+    Basin-and-range mountains, like the Wasatch rising out of the Salt Lake valley.
 
-    Each ridge layer is (1 - |noise|)^2, so noise crossing zero traces long winding
-    ridgelines with the concave profile of real mountains. Each finer layer is weighted
-    by the one before it, so side ridges and spurs branch off high ground while valley
-    floors stay smooth. Coordinates are warped so ranges bend naturally, a slow "massif"
-    noise decides which ranges are giants, and river lines cut gorges through them.
+    Ranges follow the zero-lines of a slow, warped noise, giving long winding belts with
+    flat basins between them. Across a belt, t runs 0 (range foot) -> 1 (axis). The
+    mountain front is 1-(1-t)^3, so slopes leap straight out of the flats, and the crest
+    (t^2) carries ridged detail and pointed horn summits. Rugged regions (low erosion)
+    get the most ranges; open plains get none. River lines cut gorges through them.
     """
     noises = {
-        "mountain_ridges": (-9, [1.0, 0.3]),    # ~500 blocks between main ridges
-        "mountain_ridges_detail": (-8, [1.0]),  # side ridges
-        "mountain_ridges_fine": (-7, [1.0]),    # spurs and gullies
-        "mountain_massif": (-10, [1.0, 0.5]),   # broad uplift; which ranges are giants
-        "mountain_horn_a": (-8, [1.0]),          # two crossing ridge systems for horn peaks
+        "mountain_range_belts": (-11, [1.0, 0.35]),  # where ranges run (~1-2 km apart)
+        "mountain_ridges": (-9, [1.0, 0.3]),          # crest detail
+        "mountain_ridges_detail": (-8, [1.0]),        # side ridges and spurs
+        "mountain_massif": (-10, [1.0, 0.5]),         # which ranges are giants
+        "mountain_horn_a": (-8, [1.0]),
         "mountain_horn_b": (-8, [1.0]),
         "mountain_warp_x": (-8, [1.0, 0.5]),
         "mountain_warp_z": (-8, [1.0, 0.5]),
@@ -182,37 +184,47 @@ def mountains():
                 "shift_x": mul(WARP_BLOCKS, n("mountain_warp_x")), "shift_y": 0.0,
                 "shift_z": mul(WARP_BLOCKS, n("mountain_warp_z"))}
 
-    def signal(name):
-        return {"type": mc("square"),
-                "argument": clamp(add(1.0, mul(-1.0, abs_(warped(name)))), 0.0, 1.0)}
+    def one_minus_abs(x, scale=1.0):
+        return clamp(add(1.0, mul(-scale, abs_(x))), 0.0, 1.0)
+
+    def sq(x):
+        return {"type": mc("square"), "argument": x}
 
     def cached(x):
         return {"type": mc("cache_2d"), "argument": x}
 
     d = f"{MODID}/worldgen/density_function/overworld/mountains"
     ref = lambda x: vl(f"overworld/mountains/{x}")  # noqa: E731
-    write(f"{d}/ridge.json", cached(signal("mountain_ridges")))
-    write(f"{d}/ridge_detail.json", cached(mul(signal("mountain_ridges_detail"),
+
+    # position across the range belt: 1 on the axis, 0 at the foot
+    write(f"{d}/axis.json", cached(one_minus_abs(warped("mountain_range_belts"), 1.0 / RANGE_WIDTH)))
+    t = ref("axis")
+    foot = add(1.0, mul(-1.0, t))                         # 1 - t
+    write(f"{d}/front.json", cached(add(1.0, mul(-1.0, mul(sq(foot), foot)))))  # 1 - (1-t)^3
+    crest = sq(t)
+    write(f"{d}/ridge.json", cached(sq(one_minus_abs(warped("mountain_ridges")))))
+    write(f"{d}/ridge_detail.json", cached(mul(sq(one_minus_abs(warped("mountain_ridges_detail"))),
                                                clamp(mul(2.0, ref("ridge")), 0.0, 1.0))))
-    write(f"{d}/ridge_fine.json", cached(mul(signal("mountain_ridges_fine"),
-                                             clamp(mul(2.0, ref("ridge_detail")), 0.0, 1.0))))
-    # Horn peaks: where both horn ridge systems crest at once, a sharp point forms with
-    # ridges radiating from it. Raised to the 4th power so the summit is narrow, and only
-    # allowed on main ridges.
-    horn_cross = clamp(mul(clamp(add(1.0, mul(-1.0, abs_(warped("mountain_horn_a")))), 0.0, 1.0),
-                           clamp(add(1.0, mul(-1.0, abs_(warped("mountain_horn_b")))), 0.0, 1.0)), 0.0, 1.0)
-    write(f"{d}/horn.json", cached(mul({"type": mc("square"), "argument": {"type": mc("square"), "argument": horn_cross}},
-                                       clamp(mul(2.0, ref("ridge")), 0.0, 1.0))))
-    a, b, c = RIDGE_WEIGHTS
-    ridged = add(mul(a, ref("ridge")), add(mul(b, ref("ridge_detail")), mul(c, ref("ridge_fine"))))
-    massif = clamp(add(0.55, mul(0.7, n("mountain_massif"))), 0.15, 1.0)
-    shape = mul(massif, add(MASSIF_UPLIFT, add(ridged, mul(HORN_PEAKS, ref("horn")))))
-    # Where ranges rise: rugged land (low erosion) away from the coast.
-    rugged = clamp(mul(-1.6, mc("overworld_large_biomes/erosion")), 0.0, 1.0)
+    write(f"{d}/horn.json", cached(sq(sq(clamp(mul(one_minus_abs(warped("mountain_horn_a")),
+                                                   one_minus_abs(warped("mountain_horn_b"))), 0.0, 1.0)))))
+    size = clamp(add(0.75, mul(0.6, n("mountain_massif"))), 0.4, 1.0)
+    shape = add(RANGE_BODY,
+                add(mul(RANGE_CREST, mul(crest, add(0.5, mul(0.5, ref("ridge"))))),
+                    add(mul(RANGE_SIDE_RIDGES, mul(ref("ridge_detail"), t)),
+                        mul(HORN_PEAKS, mul(ref("horn"), crest)))))
+    # where ranges may rise: rugged regions, away from the coast
+    rugged = clamp(add(0.9, mul(-1.3, mc("overworld_large_biomes/erosion"))), 0.0, 1.0)
     inland = clamp(mul(3.0, add(mc("overworld_large_biomes/continents"), 0.05)), 0.0, 1.0)
+    write(f"{d}/presence.json", cached(mul(mul(rugged, inland), ref("front"))))
     # River lines (vanilla weirdness near zero) carve gorges through the ranges.
     gorge = clamp(mul(8.0, add(abs_(mc("overworld/ridges")), -0.03)), 0.0, 1.0)
-    write(f"{d}/height.json", cached(mul(mul(mul(rugged, inland), gorge), shape)))
+    write(f"{d}/height.json", cached(mul(mul(ref("presence"), gorge), mul(size, shape))))
+    # Biomes read this instead of raw erosion, so mountain biomes sit on the actual ranges.
+    # Flat basins never count as mountain country (erosion floored at -0.2 = lowland);
+    # the ranges themselves push erosion down into highland and mountain biomes.
+    write(f"{d}/biome_erosion.json", cached(add(
+        {"type": mc("max"), "argument1": mc("overworld_large_biomes/erosion"), "argument2": -0.2},
+        mul(-2.0, ref("presence")))))
 
 
 def slides(inner):
@@ -259,7 +271,7 @@ def noise_settings():
         "temperature": climate("temperature_large"),
         "vegetation": climate("vegetation_large"),
         "continents": mc("overworld_large_biomes/continents"),
-        "erosion": mc("overworld_large_biomes/erosion"),
+        "erosion": vl("overworld/mountains/biome_erosion"),
         "depth": vl("overworld/depth"),
         "ridges": mc("overworld/ridges"),
         "initial_density_without_jaggedness": initial,

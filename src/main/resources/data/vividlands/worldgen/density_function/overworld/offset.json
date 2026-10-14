@@ -9,17 +9,17 @@
         "argument1": {
           "type": "minecraft:min",
           "argument1": "minecraft:overworld_large_biomes/offset",
-          "argument2": -0.2
+          "argument2": -0.4
         },
         "argument2": {
           "type": "minecraft:mul",
-          "argument1": 0.3,
+          "argument1": 0.12,
           "argument2": {
             "type": "minecraft:max",
             "argument1": {
               "type": "minecraft:add",
               "argument1": "minecraft:overworld_large_biomes/offset",
-              "argument2": 0.2
+              "argument2": 0.4
             },
             "argument2": 0.0
           }
