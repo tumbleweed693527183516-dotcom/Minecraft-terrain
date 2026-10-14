@@ -232,7 +232,7 @@ def mountains():
                                       "argument2": ref("stamps")}))
     # anything mountainous (range or real stamp) counts as mountain country for biomes
     write(f"{d}/mountain_presence.json", cached({"type": mc("max"), "argument1": ref("presence"),
-                                                 "argument2": clamp(mul(3.0, ref("stamps")), 0.0, 1.0)}))
+                                                 "argument2": clamp(mul(2.5, add(ref("stamps"), -0.08)), 0.0, 1.0)}))
     # Biomes read this instead of raw erosion, so mountain biomes sit on the actual ranges.
     # Flat basins never count as mountain country (erosion floored at -0.2 = lowland);
     # the ranges themselves push erosion down into highland and mountain biomes.
@@ -782,14 +782,14 @@ def define_biomes():
       veg=["trees_spruce_dense", "sweet_berries", "ferns"], tags=["forest", "taiga", "cold", "snowy", "conifer"])
 
     # ---------------- cold (Iceland & Scotland) ----------------
-    B("volcanic_cones", temp=0.2, downfall=0.3, colors=colors("#8fa3d1", "#b9aa9c", "#2fb8c9", "#0a3a44", "#7a9a3a", "#5e8a2e"),
+    B("volcanic_cones", temp=0.36, downfall=0.3, colors=colors("#8fa3d1", "#b9aa9c", "#2fb8c9", "#0a3a44", "#7a9a3a", "#5e8a2e"),
       surface=seq(cond(y_above(330), cond(not_(STEEP), block("snow_block"))), cond(STEEP, block("basalt", axis="y")),
                   cond(noise("surface", -0.06, 0.06), block("magma_block")),
                   cond(noise("surface_secondary", 0.25), block("tuff")), block("blackstone")),
       under=block("blackstone"), underwater=block("blackstone"), mobs="mountain",
       veg=["lava_pools", "spires_basalt"], particle=("white_ash", 0.004),
       tags=["mountain", "peak", "cold", "dry", "volcanic", "rocky"])
-    B("highland_crags", temp=0.25, downfall=0.7, colors=colors("#9fbbe0", "#c8d2dc", "#3a90c8", "#0e3048", "#8f8f5a", "#6f7f3a"),
+    B("highland_crags", temp=0.33, downfall=0.7, colors=colors("#9fbbe0", "#c8d2dc", "#3a90c8", "#0e3048", "#8f8f5a", "#6f7f3a"),
       surface=snowcap(300, patches((0.6, GRAVEL), default=GRASS)), mobs="mountain",
       veg=["boulders_mossy", "heather", "grass"], tags=["mountain", "peak", "cold", "rocky"])
     B("basalt_highlands", temp=0.3, downfall=0.6, colors=colors("#9ec4ff", "#c9d6e0", "#1ec8d8", "#0b4a55", "#8fd14f", "#6fbf3f"),
@@ -812,13 +812,13 @@ def define_biomes():
       tags=["forest", "taiga", "cold", "wet", "conifer"])
 
     # ---------------- temperate ----------------
-    B("alpine_peaks", temp=0.1, downfall=0.6, colors=colors("#7fb2ff", "#d0e0f5", "#40b8ff", "#0e3a5e", "#7fc04a", "#5fa83a"),
+    B("alpine_peaks", temp=0.375, downfall=0.6, colors=colors("#7fb2ff", "#d0e0f5", "#40b8ff", "#0e3a5e", "#7fc04a", "#5fa83a"),
       surface=seq(cond(STEEP, seq(cond(noise("calcite", -0.02, 0.02), block("calcite")), STONE)),
                   cond(y_above(320), block("snow_block")), cond(y_above(250), patches((0.0, GRAVEL), default=STONE)),
                   GRASS),
       under=seq(cond(STEEP, STONE), cond(y_above(250), STONE), DIRT), mobs="mountain",
       veg=["trees_spruce_rare", "flowers_meadow", "grass"], tags=["mountain", "peak", "temperate", "snowy"])
-    B("jagged_spires", temp=0.0, downfall=0.6, colors=colors("#7fb2ff", "#d0e0f5", "#40b8ff", "#0e3a5e", "#7fc04a", "#5fa83a"),
+    B("jagged_spires", temp=0.35, downfall=0.6, colors=colors("#7fb2ff", "#d0e0f5", "#40b8ff", "#0e3a5e", "#7fc04a", "#5fa83a"),
       surface=seq(cond(STEEP, seq(cond(noise("calcite", -0.03, 0.03), block("calcite")), STONE)),
                   cond(y_above(290), block("snow_block")), STONE),
       under=STONE, mobs="mountain", tags=["mountain", "peak", "temperate", "snowy", "rocky"])

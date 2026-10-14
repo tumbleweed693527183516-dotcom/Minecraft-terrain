@@ -1,6 +1,6 @@
 {
   "has_precipitation": true,
-  "temperature": 0.0,
+  "temperature": 0.35,
   "downfall": 0.6,
   "effects": {
     "sky_color": 8368895,

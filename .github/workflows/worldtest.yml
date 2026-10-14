@@ -82,7 +82,7 @@ jobs:
       - name: Publish results to the worldtest-results branch
         if: always()
         run: |
-          mkdir -p results && cp out/*.png out/*.txt results/ 2>/dev/null || true
+          mkdir -p results && cp out/*.png out/*.txt out/*.npz out/names.json results/ 2>/dev/null || true
           tail -n 400 out/server.log > results/server_tail.log 2>/dev/null || true
           cd results
           git init -q && git checkout -q -b worldtest-results

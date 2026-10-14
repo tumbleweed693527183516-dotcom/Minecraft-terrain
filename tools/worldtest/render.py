@@ -131,7 +131,12 @@ def main(src, data_dir):
     for k, (r, c) in enumerate(picks):
         r0, c0 = int(np.clip(r - win // 2, 0, H - win)), int(np.clip(c - win // 2, 0, W - win))
         z = hsm[r0:r0 + win:2, c0:c0 + win:2]
-        cc = img[r0:r0 + win:2, c0:c0 + win:2] / 255.0
+        t = np.clip((z - 60) / 380, 0, 1)[..., None]
+        low, mid, rock, snow = (np.array(v, float) / 255 for v in ((96, 140, 70), (150, 140, 100),
+                                                                   (135, 130, 125), (245, 248, 255)))
+        cc = np.where(t < 0.3, low + (mid - low) * t / 0.3,
+                      np.where(t < 0.55, mid + (rock - mid) * (t - 0.3) / 0.25,
+                               np.where(t < 0.62, rock, snow)))
         fig = plt.figure(figsize=(12, 8), dpi=110)
         ax = fig.add_subplot(projection="3d")
         X, Y = np.meshgrid(np.arange(z.shape[1]) * 2, np.arange(z.shape[0]) * 2)
