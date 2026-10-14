@@ -1,0 +1,16 @@
+{
+  "natural_starts": {
+    "vividlands:runestone": 43,
+    "vividlands:longhouse": 23,
+    "vividlands:longship": 1,
+    "vividlands:turf_house": 2,
+    "vividlands:viking_village": 1
+  },
+  "failures": []
+}
+located vividlands:viking_village -1328 -1600 not generated {}
+located vividlands:longhouse -304 64 generated {'minecraft:sheep': 2, 'minecraft:wolf': 4, 'minecraft:cow': 3, 'minecraft:chest_minecart': 6, 'minecraft:villager': 3}
+located vividlands:turf_house -1216 -1136 not generated {}
+located vividlands:longship 1152 3024 not generated {}
+located vividlands:runestone 144 64 generated {'minecraft:rabbit': 3, 'minecraft:item': 8, 'minecraft:pig': 1}
+natural vividlands:viking_village -1320 -1592 not generated {}
