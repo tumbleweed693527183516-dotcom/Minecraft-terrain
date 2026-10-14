@@ -77,20 +77,24 @@ public class SiteStructure extends Structure {
         // the footprint itself must be dry and fairly level
         int inner = Math.max(2, Math.min(size.getX(), size.getZ()) / 2 - 2);
         int[] ys = new int[9];
-        int n = 0;
+        int n = 0, wet = 0;
         for (int dx = -1; dx <= 1; dx++) {
             for (int dz = -1; dz <= 1; dz++) {
                 int x = cx + dx * inner, z = cz + dz * inner;
                 int y = VikingVillageStructure.height(ctx, x, z);
                 if (VikingVillageStructure.isWater(ctx, x, y, z)) {
-                    return Optional.empty();
+                    if (dx == 0 && dz == 0) {
+                        return Optional.empty();
+                    }
+                    wet++;
                 }
                 ys[n++] = y;
             }
         }
         int[] sorted = ys.clone();
         Arrays.sort(sorted);
-        if (sorted[8] - sorted[0] > maxSlope) {
+        // ignore the single highest and lowest sample (a boulder, a creek bed)
+        if (wet > (minWater > 0 ? 3 : 1) || sorted[7] - sorted[1] > maxSlope) {
             return Optional.empty();
         }
         int y = sorted[4] - sink;

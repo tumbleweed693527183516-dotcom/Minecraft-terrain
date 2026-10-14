@@ -8,6 +8,6 @@
     "vividlands:site/fishing_hamlet"
   ],
   "sink": 3,
-  "max_slope": 7,
-  "min_water": 6
+  "max_slope": 10,
+  "min_water": 5
 }

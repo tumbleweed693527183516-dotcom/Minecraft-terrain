@@ -8,6 +8,6 @@
     "vividlands:site/thing_site"
   ],
   "sink": 0,
-  "max_slope": 7,
+  "max_slope": 10,
   "min_water": 0
 }

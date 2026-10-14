@@ -34,6 +34,16 @@ if [ -f commands.txt ]; then
     echo "$cmd" > console
     case "$cmd" in forceload*) sleep 20 ;; *) sleep 25 ;; esac
   done < commands.txt
+  # load the area around every far-away located structure so it generates naturally
+  grep -oE "nearest [a-z_:]+ is at \[-?[0-9]+, ~, -?[0-9]+\] \([0-9]+ blocks" server.log | \
+    sed -E 's/.*\[(-?[0-9]+), ~, (-?[0-9]+)\] \(([0-9]+).*/\1 \2 \3/' | while read -r x z d; do
+      if [ "$d" -gt "$((RADIUS - 100))" ]; then
+        echo "forceload add $((x-88)) $((z-88)) $((x+88)) $((z+88))" > console
+        sleep 40
+        echo "forceload remove all" > console
+        sleep 2
+      fi
+    done
   grep -E "Generated structure|nearest|Could not find|Failed|Unknown|Incorrect|not loaded|forceload|Marked" server.log | tail -n 40 || true
 fi
 echo "save-all flush" > console

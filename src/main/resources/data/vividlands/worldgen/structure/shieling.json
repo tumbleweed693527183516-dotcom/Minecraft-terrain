@@ -8,6 +8,6 @@
     "vividlands:site/shieling"
   ],
   "sink": 0,
-  "max_slope": 10,
+  "max_slope": 14,
   "min_water": 0
 }

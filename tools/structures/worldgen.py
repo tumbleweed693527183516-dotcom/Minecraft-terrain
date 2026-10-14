@@ -70,11 +70,11 @@ HEIGHTMAP = {"shipwreck": "OCEAN_FLOOR_WG"}
 # Standalone sites placed by the Java type vividlands:site (dry, level ground; some beside water)
 # name: (templates, sink, max slope, min water samples, spacing, separation, salt)
 SITES = {
-    "stave_church": (["site/stave_church"], 0, 9, 0, 36, 14, 1946157320),
-    "mead_hall": (["site/mead_hall"], 0, 9, 0, 40, 16, 1946157321),
-    "fishing_hamlet": (["site/fishing_hamlet"], 3, 7, 6, 22, 8, 1946157322),
-    "thing_site": (["site/thing_site"], 0, 7, 0, 40, 16, 1946157323),
-    "shieling": (["site/shieling"], 0, 10, 0, 18, 6, 1946157324),
+    "stave_church": (["site/stave_church"], 0, 12, 0, 34, 14, 1946157320),
+    "mead_hall": (["site/mead_hall"], 0, 12, 0, 32, 16, 1946157321),
+    "fishing_hamlet": (["site/fishing_hamlet"], 3, 10, 5, 20, 8, 1946157322),
+    "thing_site": (["site/thing_site"], 0, 10, 0, 34, 16, 1946157323),
+    "shieling": (["site/shieling"], 0, 14, 0, 18, 6, 1946157324),
 }
 
 

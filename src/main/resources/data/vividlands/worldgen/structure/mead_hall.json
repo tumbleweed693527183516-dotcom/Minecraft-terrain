@@ -8,6 +8,6 @@
     "vividlands:site/mead_hall"
   ],
   "sink": 0,
-  "max_slope": 9,
+  "max_slope": 12,
   "min_water": 0
 }

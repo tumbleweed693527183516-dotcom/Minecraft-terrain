@@ -56,8 +56,8 @@ public class VikingVillageStructure extends Structure {
         boolean fort = fortress();
         double big = fort ? 54 + rand.nextInt(5) : 50 + rand.nextInt(13);
         Ring ringShape = fort ? new Ring(cx, cz, big, 0, 0, 0, 0) : new Ring(cx, cz, big, rand);
-        double[] radii = fort ? new double[]{big, big - 8} : new double[]{big, big - 10, big - 18};
-        int maxSlope = fort ? 26 : MAX_SLOPE;
+        double[] radii = fort ? new double[]{big, big - 8, big - 14} : new double[]{big, big - 10, big - 18};
+        int maxSlope = MAX_SLOPE;
         // try a large village first, then shrink to fit rougher ground
         for (double radius : radii) {
             Ring ring = new Ring(cx, cz, radius, ringShape.a1, ringShape.p1, ringShape.a2, ringShape.p2);
@@ -76,7 +76,7 @@ public class VikingVillageStructure extends Structure {
                 }
             }
             Collections.sort(heights);
-            if (wet > (fort ? 3 : 5) || heights.get(heights.size() - 3) - heights.get(2) > maxSlope) {
+            if (wet > (fort ? 4 : 5) || heights.get(heights.size() - 3) - heights.get(2) > maxSlope) {
                 continue;
             }
             int groundY = heights.get(heights.size() / 2);
