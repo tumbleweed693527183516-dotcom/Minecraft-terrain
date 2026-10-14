@@ -154,6 +154,15 @@
           ]
         }
       ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "vividlands:chests/extra/everywhere"
+        }
+      ]
     }
   ]
 }

@@ -3,22 +3,49 @@
     "id": "vividlands:viking/great_hall",
     "role": "core",
     "size": [
-      18,
+      24,
       16,
-      45
+      50
     ]
   },
   {
     "id": "vividlands:viking/longhouse_large_shingle",
     "role": "house",
     "size": [
-      16,
+      20,
+      14,
+      38
+    ]
+  },
+  {
+    "id": "vividlands:viking/longhouse_large_thatch",
+    "role": "house",
+    "size": [
+      20,
+      14,
+      34
+    ]
+  },
+  {
+    "id": "vividlands:viking/longhouse_medium_turf",
+    "role": "house",
+    "size": [
+      18,
+      15,
+      29
+    ]
+  },
+  {
+    "id": "vividlands:viking/longhouse_medium_thatch",
+    "role": "house",
+    "size": [
+      17,
       14,
       33
     ]
   },
   {
-    "id": "vividlands:viking/longhouse_large_thatch",
+    "id": "vividlands:viking/longhouse_medium_shingle",
     "role": "house",
     "size": [
       16,
@@ -27,145 +54,118 @@
     ]
   },
   {
-    "id": "vividlands:viking/longhouse_medium_turf",
-    "role": "house",
-    "size": [
-      16,
-      15,
-      27
-    ]
-  },
-  {
-    "id": "vividlands:viking/longhouse_medium_thatch",
-    "role": "house",
-    "size": [
-      14,
-      14,
-      25
-    ]
-  },
-  {
-    "id": "vividlands:viking/longhouse_medium_shingle",
-    "role": "house",
-    "size": [
-      14,
-      14,
-      23
-    ]
-  },
-  {
     "id": "vividlands:viking/longhouse_small_thatch",
     "role": "house",
     "size": [
-      12,
+      16,
       13,
-      17
+      24
     ]
   },
   {
     "id": "vividlands:viking/longhouse_small_turf",
     "role": "house",
     "size": [
+      15,
       14,
-      14,
-      19
+      21
     ]
   },
   {
     "id": "vividlands:viking/farmstead_a",
     "role": "house",
     "size": [
-      26,
+      33,
       10,
-      16
+      20
     ]
   },
   {
     "id": "vividlands:viking/farmstead_b",
     "role": "house",
     "size": [
-      31,
+      35,
       10,
-      16
+      21
     ]
   },
   {
     "id": "vividlands:viking/turf_cottage_a",
     "role": "house",
     "size": [
-      14,
+      21,
       10,
-      14
+      18
     ]
   },
   {
     "id": "vividlands:viking/turf_cottage_b",
     "role": "house",
     "size": [
-      14,
+      20,
       10,
-      14
+      18
     ]
   },
   {
     "id": "vividlands:viking/pit_house",
     "role": "craft",
     "size": [
-      9,
+      16,
       6,
-      10
+      17
     ]
   },
   {
     "id": "vividlands:viking/forge",
     "role": "craft",
     "size": [
-      15,
+      20,
       13,
-      14
+      18
     ]
   },
   {
     "id": "vividlands:viking/stabbur_small",
     "role": "craft",
     "size": [
-      9,
       15,
-      9
+      15,
+      13
     ]
   },
   {
     "id": "vividlands:viking/stabbur_large",
     "role": "craft",
     "size": [
-      13,
+      16,
       20,
-      12
+      14
     ]
   },
   {
     "id": "vividlands:viking/byre",
     "role": "craft",
     "size": [
-      11,
+      16,
       10,
-      21
+      24
     ]
   },
   {
     "id": "vividlands:viking/granary",
     "role": "craft",
     "size": [
-      9,
+      13,
       11,
-      10
+      14
     ]
   },
   {
     "id": "vividlands:viking/hof",
     "role": "civic",
     "size": [
-      13,
+      17,
       20,
       21
     ]
@@ -174,27 +174,27 @@
     "id": "vividlands:viking/market",
     "role": "civic",
     "size": [
-      17,
+      26,
       7,
-      6
+      9
     ]
   },
   {
     "id": "vividlands:viking/training_yard",
     "role": "civic",
     "size": [
-      17,
+      23,
       6,
-      13
+      17
     ]
   },
   {
     "id": "vividlands:viking/drying_racks",
     "role": "craft",
     "size": [
-      10,
+      18,
       5,
-      8
+      16
     ]
   },
   {
@@ -219,7 +219,7 @@
     "id": "vividlands:viking/watchtower",
     "role": "wall_tower",
     "size": [
-      9,
+      11,
       21,
       9
     ]
@@ -228,7 +228,7 @@
     "id": "vividlands:viking/field_a",
     "role": "field",
     "size": [
-      15,
+      17,
       4,
       12
     ]
@@ -237,7 +237,7 @@
     "id": "vividlands:viking/field_b",
     "role": "field",
     "size": [
-      11,
+      13,
       4,
       14
     ]

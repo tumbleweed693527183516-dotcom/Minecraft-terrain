@@ -22,6 +22,8 @@ public final class ModStructures {
             id("village_template"), (StructurePieceType.StructureTemplateType) TemplatePiece::new);
     public static final StructurePieceType PALISADE_PIECE = Registry.register(BuiltInRegistries.STRUCTURE_PIECE,
             id("village_palisade"), (StructurePieceType.ContextlessType) PalisadePiece::new);
+    public static final StructurePieceType GRADE_PIECE = Registry.register(BuiltInRegistries.STRUCTURE_PIECE,
+            id("village_grade"), (StructurePieceType.ContextlessType) GradePiece::new);
     public static final StructurePieceType PATH_PIECE = Registry.register(BuiltInRegistries.STRUCTURE_PIECE,
             id("village_path"), (StructurePieceType.ContextlessType) PathPiece::new);
 

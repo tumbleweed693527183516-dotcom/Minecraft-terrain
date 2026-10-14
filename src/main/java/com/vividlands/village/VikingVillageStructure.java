@@ -28,7 +28,7 @@ import java.util.Set;
 public class VikingVillageStructure extends Structure {
     public static final Codec<VikingVillageStructure> CODEC = simpleCodec(VikingVillageStructure::new);
 
-    private static final int MAX_SLOPE = 34;
+    private static final int MAX_SLOPE = 24;
 
     public VikingVillageStructure(StructureSettings settings) {
         super(settings);
@@ -154,6 +154,8 @@ public class VikingVillageStructure extends Structure {
         void build(StructurePiecesBuilder out) {
             VillageCatalogue cat = VillageCatalogue.get();
             int cx = ring.cx, cz = ring.cz;
+            // level the site first, so every building, wall and path lands on finished ground
+            out.addPiece(new GradePiece(ring, groundY, margin()));
 
             // plaza in the middle
             place(out, cat.pick("plaza", rand), cx, cz, Rotation.getRandom(rand), false);
@@ -319,14 +321,25 @@ public class VikingVillageStructure extends Structure {
         }
 
         /** Places a template centred on (bx, bz) at the local ground height. */
+        int margin() {
+            return fort ? 10 : 3;
+        }
+
+        /** Ground height after the site is graded (see GradePiece). */
+        int gradedHeight(int x, int z) {
+            double w = GradePiece.weight(ring, margin(), x + 0.5, z + 0.5);
+            return w >= 0.999 ? groundY : GradePiece.graded(height(ctx, x, z), groundY, w);
+        }
+
         private boolean place(StructurePiecesBuilder out, String id, int bx, int bz, Rotation rot, boolean force) {
             Vec3i size = size(id);
             int[] rect = rect(bx, bz, size, rot, 0);
-            int[] ys = {height(ctx, bx, bz), height(ctx, rect[0], rect[1]), height(ctx, rect[2], rect[1]),
-                    height(ctx, rect[0], rect[3]), height(ctx, rect[2], rect[3])};
+            int[] ys = {gradedHeight(bx, bz), gradedHeight(rect[0], rect[1]), gradedHeight(rect[2], rect[1]),
+                    gradedHeight(rect[0], rect[3]), gradedHeight(rect[2], rect[3])};
             int[] sorted = ys.clone();
             java.util.Arrays.sort(sorted);
-            if (!force && (sorted[4] - sorted[0] > 12 || isWater(ctx, bx, ys[0], bz))) {
+            boolean onPlateau = sorted[4] == groundY && sorted[0] == groundY;
+            if (!force && !onPlateau && (sorted[4] - sorted[0] > 8 || isWater(ctx, bx, height(ctx, bx, bz), bz))) {
                 return false;
             }
             int y = sorted[2];

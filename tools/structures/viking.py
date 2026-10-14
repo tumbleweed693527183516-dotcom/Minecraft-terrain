@@ -80,12 +80,53 @@ def hall(name, length, half_mid, half_end, roof, walls, wall_h=3, byre=False, lo
         b.door(x, 2, zm, "west" if side < 0 else "east")
         if walls == "turf":
             b.air(x + side, 2, zm, x + side, 3, zm)
-    # doorstep and flanking carved posts at the front
-    for x in (cx - 2, cx + 2):
-        if x != cx:
+    # doorstep and flanking carved posts at the front (turf halls; timber halls get a porch below)
+    if walls == "turf":
+        for x in (cx - 2, cx + 2):
             b.set(x, 2, Z0 - 1, f"{NS}:carved_post", axis="y")
             b.set(x, 3, Z0 - 1, "lantern", hanging=False, waterlogged=False)
-    slab(b, cx, 1, Z0 - 1, "cobblestone_slab")
+        slab(b, cx, 1, Z0 - 1, "cobblestone_slab")
+
+    # covered entrance porch on timber halls: two posts, a little gabled roof, steps and banners
+    if walls != "turf":
+        pz = Z0 - 3
+        for x in (cx - 2, cx + 2):
+            b.fill(x, 1, pz, x, 3, pz, f"{NS}:carved_post", axis="y")
+            b.set(x, 1, Z0 - 2, "spruce_fence", **FENCE)
+        for z in (pz, Z0 - 2):
+            stair(b, cx - 3, 4, z, "spruce_stairs", "east")
+            stair(b, cx + 3, 4, z, "spruce_stairs", "west")
+            b.set(cx - 2, 4, z, "spruce_planks")
+            b.set(cx + 2, 4, z, "spruce_planks")
+            stair(b, cx - 2, 5, z, "dark_oak_stairs", "east")
+            stair(b, cx + 2, 5, z, "dark_oak_stairs", "west")
+            stair(b, cx - 1, 5, z, "dark_oak_stairs", "east") if half_mid < 5 else b.set(cx - 1, 5, z, "dark_oak_planks")
+            stair(b, cx + 1, 5, z, "dark_oak_stairs", "west") if half_mid < 5 else b.set(cx + 1, 5, z, "dark_oak_planks")
+            slab(b, cx, 6, z, "dark_oak_slab")
+            b.air(cx - 1, 2, z, cx + 1, 4, z)
+        crossed_horns(b, cx, 7, pz, "out")
+        for z in range(pz, Z0):
+            for x in range(cx - 1, cx + 2):
+                b.set(x, 0, z, "cobblestone")
+                slab(b, x, 1, z, "spruce_slab", "bottom") if z > pz else stair(b, x, 1, z, "cobblestone_stairs", "south")
+        b.banner(cx - 2, 3, pz - 1, "north", "red" if salt % 2 else "blue")
+        b.banner(cx + 2, 3, pz - 1, "north", "red" if salt % 2 else "blue")
+        hanging_lantern(b, cx, 4, Z0 - 2, length=1)
+
+    # painted shields hung outside along the long walls, under the eaves
+    if walls != "turf":
+        for z in range(Z0 + 1, Z1, 3):
+            for side in (-1, 1):
+                x = cx + side * (hw(z) + 1)
+                if b.get(x, wall_top, z) is None and b.get(x - side, wall_top, z) not in (None, "minecraft:air"):
+                    shield(b, x, wall_top, z, "west" if side < 0 else "east", salt + z)
+
+    # a smoke vent on the ridge above the hearth: a lit campfire sends a plume up over the roof
+    vz = (Z0 + Z1) // 2 + 2
+    if vz in ridge:
+        b.set(cx, ridge[vz] + 1, vz, "campfire", lit=True, signal_fire=False, facing="north", waterlogged=False)
+        for dx in (-1, 1):
+            slab(b, cx + dx, ridge[vz] + 1, vz, "cobblestone_slab")
 
     # outer posts under the eaves (Trelleborg-style), every 4 blocks
     if walls in ("timber", "plank", "stave"):
@@ -976,7 +1017,8 @@ def catalogue():
     c = {}
 
     def add(n, b, role):
-        c[f"viking/{n}"] = (b, role)
+        from .dress import dress
+        c[f"viking/{n}"] = (dress(b, f"viking/{n}", role, salt=sum(map(ord, n))), role)
 
     add("great_hall", hall("great_hall", 43, 7, 5, "shingle", "stave", wall_h=4, great=True, salt=1, villagers=4),
         "core")

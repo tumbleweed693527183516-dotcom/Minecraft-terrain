@@ -669,7 +669,9 @@ def frozen_longship(salt):
 
 def catalogue2():
     from .viking import hall
-    great = hall("great_hall_mh", 43, 7, 5, "shingle", "stave", wall_h=4, great=True, salt=11, villagers=4)
+    from .dress import dress_exterior
+    great = dress_exterior(hall("great_hall_mh", 43, 7, 5, "shingle", "stave", wall_h=4, great=True, salt=11,
+                                villagers=4), "core", 11)
     return {
         "dungeon/burial_mound": burial_mound(0),
         "dungeon/burial_mound_b": burial_mound(3),

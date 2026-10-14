@@ -196,11 +196,38 @@ LOOT = {
         item("iron_axe", 3, extra=ENCHANT), item("rotten_flesh", 6, 1, 4), item("prismarine_crystals", 4, 1, 4),
         item("nautilus_shell", 2), item("heart_of_the_sea", 1), item("compass", 3), item("map", 3),
         item("diamond", 1, 1, 2)]),
+    "guard": table((3, 6), [
+        item("arrow", 10, 4, 16), item("bow", 4), item("crossbow", 2), item("iron_axe", 4), item("iron_sword", 3),
+        item("shield", 4), item("chainmail_helmet", 3), item("leather_chestplate", 3), item("bread", 6, 1, 3),
+        item("cooked_mutton", 5, 1, 3), item("torch", 5, 2, 6), item("goat_horn", 1), item("spyglass", 1)]),
+    "farm": table((3, 6), [
+        item("wheat_seeds", 10, 2, 8), item("wheat", 8, 2, 6), item("carrot", 6, 1, 4), item("potato", 6, 1, 4),
+        item("beetroot_seeds", 5, 1, 6), item("bone_meal", 6, 1, 4), item("iron_hoe", 2), item("shears", 2),
+        item("white_wool", 4, 1, 3), item("lead", 2), item("pumpkin_seeds", 2, 1, 3)]),
     "ship_cargo": table((3, 6), [
         item("wheat", 6, 4, 12), item("white_wool", 6, 2, 8), item("leather", 6, 2, 6), item("cod", 6, 3, 9),
         item("salmon", 5, 3, 8), item("iron_ingot", 4, 1, 4), item("honeycomb", 3, 1, 4), item("barrel", 2),
         item("lead", 3, 1, 2)]),
 }
+
+
+# Which default loot each village building's own table draws from
+VILLAGE_LOOT = [("great_hall", "great_hall"), ("longhouse", "longhouse"), ("farmstead", "turf_house"),
+                ("turf_cottage", "turf_house"), ("forge", "smithy"), ("hof", "hof"), ("gatehouse", "guard"),
+                ("watchtower", "guard"), ("training_yard", "guard"), ("field", "farm"), ("sheep_fold", "farm"),
+                ("byre", "farm"), ("", "storehouse")]
+
+
+def ref(name):
+    return {"rolls": 1, "entries": [{"type": "minecraft:loot_table", "name": f"{NS}:{name}"}]}
+
+
+EMPTY = {"type": "minecraft:chest", "pools": []}
+
+
+def village_table(building):
+    base = next(t for key, t in VILLAGE_LOOT if key in building)
+    return {"type": "minecraft:chest", "pools": [ref(f"chests/{base}"), ref("chests/extra/village")]}
 
 
 def write(data_dir, biome_exists):
@@ -266,7 +293,15 @@ def write(data_dir, biome_exists):
         biomes = [f"{NS}:{b}" for b in STRUCTURE_BIOMES[name] if biome_exists(b)]
         _w(out / "tags/worldgen/biome/has_structure" / f"{name}.json", {"replace": False, "values": biomes})
     for name, t in LOOT.items():
+        t = dict(t, pools=t["pools"] + [ref("chests/extra/everywhere")])
         _w(out / "loot_tables/chests" / f"{name}.json", t)
+    # every village building has its own table (default contents + the shared village extra)
+    for name in catalogue():
+        short = name.split("/")[-1]
+        _w(out / "loot_tables/chests/village" / f"{short}.json", village_table(short))
+    # empty hook tables: override these in a datapack to add your own loot everywhere at once
+    for hook in ("village", "everywhere"):
+        _w(out / "loot_tables/chests/extra" / f"{hook}.json", EMPTY)
     return sizes
 
 
