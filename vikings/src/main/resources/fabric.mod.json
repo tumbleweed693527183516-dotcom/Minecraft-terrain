@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "vividlands_vikings",
+  "version": "${version}",
+  "name": "Vivid Lands: Vikings",
+  "description": "Add-on for Vivid Lands: full-size walled Viking villages in six regional styles (replacing vanilla villages), Trelleborg ring fortresses, burial mounds and ship burials, stave churches, mead halls, fishing hamlets, giant dragon warships and more.",
+  "authors": [
+    "tumbleweed693527183516-dotcom"
+  ],
+  "contact": {
+    "sources": "https://github.com/tumbleweed693527183516-dotcom/Minecraft-terrain"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/vividlands_vikings/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.vividlands.village.VividLandsVikings"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.21",
+    "minecraft": "1.20.1",
+    "fabric-api": "*",
+    "vividlands": "*",
+    "biomeswevegone": "*",
+    "decorative_blocks": "*"
+  }
+}

@@ -1,6 +1,6 @@
 package com.vividlands.village;
 
-import com.vividlands.VividLands;
+
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -31,7 +31,7 @@ public final class ModStructures {
     }
 
     private static ResourceLocation id(String path) {
-        return new ResourceLocation(VividLands.MOD_ID, path);
+        return new ResourceLocation("vividlands", path);
     }
 
     public static void init() {

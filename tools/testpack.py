@@ -72,7 +72,6 @@ FILES = [
 RESOLVE = [
     # block providers Vivid Lands builds with (and their libraries, resolved automatically)
     ("oh-the-biomes-weve-gone", True),     # thatch, palm/pine/redwood woods, black sand, peat, dacite...
-    ("decorative-blocks", True),          # palisades for the village walls
     ("badoptimizations", False),       # client micro-optimizations (lightmap, sky, entities)
     ("cloth-config", False),           # config library used by MoreCulling
     ("moreculling", False),            # culls hidden leaf and block faces: big win in forests
@@ -80,6 +79,8 @@ RESOLVE = [
     ("sodium-extra", False),           # extra toggles (particles, animations, fog)
     ("reeses-sodium-options", False),
 ]
+# Extra mods only the Vikings pack needs
+RESOLVE_VIKINGS = [("decorative-blocks", True)]          # palisades for the village walls
 API = "https://api.modrinth.com/v2"
 # Modrinth project ids of the pinned files above (never pull a second copy in as a dependency)
 PINNED = {"P7dR8mSH", "AANobbMI", "Orvt0mRa", "gvQqBUqZ", "VSNURh3q", "uXXizFIs", "nmDcB62a", "5ZwdcRci",
@@ -153,39 +154,52 @@ shaderPack=ComplementaryReimagined_r5.9.3.zip
 """
 
 
-def main():
-    files = []
-    extra, seen = [], set()
-    for slug, server in RESOLVE:
+def resolve_all(slugs, seen, have):
+    extra = []
+    for slug, server in slugs:
         try:
             got = resolve(slug, server, seen)
-            extra += [g for g in got if g[1] not in {e[1] for e in extra}]
+            extra += [g for g in got if g[1] not in have | {e[1] for e in extra}]
             print(f"resolved {slug}: {', '.join(g[1] for g in got)}")
         except Exception as e:                           # offline or renamed: build the pack without it
             print(f"warning: could not resolve {slug}: {e}")
-    for folder, name, url, size, sha1, sha512, server in FILES + extra:
+    return extra
+
+
+def build(out_name, title, summary, entries, jars):
+    files = []
+    for folder, name, url, size, sha1, sha512, server in entries:
         assert len(sha1) == 40 and len(sha512) == 128, name
         int(sha1, 16), int(sha512, 16)
         files.append({"path": f"{folder}/{name}", "hashes": {"sha1": sha1, "sha512": sha512},
                       "env": {"client": "required", "server": "required" if server else "unsupported"},
                       "downloads": [url], "fileSize": size})
-    index = {
-        "formatVersion": 1, "game": "minecraft", "versionId": VERSION,
-        "name": "Vivid Lands Test Pack",
-        "summary": "Vivid Lands world generation with performance mods, shaders, Distant Horizons and resource packs",
-        "files": files,
-        "dependencies": {"minecraft": "1.20.1", "fabric-loader": "0.16.10"},
-    }
-    jar = ROOT / "build" / "libs" / f"vividlands-{VERSION}.jar"
+    index = {"formatVersion": 1, "game": "minecraft", "versionId": VERSION, "name": title, "summary": summary,
+             "files": files, "dependencies": {"minecraft": "1.20.1", "fabric-loader": "0.16.10"}}
     OUT.mkdir(exist_ok=True)
-    out = OUT / f"VividLands-TestPack-{VERSION}.mrpack"
+    out = OUT / out_name
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
         z.writestr("modrinth.index.json", json.dumps(index, indent=2))
-        z.write(jar, f"overrides/mods/{jar.name}")
+        for jar in jars:
+            z.write(jar, f"overrides/mods/{jar.name}")
         z.writestr("overrides/options.txt", OPTIONS)
         z.writestr("overrides/config/iris.properties", IRIS)
         z.writestr("overrides/config/DistantHorizons.toml", DH)
     print(f"Built {out.name} ({len(files)} downloads)")
+
+
+def main():
+    seen = set()
+    base = FILES + resolve_all(RESOLVE, seen, set())
+    vikings = base + resolve_all(RESOLVE_VIKINGS, seen, {e[1] for e in base})
+    base_jar = ROOT / "build" / "libs" / f"vividlands-{VERSION}.jar"
+    addon_jar = ROOT / "vikings" / "build" / "libs" / f"vividlands_vikings-{VERSION}.jar"
+    build(f"VividLands-TestPack-{VERSION}.mrpack", "Vivid Lands Test Pack",
+          "Vivid Lands world generation with vanilla structures, performance mods, shaders and Distant Horizons",
+          base, [base_jar])
+    build(f"VividLands-Vikings-TestPack-{VERSION}.mrpack", "Vivid Lands + Vikings Test Pack",
+          "Vivid Lands world generation with the Vikings add-on (Viking villages and structures)",
+          vikings, [base_jar, addon_jar])
 
 
 if __name__ == "__main__":

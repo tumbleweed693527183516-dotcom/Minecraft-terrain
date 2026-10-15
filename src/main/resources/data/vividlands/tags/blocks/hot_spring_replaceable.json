@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:grass_block",
+    "minecraft:dirt",
+    "minecraft:coarse_dirt",
+    "minecraft:gravel",
+    "minecraft:stone",
+    "minecraft:calcite",
+    "minecraft:moss_block",
+    "minecraft:yellow_terracotta",
+    "minecraft:podzol",
+    "minecraft:tuff",
+    {
+      "id": "biomeswevegone:white_sandstone",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:red_rock",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:peat",
+      "required": false
+    }
+  ]
+}

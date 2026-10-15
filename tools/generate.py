@@ -20,6 +20,7 @@ MODID = "vividlands"
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "src" / "main" / "resources"
 DATA = RES / "data"
+VIKINGS_DATA = ROOT / "vikings" / "src" / "main" / "resources" / "data"   # the Vikings add-on
 
 # ---------------------------------------------------------------------------
 # Tunables
@@ -654,7 +655,22 @@ def features():
     configured("moss_mound", "forest_rock", {"state": state("moss_block")})
     configured("smooth_basalt_rock", "forest_rock", {"state": state("smooth_basalt")})
     configured("deepslate_rock", "forest_rock", {"state": state("cobbled_deepslate")})
-    configured("hot_spring_pool", "lake", {"fluid": simple("water", level=0), "barrier": simple("vividlands:sinter")})
+    # Hot springs: lots of small, shallow, rock-rimmed pools level with the ground, like tide pools
+    # (vanilla's waterlogged vegetation patch, as in lush caves), not lakes that land in creeks.
+    write(f"{MODID}/tags/blocks/hot_spring_replaceable.json", {"replace": False, "values": [
+        mc(b) for b in ("grass_block", "dirt", "coarse_dirt", "gravel", "stone", "calcite", "moss_block",
+                        "yellow_terracotta", "podzol", "tuff")] + [
+        {"id": f"biomeswevegone:{b}", "required": False} for b in ("white_sandstone", "red_rock", "peat")]})
+    for name, radius, depth in (("hot_spring_pool", uniform(1, 3), uniform(1, 2)),
+                                ("hot_spring_basin", uniform(3, 5), 1)):
+        configured(name, "waterlogged_vegetation_patch", {
+            "replaceable": f"#{MODID}:hot_spring_replaceable",
+            "ground_state": weighted((5, state("vividlands:sinter")), (2, state("vividlands:travertine")),
+                                     (1, state("vividlands:thermal_mat"))),
+            "vegetation_feature": {"feature": {"type": mc("simple_block"),
+                                               "config": {"to_place": simple("air")}}, "placement": []},
+            "surface": "floor", "depth": depth, "extra_bottom_block_chance": 0.3, "vertical_range": 4,
+            "vegetation_chance": 0.0, "xz_radius": radius, "extra_edge_column_chance": 0.4})
     configured("stone_boulder", "forest_rock", {"state": state("cobblestone")})
     configured("lava_pool", "lake", {"fluid": simple("lava", level=0), "barrier": simple("blackstone")})
     configured("water_lake", "lake", {"fluid": simple("water", level=0), "barrier": simple("stone")})
@@ -676,7 +692,8 @@ def features():
     p("lava_pools", "lava_pool", surface(rarity(5), hm="WORLD_SURFACE_WG"))
     p("lakes", "water_lake", surface(rarity(3), hm="WORLD_SURFACE_WG"))
     p("fen_pools", "water_lake", surface(rarity(2), hm="WORLD_SURFACE_WG"))
-    p("hot_spring_pools", "hot_spring_pool", surface(count(3), hm="WORLD_SURFACE_WG"))
+    p("hot_spring_pools", "hot_spring_pool", surface(count(14), hm="WORLD_SURFACE_WG"))
+    p("hot_spring_basins", "hot_spring_basin", surface(count(2), hm="WORLD_SURFACE_WG"))
     p("boulders_mossy", "mossy_boulder", surface(rarity(3)))
     p("boulders_stone", "stone_boulder", surface(rarity(4)))
     p("mounds_moss", "moss_mound", surface(count(4)))
@@ -799,7 +816,7 @@ VANILLA_ORES = [mc(f"ore_{x}") for x in [
 
 BIOMES = {}
 LOCAL = {"iceberg_packed", "iceberg_blue"}
-LAKES = {"lava_pools", "lakes", "fen_pools", "hot_spring_pools"}
+LAKES = {"lava_pools", "lakes", "fen_pools", "hot_spring_pools", "hot_spring_basins"}
 
 
 def B(name, *, temp, downfall, colors, surface, under=DIRT, underwater=DIRT, sandy=False, ceiling=None, rain=None,
@@ -937,8 +954,8 @@ def define_biomes():
                   cond(noise("surface", 0.12, 0.4), block("vividlands:sinter")),
                   cond(noise("surface", -0.4, -0.12), block("vividlands:travertine")),
                   cond(noise("surface", 0.6), block("moss_block")), GRASS),
-      under=block("vividlands:sinter"), underwater=block("vividlands:sinter"), mobs="highland",
-      veg=["hot_spring_pools", "grass_sparse", "moss_carpet"], particle=("white_ash", 0.002),
+      under=block("vividlands:sinter"), underwater=block("gravel"), mobs="highland",
+      veg=["hot_spring_basins", "hot_spring_pools", "grass_sparse", "moss_carpet"], particle=("white_ash", 0.002),
       tags=["hill", "cold", "wet", "volcanic", "rocky"])
     B("mossy_lava_fields", temp=0.35, downfall=0.85, colors=colors("#a0bad8", "#cdd6de", "#2ab8c8", "#0b4250", "#8fc85a", "#6fae48"),
       surface=seq(cond(STEEP, block("basalt", axis="y")),
@@ -1312,16 +1329,13 @@ def tags():
         # ocean-only structures stay in oceans
         if "ocean" not in s["tags"]:
             tag_list = [t for t in tag_list if "ocean_ruin" not in t and "shipwreck" not in t]
-        # every vanilla village is replaced by a Viking village in a matching regional style
-        tag_list = [t for t in tag_list if not t.startswith("minecraft:has_structure/village_")]
+        if name in ("tundra", "boreal_snowwoods"):
+            tag_list.append("minecraft:has_structure/village_snowy")
         for t in set(tag_list):
             out.setdefault(t, set()).add(vl(name))
     for t, members in out.items():
         ns, path = t.split(":")
         write(f"{ns}/tags/worldgen/biome/{path}.json", {"replace": False, "values": sorted(members)})
-    # switch vanilla villages off everywhere (also in any biome another mod adds)
-    for kind in ("plains", "desert", "savanna", "snowy", "taiga"):
-        write(f"minecraft/tags/worldgen/biome/has_structure/village_{kind}.json", {"replace": True, "values": []})
 
 
 def lang(extra):
@@ -1334,8 +1348,9 @@ def lang(extra):
 
 
 def main():
-    if DATA.exists():
-        shutil.rmtree(DATA)
+    for d in (DATA, VIKINGS_DATA):
+        if d.exists():
+            shutil.rmtree(d)
     dimension_type()
     density_functions()
     features()
@@ -1344,7 +1359,8 @@ def main():
     write_biomes()
     entries = biome_layout()
     tags()
-    structures.write(DATA, lambda b: b in BIOMES)
+    # Viking structures live in the separate add-on (vikings/); the base mod keeps vanilla structures
+    structures.write(VIKINGS_DATA, lambda b: b in BIOMES)
     # TerraBlender (needed by Oh The Biomes We've Gone, whose blocks we build with) must not mix
     # its biomes into our overworld: opt the overworld out of its regions.
     write("terrablender/tags/dimension_type/overworld_regions.json", {"replace": True, "values": []})

@@ -1,6 +1,6 @@
 package com.vividlands.village;
 
-import com.vividlands.ModCompat;
+
 import net.minecraft.world.level.block.Block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;

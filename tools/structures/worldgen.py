@@ -12,7 +12,7 @@ from .viking2 import DEPTH_MOUND, DEPTH_SHIP, catalogue2
 from .warship import WATER as WARSHIP_WATER, catalogue3
 from .styles import STYLES, restyle
 
-CATALOGUE_OUT = Path(__file__).resolve().parents[2] / "src/main/resources/vividlands_villages/catalogue.json"
+CATALOGUE_OUT = Path(__file__).resolve().parents[2] / "vikings/src/main/resources/vividlands_villages/catalogue.json"
 
 NS = "vividlands"
 
@@ -296,6 +296,16 @@ def write(data_dir, biome_exists):
             "step": "top_layer_modification", "spawn_overrides": {}, "terrain_adaptation": "none"})
         _w(out / f"tags/worldgen/biome/has_structure/{sname}.json",
            {"replace": False, "values": [f"{NS}:{b}" for b in biomes if biome_exists(b)]})
+    # With the add-on installed, vanilla villages don't generate: each vanilla village structure is
+    # pointed at an empty biome tag (works whatever order the mods' data loads in).
+    _w(out / "tags/worldgen/biome/no_vanilla_villages.json", {"replace": False, "values": []})
+    for kind in ("plains", "desert", "savanna", "snowy", "taiga"):
+        _w(data_dir / f"minecraft/worldgen/structure/village_{kind}.json", {
+            "type": "minecraft:jigsaw", "biomes": f"#{NS}:no_vanilla_villages", "step": "surface_structures",
+            "spawn_overrides": {}, "terrain_adaptation": "beard_thin",
+            "start_pool": f"minecraft:village/{kind}/town_centers", "size": 6, "start_height": {"absolute": 0},
+            "project_start_to_heightmap": "WORLD_SURFACE_WG", "max_distance_from_center": 80,
+            "use_expansion_hack": True})
     sp, se, salt = VILLAGE_SPACING
     _w(out / "worldgen/structure_set/viking_village.json", {
         "structures": [{"structure": f"{NS}:{village_structure(st)}", "weight": 1} for st in VILLAGE_STYLE_BIOMES],

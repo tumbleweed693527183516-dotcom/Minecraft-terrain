@@ -13,10 +13,9 @@ public class VividLands implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        com.vividlands.village.ModStructures.init();
         StampLibrary.load();
         Registry.register(BuiltInRegistries.DENSITY_FUNCTION_TYPE, new ResourceLocation(MOD_ID, "stamps"),
                 StampDensity.CODEC.codec());
-        LOG.info("Vivid Lands ready (building with Oh The Biomes We've Gone and Decorative Blocks)");
+        LOG.info("Vivid Lands ready");
     }
 }

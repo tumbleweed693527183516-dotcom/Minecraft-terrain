@@ -1,4 +1,4 @@
-package com.vividlands;
+package com.vividlands.village;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;

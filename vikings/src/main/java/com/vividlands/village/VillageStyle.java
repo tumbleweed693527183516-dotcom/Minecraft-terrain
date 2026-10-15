@@ -1,6 +1,6 @@
 package com.vividlands.village;
 
-import com.vividlands.ModCompat;
+
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 

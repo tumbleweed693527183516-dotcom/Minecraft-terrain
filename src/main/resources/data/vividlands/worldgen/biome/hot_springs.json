@@ -132,7 +132,8 @@
     [],
     [
       "minecraft:lake_lava_underground",
-      "vividlands:hot_spring_pools"
+      "vividlands:hot_spring_pools",
+      "vividlands:hot_spring_basins"
     ],
     [
       "minecraft:amethyst_geode"

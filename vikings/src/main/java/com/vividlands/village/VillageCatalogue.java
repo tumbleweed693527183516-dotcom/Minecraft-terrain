@@ -3,7 +3,7 @@ package com.vividlands.village;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.vividlands.VividLands;
+
 import net.minecraft.util.RandomSource;
 
 import java.io.InputStream;
@@ -38,7 +38,7 @@ public final class VillageCatalogue {
                         .computeIfAbsent(o.get("role").getAsString(), k -> new ArrayList<>()).add(o.get("id").getAsString());
             }
         } catch (Exception ex) {
-            VividLands.LOG.error("Could not load the village catalogue", ex);
+            VividLandsVikings.LOG.error("Could not load the village catalogue", ex);
         }
         return out;
     }

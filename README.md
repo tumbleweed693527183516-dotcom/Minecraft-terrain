@@ -14,7 +14,12 @@ Vivid Lands adds no blocks of its own. Terrain and buildings use blocks from est
 
 Both are required (with Oh The Biomes We've Gone's libraries TerraBlender, CorgiLib, Oh The Trees You'll Grow and GeckoLib). Their own biomes are switched off in the Vivid Lands overworld, so only their blocks appear. The mapping lives in `tools/modblocks.py`.
 
-## Viking structures (v0.15)
+## Two mods
+
+- **Vivid Lands** (`vividlands-<version>.jar`): the world generation, with all the normal Minecraft structures (vanilla villages, strongholds, mineshafts, temples...).
+- **Vivid Lands: Vikings** (`vividlands_vikings-<version>.jar`, in `vikings/`): an add-on with everything below. Install it next to Vivid Lands; it switches vanilla villages off and adds the Viking structures. Needs Decorative Blocks.
+
+## Viking structures (Vikings add-on, v0.16)
 
 - **Walled Viking villages replace every vanilla village**, full-sized (66-80 block radius, 30+ buildings plus outlying farmsteads), in six regional styles: *north* (turf, spruce and thatch), *snow* (dark timber, snow-laden roofs), *forest* (oak halls), *steppe* (birch Rus towns), *desert* (Varangian trading posts in palm wood, sandstone and mud brick) and *jungle* (far-voyager camps). Each has a ring palisade of sharpened logs that follows the ground, 2-3 gatehouses with walkways, watchtowers, a central plaza with a covered well, bell and runestones, a chieftain's great hall (45 blocks long), longhouses in three sizes with shingle, thatch or turf roofs, Glaumbær-style turf farmsteads, a forge with a chimney, a temple, a market, stabbur storehouses, a granary, a byre, a weaving pit-house, a training yard, paths to every door, and fields and sheep folds outside the walls. Built by a custom generator (`com.vividlands.village`) so every village is laid out differently, inhabited by villagers. They replace vanilla villages in these biomes.
 - **Level sites:** before a village or fortress is built its ground is graded into a level plateau (hills cut, hollows and ponds filled, with the local surface blocks), blending back into the land outside the walls.
@@ -49,8 +54,8 @@ Terrain: basin-and-range mountains, like the Wasatch rising out of the Salt Lake
 
 ## Installing for testing
 
-- **Mod:** put `vividlands-<version>.jar` in your Fabric 1.20.1 `mods` folder with **Fabric API**, **Oh The Biomes We've Gone** (+ TerraBlender, CorgiLib, Oh The Trees You'll Grow, GeckoLib) and **Decorative Blocks**.
-- **Test pack:** import `VividLands-TestPack-<version>.mrpack` into the Modrinth App.
+- **Mod:** put `vividlands-<version>.jar` (and, for Vikings, `vividlands_vikings-<version>.jar`) in your Fabric 1.20.1 `mods` folder with **Fabric API**, **Oh The Biomes We've Gone** (+ TerraBlender, CorgiLib, Oh The Trees You'll Grow, GeckoLib) and **Decorative Blocks**.
+- **Test packs:** import `VividLands-TestPack-<version>.mrpack` (vanilla structures) or `VividLands-Vikings-TestPack-<version>.mrpack` (with the Vikings add-on) into the Modrinth App.
 
 Always create a **new world**. Do not add this to an existing world.
 

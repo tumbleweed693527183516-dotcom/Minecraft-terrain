@@ -258,7 +258,7 @@ public class VikingVillageStructure extends Structure {
                     placed++;
                 }
             }
-            com.vividlands.VividLands.LOG.debug("Viking village at {}, {}: radius {}, {} buildings", cx, cz,
+            VividLandsVikings.LOG.debug("Viking village at {}, {}: radius {}, {} buildings", cx, cz,
                     (int) ring.radius, placed);
 
             // fields and folds outside the walls, near the gates

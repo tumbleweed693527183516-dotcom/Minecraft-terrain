@@ -5,7 +5,23 @@ import re
 import sys
 from pathlib import Path
 
-DATA = Path(__file__).resolve().parent.parent / "src" / "main" / "resources" / "data"
+# Base mod and Vikings add-on are checked together (the add-on refers to the base's biomes)
+_ROOT = Path(__file__).resolve().parent.parent
+_MERGED = _ROOT / "build" / "check_merged"
+
+
+def _merge():
+    import shutil
+    if _MERGED.exists():
+        shutil.rmtree(_MERGED)
+    for res in (_ROOT / "src/main/resources", _ROOT / "vikings/src/main/resources"):
+        for sub in ("data", "vividlands_villages"):
+            if (res / sub).exists():
+                shutil.copytree(res / sub, _MERGED / sub, dirs_exist_ok=True)
+    return _MERGED / "data"
+
+
+DATA = _merge()
 
 # Vanilla 1.20.1 IDs this mod relies on, grouped by registry.
 VANILLA = {

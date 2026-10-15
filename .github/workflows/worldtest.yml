@@ -61,6 +61,7 @@ jobs:
           dl lithium
           for m in terrablender corgilib oh-the-trees-youll-grow geckolib oh-the-biomes-weve-gone decorative-blocks; do dl $m; done
           cp ../build/libs/vividlands-$(cat ../VERSION).jar mods/
+          if [ "${{ inputs.structures }}" = "true" ]; then cp ../vikings/build/libs/vividlands_vikings-$(cat ../VERSION).jar mods/; fi
           if [ "${{ inputs.stamp_test }}" = "true" ]; then
             mkdir -p world/datapacks/stamptest/data/vividlands/worldgen/density_function/overworld/mountains
             echo '{"pack":{"pack_format":15,"description":"stamp test"}}' > world/datapacks/stamptest/pack.mcmeta

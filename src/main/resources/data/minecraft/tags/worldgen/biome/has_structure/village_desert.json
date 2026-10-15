@@ -1,4 +1,9 @@
 {
-  "replace": true,
-  "values": []
+  "replace": false,
+  "values": [
+    "vividlands:great_erg",
+    "vividlands:oasis",
+    "vividlands:rocky_hamada",
+    "vividlands:salt_flats"
+  ]
 }

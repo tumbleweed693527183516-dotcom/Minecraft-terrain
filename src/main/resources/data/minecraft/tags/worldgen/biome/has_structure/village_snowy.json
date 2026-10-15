@@ -1,4 +1,7 @@
 {
-  "replace": true,
-  "values": []
+  "replace": false,
+  "values": [
+    "vividlands:boreal_snowwoods",
+    "vividlands:tundra"
+  ]
 }
