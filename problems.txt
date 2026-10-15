@@ -1,0 +1,3 @@
+125:[15:52:10] [main/ERROR]: No data fixer registered for biomeswevegone:sign
+126:[15:52:10] [main/ERROR]: No data fixer registered for biomeswevegone:hanging_sign
+127:[15:52:10] [main/ERROR]: No data fixer registered for biomeswevegone:pumpkin_burrow
