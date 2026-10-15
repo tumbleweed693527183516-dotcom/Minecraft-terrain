@@ -21,6 +21,8 @@ Status: **pending** (not checked yet) · **ok** (Fabric 1.20.1, fits) · **no** 
 
 | # | Mod | Link | Loader / version | Licence | Purpose | Status | Notes |
 |---|-----|------|------------------|---------|---------|--------|-------|
+| 4 | Civilizations | https://modrinth.com/mod/civilizations | Fabric 1.20.1: yes (0.2, release) | All Rights Reserved | Egyptian, Chinese, Roman, Greek, Norse civilizations; structures, currencies, trading; leader bosses (Khufu, Qin Shi Huang, Caesar, Alexander, Bjorn Ironside) and summonable gods (Anubis, Sun Wukong, Mercury, Artemis, Loki) | ok | CHOSEN. No dependencies. Core of the ancient-civilizations theme and a ready-made boss set; check which biomes its structures use once installed. |
+| 5 | Luki's Grand Capitals | https://modrinth.com/mod/lukis-grand-capitals | Fabric 1.20.1: yes (1.1.3, release) | All Rights Reserved | Rebuilds vanilla villages as grand capitals with their own loot; also remakes pillager outpost, woodland mansion, swamp hut | ok | CHOSEN as the village replacement. No dependencies. Works through vanilla's village slots, so it uses Vivid Lands' village biome tags automatically. Beta: jungle, snowy, badlands, meadow villages still planned; warns some villages may generate oddly on rough terrain. |
 | 3 | Small Ships | https://modrinth.com/mod/small-ships | Fabric 1.20.1: yes (2.0.0-b1.4, beta) | All Rights Reserved | Sailable medieval ships (cog, brigg, galley, drakkar, caravel, dhow, galleon), cannons, wind and sails, dockyard, ramming and sinking | ok | Gameplay mod for the pack. Only needs Fabric API. ARR, so install it as-is; an add-on that uses it is fine, copying its files is not. Fabric build is a beta. |
 
 ## Boss progression plan
