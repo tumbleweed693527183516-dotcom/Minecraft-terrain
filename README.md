@@ -6,38 +6,7 @@ Taller worlds (build limit y=511), continent-sized landmasses, and new biomes in
 
 ## Blocks
 
-Vivid Lands adds no blocks of its own. Terrain and buildings use blocks from established mods, with their creators' textures:
-
-- **[Oh The Biomes We've Gone](https://modrinth.com/mod/oh-the-biomes-weve-gone)**: cattail thatch (block, stairs, slab) for roofs, palm, pine and redwood woods and leaves, black and white sand, white sandstone, peat, dacite (volcanic rock), red rock, purple sage (heather) and prairie grass.
-- **[Decorative Blocks](https://modrinth.com/mod/decorative-blocks)**: sharpened-log palisades for village walls.
-- Vanilla for the rest (calcite, packed mud, stripped dark oak, wall banners...).
-
-Both are required (with Oh The Biomes We've Gone's libraries TerraBlender, CorgiLib, Oh The Trees You'll Grow and GeckoLib). Their own biomes are switched off in the Vivid Lands overworld, so only their blocks appear. The mapping lives in `tools/modblocks.py`.
-
-## Two mods
-
-- **Vivid Lands** (`vividlands-<version>.jar`): the world generation, with all the normal Minecraft structures (vanilla villages, strongholds, mineshafts, temples...).
-- **Vivid Lands: Vikings** (`vividlands_vikings-<version>.jar`, in `vikings/`): an add-on with everything below. Install it next to Vivid Lands; it switches vanilla villages off and adds the Viking structures. Needs Decorative Blocks.
-
-## Viking structures (Vikings add-on, v0.16)
-
-- **Walled Viking villages replace every vanilla village**, full-sized (66-80 block radius, 30+ buildings plus outlying farmsteads), in six regional styles: *north* (turf, spruce and thatch), *snow* (dark timber, snow-laden roofs), *forest* (oak halls), *steppe* (birch Rus towns), *desert* (Varangian trading posts in palm wood, sandstone and mud brick) and *jungle* (far-voyager camps). Each has a ring palisade of sharpened logs that follows the ground, 2-3 gatehouses with walkways, watchtowers, a central plaza with a covered well, bell and runestones, a chieftain's great hall (45 blocks long), longhouses in three sizes with shingle, thatch or turf roofs, Glaumbær-style turf farmsteads, a forge with a chimney, a temple, a market, stabbur storehouses, a granary, a byre, a weaving pit-house, a training yard, paths to every door, and fields and sheep folds outside the walls. Built by a custom generator (`com.vividlands.village`) so every village is laid out differently, inhabited by villagers. They replace vanilla villages in these biomes.
-- **Level sites:** before a village or fortress is built its ground is graded into a level plateau (hills cut, hollows and ponds filled, with the local surface blocks), blending back into the land outside the walls.
-- **Details on every building:** shuttered windows with flower boxes, covered entrance porches with banners on timber halls, painted shields under the eaves, smoke rising from the roof vents, gravel drip edges with plants, rugs, and yards with woodpiles, chopping blocks, carts, hide frames, water barrels, hay and lantern posts.
-- **Trelleborg ring fortresses** (rare): a perfectly round earthen rampart with a palisade on its crest and a ditch outside, four gates on the compass points, cross streets, watchtowers and rows of garrison halls in the four quarters.
-- **Burial mounds** (dungeons): a grassy mound ringed by standing stones; a timbered passage with an arrow trap leads down to a stone chamber with a bier, grave goods, a caged spawner and armoured *Draugr*.
-- **Ship burials** (rare dungeons): a whole longship laid in a timber chamber under a great mound, guarded by draugr, two spawners and the **Draugr Jarl** (80 health, diamond axe), with the richest loot in the mod.
-- **Stave churches**: tiered dark-wood roofs, a covered gallery, dragon heads on every roof edge, a bell spire, benches and an altar, with runestones in the churchyard.
-- **Mead halls**: a chieftain's great hall standing alone in a fenced yard with carved gate posts, a cart, woodpile, hide frame, kitchen garden, horses and chickens.
-- **Fishing hamlets** on northern shores: turf and thatch huts, a boathouse with a boat, fish-drying racks and a jetty.
-- **Thing sites**: open-air assemblies with a stepped law rock, rings of stone seats, coloured booths, fires and banner poles.
-- **Shielings** (summer huts with a dry-stone sheep fold) and **beacon cairns** on the hills.
-- **Longhouses**, **turf farmsteads** and **cottages** standing alone as homesteads.
-- **Giant dragon warships** (drekar, rare, on deep northern seas): a 100-block sea-king's flagship with two masts and an 80-block war drakkar, with carved dragon heads and curled tails, billowing striped sails, shields and oars, rigging and crow's nests, a captain's cabin under a raised stern deck, a seer's hut, and a dark three-part hold. Spawners for draugr zombies and skeletons, spiders, strays, vindicators, a witch and zombie villagers, an armoured draugr crew and a Draugr Jarl.
-- **Longships** and **knarr** cargo ships out on northern seas, **shipwrecks** on the sea floor, and **frozen longships** locked in glacier ice with draugr guarding the treasure.
-- **Runestones**, stone circles and cairns across the north.
-
-Building designs live in `tools/structures/viking.py` and `viking2.py` (helpers in `kit.py`); they are written to structure templates by `tools/generate.py`.
+Vivid Lands adds no blocks of its own. Terrain uses blocks from **[Oh The Biomes We've Gone](https://modrinth.com/mod/oh-the-biomes-weve-gone)** (palm, pine and redwood trees, black and white sand, white sandstone, peat, dacite, red rock, purple sage, prairie grass) and vanilla. It is required, with its libraries TerraBlender, CorgiLib, Oh The Trees You'll Grow and GeckoLib. Its own biomes are switched off in the Vivid Lands overworld, so only its blocks appear. The mapping lives in `tools/modblocks.py`.
 
 ## Biomes
 
@@ -52,33 +21,33 @@ Building designs live in `tools/structures/viking.py` and `viking2.py` (helpers 
 
 Terrain: basin-and-range mountains, like the Wasatch rising out of the Salt Lake valley - flat basins, steep mountain fronts leaping straight out of them, long winding ranges with a jagged crest and pointed horn summits up to about y=385, and river gorges cutting through. Mountain biomes follow the actual ranges; basins keep lowland biomes.
 
-## Installing for testing
+## The Vivid Lands modpack
 
-- **Mod:** put `vividlands-<version>.jar` (and, for Vikings, `vividlands_vikings-<version>.jar`) in your Fabric 1.20.1 `mods` folder with **Fabric API**, **Oh The Biomes We've Gone** (+ TerraBlender, CorgiLib, Oh The Trees You'll Grow, GeckoLib) and **Decorative Blocks**.
-- **Test packs:** import `VividLands-TestPack-<version>.mrpack` (vanilla structures) or `VividLands-Vikings-TestPack-<version>.mrpack` (with the Vikings add-on) into the Modrinth App.
+`VividLands-Modpack-<version>.mrpack` (import it into the Modrinth App or Prism Launcher) is built on the client set of
+[Fabulously Optimized](https://github.com/Fabulously-Optimized/fabulously-optimized) for 1.20.1 (BSD-3; its licence
+ships with the pack) with every mod updated to its newest 1.20.1 release, plus what a heavy world generator needs:
 
-Always create a **new world**. Do not add this to an existing world.
+- **Rendering:** Sodium, Sodium Extra, Reese's Sodium Options, Indium, ImmediatelyFast, Entity Culling, MoreCulling, Enhanced Block Entities, Model Gap Fix, BadOptimizations, Continuity
+- **Game logic and memory:** Lithium, FerriteCore, ModernFix, Memory Leak Fix, Debugify, Dynamic FPS (idles when the window is in the background)
+- **World generation:** C2ME (multi-threaded chunk generation) and Chunky (pre-generate an area: `/chunky radius 2000` then `/chunky start`)
+- **Visuals:** Iris with Complementary Reimagined (off by default, press K), Distant Horizons (far terrain built from the surface shape only)
+- **Quality of life:** Mod Menu, Zoomify (C), FastQuit, Remove Reloading Screen, Language Reload, AdvancementInfo, Better Mount HUD, Borderless Mining, More Chat History, No Chat Reports
+- **Adding your own mods safely:** MixinTrace (names the mod behind a crash), YOSBR (the pack's default settings are applied once and never overwrite yours), Cloth Config, YetAnotherConfigLib, Fabric Language Kotlin
 
-## Loot
+Default settings come from Fabulously Optimized's tuned configs with render distance 10, simulation distance 6, smaller biome blend and fewer particles.
 
-Every village building has two or three chests (one for fields, gates and towers), filled from its own table `vividlands:chests/village/<building>`. Two empty hook tables let you add your own loot without replacing anything:
-
-- `vividlands:chests/extra/village`: added to every village and fortress chest.
-- `vividlands:chests/extra/everywhere`: added to every Vivid Lands chest.
-
-Override them with a datapack (an example ships as `VividLands-Loot-Datapack.zip`).
+Give the instance **6-8 GB of RAM** (Modrinth App: instance settings > Java and memory); raise it as you add more mods. Always create a **new world**.
 
 ## Performance
 
 - Open sky is skipped: above the terrain's smooth shape the 3D terrain, cave and entrance noise isn't computed at all (most of a 576-block-tall world).
 - The 16-octave jagged-peaks noise is cached per column instead of being recomputed at every cell.
-- One lit fire per building and at most one or two villagers per building.
-- The test pack adds VMP, Krypton, BadOptimizations, MoreCulling, Enhanced Block Entities and Sodium Extra, drops the heavy cosmetic packs, and sets Distant Horizons to build far terrain from the surface shape only.
+- Hot springs use vanilla's light water-patch feature instead of lakes.
 
 ## Compatibility
 
 - Performance mods (Sodium, Lithium, C2ME, FerriteCore, ModernFix), Iris shaders, Distant Horizons: no code changes to the game, terrain is pure data.
-- Structure mods (YUNG's, dungeon and boss mods): biomes carry vanilla and `c:` convention tags so structures find them.
+- Structure mods (YUNG's, dungeon and boss mods): biomes carry vanilla and `c:` convention tags so structures find them. All vanilla structures generate (villages, strongholds, temples, mineshafts...).
 - Cave mods: the vanilla cave system is kept as its own density function (`vividlands:overworld/caves`).
 - Not compatible with other full terrain overhauls such as Terralith or Tectonic.
 

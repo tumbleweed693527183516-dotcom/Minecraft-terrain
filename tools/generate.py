@@ -14,13 +14,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import modblocks  # noqa: E402
-from structures import worldgen as structures  # noqa: E402
 
 MODID = "vividlands"
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "src" / "main" / "resources"
 DATA = RES / "data"
-VIKINGS_DATA = ROOT / "vikings" / "src" / "main" / "resources" / "data"   # the Vikings add-on
 
 # ---------------------------------------------------------------------------
 # Tunables
@@ -1348,9 +1346,8 @@ def lang(extra):
 
 
 def main():
-    for d in (DATA, VIKINGS_DATA):
-        if d.exists():
-            shutil.rmtree(d)
+    if DATA.exists():
+        shutil.rmtree(DATA)
     dimension_type()
     density_functions()
     features()
@@ -1359,8 +1356,6 @@ def main():
     write_biomes()
     entries = biome_layout()
     tags()
-    # Viking structures live in the separate add-on (vikings/); the base mod keeps vanilla structures
-    structures.write(VIKINGS_DATA, lambda b: b in BIOMES)
     # TerraBlender (needed by Oh The Biomes We've Gone, whose blocks we build with) must not mix
     # its biomes into our overworld: opt the overworld out of its regions.
     write("terrablender/tags/dimension_type/overworld_regions.json", {"replace": True, "values": []})

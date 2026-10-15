@@ -31,19 +31,18 @@ jobs:
         run: |
           set -o pipefail
           gradle build --no-daemon --console=plain 2>&1 | tee build.log
-      - name: Test pack
-        run: python3 tools/testpack.py
+      - name: Modpack
+        run: python3 tools/modpack.py
       - uses: actions/upload-artifact@v4
         with:
           name: vivid-lands
           path: |
             build/libs/vividlands-*.jar
-            vikings/build/libs/vividlands_vikings-*.jar
             build/*.mrpack
       - name: Publish jar and test pack to the dist branch
         if: success()
         run: |
-          mkdir -p dist && cp build/libs/vividlands-$(cat VERSION).jar vikings/build/libs/vividlands_vikings-$(cat VERSION).jar build/*.mrpack dist/
+          mkdir -p dist && cp build/libs/vividlands-$(cat VERSION).jar build/*.mrpack dist/
           cd dist && git init -q && git checkout -q -b dist
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

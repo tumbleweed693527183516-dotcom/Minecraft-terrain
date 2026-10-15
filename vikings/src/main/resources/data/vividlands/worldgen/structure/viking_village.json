@@ -1,8 +1,0 @@
-{
-  "type": "vividlands:viking_village",
-  "biomes": "#vividlands:has_structure/viking_village",
-  "style": "north",
-  "step": "top_layer_modification",
-  "spawn_overrides": {},
-  "terrain_adaptation": "none"
-}

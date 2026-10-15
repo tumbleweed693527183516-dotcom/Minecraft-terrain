@@ -5,23 +5,7 @@ import re
 import sys
 from pathlib import Path
 
-# Base mod and Vikings add-on are checked together (the add-on refers to the base's biomes)
-_ROOT = Path(__file__).resolve().parent.parent
-_MERGED = _ROOT / "build" / "check_merged"
-
-
-def _merge():
-    import shutil
-    if _MERGED.exists():
-        shutil.rmtree(_MERGED)
-    for res in (_ROOT / "src/main/resources", _ROOT / "vikings/src/main/resources"):
-        for sub in ("data", "vividlands_villages"):
-            if (res / sub).exists():
-                shutil.copytree(res / sub, _MERGED / sub, dirs_exist_ok=True)
-    return _MERGED / "data"
-
-
-DATA = _merge()
+DATA = Path(__file__).resolve().parent.parent / "src" / "main" / "resources" / "data"
 
 # Vanilla 1.20.1 IDs this mod relies on, grouped by registry.
 VANILLA = {
@@ -108,45 +92,6 @@ def main():
                             errors.append(f"feature order conflict in step {step}: {a} / {b} "
                                           f"({rel} vs {before[(step, b, a)]})")
                         before.setdefault((step, a, b), rel)
-
-    # structures: pools point at real templates, structures at real pools, sets at real structures
-    nbts = {p.relative_to(DATA / "vividlands/structures").with_suffix("").as_posix()
-            for p in (DATA / "vividlands/structures").rglob("*.nbt")}
-    for p, obj in files.items():
-        rel = p.relative_to(DATA).as_posix()
-        if rel.startswith("vividlands/worldgen/template_pool/"):
-            for e in obj["elements"]:
-                loc = e["element"]["location"].split(":", 1)[1]
-                if loc not in nbts:
-                    errors.append(f"{rel}: missing template {loc}")
-            fb = obj["fallback"]
-            if fb.startswith("vividlands:") and fb.split(":")[1] not in own.get("template_pool", set()):
-                errors.append(f"{rel}: missing fallback pool {fb}")
-        if rel.startswith("vividlands/worldgen/structure/") and obj["type"] == "minecraft:jigsaw":
-            need("template_pool", obj["start_pool"], rel)
-            tag = obj["biomes"].lstrip("#").split(":", 1)[1]
-            if not (DATA / "vividlands/tags/worldgen/biome" / f"{tag}.json").exists():
-                errors.append(f"{rel}: missing biome tag {obj['biomes']}")
-        if rel.startswith("vividlands/worldgen/structure_set/"):
-            for st in obj["structures"]:
-                need("structure", st["structure"], rel)
-    import gzip, re as _re
-    for name in nbts:
-        raw = gzip.decompress((DATA / "vividlands/structures" / f"{name}.nbt").read_bytes())
-        for pool in set(_re.findall(rb"vividlands:village/[a-z_]+", raw)) - {b"vividlands:village/x"}:
-            if pool.decode().split(":")[1] not in own.get("template_pool", set()):
-                errors.append(f"structure {name}: jigsaw pool {pool.decode()} missing")
-
-    cat_file = DATA.parent / "vividlands_villages/catalogue.json"
-    if cat_file.exists():
-        roles = {}
-        for e in json.loads(cat_file.read_text()):
-            roles[e["role"]] = roles.get(e["role"], 0) + 1
-            if e["id"].split(":", 1)[1] not in nbts:
-                errors.append(f"village catalogue: missing template {e['id']}")
-        for r in ("plaza", "core", "civic", "craft", "house", "field", "wall_gate", "wall_tower"):
-            if not roles.get(r):
-                errors.append(f"village catalogue: no buildings with role {r}")
 
     biomes_used = {e["biome"] for e in files[DATA / "minecraft/dimension/overworld.json"]["generator"]
                    ["biome_source"]["biomes"]}

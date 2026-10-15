@@ -13,9 +13,6 @@ on:
       biomes:
         description: Optional comma-separated biomes to tile as a checkerboard (tests specific biomes)
         default: ""
-      structures:
-        description: Locate and place Vivid Lands structures, then capture them
-        default: "false"
       stamp_test:
         description: Put a real-world mountain in every cell (to inspect stamps)
         default: "false"
@@ -59,9 +56,8 @@ jobs:
           dl fabric-api
           dl chunky
           dl lithium
-          for m in terrablender corgilib oh-the-trees-youll-grow geckolib oh-the-biomes-weve-gone decorative-blocks; do dl $m; done
+          for m in terrablender corgilib oh-the-trees-youll-grow geckolib oh-the-biomes-weve-gone; do dl $m; done
           cp ../build/libs/vividlands-$(cat ../VERSION).jar mods/
-          if [ "${{ inputs.structures }}" = "true" ]; then cp ../vikings/build/libs/vividlands_vikings-$(cat ../VERSION).jar mods/; fi
           if [ "${{ inputs.stamp_test }}" = "true" ]; then
             mkdir -p world/datapacks/stamptest/data/vividlands/worldgen/density_function/overworld/mountains
             echo '{"pack":{"pack_format":15,"description":"stamp test"}}' > world/datapacks/stamptest/pack.mcmeta
@@ -73,29 +69,6 @@ jobs:
             echo '{"pack":{"pack_format":15,"description":"biome test"}}' > world/datapacks/biometest/pack.mcmeta
             python3 -c "import json,sys; b=[x.strip() for x in sys.argv[1].split(',') if x.strip()]; print(json.dumps({'type':'minecraft:overworld','generator':{'type':'minecraft:noise','settings':'vividlands:overworld','biome_source':{'type':'minecraft:checkerboard','biomes':b,'scale':3}}}))" "${{ inputs.biomes }}" > world/datapacks/biometest/data/minecraft/dimension/overworld.json
             cat world/datapacks/biometest/data/minecraft/dimension/overworld.json
-          fi
-          if [ "${{ inputs.structures }}" = "true" ]; then
-            ALL="viking_village trelleborg longhouse turf_house longship runestone burial_mound ship_burial stave_church mead_hall fishing_hamlet thing_site shieling beacon_cairn knarr shipwreck frozen_longship drakkar"
-            for st in $ALL; do echo "locate structure vividlands:$st"; done > commands.txt
-            place() {   # structure x z forceload-radius
-              echo "forceload add $(($2-$4)) $(($3-$4)) $(($2+$4)) $(($3+$4))"
-              echo "place structure vividlands:$1 $2 80 $3"
-              echo "forceload remove all"
-            }
-            {
-              for xz in "500 0" "-500 0" "0 800" "800 800" "-800 -800" "900 -300"; do
-                set -- $xz
-                place trelleborg $1 $2 112
-              done
-              place viking_village 0 500 96
-              place viking_village 0 -500 96
-              x=-480
-              for st in burial_mound ship_burial stave_church mead_hall fishing_hamlet thing_site shieling beacon_cairn frozen_longship; do
-                place $st $x 260 48
-                x=$((x+120))
-              done
-            } >> commands.txt
-            cat commands.txt
           fi
           echo "eula=true" > eula.txt
           printf "level-seed=%s\nonline-mode=false\nview-distance=4\nsimulation-distance=4\nspawn-protection=0\nmax-tick-time=-1\nsync-chunk-writes=false\n" "$SEED" > server.properties
@@ -112,9 +85,6 @@ jobs:
       - name: Extract maps
         run: |
           python3 tools/worldtest/extract.py server/world out
-          if [ "${{ inputs.structures }}" = "true" ]; then
-            python3 tools/worldtest/structures.py server/world server/server.log out 2>&1 | tee out/structures_log.txt || true
-          fi
       - name: Render maps
         if: always()
         run: |
