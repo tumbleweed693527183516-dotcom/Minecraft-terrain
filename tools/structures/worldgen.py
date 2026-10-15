@@ -64,8 +64,8 @@ STRUCTURES = {
     "burial_mound": ("burial_mound/start", 1, -(DEPTH_MOUND + 1), "none", 20, 8, 1946157318),
     "ship_burial": ("ship_burial/start", 1, -(DEPTH_SHIP + 1), "none", 40, 16, 1946157319),
     "beacon_cairn": ("beacon_cairn/start", 1, -1, "beard_thin", 24, 8, 1946157325),
-    # giant warships: keel one block below template y=0, so the sea surface sits at WATER + 1
-    "drakkar": ("drakkar/start", 1, -(WARSHIP_WATER + 2), "none", 44, 18, 1946157330),
+    # giant warships: the start height counts from the top water block; hold floor = top water block
+    "drakkar": ("drakkar/start", 1, -(WARSHIP_WATER + 1), "none", 44, 18, 1946157330),
     "knarr": ("knarr/start", 1, -4, "none", 28, 10, 1946157326),
     "shipwreck": ("shipwreck/start", 1, -2, "none", 18, 7, 1946157327),
     "frozen_longship": ("frozen_longship/start", 1, -4, "beard_thin", 36, 12, 1946157328),
