@@ -70,6 +70,9 @@ FILES = [
 # Extra performance mods resolved from Modrinth at build time (latest Fabric 1.20.1 release, with
 # required dependencies). (slug, needed on a server too)
 RESOLVE = [
+    # block providers Vivid Lands builds with (and their libraries, resolved automatically)
+    ("oh-the-biomes-weve-gone", True),     # thatch, palm/pine/redwood woods, black sand, peat, dacite...
+    ("decorative-blocks", True),          # palisades for the village walls
     ("badoptimizations", False),       # client micro-optimizations (lightmap, sky, entities)
     ("cloth-config", False),           # config library used by MoreCulling
     ("moreculling", False),            # culls hidden leaf and block faces: big win in forests

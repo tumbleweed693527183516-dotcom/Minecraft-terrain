@@ -1,6 +1,7 @@
 package com.vividlands.village;
 
-import com.vividlands.ModBlocks;
+import com.vividlands.ModCompat;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.tags.BlockTags;
@@ -112,7 +113,8 @@ public class PalisadePiece extends StructurePiece {
     }
 
     /** Trelleborg rampart: an earthen bank with the palisade on its crest and a ditch outside. */
-    private void rampartColumn(WorldGenLevel level, BlockPos.MutableBlockPos p, int x, int z, double t, long hash) {
+    private void rampartColumn(WorldGenLevel level, BlockPos.MutableBlockPos p, int x, int z, double t, long hash,
+                               BlockState stake, List<BlockPos> tops) {
         int g = findGround(level, x, z, groundY);
         if (g < -500) {
             return;                                      // leave water alone
@@ -141,7 +143,8 @@ public class PalisadePiece extends StructurePiece {
                     level.setBlock(p, (hash >>> 11 & 3) == 0 ? style.wallAccent() : style.wallLog(), 2);
                 }
                 p.set(x, base + height + 1, z);
-                level.setBlock(p, ModBlocks.PALISADE_STAKE.defaultBlockState(), 2);
+                level.setBlock(p, stake, 2);
+                tops.add(p.immutable());
             }
         } else if (t > 4.5 && t < 9) {                    // the ditch
             int depth = (int) Math.round(2.6 * Math.sin(Math.PI * (t - 4.5) / 4.5));
@@ -160,7 +163,9 @@ public class PalisadePiece extends StructurePiece {
         BlockPos.MutableBlockPos p = new BlockPos.MutableBlockPos();
         BlockState log = style.wallLog();
         BlockState dark = style.wallAccent();
-        BlockState stake = ModBlocks.PALISADE_STAKE.defaultBlockState();
+        // sharpened tops: Decorative Blocks palisades, joined up once the whole arc in this chunk is placed
+        BlockState stake = ModCompat.palisade(style.palisadeWood());
+        List<BlockPos> tops = new ArrayList<>();
         for (int x = Math.max(boundingBox.minX(), chunkBox.minX()); x <= Math.min(boundingBox.maxX(), chunkBox.maxX()); x++) {
             for (int z = Math.max(boundingBox.minZ(), chunkBox.minZ()); z <= Math.min(boundingBox.maxZ(), chunkBox.maxZ()); z++) {
                 double cxp = x + 0.5, czp = z + 0.5;
@@ -185,7 +190,7 @@ public class PalisadePiece extends StructurePiece {
                         }
                     }
                     if (!gap) {
-                        rampartColumn(level, p, x, z, t, (long) x * 73428767L ^ (long) z * 912931L);
+                        rampartColumn(level, p, x, z, t, (long) x * 73428767L ^ (long) z * 912931L, stake, tops);
                     }
                     continue;
                 }
@@ -212,6 +217,7 @@ public class PalisadePiece extends StructurePiece {
                 }
                 p.set(x, base + height + 1, z);
                 level.setBlock(p, stake, 2);
+                tops.add(p.immutable());
                 // fill under the wall so it never floats on a slope
                 for (int y = base; y > base - 8; y--) {
                     p.set(x, y, z);
@@ -222,6 +228,9 @@ public class PalisadePiece extends StructurePiece {
                     level.setBlock(p, log, 2);
                 }
             }
+        }
+        for (BlockPos top : tops) {              // connect each palisade to its neighbours
+            level.setBlock(top, Block.updateFromNeighbourShapes(level.getBlockState(top), level, top), 2);
         }
     }
 }

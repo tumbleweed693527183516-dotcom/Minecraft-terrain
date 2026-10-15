@@ -1,6 +1,6 @@
 package com.vividlands.village;
 
-import com.vividlands.ModBlocks;
+import com.vividlands.ModCompat;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.tags.BlockTags;
@@ -78,8 +78,7 @@ public class GradePiece extends StructurePiece {
 
     private static boolean soil(BlockState s) {
         return s.is(BlockTags.DIRT) || s.is(BlockTags.SAND) || s.is(Blocks.GRAVEL) || s.is(Blocks.SNOW_BLOCK)
-                || s.is(Blocks.MUD) || s.is(Blocks.CLAY) || s.is(ModBlocks.BLACK_SAND) || s.is(ModBlocks.PEAT)
-                || s.is(ModBlocks.VOLCANIC_ASH);
+                || s.is(Blocks.MUD) || s.is(Blocks.CLAY) || ModCompat.isModSoil(s);
     }
 
     private static boolean clutter(BlockState s) {

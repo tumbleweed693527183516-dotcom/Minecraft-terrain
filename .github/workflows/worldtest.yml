@@ -59,6 +59,7 @@ jobs:
           dl fabric-api
           dl chunky
           dl lithium
+          for m in terrablender corgilib oh-the-trees-youll-grow geckolib oh-the-biomes-weve-gone decorative-blocks; do dl $m; done
           cp ../build/libs/vividlands-$(cat ../VERSION).jar mods/
           if [ "${{ inputs.stamp_test }}" = "true" ]; then
             mkdir -p world/datapacks/stamptest/data/vividlands/worldgen/density_function/overworld/mountains

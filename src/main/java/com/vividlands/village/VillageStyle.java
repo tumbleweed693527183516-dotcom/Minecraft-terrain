@@ -1,6 +1,6 @@
 package com.vividlands.village;
 
-import com.vividlands.ModBlocks;
+import com.vividlands.ModCompat;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -33,9 +33,20 @@ public enum VillageStyle {
         return switch (this) {
             case SNOW, STEPPE -> Blocks.DARK_OAK_LOG.defaultBlockState();
             case FOREST -> Blocks.OAK_LOG.defaultBlockState();
-            case DESERT -> ModBlocks.PALM_LOG.defaultBlockState();
+            case DESERT -> ModCompat.state(ModCompat.BWG, "palm_log", Blocks.ACACIA_LOG);
             case JUNGLE -> Blocks.JUNGLE_LOG.defaultBlockState();
             default -> Blocks.SPRUCE_LOG.defaultBlockState();
+        };
+    }
+
+    /** Decorative Blocks palisade wood for the sharpened tops of the wall. */
+    String palisadeWood() {
+        return switch (this) {
+            case SNOW, STEPPE -> "dark_oak";
+            case FOREST -> "oak";
+            case DESERT -> "acacia";
+            case JUNGLE -> "jungle";
+            default -> "spruce";
         };
     }
 

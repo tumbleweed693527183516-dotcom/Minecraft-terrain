@@ -1,6 +1,6 @@
 package com.vividlands.village;
 
-import com.vividlands.ModBlocks;
+import com.vividlands.ModCompat;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.RandomSource;
@@ -80,8 +80,8 @@ public class PathPiece extends StructurePiece {
             if (!(here.is(Blocks.GRASS_BLOCK) || here.is(Blocks.DIRT) || here.is(Blocks.COARSE_DIRT)
                     || here.is(Blocks.PODZOL) || here.is(Blocks.SAND) || here.is(Blocks.GRAVEL)
                     || here.is(Blocks.SNOW_BLOCK) || here.is(Blocks.MOSS_BLOCK) || here.is(Blocks.MUD)
-                    || here.is(Blocks.ROOTED_DIRT) || here.is(Blocks.MYCELIUM) || here.is(ModBlocks.BLACK_SAND)
-                    || here.is(ModBlocks.PEAT) || here.is(ModBlocks.VOLCANIC_ASH) || here.is(Blocks.TUFF)
+                    || here.is(Blocks.ROOTED_DIRT) || here.is(Blocks.MYCELIUM) || ModCompat.isModSoil(here)
+                     || here.is(Blocks.TUFF)
                     || here.is(Blocks.BLACKSTONE))) {
                 continue;     // don't pave over stone floors, foundations or rock
             }

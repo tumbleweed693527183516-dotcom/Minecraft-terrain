@@ -6,9 +6,15 @@ Taller worlds (build limit y=511), continent-sized landmasses, and new biomes in
 
 ## Blocks
 
-Palisade stakes, thatch (block, stairs, slab), wattle and daub, carved posts, painted wall shields, black sand, volcanic ash, salt crust, peat, heather, dry grass, and three woods - palm, redwood and Scots pine (log, leaves, planks) - with matching trees: drooping-frond palms, giant redwoods, orange-barked Scots pines and spreading giant oaks. Every block uses Minecraft's own textures (referenced, not copied), so resource packs restyle them with the rest of the game; blocks are defined once in `tools/blocks.py`.
+Vivid Lands adds no blocks of its own. Terrain and buildings use blocks from established mods, with their creators' textures:
 
-## Viking structures (v0.14)
+- **[Oh The Biomes We've Gone](https://modrinth.com/mod/oh-the-biomes-weve-gone)**: cattail thatch (block, stairs, slab) for roofs, palm, pine and redwood woods and leaves, black and white sand, white sandstone, peat, dacite (volcanic rock), red rock, purple sage (heather) and prairie grass.
+- **[Decorative Blocks](https://modrinth.com/mod/decorative-blocks)**: sharpened-log palisades for village walls.
+- Vanilla for the rest (calcite, packed mud, stripped dark oak, wall banners...).
+
+Both are required (with Oh The Biomes We've Gone's libraries TerraBlender, CorgiLib, Oh The Trees You'll Grow and GeckoLib). Their own biomes are switched off in the Vivid Lands overworld, so only their blocks appear. The mapping lives in `tools/modblocks.py`.
+
+## Viking structures (v0.15)
 
 - **Walled Viking villages replace every vanilla village**, full-sized (66-80 block radius, 30+ buildings plus outlying farmsteads), in six regional styles: *north* (turf, spruce and thatch), *snow* (dark timber, snow-laden roofs), *forest* (oak halls), *steppe* (birch Rus towns), *desert* (Varangian trading posts in palm wood, sandstone and mud brick) and *jungle* (far-voyager camps). Each has a ring palisade of sharpened logs that follows the ground, 2-3 gatehouses with walkways, watchtowers, a central plaza with a covered well, bell and runestones, a chieftain's great hall (45 blocks long), longhouses in three sizes with shingle, thatch or turf roofs, Glaumbær-style turf farmsteads, a forge with a chimney, a temple, a market, stabbur storehouses, a granary, a byre, a weaving pit-house, a training yard, paths to every door, and fields and sheep folds outside the walls. Built by a custom generator (`com.vividlands.village`) so every village is laid out differently, inhabited by villagers. They replace vanilla villages in these biomes.
 - **Level sites:** before a village or fortress is built its ground is graded into a level plateau (hills cut, hollows and ponds filled, with the local surface blocks), blending back into the land outside the walls.
@@ -43,7 +49,7 @@ Terrain: basin-and-range mountains, like the Wasatch rising out of the Salt Lake
 
 ## Installing for testing
 
-- **Mod:** put `vividlands-<version>.jar` in your Fabric 1.20.1 `mods` folder with **Fabric API**.
+- **Mod:** put `vividlands-<version>.jar` in your Fabric 1.20.1 `mods` folder with **Fabric API**, **Oh The Biomes We've Gone** (+ TerraBlender, CorgiLib, Oh The Trees You'll Grow, GeckoLib) and **Decorative Blocks**.
 - **Test pack:** import `VividLands-TestPack-<version>.mrpack` into the Modrinth App.
 
 Always create a **new world**. Do not add this to an existing world.

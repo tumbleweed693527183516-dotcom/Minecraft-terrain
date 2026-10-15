@@ -727,7 +727,7 @@
                                   {
                                     "type": "minecraft:block",
                                     "result_state": {
-                                      "Name": "vividlands:black_sand"
+                                      "Name": "biomeswevegone:black_sand"
                                     }
                                   }
                                 ]
@@ -1304,7 +1304,7 @@
                                 "then_run": {
                                   "type": "minecraft:block",
                                   "result_state": {
-                                    "Name": "vividlands:volcanic_ash"
+                                    "Name": "biomeswevegone:dacite"
                                   }
                                 }
                               },
@@ -1334,7 +1334,7 @@
                                 "then_run": {
                                   "type": "minecraft:block",
                                   "result_state": {
-                                    "Name": "vividlands:black_sand"
+                                    "Name": "biomeswevegone:black_sand"
                                   }
                                 }
                               },
@@ -1546,7 +1546,7 @@
                               {
                                 "type": "minecraft:block",
                                 "result_state": {
-                                  "Name": "vividlands:black_sand"
+                                  "Name": "biomeswevegone:black_sand"
                                 }
                               }
                             ]
@@ -1610,7 +1610,7 @@
                                         "then_run": {
                                           "type": "minecraft:block",
                                           "result_state": {
-                                            "Name": "vividlands:peat"
+                                            "Name": "biomeswevegone:peat"
                                           }
                                         }
                                       },
@@ -1776,7 +1776,7 @@
                                 "then_run": {
                                   "type": "minecraft:block",
                                   "result_state": {
-                                    "Name": "vividlands:travertine"
+                                    "Name": "biomeswevegone:white_sandstone"
                                   }
                                 }
                               },
@@ -1791,7 +1791,7 @@
                                 "then_run": {
                                   "type": "minecraft:block",
                                   "result_state": {
-                                    "Name": "vividlands:sulfur_crust"
+                                    "Name": "minecraft:yellow_terracotta"
                                   }
                                 }
                               },
@@ -1806,7 +1806,7 @@
                                 "then_run": {
                                   "type": "minecraft:block",
                                   "result_state": {
-                                    "Name": "vividlands:thermal_mat"
+                                    "Name": "biomeswevegone:red_rock"
                                   }
                                 }
                               },
@@ -1821,7 +1821,7 @@
                                 "then_run": {
                                   "type": "minecraft:block",
                                   "result_state": {
-                                    "Name": "vividlands:sinter"
+                                    "Name": "minecraft:calcite"
                                   }
                                 }
                               },
@@ -1836,7 +1836,7 @@
                                 "then_run": {
                                   "type": "minecraft:block",
                                   "result_state": {
-                                    "Name": "vividlands:travertine"
+                                    "Name": "biomeswevegone:white_sandstone"
                                   }
                                 }
                               },
@@ -1972,7 +1972,7 @@
                                     "then_run": {
                                       "type": "minecraft:block",
                                       "result_state": {
-                                        "Name": "vividlands:volcanic_ash"
+                                        "Name": "biomeswevegone:dacite"
                                       }
                                     }
                                   },
@@ -2012,7 +2012,7 @@
                                       {
                                         "type": "minecraft:block",
                                         "result_state": {
-                                          "Name": "vividlands:black_sand"
+                                          "Name": "biomeswevegone:black_sand"
                                         }
                                       }
                                     ]
@@ -2066,7 +2066,7 @@
                               {
                                 "type": "minecraft:block",
                                 "result_state": {
-                                  "Name": "vividlands:black_sand"
+                                  "Name": "biomeswevegone:black_sand"
                                 }
                               }
                             ]
@@ -2144,7 +2144,7 @@
                                 "then_run": {
                                   "type": "minecraft:block",
                                   "result_state": {
-                                    "Name": "vividlands:volcanic_ash"
+                                    "Name": "biomeswevegone:dacite"
                                   }
                                 }
                               },
@@ -2975,7 +2975,7 @@
                           "then_run": {
                             "type": "minecraft:block",
                             "result_state": {
-                              "Name": "vividlands:salt_crust"
+                              "Name": "biomeswevegone:white_sand"
                             }
                           }
                         },
@@ -3293,7 +3293,7 @@
                         "then_run": {
                           "type": "minecraft:block",
                           "result_state": {
-                            "Name": "vividlands:black_sand"
+                            "Name": "biomeswevegone:black_sand"
                           }
                         }
                       },
@@ -3578,7 +3578,7 @@
                         "then_run": {
                           "type": "minecraft:block",
                           "result_state": {
-                            "Name": "vividlands:black_sand"
+                            "Name": "biomeswevegone:black_sand"
                           }
                         }
                       },
@@ -3608,7 +3608,7 @@
                         "then_run": {
                           "type": "minecraft:block",
                           "result_state": {
-                            "Name": "vividlands:black_sand"
+                            "Name": "biomeswevegone:black_sand"
                           }
                         }
                       },
@@ -3623,7 +3623,7 @@
                         "then_run": {
                           "type": "minecraft:block",
                           "result_state": {
-                            "Name": "vividlands:peat"
+                            "Name": "biomeswevegone:peat"
                           }
                         }
                       },
@@ -3668,7 +3668,7 @@
                         "then_run": {
                           "type": "minecraft:block",
                           "result_state": {
-                            "Name": "vividlands:sinter"
+                            "Name": "minecraft:calcite"
                           }
                         }
                       },
@@ -3683,7 +3683,7 @@
                         "then_run": {
                           "type": "minecraft:block",
                           "result_state": {
-                            "Name": "vividlands:black_sand"
+                            "Name": "biomeswevegone:black_sand"
                           }
                         }
                       },
@@ -3698,7 +3698,7 @@
                         "then_run": {
                           "type": "minecraft:block",
                           "result_state": {
-                            "Name": "vividlands:black_sand"
+                            "Name": "biomeswevegone:black_sand"
                           }
                         }
                       },
@@ -3983,7 +3983,7 @@
                         "then_run": {
                           "type": "minecraft:block",
                           "result_state": {
-                            "Name": "vividlands:salt_crust"
+                            "Name": "biomeswevegone:white_sand"
                           }
                         }
                       },
@@ -4171,7 +4171,7 @@
                     "then_run": {
                       "type": "minecraft:block",
                       "result_state": {
-                        "Name": "vividlands:black_sand"
+                        "Name": "biomeswevegone:black_sand"
                       }
                     }
                   },
@@ -4458,7 +4458,7 @@
                     "then_run": {
                       "type": "minecraft:block",
                       "result_state": {
-                        "Name": "vividlands:sinter"
+                        "Name": "minecraft:calcite"
                       }
                     }
                   },
@@ -4488,7 +4488,7 @@
                     "then_run": {
                       "type": "minecraft:block",
                       "result_state": {
-                        "Name": "vividlands:black_sand"
+                        "Name": "biomeswevegone:black_sand"
                       }
                     }
                   },
@@ -4503,7 +4503,7 @@
                     "then_run": {
                       "type": "minecraft:block",
                       "result_state": {
-                        "Name": "vividlands:black_sand"
+                        "Name": "biomeswevegone:black_sand"
                       }
                     }
                   },
@@ -4821,7 +4821,7 @@
                     "then_run": {
                       "type": "minecraft:block",
                       "result_state": {
-                        "Name": "vividlands:salt_crust"
+                        "Name": "biomeswevegone:white_sand"
                       }
                     }
                   },

@@ -13,7 +13,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import blocks  # noqa: E402
+import modblocks  # noqa: E402
 from structures import worldgen as structures  # noqa: E402
 
 MODID = "vividlands"
@@ -73,7 +73,7 @@ def vl(x):
 def write(path, obj):
     p = DATA / path
     p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(json.dumps(obj, indent=2) + "\n")
+    p.write_text(json.dumps(modblocks.remap_json(obj), indent=2) + "\n")
 
 
 def state(name, **props):
@@ -1345,7 +1345,10 @@ def main():
     entries = biome_layout()
     tags()
     structures.write(DATA, lambda b: b in BIOMES)
-    lang(blocks.assets_and_data(DATA))
+    # TerraBlender (needed by Oh The Biomes We've Gone, whose blocks we build with) must not mix
+    # its biomes into our overworld: opt the overworld out of its regions.
+    write("terrablender/tags/dimension_type/overworld_regions.json", {"replace": True, "values": []})
+    lang({})
     print(f"Generated {len(BIOMES)} biomes, {len(ORDER)} placed features, {len(entries)} biome map entries")
 
 

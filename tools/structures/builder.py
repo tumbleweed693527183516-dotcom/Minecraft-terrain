@@ -6,6 +6,8 @@ anything left unset keeps whatever terrain is there (like structure void).
 """
 from .nbtio import Byte, DoubleList, IntList, write_nbt
 
+import modblocks
+
 DATA_VERSION = 3465  # Minecraft 1.20.1
 
 
@@ -87,6 +89,7 @@ class Build:
         (x0, y0, z0), (x1, y1, z1) = self.bounds()
         palette, index, blocks = [], {}, []
         for (x, y, z), (name, props, nbt) in sorted(self.blocks.items(), key=lambda kv: (kv[0][1], kv[0][2], kv[0][0])):
+            name, props = modblocks.name(name), modblocks.props(name, props)   # design names -> mod blocks
             key = (name, props)
             if key not in index:
                 index[key] = len(palette)

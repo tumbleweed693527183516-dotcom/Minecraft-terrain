@@ -3,8 +3,10 @@
   "id": "vividlands",
   "version": "${version}",
   "name": "Vivid Lands",
-  "description": "Huge, vivid world generation: towering mountains, volcanic highlands, heather moors, endless dunes, oases and ancient forests.",
-  "authors": ["tumbleweed693527183516-dotcom"],
+  "description": "Huge, vivid world generation: towering mountains, volcanic highlands, heather moors, endless dunes, oases, ancient forests and Viking villages. Builds with blocks from Oh The Biomes We've Gone and Decorative Blocks.",
+  "authors": [
+    "tumbleweed693527183516-dotcom"
+  ],
   "contact": {
     "sources": "https://github.com/tumbleweed693527183516-dotcom/Minecraft-terrain"
   },
@@ -12,13 +14,19 @@
   "icon": "assets/vividlands/icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": ["com.vividlands.VividLands"],
-    "client": ["com.vividlands.VividLandsClient"]
+    "main": [
+      "com.vividlands.VividLands"
+    ],
+    "client": [
+      "com.vividlands.VividLandsClient"
+    ]
   },
   "depends": {
     "fabricloader": ">=0.14.21",
     "minecraft": "1.20.1",
-    "fabric-api": "*"
+    "fabric-api": "*",
+    "biomeswevegone": "*",
+    "decorative_blocks": "*"
   },
   "conflicts": {
     "terralith": "*",
