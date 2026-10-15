@@ -26,3 +26,16 @@ Status: **pending** (not checked yet) · **ok** (Fabric 1.20.1, fits) · **no** 
 ## Boss progression plan
 
 (to be written once the mods are collected)
+
+## Candidates suggested (not chosen yet)
+
+Village replacements and ancient-civilization content found on Modrinth (Fabric 1.20.1):
+
+| Mod | Link | Licence | Why it might fit |
+|-----|------|---------|------------------|
+| Civilizations | https://modrinth.com/mod/civilizations | ARR | Egyptian, Chinese, Roman, Greek and Norse civilizations with structures, currencies and trading; leaders (Khufu, Qin Shi Huang, Caesar, Alexander, Bjorn Ironside) to fight and gods (Anubis, Sun Wukong, Mercury, Artemis, Loki) to summon. Fabric only, 1.20.1-1.20.4. |
+| Towns and Towers | https://modrinth.com/mod/towns-and-towers | CC-BY-NC-SA-4.0 | 50+ villages, outposts and ships inspired by real-world architecture styles; adds alongside vanilla. Needs CristelLib. |
+| ChoiceTheorem's Overhauled Village | https://modrinth.com/mod/ct-overhaul-village | CC-BY-NC-ND-4.0 | Villages for many more biomes plus overhauled vanilla ones. |
+| Epic Structures: Villages | https://modrinth.com/mod/epic-structures-villages | ARR | Replaces villages with large medieval cities and towns. |
+| Luki's Grand Capitals | https://modrinth.com/mod/lukis-grand-capitals | ARR | Rebuilds vanilla villages as grand capitals. |
+| Mebahel's Antique Beasts | https://modrinth.com/mod/mebahels-antique-beasts | ARR | Ancient warriors, legendary beasts, forgotten ruins (creature/boss candidate). |
