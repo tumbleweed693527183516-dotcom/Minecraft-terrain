@@ -40,6 +40,9 @@ Give the instance **6-8 GB of RAM** (Modrinth App: instance settings > Java and 
 
 ## Performance
 
+- The whole land shape (mountain ranges, real-world stamps, creeks) is one compiled density function, `vividlands:terrain_2d`, computed once per column: the terrain formula shrank from ~2,500 steps to ~180, so each chunk sets up far faster.
+- Aquifers skip open sky: above the ground and sea level the water/lava/air check answers "air" at once (a mixin; identical results).
+- Benchmark (same 16,641 chunks on a test server): vanilla 6:40, Vivid Lands before 7:36, now 5:06, with identical terrain.
 - Open sky is skipped: above the terrain's smooth shape the 3D terrain, cave and entrance noise isn't computed at all (most of a 576-block-tall world).
 - The 16-octave jagged-peaks noise is cached per column instead of being recomputed at every cell.
 - Hot springs use vanilla's light water-patch feature instead of lakes.
