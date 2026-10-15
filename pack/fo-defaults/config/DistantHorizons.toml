@@ -1,9 +1,0 @@
-[common.worldGenerator]
-	enableDistantGeneration = true
-	distantGeneratorMode = "SURFACE"
-
-[client.advanced.graphics.quality]
-	lodChunkRenderDistanceRadius = 192
-
-[common.multiThreading]
-	numberOfWorldGenerationThreads = 2

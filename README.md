@@ -30,7 +30,7 @@ ships with the pack) with every mod updated to its newest 1.20.1 release, plus w
 - **Rendering:** Sodium, Sodium Extra, Reese's Sodium Options, Indium, ImmediatelyFast, Entity Culling, MoreCulling, Enhanced Block Entities, Model Gap Fix, BadOptimizations, Continuity
 - **Game logic and memory:** Lithium, FerriteCore, ModernFix, Memory Leak Fix, Debugify, Dynamic FPS (idles when the window is in the background)
 - **World generation:** C2ME (multi-threaded chunk generation) and Chunky (pre-generate an area: `/chunky radius 2000` then `/chunky start`)
-- **Visuals:** Iris with Complementary Reimagined (off by default, press K), Distant Horizons (far terrain built from the surface shape only)
+- **Visuals:** Iris with Complementary Reimagined (off by default, press K), Distant Horizons (its own default settings)
 - **Quality of life:** Mod Menu, Zoomify (C), FastQuit, Remove Reloading Screen, Language Reload, AdvancementInfo, Better Mount HUD, Borderless Mining, More Chat History, No Chat Reports
 - **Adding your own mods safely:** MixinTrace (names the mod behind a crash), YOSBR (the pack's default settings are applied once and never overwrite yours), Cloth Config, YetAnotherConfigLib, Fabric Language Kotlin
 
