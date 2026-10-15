@@ -1,7 +1,7 @@
 """
 Giant Viking warships (drekar): a dragon-headed sea-king's flagship and a large war longship.
 
-Local y = WATER is the sea surface. Below deck the hull is dry (air cells push the sea out).
+Local y = WATER is the sea surface: the hold floor, so everything below deck is above the sea and stays dry.
 Spawners sit in dark places (the hold, the cabins) so they work by day, plus a crow's-nest
 spawner that wakes at night, an armoured draugr crew on deck and a Draugr Jarl aft.
 """
@@ -11,7 +11,7 @@ from .builder import Build
 from .kit import FENCE, NS, armor_stand, candle, draugr, h, shield, slab, spawner, stair
 from .nbtio import Byte
 
-WATER = 5
+WATER = 1          # the sea laps the hold floor: everything below deck is above the waterline
 DECK = 6
 
 
@@ -151,11 +151,10 @@ def warship(name, L, B, masts, salt, sail=("red", "white")):
                 shield(b, x, T - 1, z, "west" if side < 0 else "east", salt + z)
             if z % 4 == 1 and 10 <= z <= L - 11:                 # oars: out and down to the sea
                 ox = C + side * (w + 1)
-                for i in range(7):
-                    y = T - 2 if i < 3 else (T - 3 if i < 5 else WATER)
-                    y = max(y, WATER)
-                    fence_x(b, ox + side * i, y, z, waterlogged=(y == WATER))
-                b.set(ox + side * 7, WATER, z, "spruce_slab", type="top", waterlogged=True)
+                for i in range(8):
+                    y = round((T - 2) + (WATER - (T - 2)) * i / 7)
+                    fence_x(b, ox + side * i, y, z, waterlogged=(y <= WATER))
+                b.set(ox + side * 8, WATER, z, "spruce_slab", type="top", waterlogged=True)
 
     # ---- rowing benches and sea chests on deck ----------------------------------
     for z in range(10, L - 26, 4):
