@@ -71,6 +71,7 @@ FILES = [
 # required dependencies). (slug, needed on a server too)
 RESOLVE = [
     ("badoptimizations", False),       # client micro-optimizations (lightmap, sky, entities)
+    ("cloth-config", False),           # config library used by MoreCulling
     ("moreculling", False),            # culls hidden leaf and block faces: big win in forests
     ("ebe", False),                    # Enhanced Block Entities: chests, beds, bells render as fast blocks
     ("sodium-extra", False),           # extra toggles (particles, animations, fog)
