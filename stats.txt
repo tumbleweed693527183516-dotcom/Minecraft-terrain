@@ -1,0 +1,8 @@
+area: 2064x2064 blocks
+land surface height  p5/p25/p50/p75/p95/max: 61 / 61 / 62 / 62 / 62 / 62
+water share: 100.0%
+blocks above y=300: 0.00%  above y=200: 0.00%
+
+biomes by area:
+  vividlands:deep_temperate_ocean           58.2%
+  vividlands:temperate_ocean                41.8%
