@@ -25,6 +25,11 @@ echo "Server started. Generating terrain (radius ${RADIUS})..."
 echo "chunky center 0 0" > console
 echo "chunky radius ${RADIUS}" > console
 echo "chunky start" > console
+if [ "${PROFILE:-false}" = "true" ]; then
+  # poor man's sampling profiler: stack snapshots of the server while it generates
+  (sleep 90; mkdir -p ../profile; for i in $(seq 240); do
+     jstack "$PID" > "../profile/s$i.txt" 2>/dev/null || break; sleep 0.5; done) &
+fi
 wait_for 'task finished' 5400
 grep -i 'chunky' server.log | tail -n 3
 if [ -f commands.txt ]; then

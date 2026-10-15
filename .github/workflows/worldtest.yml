@@ -16,6 +16,9 @@ on:
       vanilla:
         description: Benchmark plain vanilla generation instead (no Vivid Lands)
         default: "false"
+      profile:
+        description: Sample stack traces during generation and summarise where the time goes
+        default: "false"
       label:
         description: Name for the results branch (worldtest-<label>); defaults to the seed
         default: ""
@@ -80,6 +83,8 @@ jobs:
           echo "eula=true" > eula.txt
           printf "level-seed=%s\nonline-mode=false\nview-distance=4\nsimulation-distance=4\nspawn-protection=0\nmax-tick-time=-1\nsync-chunk-writes=false\n" "$SEED" > server.properties
       - name: Generate world
+        env:
+          PROFILE: ${{ inputs.profile }}
         run: bash tools/worldtest/run_server.sh "${{ inputs.radius }}"
       - name: Collect errors
         if: always()
@@ -92,6 +97,11 @@ jobs:
       - name: Extract maps
         run: |
           python3 tools/worldtest/extract.py server/world out
+          if [ -d profile ]; then
+            MAP=$(find ~/.gradle .gradle -name "mappings.tiny" 2>/dev/null | xargs -r grep -l "named" | head -1)
+            echo "mappings: $MAP"
+            python3 tools/worldtest/profile.py profile out/profile.txt "$MAP" || true
+          fi
       - name: Render maps
         if: always()
         run: |
