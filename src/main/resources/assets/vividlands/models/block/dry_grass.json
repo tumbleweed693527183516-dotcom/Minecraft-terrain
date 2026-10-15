@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "vividlands:block/dry_grass"
+    "cross": "minecraft:block/dead_bush"
   }
 }

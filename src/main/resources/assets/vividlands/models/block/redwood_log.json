@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "vividlands:block/redwood_log_top",
-    "side": "vividlands:block/redwood_log"
+    "end": "minecraft:block/mangrove_log_top",
+    "side": "minecraft:block/mangrove_log"
   }
 }

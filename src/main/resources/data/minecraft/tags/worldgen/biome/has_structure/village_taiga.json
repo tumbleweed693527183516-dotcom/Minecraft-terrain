@@ -1,7 +1,4 @@
 {
-  "replace": false,
-  "values": [
-    "vividlands:boreal_snowwoods",
-    "vividlands:redwood_giants"
-  ]
+  "replace": true,
+  "values": []
 }

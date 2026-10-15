@@ -2,10 +2,10 @@
   "parent": "minecraft:block/block",
   "ambientocclusion": false,
   "textures": {
-    "face": "vividlands:block/shield_green",
+    "face": "minecraft:block/green_wool",
     "rim": "minecraft:block/dark_oak_planks",
     "boss": "minecraft:block/iron_block",
-    "particle": "vividlands:block/shield_green"
+    "particle": "minecraft:block/green_wool"
   },
   "elements": [
     {

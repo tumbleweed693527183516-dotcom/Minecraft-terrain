@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "vividlands:block/shield_blue"
-  }
+  "parent": "vividlands:block/shield_blue"
 }

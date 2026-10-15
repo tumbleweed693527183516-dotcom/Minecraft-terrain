@@ -1,6 +1,4 @@
 {
-  "replace": false,
-  "values": [
-    "vividlands:golden_savanna"
-  ]
+  "replace": true,
+  "values": []
 }

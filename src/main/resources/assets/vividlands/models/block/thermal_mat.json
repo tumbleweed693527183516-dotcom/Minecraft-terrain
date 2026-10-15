@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "vividlands:block/thermal_mat"
+    "all": "minecraft:block/orange_terracotta"
   }
 }

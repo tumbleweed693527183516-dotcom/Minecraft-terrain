@@ -1,11 +1,4 @@
 {
-  "replace": false,
-  "values": [
-    "vividlands:alpine_meadow",
-    "vividlands:black_sand_desert",
-    "vividlands:endless_steppe",
-    "vividlands:golden_savanna",
-    "vividlands:salt_flats",
-    "vividlands:wildflower_prairie"
-  ]
+  "replace": true,
+  "values": []
 }

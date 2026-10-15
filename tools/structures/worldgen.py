@@ -10,14 +10,31 @@ from .designs import all_designs
 from .viking import catalogue
 from .viking2 import DEPTH_MOUND, DEPTH_SHIP, catalogue2
 from .warship import WATER as WARSHIP_WATER, catalogue3
+from .styles import STYLES, restyle
 
 CATALOGUE_OUT = Path(__file__).resolve().parents[2] / "src/main/resources/vividlands_villages/catalogue.json"
 
 NS = "vividlands"
 
-# Which of our biomes get which structure
-VILLAGE_BIOMES = ["highland_moors", "caledonian_pinewood", "taiga_lakelands", "glacial_outwash", "mossy_lava_fields",
-                  "tundra", "basalt_highlands"]
+# Viking villages replace every vanilla village; each region gets its own style (see styles.py)
+VILLAGE_STYLE_BIOMES = {
+    "north": ["highland_moors", "caledonian_pinewood", "taiga_lakelands", "glacial_outwash", "mossy_lava_fields",
+              "basalt_highlands", "black_sand_desert", "rhyolite_highlands", "hot_springs"],
+    "snow": ["tundra", "boreal_snowwoods"],
+    "forest": ["mixed_woodland", "autumn_woodland", "old_growth_oakwood", "redwood_giants", "alpine_meadow", "fen"],
+    "steppe": ["endless_steppe", "wildflower_prairie", "golden_savanna"],
+    "desert": ["great_erg", "rocky_hamada", "salt_flats", "red_canyonlands", "oasis"],
+    "jungle": ["rainforest", "cloud_forest"],
+}
+VILLAGE_BIOMES = [b for bs in VILLAGE_STYLE_BIOMES.values() for b in bs]
+
+
+def village_structure(style):
+    return "viking_village" if style == "north" else f"viking_village_{style}"
+
+
+def template_dir(style):
+    return "viking" if style == "north" else f"viking_{style}"
 STRUCTURE_BIOMES = {
     "viking_village": VILLAGE_BIOMES,
     "longhouse": VILLAGE_BIOMES + ["mixed_woodland", "autumn_woodland", "alpine_meadow", "black_sand_desert",
@@ -51,7 +68,7 @@ STRUCTURE_BIOMES = {
 }
 
 # Walled villages use the Java structure type vividlands:viking_village (see VikingVillageStructure).
-VILLAGE_SPACING = (34, 14, 1946157313)
+VILLAGE_SPACING = (34, 10, 1946157313)     # like vanilla villages (34 / 8)
 TRELLEBORG_SPACING = (72, 30, 1946157329)
 
 # name: (start pool, size, start height, terrain adaptation, spacing, separation, salt)
@@ -259,24 +276,30 @@ def write(data_dir, biome_exists):
     cat = []
     role_map = {"wall": None}
     for name, (b, role) in catalogue().items():
-        sizes[name] = b.save(out / "structures" / f"{name}.nbt")
+        short = name.split("/")[-1]
         if role == "wall":
             role = "wall_gate" if "gate" in name else "wall_tower"
-        cat.append({"id": f"{NS}:{name}", "role": role, "size": list(sizes[name])})
+        for style in STYLES:
+            tname = f"{template_dir(style)}/{short}"
+            sizes[tname] = restyle(b, style, short).save(out / "structures" / f"{tname}.nbt")
+            cat.append({"id": f"{NS}:{tname}", "role": role, "size": list(sizes[tname]), "style": style})
     for name, b in list(catalogue2().items()) + list(catalogue3().items()):
         sizes[name] = b.save(out / "structures" / f"{name}.nbt")
     CATALOGUE_OUT.parent.mkdir(parents=True, exist_ok=True)
     CATALOGUE_OUT.write_text(json.dumps(cat, indent=2))
-    # walled village: custom structure type
-    _w(out / "worldgen/structure/viking_village.json", {
-        "type": f"{NS}:viking_village", "biomes": f"#{NS}:has_structure/viking_village",
-        "step": "top_layer_modification", "spawn_overrides": {}, "terrain_adaptation": "none"})
+    # walled villages: custom structure type, one structure per regional style, sharing one
+    # placement set so they space out like vanilla villages and never overlap
+    for style, biomes in VILLAGE_STYLE_BIOMES.items():
+        sname = village_structure(style)
+        _w(out / f"worldgen/structure/{sname}.json", {
+            "type": f"{NS}:viking_village", "biomes": f"#{NS}:has_structure/{sname}", "style": style,
+            "step": "top_layer_modification", "spawn_overrides": {}, "terrain_adaptation": "none"})
+        _w(out / f"tags/worldgen/biome/has_structure/{sname}.json",
+           {"replace": False, "values": [f"{NS}:{b}" for b in biomes if biome_exists(b)]})
     sp, se, salt = VILLAGE_SPACING
     _w(out / "worldgen/structure_set/viking_village.json", {
-        "structures": [{"structure": f"{NS}:viking_village", "weight": 1}],
+        "structures": [{"structure": f"{NS}:{village_structure(st)}", "weight": 1} for st in VILLAGE_STYLE_BIOMES],
         "placement": {"type": "minecraft:random_spread", "spacing": sp, "separation": se, "salt": salt}})
-    _w(out / "tags/worldgen/biome/has_structure/viking_village.json",
-       {"replace": False, "values": [f"{NS}:{b}" for b in STRUCTURE_BIOMES["viking_village"] if biome_exists(b)]})
     # Trelleborg ring fortress: custom structure type vividlands:trelleborg
     _w(out / "worldgen/structure/trelleborg.json", {
         "type": f"{NS}:trelleborg", "biomes": f"#{NS}:has_structure/trelleborg",

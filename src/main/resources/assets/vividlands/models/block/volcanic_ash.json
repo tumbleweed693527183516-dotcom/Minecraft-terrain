@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "vividlands:block/volcanic_ash"
+    "all": "minecraft:block/gray_concrete_powder"
   }
 }

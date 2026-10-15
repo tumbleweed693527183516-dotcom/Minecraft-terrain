@@ -12,7 +12,7 @@ public class TrelleborgStructure extends VikingVillageStructure {
     public static final Codec<TrelleborgStructure> CODEC = simpleCodec(TrelleborgStructure::new);
 
     public TrelleborgStructure(StructureSettings settings) {
-        super(settings);
+        super(settings, VillageStyle.NORTH);
     }
 
     @Override

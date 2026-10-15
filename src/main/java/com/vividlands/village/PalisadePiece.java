@@ -25,9 +25,10 @@ public class PalisadePiece extends StructurePiece {
     private final int groundY;
     private final List<int[]> gates;
     private final boolean rampart;
+    private final VillageStyle style;
 
     PalisadePiece(VikingVillageStructure.Ring ring, double a0, double a1, List<int[]> gates, int groundY,
-                  boolean rampart) {
+                  boolean rampart, VillageStyle style) {
         super(ModStructures.PALISADE_PIECE, 0, box(ring, a0, a1, groundY, rampart ? 10 : 2));
         this.ring = ring;
         this.a0 = a0;
@@ -35,6 +36,7 @@ public class PalisadePiece extends StructurePiece {
         this.gates = gates;
         this.groundY = groundY;
         this.rampart = rampart;
+        this.style = style;
     }
 
     public PalisadePiece(CompoundTag tag) {
@@ -45,6 +47,7 @@ public class PalisadePiece extends StructurePiece {
         this.a1 = tag.getDouble("S1");
         this.groundY = tag.getInt("GY");
         this.rampart = tag.getBoolean("Ramp");
+        this.style = VillageStyle.of(tag.getString("Style"));
         this.gates = new ArrayList<>();
         int[] g = tag.getIntArray("Gates");
         for (int i = 0; i + 1 < g.length; i += 2) {
@@ -79,6 +82,7 @@ public class PalisadePiece extends StructurePiece {
         tag.putDouble("S1", a1);
         tag.putInt("GY", groundY);
         tag.putBoolean("Ramp", rampart);
+        tag.putString("Style", style.id);
         int[] g = new int[gates.size() * 2];
         for (int i = 0; i < gates.size(); i++) {
             g[i * 2] = gates.get(i)[0];
@@ -134,8 +138,7 @@ public class PalisadePiece extends StructurePiece {
                 int height = 3 + (int) ((hash >>> 7) & 1);
                 for (int y = base + 1; y <= base + height; y++) {
                     p.set(x, y, z);
-                    level.setBlock(p, (hash >>> 11 & 3) == 0 ? Blocks.STRIPPED_SPRUCE_LOG.defaultBlockState()
-                            : Blocks.SPRUCE_LOG.defaultBlockState(), 2);
+                    level.setBlock(p, (hash >>> 11 & 3) == 0 ? style.wallAccent() : style.wallLog(), 2);
                 }
                 p.set(x, base + height + 1, z);
                 level.setBlock(p, ModBlocks.PALISADE_STAKE.defaultBlockState(), 2);
@@ -155,8 +158,8 @@ public class PalisadePiece extends StructurePiece {
     public void postProcess(WorldGenLevel level, StructureManager structureManager, ChunkGenerator generator,
                             RandomSource random, BoundingBox chunkBox, ChunkPos chunkPos, BlockPos pivot) {
         BlockPos.MutableBlockPos p = new BlockPos.MutableBlockPos();
-        BlockState log = Blocks.SPRUCE_LOG.defaultBlockState();
-        BlockState dark = Blocks.STRIPPED_SPRUCE_LOG.defaultBlockState();
+        BlockState log = style.wallLog();
+        BlockState dark = style.wallAccent();
         BlockState stake = ModBlocks.PALISADE_STAKE.defaultBlockState();
         for (int x = Math.max(boundingBox.minX(), chunkBox.minX()); x <= Math.min(boundingBox.maxX(), chunkBox.maxX()); x++) {
             for (int z = Math.max(boundingBox.minZ(), chunkBox.minZ()); z <= Math.min(boundingBox.maxZ(), chunkBox.maxZ()); z++) {

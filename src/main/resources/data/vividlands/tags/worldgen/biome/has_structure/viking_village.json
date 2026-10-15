@@ -6,7 +6,9 @@
     "vividlands:taiga_lakelands",
     "vividlands:glacial_outwash",
     "vividlands:mossy_lava_fields",
-    "vividlands:tundra",
-    "vividlands:basalt_highlands"
+    "vividlands:basalt_highlands",
+    "vividlands:black_sand_desert",
+    "vividlands:rhyolite_highlands",
+    "vividlands:hot_springs"
   ]
 }

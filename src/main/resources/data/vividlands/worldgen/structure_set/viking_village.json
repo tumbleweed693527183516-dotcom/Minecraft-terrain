@@ -3,12 +3,32 @@
     {
       "structure": "vividlands:viking_village",
       "weight": 1
+    },
+    {
+      "structure": "vividlands:viking_village_snow",
+      "weight": 1
+    },
+    {
+      "structure": "vividlands:viking_village_forest",
+      "weight": 1
+    },
+    {
+      "structure": "vividlands:viking_village_steppe",
+      "weight": 1
+    },
+    {
+      "structure": "vividlands:viking_village_desert",
+      "weight": 1
+    },
+    {
+      "structure": "vividlands:viking_village_jungle",
+      "weight": 1
     }
   ],
   "placement": {
     "type": "minecraft:random_spread",
     "spacing": 34,
-    "separation": 14,
+    "separation": 10,
     "salt": 1946157313
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "vividlands:block/heather"
+    "layer0": "minecraft:block/lilac_top"
   }
 }

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "vividlands:block/pine_log_top",
-    "side": "vividlands:block/pine_log"
+    "end": "minecraft:block/spruce_log_top",
+    "side": "minecraft:block/spruce_log"
   }
 }

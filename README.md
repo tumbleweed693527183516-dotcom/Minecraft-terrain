@@ -6,11 +6,11 @@ Taller worlds (build limit y=511), continent-sized landmasses, and new biomes in
 
 ## Blocks
 
-Palisade stakes, thatch (block, stairs, slab), wattle and daub, carved posts, painted wall shields, black sand, volcanic ash, salt crust, peat, heather, dry grass, and three woods - palm, redwood and Scots pine (log, leaves, planks) - with matching trees: drooping-frond palms, giant redwoods, orange-barked Scots pines and spreading giant oaks. All textures are drawn by `tools/textures.py`; blocks are defined once in `tools/blocks.py`.
+Palisade stakes, thatch (block, stairs, slab), wattle and daub, carved posts, painted wall shields, black sand, volcanic ash, salt crust, peat, heather, dry grass, and three woods - palm, redwood and Scots pine (log, leaves, planks) - with matching trees: drooping-frond palms, giant redwoods, orange-barked Scots pines and spreading giant oaks. Every block uses Minecraft's own textures (referenced, not copied), so resource packs restyle them with the rest of the game; blocks are defined once in `tools/blocks.py`.
 
-## Viking structures (v0.13)
+## Viking structures (v0.14)
 
-- **Walled Viking villages** (moors, pinewoods, lakelands, lava fields, outwash plains, tundra, basalt highlands): a ring palisade of sharpened logs that follows the ground, 2-3 gatehouses with walkways, watchtowers, a central plaza with a covered well, bell and runestones, a chieftain's great hall (45 blocks long), longhouses in three sizes with shingle, thatch or turf roofs, Glaumbær-style turf farmsteads, a forge with a chimney, a temple, a market, stabbur storehouses, a granary, a byre, a weaving pit-house, a training yard, paths to every door, and fields and sheep folds outside the walls. Built by a custom generator (`com.vividlands.village`) so every village is laid out differently, inhabited by villagers. They replace vanilla villages in these biomes.
+- **Walled Viking villages replace every vanilla village**, full-sized (66-80 block radius, 30+ buildings plus outlying farmsteads), in six regional styles: *north* (turf, spruce and thatch), *snow* (dark timber, snow-laden roofs), *forest* (oak halls), *steppe* (birch Rus towns), *desert* (Varangian trading posts in palm wood, sandstone and mud brick) and *jungle* (far-voyager camps). Each has a ring palisade of sharpened logs that follows the ground, 2-3 gatehouses with walkways, watchtowers, a central plaza with a covered well, bell and runestones, a chieftain's great hall (45 blocks long), longhouses in three sizes with shingle, thatch or turf roofs, Glaumbær-style turf farmsteads, a forge with a chimney, a temple, a market, stabbur storehouses, a granary, a byre, a weaving pit-house, a training yard, paths to every door, and fields and sheep folds outside the walls. Built by a custom generator (`com.vividlands.village`) so every village is laid out differently, inhabited by villagers. They replace vanilla villages in these biomes.
 - **Level sites:** before a village or fortress is built its ground is graded into a level plateau (hills cut, hollows and ponds filled, with the local surface blocks), blending back into the land outside the walls.
 - **Details on every building:** shuttered windows with flower boxes, covered entrance porches with banners on timber halls, painted shields under the eaves, smoke rising from the roof vents, gravel drip edges with plants, rugs, and yards with woodpiles, chopping blocks, carts, hide frames, water barrels, hay and lantern posts.
 - **Trelleborg ring fortresses** (rare): a perfectly round earthen rampart with a palisade on its crest and a ditch outside, four gates on the compass points, cross streets, watchtowers and rows of garrison halls in the four quarters.
@@ -56,6 +56,13 @@ Every village building has two or three chests (one for fields, gates and towers
 - `vividlands:chests/extra/everywhere`: added to every Vivid Lands chest.
 
 Override them with a datapack (an example ships as `VividLands-Loot-Datapack.zip`).
+
+## Performance
+
+- Open sky is skipped: above the terrain's smooth shape the 3D terrain, cave and entrance noise isn't computed at all (most of a 576-block-tall world).
+- The 16-octave jagged-peaks noise is cached per column instead of being recomputed at every cell.
+- One lit fire per building and at most one or two villagers per building.
+- The test pack adds VMP, Krypton, BadOptimizations, MoreCulling, Enhanced Block Entities and Sodium Extra, drops the heavy cosmetic packs, and sets Distant Horizons to build far terrain from the surface shape only.
 
 ## Compatibility
 

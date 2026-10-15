@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "vividlands:block/salt_crust"
+    "all": "minecraft:block/calcite"
   }
 }

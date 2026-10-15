@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:mul",
+  "argument1": {
+    "type": "minecraft:add",
+    "argument1": "vividlands:overworld/depth",
+    "argument2": "vividlands:overworld/jagged"
+  },
+  "argument2": "vividlands:overworld/factor_cached"
+}

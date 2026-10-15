@@ -1,6 +1,7 @@
 package com.vividlands.village;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.resources.ResourceLocation;
@@ -26,12 +27,17 @@ import java.util.Set;
  * without overlap with doors facing the centre, dirt paths, and fields outside the walls.
  */
 public class VikingVillageStructure extends Structure {
-    public static final Codec<VikingVillageStructure> CODEC = simpleCodec(VikingVillageStructure::new);
+    public static final Codec<VikingVillageStructure> CODEC = RecordCodecBuilder.create(i -> i.group(
+            settingsCodec(i),
+            Codec.STRING.optionalFieldOf("style", "north").forGetter(s -> s.style.id)
+    ).apply(i, (settings, style) -> new VikingVillageStructure(settings, VillageStyle.of(style))));
 
     private static final int MAX_SLOPE = 24;
+    protected final VillageStyle style;
 
-    public VikingVillageStructure(StructureSettings settings) {
+    public VikingVillageStructure(StructureSettings settings, VillageStyle style) {
         super(settings);
+        this.style = style;
     }
 
     @Override
@@ -54,9 +60,10 @@ public class VikingVillageStructure extends Structure {
             return Optional.empty();
         }
         boolean fort = fortress();
-        double big = fort ? 54 + rand.nextInt(5) : 50 + rand.nextInt(13);
+        // full-size villages: a vanilla village holds ~20-40 buildings, so the ring is big
+        double big = fort ? 54 + rand.nextInt(5) : 66 + rand.nextInt(15);
         Ring ringShape = fort ? new Ring(cx, cz, big, 0, 0, 0, 0) : new Ring(cx, cz, big, rand);
-        double[] radii = fort ? new double[]{big, big - 8, big - 14} : new double[]{big, big - 10, big - 18};
+        double[] radii = fort ? new double[]{big, big - 8, big - 14} : new double[]{big, big - 10, big - 18, big - 26};
         int maxSlope = MAX_SLOPE;
         // try a large village first, then shrink to fit rougher ground
         for (double radius : radii) {
@@ -95,7 +102,7 @@ public class VikingVillageStructure extends Structure {
                 continue;
             }
             return Optional.of(new GenerationStub(new BlockPos(cx, groundY, cz),
-                    builder -> new Planner(ctx, ring, groundY, fort).build(builder)));
+                    builder -> new Planner(ctx, ring, groundY, fort, style).build(builder)));
         }
         return Optional.empty();
     }
@@ -156,17 +163,19 @@ public class VikingVillageStructure extends Structure {
         private final List<int[]> gates = new ArrayList<>();
         private final Set<Long> paths = new HashSet<>();
         private final boolean fort;
+        private final VillageStyle style;
 
-        Planner(GenerationContext ctx, Ring ring, int groundY, boolean fort) {
+        Planner(GenerationContext ctx, Ring ring, int groundY, boolean fort, VillageStyle style) {
             this.ctx = ctx;
             this.rand = ctx.random();
             this.ring = ring;
             this.groundY = groundY;
             this.fort = fort;
+            this.style = style;
         }
 
         void build(StructurePiecesBuilder out) {
-            VillageCatalogue cat = VillageCatalogue.get();
+            VillageCatalogue cat = VillageCatalogue.get(style);
             int cx = ring.cx, cz = ring.cz;
             // level the site first, so every building, wall and path lands on finished ground
             out.addPiece(new GradePiece(ring, groundY, margin()));
@@ -228,16 +237,24 @@ public class VikingVillageStructure extends Structure {
             }
             plan.addAll(cat.pickSome("craft", 4 + rand.nextInt(3), rand));
             java.util.Random shuffler = new java.util.Random(rand.nextLong());
-            for (int pass = 0; pass < 2; pass++) {          // two rounds of houses fill the village
+            for (int pass = 0; pass < 4; pass++) {          // rounds of houses until the ring is full
                 List<String> houses = cat.all("house");
                 Collections.shuffle(houses, shuffler);
                 plan.addAll(houses);
             }
-            plan.addAll(cat.pickSome("craft", 3, rand));
-            plan.addAll(cat.pickSome("house", 4, rand));
+            plan.addAll(cat.pickSome("craft", 5, rand));
+            plan.addAll(cat.pickSome("civic", 2, rand));
+            for (int pass = 0; pass < 2; pass++) {          // small fillers squeeze into the gaps
+                List<String> small = cat.all("house");
+                small.removeIf(id -> !id.contains("small") && !id.contains("cottage"));
+                small.addAll(cat.all("craft"));
+                small.removeIf(id -> id.contains("forge") || id.contains("byre") || id.contains("stabbur_large"));
+                Collections.shuffle(small, shuffler);
+                plan.addAll(small);
+            }
             int placed = 0;
             for (String id : plan) {
-                if (tryPlaceInside(out, id, 120)) {
+                if (tryPlaceInside(out, id, 90)) {
                     placed++;
                 }
             }
@@ -246,25 +263,34 @@ public class VikingVillageStructure extends Structure {
 
             // fields and folds outside the walls, near the gates
             List<String> fields = cat.all("field");
-            int fieldCount = 3 + rand.nextInt(3);
+            int fieldCount = 5 + rand.nextInt(4);
             for (int i = 0; i < fieldCount && !gates.isEmpty(); i++) {
                 String id = fields.get(rand.nextInt(fields.size()));
                 int[] g = gates.get(i % gates.size());
                 tryPlaceOutside(out, id, g, 40);
+            }
+            // outlying farmsteads and cottages beyond the wall, as around a real village
+            if (!fort) {
+                List<String> farms = cat.all("house");
+                farms.removeIf(id -> !id.contains("farmstead") && !id.contains("cottage") && !id.contains("small"));
+                int outlying = 3 + rand.nextInt(4);
+                for (int i = 0; i < outlying && !gates.isEmpty() && !farms.isEmpty(); i++) {
+                    tryPlaceOutside(out, farms.get(rand.nextInt(farms.size())), gates.get(i % gates.size()), 40);
+                }
             }
 
             // side paths: inside doors lead to the plaza, outside ones to their gate
             for (int[] d : doors) {
                 road(d[0], d[1], d[2], d[3], 0, d[4] == 1 ? 2 : plazaHalf);
             }
-            out.addPiece(new PathPiece(paths, groundY));
+            out.addPiece(new PathPiece(paths, groundY, style));
 
             // palisade in arc segments
             int segments = Math.max(8, (int) (ring.radius * 2 * Math.PI / 14));
             List<int[]> gateList = new ArrayList<>(gates);
             for (int i = 0; i < segments; i++) {
                 double a0 = i * Math.PI * 2 / segments, a1 = (i + 1) * Math.PI * 2 / segments;
-                out.addPiece(new PalisadePiece(ring, a0, a1, gateList, groundY, fort));
+                out.addPiece(new PalisadePiece(ring, a0, a1, gateList, groundY, fort, style));
             }
         }
 

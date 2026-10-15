@@ -1,0 +1,8 @@
+{
+  "type": "vividlands:viking_village",
+  "biomes": "#vividlands:has_structure/viking_village_jungle",
+  "style": "jungle",
+  "step": "top_layer_modification",
+  "spawn_overrides": {},
+  "terrain_adaptation": "none"
+}

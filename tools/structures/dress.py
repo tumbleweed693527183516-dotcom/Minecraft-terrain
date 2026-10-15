@@ -260,6 +260,27 @@ def dress_exterior(b, role, salt=0):
     return b
 
 
+VILLAGERS = {"core": 2, "house": 1, "craft": 1, "civic": 1, "plaza": 1, "wall": 0, "field": 0}
+
+
+def lighten(b, role):
+    """Performance: one lit fire per building (campfire smoke is costly to render), and a modest
+    number of villagers (villager AI is the classic cause of server lag in big villages)."""
+    fires = sorted(p for p, v in b.blocks.items() if v[0] == "minecraft:campfire" and ("lit", "true") in v[1])
+    for p in fires[1:]:
+        name, props, nbt = b.blocks[p]
+        b.blocks[p] = (name, tuple((k, "false" if k == "lit" else v) for k, v in props), nbt)
+    keep = VILLAGERS.get(role, 1)
+    out = []
+    for e in b.entities:
+        if e[3].get("id") == "minecraft:villager":
+            if keep <= 0:
+                continue
+            keep -= 1
+        out.append(e)
+    b.entities = out
+
+
 def dress(b, name, role, salt=0):
     short = name.split("/")[-1]
     loot = f"{NS}:chests/village/{short}"
@@ -268,6 +289,7 @@ def dress(b, name, role, salt=0):
         drip_edge(b, salt)
         interior(b, salt)
         yard(b, role, salt, n=6 if role == "core" else 4)
+    lighten(b, role)
     wire_loot(b, loot)
     ensure_chests(b, loot, CHEST_COUNT.get(role, 1), salt)
     weather(b, salt, vines=role != "field")

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "vividlands:block/sulfur_crust"
+    "all": "minecraft:block/yellow_concrete_powder"
   }
 }

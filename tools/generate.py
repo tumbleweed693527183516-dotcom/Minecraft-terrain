@@ -31,6 +31,7 @@ VERTICAL_SCALE = 1.75        # how much taller land above sea level gets vs vani
 SMOOTHING = 1.3              # >1 = smoother slopes, fewer overhangs and floating bits
 DETAIL_NOISE = 0.7           # strength of small-scale 3D terrain noise (vanilla = 1.0)
 JAGGEDNESS = 0.5             # vanilla spiky peak noise, scaled down so our ridges lead
+AIR_GUARD = -1.2          # shape value below which a cell is certainly open air
 TOP_SLIDE = (488, 504)       # terrain fades out between these heights
 
 # Basin-and-range mountains (heights in "depth units": 1.0 is about 224 blocks above sea level)
@@ -152,13 +153,20 @@ def density_functions():
     write(f"{MODID}/worldgen/density_function/overworld/base_3d_noise.json",
           mul(DETAIL_NOISE, {"type": mc("old_blended_noise"), "xz_scale": 0.25, "y_scale": 0.125,
                              "xz_factor": 120.0, "y_factor": 200.0, "smear_scale_multiplier": 8.0}))
+    # The jagged-peaks noise is 2D (16 octaves): evaluate it once per column, not once per cell corner.
+    write(f"{MODID}/worldgen/density_function/overworld/jagged.json", {"type": mc("flat_cache"), "argument": {
+        "type": mc("cache_2d"), "argument": mul(mul(JAGGEDNESS, mc("overworld_large_biomes/jaggedness")),
+                                                {"type": mc("half_negative"), "argument": {
+                                                    "type": mc("noise"), "noise": mc("jagged"),
+                                                    "xz_scale": 1500.0, "y_scale": 0.0}})}})
+    write(f"{MODID}/worldgen/density_function/overworld/factor_cached.json",
+          {"type": mc("flat_cache"), "argument": {"type": mc("cache_2d"), "argument": vl("overworld/factor")}})
+    # Smooth terrain shape without the 3D detail noise. Cheap (2D caches + a y gradient), and used
+    # as a guard: far above it nothing can be solid, so the costly noise there is skipped.
+    write(f"{MODID}/worldgen/density_function/overworld/shape.json",
+          mul(add(vl("overworld/depth"), vl("overworld/jagged")), vl("overworld/factor_cached")))
     write(f"{MODID}/worldgen/density_function/overworld/sloped_cheese.json", add(
-        mul(4.0, {"type": mc("quarter_negative"), "argument": mul(
-            add(vl("overworld/depth"),
-                mul(mul(JAGGEDNESS, mc("overworld_large_biomes/jaggedness")),
-                    {"type": mc("half_negative"), "argument": {"type": mc("noise"), "noise": mc("jagged"),
-                                                              "xz_scale": 1500.0, "y_scale": 0.0}})),
-            vl("overworld/factor"))}),
+        mul(4.0, {"type": mc("quarter_negative"), "argument": vl("overworld/shape")}),
         vl("overworld/base_3d_noise")))
     # Caves kept as a separate, swappable piece (vanilla cave system).
     write(f"{MODID}/worldgen/density_function/overworld/caves_vanilla.json", {
@@ -344,6 +352,10 @@ def noise_settings():
                "when_in_range": {"type": mc("min"), "argument1": sloped,
                                  "argument2": mul(5.0, vl("overworld/caves/entrances"))},
                "when_out_of_range": vl("overworld/caves")}
+    # Open sky: when the smooth shape is far below zero no detail noise could make the cell solid,
+    # so return air at once and skip the 3D terrain, cave and entrance noise (most of a tall world).
+    terrain = {"type": mc("range_choice"), "input": vl("overworld/shape"), "min_inclusive": -1000000.0,
+               "max_exclusive": AIR_GUARD, "when_in_range": -1.0, "when_out_of_range": terrain}
     final_density = {"type": mc("min"),
                      "argument1": {"type": mc("squeeze"), "argument": mul(0.64, {
                          "type": mc("interpolated"), "argument": {"type": mc("blend_density"),
@@ -1300,13 +1312,16 @@ def tags():
         # ocean-only structures stay in oceans
         if "ocean" not in s["tags"]:
             tag_list = [t for t in tag_list if "ocean_ruin" not in t and "shipwreck" not in t]
-        if name in structures.VILLAGE_BIOMES:
-            tag_list = [t for t in tag_list if not t.startswith("minecraft:has_structure/village_")]
+        # every vanilla village is replaced by a Viking village in a matching regional style
+        tag_list = [t for t in tag_list if not t.startswith("minecraft:has_structure/village_")]
         for t in set(tag_list):
             out.setdefault(t, set()).add(vl(name))
     for t, members in out.items():
         ns, path = t.split(":")
         write(f"{ns}/tags/worldgen/biome/{path}.json", {"replace": False, "values": sorted(members)})
+    # switch vanilla villages off everywhere (also in any biome another mod adds)
+    for kind in ("plains", "desert", "savanna", "snowy", "taiga"):
+        write(f"minecraft/tags/worldgen/biome/has_structure/village_{kind}.json", {"replace": True, "values": []})
 
 
 def lang(extra):

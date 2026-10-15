@@ -20,17 +20,20 @@ import java.util.Set;
 public class PathPiece extends StructurePiece {
     private final long[] cells;
     private final int groundY;
+    private final VillageStyle style;
 
-    PathPiece(Set<Long> cells, int groundY) {
+    PathPiece(Set<Long> cells, int groundY, VillageStyle style) {
         super(ModStructures.PATH_PIECE, 0, box(cells, groundY));
         this.cells = cells.stream().mapToLong(Long::longValue).toArray();
         this.groundY = groundY;
+        this.style = style;
     }
 
     public PathPiece(CompoundTag tag) {
         super(ModStructures.PATH_PIECE, tag);
         this.cells = tag.getLongArray("Cells");
         this.groundY = tag.getInt("GY");
+        this.style = VillageStyle.of(tag.getString("Style"));
     }
 
     private static BoundingBox box(Set<Long> cells, int groundY) {
@@ -52,6 +55,7 @@ public class PathPiece extends StructurePiece {
     protected void addAdditionalSaveData(StructurePieceSerializationContext context, CompoundTag tag) {
         tag.putLongArray("Cells", cells);
         tag.putInt("GY", groundY);
+        tag.putString("Style", style.id);
     }
 
     @Override
@@ -68,7 +72,7 @@ public class PathPiece extends StructurePiece {
             int pick = (int) ((hash >>> 16) % 10 + 10) % 10;
             if (g < -500) {
                 p.set(x, -g - 1000, z);
-                level.setBlock(p, Blocks.SPRUCE_PLANKS.defaultBlockState(), 2);
+                level.setBlock(p, style.bridge(), 2);
                 continue;
             }
             p.set(x, g, z);
@@ -81,8 +85,7 @@ public class PathPiece extends StructurePiece {
                     || here.is(Blocks.BLACKSTONE))) {
                 continue;     // don't pave over stone floors, foundations or rock
             }
-            BlockState surface = pick < 6 ? Blocks.DIRT_PATH.defaultBlockState()
-                    : pick < 8 ? Blocks.GRAVEL.defaultBlockState() : Blocks.COARSE_DIRT.defaultBlockState();
+            BlockState surface = style.path(pick);
             level.setBlock(p, surface, 2);
             for (int y = g + 1; y <= g + 2; y++) {
                 p.set(x, y, z);

@@ -5,31 +5,7 @@
     "argument1": 4.0,
     "argument2": {
       "type": "minecraft:quarter_negative",
-      "argument": {
-        "type": "minecraft:mul",
-        "argument1": {
-          "type": "minecraft:add",
-          "argument1": "vividlands:overworld/depth",
-          "argument2": {
-            "type": "minecraft:mul",
-            "argument1": {
-              "type": "minecraft:mul",
-              "argument1": 0.5,
-              "argument2": "minecraft:overworld_large_biomes/jaggedness"
-            },
-            "argument2": {
-              "type": "minecraft:half_negative",
-              "argument": {
-                "type": "minecraft:noise",
-                "noise": "minecraft:jagged",
-                "xz_scale": 1500.0,
-                "y_scale": 0.0
-              }
-            }
-          }
-        },
-        "argument2": "vividlands:overworld/factor"
-      }
+      "argument": "vividlands:overworld/shape"
     }
   },
   "argument2": "vividlands:overworld/base_3d_noise"

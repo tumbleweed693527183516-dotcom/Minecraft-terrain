@@ -6,7 +6,58 @@
       24,
       16,
       50
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/great_hall",
+    "role": "core",
+    "size": [
+      24,
+      16,
+      50
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/great_hall",
+    "role": "core",
+    "size": [
+      24,
+      16,
+      50
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/great_hall",
+    "role": "core",
+    "size": [
+      24,
+      16,
+      50
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/great_hall",
+    "role": "core",
+    "size": [
+      24,
+      16,
+      50
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/great_hall",
+    "role": "core",
+    "size": [
+      24,
+      16,
+      50
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/longhouse_large_shingle",
@@ -15,7 +66,58 @@
       20,
       14,
       38
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/longhouse_large_shingle",
+    "role": "house",
+    "size": [
+      20,
+      14,
+      38
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/longhouse_large_shingle",
+    "role": "house",
+    "size": [
+      20,
+      14,
+      38
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/longhouse_large_shingle",
+    "role": "house",
+    "size": [
+      20,
+      14,
+      38
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/longhouse_large_shingle",
+    "role": "house",
+    "size": [
+      20,
+      14,
+      38
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/longhouse_large_shingle",
+    "role": "house",
+    "size": [
+      20,
+      14,
+      38
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/longhouse_large_thatch",
@@ -24,7 +126,58 @@
       20,
       14,
       34
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/longhouse_large_thatch",
+    "role": "house",
+    "size": [
+      20,
+      14,
+      34
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/longhouse_large_thatch",
+    "role": "house",
+    "size": [
+      20,
+      14,
+      34
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/longhouse_large_thatch",
+    "role": "house",
+    "size": [
+      20,
+      14,
+      34
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/longhouse_large_thatch",
+    "role": "house",
+    "size": [
+      20,
+      14,
+      34
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/longhouse_large_thatch",
+    "role": "house",
+    "size": [
+      20,
+      14,
+      34
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/longhouse_medium_turf",
@@ -33,7 +186,58 @@
       18,
       15,
       29
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/longhouse_medium_turf",
+    "role": "house",
+    "size": [
+      18,
+      15,
+      29
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/longhouse_medium_turf",
+    "role": "house",
+    "size": [
+      18,
+      15,
+      29
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/longhouse_medium_turf",
+    "role": "house",
+    "size": [
+      18,
+      15,
+      29
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/longhouse_medium_turf",
+    "role": "house",
+    "size": [
+      18,
+      15,
+      29
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/longhouse_medium_turf",
+    "role": "house",
+    "size": [
+      18,
+      15,
+      29
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/longhouse_medium_thatch",
@@ -42,7 +246,58 @@
       17,
       14,
       33
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/longhouse_medium_thatch",
+    "role": "house",
+    "size": [
+      17,
+      14,
+      33
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/longhouse_medium_thatch",
+    "role": "house",
+    "size": [
+      17,
+      14,
+      33
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/longhouse_medium_thatch",
+    "role": "house",
+    "size": [
+      17,
+      14,
+      33
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/longhouse_medium_thatch",
+    "role": "house",
+    "size": [
+      17,
+      14,
+      33
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/longhouse_medium_thatch",
+    "role": "house",
+    "size": [
+      17,
+      14,
+      33
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/longhouse_medium_shingle",
@@ -51,7 +306,58 @@
       16,
       14,
       31
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/longhouse_medium_shingle",
+    "role": "house",
+    "size": [
+      16,
+      14,
+      31
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/longhouse_medium_shingle",
+    "role": "house",
+    "size": [
+      16,
+      14,
+      31
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/longhouse_medium_shingle",
+    "role": "house",
+    "size": [
+      16,
+      14,
+      31
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/longhouse_medium_shingle",
+    "role": "house",
+    "size": [
+      16,
+      14,
+      31
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/longhouse_medium_shingle",
+    "role": "house",
+    "size": [
+      16,
+      14,
+      31
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/longhouse_small_thatch",
@@ -60,7 +366,58 @@
       16,
       13,
       24
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/longhouse_small_thatch",
+    "role": "house",
+    "size": [
+      16,
+      13,
+      24
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/longhouse_small_thatch",
+    "role": "house",
+    "size": [
+      16,
+      13,
+      24
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/longhouse_small_thatch",
+    "role": "house",
+    "size": [
+      16,
+      13,
+      24
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/longhouse_small_thatch",
+    "role": "house",
+    "size": [
+      16,
+      13,
+      24
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/longhouse_small_thatch",
+    "role": "house",
+    "size": [
+      16,
+      13,
+      24
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/longhouse_small_turf",
@@ -69,7 +426,58 @@
       15,
       14,
       21
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/longhouse_small_turf",
+    "role": "house",
+    "size": [
+      15,
+      14,
+      21
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/longhouse_small_turf",
+    "role": "house",
+    "size": [
+      15,
+      14,
+      21
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/longhouse_small_turf",
+    "role": "house",
+    "size": [
+      15,
+      14,
+      21
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/longhouse_small_turf",
+    "role": "house",
+    "size": [
+      15,
+      14,
+      21
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/longhouse_small_turf",
+    "role": "house",
+    "size": [
+      15,
+      14,
+      21
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/farmstead_a",
@@ -78,7 +486,58 @@
       33,
       10,
       20
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/farmstead_a",
+    "role": "house",
+    "size": [
+      33,
+      10,
+      20
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/farmstead_a",
+    "role": "house",
+    "size": [
+      33,
+      10,
+      20
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/farmstead_a",
+    "role": "house",
+    "size": [
+      33,
+      10,
+      20
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/farmstead_a",
+    "role": "house",
+    "size": [
+      33,
+      10,
+      20
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/farmstead_a",
+    "role": "house",
+    "size": [
+      33,
+      10,
+      20
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/farmstead_b",
@@ -87,7 +546,58 @@
       35,
       10,
       21
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/farmstead_b",
+    "role": "house",
+    "size": [
+      35,
+      10,
+      21
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/farmstead_b",
+    "role": "house",
+    "size": [
+      35,
+      10,
+      21
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/farmstead_b",
+    "role": "house",
+    "size": [
+      35,
+      10,
+      21
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/farmstead_b",
+    "role": "house",
+    "size": [
+      35,
+      10,
+      21
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/farmstead_b",
+    "role": "house",
+    "size": [
+      35,
+      10,
+      21
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/turf_cottage_a",
@@ -96,7 +606,58 @@
       21,
       10,
       18
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/turf_cottage_a",
+    "role": "house",
+    "size": [
+      21,
+      10,
+      18
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/turf_cottage_a",
+    "role": "house",
+    "size": [
+      21,
+      10,
+      18
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/turf_cottage_a",
+    "role": "house",
+    "size": [
+      21,
+      10,
+      18
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/turf_cottage_a",
+    "role": "house",
+    "size": [
+      21,
+      10,
+      18
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/turf_cottage_a",
+    "role": "house",
+    "size": [
+      21,
+      10,
+      18
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/turf_cottage_b",
@@ -105,7 +666,58 @@
       20,
       10,
       18
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/turf_cottage_b",
+    "role": "house",
+    "size": [
+      20,
+      10,
+      18
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/turf_cottage_b",
+    "role": "house",
+    "size": [
+      20,
+      10,
+      18
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/turf_cottage_b",
+    "role": "house",
+    "size": [
+      20,
+      10,
+      18
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/turf_cottage_b",
+    "role": "house",
+    "size": [
+      20,
+      10,
+      18
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/turf_cottage_b",
+    "role": "house",
+    "size": [
+      20,
+      10,
+      18
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/pit_house",
@@ -114,7 +726,58 @@
       16,
       6,
       17
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/pit_house",
+    "role": "craft",
+    "size": [
+      16,
+      6,
+      17
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/pit_house",
+    "role": "craft",
+    "size": [
+      16,
+      6,
+      17
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/pit_house",
+    "role": "craft",
+    "size": [
+      16,
+      6,
+      17
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/pit_house",
+    "role": "craft",
+    "size": [
+      16,
+      6,
+      17
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/pit_house",
+    "role": "craft",
+    "size": [
+      16,
+      6,
+      17
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/forge",
@@ -123,7 +786,58 @@
       20,
       13,
       18
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/forge",
+    "role": "craft",
+    "size": [
+      20,
+      13,
+      18
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/forge",
+    "role": "craft",
+    "size": [
+      20,
+      13,
+      18
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/forge",
+    "role": "craft",
+    "size": [
+      20,
+      13,
+      18
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/forge",
+    "role": "craft",
+    "size": [
+      20,
+      13,
+      18
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/forge",
+    "role": "craft",
+    "size": [
+      20,
+      13,
+      18
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/stabbur_small",
@@ -132,7 +846,58 @@
       15,
       15,
       13
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/stabbur_small",
+    "role": "craft",
+    "size": [
+      15,
+      15,
+      13
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/stabbur_small",
+    "role": "craft",
+    "size": [
+      15,
+      15,
+      13
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/stabbur_small",
+    "role": "craft",
+    "size": [
+      15,
+      15,
+      13
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/stabbur_small",
+    "role": "craft",
+    "size": [
+      15,
+      15,
+      13
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/stabbur_small",
+    "role": "craft",
+    "size": [
+      15,
+      15,
+      13
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/stabbur_large",
@@ -141,7 +906,58 @@
       16,
       20,
       14
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/stabbur_large",
+    "role": "craft",
+    "size": [
+      16,
+      20,
+      14
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/stabbur_large",
+    "role": "craft",
+    "size": [
+      16,
+      20,
+      14
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/stabbur_large",
+    "role": "craft",
+    "size": [
+      16,
+      20,
+      14
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/stabbur_large",
+    "role": "craft",
+    "size": [
+      16,
+      20,
+      14
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/stabbur_large",
+    "role": "craft",
+    "size": [
+      16,
+      20,
+      14
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/byre",
@@ -150,7 +966,58 @@
       16,
       10,
       24
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/byre",
+    "role": "craft",
+    "size": [
+      16,
+      10,
+      24
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/byre",
+    "role": "craft",
+    "size": [
+      16,
+      10,
+      24
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/byre",
+    "role": "craft",
+    "size": [
+      16,
+      10,
+      24
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/byre",
+    "role": "craft",
+    "size": [
+      16,
+      10,
+      24
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/byre",
+    "role": "craft",
+    "size": [
+      16,
+      10,
+      24
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/granary",
@@ -159,7 +1026,58 @@
       13,
       11,
       14
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/granary",
+    "role": "craft",
+    "size": [
+      13,
+      11,
+      14
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/granary",
+    "role": "craft",
+    "size": [
+      13,
+      11,
+      14
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/granary",
+    "role": "craft",
+    "size": [
+      13,
+      11,
+      14
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/granary",
+    "role": "craft",
+    "size": [
+      13,
+      11,
+      14
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/granary",
+    "role": "craft",
+    "size": [
+      13,
+      11,
+      14
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/hof",
@@ -168,7 +1086,58 @@
       17,
       20,
       21
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/hof",
+    "role": "civic",
+    "size": [
+      17,
+      20,
+      21
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/hof",
+    "role": "civic",
+    "size": [
+      17,
+      20,
+      21
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/hof",
+    "role": "civic",
+    "size": [
+      17,
+      20,
+      21
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/hof",
+    "role": "civic",
+    "size": [
+      17,
+      20,
+      21
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/hof",
+    "role": "civic",
+    "size": [
+      17,
+      20,
+      21
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/market",
@@ -177,7 +1146,58 @@
       26,
       7,
       9
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/market",
+    "role": "civic",
+    "size": [
+      26,
+      7,
+      9
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/market",
+    "role": "civic",
+    "size": [
+      26,
+      7,
+      9
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/market",
+    "role": "civic",
+    "size": [
+      26,
+      7,
+      9
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/market",
+    "role": "civic",
+    "size": [
+      26,
+      7,
+      9
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/market",
+    "role": "civic",
+    "size": [
+      26,
+      7,
+      9
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/training_yard",
@@ -186,7 +1206,58 @@
       23,
       6,
       17
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/training_yard",
+    "role": "civic",
+    "size": [
+      23,
+      6,
+      17
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/training_yard",
+    "role": "civic",
+    "size": [
+      23,
+      6,
+      17
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/training_yard",
+    "role": "civic",
+    "size": [
+      23,
+      6,
+      17
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/training_yard",
+    "role": "civic",
+    "size": [
+      23,
+      6,
+      17
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/training_yard",
+    "role": "civic",
+    "size": [
+      23,
+      6,
+      17
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/drying_racks",
@@ -195,7 +1266,58 @@
       18,
       5,
       16
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/drying_racks",
+    "role": "craft",
+    "size": [
+      18,
+      5,
+      16
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/drying_racks",
+    "role": "craft",
+    "size": [
+      18,
+      5,
+      16
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/drying_racks",
+    "role": "craft",
+    "size": [
+      18,
+      5,
+      16
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/drying_racks",
+    "role": "craft",
+    "size": [
+      18,
+      5,
+      16
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/drying_racks",
+    "role": "craft",
+    "size": [
+      18,
+      5,
+      16
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/plaza",
@@ -204,7 +1326,58 @@
       23,
       8,
       23
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/plaza",
+    "role": "plaza",
+    "size": [
+      23,
+      8,
+      23
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/plaza",
+    "role": "plaza",
+    "size": [
+      23,
+      8,
+      23
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/plaza",
+    "role": "plaza",
+    "size": [
+      23,
+      8,
+      23
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/plaza",
+    "role": "plaza",
+    "size": [
+      23,
+      8,
+      23
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/plaza",
+    "role": "plaza",
+    "size": [
+      23,
+      8,
+      23
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/gatehouse",
@@ -213,7 +1386,58 @@
       17,
       12,
       7
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/gatehouse",
+    "role": "wall_gate",
+    "size": [
+      17,
+      12,
+      7
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/gatehouse",
+    "role": "wall_gate",
+    "size": [
+      17,
+      12,
+      7
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/gatehouse",
+    "role": "wall_gate",
+    "size": [
+      17,
+      12,
+      7
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/gatehouse",
+    "role": "wall_gate",
+    "size": [
+      17,
+      12,
+      7
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/gatehouse",
+    "role": "wall_gate",
+    "size": [
+      17,
+      12,
+      7
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/watchtower",
@@ -222,7 +1446,58 @@
       11,
       21,
       9
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/watchtower",
+    "role": "wall_tower",
+    "size": [
+      11,
+      21,
+      9
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/watchtower",
+    "role": "wall_tower",
+    "size": [
+      11,
+      21,
+      9
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/watchtower",
+    "role": "wall_tower",
+    "size": [
+      11,
+      21,
+      9
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/watchtower",
+    "role": "wall_tower",
+    "size": [
+      11,
+      21,
+      9
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/watchtower",
+    "role": "wall_tower",
+    "size": [
+      11,
+      21,
+      9
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/field_a",
@@ -231,7 +1506,58 @@
       17,
       4,
       12
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/field_a",
+    "role": "field",
+    "size": [
+      17,
+      4,
+      12
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/field_a",
+    "role": "field",
+    "size": [
+      17,
+      4,
+      12
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/field_a",
+    "role": "field",
+    "size": [
+      17,
+      4,
+      12
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/field_a",
+    "role": "field",
+    "size": [
+      17,
+      4,
+      12
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/field_a",
+    "role": "field",
+    "size": [
+      17,
+      4,
+      12
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/field_b",
@@ -240,7 +1566,58 @@
       13,
       4,
       14
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/field_b",
+    "role": "field",
+    "size": [
+      13,
+      4,
+      14
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/field_b",
+    "role": "field",
+    "size": [
+      13,
+      4,
+      14
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/field_b",
+    "role": "field",
+    "size": [
+      13,
+      4,
+      14
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/field_b",
+    "role": "field",
+    "size": [
+      13,
+      4,
+      14
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/field_b",
+    "role": "field",
+    "size": [
+      13,
+      4,
+      14
+    ],
+    "style": "jungle"
   },
   {
     "id": "vividlands:viking/sheep_fold",
@@ -249,6 +1626,57 @@
       13,
       6,
       11
-    ]
+    ],
+    "style": "north"
+  },
+  {
+    "id": "vividlands:viking_snow/sheep_fold",
+    "role": "field",
+    "size": [
+      13,
+      6,
+      11
+    ],
+    "style": "snow"
+  },
+  {
+    "id": "vividlands:viking_forest/sheep_fold",
+    "role": "field",
+    "size": [
+      13,
+      6,
+      11
+    ],
+    "style": "forest"
+  },
+  {
+    "id": "vividlands:viking_steppe/sheep_fold",
+    "role": "field",
+    "size": [
+      13,
+      6,
+      11
+    ],
+    "style": "steppe"
+  },
+  {
+    "id": "vividlands:viking_desert/sheep_fold",
+    "role": "field",
+    "size": [
+      13,
+      6,
+      11
+    ],
+    "style": "desert"
+  },
+  {
+    "id": "vividlands:viking_jungle/sheep_fold",
+    "role": "field",
+    "size": [
+      13,
+      6,
+      11
+    ],
+    "style": "jungle"
   }
 ]

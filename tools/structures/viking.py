@@ -121,11 +121,10 @@ def hall(name, length, half_mid, half_end, roof, walls, wall_h=3, byre=False, lo
                 if b.get(x, wall_top, z) is None and b.get(x - side, wall_top, z) not in (None, "minecraft:air"):
                     shield(b, x, wall_top, z, "west" if side < 0 else "east", salt + z)
 
-    # a smoke vent on the ridge above the hearth: a lit campfire sends a plume up over the roof
+    # a smoke louver on the ridge above the hearth (the hearth's smoke drifts up through it)
     vz = (Z0 + Z1) // 2 + 2
     if vz in ridge:
-        b.set(cx, ridge[vz] + 1, vz, "campfire", lit=True, signal_fire=False, facing="north", waterlogged=False)
-        for dx in (-1, 1):
+        for dx in (-1, 0, 1):
             slab(b, cx + dx, ridge[vz] + 1, vz, "cobblestone_slab")
 
     # outer posts under the eaves (Trelleborg-style), every 4 blocks

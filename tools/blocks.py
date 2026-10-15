@@ -47,6 +47,50 @@ BLOCKS = {
 }
 
 
+# Every block uses Minecraft's own textures (referenced, not copied), so resource packs restyle
+# them along with the rest of the game. name -> {"all"} or {"side", "end"} (leaves are biome-tinted).
+V = "minecraft:block/"
+TEX = {
+    "black_sand": {"all": V + "black_concrete_powder"},
+    "volcanic_ash": {"all": V + "gray_concrete_powder"},
+    "salt_crust": {"all": V + "calcite"},
+    "peat": {"all": V + "mud"},
+    "sinter": {"all": V + "dripstone_block"},
+    "travertine": {"all": V + "sandstone_top"},
+    "thermal_mat": {"all": V + "orange_terracotta"},
+    "sulfur_crust": {"all": V + "yellow_concrete_powder"},
+    "heather": {"all": V + "lilac_top"},
+    "dry_grass": {"all": V + "dead_bush"},
+    "palm_log": {"side": V + "jungle_log", "end": V + "jungle_log_top"},
+    "palm_leaves": {"all": V + "jungle_leaves"},
+    "palm_planks": {"all": V + "bamboo_planks"},
+    "redwood_log": {"side": V + "mangrove_log", "end": V + "mangrove_log_top"},
+    "redwood_leaves": {"all": V + "spruce_leaves"},
+    "redwood_planks": {"all": V + "mangrove_planks"},
+    "pine_log": {"side": V + "spruce_log", "end": V + "spruce_log_top"},
+    "pine_leaves": {"all": V + "spruce_leaves"},
+    "pine_planks": {"all": V + "spruce_planks"},
+    "thatch": {"side": V + "hay_block_side", "end": V + "hay_block_top"},
+    "wattle_daub": {"all": V + "packed_mud"},
+    "carved_post": {"side": V + "stripped_dark_oak_log", "end": V + "stripped_dark_oak_log_top"},
+    "palisade_stake": {"side": V + "stripped_spruce_log", "end": V + "stripped_spruce_log_top"},
+    "shield_red": {"all": V + "red_wool"},
+    "shield_blue": {"all": V + "blue_wool"},
+    "shield_yellow": {"all": V + "yellow_wool"},
+    "shield_green": {"all": V + "green_wool"},
+}
+
+
+def side(name):
+    t = TEX[name]
+    return t.get("side", t.get("all"))
+
+
+def end(name):
+    t = TEX[name]
+    return t.get("end", t.get("all"))
+
+
 def jwrite(path, obj):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(obj, indent=2) + "\n")
@@ -165,12 +209,14 @@ def assets_and_data(data_dir):
         bs = ASSETS / "blockstates" / f"{name}.json"
         model = ASSETS / "models/block" / f"{name}.json"
         item = ASSETS / "models/item" / f"{name}.json"
-        tex = f"vividlands:block/{name}"
+        base_name = x.get("base", name)
+        tex = side(base_name)
         if kind == "log":
             jwrite(model, {"parent": "minecraft:block/cube_column",
-                           "textures": {"end": f"{tex}_top", "side": tex}})
+                           "textures": {"end": end(name), "side": side(name)}})
             jwrite(ASSETS / "models/block" / f"{name}_horizontal.json",
-                   {"parent": "minecraft:block/cube_column_horizontal", "textures": {"end": f"{tex}_top", "side": tex}})
+                   {"parent": "minecraft:block/cube_column_horizontal",
+                    "textures": {"end": end(name), "side": side(name)}})
             jwrite(bs, {"variants": {
                 "axis=y": {"model": f"vividlands:block/{name}"},
                 "axis=z": {"model": f"vividlands:block/{name}_horizontal", "x": 90},
@@ -179,36 +225,36 @@ def assets_and_data(data_dir):
             jwrite(model, {"parent": "minecraft:block/cross", "textures": {"cross": tex}})
             jwrite(bs, {"variants": {"": {"model": f"vividlands:block/{name}"}}})
         elif kind == "pillar":
-            jwrite(model, {"parent": "minecraft:block/cube_column", "textures": {"end": f"{tex}_top", "side": tex}})
+            jwrite(model, {"parent": "minecraft:block/cube_column", "textures": {"end": end(name), "side": side(name)}})
             jwrite(ASSETS / "models/block" / f"{name}_horizontal.json",
-                   {"parent": "minecraft:block/cube_column_horizontal", "textures": {"end": f"{tex}_top", "side": tex}})
+                   {"parent": "minecraft:block/cube_column_horizontal",
+                    "textures": {"end": end(name), "side": side(name)}})
             jwrite(bs, {"variants": {
                 "axis=y": {"model": f"vividlands:block/{name}"},
                 "axis=z": {"model": f"vividlands:block/{name}_horizontal", "x": 90},
                 "axis=x": {"model": f"vividlands:block/{name}_horizontal", "x": 90, "y": 90}}})
         elif kind == "stairs":
-            base = f"vividlands:block/{x['base']}"
-            t = {"bottom": base, "top": base, "side": base}
+            t = {"bottom": end(x["base"]), "top": end(x["base"]), "side": side(x["base"])}
             for suffix, parent in (("", "stairs"), ("_inner", "inner_stairs"), ("_outer", "outer_stairs")):
                 jwrite(ASSETS / "models/block" / f"{name}{suffix}.json", {"parent": f"minecraft:block/{parent}", "textures": t})
             jwrite(bs, stairs_blockstate(f"vividlands:block/{name}"))
         elif kind == "slab":
             base = f"vividlands:block/{x['base']}"
-            t = {"bottom": base, "top": base, "side": base}
+            t = {"bottom": end(x["base"]), "top": end(x["base"]), "side": side(x["base"])}
             jwrite(model, {"parent": "minecraft:block/slab", "textures": t})
             jwrite(ASSETS / "models/block" / f"{name}_top.json", {"parent": "minecraft:block/slab_top", "textures": t})
             jwrite(bs, {"variants": {"type=bottom": {"model": f"vividlands:block/{name}"},
                                      "type=top": {"model": f"vividlands:block/{name}_top"},
                                      "type=double": {"model": base}}})
         elif kind == "stake":
-            side, end = "minecraft:block/stripped_spruce_log", "minecraft:block/stripped_spruce_log_top"
+            s_tex, e_tex = side(name), end(name)
 
             def el(a, b, top_tex):
                 faces = {f: {"texture": "#side"} for f in ("north", "south", "east", "west")}
                 faces["up"] = {"texture": "#end" if top_tex else "#side"}
                 faces["down"] = {"texture": "#end"}
                 return {"from": a, "to": b, "faces": faces}
-            jwrite(model, {"parent": "minecraft:block/block", "textures": {"side": side, "end": end, "particle": side},
+            jwrite(model, {"parent": "minecraft:block/block", "textures": {"side": s_tex, "end": e_tex, "particle": s_tex},
                            "elements": [el([2, 0, 2], [14, 9, 14], False), el([4, 9, 4], [12, 13, 12], False),
                                         el([6, 13, 6], [10, 16, 10], True)]})
             jwrite(bs, {"variants": {"": {"model": f"vividlands:block/{name}"}}})
@@ -221,15 +267,21 @@ def assets_and_data(data_dir):
             boss = {"from": [6, 6, 14], "to": [10, 10, 15], "faces": {
                 f: {"uv": [7, 7, 9, 9], "texture": "#boss"} for f in ("north", "east", "west", "up", "down")}}
             jwrite(model, {"parent": "minecraft:block/block", "ambientocclusion": False,
-                           "textures": {"face": tex, "rim": "minecraft:block/dark_oak_planks",
+                           "textures": {"face": side(name), "rim": "minecraft:block/dark_oak_planks",
                                         "boss": "minecraft:block/iron_block", "particle": tex},
                            "elements": [disc, boss]})
             jwrite(bs, {"variants": {f"facing={f}": {"model": f"vividlands:block/{name}", "y": r}
                                      for f, r in (("north", 0), ("east", 90), ("south", 180), ("west", 270))}})
-        else:
-            jwrite(model, {"parent": "minecraft:block/cube_all", "textures": {"all": tex}})
+        elif kind == "leaves":
+            jwrite(model, {"parent": "minecraft:block/leaves", "textures": {"all": side(name)}})
             jwrite(bs, {"variants": {"": {"model": f"vividlands:block/{name}"}}})
-        if kind in ("flower", "dry_plant", "shield"):
+        elif kind == "thatch":
+            jwrite(model, {"parent": "minecraft:block/cube_column", "textures": {"end": end(name), "side": side(name)}})
+            jwrite(bs, {"variants": {"": {"model": f"vividlands:block/{name}"}}})
+        else:
+            jwrite(model, {"parent": "minecraft:block/cube_all", "textures": {"all": side(name)}})
+            jwrite(bs, {"variants": {"": {"model": f"vividlands:block/{name}"}}})
+        if kind in ("flower", "dry_plant"):
             jwrite(item, {"parent": "minecraft:item/generated", "textures": {"layer0": tex}})
         else:
             jwrite(item, {"parent": f"vividlands:block/{name}"})

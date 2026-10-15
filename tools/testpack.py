@@ -61,34 +61,74 @@ FILES = [
      f"{CDN}/uCdwusMi/versions/6UnEfsRQ/DistantHorizons-3.3.3-1.20.1-fabric-forge.jar",
      27700542, "5447c4716571bfdba817c85278a9ce0d411573ec",
      "2ac0a2fd34fe17bb3a3764bb53838f00595998a7e0b4bd70c5068aa9244626c6b0e622af548f97a1614dbb0b7c3df29b6d313edfc890d572dc361591c2a176c0", True),
-    ("mods", "entity_texture_features-7.2.5-1.20.1-fabric.jar",
-     f"{CDN}/BVzZfTc1/versions/XtfsASE0/entity_texture_features-7.2.5-1.20.1-fabric.jar",
-     807756, "b5d1de5452a58485d52843936a36361e5f27ac43",
-     "dc3e632a74d03941c923ef48be2ca7189957152a8e6c84864d7be982ede682f29ccdb47277bbd7f7eb3d48a4479ca50f937b8925ca2c287c54b62a1f387e7c7d", False),
-    ("mods", "entity_model_features-3.3.11-1.20.1-fabric.jar",
-     f"{CDN}/4I1XuqiY/versions/rQLv8RBX/entity_model_features-3.3.11-1.20.1-fabric.jar",
-     651739, "f9905c6b030413c37c1dcbdcc5b7d0d8ec446b86",
-     "2ca796bb0f7ccade70a1151bd7e60f4d8b0c6861076d5fc5c9b7736707ad06786d4c94e04b7d19613ace1d443847dba86b59dbade1e16e2eac8e23d1fe266700", False),
     ("shaderpacks", "ComplementaryReimagined_r5.9.3.zip",
      f"{CDN}/HVnmMxH1/versions/Bqen1mJX/ComplementaryReimagined_r5.9.3.zip",
      553397, "838139b54cddb56b2e83cd260d8efd960ac536d6",
      "45304b1d7862afdb2177b7e6226fc9c6737911d17a4ad46cc9c519ca4deb935f05072cd337cd8b19a15bb8062b57b54eceec7bdee4cd572d94858e2946d37d85", False),
-    ("resourcepacks", "FreshAnimations_v1.10.4.zip", f"{CDN}/50dA9Sha/versions/xN57JJts/FreshAnimations_v1.10.4.zip",
-     850941, "73db740a6868e043c5e615c036fca2c912615b6e",
-     "41258f9bea1a773d823f9a014d0c08206e9e7b339bc538e1538211fff28fadd06878a836d292cbb636ed6829cd2801a509368ae3eb3ad4bedf42190a0d5f7a90", False),
-    ("resourcepacks", "Better-Leaves-9.6.zip", f"{CDN}/uvpymuxq/versions/w4ReEpuG/Better-Leaves-9.6.zip",
-     1977146, "fa3a961b82a9f15a4e80b1f7f021bc121649f073",
-     "793dacaca4c200656e8875195e42975ecb628af114e13aad2059368b51cf45f00280f86075368e9adf492e847718a9d593bdf481664e10cf1aa9628d2a51a8d6", False),
 ]
+
+# Extra performance mods resolved from Modrinth at build time (latest Fabric 1.20.1 release, with
+# required dependencies). (slug, needed on a server too)
+RESOLVE = [
+    ("vmp-fabric", True),              # faster chunk loading and ticking
+    ("krypton", True),                 # leaner networking
+    ("badoptimizations", False),       # client micro-optimizations (lightmap, sky, entities)
+    ("moreculling", False),            # culls hidden leaf and block faces: big win in forests
+    ("ebe", False),                    # Enhanced Block Entities: chests, beds, bells render as fast blocks
+    ("sodium-extra", False),           # extra toggles (particles, animations, fog)
+    ("reeses-sodium-options", False),
+]
+API = "https://api.modrinth.com/v2"
+# Modrinth project ids of the pinned files above (never pull a second copy in as a dependency)
+PINNED = {"P7dR8mSH", "AANobbMI", "Orvt0mRa", "gvQqBUqZ", "VSNURh3q", "uXXizFIs", "nmDcB62a", "5ZwdcRci",
+          "NNAgCjsB", "LQ3K71Q1", "YL57xq9U", "uCdwusMi", "HVnmMxH1"}
+
+
+def resolve(slug, server, seen):
+    """Latest Fabric 1.20.1 file for a Modrinth project plus its required dependencies."""
+    import urllib.parse
+    import urllib.request
+    q = urllib.parse.urlencode({"game_versions": '["1.20.1"]', "loaders": '["fabric"]'})
+    req = urllib.request.Request(f"{API}/project/{slug}/version?{q}", headers={"User-Agent": "vividlands-testpack"})
+    versions = json.load(urllib.request.urlopen(req, timeout=30))
+    if not versions:
+        raise RuntimeError("no 1.20.1 fabric version")
+    v = next((x for x in versions if x.get("version_type") == "release"), versions[0])
+    f = next((x for x in v["files"] if x.get("primary")), v["files"][0])
+    out = [("mods", f["filename"], f["url"], f["size"], f["hashes"]["sha1"], f["hashes"]["sha512"], server)]
+    seen.add(v["project_id"])
+    if v["project_id"] in PINNED:
+        return []
+    for d in v.get("dependencies", []):
+        if d.get("dependency_type") == "required" and d.get("project_id") and d["project_id"] not in seen \
+                and d["project_id"] not in PINNED:
+            out += resolve(d["project_id"], server, seen)
+    return out
+
 
 # Starting settings for a fresh instance: resource packs on, shader on, smooth biome blending,
 # a moderate render distance (Distant Horizons draws the far terrain cheaply).
 OPTIONS = """version:3465
-resourcePacks:["vanilla","fabric","file/FreshAnimations_v1.10.4.zip","file/Better-Leaves-9.6.zip"]
-biomeBlendRadius:7
+resourcePacks:["vanilla","fabric"]
+biomeBlendRadius:2
 graphicsMode:1
-renderDistance:12
-simulationDistance:8
+renderDistance:10
+simulationDistance:6
+entityDistanceScaling:0.75
+particles:1
+maxFps:260
+"""
+# Distant Horizons: build far-away LODs from terrain shape only (no trees/structures generated
+# for them), a little more modest radius, fewer background threads.
+DH = """[common.worldGenerator]
+	enableDistantGeneration = true
+	distantGeneratorMode = "SURFACE"
+
+[client.advanced.graphics.quality]
+	lodChunkRenderDistanceRadius = 192
+
+[common.multiThreading]
+	numberOfWorldGenerationThreads = 2
 """
 IRIS = """enableShaders=true
 shaderPack=ComplementaryReimagined_r5.9.3.zip
@@ -97,7 +137,15 @@ shaderPack=ComplementaryReimagined_r5.9.3.zip
 
 def main():
     files = []
-    for folder, name, url, size, sha1, sha512, server in FILES:
+    extra, seen = [], set()
+    for slug, server in RESOLVE:
+        try:
+            got = resolve(slug, server, seen)
+            extra += [g for g in got if g[1] not in {e[1] for e in extra}]
+            print(f"resolved {slug}: {', '.join(g[1] for g in got)}")
+        except Exception as e:                           # offline or renamed: build the pack without it
+            print(f"warning: could not resolve {slug}: {e}")
+    for folder, name, url, size, sha1, sha512, server in FILES + extra:
         assert len(sha1) == 40 and len(sha512) == 128, name
         int(sha1, 16), int(sha512, 16)
         files.append({"path": f"{folder}/{name}", "hashes": {"sha1": sha1, "sha512": sha512},
@@ -118,6 +166,7 @@ def main():
         z.write(jar, f"overrides/mods/{jar.name}")
         z.writestr("overrides/options.txt", OPTIONS)
         z.writestr("overrides/config/iris.properties", IRIS)
+        z.writestr("overrides/config/DistantHorizons.toml", DH)
     print(f"Built {out.name} ({len(files)} downloads)")
 
 

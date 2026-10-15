@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "vividlands:block/heather"
+    "cross": "minecraft:block/lilac_top"
   }
 }
