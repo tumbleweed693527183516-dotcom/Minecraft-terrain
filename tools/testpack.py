@@ -70,8 +70,6 @@ FILES = [
 # Extra performance mods resolved from Modrinth at build time (latest Fabric 1.20.1 release, with
 # required dependencies). (slug, needed on a server too)
 RESOLVE = [
-    ("vmp-fabric", True),              # faster chunk loading and ticking
-    ("krypton", True),                 # leaner networking
     ("badoptimizations", False),       # client micro-optimizations (lightmap, sky, entities)
     ("moreculling", False),            # culls hidden leaf and block faces: big win in forests
     ("ebe", False),                    # Enhanced Block Entities: chests, beds, bells render as fast blocks
@@ -84,25 +82,41 @@ PINNED = {"P7dR8mSH", "AANobbMI", "Orvt0mRa", "gvQqBUqZ", "VSNURh3q", "uXXizFIs"
           "NNAgCjsB", "LQ3K71Q1", "YL57xq9U", "uCdwusMi", "HVnmMxH1"}
 
 
-def resolve(slug, server, seen):
-    """Latest Fabric 1.20.1 file for a Modrinth project plus its required dependencies."""
-    import urllib.parse
+def _get(path):
     import urllib.request
-    q = urllib.parse.urlencode({"game_versions": '["1.20.1"]', "loaders": '["fabric"]'})
-    req = urllib.request.Request(f"{API}/project/{slug}/version?{q}", headers={"User-Agent": "vividlands-testpack"})
-    versions = json.load(urllib.request.urlopen(req, timeout=30))
-    if not versions:
-        raise RuntimeError("no 1.20.1 fabric version")
-    v = next((x for x in versions if x.get("version_type") == "release"), versions[0])
+    req = urllib.request.Request(f"{API}{path}", headers={"User-Agent": "vividlands-testpack"})
+    return json.load(urllib.request.urlopen(req, timeout=30))
+
+
+def _entry(v, server):
     f = next((x for x in v["files"] if x.get("primary")), v["files"][0])
-    out = [("mods", f["filename"], f["url"], f["size"], f["hashes"]["sha1"], f["hashes"]["sha512"], server)]
-    seen.add(v["project_id"])
-    if v["project_id"] in PINNED:
+    return ("mods", f["filename"], f["url"], f["size"], f["hashes"]["sha1"], f["hashes"]["sha512"], server)
+
+
+def resolve(slug, server, seen, version=None):
+    """Latest Fabric 1.20.1 file for a Modrinth project (or an exact version) plus its required
+    dependencies, however Modrinth lists them (by project or by version)."""
+    import urllib.parse
+    if version is None:
+        q = urllib.parse.urlencode({"game_versions": '["1.20.1"]', "loaders": '["fabric"]'})
+        versions = _get(f"/project/{slug}/version?{q}")
+        if not versions:
+            raise RuntimeError("no 1.20.1 fabric version")
+        version = next((x for x in versions if x.get("version_type") == "release"), versions[0])
+    v = version
+    if v["project_id"] in seen or v["project_id"] in PINNED:
         return []
+    seen.add(v["project_id"])
+    out = [_entry(v, server)]
     for d in v.get("dependencies", []):
-        if d.get("dependency_type") == "required" and d.get("project_id") and d["project_id"] not in seen \
-                and d["project_id"] not in PINNED:
-            out += resolve(d["project_id"], server, seen)
+        if d.get("dependency_type") != "required":
+            continue
+        pid = d.get("project_id")
+        if d.get("version_id"):
+            dv = _get(f"/version/{d['version_id']}")
+            out += resolve(None, server, seen, version=dv)
+        elif pid and pid not in seen and pid not in PINNED:
+            out += resolve(pid, server, seen)
     return out
 
 
