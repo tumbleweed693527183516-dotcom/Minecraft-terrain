@@ -1,0 +1,23 @@
+area: 6944x4480 blocks
+land surface height  p5/p25/p50/p75/p95/max: 63 / 63 / 84 / 102 / 245 / 433
+water share: 11.0%
+blocks above y=300: 2.06%  above y=200: 7.67%
+
+biomes by area:
+  vividlands:tundra                         27.2%
+  vividlands:glacier_peaks                  20.3%
+  vividlands:boreal_snowwoods               16.6%
+  vividlands:glacial_ocean                  15.0%
+  vividlands:snowy_shore                     6.7%
+  vividlands:glacial_river                   6.1%
+  vividlands:northern_ocean                  2.8%
+  vividlands:highland_moors                  1.8%
+  vividlands:rhyolite_highlands              1.4%
+  vividlands:highland_crags                  1.0%
+  vividlands:glacier                         0.5%
+  vividlands:mossy_lava_fields               0.3%
+  vividlands:hot_springs                     0.1%
+  vividlands:glacial_outwash                 0.0%
+  vividlands:basalt_shore                    0.0%
+  minecraft:dripstone_caves                  0.0%
+  minecraft:lush_caves                       0.0%

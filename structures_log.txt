@@ -1,0 +1,63 @@
+{
+  "natural_starts": {
+    "vividlands:turf_house": 21,
+    "vividlands:shieling": 5,
+    "vividlands:runestone": 44,
+    "vividlands:ship_burial": 3,
+    "vividlands:burial_mound": 30,
+    "vividlands:longhouse": 22,
+    "vividlands:frozen_longship": 7,
+    "vividlands:knarr": 7,
+    "vividlands:shipwreck": 18,
+    "vividlands:longship": 4,
+    "vividlands:viking_village": 3,
+    "vividlands:beacon_cairn": 9,
+    "vividlands:mead_hall": 1,
+    "vividlands:thing_site": 1,
+    "vividlands:stave_church": 1,
+    "vividlands:trelleborg": 1,
+    "vividlands:fishing_hamlet": 1,
+    "vividlands:drakkar": 1
+  },
+  "failures": [
+    "Failed to place structure",
+    "Failed to place structure",
+    "Failed to place structure",
+    "Failed to place structure",
+    "Failed to place structure",
+    "Failed to place structure",
+    "Failed to place structure",
+    "Failed to place structure",
+    "Failed to place structure",
+    "Failed to place structure"
+  ]
+}
+located vividlands:viking_village 544 -544 generated {'minecraft:villager': 13, 'minecraft:rabbit': 1, 'minecraft:chest_minecart': 2, 'minecraft:armor_stand': 3, 'minecraft:fox': 4}
+located vividlands:trelleborg 1504 -1888 generated {'minecraft:rabbit': 10, 'minecraft:villager': 8, 'minecraft:item': 2}
+located vividlands:longhouse 48 96 generated {'minecraft:fox': 3, 'minecraft:villager': 2}
+located vividlands:turf_house 16 32 generated {'minecraft:rabbit': 1, 'minecraft:cow': 1, 'minecraft:stray': 1, 'minecraft:villager': 1, 'minecraft:fox': 1}
+located vividlands:longship 1216 800 generated {}
+located vividlands:runestone 112 128 generated {'minecraft:fox': 10, 'minecraft:chest_minecart': 2, 'minecraft:rabbit': 1}
+located vividlands:burial_mound 0 160 generated {'minecraft:villager': 1, 'minecraft:armor_stand': 1, 'minecraft:zombie': 2, 'minecraft:skeleton': 1}
+located vividlands:ship_burial 656 -336 generated {'minecraft:rabbit': 2, 'minecraft:skeleton': 2, 'minecraft:zombie': 3}
+located vividlands:stave_church -320 224 generated {'minecraft:wolf': 4, 'minecraft:zombie': 3, 'minecraft:villager': 1, 'minecraft:skeleton': 2}
+located vividlands:mead_hall -3856 1568 generated {'minecraft:rabbit': 2, 'minecraft:sheep': 8, 'minecraft:horse': 1, 'minecraft:goat': 1, 'minecraft:villager': 4, 'minecraft:armor_stand': 1, 'minecraft:item': 4, 'minecraft:chicken': 3}
+located vividlands:fishing_hamlet 672 80 generated {'minecraft:armor_stand': 1, 'minecraft:zombie': 2, 'minecraft:skeleton': 1, 'minecraft:chest_minecart': 2, 'minecraft:villager': 3, 'minecraft:boat': 1, 'minecraft:cat': 1, 'minecraft:rabbit': 2}
+located vividlands:thing_site -5184 -1984 generated {'minecraft:sheep': 13, 'minecraft:item': 16, 'minecraft:fox': 2, 'minecraft:villager': 4, 'minecraft:rabbit': 3}
+located vividlands:shieling -1312 -2192 generated {'minecraft:sheep': 8, 'minecraft:goat': 10, 'minecraft:villager': 1}
+located vividlands:beacon_cairn -2512 -2656 generated {'minecraft:goat': 3}
+located vividlands:knarr 224 448 generated {'minecraft:sheep': 2, 'minecraft:chest_minecart': 1}
+located vividlands:shipwreck 400 448 generated {}
+located vividlands:frozen_longship 64 48 generated {'minecraft:rabbit': 1, 'minecraft:stray': 1, 'minecraft:fox': 4, 'minecraft:villager': 1}
+located vividlands:drakkar 1488 1088 generated {'minecraft:zombie': 2, 'minecraft:skeleton': 2, 'minecraft:stray': 1}
+placed vividlands:burial_mound -480 260 generated {'minecraft:chicken': 5, 'minecraft:cow': 4, 'minecraft:pig': 3, 'minecraft:armor_stand': 1, 'minecraft:zombie': 2, 'minecraft:skeleton': 1, 'minecraft:arrow': 1, 'minecraft:sheep': 3, 'minecraft:wolf': 4, 'minecraft:fox': 3, 'minecraft:chest_minecart': 1}
+placed vividlands:ship_burial -360 260 generated {'minecraft:pig': 1, 'minecraft:zombie': 3, 'minecraft:villager': 1, 'minecraft:skeleton': 2, 'minecraft:fox': 3}
+placed vividlands:stave_church -240 260 generated {'minecraft:item': 3, 'minecraft:villager': 1, 'minecraft:rabbit': 3, 'minecraft:cow': 2}
+placed vividlands:mead_hall -120 260 generated {'minecraft:fox': 2, 'minecraft:rabbit': 1, 'minecraft:item': 19, 'minecraft:armor_stand': 1, 'minecraft:villager': 4, 'minecraft:horse': 1}
+placed vividlands:thing_site 120 260 generated {'minecraft:villager': 4, 'minecraft:item': 1, 'minecraft:fox': 5, 'minecraft:rabbit': 3}
+placed vividlands:beacon_cairn 360 260 generated {'minecraft:chest_minecart': 4}
+placed vividlands:frozen_longship 480 260 generated {'minecraft:stray': 2}
+natural vividlands:viking_village 1224 -2104 not generated {}
+natural vividlands:viking_village -3672 1768 generated {}
+natural vividlands:trelleborg 1512 -1880 generated {'minecraft:rabbit': 7, 'minecraft:villager': 9, 'minecraft:item': 2, 'minecraft:chest_minecart': 2, 'minecraft:fox': 4}
+natural vividlands:viking_village 552 -536 generated {'minecraft:villager': 13, 'minecraft:rabbit': 1, 'minecraft:chest_minecart': 2, 'minecraft:fox': 4, 'minecraft:armor_stand': 2}
