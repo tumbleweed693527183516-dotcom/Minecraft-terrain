@@ -21,6 +21,7 @@ Status: **pending** (not checked yet) · **ok** (Fabric 1.20.1, fits) · **no** 
 
 | # | Mod | Link | Loader / version | Licence | Purpose | Status | Notes |
 |---|-----|------|------------------|---------|---------|--------|-------|
+| 3 | Small Ships | https://modrinth.com/mod/small-ships | Fabric 1.20.1: yes (2.0.0-b1.4, beta) | All Rights Reserved | Sailable medieval ships (cog, brigg, galley, drakkar, caravel, dhow, galleon), cannons, wind and sails, dockyard, ramming and sinking | ok | Gameplay mod for the pack. Only needs Fabric API. ARR, so install it as-is; an add-on that uses it is fine, copying its files is not. Fabric build is a beta. |
 
 ## Boss progression plan
 
