@@ -71,6 +71,11 @@ FILES = [
 # The client set follows Fabulously Optimized's 1.20.1 pack (BSD-3, see pack/), minus FO's
 # branding, capes, screenshot/LAN extras and resource-pack effect mods.  (project id, needed on a server)
 RESOLVE = [
+    # --- shared libraries first, so their newest versions win over older pinned dependencies ---
+    ("WwbubTsV", True),   # YOSBR (default settings that never overwrite yours)
+    ("9s6osm5g", True),   # Cloth Config
+    ("1eAoo2KR", False),  # YetAnotherConfigLib
+    ("Ha28R6CL", True),   # Fabric Language Kotlin
     # --- Fabulously Optimized: performance ---
     ("PtjYWJkn", False),  # Sodium Extra
     ("Bh37bMuy", False),  # Reese's Sodium Options
@@ -92,10 +97,6 @@ RESOLVE = [
     ("8qkXwOnk", False),  # More Chat History
     ("qQyHxfxd", True),   # No Chat Reports
     ("sGmHWmeL", True),   # MixinTrace (clearer crash reports when you add mods)
-    ("WwbubTsV", True),   # YOSBR (default settings that never overwrite yours)
-    ("9s6osm5g", True),   # Cloth Config
-    ("1eAoo2KR", False),  # YetAnotherConfigLib
-    ("Ha28R6CL", True),   # Fabric Language Kotlin
     # --- for Vivid Lands ---
     ("badoptimizations", False),
     ("chunky", True),                      # pre-generate the world: no generation lag while exploring
