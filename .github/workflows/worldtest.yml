@@ -13,6 +13,12 @@ on:
       biomes:
         description: Optional comma-separated biomes to tile as a checkerboard (tests specific biomes)
         default: ""
+      vanilla:
+        description: Benchmark plain vanilla generation instead (no Vivid Lands)
+        default: "false"
+      label:
+        description: Name for the results branch (worldtest-<label>); defaults to the seed
+        default: ""
       stamp_test:
         description: Put a real-world mountain in every cell (to inspect stamps)
         default: "false"
@@ -57,7 +63,8 @@ jobs:
           dl chunky
           dl lithium
           for m in terrablender corgilib oh-the-trees-youll-grow geckolib oh-the-biomes-weve-gone; do dl $m; done
-          cp ../build/libs/vividlands-$(cat ../VERSION).jar mods/
+          if [ "${{ inputs.vanilla }}" = "true" ]; then rm -f mods/terrablender.jar mods/corgilib.jar mods/oh-the-trees-youll-grow.jar mods/geckolib.jar mods/oh-the-biomes-weve-gone.jar
+          else cp ../build/libs/vividlands-$(cat ../VERSION).jar mods/; fi
           if [ "${{ inputs.stamp_test }}" = "true" ]; then
             mkdir -p world/datapacks/stamptest/data/vividlands/worldgen/density_function/overworld/mountains
             echo '{"pack":{"pack_format":15,"description":"stamp test"}}' > world/datapacks/stamptest/pack.mcmeta
@@ -100,4 +107,4 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A && git commit -qm "World test ${{ github.run_id }} (seed ${{ inputs.seed }})"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:worldtest-${{ inputs.seed }}
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:worldtest-${{ inputs.label || inputs.seed }}
