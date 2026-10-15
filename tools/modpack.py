@@ -103,6 +103,21 @@ RESOLVE = [
     ("oh-the-biomes-weve-gone", True),     # blocks Vivid Lands builds with
 ]
 API = "https://api.modrinth.com/v2"
+LOADER_FALLBACK = "0.19.5"
+
+
+def fabric_loader():
+    """Newest stable Fabric Loader for 1.20.1 (newest mod releases often require it)."""
+    import urllib.request
+    try:
+        req = urllib.request.Request("https://meta.fabricmc.net/v2/versions/loader/1.20.1",
+                                     headers={"User-Agent": "vividlands-modpack"})
+        for v in json.load(urllib.request.urlopen(req, timeout=30)):
+            if v["loader"].get("stable"):
+                return v["loader"]["version"]
+    except Exception as e:
+        print(f"warning: could not look up Fabric Loader ({e}); using {LOADER_FALLBACK}")
+    return LOADER_FALLBACK
 # Modrinth project ids of the pinned files above (never pull a second copy in as a dependency)
 PINNED = {"P7dR8mSH", "AANobbMI", "Orvt0mRa", "gvQqBUqZ", "VSNURh3q", "uXXizFIs", "nmDcB62a", "5ZwdcRci",
           "NNAgCjsB", "LQ3K71Q1", "YL57xq9U", "uCdwusMi", "HVnmMxH1"}
@@ -147,6 +162,7 @@ def resolve(slug, server, seen, version=None):
 
 
 PACK = ROOT / "pack"
+LOADER = LOADER_FALLBACK
 
 
 def resolve_all(slugs, seen, have):
@@ -170,7 +186,7 @@ def build(out_name, title, summary, entries, jars):
                       "env": {"client": "required", "server": "required" if server else "unsupported"},
                       "downloads": [url], "fileSize": size})
     index = {"formatVersion": 1, "game": "minecraft", "versionId": VERSION, "name": title, "summary": summary,
-             "files": files, "dependencies": {"minecraft": "1.20.1", "fabric-loader": "0.16.10"}}
+             "files": files, "dependencies": {"minecraft": "1.20.1", "fabric-loader": LOADER}}
     OUT.mkdir(exist_ok=True)
     out = OUT / out_name
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
@@ -187,6 +203,9 @@ def build(out_name, title, summary, entries, jars):
 
 
 def main():
+    global LOADER
+    LOADER = fabric_loader()
+    print(f"Fabric Loader {LOADER}")
     entries = FILES + resolve_all(RESOLVE, set(), set())
     jar = ROOT / "build" / "libs" / f"vividlands-{VERSION}.jar"
     build(f"VividLands-Modpack-{VERSION}.mrpack", "Vivid Lands",
