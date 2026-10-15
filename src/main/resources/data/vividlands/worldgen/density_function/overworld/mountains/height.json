@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:cache_2d",
-  "argument": {
-    "type": "minecraft:max",
-    "argument1": "vividlands:overworld/mountains/procedural",
-    "argument2": "vividlands:overworld/mountains/stamps"
-  }
-}

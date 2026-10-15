@@ -27,5 +27,8 @@
   "conflicts": {
     "terralith": "*",
     "tectonic": "*"
-  }
+  },
+  "mixins": [
+    "vividlands.mixins.json"
+  ]
 }

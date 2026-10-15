@@ -16,6 +16,8 @@ public class VividLands implements ModInitializer {
         StampLibrary.load();
         Registry.register(BuiltInRegistries.DENSITY_FUNCTION_TYPE, new ResourceLocation(MOD_ID, "stamps"),
                 StampDensity.CODEC.codec());
+        Registry.register(BuiltInRegistries.DENSITY_FUNCTION_TYPE, new ResourceLocation(MOD_ID, "terrain_2d"),
+                Terrain2D.CODEC.codec());
         LOG.info("Vivid Lands ready");
     }
 }

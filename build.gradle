@@ -6,6 +6,12 @@ version = file('VERSION').text.trim()
 group = 'com.vividlands'
 base { archivesName = 'vividlands' }
 
+loom {
+    mixin {
+        defaultRefmapName = 'vividlands.refmap.json'
+    }
+}
+
 dependencies {
     minecraft 'com.mojang:minecraft:1.20.1'
     mappings loom.officialMojangMappings()

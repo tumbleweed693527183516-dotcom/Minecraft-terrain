@@ -138,14 +138,8 @@ def density_functions():
     mountains()
     # Vanilla land shape, with everything above BASE_SOFT_CAP squashed so it can't form
     # long flat-topped plateaus; real height comes from the mountain ranges.
-    van = mc("overworld_large_biomes/offset")
-    base = add({"type": mc("min"), "argument1": van, "argument2": BASE_SOFT_CAP},
-               mul(BASE_SOFT_KEEP, {"type": mc("max"), "argument1": add(van, -BASE_SOFT_CAP), "argument2": 0.0}))
-    write(f"{MODID}/worldgen/density_function/overworld/land.json",
-          {"type": mc("cache_2d"), "argument": add(base, vl("overworld/mountains/height"))})
     creeks()
-    write(f"{MODID}/worldgen/density_function/overworld/offset.json", {
-        "type": mc("flat_cache"), "argument": {"type": mc("cache_2d"), "argument": vl("overworld/creeks/carved")}})
+    write(f"{MODID}/worldgen/density_function/overworld/offset.json", terrain_2d("offset"))
     write(f"{MODID}/worldgen/density_function/overworld/depth.json", add(gradient, vl("overworld/offset")))
     write(f"{MODID}/worldgen/density_function/overworld/factor.json",
           mul(VERTICAL_SCALE * SMOOTHING, mc("overworld_large_biomes/factor")))
@@ -193,24 +187,6 @@ def creeks():
     for name, octave in (("creek_network", -8), ("brook_network", -7), ("creek_warp_x", -7), ("creek_warp_z", -7)):
         write(f"{MODID}/worldgen/noise/{name}.json", {"firstOctave": octave, "amplitudes": [1.0, 0.4]})
 
-    def n(name):
-        return {"type": mc("noise"), "noise": vl(name), "xz_scale": 1.0, "y_scale": 0.0}
-
-    def channel(name, width):
-        warped = {"type": mc("shifted_noise"), "noise": vl(name), "xz_scale": 1.0, "y_scale": 0.0,
-                  "shift_x": mul(40.0, n("creek_warp_x")), "shift_y": 0.0, "shift_z": mul(40.0, n("creek_warp_z"))}
-        # flat-bottomed channel: 1 in the middle half, sloping banks outside it
-        return clamp(mul(2.0, add(1.0, mul(-1.0 / width, abs_(warped)))), 0.0, 1.0)
-
-    d = f"{MODID}/worldgen/density_function/overworld/creeks"
-    land = vl("overworld/land")
-    write(f"{d}/channel.json", {"type": mc("cache_2d"), "argument": {
-        "type": mc("max"), "argument1": channel("creek_network", CREEK_WIDTH),
-        "argument2": mul(0.85, channel("brook_network", BROOK_WIDTH))}})
-    lowland = clamp(mul(-6.0, add(land, -CREEK_MAX_OFFSET)), 0.0, 1.0)
-    depth_above_floor = {"type": mc("max"), "argument1": add(land, -CREEK_FLOOR), "argument2": 0.0}
-    write(f"{d}/carved.json", {"type": mc("cache_2d"), "argument": add(
-        land, mul(-1.0, mul(mul(vl("overworld/creeks/channel"), lowland), depth_above_floor)))})
 
 
 def mountains():
@@ -253,48 +229,33 @@ def mountains():
     def cached(x):
         return {"type": mc("cache_2d"), "argument": x}
 
-    d = f"{MODID}/worldgen/density_function/overworld/mountains"
-    ref = lambda x: vl(f"overworld/mountains/{x}")  # noqa: E731
-
-    # position across the range belt: 1 on the axis, 0 at the foot
-    write(f"{d}/axis.json", cached(one_minus_abs(warped("mountain_range_belts"), 1.0 / RANGE_WIDTH)))
-    t = ref("axis")
-    foot = add(1.0, mul(-1.0, t))                         # 1 - t
-    write(f"{d}/front.json", cached(add(1.0, mul(-1.0, mul(sq(foot), foot)))))  # 1 - (1-t)^3
-    crest = sq(t)
-    write(f"{d}/ridge.json", cached(sq(one_minus_abs(warped("mountain_ridges")))))
-    write(f"{d}/ridge_detail.json", cached(mul(sq(one_minus_abs(warped("mountain_ridges_detail"))),
-                                               clamp(mul(2.0, ref("ridge")), 0.0, 1.0))))
-    write(f"{d}/horn.json", cached(sq(sq(clamp(mul(one_minus_abs(warped("mountain_horn_a")),
-                                                   one_minus_abs(warped("mountain_horn_b"))), 0.0, 1.0)))))
-    size = clamp(add(0.75, mul(0.6, n("mountain_massif"))), 0.4, 1.0)
-    shape = add(RANGE_BODY,
-                add(mul(RANGE_CREST, mul(crest, add(0.5, mul(0.5, ref("ridge"))))),
-                    add(mul(RANGE_SIDE_RIDGES, mul(ref("ridge_detail"), t)),
-                        mul(HORN_PEAKS, mul(ref("horn"), crest)))))
-    # where ranges may rise: rugged regions, away from the coast
-    rugged = clamp(add(0.9, mul(-1.3, mc("overworld_large_biomes/erosion"))), 0.0, 1.0)
-    inland = clamp(mul(3.0, add(mc("overworld_large_biomes/continents"), 0.05)), 0.0, 1.0)
-    write(f"{d}/presence.json", cached(mul(mul(rugged, inland), ref("front"))))
-    # River lines (vanilla weirdness near zero) carve gorges through the ranges.
-    gorge = clamp(mul(8.0, add(abs_(mc("overworld/ridges")), -0.03)), 0.0, 1.0)
-    write(f"{d}/procedural.json", cached(mul(mul(ref("presence"), gorge), mul(size, shape))))
-    # Real-world mountains, placed in rugged inland regions (a little more widely than ranges).
     write(f"{MODID}/worldgen/noise/stamp_seed.json", {"firstOctave": 0, "amplitudes": [1.0]})
-    stamp_region = mul(clamp(add(1.2, mul(-1.3, mc("overworld_large_biomes/erosion"))), 0.0, 1.0), inland)
-    write(f"{d}/stamps.json", cached(mul(stamp_region, {
-        "type": vl("stamps"), "seed_noise": vl("stamp_seed"), "cell_size": STAMP_CELL, "chance": STAMP_CHANCE})))
-    write(f"{d}/height.json", cached({"type": mc("max"), "argument1": ref("procedural"),
-                                      "argument2": ref("stamps")}))
-    # anything mountainous (range or real stamp) counts as mountain country for biomes
-    write(f"{d}/mountain_presence.json", cached({"type": mc("max"), "argument1": ref("presence"),
-                                                 "argument2": clamp(mul(2.5, add(ref("stamps"), -0.08)), 0.0, 1.0)}))
-    # Biomes read this instead of raw erosion, so mountain biomes sit on the actual ranges.
-    # Flat basins never count as mountain country (erosion floored at -0.2 = lowland);
-    # the ranges themselves push erosion down into highland and mountain biomes.
-    write(f"{d}/biome_erosion.json", cached(add(
-        {"type": mc("max"), "argument1": mc("overworld_large_biomes/erosion"), "argument2": -0.2},
-        mul(-2.0, ref("mountain_presence")))))
+    # The land shape (ranges, stamps, squashed vanilla base, creeks) is one Java density function,
+    # vividlands:terrain_2d, computed once per column. Its three outputs:
+    d = f"{MODID}/worldgen/density_function/overworld/mountains"
+    write(f"{d}/mountain_presence.json", terrain_2d("mountain_presence"))
+    write(f"{d}/biome_erosion.json", terrain_2d("biome_erosion"))
+
+
+TERRAIN_NOISES = ["mountain_range_belts", "mountain_ridges", "mountain_ridges_detail", "mountain_massif",
+                  "mountain_horn_a", "mountain_horn_b", "mountain_warp_x", "mountain_warp_z",
+                  "creek_network", "brook_network", "creek_warp_x", "creek_warp_z"]
+
+
+def terrain_2d(mode):
+    """vividlands:terrain_2d (src/main/java/com/vividlands/Terrain2D.java), cached per chunk column grid."""
+    return {"type": mc("flat_cache"), "argument": {"type": mc("cache_2d"), "argument": {
+        "type": vl("terrain_2d"), "mode": mode,
+        "noises": {n: vl(n) for n in TERRAIN_NOISES},
+        "params": {"warp_blocks": WARP_BLOCKS, "range_width": RANGE_WIDTH, "range_body": RANGE_BODY,
+                   "range_crest": RANGE_CREST, "range_side_ridges": RANGE_SIDE_RIDGES, "horn_peaks": HORN_PEAKS,
+                   "base_soft_cap": BASE_SOFT_CAP, "base_soft_keep": BASE_SOFT_KEEP,
+                   "creek_floor": CREEK_FLOOR, "creek_width": CREEK_WIDTH, "brook_width": BROOK_WIDTH,
+                   "creek_max_offset": CREEK_MAX_OFFSET},
+        "offset": mc("overworld_large_biomes/offset"), "erosion": mc("overworld_large_biomes/erosion"),
+        "continents": mc("overworld_large_biomes/continents"), "ridges": mc("overworld/ridges"),
+        "stamps": {"type": vl("stamps"), "seed_noise": vl("stamp_seed"), "cell_size": STAMP_CELL,
+                   "chance": STAMP_CHANCE}}}}
 
 
 def solid_mountain_tops():
