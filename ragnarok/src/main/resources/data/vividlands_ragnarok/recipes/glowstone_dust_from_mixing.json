@@ -10,19 +10,19 @@
   "type": "create:mixing",
   "ingredients": [
     {
-      "item": "minecraft:redstone"
+      "item": "create:cinder_flour"
     },
     {
-      "item": "minecraft:redstone"
+      "item": "create:cinder_flour"
     },
     {
-      "item": "minecraft:glow_ink_sac"
+      "fluid": "minecraft:lava",
+      "amount": 4050
     }
   ],
   "results": [
     {
-      "item": "minecraft:glowstone_dust",
-      "count": 2
+      "item": "minecraft:glowstone_dust"
     }
   ],
   "heatRequirement": "heated"

@@ -10,18 +10,16 @@
   "type": "create:mixing",
   "ingredients": [
     {
+      "item": "minecraft:netherrack"
+    },
+    {
       "tag": "minecraft:sand"
-    },
-    {
-      "item": "minecraft:rotten_flesh"
-    },
-    {
-      "item": "minecraft:bone_meal"
     }
   ],
   "results": [
     {
-      "item": "minecraft:soul_sand"
+      "item": "minecraft:soul_sand",
+      "count": 2
     }
   ]
 }

@@ -7,18 +7,16 @@
       ]
     }
   ],
-  "type": "create:deploying",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:netherrack"
+      "item": "minecraft:paper"
     },
     {
-      "item": "minecraft:warped_fungus"
+      "item": "minecraft:gilded_blackstone"
     }
   ],
-  "results": [
-    {
-      "item": "minecraft:warped_nylium"
-    }
-  ]
+  "result": {
+    "item": "minecraft:piglin_banner_pattern"
+  }
 }

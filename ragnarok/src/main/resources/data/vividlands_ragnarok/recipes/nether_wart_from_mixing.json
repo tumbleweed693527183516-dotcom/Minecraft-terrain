@@ -1,0 +1,28 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ],
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:soul_sand"
+    },
+    {
+      "item": "create:cinder_flour"
+    },
+    {
+      "fluid": "minecraft:water",
+      "amount": 8100
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:nether_wart"
+    }
+  ]
+}

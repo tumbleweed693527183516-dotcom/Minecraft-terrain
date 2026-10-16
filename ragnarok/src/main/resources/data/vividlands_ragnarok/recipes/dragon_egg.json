@@ -1,0 +1,36 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ],
+  "type": "create:mechanical_crafting",
+  "acceptMirrored": false,
+  "key": {
+    "E": {
+      "item": "minecraft:end_stone"
+    },
+    "S": {
+      "item": "minecraft:shulker_shell"
+    },
+    "D": {
+      "item": "minecraft:dragon_head"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "EEEEE",
+    "ESDSE",
+    "EDNDE",
+    "ESDSE",
+    "EEEEE"
+  ],
+  "result": {
+    "item": "minecraft:dragon_egg"
+  }
+}

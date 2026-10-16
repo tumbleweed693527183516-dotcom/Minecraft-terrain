@@ -7,10 +7,14 @@
       ]
     }
   ],
-  "type": "create:haunting",
+  "type": "create:mixing",
   "ingredients": [
     {
-      "item": "minecraft:granite"
+      "tag": "c:cobblestone"
+    },
+    {
+      "fluid": "minecraft:lava",
+      "amount": 4050
     }
   ],
   "results": [

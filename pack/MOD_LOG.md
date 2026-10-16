@@ -186,36 +186,52 @@ Open question: whether the Civilizations Egyptian, Chinese, Roman and Greek boss
 - **No Warden.** Sculk shriekers never summon one; they still shriek and give Darkness. Ancient Cities stay (Nidhoggr).
 - **The Nether and the End are closed.** Obsidian frames never light, eyes of ender can't go into portal frames, and
   nothing can travel to either dimension ("That realm is sealed until Ragnarok").
-- **Create** (create-fabric) makes everything those dimensions give. Create already has: haunting (soul sand, soul soil,
-  blackstone, crimson/warped fungus, nether brick, soul campfire/torch/lantern), crushing diorite -> quartz, cinder flour
-  -> glowstone, blaze cakes. Pack recipes (tools/ragnarok_recipes.py) add the rest:
+- **Create** (create-fabric) makes everything those dimensions give, and **every Nether and End item is craftable
+  from cobblestone**: each chain starts with cobblestone (or a block made from it) and only adds ordinary renewable
+  Overworld items (lava, water, gold, ender pearls, diamonds...). Create already does cobblestone -> gravel (milling),
+  gravel -> sand (crushing), cobblestone -> blackstone (haunting), netherrack -> cinder flour (crushing), plus soul
+  campfires/torches/lanterns, nether bricks and fungi. Pack recipes (tools/ragnarok_recipes.py):
 
 | Item | Machine | Recipe |
 |------|---------|--------|
-| Soul sand (first one) | mixing | sand + rotten flesh + bone meal (light soul fire for haunting fans) |
-| Netherrack | haunting | granite |
-| Nether wart | haunting | beetroot seeds |
-| Wither skeleton skull | haunting | skeleton skull (the Wither, nether stars, beacons) |
-| Crying obsidian | haunting | obsidian |
-| Crimson / warped nylium | deploying | fungus onto netherrack (bone-meal fungi for stems, wart blocks, shroomlight, vines) |
-| Gilded blackstone | deploying | gold ingot onto blackstone |
+| Netherrack | mixing | cobblestone + 50 mB lava |
+| Soul sand x2 | mixing | netherrack + sand (lights soul fire, which runs Create's haunting fans) |
+| Soul soil x2 | mixing | soul sand + gravel |
+| Basalt x2 | compacting | 2 cobblestone + 100 mB lava |
+| Blackstone | haunting (Create) | cobblestone |
 | Magma block | compacting | netherrack + 100 mB lava |
-| Blaze rod | compacting | stick + 2 gold nuggets + 250 mB lava |
-| Blaze burner | crafting | empty blaze burner + 4 blaze rods |
-| Ghast tear | heated mixing | soul sand + phantom membrane + 250 mB water |
-| Glowstone dust x2 | heated mixing | 2 redstone + glow ink sac |
-| Netherite scrap | superheated mixing | diamond + 2 crushed raw gold + blackstone + 500 mB lava |
+| Gilded blackstone | deploying | gold ingot onto blackstone |
+| Crying obsidian | superheated mixing / haunting | 2 blackstone + 250 mB lava / obsidian |
+| Nether gold ore, nether quartz ore | deploying | gold nugget / quartz onto netherrack |
 | Ancient debris | superheated compacting | netherite scrap + blackstone |
+| Nether wart | mixing | soul sand + cinder flour + 100 mB water |
+| Crimson nylium | deploying | nether wart onto netherrack |
+| Warped nylium | mixing | netherrack + soul soil + 100 mB water |
+| Fungi, roots, sprouts, stems, wart blocks, shroomlight, vines | vanilla | bone meal on nylium, then grow huge fungi |
+| Nether quartz | crushing | blackstone (50% + 25%) |
+| Glowstone dust | heated mixing | 2 cinder flour + 50 mB lava |
+| Magma cream x3-4 | crushing | magma block |
+| Blaze rod | compacting | blackstone + 2 gold nuggets + 250 mB lava |
+| Blaze burner | crafting | empty blaze burner + 4 blaze rods |
+| Ghast tear | heated mixing | soul sand + quartz + 250 mB water |
+| Wither skeleton skull | superheated mixing / haunting | 2 blackstone + bone block / skeleton skull (the Wither: nether stars, beacons) |
+| Netherite scrap | superheated mixing | blackstone + diamond + 2 crushed raw gold + 500 mB lava |
 | Netherite upgrade template | mechanical crafting | 7 diamonds + netherite scrap + netherrack (then duplicate as usual) |
 | Rib / snout trims | mechanical crafting | 7 diamonds + wither skull and bone block / gold block and blackstone |
-| End stone x4 | mixing | 4 sandstone + ender pearl |
-| Chorus flower | mixing | ender pearl + beetroot seeds + bone meal (plant on end stone: chorus fruit, purpur, end rods) |
+| Piglin head | mechanical crafting | skeleton skull + 4 blackstone + 4 gold ingots |
+| Pigstep disc | mechanical crafting | diamond + 4 blackstone + 4 gold ingots |
+| Snout banner pattern | crafting | paper + gilded blackstone |
+| End stone x4 | mixing | 4 cobblestone + ender pearl |
+| Chorus fruit x4 | mixing | end stone + ender pearl + 250 mB water |
+| Chorus flower | mixing | end stone + ender pearl + bone meal (plant on end stone) |
+| Purpur, end rods, popped chorus | vanilla | from chorus fruit |
 | Shulker shell | heated mixing | purpur block + 2 ender pearls + popped chorus fruit |
 | Dragon's breath | heated mixing | glass bottle + popped chorus fruit + blaze powder |
 | Elytra | mechanical crafting | 6 phantom membranes + shulker shell + diamond + popped chorus fruit |
 | Spire trim | mechanical crafting | 7 diamonds + shulker shell + purpur block |
+| Dragon head | mechanical crafting | wither skeleton skull + 4 end stone + 4 purpur blocks |
+| Dragon egg | mechanical crafting (5x5) | nether star + 4 dragon heads + 4 shulker shells + 16 end stone |
 
-Not made (decoration or trophies only): Pigstep disc, piglin head, snout banner pattern, dragon egg, dragon head.
 
 ## Pack test (v0.19, .github/workflows/packtest.yml)
 

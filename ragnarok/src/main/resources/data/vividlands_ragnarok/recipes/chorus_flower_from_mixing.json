@@ -10,10 +10,10 @@
   "type": "create:mixing",
   "ingredients": [
     {
-      "item": "minecraft:ender_pearl"
+      "item": "minecraft:end_stone"
     },
     {
-      "item": "minecraft:beetroot_seeds"
+      "item": "minecraft:ender_pearl"
     },
     {
       "item": "minecraft:bone_meal"

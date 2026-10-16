@@ -10,16 +10,16 @@
   "type": "create:mixing",
   "ingredients": [
     {
-      "item": "minecraft:sandstone"
+      "tag": "c:cobblestone"
     },
     {
-      "item": "minecraft:sandstone"
+      "tag": "c:cobblestone"
     },
     {
-      "item": "minecraft:sandstone"
+      "tag": "c:cobblestone"
     },
     {
-      "item": "minecraft:sandstone"
+      "tag": "c:cobblestone"
     },
     {
       "item": "minecraft:ender_pearl"

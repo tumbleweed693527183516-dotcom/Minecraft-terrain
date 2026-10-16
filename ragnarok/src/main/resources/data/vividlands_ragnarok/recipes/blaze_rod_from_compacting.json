@@ -10,7 +10,7 @@
   "type": "create:compacting",
   "ingredients": [
     {
-      "item": "minecraft:stick"
+      "item": "minecraft:blackstone"
     },
     {
       "item": "minecraft:gold_nugget"

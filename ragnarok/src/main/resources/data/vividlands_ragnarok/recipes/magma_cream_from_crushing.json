@@ -1,0 +1,27 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ],
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "minecraft:magma_block"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:magma_cream",
+      "count": 3
+    },
+    {
+      "item": "minecraft:magma_cream",
+      "chance": 0.5
+    }
+  ],
+  "processingTime": 200
+}
