@@ -101,6 +101,8 @@ RESOLVE = [
     ("badoptimizations", False),
     ("chunky", True),                      # pre-generate the world: no generation lag while exploring
     ("oh-the-biomes-weve-gone", True),     # blocks Vivid Lands builds with
+    # --- structures for the boss progression (see pack/MOD_LOG.md) ---
+    ("mebahels-creatures-draugr", True),   # Draugr Bastion, Crypt, Fort, Tower (+ Mebahel's API, Elder Scrolls Core, GeckoLib)
 ]
 API = "https://api.modrinth.com/v2"
 LOADER_FALLBACK = "0.19.5"

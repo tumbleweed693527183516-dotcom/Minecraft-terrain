@@ -159,10 +159,10 @@ when you get close). The exceptions use structures that already exist.
 | Silverback Gorilla | Mayan temple | Ancient Structures |
 | Giant Bull Shark | open ocean, fought from a Small Ships ship | no structure |
 | other Chapter 1 animals | roam their biomes | no structure |
-| Huginn and Muninn | Viking tower (the ravens keep watch from it) | Nordic Adventure |
-| Geri and Freki | Meadhall (Odin's hall, Valhalla) | Nordic Adventure |
+| Huginn and Muninn | Draugr Tower (the ravens keep watch from it) | Mebahel's Creatures - Draugr Invasion |
+| Geri and Freki | Norse settlement (the jarl's hall) | Civilizations |
 | Sleipnir | floating sky island | MSS - Moog's Soaring Structures |
-| Skoll and Hati | Viking fort | Nordic Adventure |
+| Skoll and Hati | Draugr Fort | Mebahel's Creatures - Draugr Invasion |
 | Garmr | Nether fortress (the Nether is Hel; Garmr guards its gate) | YUNG's Better Nether Fortresses |
 | Nidhoggr | Ancient City, deep underground among the roots | vanilla |
 | Fafnir | Draugr Bastion treasure halls, cold mountains | Mebahel's Creatures - Draugr Invasion |
@@ -170,11 +170,11 @@ when you get close). The exceptions use structures that already exist.
 | Fenrir | central arena of the Draugr Crypt (largest, rarest dungeon) | Mebahel's Creatures - Draugr Invasion |
 
 New structure mods this needs (all Fabric 1.20.1):
-- **Nordic Adventure** (https://modrinth.com/mod/nordic-adventure): ARR, alpha, made with MCreator; benchmark it for lag.
-  Longhouse, farmhouse, meadhall (with a boss), Draugr mine, Viking fort (Jarl Eirik Raudi), longboat, Viking village
-  (Jarl Ivar the Boneless), Viking tower.
 - **Mebahel's Creatures - Draugr Invasion** (https://modrinth.com/mod/mebahels-creatures-draugr): ARR. Needs Mebahel's API,
   Mebahel's Elder Scrolls Core and GeckoLib. Draugr Bastion, Crypt, Fort and Tower; its own Draugr Overlord boss and raid.
+  ADDED to the modpack (v0.18).
+- ~~Nordic Adventure~~ (https://modrinth.com/mod/nordic-adventure): user liked it, but REJECTED: no Fabric 1.20.1 build
+  (1.20.1 is Forge only; Fabric only for 1.21.8). Its bosses moved to the Draugr Tower, Draugr Fort and Civilizations.
 - **MSS - Moog's Soaring Structures** (https://modrinth.com/mod/mss-moogs-soaring-structures): GPL-3.0, floating islands.
 - **When Dungeons Arise: Seven Seas** (https://modrinth.com/mod/when-dungeons-arise-seven-seas): hostile ships.
 - **YUNG's Better Nether Fortresses** (with YUNG's API).
