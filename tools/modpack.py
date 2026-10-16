@@ -104,7 +104,7 @@ RESOLVE = [
     # --- structures for the boss progression (see pack/MOD_LOG.md) ---
     ("mebahels-creatures-draugr", True),   # Draugr Bastion, Crypt, Fort, Tower (+ Mebahel's API, Elder Scrolls Core, GeckoLib)
     ("ancient-structures", True),          # Mayan temple (Gorilla) and other ancient sites (+ Dawn of Time, Armor of the Ages, Fusion)
-    ("ancient-villages", True),            # Japanese-style villages in taiga
+    ("ancient-villages", False),           # Japanese-style villages in taiga; single-player only: its Garden Trails library crashes dedicated servers
     ("civilizations", True),               # Norse settlement (Geri and Freki), Bjorn Ironside and Loki
     ("lukis-grand-capitals", True),        # replaces vanilla villages with grand capitals
     ("mss-moogs-soaring-structures", True),     # sky islands (Sleipnir)
