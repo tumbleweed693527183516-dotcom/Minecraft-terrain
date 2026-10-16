@@ -27,7 +27,26 @@ Status: **pending** (not checked yet) · **ok** (Fabric 1.20.1, fits) · **no** 
 
 ## Boss progression plan
 
-### Final bosses (Norse mythology) - custom, models to be supplied
+Target: about 20 bosses in two chapters.
+
+### Chapter 1: dangerous real (and Ice Age) animals - draft list
+
+Fierce but believable, nothing mythical. Each tied to a Vivid Lands biome. Ordered roughly easy to hard.
+
+| # | Boss | Home biome | Fight ideas (draft) | Model source |
+|---|------|------------|---------------------|--------------|
+| 1 | Cave Bear | taiga lakelands, Caledonian pinewood (cave lair) | Swipes, rearing roar that slows you; a good first boss | pending |
+| 2 | Giant Irish Elk | highland moors | Antler charges, knockback; calls a small herd | pending |
+| 3 | Hippopotamus | oasis, tropical rivers | Hides underwater then lunges; huge bite, capsizes boats | pending |
+| 4 | Nile Crocodile (giant) | fen, tropical rivers | Ambush from water, death-roll grab | pending |
+| 5 | Silverback Gorilla | rainforest, cloud forest | Chest-beat stun, boulder throws, ground pound | pending |
+| 6 | Saber-tooth Cat | endless steppe, golden savanna | Stalks invisibly in tall grass, pounce and bleed | pending |
+| 7 | Woolly Rhinoceros | tundra, glacial outwash | Unstoppable charges that break blocks; dodge into walls to stun it | pending |
+| 8 | Cape Buffalo bull / African Elephant bull | golden savanna | Stampede waves, trunk throw (elephant) | pending |
+| 9 | Great White Shark / Orca | northern and temperate oceans | Naval fight around your ship; breaches and rams | pending |
+| 10 | Woolly Mammoth | glacier, tundra | Chapter 1 finale: tusk sweeps, trumpet shockwave, stomp quakes; maybe rideable reward | pending |
+
+### Chapter 2: Norse mythology - custom, models to be supplied
 
 | Boss | Who | Fight ideas (draft) | Model |
 |------|-----|---------------------|-------|
