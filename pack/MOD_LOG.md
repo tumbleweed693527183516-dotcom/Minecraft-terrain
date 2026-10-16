@@ -216,3 +216,18 @@ Open question: whether the Civilizations Egyptian, Chinese, Roman and Greek boss
 | Spire trim | mechanical crafting | 7 diamonds + shulker shell + purpur block |
 
 Not made (decoration or trophies only): Pigstep disc, piglin head, snout banner pattern, dragon egg, dragon head.
+
+## Pack test (v0.19, .github/workflows/packtest.yml)
+
+Dedicated server with every server-side mod (178 mods loaded): starts cleanly, the Nether portal won't light, a pig in a
+portal stays in the Overworld, all 24 Create recipes load. Generating 16,641 chunks took 6:28 (Vivid Lands with only BWG:
+5:06), so the structure and creature mods cost about a quarter more generation time; pre-generate with Chunky.
+Ancient Villages is single-player only (its Garden Trails library crashes dedicated servers).
+
+Structure ids for boss spawns:
+- Draugr Invasion: mebahelcreaturesdraugr:draugr_bastion, draugr_crypt, draugr_fort, draugr_tower (+ ruin, ruined_church, simple_grave)
+- Civilizations: civilizations:nordic (also egypt, china, greece, rome)
+- Ancient Structures: ancientstructures:mayan_temple, mayan_temple2-4, mayan_ruins, mayan_village (+ roman, german, japanese sites)
+- Seven Seas: dungeons_arise_seven_seas:corsair_corvette, pirate_junk, small_yacht, unicorn_galleon, victory_frigate
+- Strongholds: betterstrongholds:stronghold
+- Moog's Soaring Structures: 35 sky structures (pick Sleipnir's when building him)

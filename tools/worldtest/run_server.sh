@@ -48,7 +48,7 @@ if [ -f commands.txt ]; then
         echo "forceload remove all" > console
         sleep 2
       fi
-    done
+    done || true
   grep -E "Generated structure|nearest|Could not find|Failed|Unknown|Incorrect|not loaded|forceload|Marked" server.log | tail -n 40 || true
 fi
 echo "save-all flush" > console
