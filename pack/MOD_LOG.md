@@ -17,6 +17,10 @@ Status: **pending** (not checked yet) · **ok** (Fabric 1.20.1, fits) · **no** 
 | # | Mod | Link | Loader / version | Licence | Creatures / models worth using | Status | Notes |
 |---|-----|------|------------------|---------|--------------------------------|--------|-------|
 
+| 6 | Naturalist (Starfish Studios) | https://modrinth.com/mod/naturalist | Fabric 1.20.1: yes (5.0pre4, beta) | Assets ARR, code MIT | GeckoLib models: bear, moose, deer, hippo, alligator, rhino, elephant, mammoth, lion, giraffe, boar, ostrich, vulture, snake, tortoise, capybara... | candidate | Model source for Chapter 1: cave bear, elk (moose), hippo, crocodile (alligator), woolly rhino, elephant, mammoth. Needs GeckoLib (already in pack). |
+| 7 | Animal Garden series (Aquarius.playz) | https://modrinth.com/user/Aquarius.playz | Fabric 1.20.1: yes (one mod per animal) | ARR | Western Gorilla, Bull Shark, Crocodile, Hippopotamus, White Rhinoceros, Bison, Lion, Snow Leopard, Spotted Hyena... | candidate | Fills the gaps: gorilla, shark, bison/buffalo. Install only the animals used. |
+| 8 | Fossils and Archeology: Revival | https://modrinth.com/mod/fossils-and-archeology-revival | Fabric 1.20.1: yes (9.3.4.0) | FA License | 60+ prehistoric creatures incl. mammoth, smilodon (saber-tooth), terror bird, dodo, dinosaurs (revived from fossils/DNA) | candidate | Only needed for a true saber-tooth; brings a whole dinosaur system with it. Several dependencies. |
+
 ## Other mods
 
 | # | Mod | Link | Loader / version | Licence | Purpose | Status | Notes |
