@@ -30,6 +30,8 @@ public class Ragnarok implements ModInitializer {
         Class<?>[] patched = {net.minecraft.world.level.block.entity.SculkShriekerBlockEntity.class,
                 net.minecraft.world.level.portal.PortalShape.class, net.minecraft.world.item.EnderEyeItem.class,
                 net.minecraft.world.entity.Entity.class, net.minecraft.server.level.ServerPlayer.class};
-        LOG.info("Vivid Lands: Ragnarok - Warden disabled, Nether and End closed ({} rules)", patched.length);
+        com.vividlands.ragnarok.generator.Generators.register();
+        LOG.info("Vivid Lands: Ragnarok - Warden disabled, Nether and End closed ({} rules); cobblestone generators MK1-MK5",
+                patched.length);
     }
 }

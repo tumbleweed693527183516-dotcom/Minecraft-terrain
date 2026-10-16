@@ -74,6 +74,10 @@ jobs:
           summon minecraft:pig 20 200 20 {NoAI:1b,Tags:["porttest"]}
           execute if entity @e[type=minecraft:pig,tag=porttest] run say RULECHECK pig stayed in the Overworld (good)
           execute unless entity @e[type=minecraft:pig,tag=porttest] run say RULECHECK pig left the Overworld (bad)
+          setblock 30 200 30 vividlands_ragnarok:cobblestone_generator_mk1
+          setblock 32 200 30 vividlands_ragnarok:cobblestone_generator_mk5
+          data get block 30 200 30 Items[0]
+          data get block 32 200 30 Items
           EOF
       - name: Structure ids added by the pack's mods
         run: |
@@ -94,7 +98,7 @@ jobs:
         run: |
           cp server/server.log out/ 2>/dev/null || true
           grep -iE "chunky|Done \(" server/server.log | tail -n 8 >> out/timing.txt 2>/dev/null || true
-          grep -E "RULECHECK|Ragnarok" server/server.log > out/rules.txt 2>/dev/null || true
+          grep -E "RULECHECK|Ragnarok|has the following block data|Changed the block at 3[02]" server/server.log > out/rules.txt 2>/dev/null || true
           grep -nE "ERROR|Exception|Caused by|Failed to|Mixin.*(fail|error)|Parsing error" server/server.log > out/problems.txt 2>/dev/null || true
           wc -l out/problems.txt || true
           cat out/rules.txt out/timing.txt || true

@@ -3,14 +3,17 @@
   "id": "vividlands_ragnarok",
   "version": "${version}",
   "name": "Vivid Lands: Ragnarok",
-  "description": "The Vivid Lands modpack's own rules and content: no Warden, the Nether and the End are closed, and Create recipes make everything those dimensions give.",
+  "description": "The Vivid Lands modpack's own rules and content: no Warden, the Nether and the End are closed, Create recipes make everything those dimensions give from cobblestone, and Kibe's Cobblestone Generators MK1-MK5 (ported from Kibe by lucaargolo, MPL-2.0).",
   "authors": [
     "tumbleweed693527183516-dotcom"
   ],
   "contact": {
     "sources": "https://github.com/tumbleweed693527183516-dotcom/Minecraft-terrain"
   },
-  "license": "All-Rights-Reserved",
+  "license": [
+    "All-Rights-Reserved",
+    "MPL-2.0"
+  ],
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -27,5 +30,8 @@
   },
   "mixins": [
     "vividlands_ragnarok.mixins.json"
+  ],
+  "contributors": [
+    "lucaargolo (Kibe: Cobblestone Generator code and textures, MPL-2.0)"
   ]
 }

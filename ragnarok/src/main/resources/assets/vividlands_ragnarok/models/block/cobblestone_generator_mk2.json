@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "north": "vividlands_ragnarok:block/cobblestone_generator_mk2",
+    "east": "vividlands_ragnarok:block/cobblestone_generator_mk2",
+    "south": "vividlands_ragnarok:block/cobblestone_generator_mk2",
+    "west": "vividlands_ragnarok:block/cobblestone_generator_mk2",
+    "up": "vividlands_ragnarok:block/machine_top_mk2",
+    "down": "vividlands_ragnarok:block/machine_bottom_mk2",
+    "particle": "vividlands_ragnarok:block/machine_bottom_mk2"
+  }
+}

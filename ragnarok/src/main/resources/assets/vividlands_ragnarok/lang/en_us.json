@@ -1,0 +1,13 @@
+{
+  "block.vividlands_ragnarok.cobblestone_generator_mk1": "Cobblestone Generator MK1",
+  "tooltip.vividlands_ragnarok.cobblestone_generator_mk1": "Generates 0.2 Cobblestone per second",
+  "block.vividlands_ragnarok.cobblestone_generator_mk2": "Cobblestone Generator MK2",
+  "tooltip.vividlands_ragnarok.cobblestone_generator_mk2": "Generates 0.8 Cobblestone per second",
+  "block.vividlands_ragnarok.cobblestone_generator_mk3": "Cobblestone Generator MK3",
+  "tooltip.vividlands_ragnarok.cobblestone_generator_mk3": "Generates 3.2 Cobblestone per second",
+  "block.vividlands_ragnarok.cobblestone_generator_mk4": "Cobblestone Generator MK4",
+  "tooltip.vividlands_ragnarok.cobblestone_generator_mk4": "Generates 12.8 Cobblestone per second",
+  "block.vividlands_ragnarok.cobblestone_generator_mk5": "Cobblestone Generator MK5",
+  "tooltip.vividlands_ragnarok.cobblestone_generator_mk5": "Generates 51.2 Cobblestone per second",
+  "container.vividlands_ragnarok.cobblestone_generator": "Cobblestone Generator"
+}

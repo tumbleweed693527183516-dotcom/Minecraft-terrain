@@ -233,6 +233,18 @@ Open question: whether the Civilizations Egyptian, Chinese, Roman and Greek boss
 | Dragon egg | mechanical crafting (5x5) | nether star + 4 dragon heads + 4 shulker shells + 16 end stone |
 
 
+**Cobblestone Generators MK1-MK5** (only this, from Kibe by lucaargolo, https://modrinth.com/mod/kibe, MPL-2.0): ported
+into Vivid Lands: Ragnarok with Kibe's tiers, rates, recipes and textures; nothing else from Kibe. A 27-slot output
+inventory that hoppers and Create funnels/chutes can pull from.
+
+| Tier | Cobblestone per second | Recipe |
+|------|------------------------|--------|
+| MK1 | 0.2 | 5 cobblestone, water bucket, iron block, lava bucket, chest |
+| MK2 | 0.8 | 4 MK1 + gold block |
+| MK3 | 3.2 | 4 MK2 + diamond block |
+| MK4 | 12.8 | 4 MK3 + emerald block |
+| MK5 | 51.2 | 4 MK4 + netherite block |
+
 ## Pack test (v0.19, .github/workflows/packtest.yml)
 
 Dedicated server with every server-side mod (178 mods loaded): starts cleanly, the Nether portal won't light, a pig in a

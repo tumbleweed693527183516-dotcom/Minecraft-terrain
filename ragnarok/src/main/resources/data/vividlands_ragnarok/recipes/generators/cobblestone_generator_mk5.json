@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#G#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "vividlands_ragnarok:cobblestone_generator_mk4"
+    },
+    "G": {
+      "item": "minecraft:netherite_block"
+    }
+  },
+  "result": {
+    "item": "vividlands_ragnarok:cobblestone_generator_mk5"
+  }
+}

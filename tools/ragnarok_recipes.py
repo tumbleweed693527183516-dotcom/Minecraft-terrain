@@ -149,9 +149,9 @@ mechanical("dragon_egg", ["EEEEE", "ESDSE", "EDNDE", "ESDSE", "EEEEE"],
 
 
 def main():
-    if OUT.exists():
-        shutil.rmtree(OUT)
-    OUT.mkdir(parents=True)
+    OUT.mkdir(parents=True, exist_ok=True)
+    for old in OUT.glob("*.json"):          # only this script's recipes (subfolders belong to other tools)
+        old.unlink()
     for name, r in sorted(R.items()):
         (OUT / f"{name}.json").write_text(json.dumps(r, indent=2) + "\n")
     print(f"wrote {len(R)} recipes to {OUT.relative_to(ROOT)}")
