@@ -1,0 +1,48 @@
+297:[17:14:40] [main/WARN]: Error loading class: net/minecraft/class_881 (java.lang.ClassNotFoundException: net/minecraft/class_881)
+299:[17:14:40] [main/WARN]: Error loading class: net/minecraft/class_525 (java.lang.ClassNotFoundException: net/minecraft/class_525)
+301:[17:14:40] [main/WARN]: Error loading class: net/minecraft/class_906 (java.lang.ClassNotFoundException: net/minecraft/class_906)
+303:[17:14:41] [main/WARN]: Error loading class: tschipp/carryon/common/carry/PickupHandler (java.lang.ClassNotFoundException: tschipp/carryon/common/carry/PickupHandler)
+307:[17:14:41] [main/WARN]: Error loading class: net/minecraftforge/common/ForgeHooks (java.lang.ClassNotFoundException: net/minecraftforge/common/ForgeHooks)
+308:[17:14:41] [main/WARN]: Error loading class: net/minecraft/class_898 (java.lang.ClassNotFoundException: net/minecraft/class_898)
+310:[17:14:41] [main/WARN]: Error loading class: dev/ftb/mods/ftbchunks/client/gui/LargeMapScreen (java.lang.ClassNotFoundException: dev/ftb/mods/ftbchunks/client/gui/LargeMapScreen)
+312:[17:14:41] [main/WARN]: Error loading class: dev/ftb/mods/ftbchunks/client/gui/RegionMapPanel (java.lang.ClassNotFoundException: dev/ftb/mods/ftbchunks/client/gui/RegionMapPanel)
+318:[17:14:42] [main/INFO]: Renaming synthetic method lambda$onWriteJsonWithCodec$1(Ljava/lang/Object;Ljava/lang/String;)Lio/netty/handler/codec/EncoderException; to mdbb685e$nochatreports$lambda$onWriteJsonWithCodec$1$0 in mixins/common/nochatreports.mixins.json:common.MixinFriendlyByteBuf from mod nochatreports
+319:[17:14:42] [main/INFO]: Renaming synthetic method lambda$onReadJsonWithCodec$0(Ljava/lang/String;)Lio/netty/handler/codec/DecoderException; to mdbb685e$nochatreports$lambda$onReadJsonWithCodec$0$1 in mixins/common/nochatreports.mixins.json:common.MixinFriendlyByteBuf from mod nochatreports
+347:[17:14:47] [main/ERROR]: No data fixer registered for biomeswevegone:sign
+348:[17:14:47] [main/ERROR]: No data fixer registered for biomeswevegone:hanging_sign
+349:[17:14:47] [main/ERROR]: No data fixer registered for biomeswevegone:pumpkin_burrow
+512:[17:14:54] [Worker-Main-2/ERROR]: Error while parsing loot table decoration entry. Found minecraft:red_x. Defaulting to MANSION
+513:[17:14:54] [Worker-Main-2/ERROR]: Error while parsing loot table decoration entry. Found minecraft:red_x. Defaulting to MANSION
+514:[17:14:54] [Worker-Main-2/ERROR]: Error while parsing loot table decoration entry. Found minecraft:red_x. Defaulting to MANSION
+515:[17:14:54] [Worker-Main-2/ERROR]: Error while parsing loot table decoration entry. Found minecraft:red_x. Defaulting to MANSION
+516:[17:14:55] [main/ERROR]: Parsing error loading recipe create:milling/compat/biomeswevegone/purple_rose
+517:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:purple_rose'
+542:[17:14:55] [main/ERROR]: Parsing error loading recipe create:milling/compat/biomeswevegone/compat/biomeswevegone/white_sage
+543:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:compat/biomeswevegone/white_sage'
+568:[17:14:55] [main/ERROR]: Parsing error loading recipe create:pressing/compat/biomeswevegone/lush_grass_path
+569:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:lush_grass'
+594:[17:14:55] [main/ERROR]: Parsing error loading recipe create:crushing/compat/biomeswevegone/blue_nether_quartz_ore
+595:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:blue_nether_quartz_ore'
+620:[17:14:55] [main/ERROR]: Parsing error loading recipe create:crushing/compat/biomeswevegone/brimstone_nether_quartz_ore
+621:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:brimstone_nether_quartz_ore'
+646:[17:14:55] [main/ERROR]: Parsing error loading recipe create:milling/compat/biomeswevegone/orchid
+647:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:orchid'
+672:[17:14:55] [main/ERROR]: Parsing error loading recipe create:crushing/compat/biomeswevegone/brimstone_nether_gold_ore
+673:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:brimstone_nether_gold_ore'
+698:[17:14:55] [main/ERROR]: Parsing error loading recipe create:crushing/compat/biomeswevegone/cryptic_redstone_ore
+699:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:cryptic_redstone_ore'
+724:[17:14:55] [main/ERROR]: Parsing error loading recipe create:crushing/compat/biomeswevegone/blue_nether_gold_ore
+725:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:blue_nether_gold_ore'
+750:[17:14:55] [main/ERROR]: Parsing error loading recipe create:milling/compat/biomeswevegone/lolipop_flower
+751:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:lolipop_flower'
+776:[17:14:55] [main/ERROR]: Parsing error loading recipe create:milling/compat/biomeswevegone/compat/biomeswevegone/winter_cyclamen
+777:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:compat/biomeswevegone/winter_cyclamen'
+802:[17:14:55] [main/ERROR]: Parsing error loading recipe create:milling/compat/biomeswevegone/torch_ginger
+803:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:torch_ginger'
+829:[17:14:55] [main/ERROR]: Parsing error loading custom advancement ancientstructures:conqueror: Invalid criterion trigger: minecraft:player_advancements
+1207:[17:15:26] [Worker-Main-1/ERROR]: Hanging entity at invalid position: class_2338{x=-10, y=-56, z=36}
+1208:[17:15:26] [Worker-Main-1/ERROR]: Hanging entity at invalid position: class_2338{x=-8, y=-56, z=35}
+1209:[17:15:26] [Worker-Main-1/ERROR]: Hanging entity at invalid position: class_2338{x=-6, y=-56, z=35}
+1210:[17:15:26] [Worker-Main-1/ERROR]: Hanging entity at invalid position: class_2338{x=-10, y=-55, z=38}
+1211:[17:15:26] [Worker-Main-1/ERROR]: Hanging entity at invalid position: class_2338{x=-8, y=-56, z=39}
+1212:[17:15:26] [Worker-Main-1/ERROR]: Hanging entity at invalid position: class_2338{x=-13, y=-59, z=41}

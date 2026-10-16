@@ -1,0 +1,600 @@
+	at net.minecraft.class_4080.method_18790(class_4080.java:13) ~[server-intermediary.jar:?]
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at net.minecraft.class_4014.method_18365(class_4014.java:69) ~[server-intermediary.jar:?]
+	at net.minecraft.class_156.method_43498(class_156.java:950) ~[server-intermediary.jar:?]
+	at net.minecraft.class_156.method_43499(class_156.java:938) ~[server-intermediary.jar:?]
+	at net.minecraft.server.Main.main(Main.java:160) ~[server-intermediary.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:517) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:72) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.server.FabricServerLauncher.main(FabricServerLauncher.java:69) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.installer.ServerLauncher.main(ServerLauncher.java:69) ~[server.jar:1.0.1]
+[17:14:55] [main/ERROR]: Parsing error loading recipe create:crushing/compat/biomeswevegone/brimstone_nether_gold_ore
+com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:brimstone_nether_gold_ore'
+	at net.minecraft.class_1869.method_17878(class_1869.java:272) ~[server-intermediary.jar:?]
+	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
+	at net.minecraft.class_1869.method_8155(class_1869.java:272) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1856.method_8107(class_1856.java:160) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1856.method_8102(class_1856.java:143) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1856.method_52177(class_1856.java:135) ~[server-intermediary.jar:?]
+	at com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer.readFromJson(ProcessingRecipeSerializer.java:67) ~[create-fabric-6.0.8.1+build.1744-mc1.20.1.jar:?]
+	at com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer.fromJson(ProcessingRecipeSerializer.java:155) ~[create-fabric-6.0.8.1+build.1744-mc1.20.1.jar:?]
+	at com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer.method_8121(ProcessingRecipeSerializer.java:22) ~[create-fabric-6.0.8.1+build.1744-mc1.20.1.jar:?]
+	at net.minecraft.class_1863.method_17720(class_1863.java:135) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1863.method_20705(class_1863.java:56) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1863.method_18788(class_1863.java:35) ~[server-intermediary.jar:?]
+	at net.minecraft.class_4080.method_18790(class_4080.java:13) ~[server-intermediary.jar:?]
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at net.minecraft.class_4014.method_18365(class_4014.java:69) ~[server-intermediary.jar:?]
+	at net.minecraft.class_156.method_43498(class_156.java:950) ~[server-intermediary.jar:?]
+	at net.minecraft.class_156.method_43499(class_156.java:938) ~[server-intermediary.jar:?]
+	at net.minecraft.server.Main.main(Main.java:160) ~[server-intermediary.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:517) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:72) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.server.FabricServerLauncher.main(FabricServerLauncher.java:69) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.installer.ServerLauncher.main(ServerLauncher.java:69) ~[server.jar:1.0.1]
+[17:14:55] [main/ERROR]: Parsing error loading recipe create:crushing/compat/biomeswevegone/cryptic_redstone_ore
+com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:cryptic_redstone_ore'
+	at net.minecraft.class_1869.method_17878(class_1869.java:272) ~[server-intermediary.jar:?]
+	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
+	at net.minecraft.class_1869.method_8155(class_1869.java:272) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1856.method_8107(class_1856.java:160) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1856.method_8102(class_1856.java:143) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1856.method_52177(class_1856.java:135) ~[server-intermediary.jar:?]
+	at com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer.readFromJson(ProcessingRecipeSerializer.java:67) ~[create-fabric-6.0.8.1+build.1744-mc1.20.1.jar:?]
+	at com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer.fromJson(ProcessingRecipeSerializer.java:155) ~[create-fabric-6.0.8.1+build.1744-mc1.20.1.jar:?]
+	at com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer.method_8121(ProcessingRecipeSerializer.java:22) ~[create-fabric-6.0.8.1+build.1744-mc1.20.1.jar:?]
+	at net.minecraft.class_1863.method_17720(class_1863.java:135) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1863.method_20705(class_1863.java:56) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1863.method_18788(class_1863.java:35) ~[server-intermediary.jar:?]
+	at net.minecraft.class_4080.method_18790(class_4080.java:13) ~[server-intermediary.jar:?]
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at net.minecraft.class_4014.method_18365(class_4014.java:69) ~[server-intermediary.jar:?]
+	at net.minecraft.class_156.method_43498(class_156.java:950) ~[server-intermediary.jar:?]
+	at net.minecraft.class_156.method_43499(class_156.java:938) ~[server-intermediary.jar:?]
+	at net.minecraft.server.Main.main(Main.java:160) ~[server-intermediary.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:517) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:72) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.server.FabricServerLauncher.main(FabricServerLauncher.java:69) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.installer.ServerLauncher.main(ServerLauncher.java:69) ~[server.jar:1.0.1]
+[17:14:55] [main/ERROR]: Parsing error loading recipe create:crushing/compat/biomeswevegone/blue_nether_gold_ore
+com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:blue_nether_gold_ore'
+	at net.minecraft.class_1869.method_17878(class_1869.java:272) ~[server-intermediary.jar:?]
+	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
+	at net.minecraft.class_1869.method_8155(class_1869.java:272) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1856.method_8107(class_1856.java:160) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1856.method_8102(class_1856.java:143) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1856.method_52177(class_1856.java:135) ~[server-intermediary.jar:?]
+	at com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer.readFromJson(ProcessingRecipeSerializer.java:67) ~[create-fabric-6.0.8.1+build.1744-mc1.20.1.jar:?]
+	at com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer.fromJson(ProcessingRecipeSerializer.java:155) ~[create-fabric-6.0.8.1+build.1744-mc1.20.1.jar:?]
+	at com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer.method_8121(ProcessingRecipeSerializer.java:22) ~[create-fabric-6.0.8.1+build.1744-mc1.20.1.jar:?]
+	at net.minecraft.class_1863.method_17720(class_1863.java:135) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1863.method_20705(class_1863.java:56) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1863.method_18788(class_1863.java:35) ~[server-intermediary.jar:?]
+	at net.minecraft.class_4080.method_18790(class_4080.java:13) ~[server-intermediary.jar:?]
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at net.minecraft.class_4014.method_18365(class_4014.java:69) ~[server-intermediary.jar:?]
+	at net.minecraft.class_156.method_43498(class_156.java:950) ~[server-intermediary.jar:?]
+	at net.minecraft.class_156.method_43499(class_156.java:938) ~[server-intermediary.jar:?]
+	at net.minecraft.server.Main.main(Main.java:160) ~[server-intermediary.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:517) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:72) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.server.FabricServerLauncher.main(FabricServerLauncher.java:69) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.installer.ServerLauncher.main(ServerLauncher.java:69) ~[server.jar:1.0.1]
+[17:14:55] [main/ERROR]: Parsing error loading recipe create:milling/compat/biomeswevegone/lolipop_flower
+com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:lolipop_flower'
+	at net.minecraft.class_1869.method_17878(class_1869.java:272) ~[server-intermediary.jar:?]
+	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
+	at net.minecraft.class_1869.method_8155(class_1869.java:272) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1856.method_8107(class_1856.java:160) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1856.method_8102(class_1856.java:143) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1856.method_52177(class_1856.java:135) ~[server-intermediary.jar:?]
+	at com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer.readFromJson(ProcessingRecipeSerializer.java:67) ~[create-fabric-6.0.8.1+build.1744-mc1.20.1.jar:?]
+	at com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer.fromJson(ProcessingRecipeSerializer.java:155) ~[create-fabric-6.0.8.1+build.1744-mc1.20.1.jar:?]
+	at com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer.method_8121(ProcessingRecipeSerializer.java:22) ~[create-fabric-6.0.8.1+build.1744-mc1.20.1.jar:?]
+	at net.minecraft.class_1863.method_17720(class_1863.java:135) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1863.method_20705(class_1863.java:56) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1863.method_18788(class_1863.java:35) ~[server-intermediary.jar:?]
+	at net.minecraft.class_4080.method_18790(class_4080.java:13) ~[server-intermediary.jar:?]
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at net.minecraft.class_4014.method_18365(class_4014.java:69) ~[server-intermediary.jar:?]
+	at net.minecraft.class_156.method_43498(class_156.java:950) ~[server-intermediary.jar:?]
+	at net.minecraft.class_156.method_43499(class_156.java:938) ~[server-intermediary.jar:?]
+	at net.minecraft.server.Main.main(Main.java:160) ~[server-intermediary.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:517) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:72) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.server.FabricServerLauncher.main(FabricServerLauncher.java:69) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.installer.ServerLauncher.main(ServerLauncher.java:69) ~[server.jar:1.0.1]
+[17:14:55] [main/ERROR]: Parsing error loading recipe create:milling/compat/biomeswevegone/compat/biomeswevegone/winter_cyclamen
+com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:compat/biomeswevegone/winter_cyclamen'
+	at net.minecraft.class_1869.method_17878(class_1869.java:272) ~[server-intermediary.jar:?]
+	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
+	at net.minecraft.class_1869.method_8155(class_1869.java:272) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1856.method_8107(class_1856.java:160) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1856.method_8102(class_1856.java:143) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1856.method_52177(class_1856.java:135) ~[server-intermediary.jar:?]
+	at com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer.readFromJson(ProcessingRecipeSerializer.java:67) ~[create-fabric-6.0.8.1+build.1744-mc1.20.1.jar:?]
+	at com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer.fromJson(ProcessingRecipeSerializer.java:155) ~[create-fabric-6.0.8.1+build.1744-mc1.20.1.jar:?]
+	at com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer.method_8121(ProcessingRecipeSerializer.java:22) ~[create-fabric-6.0.8.1+build.1744-mc1.20.1.jar:?]
+	at net.minecraft.class_1863.method_17720(class_1863.java:135) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1863.method_20705(class_1863.java:56) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1863.method_18788(class_1863.java:35) ~[server-intermediary.jar:?]
+	at net.minecraft.class_4080.method_18790(class_4080.java:13) ~[server-intermediary.jar:?]
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at net.minecraft.class_4014.method_18365(class_4014.java:69) ~[server-intermediary.jar:?]
+	at net.minecraft.class_156.method_43498(class_156.java:950) ~[server-intermediary.jar:?]
+	at net.minecraft.class_156.method_43499(class_156.java:938) ~[server-intermediary.jar:?]
+	at net.minecraft.server.Main.main(Main.java:160) ~[server-intermediary.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:517) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:72) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.server.FabricServerLauncher.main(FabricServerLauncher.java:69) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.installer.ServerLauncher.main(ServerLauncher.java:69) ~[server.jar:1.0.1]
+[17:14:55] [main/ERROR]: Parsing error loading recipe create:milling/compat/biomeswevegone/torch_ginger
+com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:torch_ginger'
+	at net.minecraft.class_1869.method_17878(class_1869.java:272) ~[server-intermediary.jar:?]
+	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
+	at net.minecraft.class_1869.method_8155(class_1869.java:272) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1856.method_8107(class_1856.java:160) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1856.method_8102(class_1856.java:143) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1856.method_52177(class_1856.java:135) ~[server-intermediary.jar:?]
+	at com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer.readFromJson(ProcessingRecipeSerializer.java:67) ~[create-fabric-6.0.8.1+build.1744-mc1.20.1.jar:?]
+	at com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer.fromJson(ProcessingRecipeSerializer.java:155) ~[create-fabric-6.0.8.1+build.1744-mc1.20.1.jar:?]
+	at com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer.method_8121(ProcessingRecipeSerializer.java:22) ~[create-fabric-6.0.8.1+build.1744-mc1.20.1.jar:?]
+	at net.minecraft.class_1863.method_17720(class_1863.java:135) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1863.method_20705(class_1863.java:56) ~[server-intermediary.jar:?]
+	at net.minecraft.class_1863.method_18788(class_1863.java:35) ~[server-intermediary.jar:?]
+	at net.minecraft.class_4080.method_18790(class_4080.java:13) ~[server-intermediary.jar:?]
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at net.minecraft.class_4014.method_18365(class_4014.java:69) ~[server-intermediary.jar:?]
+	at net.minecraft.class_156.method_43498(class_156.java:950) ~[server-intermediary.jar:?]
+	at net.minecraft.class_156.method_43499(class_156.java:938) ~[server-intermediary.jar:?]
+	at net.minecraft.server.Main.main(Main.java:160) ~[server-intermediary.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:517) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:72) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.loader.impl.launch.server.FabricServerLauncher.main(FabricServerLauncher.java:69) ~[fabric-loader-0.19.5.jar:?]
+	at net.fabricmc.installer.ServerLauncher.main(ServerLauncher.java:69) ~[server.jar:1.0.1]
+[17:14:55] [main/INFO]: Loaded 29 recipes
+[17:14:55] [main/ERROR]: Parsing error loading custom advancement ancientstructures:conqueror: Invalid criterion trigger: minecraft:player_advancements
+[17:14:55] [main/INFO]: Loaded 3889 advancements
+[17:14:55] [main/INFO]: Loaded 733 server animations for 66 entities
+[17:14:55] [main/INFO]: Loaded 1056 animation category entries for 66 entities
+[17:14:55] [main/INFO]: Loaded data for 59 entities
+[17:14:55] [main/INFO]: Loaded food values: (blocks: 41) (items: 41) (entities: 47, 47) (Tags: 3, 8, 0)
+[17:14:55] [main/INFO]: Loaded 13 variants
+[17:14:55] [main/INFO]: Loaded 9 dragon attribute configuration(s)
+[17:14:55] [main/INFO]: Loaded 7 dragon variant definition(s)
+[17:14:55] [main/INFO]: Loaded Draconic Crucible thermal data
+[17:14:55] [main/WARN]: Initial datapack load took 3.257 s
+[17:14:55] [main/INFO]: Mixing server.MixinDedicatedServer from mixins/common/nochatreports.mixins.json into net.minecraft.class_3176
+[17:14:55] [main/INFO]: Mixing server.MixinPlayerList from mixins/common/nochatreports.mixins.json into net.minecraft.class_3324
+[17:14:55] [main/INFO]: Initialized TerraBlender biomes for level stem minecraft:the_nether
+[17:14:55] [main/INFO]: Applied 2238 biome modifications to 171 of 171 new biomes in 59.47 ms
+[17:14:55] [Server thread/WARN]: Configuration file ./config/create-server.toml is not correct. Correcting
+[17:14:55] [Server thread/WARN]: Incorrect key infrastructure was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key infrastructure.tickrateSyncTimer was corrected from null to its default, 20. 
+[17:14:55] [Server thread/WARN]: Incorrect key recipes was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key recipes.bulkPressing was corrected from null to its default, false. 
+[17:14:55] [Server thread/WARN]: Incorrect key recipes.bulkCutting was corrected from null to its default, false. 
+[17:14:55] [Server thread/WARN]: Incorrect key recipes.allowBrewingInMixer was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key recipes.allowShapelessInMixer was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key recipes.allowShapedSquareInPress was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key recipes.allowRegularCraftingInCrafter was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key recipes.maxFireworkIngredientsInCrafter was corrected from null to its default, 9. 
+[17:14:55] [Server thread/WARN]: Incorrect key recipes.allowStonecuttingOnSaw was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key recipes.allowCastingBySpout was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key recipes.allowFillingBySpout was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key recipes.displayLogStrippingRecipes was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key recipes.lightSourceCountForRefinedRadiance was corrected from null to its default, 10. 
+[17:14:55] [Server thread/WARN]: Incorrect key recipes.enableRefinedRadianceRecipe was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key recipes.enableShadowSteelRecipe was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.disableStress was corrected from null to its default, false. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.maxBeltLength was corrected from null to its default, 20. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.maxChainConveyorLength was corrected from null to its default, 32. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.maxChainConveyorConnections was corrected from null to its default, 4. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.crushingDamage was corrected from null to its default, 4. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.maxRotationSpeed was corrected from null to its default, 256. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.ignoreDeployerAttacks was corrected from null to its default, CREEPERS. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.kineticValidationFrequency was corrected from null to its default, 60. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.crankHungerMultiplier was corrected from null to its default, 0.009999999776482582. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.minimumWindmillSails was corrected from null to its default, 8. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.windmillSailsPerRPM was corrected from null to its default, 8. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.maxEjectorDistance was corrected from null to its default, 32. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.ejectorScanInterval was corrected from null to its default, 120. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.encasedFan was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.encasedFan.fanPushDistance was corrected from null to its default, 20. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.encasedFan.fanPullDistance was corrected from null to its default, 20. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.encasedFan.fanBlockCheckRate was corrected from null to its default, 30. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.encasedFan.fanRotationArgmax was corrected from null to its default, 256. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.encasedFan.fanProcessingTime was corrected from null to its default, 150. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions.maxBlocksMoved was corrected from null to its default, 2048. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions.maxChassisRange was corrected from null to its default, 16. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions.maxPistonPoles was corrected from null to its default, 64. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions.maxRopeLength was corrected from null to its default, 384. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions.maxCartCouplingLength was corrected from null to its default, 32. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions.rollerFillDepth was corrected from null to its default, 12. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions.survivalContraptionPickup was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions.contraptionPlacing was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions.movableSpawners was corrected from null to its default, NO_PICKUP. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions.amethystMovement was corrected from null to its default, NO_PICKUP. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions.movableObsidian was corrected from null to its default, UNMOVABLE. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions.movableReinforcedDeepslate was corrected from null to its default, UNMOVABLE. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions.moveItemsToStorage was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions.harvestPartiallyGrown was corrected from null to its default, false. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions.harvesterReplants was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions.minecartContraptionInContainers was corrected from null to its default, false. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions.stabiliseStableContraptions was corrected from null to its default, false. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions.syncPlayerPickupHitboxWithContraptionHitbox was corrected from null to its default, false. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.contraptions.noDropWhenContraptionReplaceBlocks was corrected from null to its default, false. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stats was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stats.mediumSpeed was corrected from null to its default, 30.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stats.fastSpeed was corrected from null to its default, 100.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stats.mediumStressImpact was corrected from null to its default, 4.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stats.highStressImpact was corrected from null to its default, 8.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stats.mediumCapacity was corrected from null to its default, 256.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stats.highCapacity was corrected from null to its default, 1024.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2 was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.brass_encased_shaft was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.turntable was corrected from null to its default, 4.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.clutch was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.mechanical_mixer was corrected from null to its default, 4.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.gearbox was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.mechanical_bearing was corrected from null to its default, 4.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.copper_backtank was corrected from null to its default, 4.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.hose_pulley was corrected from null to its default, 4.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.display_board was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.crushing_wheel was corrected from null to its default, 8.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.adjustable_chain_gearshift was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.millstone was corrected from null to its default, 4.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.rotation_speed_controller was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.sticky_mechanical_piston was corrected from null to its default, 4.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.mechanical_crafter was corrected from null to its default, 2.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.deployer was corrected from null to its default, 4.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.elevator_pulley was corrected from null to its default, 4.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.stressometer was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.cogwheel was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.encased_chain_drive was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.belt was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.brass_encased_large_cogwheel was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.weighted_ejector was corrected from null to its default, 2.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.chain_conveyor was corrected from null to its default, 1.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.mechanical_saw was corrected from null to its default, 4.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.flywheel was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.mechanical_piston was corrected from null to its default, 4.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.speedometer was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.brass_encased_cogwheel was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.clockwork_bearing was corrected from null to its default, 4.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.mechanical_press was corrected from null to its default, 8.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.mechanical_drill was corrected from null to its default, 4.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.andesite_encased_shaft was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.netherite_backtank was corrected from null to its default, 4.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.mechanical_arm was corrected from null to its default, 2.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.sequenced_gearshift was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.andesite_encased_large_cogwheel was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.shaft was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.cuckoo_clock was corrected from null to its default, 1.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.gearshift was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.rope_pulley was corrected from null to its default, 4.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.andesite_encased_cogwheel was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.large_cogwheel was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.encased_fan was corrected from null to its default, 2.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.mysterious_cuckoo_clock was corrected from null to its default, 1.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.gantry_shaft was corrected from null to its default, 0.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.impact.mechanical_pump was corrected from null to its default, 4.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.capacity was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.capacity.steam_engine was corrected from null to its default, 1024.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.capacity.water_wheel was corrected from null to its default, 32.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.capacity.copper_valve_handle was corrected from null to its default, 8.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.capacity.hand_crank was corrected from null to its default, 8.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.capacity.creative_motor was corrected from null to its default, 16384.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.capacity.large_water_wheel was corrected from null to its default, 128.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key kinetics.stressValues.v2.capacity.windmill_bearing was corrected from null to its default, 512.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key fluids was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key fluids.fluidTankCapacity was corrected from null to its default, 8. 
+[17:14:55] [Server thread/WARN]: Incorrect key fluids.fluidTankMaxHeight was corrected from null to its default, 32. 
+[17:14:55] [Server thread/WARN]: Incorrect key fluids.mechanicalPumpRange was corrected from null to its default, 16. 
+[17:14:55] [Server thread/WARN]: Incorrect key fluids.hosePulleyRange was corrected from null to its default, 128. 
+[17:14:55] [Server thread/WARN]: Incorrect key fluids.hosePulleyBlockThreshold was corrected from null to its default, 10000. 
+[17:14:55] [Server thread/WARN]: Incorrect key fluids.fillInfinite was corrected from null to its default, false. 
+[17:14:55] [Server thread/WARN]: Incorrect key fluids.bottomlessFluidMode was corrected from null to its default, ALLOW_BY_TAG. 
+[17:14:55] [Server thread/WARN]: Incorrect key fluids.fluidFillPlaceFluidSourceBlocks was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key fluids.pipesPlaceFluidSourceBlocks was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key logistics was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key logistics.defaultExtractionTimer was corrected from null to its default, 8. 
+[17:14:55] [Server thread/WARN]: Incorrect key logistics.psiTimeout was corrected from null to its default, 60. 
+[17:14:55] [Server thread/WARN]: Incorrect key logistics.mechanicalArmRange was corrected from null to its default, 5. 
+[17:14:55] [Server thread/WARN]: Incorrect key logistics.packagePortRange was corrected from null to its default, 5. 
+[17:14:55] [Server thread/WARN]: Incorrect key logistics.linkRange was corrected from null to its default, 256. 
+[17:14:55] [Server thread/WARN]: Incorrect key logistics.displayLinkRange was corrected from null to its default, 64. 
+[17:14:55] [Server thread/WARN]: Incorrect key logistics.vaultCapacity was corrected from null to its default, 20. 
+[17:14:55] [Server thread/WARN]: Incorrect key logistics.chainConveyorCapacity was corrected from null to its default, 20. 
+[17:14:55] [Server thread/WARN]: Incorrect key logistics.brassTunnelTimer was corrected from null to its default, 10. 
+[17:14:55] [Server thread/WARN]: Incorrect key logistics.factoryGaugeTimer was corrected from null to its default, 100. 
+[17:14:55] [Server thread/WARN]: Incorrect key logistics.seatHostileMobs was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key schematics was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key schematics.creativePrintIncludesAir was corrected from null to its default, false. 
+[17:14:55] [Server thread/WARN]: Incorrect key schematics.maxSchematics was corrected from null to its default, 10. 
+[17:14:55] [Server thread/WARN]: Incorrect key schematics.maxTotalSchematicSize was corrected from null to its default, 256. 
+[17:14:55] [Server thread/WARN]: Incorrect key schematics.maxSchematicPacketSize was corrected from null to its default, 1024. 
+[17:14:55] [Server thread/WARN]: Incorrect key schematics.schematicIdleTimeout was corrected from null to its default, 600. 
+[17:14:55] [Server thread/WARN]: Incorrect key schematics.schematicannon was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key schematics.schematicannon.schematicannonDelay was corrected from null to its default, 10. 
+[17:14:55] [Server thread/WARN]: Incorrect key schematics.schematicannon.schematicannonShotsPerGunpowder was corrected from null to its default, 400. 
+[17:14:55] [Server thread/WARN]: Incorrect key equipment was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key equipment.maxSymmetryWandRange was corrected from null to its default, 50. 
+[17:14:55] [Server thread/WARN]: Incorrect key equipment.placementAssistRange was corrected from null to its default, 12. 
+[17:14:55] [Server thread/WARN]: Incorrect key equipment.toolboxRange was corrected from null to its default, 10. 
+[17:14:55] [Server thread/WARN]: Incorrect key equipment.airInBacktank was corrected from null to its default, 900. 
+[17:14:55] [Server thread/WARN]: Incorrect key equipment.enchantedBacktankCapacity was corrected from null to its default, 300. 
+[17:14:55] [Server thread/WARN]: Incorrect key equipment.maxExtendoGripActions was corrected from null to its default, 1000. 
+[17:14:55] [Server thread/WARN]: Incorrect key equipment.maxPotatoCannonShots was corrected from null to its default, 200. 
+[17:14:55] [Server thread/WARN]: Incorrect key equipment.potatoCannonWorldModification was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key trains was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key trains.trainsCauseDamage was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key trains.maxTrackPlacementLength was corrected from null to its default, 32. 
+[17:14:55] [Server thread/WARN]: Incorrect key trains.maxAssemblyLength was corrected from null to its default, 128. 
+[17:14:55] [Server thread/WARN]: Incorrect key trains.maxBogeyCount was corrected from null to its default, 20. 
+[17:14:55] [Server thread/WARN]: Incorrect key trains.manualTrainSpeedModifier was corrected from null to its default, 0.75. 
+[17:14:55] [Server thread/WARN]: Incorrect key trains.trainStats was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key trains.trainStats.trainTopSpeed was corrected from null to its default, 28.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key trains.trainStats.trainTurningTopSpeed was corrected from null to its default, 14.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key trains.trainStats.trainAcceleration was corrected from null to its default, 3.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key trains.poweredTrainStats was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key trains.poweredTrainStats.poweredTrainTopSpeed was corrected from null to its default, 40.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key trains.poweredTrainStats.poweredTrainTurningTopSpeed was corrected from null to its default, 20.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key trains.poweredTrainStats.poweredTrainAcceleration was corrected from null to its default, 3.0. 
+[17:14:55] [Server thread/WARN]: Configuration file ./config/smallships-server.toml is not correct. Correcting
+[17:14:55] [Server thread/WARN]: Incorrect key schematicVersion was corrected from null to its default, 6. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.shipGeneralSailCooldown was corrected from null to its default, 30. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.shipGeneralCollisionDamage was corrected from null to its default, 7.5. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.shipGeneralCollisionKnockBack was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.shipGeneralDoItemDrop was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Modifier was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Modifier.shipGeneralContainerModifier was corrected from null to its default, 10.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Modifier.shipGeneralCannonModifier was corrected from null to its default, 2.5. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Modifier.shipGeneralPaddlingModifier was corrected from null to its default, 35.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Modifier.shipGeneralBiomeModifier was corrected from null to its default, 20.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Modifier.shipGeneralShieldDamageReduction was corrected from null to its default, 3.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Modifier.shipGeneralDespawnTimeSunken was corrected from null to its default, 15.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Modifier.mountBlackList was corrected from null to its default, [minecraft:ender_dragon, minecraft:wither, minecraft:wither, minecraft:ghast, minecraft:warden, minecraft:ravager, alexmobs:cachalot_whale]. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Modifier.driverEntities was corrected from null to its default, [recruits:captain]. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Modifier.dockyardBuildableShips was corrected from null to its default, []. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Modifier.shipGeneralCannonDamage was corrected from null to its default, 25.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Modifier.shipGeneralCannonDestruction was corrected from null to its default, 1.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Fleeing Water Animals was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Fleeing Water Animals.waterAnimalFleeRadius was corrected from null to its default, 15.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Fleeing Water Animals.waterAnimalFleeSpeed was corrected from null to its default, 1.5. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Fleeing Water Animals.waterAnimalFleeDistance was corrected from null to its default, 10.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Upgrades was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Upgrades.shipUpgradeEnable was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Upgrades.shipUpgradeCostModifier was corrected from null to its default, 100.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Upgrades.shipUpgradeTimeModifier was corrected from null to its default, 100.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Upgrades.shipUpgradeRefundModifier was corrected from null to its default, 30.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Upgrades.shipUpgradeIronScantlingsHealth was corrected from null to its default, 100.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Upgrades.shipUpgradeCottonSailsSpeed was corrected from null to its default, 10.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.General.Upgrades.shipUpgradeCopperPlatingRotation was corrected from null to its default, 20.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Cog was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Cog.Attributes was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Cog.Attributes.shipAttributeCogMaxHealth was corrected from null to its default, 400.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Cog.Attributes.shipAttributeCogMaxSpeed was corrected from null to its default, 27.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Cog.Attributes.shipAttributeCogMaxReverseSpeed was corrected from null to its default, 0.1. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Cog.Attributes.shipAttributeCogMaxRotationSpeed was corrected from null to its default, 4.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Cog.Attributes.shipAttributeCogAcceleration was corrected from null to its default, 0.01. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Cog.Attributes.shipAttributeCogRotationAcceleration was corrected from null to its default, 0.75. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Cog.Container was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Cog.Container.shipContainerCogContainerSize was corrected from null to its default, 108. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Cog.Modifier was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Cog.Modifier.shipModifierCogBiome was corrected from null to its default, COLD. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Brigg was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Brigg.Attributes was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Brigg.Attributes.shipAttributeBriggMaxHealth was corrected from null to its default, 500.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Brigg.Attributes.shipAttributeBriggMaxSpeed was corrected from null to its default, 30.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Brigg.Attributes.shipAttributeBriggMaxReverseSpeed was corrected from null to its default, 0.1. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Brigg.Attributes.shipAttributeBriggMaxRotationSpeed was corrected from null to its default, 3.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Brigg.Attributes.shipAttributeBriggAcceleration was corrected from null to its default, 0.01. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Brigg.Attributes.shipAttributeBriggRotationAcceleration was corrected from null to its default, 0.6. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Brigg.Container was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Brigg.Container.shipContainerBriggContainerSize was corrected from null to its default, 162. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Brigg.Modifier was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Brigg.Modifier.shipModifierBriggBiome was corrected from null to its default, COLD. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galley was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galley.Attributes was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galley.Attributes.shipAttributeGalleyMaxHealth was corrected from null to its default, 200.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galley.Attributes.shipAttributeGalleyMaxSpeed was corrected from null to its default, 35.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galley.Attributes.shipAttributeGalleyMaxReverseSpeed was corrected from null to its default, 0.1. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galley.Attributes.shipAttributeGalleyMaxRotationSpeed was corrected from null to its default, 5.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galley.Attributes.shipAttributeGalleyAcceleration was corrected from null to its default, 0.01. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galley.Attributes.shipAttributeGalleyRotationAcceleration was corrected from null to its default, 0.9. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galley.Container was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galley.Container.shipContainerGalleyContainerSize was corrected from null to its default, 54. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galley.Modifier was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galley.Modifier.shipModifierGalleyBiome was corrected from null to its default, WARM. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Drakkar was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Drakkar.Attributes was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Drakkar.Attributes.shipAttributeDrakkarMaxHealth was corrected from null to its default, 200.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Drakkar.Attributes.shipAttributeDrakkarMaxSpeed was corrected from null to its default, 28.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Drakkar.Attributes.shipAttributeDrakkarMaxReverseSpeed was corrected from null to its default, 0.1. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Drakkar.Attributes.shipAttributeDrakkarMaxRotationSpeed was corrected from null to its default, 5.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Drakkar.Attributes.shipAttributeDrakkarAcceleration was corrected from null to its default, 0.01. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Drakkar.Attributes.shipAttributeDrakkarRotationAcceleration was corrected from null to its default, 0.75. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Drakkar.Container was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Drakkar.Container.shipContainerDrakkarContainerSize was corrected from null to its default, 54. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Drakkar.Modifier was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Drakkar.Modifier.shipModifierDrakkarBiome was corrected from null to its default, COLD. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galleon was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galleon.Attributes was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galleon.Attributes.shipAttributeGalleonMaxHealth was corrected from null to its default, 700.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galleon.Attributes.shipAttributeGalleonMaxSpeed was corrected from null to its default, 25.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galleon.Attributes.shipAttributeGalleonMaxReverseSpeed was corrected from null to its default, 0.1. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galleon.Attributes.shipAttributeGalleonMaxRotationSpeed was corrected from null to its default, 1.5. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galleon.Attributes.shipAttributeGalleonAcceleration was corrected from null to its default, 0.007. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galleon.Attributes.shipAttributeGalleonRotationAcceleration was corrected from null to its default, 0.5. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galleon.Container was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galleon.Container.shipContainerGalleyContainerSize was corrected from null to its default, 216. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galleon.Modifier was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Galleon.Modifier.shipModifierGalleonBiome was corrected from null to its default, NONE. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Dhow was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Dhow.Attributes was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Dhow.Attributes.shipAttributeDhowMaxHealth was corrected from null to its default, 200.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Dhow.Attributes.shipAttributeDhowMaxSpeed was corrected from null to its default, 32.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Dhow.Attributes.shipAttributeDhowMaxReverseSpeed was corrected from null to its default, 0.1. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Dhow.Attributes.shipAttributeDhowMaxRotationSpeed was corrected from null to its default, 4.5. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Dhow.Attributes.shipAttributeDhowAcceleration was corrected from null to its default, 0.01. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Dhow.Attributes.shipAttributeDhowRotationAcceleration was corrected from null to its default, 0.75. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Dhow.Container was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Dhow.Container.shipContainerDhowContainerSize was corrected from null to its default, 135. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Dhow.Modifier was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Dhow.Modifier.shipModifierDhowBiome was corrected from null to its default, WARM. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Caravel was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Caravel.Attributes was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Caravel.Attributes.shipAttributeCaravelMaxHealth was corrected from null to its default, 250.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Caravel.Attributes.shipAttributeCaravelMaxSpeed was corrected from null to its default, 32.0. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Caravel.Attributes.shipAttributeCaravelMaxReverseSpeed was corrected from null to its default, 0.1. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Caravel.Attributes.shipAttributeCaravelMaxRotationSpeed was corrected from null to its default, 4.75. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Caravel.Attributes.shipAttributeCaravelAcceleration was corrected from null to its default, 0.01. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Caravel.Attributes.shipAttributeCaravelRotationAcceleration was corrected from null to its default, 0.75. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Caravel.Container was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Caravel.Container.shipContainerCaravelContainerSize was corrected from null to its default, 81. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Caravel.Modifier was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Caravel.Modifier.shipModifierCaravelBiome was corrected from null to its default, NONE. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Wind was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Wind.windEnable was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Wind.windMaxSpeedInfluence was corrected from null to its default, 0.33. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Wind.windChangeIntervalMin was corrected from null to its default, 120. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Wind.windChangeIntervalMax was corrected from null to its default, 600. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Wind.windTransitionTime was corrected from null to its default, 45. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Wind.windRainMinStrength was corrected from null to its default, 0.4. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Wind.windStormMinStrength was corrected from null to its default, 0.7. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.SailDamage was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.SailDamage.sailDamageEnable was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Camera was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.Camera.shipGeneralCameraFreeLook was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.VanillaBoats was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.VanillaBoats.vanillaBoatSlowdownEnable was corrected from null to its default, true. 
+[17:14:55] [Server thread/WARN]: Incorrect key Ship.VanillaBoats.vanillaBoatSpeedFactor was corrected from null to its default, 0.25. 
+[17:14:55] [Server thread/WARN]: Incorrect key General was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:14:55] [Server thread/WARN]: Incorrect key General.updateCheckerEnable was corrected from null to its default, true. 
+[17:14:55] [Server thread/INFO]: Starting minecraft server version 1.20.1
+[17:14:55] [Server thread/INFO]: Loading properties
+[17:14:55] [Server thread/INFO]: Default game type: SURVIVAL
+[17:14:55] [Server thread/INFO]: Generating keypair
+[17:14:56] [Server thread/INFO]: Starting Minecraft server on *:25565
+[17:14:56] [Server thread/INFO]: Using epoll channel type
+[17:14:56] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[17:14:56] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[17:14:56] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[17:14:56] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[17:14:56] [Server thread/INFO]: Preparing level "world"
+[17:14:56] [Server thread/INFO]: Enforcing safe world random access
+[17:15:06] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[17:15:06] [Worker-Main-2/INFO]: Preparing spawn area: 0%
+[17:15:07] [Worker-Main-3/INFO]: Preparing spawn area: 0%
+[17:15:07] [Worker-Main-1/INFO]: Preparing spawn area: 0%
+[17:15:08] [Worker-Main-2/INFO]: Preparing spawn area: 0%
+[17:15:08] [Worker-Main-2/INFO]: Preparing spawn area: 1%
+[17:15:09] [Worker-Main-2/INFO]: Preparing spawn area: 2%
+[17:15:09] [Worker-Main-1/INFO]: Preparing spawn area: 3%
+[17:15:10] [Worker-Main-1/INFO]: Preparing spawn area: 3%
+[17:15:10] [Worker-Main-1/INFO]: Preparing spawn area: 4%
+[17:15:11] [Worker-Main-2/INFO]: Preparing spawn area: 6%
+[17:15:11] [Worker-Main-3/INFO]: Preparing spawn area: 7%
+[17:15:12] [Worker-Main-1/INFO]: Preparing spawn area: 9%
+[17:15:12] [Worker-Main-3/INFO]: Preparing spawn area: 10%
+[17:15:13] [Worker-Main-1/INFO]: Preparing spawn area: 11%
+[17:15:13] [Worker-Main-3/INFO]: Preparing spawn area: 14%
+[17:15:14] [Worker-Main-1/INFO]: Preparing spawn area: 15%
+[17:15:14] [Worker-Main-3/INFO]: Preparing spawn area: 17%
+[17:15:15] [Worker-Main-3/INFO]: Preparing spawn area: 19%
+[17:15:15] [Worker-Main-2/INFO]: Preparing spawn area: 22%
+[17:15:16] [Worker-Main-1/INFO]: Preparing spawn area: 25%
+[17:15:16] [Worker-Main-3/INFO]: Preparing spawn area: 27%
+[17:15:17] [Worker-Main-1/INFO]: Preparing spawn area: 30%
+[17:15:17] [Worker-Main-2/INFO]: Preparing spawn area: 33%
+[17:15:18] [Worker-Main-3/INFO]: Preparing spawn area: 34%
+[17:15:18] [Worker-Main-3/INFO]: Preparing spawn area: 37%
+[17:15:19] [Worker-Main-2/INFO]: Preparing spawn area: 41%
+[17:15:19] [Worker-Main-2/INFO]: Preparing spawn area: 42%
+[17:15:20] [Worker-Main-1/INFO]: Preparing spawn area: 46%
+[17:15:20] [Worker-Main-3/INFO]: Preparing spawn area: 48%
+[17:15:21] [Worker-Main-2/INFO]: Preparing spawn area: 51%
+[17:15:21] [Worker-Main-1/INFO]: Preparing spawn area: 54%
+[17:15:22] [Worker-Main-2/INFO]: Preparing spawn area: 56%
+[17:15:22] [Worker-Main-3/INFO]: Preparing spawn area: 60%
+[17:15:23] [Worker-Main-3/INFO]: Preparing spawn area: 64%
+[17:15:23] [Worker-Main-1/INFO]: Preparing spawn area: 68%
+[17:15:24] [Worker-Main-3/INFO]: Preparing spawn area: 71%
+[17:15:24] [Worker-Main-3/INFO]: Preparing spawn area: 74%
+[17:15:25] [Worker-Main-2/INFO]: Preparing spawn area: 79%
+[17:15:25] [Worker-Main-2/INFO]: Preparing spawn area: 83%
+[17:15:26] [Worker-Main-1/INFO]: Preparing spawn area: 86%
+[17:15:26] [Worker-Main-1/ERROR]: Hanging entity at invalid position: class_2338{x=-10, y=-56, z=36}
+[17:15:26] [Worker-Main-1/ERROR]: Hanging entity at invalid position: class_2338{x=-8, y=-56, z=35}
+[17:15:26] [Worker-Main-1/ERROR]: Hanging entity at invalid position: class_2338{x=-6, y=-56, z=35}
+[17:15:26] [Worker-Main-1/ERROR]: Hanging entity at invalid position: class_2338{x=-10, y=-55, z=38}
+[17:15:26] [Worker-Main-1/ERROR]: Hanging entity at invalid position: class_2338{x=-8, y=-56, z=39}
+[17:15:26] [Worker-Main-1/ERROR]: Hanging entity at invalid position: class_2338{x=-13, y=-59, z=41}
+[17:15:26] [Worker-Main-2/INFO]: Preparing spawn area: 89%
+[17:15:27] [Worker-Main-3/INFO]: Preparing spawn area: 93%
+[17:15:27] [Worker-Main-3/INFO]: Preparing spawn area: 96%
+[17:15:27] [Server thread/INFO]: Time elapsed: 21210 ms
+[17:15:27] [Server thread/INFO]: Done (31.544s)! For help, type "help"
+[17:15:27] [Server thread/WARN]: Dedicated server took 55.635 seconds to load
+[17:15:27] [Server thread/INFO]: Mixing common.MixinServerStatus from mixins/common/nochatreports.mixins.json into net.minecraft.class_2926
+[17:15:28] [Server thread/INFO]: [Chunky] Center changed to 0, 0.
+[17:15:28] [Server thread/INFO]: [Chunky] Radius changed to 128.
+[17:15:28] [Server thread/INFO]: [Chunky] Task started in minecraft:overworld for the square region centered at 0, 0 with radius 128.
+[17:15:28] [Server thread/INFO]: [Chunky] Task running for minecraft:overworld. Processed: 169 chunks (58.48%), ETA: 0:00:00, Rate: 1396.7 cps, Current: -7, -1
+[17:15:28] [Server thread/INFO]: [Chunky] Task finished for minecraft:overworld. Processed: 289 chunks (100.00%), Total time: 0:00:00
+[17:15:29] [Server thread/INFO]: Marked [0, 0] chunks in minecraft:overworld from [0, 0] to [3, 3] to be force loaded
+[17:15:49] [Server thread/INFO]: Successfully filled 20 block(s)
+[17:16:14] [Server thread/INFO]: Successfully filled 6 block(s)
+[17:16:39] [Server thread/INFO]: Changed the block at 1, 201, 0
+[17:17:29] [Server thread/INFO]: [Server] RULECHECK nether portal blocked (good)
+[17:17:54] [Server thread/INFO]: Changed the block at 20, 200, 20
+[17:18:19] [Server thread/INFO]: Summoned new Pig
+[17:18:44] [Server thread/INFO]: [Server] RULECHECK pig stayed in the Overworld (good)
+[17:19:34] [Server thread/INFO]: Changed the block at 30, 200, 30
+[17:19:59] [Server thread/INFO]: Changed the block at 32, 200, 30
+[17:20:24] [Server thread/INFO]: 30, 200, 30 has the following block data: {Slot: 0b, id: "minecraft:cobblestone", Count: 9b}
+[17:20:49] [Server thread/INFO]: 32, 200, 30 has the following block data: [{Slot: 0b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 1b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 2b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 3b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 4b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 5b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 6b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 7b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 8b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 9b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 10b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 11b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 12b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 13b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 14b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 15b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 16b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 17b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 18b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 19b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 20b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 21b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 22b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 23b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 24b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 25b, id: "minecraft:cobblestone", Count: 64b}, {Slot: 26b, id: "minecraft:cobblestone", Count: 64b}]
+[17:21:14] [Server thread/INFO]: Saving the game (this may take a moment!)
+[17:21:15] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[17:21:15] [Server thread/INFO]: ThreadedAnvilChunkStorage (anu_lair): All chunks are saved
+[17:21:15] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[17:21:15] [Server thread/INFO]: ThreadedAnvilChunkStorage (treasure_room): All chunks are saved
+[17:21:15] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[17:21:15] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[17:21:15] [Server thread/INFO]: Saved the game
+[17:21:29] [Server thread/INFO]: Stopping the server
+[17:21:29] [Server thread/INFO]: Stopping server
+[17:21:29] [Server thread/INFO]: Saving players
+[17:21:29] [Server thread/INFO]: Saving worlds
+[17:21:29] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[17:21:29] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/fossil:anu_lair
+[17:21:29] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[17:21:29] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/fossil:treasure_room
+[17:21:29] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[17:21:29] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[17:21:29] [Server thread/INFO]: ThreadedAnvilChunkStorage (anu_lair): All chunks are saved
+[17:21:29] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[17:21:29] [Server thread/INFO]: ThreadedAnvilChunkStorage (treasure_room): All chunks are saved
+[17:21:29] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[17:21:29] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
