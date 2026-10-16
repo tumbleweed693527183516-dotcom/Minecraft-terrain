@@ -17,15 +17,15 @@ Status: **pending** (not checked yet) · **ok** (Fabric 1.20.1, fits) · **no** 
 | # | Mod | Link | Loader / version | Licence | Creatures / models worth using | Status | Notes |
 |---|-----|------|------------------|---------|--------------------------------|--------|-------|
 
-| 6 | Naturalist (Starfish Studios) | https://modrinth.com/mod/naturalist | Fabric 1.20.1: yes (5.0pre4, beta) | Assets ARR, code MIT | GeckoLib models: bear, moose, deer, hippo, alligator, rhino, elephant, mammoth, lion, giraffe, boar, ostrich, vulture, snake, tortoise, capybara... | candidate | Model source for Chapter 1: cave bear, elk (moose), hippo, crocodile (alligator), woolly rhino, elephant, mammoth. Needs GeckoLib (already in pack). |
-| 7 | Animal Garden series (Aquarius.playz) | https://modrinth.com/user/Aquarius.playz | Fabric 1.20.1: yes (one mod per animal) | ARR | Western Gorilla, Bull Shark, Crocodile, Hippopotamus, White Rhinoceros, Bison, Lion, Snow Leopard, Spotted Hyena... | candidate | Fills the gaps: gorilla, shark, bison/buffalo. Install only the animals used. |
-| 8 | Fossils and Archeology: Revival | https://modrinth.com/mod/fossils-and-archeology-revival | Fabric 1.20.1: yes (9.3.4.0) | FA License | 60+ prehistoric creatures incl. mammoth, smilodon (saber-tooth), terror bird, dodo, dinosaurs (revived from fossils/DNA) | candidate | Only needed for a true saber-tooth; brings a whole dinosaur system with it. Several dependencies. |
+| 6 | Naturalist (Starfish Studios) | https://modrinth.com/mod/naturalist | Fabric 1.20.1: yes (5.0pre4, beta) | Assets ARR, code MIT | GeckoLib models: bear, moose, deer, hippo, alligator, rhino, elephant, mammoth, lion, giraffe, boar, ostrich, vulture, snake, tortoise, capybara... | ok | CHOSEN: model source for Chapter 1: cave bear, elk (moose), hippo, crocodile (alligator), woolly rhino, elephant, mammoth. Needs GeckoLib (already in pack). |
+| 7 | Animal Garden series (Aquarius.playz) | https://modrinth.com/user/Aquarius.playz | Fabric 1.20.1: yes (one mod per animal) | ARR | Western Gorilla, Bull Shark, Crocodile, Hippopotamus, White Rhinoceros, Bison, Lion, Snow Leopard, Spotted Hyena... | ok | CHOSEN: gorilla and bull shark (install only those two). |
+| 8 | Fossils and Archeology: Revival | https://modrinth.com/mod/fossils-and-archeology-revival | Fabric 1.20.1: yes (9.3.4.0) | FA License | 60+ prehistoric creatures incl. mammoth, smilodon (saber-tooth), terror bird, dodo, dinosaurs (revived from fossils/DNA) | ok | CHOSEN for the saber-tooth (smilodon); brings a whole dinosaur system with it. Several dependencies. |
 
-| 9 | Animal Garden - Common Raven | https://modrinth.com/mod/animal-garden-common-raven | Fabric 1.20.1: yes | ARR | Raven | candidate | Model for Huginn and Muninn. |
-| 10 | Backported Wolves | https://modrinth.com/mod/backported-wolves | Fabric 1.20.1: yes | MIT | The newer wolf coat variants (ashen, black, chestnut, rusty, snowy, spotted, striped, woods) | candidate | Distinct coats for Geri, Freki, Skoll, Hati, Garmr and a giant black Fenrir on the vanilla wolf model. |
-| 11 | Saint's Dragons | https://modrinth.com/mod/saints-dragons | Fabric 1.20.1: yes | Dual licence | Animated, tameable, rideable dragons | candidate | Model for Fafnir (and possibly Nidhoggr). |
-| 12 | Useless Reptile | https://modrinth.com/mod/useless-reptile | Fabric 1.20.1: listed (author says older versions unsupported) | ARR (submods allowed) | Swamp Wyvern, Moleclaw (cave burrower), River Pikehorn, Lightning Chaser, Magmamuncher | candidate | Alternative dragon models; Moleclaw could suit a burrowing Nidhoggr. Needs YACL. |
-| 13 | Myths of the Sea | https://modrinth.com/mod/myths-of-the-sea | 1.20.1 listed; Fabric 1.20.1 not confirmed yet | ARR | Leviathan, Kraken, Hippocampus, Bunyip, Bake Kujira, Abaia | candidate | Leviathan as a possible Jormungandr model; check the Fabric build. |
+| 9 | Animal Garden - Common Raven | https://modrinth.com/mod/animal-garden-common-raven | Fabric 1.20.1: yes | ARR | Raven | ok | CHOSEN: model for Huginn and Muninn. |
+| 10 | Backported Wolves | https://modrinth.com/mod/backported-wolves | Fabric 1.20.1: yes | MIT | The newer wolf coat variants (ashen, black, chestnut, rusty, snowy, spotted, striped, woods) | ok | CHOSEN: distinct coats for Geri, Freki, Skoll, Hati, Garmr and a giant black Fenrir on the vanilla wolf model. |
+| 11 | Saint's Dragons | https://modrinth.com/mod/saints-dragons | Fabric 1.20.1: yes | Dual licence | Animated, tameable, rideable dragons | ok | CHOSEN: models for Fafnir and Nidhoggr (two looks). |
+| 12 | Useless Reptile | https://modrinth.com/mod/useless-reptile | Fabric 1.20.1: listed (author says older versions unsupported) | ARR (submods allowed) | Swamp Wyvern, Moleclaw (cave burrower), River Pikehorn, Lightning Chaser, Magmamuncher | not used | Alternative dragon models; Moleclaw could suit a burrowing Nidhoggr. Needs YACL. |
+| 13 | Myths of the Sea | https://modrinth.com/mod/myths-of-the-sea | 1.20.1 listed; Fabric 1.20.1 not confirmed yet | ARR | Leviathan, Kraken, Hippocampus, Bunyip, Bake Kujira, Abaia | not used | Jormungandr will be a custom segmented serpent instead (no extra dependency, can be truly colossal). |
 
 ## Other mods
 
@@ -45,30 +45,30 @@ Fierce but believable, nothing mythical. Each tied to a Vivid Lands biome. Order
 
 | # | Boss | Home biome | Fight ideas (draft) | Model source |
 |---|------|------------|---------------------|--------------|
-| 1 | Cave Bear | taiga lakelands, Caledonian pinewood (cave lair) | Swipes, rearing roar that slows you; a good first boss | pending |
-| 2 | Giant Irish Elk | highland moors | Antler charges, knockback; calls a small herd | pending |
-| 3 | Hippopotamus | oasis, tropical rivers | Hides underwater then lunges; huge bite, capsizes boats | pending |
-| 4 | Nile Crocodile (giant) | fen, tropical rivers | Ambush from water, death-roll grab | pending |
-| 5 | Silverback Gorilla | rainforest, cloud forest | Chest-beat stun, boulder throws, ground pound | pending |
+| 1 | Cave Bear | taiga lakelands, Caledonian pinewood (cave lair) | Swipes, rearing roar that slows you; a good first boss | Naturalist bear |
+| 2 | Giant Irish Elk | highland moors | Antler charges, knockback; calls a small herd | Naturalist moose |
+| 3 | Hippopotamus | oasis, tropical rivers | Hides underwater then lunges; huge bite, capsizes boats | Naturalist hippo |
+| 4 | Nile Crocodile (giant) | fen, tropical rivers | Ambush from water, death-roll grab | Naturalist alligator |
+| 5 | Silverback Gorilla | rainforest, cloud forest | Chest-beat stun, boulder throws, ground pound | Animal Garden gorilla |
 | 6 | Saber-tooth Cat | endless steppe, golden savanna | Stalks invisibly in tall grass, pounce and bleed | Fossils and Archeology smilodon (chosen) |
-| 7 | Woolly Rhinoceros | tundra, glacial outwash | Unstoppable charges that break blocks; dodge into walls to stun it | pending |
-| 8 | Cape Buffalo bull / African Elephant bull | golden savanna | Stampede waves, trunk throw (elephant) | pending |
-| 9 | Great White Shark / Orca | northern and temperate oceans | Naval fight around your ship; breaches and rams | pending |
-| 10 | Woolly Mammoth | glacier, tundra | Chapter 1 finale: tusk sweeps, trumpet shockwave, stomp quakes; maybe rideable reward | pending |
+| 7 | Woolly Rhinoceros | tundra, glacial outwash | Unstoppable charges that break blocks; dodge into walls to stun it | Naturalist rhino |
+| 8 | African Elephant bull | golden savanna | Stampede waves, trunk throw | Naturalist elephant |
+| 9 | Bull Shark (giant) | northern and temperate oceans | Naval fight around your ship; breaches and rams | Animal Garden bull shark |
+| 10 | Woolly Mammoth | glacier, tundra | Chapter 1 finale: tusk sweeps, trumpet shockwave, stomp quakes; maybe rideable reward | Naturalist mammoth |
 
 ### Chapter 2: Norse mythology - custom, models to be supplied
 
 | Boss | Who | Fight ideas (draft) | Model |
 |------|-----|---------------------|-------|
-| Huginn and Muninn | Odin's ravens, Thought and Memory | Twin flying fight: one dives and strikes, the other blinds or confuses; kill both within a short window or the survivor revives the other | pending |
-| Geri and Freki | Odin's wolves | Pack duo: flanking charges, howl that buffs the other, enrage when one falls | pending |
-| Sleipnir | Odin's eight-legged horse, child of Loki | Fast arena charges and trampling, gallops through the air between phases; tamable or rideable reward possible | pending |
-| Fenrir | Colossal wolf, child of Loki, slayer of Odin | Chained at the start: phases where he breaks Gleipnir link by link; huge bites, ground slams | pending |
-| Skoll and Hati | Wolves chasing the sun and moon | Day and night pair: Skoll stronger by day, Hati by night; sky darkens or brightens as they win | pending |
-| Garmr | Blood-stained hound at the gates of Hel | Gatekeeper of a Hel arena; summons draugr, life-steal bites | pending |
-| Jormungandr | The Midgard Serpent, child of Loki | Ocean boss: surfaces around the ship or coast, coils, poison breath, tail slams; fits Small Ships naval combat | pending |
-| Nidhoggr | Dragon gnawing Yggdrasil's roots | Underground or deep-cave fight among giant roots; corrosion and burrowing | pending |
-| Fafnir | Dwarf turned dragon guarding cursed gold | Treasure-hoard lair; fire breath, flight, gold-greed mechanics (picking up gold enrages him); cursed-gold reward | pending |
+| Huginn and Muninn | Odin's ravens, Thought and Memory | Twin flying fight: one dives and strikes, the other blinds or confuses; kill both within a short window or the survivor revives the other | Animal Garden raven |
+| Geri and Freki | Odin's wolves | Pack duo: flanking charges, howl that buffs the other, enrage when one falls | vanilla wolf + Backported Wolves coats |
+| Sleipnir | Odin's eight-legged horse, child of Loki | Fast arena charges and trampling, gallops through the air between phases; tamable or rideable reward possible | custom: vanilla horse model with 8 legs |
+| Fenrir | Colossal wolf, child of Loki, slayer of Odin | Chained at the start: phases where he breaks Gleipnir link by link; huge bites, ground slams | giant black wolf (vanilla + Backported Wolves) |
+| Skoll and Hati | Wolves chasing the sun and moon | Day and night pair: Skoll stronger by day, Hati by night; sky darkens or brightens as they win | wolf coats (vanilla + Backported Wolves) |
+| Garmr | Blood-stained hound at the gates of Hel | Gatekeeper of a Hel arena; summons draugr, life-steal bites | wolf coat (vanilla + Backported Wolves) |
+| Jormungandr | The Midgard Serpent, child of Loki | Ocean boss: surfaces around the ship or coast, coils, poison breath, tail slams; fits Small Ships naval combat | custom segmented serpent |
+| Nidhoggr | Dragon gnawing Yggdrasil's roots | Underground or deep-cave fight among giant roots; corrosion and burrowing | Saint's Dragons (dark) |
+| Fafnir | Dwarf turned dragon guarding cursed gold | Treasure-hoard lair; fire breath, flight, gold-greed mechanics (picking up gold enrages him); cursed-gold reward | Saint's Dragons (gold) |
 
 Notes: Civilizations already includes Loki and Bjorn Ironside, so Loki's children (Fenrir, Jormungandr, Sleipnir) and the Norse leader can tie into one storyline toward Ragnarok.
 
