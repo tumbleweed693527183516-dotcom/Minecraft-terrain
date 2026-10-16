@@ -74,7 +74,7 @@ RESOLVE = [
     # --- shared libraries first, so their newest versions win over older pinned dependencies ---
     ("WwbubTsV", True),   # YOSBR (default settings that never overwrite yours)
     ("9s6osm5g", True),   # Cloth Config
-    ("1eAoo2KR", False),  # YetAnotherConfigLib
+    ("1eAoo2KR", True),   # YetAnotherConfigLib (Armor of the Ages needs it on servers too)
     ("Ha28R6CL", True),   # Fabric Language Kotlin
     # --- Fabulously Optimized: performance ---
     ("PtjYWJkn", False),  # Sodium Extra
