@@ -1,0 +1,44 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.10.2/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :
+Fabric Loom: 1.7.4
+:remapping 54 mods from modImplementation (java-api)
+
+> Configure project :ragnarok
+Fabric Loom: 1.7.4
+
+> Task :compileJava
+> Task :processResources
+> Task :classes
+> Task :jar
+> Task :processIncludeJars
+> Task :compileTestJava NO-SOURCE
+> Task :processTestResources NO-SOURCE
+> Task :testClasses UP-TO-DATE
+> Task :test NO-SOURCE
+> Task :validateAccessWidener NO-SOURCE
+> Task :check UP-TO-DATE
+> Task :ragnarok:compileJava
+> Task :ragnarok:processResources
+> Task :ragnarok:classes
+> Task :ragnarok:jar
+> Task :ragnarok:processIncludeJars
+> Task :ragnarok:compileTestJava NO-SOURCE
+> Task :ragnarok:processTestResources NO-SOURCE
+> Task :ragnarok:testClasses UP-TO-DATE
+> Task :ragnarok:test NO-SOURCE
+> Task :ragnarok:validateAccessWidener NO-SOURCE
+> Task :ragnarok:check UP-TO-DATE
+> Task :remapJar
+> Task :remapSourcesJar SKIPPED
+> Task :assemble
+> Task :build
+> Task :ragnarok:remapJar
+> Task :ragnarok:remapSourcesJar SKIPPED
+> Task :ragnarok:assemble
+> Task :ragnarok:build
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_3-1792170731761.json
+
+BUILD SUCCESSFUL in 25s
+10 actionable tasks: 10 executed
