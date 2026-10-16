@@ -149,5 +149,34 @@ with their own rewards.
 | 18 | Jormungandr | open ocean, from a warship | Fafnir's Heart | Serpent Scale (ultimate armour) |
 | 19 | Fenrir | Ragnarok arena: final fight | all Chapter 2 trophies | Gleipnir, Fenrir's Fang (final weapon), credits |
 
-Open questions: Chapter 2 arena structures (custom builds or Ancient Structures sites), and whether the Civilizations Egyptian,
-Chinese, Roman and Greek bosses get a role (optional side bosses for now).
+### Boss locations: existing structures only (user rule: no custom arenas unless absolutely necessary)
+
+Chapter 1 animals need no building: they are rare "alpha" spawns that roam their biome (one per region, boss bar
+when you get close). The exceptions use structures that already exist.
+
+| Boss | Location | From |
+|------|----------|------|
+| Silverback Gorilla | Mayan temple | Ancient Structures |
+| Giant Bull Shark | open ocean, fought from a Small Ships ship | no structure |
+| other Chapter 1 animals | roam their biomes | no structure |
+| Huginn and Muninn | Viking tower (the ravens keep watch from it) | Nordic Adventure |
+| Geri and Freki | Meadhall (Odin's hall, Valhalla) | Nordic Adventure |
+| Sleipnir | floating sky island | MSS - Moog's Soaring Structures |
+| Skoll and Hati | Viking fort | Nordic Adventure |
+| Garmr | Nether fortress (the Nether is Hel; Garmr guards its gate) | YUNG's Better Nether Fortresses |
+| Nidhoggr | Ancient City, deep underground among the roots | vanilla |
+| Fafnir | Draugr Bastion treasure halls, cold mountains | Mebahel's Creatures - Draugr Invasion |
+| Jormungandr | around a pirate ship in the open ocean | When Dungeons Arise: Seven Seas |
+| Fenrir | central arena of the Draugr Crypt (largest, rarest dungeon) | Mebahel's Creatures - Draugr Invasion |
+
+New structure mods this needs (all Fabric 1.20.1):
+- **Nordic Adventure** (https://modrinth.com/mod/nordic-adventure): ARR, alpha, made with MCreator; benchmark it for lag.
+  Longhouse, farmhouse, meadhall (with a boss), Draugr mine, Viking fort (Jarl Eirik Raudi), longboat, Viking village
+  (Jarl Ivar the Boneless), Viking tower.
+- **Mebahel's Creatures - Draugr Invasion** (https://modrinth.com/mod/mebahels-creatures-draugr): ARR. Needs Mebahel's API,
+  Mebahel's Elder Scrolls Core and GeckoLib. Draugr Bastion, Crypt, Fort and Tower; its own Draugr Overlord boss and raid.
+- **MSS - Moog's Soaring Structures** (https://modrinth.com/mod/mss-moogs-soaring-structures): GPL-3.0, floating islands.
+- **When Dungeons Arise: Seven Seas** (https://modrinth.com/mod/when-dungeons-arise-seven-seas): hostile ships.
+- **YUNG's Better Nether Fortresses** (with YUNG's API).
+
+Open question: whether the Civilizations Egyptian, Chinese, Roman and Greek bosses get a role (optional side bosses for now).
