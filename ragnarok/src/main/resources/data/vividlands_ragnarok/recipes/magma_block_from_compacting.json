@@ -1,0 +1,25 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ],
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "minecraft:netherrack"
+    },
+    {
+      "fluid": "minecraft:lava",
+      "amount": 8100
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:magma_block"
+    }
+  ]
+}

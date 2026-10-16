@@ -1,0 +1,31 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ],
+  "type": "create:mechanical_crafting",
+  "acceptMirrored": false,
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "S": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "B": {
+      "item": "minecraft:bone_block"
+    }
+  },
+  "pattern": [
+    "DSD",
+    "DBD",
+    "DDD"
+  ],
+  "result": {
+    "item": "minecraft:rib_armor_trim_smithing_template"
+  }
+}

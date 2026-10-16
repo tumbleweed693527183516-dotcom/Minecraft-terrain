@@ -1,0 +1,35 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ],
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "create:crushed_raw_gold"
+    },
+    {
+      "item": "create:crushed_raw_gold"
+    },
+    {
+      "item": "minecraft:blackstone"
+    },
+    {
+      "fluid": "minecraft:lava",
+      "amount": 40500
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:netherite_scrap"
+    }
+  ],
+  "heatRequirement": "superheated"
+}

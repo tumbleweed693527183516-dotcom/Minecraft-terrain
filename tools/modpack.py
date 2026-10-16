@@ -5,7 +5,7 @@ Import it in the Modrinth App (or Prism Launcher). It downloads performance mods
 Iris + Complementary Reimagined shaders, Distant Horizons and two vanilla-style
 resource packs, and includes the Vivid Lands jar with everything pre-enabled.
 
-    gradle build && python3 tools/testpack.py
+    gradle build && python3 tools/modpack.py
 """
 import json
 import zipfile
@@ -103,6 +103,24 @@ RESOLVE = [
     ("oh-the-biomes-weve-gone", True),     # blocks Vivid Lands builds with
     # --- structures for the boss progression (see pack/MOD_LOG.md) ---
     ("mebahels-creatures-draugr", True),   # Draugr Bastion, Crypt, Fort, Tower (+ Mebahel's API, Elder Scrolls Core, GeckoLib)
+    ("ancient-structures", True),          # Mayan temple (Gorilla) and other ancient sites (+ Dawn of Time, Armor of the Ages, Fusion)
+    ("ancient-villages", True),            # Japanese-style villages in taiga
+    ("civilizations", True),               # Norse settlement (Geri and Freki), Bjorn Ironside and Loki
+    ("lukis-grand-capitals", True),        # replaces vanilla villages with grand capitals
+    ("mss-moogs-soaring-structures", True),     # sky islands (Sleipnir)
+    ("when-dungeons-arise-seven-seas", True),   # hostile ships (Jormungandr)
+    ("yungs-better-strongholds", True),    # stronghold portal room: the gate of Hel (Garmr)
+    ("small-ships", True),                 # sailable ships (Bull Shark, Jormungandr fights)
+    # --- creatures whose models the bosses use ---
+    ("naturalist", True),
+    ("animal-garden-western-gorilla", True),
+    ("animal-garden-bull-shark", True),
+    ("animal-garden-common-raven", True),
+    ("fossils-and-archeology-revival", True),   # smilodon (Saber-tooth)
+    ("backported-wolves", True),
+    ("saints-dragons", True),              # Fafnir and Nidhoggr
+    # --- tech ---
+    ("create-fabric", True),               # Create: makes everything the closed Nether and End would give
 ]
 API = "https://api.modrinth.com/v2"
 LOADER_FALLBACK = "0.19.5"
@@ -209,10 +227,11 @@ def main():
     LOADER = fabric_loader()
     print(f"Fabric Loader {LOADER}")
     entries = FILES + resolve_all(RESOLVE, set(), set())
-    jar = ROOT / "build" / "libs" / f"vividlands-{VERSION}.jar"
+    jars = [ROOT / "build" / "libs" / f"vividlands-{VERSION}.jar",
+            ROOT / "ragnarok" / "build" / "libs" / f"vividlands_ragnarok-{VERSION}.jar"]
     build(f"VividLands-Modpack-{VERSION}.mrpack", "Vivid Lands",
-          "Vivid Lands world generation on a Fabulously Optimized-style performance base, ready for more mods",
-          entries, [jar])
+          "Vivid Lands: a Norse road to Ragnarok - 20 bosses, Create, ancient civilizations, on a Fabulously Optimized-style base",
+          entries, jars)
 
 
 if __name__ == "__main__":

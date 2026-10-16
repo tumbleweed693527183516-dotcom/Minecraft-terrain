@@ -143,7 +143,7 @@ with their own rewards.
 | 12 | Geri and Freki | ancient Norse hall (Ancient Structures German/Norse site) | ravens' feathers | Wolf-fang charms (pack buffs) |
 | 13 | Sleipnir | sky above the steppe, at dawn | ravens' feathers | Sleipnir becomes rideable: flies and gallops on water |
 | 14 | Skoll and Hati | glacier plateau, fought across a full day and night | Geri and Freki trophy | Sun and Moon shards (day/night armour set) |
-| 15 | Garmr | the gate of Hel, deep below a volcano | Sun and Moon shards | Hel's Key (opens Nidhoggr's realm) |
+| 15 | Garmr | the gate of Hel: the sealed portal room of a stronghold | Sun and Moon shards | Hel's Key (opens Nidhoggr's realm) |
 | 16 | Nidhoggr | giant roots far underground | Hel's Key | Root of Yggdrasil (upgrade material) |
 | 17 | Fafnir | treasure hoard in a mountain cave | Root of Yggdrasil | Cursed Gold, Fafnir's Heart (dragon-slayer blade) |
 | 18 | Jormungandr | open ocean, from a warship | Fafnir's Heart | Serpent Scale (ultimate armour) |
@@ -163,7 +163,7 @@ when you get close). The exceptions use structures that already exist.
 | Geri and Freki | Norse settlement (the jarl's hall) | Civilizations |
 | Sleipnir | floating sky island | MSS - Moog's Soaring Structures |
 | Skoll and Hati | Draugr Fort | Mebahel's Creatures - Draugr Invasion |
-| Garmr | Nether fortress (the Nether is Hel; Garmr guards its gate) | YUNG's Better Nether Fortresses |
+| Garmr | stronghold portal room: the sealed portal is the gate of Hel | YUNG's Better Strongholds |
 | Nidhoggr | Ancient City, deep underground among the roots | vanilla |
 | Fafnir | Draugr Bastion treasure halls, cold mountains | Mebahel's Creatures - Draugr Invasion |
 | Jormungandr | around a pirate ship in the open ocean | When Dungeons Arise: Seven Seas |
@@ -177,6 +177,42 @@ New structure mods this needs (all Fabric 1.20.1):
   (1.20.1 is Forge only; Fabric only for 1.21.8). Its bosses moved to the Draugr Tower, Draugr Fort and Civilizations.
 - **MSS - Moog's Soaring Structures** (https://modrinth.com/mod/mss-moogs-soaring-structures): GPL-3.0, floating islands.
 - **When Dungeons Arise: Seven Seas** (https://modrinth.com/mod/when-dungeons-arise-seven-seas): hostile ships.
-- **YUNG's Better Nether Fortresses** (with YUNG's API).
+- **YUNG's Better Strongholds** (with YUNG's API). (Better Nether Fortresses dropped: the Nether is closed.)
 
 Open question: whether the Civilizations Egyptian, Chinese, Roman and Greek bosses get a role (optional side bosses for now).
+
+## Pack rules (v0.19, mod "Vivid Lands: Ragnarok" in ragnarok/)
+
+- **No Warden.** Sculk shriekers never summon one; they still shriek and give Darkness. Ancient Cities stay (Nidhoggr).
+- **The Nether and the End are closed.** Obsidian frames never light, eyes of ender can't go into portal frames, and
+  nothing can travel to either dimension ("That realm is sealed until Ragnarok").
+- **Create** (create-fabric) makes everything those dimensions give. Create already has: haunting (soul sand, soul soil,
+  blackstone, crimson/warped fungus, nether brick, soul campfire/torch/lantern), crushing diorite -> quartz, cinder flour
+  -> glowstone, blaze cakes. Pack recipes (tools/ragnarok_recipes.py) add the rest:
+
+| Item | Machine | Recipe |
+|------|---------|--------|
+| Soul sand (first one) | mixing | sand + rotten flesh + bone meal (light soul fire for haunting fans) |
+| Netherrack | haunting | granite |
+| Nether wart | haunting | beetroot seeds |
+| Wither skeleton skull | haunting | skeleton skull (the Wither, nether stars, beacons) |
+| Crying obsidian | haunting | obsidian |
+| Crimson / warped nylium | deploying | fungus onto netherrack (bone-meal fungi for stems, wart blocks, shroomlight, vines) |
+| Gilded blackstone | deploying | gold ingot onto blackstone |
+| Magma block | compacting | netherrack + 100 mB lava |
+| Blaze rod | compacting | stick + 2 gold nuggets + 250 mB lava |
+| Blaze burner | crafting | empty blaze burner + 4 blaze rods |
+| Ghast tear | heated mixing | soul sand + phantom membrane + 250 mB water |
+| Glowstone dust x2 | heated mixing | 2 redstone + glow ink sac |
+| Netherite scrap | superheated mixing | diamond + 2 crushed raw gold + blackstone + 500 mB lava |
+| Ancient debris | superheated compacting | netherite scrap + blackstone |
+| Netherite upgrade template | mechanical crafting | 7 diamonds + netherite scrap + netherrack (then duplicate as usual) |
+| Rib / snout trims | mechanical crafting | 7 diamonds + wither skull and bone block / gold block and blackstone |
+| End stone x4 | mixing | 4 sandstone + ender pearl |
+| Chorus flower | mixing | ender pearl + beetroot seeds + bone meal (plant on end stone: chorus fruit, purpur, end rods) |
+| Shulker shell | heated mixing | purpur block + 2 ender pearls + popped chorus fruit |
+| Dragon's breath | heated mixing | glass bottle + popped chorus fruit + blaze powder |
+| Elytra | mechanical crafting | 6 phantom membranes + shulker shell + diamond + popped chorus fruit |
+| Spire trim | mechanical crafting | 7 diamonds + shulker shell + purpur block |
+
+Not made (decoration or trophies only): Pigstep disc, piglin head, snout banner pattern, dragon egg, dragon head.

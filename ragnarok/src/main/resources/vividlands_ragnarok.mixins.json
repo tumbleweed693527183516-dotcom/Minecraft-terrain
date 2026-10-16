@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.vividlands.ragnarok.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "vividlands_ragnarok.refmap.json",
+  "mixins": [
+    "SculkShriekerMixin",
+    "PortalShapeMixin",
+    "EntityDimensionMixin",
+    "ServerPlayerDimensionMixin",
+    "EnderEyeItemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

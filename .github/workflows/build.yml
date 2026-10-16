@@ -32,17 +32,20 @@ jobs:
           set -o pipefail
           gradle build --no-daemon --console=plain 2>&1 | tee build.log
       - name: Modpack
-        run: python3 tools/modpack.py
+        run: |
+          set -o pipefail
+          python3 tools/modpack.py 2>&1 | tee modpack.log
       - uses: actions/upload-artifact@v4
         with:
           name: vivid-lands
           path: |
             build/libs/vividlands-*.jar
+            ragnarok/build/libs/vividlands_ragnarok-*.jar
             build/*.mrpack
       - name: Publish jar and test pack to the dist branch
         if: success()
         run: |
-          mkdir -p dist && cp build/libs/vividlands-$(cat VERSION).jar build/*.mrpack dist/
+          mkdir -p dist && cp build/libs/vividlands-$(cat VERSION).jar ragnarok/build/libs/vividlands_ragnarok-$(cat VERSION).jar build/*.mrpack dist/
           cd dist && git init -q && git checkout -q -b dist
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -51,7 +54,7 @@ jobs:
       - name: Publish build log to the build-logs branch
         if: always()
         run: |
-          mkdir -p logs && cp build.log logs/ 2>/dev/null || echo "no build log" > logs/build.log
+          mkdir -p logs && cp build.log modpack.log logs/ 2>/dev/null || echo "no build log" > logs/build.log
           echo "${{ job.status }} $(git rev-parse --short HEAD)" > logs/status.txt
           cd logs && git init -q && git checkout -q -b build-logs
           git config user.name "github-actions[bot]"

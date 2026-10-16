@@ -1,0 +1,39 @@
+plugins {
+    id 'fabric-loom'
+}
+
+// Vivid Lands: Ragnarok - the modpack's own mod: pack rules (no Warden, no Nether, no End),
+// Create recipes for Nether/End items, and later the bosses.
+version = rootProject.file('VERSION').text.trim()
+group = 'com.vividlands'
+base { archivesName = 'vividlands_ragnarok' }
+
+loom {
+    mixin {
+        defaultRefmapName = 'vividlands_ragnarok.refmap.json'
+    }
+}
+
+dependencies {
+    minecraft 'com.mojang:minecraft:1.20.1'
+    mappings loom.officialMojangMappings()
+    modImplementation 'net.fabricmc:fabric-loader:0.16.10'
+    modImplementation 'net.fabricmc.fabric-api:fabric-api:0.92.2+1.20.1'
+}
+
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('fabric.mod.json') {
+        expand 'version': project.version
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 17
+    it.options.encoding = 'UTF-8'
+}
