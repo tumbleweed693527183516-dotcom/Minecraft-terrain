@@ -21,6 +21,12 @@ Status: **pending** (not checked yet) · **ok** (Fabric 1.20.1, fits) · **no** 
 | 7 | Animal Garden series (Aquarius.playz) | https://modrinth.com/user/Aquarius.playz | Fabric 1.20.1: yes (one mod per animal) | ARR | Western Gorilla, Bull Shark, Crocodile, Hippopotamus, White Rhinoceros, Bison, Lion, Snow Leopard, Spotted Hyena... | candidate | Fills the gaps: gorilla, shark, bison/buffalo. Install only the animals used. |
 | 8 | Fossils and Archeology: Revival | https://modrinth.com/mod/fossils-and-archeology-revival | Fabric 1.20.1: yes (9.3.4.0) | FA License | 60+ prehistoric creatures incl. mammoth, smilodon (saber-tooth), terror bird, dodo, dinosaurs (revived from fossils/DNA) | candidate | Only needed for a true saber-tooth; brings a whole dinosaur system with it. Several dependencies. |
 
+| 9 | Animal Garden - Common Raven | https://modrinth.com/mod/animal-garden-common-raven | Fabric 1.20.1: yes | ARR | Raven | candidate | Model for Huginn and Muninn. |
+| 10 | Backported Wolves | https://modrinth.com/mod/backported-wolves | Fabric 1.20.1: yes | MIT | The newer wolf coat variants (ashen, black, chestnut, rusty, snowy, spotted, striped, woods) | candidate | Distinct coats for Geri, Freki, Skoll, Hati, Garmr and a giant black Fenrir on the vanilla wolf model. |
+| 11 | Saint's Dragons | https://modrinth.com/mod/saints-dragons | Fabric 1.20.1: yes | Dual licence | Animated, tameable, rideable dragons | candidate | Model for Fafnir (and possibly Nidhoggr). |
+| 12 | Useless Reptile | https://modrinth.com/mod/useless-reptile | Fabric 1.20.1: listed (author says older versions unsupported) | ARR (submods allowed) | Swamp Wyvern, Moleclaw (cave burrower), River Pikehorn, Lightning Chaser, Magmamuncher | candidate | Alternative dragon models; Moleclaw could suit a burrowing Nidhoggr. Needs YACL. |
+| 13 | Myths of the Sea | https://modrinth.com/mod/myths-of-the-sea | 1.20.1 listed; Fabric 1.20.1 not confirmed yet | ARR | Leviathan, Kraken, Hippocampus, Bunyip, Bake Kujira, Abaia | candidate | Leviathan as a possible Jormungandr model; check the Fabric build. |
+
 ## Other mods
 
 | # | Mod | Link | Loader / version | Licence | Purpose | Status | Notes |
@@ -44,7 +50,7 @@ Fierce but believable, nothing mythical. Each tied to a Vivid Lands biome. Order
 | 3 | Hippopotamus | oasis, tropical rivers | Hides underwater then lunges; huge bite, capsizes boats | pending |
 | 4 | Nile Crocodile (giant) | fen, tropical rivers | Ambush from water, death-roll grab | pending |
 | 5 | Silverback Gorilla | rainforest, cloud forest | Chest-beat stun, boulder throws, ground pound | pending |
-| 6 | Saber-tooth Cat | endless steppe, golden savanna | Stalks invisibly in tall grass, pounce and bleed | pending |
+| 6 | Saber-tooth Cat | endless steppe, golden savanna | Stalks invisibly in tall grass, pounce and bleed | Fossils and Archeology smilodon (chosen) |
 | 7 | Woolly Rhinoceros | tundra, glacial outwash | Unstoppable charges that break blocks; dodge into walls to stun it | pending |
 | 8 | Cape Buffalo bull / African Elephant bull | golden savanna | Stampede waves, trunk throw (elephant) | pending |
 | 9 | Great White Shark / Orca | northern and temperate oceans | Naval fight around your ship; breaches and rams | pending |
