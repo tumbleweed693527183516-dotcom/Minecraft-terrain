@@ -84,3 +84,47 @@ Village replacements and ancient-civilization content found on Modrinth (Fabric 
 | Epic Structures: Villages | https://modrinth.com/mod/epic-structures-villages | ARR | Replaces villages with large medieval cities and towns. |
 | Luki's Grand Capitals | https://modrinth.com/mod/lukis-grand-capitals | ARR | Rebuilds vanilla villages as grand capitals. |
 | Mebahel's Antique Beasts | https://modrinth.com/mod/mebahels-antique-beasts | ARR | Ancient warriors, legendary beasts, forgotten ruins (creature/boss candidate). |
+
+### Progression (draft v1)
+
+Each boss drops a **trophy** (needed to unlock the next tier) and **gear materials** that make the next fights possible.
+Chapter 1 bosses live in Vivid Lands biomes (wild lairs, or arenas in Ancient Structures sites). Chapter 2 is unlocked
+through the Civilizations Norse storyline and is fought at sacred Norse sites.
+
+**Chapter 1: the wild (iron to diamond tier)**
+
+| Order | Boss | Where | Unlock | Key drops |
+|-------|------|-------|--------|-----------|
+| 1 | Cave Bear | cave lair in pine forests | none: the starter boss | Bear Pelt (warm armour: no freezing in cold biomes) |
+| 2 | Giant Irish Elk | highland moors, at a stone circle | none | Great Antlers (fast charge-dash tool / mount gear) |
+| 3 | Hippopotamus | oasis and tropical rivers | none | Hippo Hide (water-walking boots: no slowness in water) |
+| 4 | Giant Crocodile | fen, tropical rivers | Hippo trophy (lure bait) | Croc Scales (armour with underwater breathing) |
+| 5 | Silverback Gorilla | rainforest, ruined Mayan temple (Ancient Structures) | any 3 trophies | Silverback Fists (knockback gauntlets) |
+| 6 | Saber-tooth Cat | steppe, savanna | any 4 trophies | Saber Fangs (bleed-effect blade) |
+| 7 | Woolly Rhinoceros | tundra, glacial outwash | Bear Pelt worn (cold) | Rhino Horn (block-breaking charge, shield upgrade) |
+| 8 | Bull Elephant | golden savanna | any 6 trophies | Ivory (key crafting material for tier 2 gear) |
+| 9 | Giant Bull Shark | northern/temperate ocean, fought from a Small Ships ship | Croc Scales | Shark Teeth (ship rams and harpoons) |
+| 10 | Woolly Mammoth | glacier | all 9 Chapter 1 trophies | Mammoth Tusk + Frozen Heart (opens Chapter 2); tameable mammoth mount |
+
+**Bridge: Civilizations**
+
+The Frozen Heart leads into the Civilizations Norse storyline: defeat **Bjorn Ironside**, then face **Loki**. Beating Loki
+releases his children and opens the way to the Norse gods. The other Civilizations leaders and gods stay optional side bosses
+with their own rewards.
+
+**Chapter 2: the Nine Worlds (netherite tier and beyond)**
+
+| Order | Boss | Where | Unlock | Key drops |
+|-------|------|-------|--------|-----------|
+| 11 | Huginn and Muninn | above the highest mountain peaks | beat Loki | Feathers of Thought and Memory (reveal the other Norse bosses on a map) |
+| 12 | Geri and Freki | ancient Norse hall (Ancient Structures German/Norse site) | ravens' feathers | Wolf-fang charms (pack buffs) |
+| 13 | Sleipnir | sky above the steppe, at dawn | ravens' feathers | Sleipnir becomes rideable: flies and gallops on water |
+| 14 | Skoll and Hati | glacier plateau, fought across a full day and night | Geri and Freki trophy | Sun and Moon shards (day/night armour set) |
+| 15 | Garmr | the gate of Hel, deep below a volcano | Sun and Moon shards | Hel's Key (opens Nidhoggr's realm) |
+| 16 | Nidhoggr | giant roots far underground | Hel's Key | Root of Yggdrasil (upgrade material) |
+| 17 | Fafnir | treasure hoard in a mountain cave | Root of Yggdrasil | Cursed Gold, Fafnir's Heart (dragon-slayer blade) |
+| 18 | Jormungandr | open ocean, from a warship | Fafnir's Heart | Serpent Scale (ultimate armour) |
+| 19 | Fenrir | Ragnarok arena: final fight | all Chapter 2 trophies | Gleipnir, Fenrir's Fang (final weapon), credits |
+
+Open questions: Chapter 2 arena structures (custom builds or Ancient Structures sites), and whether the Civilizations Egyptian,
+Chinese, Roman and Greek bosses get a role (optional side bosses for now).
