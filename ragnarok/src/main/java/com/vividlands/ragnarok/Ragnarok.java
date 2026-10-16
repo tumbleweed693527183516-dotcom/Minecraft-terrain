@@ -25,6 +25,11 @@ public class Ragnarok implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        LOG.info("Vivid Lands: Ragnarok - Warden disabled, Nether and End closed");
+        // Load every class the pack rules patch now, so a rule that fails to apply stops the game at
+        // startup (with a clear mixin error) instead of silently letting the Warden or a portal through.
+        Class<?>[] patched = {net.minecraft.world.level.block.entity.SculkShriekerBlockEntity.class,
+                net.minecraft.world.level.portal.PortalShape.class, net.minecraft.world.item.EnderEyeItem.class,
+                net.minecraft.world.entity.Entity.class, net.minecraft.server.level.ServerPlayer.class};
+        LOG.info("Vivid Lands: Ragnarok - Warden disabled, Nether and End closed ({} rules)", patched.length);
     }
 }

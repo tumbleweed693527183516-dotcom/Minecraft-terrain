@@ -108,11 +108,11 @@ RESOLVE = [
     ("civilizations", True),               # Norse settlement (Geri and Freki), Bjorn Ironside and Loki
     ("lukis-grand-capitals", True),        # replaces vanilla villages with grand capitals
     ("mss-moogs-soaring-structures", True),     # sky islands (Sleipnir)
-    ("when-dungeons-arise-seven-seas", True),   # hostile ships (Jormungandr)
+    ("when-dungeons-arise-seven-seas", True, "ZQjAxRej"),   # hostile ships (Jormungandr); the 1.20.x build
     ("yungs-better-strongholds", True),    # stronghold portal room: the gate of Hel (Garmr)
     ("small-ships", True),                 # sailable ships (Bull Shark, Jormungandr fights)
     # --- creatures whose models the bosses use ---
-    ("naturalist", True),
+    ("naturalist", True, "3B6AIHXy"),      # 5.0pre4 beta: has the mammoth and moose (4.0.3 does not)
     ("animal-garden-western-gorilla", True),
     ("animal-garden-bull-shark", True),
     ("animal-garden-common-raven", True),
@@ -187,9 +187,9 @@ LOADER = LOADER_FALLBACK
 
 def resolve_all(slugs, seen, have):
     extra = []
-    for slug, server in slugs:
+    for slug, server, *pin in slugs:
         try:
-            got = resolve(slug, server, seen)
+            got = resolve(slug, server, seen, version=_get(f"/version/{pin[0]}") if pin else None)
             extra += [g for g in got if g[1] not in have | {e[1] for e in extra}]
             print(f"resolved {slug}: {', '.join(g[1] for g in got)}")
         except Exception as e:                           # offline or renamed: build the pack without it

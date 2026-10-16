@@ -1,0 +1,112 @@
+name: Pack test
+
+# Starts a dedicated server with every server-side mod of the modpack, checks that it loads,
+# times world generation (lag test), checks the pack rules (Nether portal can't light, nothing
+# travels to the Nether) and lists every structure id the pack's mods add (for boss spawns).
+on:
+  workflow_dispatch:
+    inputs:
+      seed:
+        description: World seed
+        default: "vividlands"
+      radius:
+        description: Radius to generate, in blocks (1024 = the earlier 16,641-chunk benchmark)
+        default: "1024"
+
+permissions:
+  contents: write
+
+jobs:
+  packtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.10.2"
+      - name: Build mods and modpack
+        run: |
+          python3 tools/generate.py
+          python3 tools/check.py
+          gradle build --no-daemon
+          python3 tools/modpack.py
+      - name: Set up server from the modpack
+        run: |
+          mkdir -p server/mods out && cd server
+          python3 - <<'EOF'
+          import json, zipfile, glob, urllib.request
+          pack = glob.glob("../build/*.mrpack")[0]
+          z = zipfile.ZipFile(pack)
+          idx = json.loads(z.read("modrinth.index.json"))
+          open("loader.txt", "w").write(idx["dependencies"]["fabric-loader"])
+          for f in idx["files"]:
+              if f["env"]["server"] != "required" or not f["path"].startswith("mods/"):
+                  continue
+              if "DistantHorizons" in f["path"]:      # LOD generation would skew the timing
+                  continue
+              print("download", f["path"])
+              req = urllib.request.Request(f["downloads"][0], headers={"User-Agent": "vividlands-packtest"})
+              open(f["path"], "wb").write(urllib.request.urlopen(req, timeout=120).read())
+          for n in z.namelist():
+              if n.startswith("overrides/mods/") and n.endswith(".jar"):
+                  open("mods/" + n.split("/")[-1], "wb").write(z.read(n))
+          EOF
+          ls mods | tee ../out/server_mods.txt
+          curl -fsSL -o server.jar "https://meta.fabricmc.net/v2/versions/loader/1.20.1/$(cat loader.txt)/1.0.1/server/jar"
+          echo "eula=true" > eula.txt
+          printf "level-seed=%s\nonline-mode=false\nview-distance=4\nsimulation-distance=4\nspawn-protection=0\nmax-tick-time=-1\nsync-chunk-writes=false\n" "${{ inputs.seed }}" > server.properties
+          cat > commands.txt <<'EOF'
+          forceload add 0 0 48 48
+          fill 0 200 0 3 204 0 minecraft:obsidian
+          fill 1 201 0 2 203 0 minecraft:air
+          setblock 1 201 0 minecraft:fire
+          execute if block 1 201 0 minecraft:nether_portal run say RULECHECK nether portal LIT (bad)
+          execute unless block 1 201 0 minecraft:nether_portal run say RULECHECK nether portal blocked (good)
+          setblock 20 200 20 minecraft:nether_portal
+          summon minecraft:pig 20 200 20 {NoAI:1b,Tags:["porttest"]}
+          execute if entity @e[type=minecraft:pig,tag=porttest] run say RULECHECK pig stayed in the Overworld (good)
+          execute unless entity @e[type=minecraft:pig,tag=porttest] run say RULECHECK pig left the Overworld (bad)
+          EOF
+      - name: Structure ids added by the pack's mods
+        run: |
+          cd server/mods
+          for j in *.jar; do
+            unzip -Z1 "$j" 2>/dev/null | grep -E '^data/[^/]+/worldgen/structure/.+\.json$' | \
+              sed -E "s#^data/([^/]+)/worldgen/structure/(.+)\.json#\1:\2#" | sed "s#^#$j  #"
+          done | sort > ../../out/structures.txt
+          wc -l ../../out/structures.txt
+          grep -c . ../../out/structures.txt || true
+      - name: Start server, time generation, check rules
+        run: |
+          start=$(date +%s)
+          bash tools/worldtest/run_server.sh "${{ inputs.radius }}"
+          echo "total seconds: $(( $(date +%s) - start ))" | tee out/timing.txt
+      - name: Collect results
+        if: always()
+        run: |
+          cp server/server.log out/ 2>/dev/null || true
+          grep -iE "chunky|Done \(" server/server.log | tail -n 8 >> out/timing.txt 2>/dev/null || true
+          grep -E "RULECHECK|Ragnarok" server/server.log > out/rules.txt 2>/dev/null || true
+          grep -nE "ERROR|Exception|Caused by|Failed to|Mixin.*(fail|error)|Parsing error" server/server.log > out/problems.txt 2>/dev/null || true
+          wc -l out/problems.txt || true
+          cat out/rules.txt out/timing.txt || true
+      - name: Publish results to the packtest branch
+        if: always()
+        run: |
+          mkdir -p results && cp out/*.txt results/ 2>/dev/null || true
+          tail -n 600 out/server.log > results/server_tail.log 2>/dev/null || true
+          head -n 400 out/server.log > results/server_head.log 2>/dev/null || true
+          cd results
+          git init -q && git checkout -q -b packtest
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -qm "Pack test ${{ github.run_id }}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:packtest
