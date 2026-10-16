@@ -85,6 +85,29 @@ Village replacements and ancient-civilization content found on Modrinth (Fabric 
 | Luki's Grand Capitals | https://modrinth.com/mod/lukis-grand-capitals | ARR | Rebuilds vanilla villages as grand capitals. |
 | Mebahel's Antique Beasts | https://modrinth.com/mod/mebahels-antique-beasts | ARR | Ancient warriors, legendary beasts, forgotten ruins (creature/boss candidate). |
 
+### Story: the road to Ragnarok (approved)
+
+Ragnarok, the prophesied end of the world, is coming. The player is a mortal chosen to become one of the einherjar,
+Odin's champions for the last battle.
+
+- **Skadi** (goddess of winter, mountains and the hunt) gives Chapter 1. She doesn't trust mortals and sets the player
+  hunter's trials: slay the greatest beasts of Midgard. Each boss is one trial, and her gifts are the rewards. The Woolly
+  Mammoth is her final test; bringing her the Frozen Heart proves the player worthy, and she tells Odin.
+- **Loki's betrayal** (the bridge): Odin summons the player just as Loki (Civilizations) breaks free and starts Ragnarok.
+  Beating Loki doesn't stop it, because his monstrous children are already loose.
+- **Odin** gives Chapter 2, his war against Ragnarok:
+  - Huginn and Muninn, Geri and Freki, and Sleipnir are Odin's own companions. These are trials of worthiness, not fights
+    to the death: once beaten, they join the player (the ravens scout the remaining bosses, the wolves fight alongside
+    them, and Sleipnir becomes the player's mount).
+  - Skoll and Hati, Garmr, Nidhoggr, Fafnir and Jormungandr are the forces of Ragnarok, to be hunted down before the end.
+  - Fenrir is the finale. In the myth, Fenrir kills Odin at Ragnarok; here the player stands in Odin's place and breaks
+    the prophecy.
+- **Mimir**, the wise severed head Odin keeps for counsel, guides the player throughout. He gives quests, explains the
+  lore and points the way to the next boss, as an NPC or a talking item.
+
+Delivery in game (to decide later): a quest book, quest-giver NPCs or shrines for Skadi and Odin, and raven messages
+after each boss.
+
 ### Progression (draft v1)
 
 Each boss drops a **trophy** (needed to unlock the next tier) and **gear materials** that make the next fights possible.
