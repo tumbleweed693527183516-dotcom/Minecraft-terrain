@@ -27,7 +27,21 @@ Status: **pending** (not checked yet) · **ok** (Fabric 1.20.1, fits) · **no** 
 
 ## Boss progression plan
 
-(to be written once the mods are collected)
+### Final bosses (Norse mythology) - custom, models to be supplied
+
+| Boss | Who | Fight ideas (draft) | Model |
+|------|-----|---------------------|-------|
+| Huginn and Muninn | Odin's ravens, Thought and Memory | Twin flying fight: one dives and strikes, the other blinds or confuses; kill both within a short window or the survivor revives the other | pending |
+| Geri and Freki | Odin's wolves | Pack duo: flanking charges, howl that buffs the other, enrage when one falls | pending |
+| Sleipnir | Odin's eight-legged horse, child of Loki | Fast arena charges and trampling, gallops through the air between phases; tamable or rideable reward possible | pending |
+| Fenrir | Colossal wolf, child of Loki, slayer of Odin | Chained at the start: phases where he breaks Gleipnir link by link; huge bites, ground slams | pending |
+| Skoll and Hati | Wolves chasing the sun and moon | Day and night pair: Skoll stronger by day, Hati by night; sky darkens or brightens as they win | pending |
+| Garmr | Blood-stained hound at the gates of Hel | Gatekeeper of a Hel arena; summons draugr, life-steal bites | pending |
+| Jormungandr | The Midgard Serpent, child of Loki | Ocean boss: surfaces around the ship or coast, coils, poison breath, tail slams; fits Small Ships naval combat | pending |
+| Nidhoggr | Dragon gnawing Yggdrasil's roots | Underground or deep-cave fight among giant roots; corrosion and burrowing | pending |
+| Fafnir | Dwarf turned dragon guarding cursed gold | Treasure-hoard lair; fire breath, flight, gold-greed mechanics (picking up gold enrages him); cursed-gold reward | pending |
+
+Notes: Civilizations already includes Loki and Bjorn Ironside, so Loki's children (Fenrir, Jormungandr, Sleipnir) and the Norse leader can tie into one storyline toward Ragnarok.
 
 ## Candidates suggested (not chosen yet)
 
