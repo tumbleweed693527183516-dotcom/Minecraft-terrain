@@ -89,7 +89,7 @@ final class RenderTest {
         // hand rotation check: a vanilla iron sword next to three candidate rotations of one weapon
         steps.add(() -> {
             mc.options.hideGui = true;
-            cmd(mc, "fill -6 199 16 8 199 22 minecraft:smooth_stone");
+            cmd(mc, "fill -8 199 12 10 199 24 minecraft:smooth_stone");
             String[] items = {"minecraft:iron_sword", "vividlands_ragnarok:test_view_a", "vividlands_ragnarok:test_view_b",
                     "vividlands_ragnarok:test_view_c"};
             for (int i = 0; i < items.length; i++) {
@@ -98,9 +98,9 @@ final class RenderTest {
                                 + "Pose:{RightArm:[-20f,0f,0f]},HandItems:[{id:\"%s\",Count:1b},{}]}", -3.5 + i * 3, items[i]));
             }
         });
-        steps.add(() -> cmd(mc, "tp @a 1.0 201.4 14.5 0 6"));
+        steps.add(() -> cmd(mc, "tp @a 1.0 201.0 15.5 0 8"));
         steps.add(() -> shot(mc, "rotation_check_front"));
-        steps.add(() -> cmd(mc, "tp @a 9.0 201.4 19.5 90 6"));
+        steps.add(() -> cmd(mc, "tp @a 9.0 201.0 19.5 90 6"));
         steps.add(() -> shot(mc, "rotation_check_side"));
         // weapons: a row of armour stands holding them, facing the camera
         steps.add(() -> {
