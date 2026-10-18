@@ -124,6 +124,16 @@ RESOLVE = [
     # --- ships: Small Ships on the sea, Valkyrien Skies + Eureka for airships (build any ship, add a helm and balloons) ---
     ("valkyrien-skies", True),
     ("eureka", True),
+    # --- armor and weapons (the Viking endgame sets will be the pack's own, made from boss drops) ---
+    ("epic-knights-shields-armor-and-weapons", True),   # historical medieval armor, shields, weapons
+    ("fantasy_armor", True),               # 13 fantasy armor sets
+    ("fantasy_weapons", True),             # matching weapons (battleaxes, halberds, pikes...)
+    ("immersive-armors", True),            # 9 sets: warrior, heavy, divine, skeleton, prismarine...
+    ("simply-swords", True),               # new weapon types and unique legendary weapons
+    ("better-combat", True),               # weapon swing animations and combos
+    ("combat-roll", True),                 # dodge roll
+    ("rogues-and-warriors", True),         # berserker-style warrior and rogue class gear and skills
+    ("mythicmetals", True),                # many new ores, each with tools, weapons and armor
     # --- quality of life (the usual modpack set) ---
     ("emi", True),                         # recipe viewer (Create shows its machine recipes in it)
     ("jade", True),                        # what am I looking at: block/mob name, mod, health, machine status

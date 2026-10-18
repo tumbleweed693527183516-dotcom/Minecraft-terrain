@@ -291,3 +291,23 @@ Structure ids for boss spawns:
 
 Already in from the Fabulously Optimized base: Mod Menu, Zoomify, AdvancementInfo, Better Mount HUD, Continuity,
 Borderless Mining, More Chat History, FastQuit.
+
+## Armor and weapons (v0.20)
+
+| Mod | What it adds |
+|-----|--------------|
+| Epic Knights: Shields, Armor and Weapons | Historical medieval armor, shields and weapons |
+| Fantasy Armor + Fantasy Weapons | 13 fantasy sets with matching weapons |
+| Immersive Armors | 9 sets: warrior, heavy, divine, skeleton, prismarine... |
+| Armor of the Ages (already in) | Samurai, Roman, pharaoh, Anubis and other culture sets |
+| Simply Swords | Spears, katanas, chakrams, rapiers and unique legendary weapons |
+| Rogues & Warriors | Warrior (berserker) and rogue class gear and skills (needs Spell Engine) |
+| Mythic Metals | Many new ores, each with tools, weapons and armor |
+| Better Combat + Combat Roll | Swing animations, combos, dodge roll |
+
+Skipped: Marium's Soulslike Weaponry (user: weapons not cool enough, and its bosses sit outside the story).
+
+**Viking endgame sets (the pack's own, from boss drops; concept art first, docs/viking_armor/):**
+Berserker (Chapter 1 trophies), Ulfhednar wolf-warrior (Geri and Freki, Skoll and Hati), Valkyrie (Huginn and Muninn,
+Sleipnir), Jarl / Einherjar (Fafnir's gold, Jormungandr's scale; the best armor in the pack). Weapons: Fenrir's Fang,
+Gungnir, Dane axe, round shield.
