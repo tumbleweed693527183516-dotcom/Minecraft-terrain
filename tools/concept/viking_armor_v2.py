@@ -1049,10 +1049,15 @@ TOP, LEFT, RIGHT = 1.0, 0.84, 0.66
 
 def render_iso(model, back=False, s=3.3):
     vox = {}
+    glow = set()
+    em = getattr(model, "emissive", set())
     for (x, y, z), c in model.v.items():
+        k = (x, y, z) in em
         if back:
             x, z = -1 - x, -1 - z
         vox[(x, y, z)] = c
+        if k:
+            glow.add((x, y, z))
     c30, s30 = math.cos(math.pi / 6), 0.5
 
     def P(x, y, z):
@@ -1080,25 +1085,31 @@ def render_iso(model, back=False, s=3.3):
         if (x + 1, y, z) not in vox:
             faces.append(([(x + 1, y, z), (x + 1, y + 1, z), (x + 1, y + 1, z + 1), (x + 1, y, z + 1)], RIGHT,
                           [(x + 1, y + 1, z), (x + 1, y - 1, z), (x + 1, y, z - 1), (x + 1, y, z + 1), (x + 2, y + 1, z)]))
+        lit = (x, y, z) in glow
         for pts, f, ao in faces:
-            occ = sum(1 for q in ao if q in vox)
+            occ = 0 if lit else sum(1 for q in ao if q in vox)
             poly = [((u - minu) * SS, (v - minv) * SS) for u, v in (P(*p) for p in pts)]
-            d.polygon(poly, fill=mul(c, f * (1.0 - 0.07 * occ)) + (255,))
+            d.polygon(poly, fill=mul(c, (1.0 if lit else f) * (1.0 - 0.07 * occ)) + (255,))
     return img.resize((W, H), Image.LANCZOS)
 
 
 def render_front(model, s=3.9):
     best = {}
+    em = getattr(model, "emissive", set())
     for (x, y, z), c in model.v.items():
         if (x, y) not in best or z > best[(x, y)][0]:
-            best[(x, y)] = (z, c)
+            best[(x, y)] = (z, c, (x, y, z) in em)
     xs = [k[0] for k in best]
     ys = [k[1] for k in best]
     x0, y1 = min(xs), max(ys)
     W, H = int((max(xs) - x0 + 3) * s), int((y1 - min(ys) + 3) * s)
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
-    for (X, y), (z, c) in best.items():
+    for (X, y), (z, c, lit) in best.items():
+        if lit:
+            px, py = (X - x0 + 1) * s, (y1 - y + 1) * s
+            d.rectangle([px, py, px + s, py + s], fill=c + (255,))
+            continue
         shade = 0.8 + 0.012 * max(-10, min(20, z))
         up, left = best.get((X, y + 1)), best.get((X - 1, y))
         if up and up[0] > z:
