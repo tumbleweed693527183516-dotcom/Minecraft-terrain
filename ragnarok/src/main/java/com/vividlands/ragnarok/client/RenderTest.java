@@ -4,7 +4,6 @@ import com.vividlands.ragnarok.Ragnarok;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Screenshot;
-import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.level.GameRules;
@@ -131,7 +130,9 @@ final class RenderTest {
     private static void onTick(Minecraft mc) {
         tick++;
         if (stage == 0) {
-            if (mc.screen instanceof TitleScreen && tick > 40) {
+            // first launch shows the accessibility welcome screen instead of the title screen: just wait for
+            // resources to finish loading, then create the world from whatever screen is open
+            if (tick > 60 && mc.getOverlay() == null && mc.level == null) {
                 stage = 1;
                 Ragnarok.LOG.info("render test: creating world");
                 mc.createWorldOpenFlows().createFreshLevel("rendertest",
