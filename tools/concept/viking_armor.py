@@ -44,6 +44,12 @@ def mix(a, b, t):
 class Model:
     def __init__(self):
         self.v = {}
+        self.pending = []        # relief voxels, added after each box so they never block the box itself
+
+    def flush(self):
+        for q, c in self.pending:
+            self.v.setdefault(q, c)
+        self.pending = []
 
     def box(self, x0, x1, y0, y1, z0, z1, paint, shell_only=False, keep=None):
         for x in range(x0, x1):
@@ -57,11 +63,32 @@ class Model:
                     c = paint(x, y, z) if callable(paint) else paint
                     if c is None:
                         self.v.pop((x, y, z), None)
-                    else:
-                        self.v[(x, y, z)] = c
+                        continue
+                    self.v[(x, y, z)] = c
+                    relief = getattr(paint, "relief", None)
+                    if relief and edge:
+                        r = relief(x, y, z)
+                        if r <= 0:
+                            continue
+                        normals = []
+                        if x == x0: normals.append((-1, 0, 0))
+                        if x == x1 - 1: normals.append((1, 0, 0))
+                        if y == y0: normals.append((0, -1, 0))
+                        if y == y1 - 1: normals.append((0, 1, 0))
+                        if z == z0: normals.append((0, 0, -1))
+                        if z == z1 - 1: normals.append((0, 0, 1))
+                        for nx, ny, nz in normals:
+                            for k in range(1, r + 1):
+                                q = (x + nx * k, y + ny * k, z + nz * k)
+                                if q not in self.v:
+                                    self.pending.append((q, mul(c, 1.0 + 0.06 * k)))
 
     def put(self, x, y, z, c):
         self.v[(x, y, z)] = c
+
+    def _box_and_flush(self, *a, **k):
+        Model._raw_box(self, *a, **k)
+        self.flush()
 
     def clear(self, x0, x1, y0, y1, z0, z1):
         for x in range(x0, x1):
@@ -76,15 +103,33 @@ class Model:
             self.v[(-1 - x, y, z)] = c
 
 
+Model._raw_box = Model.box
+Model.box = Model._box_and_flush
+
+
+def flat(paint):
+    """The same material without raised detail (for small shapes like snouts)."""
+    return lambda x, y, z: paint(x, y, z)
+
+
+def with_relief(paint, fn):
+    paint.relief = fn
+    return paint
+
+
 # ------------------------------------------------------------------ materials (texel = 2 voxels)
-def fur(base, dark=0.72, light=1.12):
+def fur(base, dark=0.72, light=1.12, tuft=2):
     base = hexc(base) if isinstance(base, str) else base
 
     def p(x, y, z):
         t = h(x // 2, z // 2, (y + int(4 * h(x // 2, z // 2))) // 3)
         f = dark + (light - dark) * t
         return mul(base, f)
-    return p
+
+    def r(x, y, z):                      # fur tufts: clumps standing 1-2 voxels proud
+        t = h(x // 3, y // 4, z // 3, 7)
+        return min(tuft, 2 if t > 0.82 else (1 if t > 0.42 else 0))
+    return with_relief(p, r)
 
 
 def mail(base="#8f959c"):
@@ -95,7 +140,7 @@ def mail(base="#8f959c"):
         ring = (x + y + z) % 2 == 0
         f = (1.08 if a else 0.78) * (1.0 if ring else 0.9)
         return mul(base, f)
-    return p
+    return with_relief(p, lambda x, y, z: 1 if (x % 4 == 0 and y % 4 == 0 and (x // 4 + y // 4) % 2 == 0) else 0)
 
 
 def scales(base, edge=None):
@@ -114,7 +159,7 @@ def scales(base, edge=None):
         if v == 3:
             return mul(base, 1.28)
         return mul(base, 1.0 + 0.12 * (h(x // 4, row, z // 4) - 0.5))
-    return p
+    return with_relief(p, lambda x, y, z: 1 if y % 4 == 3 else 0)     # each row's lip overlaps the one below
 
 
 def plate(base, rivet=None, every=6):
@@ -125,7 +170,7 @@ def plate(base, rivet=None, every=6):
         if (x % every == 2) and (y % every == 2):
             return rivet
         return mul(base, 0.95 + 0.12 * h(x // 3, y // 3, z // 3))
-    return p
+    return with_relief(p, lambda x, y, z: 1 if (x % every == 2 and y % every == 2) else 0)
 
 
 def cloth(base, stripe=None):
@@ -166,6 +211,9 @@ SKIN_DARK = hexc("#a46e50")
 def gold(x, y, z):
     t = h(x // 2, y // 2, z // 2)
     return GOLD_HI if t > 0.82 else (GOLD_LO if t < 0.15 else GOLD)
+
+
+gold.relief = lambda x, y, z: 1          # gold trim stands proud of the armor
 
 
 # ------------------------------------------------------------------ base player
@@ -241,6 +289,10 @@ def cape(m, paint, y0, y1, x0=-9, x1=9, flare=True):
         for x in range(x0 - w, x1 + w):
             for z in (-6, -7):
                 m.put(x, y, z, paint(x, y, z))
+            r = getattr(paint, "relief", None)
+            if r:
+                for k in range(1, r(x, y, -7) + 1):
+                    m.put(x, y, -7 - k, mul(paint(x, y, -7), 1.0 + 0.06 * k))
 
 
 def belt(m, y0, y1, paint, buckle=None):
@@ -290,9 +342,9 @@ def berserker():
     for x in list(range(-7, -2)) + list(range(2, 7)):
         m.put(x, 59, 7, hexc("#2a4f8a"))
     # bear hood: fur helmet, open face
-    helmet_shell(m, bear, face_open_below=60)
-    m.box(-9, 9, 59, 66, 7, 11, bear)                       # brow / forehead overhang
-    m.box(-5, 5, 58, 64, 11, 17, bear_light)                # snout
+    helmet_shell(m, fur("#5b3a22", tuft=1), face_open_below=60)
+    m.box(-9, 9, 59, 66, 7, 11, flat(bear))                 # brow / forehead overhang
+    m.box(-5, 5, 58, 64, 11, 17, flat(bear_light))          # snout
     m.box(-4, 4, 59, 62, 16, 18, fur("#9a7450"))            # muzzle
     m.box(-2, 2, 61, 63, 17, 18, solid("#161616"))          # nose
     for x in (-4, 3):                                       # fangs
@@ -301,8 +353,8 @@ def berserker():
     for x in (-7, 6):                                       # bear eyes
         m.put(x, 63, 11, (20, 16, 14))
         m.put(x, 64, 11, (20, 16, 14))
-    m.box(-9, -5, 65, 69, -1, 3, bear)                      # ears
-    m.box(5, 9, 65, 69, -1, 3, bear)
+    m.box(-9, -5, 65, 69, -1, 3, flat(bear))                # ears
+    m.box(5, 9, 65, 69, -1, 3, flat(bear))
     m.box(-8, -6, 66, 68, 3, 4, fur("#3a2414"))
     m.box(6, 8, 66, 68, 3, 4, fur("#3a2414"))
     # pelt down the back + paws over the shoulders
@@ -322,7 +374,7 @@ def berserker():
     m.box(-9, 9, 23, 49, -5, 5, lambda x, y, z: mul(SKIN, 0.95 + 0.08 * h(x, y, z)), shell_only=True)
     for y in range(24, 49):
         for x in range(-9, 9):
-            for z in (4, -5):
+            for z in (5, -6):
                 d1 = abs((x + 0.5) - (y - 36) * 0.6)
                 d2 = abs((x + 0.5) + (y - 36) * 0.6)
                 if d1 < 1.4 or d2 < 1.4:
@@ -348,9 +400,9 @@ def ulfhednar():
     base_player(m, beard="#5c5248", hair="#5c5248", eyes="#c48a1a")
     wolf = fur("#8e8a84")
     wolf_light = fur("#c9c4bc")
-    helmet_shell(m, wolf, face_open_below=60)
-    m.box(-9, 9, 59, 66, 7, 10, wolf)
-    m.box(-4, 4, 59, 64, 10, 17, wolf_light)                 # long narrow snout
+    helmet_shell(m, fur("#8e8a84", tuft=1), face_open_below=60)
+    m.box(-9, 9, 59, 66, 7, 10, flat(wolf))
+    m.box(-4, 4, 59, 64, 10, 17, flat(wolf_light))           # long narrow snout
     m.box(-3, 3, 60, 63, 16, 18, fur("#d8d3cb"))
     m.box(-1, 1, 62, 64, 17, 18, solid("#141414"))
     for x in (-3, 2):
@@ -540,14 +592,18 @@ def render_iso(model, back=False, s=7):
         c = vox[(x, y, z)]
         faces = []
         if (x, y + 1, z) not in vox:
-            faces.append(([(x, y + 1, z), (x + 1, y + 1, z), (x + 1, y + 1, z + 1), (x, y + 1, z + 1)], TOP))
+            faces.append(([(x, y + 1, z), (x + 1, y + 1, z), (x + 1, y + 1, z + 1), (x, y + 1, z + 1)], TOP,
+                          [(x - 1, y + 1, z), (x + 1, y + 1, z), (x, y + 1, z - 1), (x, y + 1, z + 1), (x, y + 2, z)]))
         if (x, y, z + 1) not in vox:
-            faces.append(([(x, y, z + 1), (x + 1, y, z + 1), (x + 1, y + 1, z + 1), (x, y + 1, z + 1)], LEFT))
+            faces.append(([(x, y, z + 1), (x + 1, y, z + 1), (x + 1, y + 1, z + 1), (x, y + 1, z + 1)], LEFT,
+                          [(x - 1, y, z + 1), (x + 1, y, z + 1), (x, y + 1, z + 1), (x, y + 1, z + 1), (x, y - 1, z + 1)]))
         if (x + 1, y, z) not in vox:
-            faces.append(([(x + 1, y, z), (x + 1, y + 1, z), (x + 1, y + 1, z + 1), (x + 1, y, z + 1)], RIGHT))
-        for pts, f in faces:
+            faces.append(([(x + 1, y, z), (x + 1, y + 1, z), (x + 1, y + 1, z + 1), (x + 1, y, z + 1)], RIGHT,
+                          [(x + 1, y + 1, z), (x + 1, y + 1, z), (x + 1, y - 1, z), (x + 1, y, z - 1), (x + 1, y, z + 1)]))
+        for pts, f, ao in faces:
+            occ = sum(1 for q in ao if q in vox)        # ambient occlusion: darker in nooks and under ledges
             poly = [(u - minu, v - minv) for u, v in (P(*p) for p in pts)]
-            d.polygon(poly, fill=mul(c, f) + (255,))
+            d.polygon(poly, fill=mul(c, f * (1.0 - 0.075 * occ)) + (255,))
     return img
 
 
@@ -568,6 +624,14 @@ def render_front(model, back=False, s=9):
     d = ImageDraw.Draw(img)
     for (X, y), (depth, c) in best.items():
         shade = 0.82 + 0.018 * max(-6, min(10, depth))      # nearer = brighter
+        up = best.get((X, y + 1))
+        left = best.get((X - 1, y))
+        if up and up[0] > depth:
+            shade *= 0.78 if up[0] - depth > 1 else 0.86       # shadow under a ledge
+        elif left and left[0] > depth:
+            shade *= 0.88
+        elif (up is None or up[0] < depth) or (left is None or left[0] < depth):
+            shade *= 1.1                                        # lit raised edge
         px, py = (X - x0 + 1) * s, (y1 - y + 1) * s
         d.rectangle([px, py, px + s - 1, py + s - 1], fill=mul(c, shade) + (255,))
     return img
