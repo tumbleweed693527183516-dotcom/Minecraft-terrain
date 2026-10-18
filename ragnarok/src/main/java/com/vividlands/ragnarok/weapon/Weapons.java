@@ -145,5 +145,11 @@ public final class Weapons {
         reg("katana", new GeoSword("katana", v, 7, -2.2f, false, props(Rarity.RARE)));
         reg("zweihander", new GeoSword("zweihander", v, 10, -3.0f, false, props(Rarity.RARE)));
         reg("ragnarok", new GeoSword("ragnarok", l, 14, -2.6f, true, props(Rarity.EPIC)));
+        if (Boolean.getBoolean("vividlands.rendertest")) {      // render test only: candidate hand rotations
+            for (String t : new String[]{"test_view_a", "test_view_b", "test_view_c"}) {
+                Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(Ragnarok.MOD_ID, t),
+                        new GeoSword("valkyrie_sword", v, 7, -2.4f, false, new Item.Properties()));
+            }
+        }
     }
 }

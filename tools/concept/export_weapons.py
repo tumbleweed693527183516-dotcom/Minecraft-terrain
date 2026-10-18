@@ -161,9 +161,21 @@ def export(wid, fn, grip_y, length, kind):
     print(f"{wid}: {len(cubes_json)} cubes, {R:.2f} voxels/px, texture {tex.width}x{tex.height}{', glowing' if glow else ''}")
 
 
+def test_variants():
+    """Render-test-only item models: the same weapon with three candidate hand rotations."""
+    base = handheld_display(24)
+    for name, dy in (("test_view_a", 0), ("test_view_b", 90), ("test_view_c", -90)):
+        disp = json.loads(json.dumps(base))
+        for k in ("thirdperson_righthand", "thirdperson_lefthand", "firstperson_righthand", "firstperson_lefthand"):
+            disp[k]["rotation"][1] += dy if "right" in k else -dy
+        (ASSETS / f"models/item/{name}.json").write_text(json.dumps(
+            {"parent": "builtin/entity", "gui_light": "front", "display": disp}, indent=2) + "\n")
+
+
 def main():
     for wid, (fn, grip, length, kind) in WEAPONS.items():
         export(wid, fn, grip, length, kind)
+    test_variants()
 
 
 if __name__ == "__main__":

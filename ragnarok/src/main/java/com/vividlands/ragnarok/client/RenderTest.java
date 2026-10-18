@@ -86,6 +86,22 @@ final class RenderTest {
             steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f 201.5 2.6 145 12", x + 1.9)));
             steps.add(() -> shot(mc, set + "_angle"));
         }
+        // hand rotation check: a vanilla iron sword next to three candidate rotations of one weapon
+        steps.add(() -> {
+            mc.options.hideGui = true;
+            cmd(mc, "fill -6 199 16 8 199 22 minecraft:smooth_stone");
+            String[] items = {"minecraft:iron_sword", "vividlands_ragnarok:test_view_a", "vividlands_ragnarok:test_view_b",
+                    "vividlands_ragnarok:test_view_c"};
+            for (int i = 0; i < items.length; i++) {
+                cmd(mc, String.format(java.util.Locale.ROOT,
+                        "summon minecraft:armor_stand %.1f 200 19.5 {ShowArms:1b,NoBasePlate:1b,NoGravity:1b,Rotation:[180f,0f],"
+                                + "Pose:{RightArm:[-20f,0f,0f]},HandItems:[{id:\"%s\",Count:1b},{}]}", -3.5 + i * 3, items[i]));
+            }
+        });
+        steps.add(() -> cmd(mc, "tp @a 1.0 201.4 14.5 0 6"));
+        steps.add(() -> shot(mc, "rotation_check_front"));
+        steps.add(() -> cmd(mc, "tp @a 9.0 201.4 19.5 90 6"));
+        steps.add(() -> shot(mc, "rotation_check_side"));
         // weapons: a row of armour stands holding them, facing the camera
         steps.add(() -> {
             mc.options.hideGui = true;
@@ -124,6 +140,15 @@ final class RenderTest {
             if (mc.player != null) mc.player.getInventory().selected = 5;
         });
         steps.add(() -> shot(mc, "firstperson_ragnarok"));
+        String[] fp = {"minecraft:iron_sword", "vividlands_ragnarok:test_view_a", "vividlands_ragnarok:test_view_b",
+                "vividlands_ragnarok:test_view_c"};
+        for (String it : fp) {
+            steps.add(() -> {
+                cmd(mc, "item replace entity @a hotbar.0 with " + it);
+                if (mc.player != null) mc.player.getInventory().selected = 0;
+            });
+            steps.add(() -> shot(mc, "firstperson_check_" + it.substring(it.indexOf(':') + 1)));
+        }
         steps.add(mc::stop);
     }
 

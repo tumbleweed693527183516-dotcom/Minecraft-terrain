@@ -388,8 +388,7 @@ def surtr_blade():
                 if surface and cr < 0.55:
                     # a crack: recessed, showing the core; the core is hotter towards the blade's spine
                     heat = min(4, int(cr * 3.0 + abs(rel) * 2.2))
-                    m.glow(x, y, z - (1 if z > 0 else -1), CORE[heat])
-                    m.v.pop((x, y, z), None)
+                    m.glow(x, y, z, CORE[heat])
                 elif surface and cr < 1.25:
                     m.set(x, y, z, mix(SHELL, hexc("#5a1408"), 0.7))   # cooled crust at the crack edges
                 elif edge_heat and surface:
