@@ -266,3 +266,27 @@ Structure ids for boss spawns:
 - **Valkyrien Skies 2** (https://modrinth.com/mod/valkyrien-skies, 2.4.11) + **Eureka! Ships** (https://modrinth.com/mod/eureka,
   1.6.3): airships. Build any ship out of blocks, place a ship helm and balloons, and fly it. Pack test: loads with
   everything else (181 mods); generation 6:50 for 16,641 chunks (6:28 without, within run-to-run noise).
+
+## Quality of life (v0.20)
+
+| Mod | What it does |
+|-----|--------------|
+| EMI | Recipe viewer (Create machine recipes included) |
+| Jade | Shows what you're looking at: block or mob name, mod, health, machine status |
+| Xaero's Minimap | Minimap with waypoints and death point |
+| Xaero's World Map | Full-screen world map |
+| AppleSkin | Food saturation and hunger previews |
+| Mouse Tweaks | Drag and scroll to move items |
+| Inventory Profiles Next | Sort inventories and chests, refill hotbar tools |
+| Shulker Box Tooltip | See inside shulker boxes on hover |
+| Enchantment Descriptions | Explains each enchantment in its tooltip |
+| Controlling | Search keybinds and find clashes |
+| Waystones | Fast travel across the world |
+| Traveler's Backpack | Backpacks |
+| Carry On | Pick up chests and animals |
+| Universal Graves | Your items wait in a grave when you die |
+| Polymorph | Choose between recipes with the same ingredients |
+| Clumps | Merges XP orbs (less lag) |
+
+Already in from the Fabulously Optimized base: Mod Menu, Zoomify, AdvancementInfo, Better Mount HUD, Continuity,
+Borderless Mining, More Chat History, FastQuit.
