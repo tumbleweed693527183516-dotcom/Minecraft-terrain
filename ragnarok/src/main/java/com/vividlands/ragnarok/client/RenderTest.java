@@ -102,6 +102,15 @@ final class RenderTest {
         steps.add(() -> shot(mc, "rotation_check_front"));
         steps.add(() -> cmd(mc, "tp @a 9.0 201.0 19.5 90 6"));
         steps.add(() -> shot(mc, "rotation_check_side"));
+        steps.add(() -> { if (mc.player != null) { mc.player.getAbilities().flying = true; mc.player.onUpdateAbilities(); } });
+        steps.add(() -> cmd(mc, "tp @a 1.0 206.0 19.5 0 90"));
+        steps.add(() -> shot(mc, "rotation_check_top"));
+        for (int i = 0; i < 4; i++) {
+            double x = -3.5 + i * 3;
+            int k = i;
+            steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f 201.0 17.0 0 8", x)));
+            steps.add(() -> shot(mc, "rotation_check_close_" + k));
+        }
         // weapons: a row of armour stands holding them, facing the camera
         steps.add(() -> {
             mc.options.hideGui = true;
