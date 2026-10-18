@@ -207,11 +207,11 @@ def fur(base, tip=None, belly=None):
 
 
 def fur_bulge(scale=1.0):
+    """Soft, rounded fur clumps (smooth noise, no single-strand spikes)."""
     def b(x, y, z):
-        clump = vnoise(x, y, z, 10, 9)
-        t = h(x // 2, z // 2, (y + int(9 * h(x // 2 + 3, z // 2))) // 9, 11)
-        v = (0 if t < 0.3 else (1 if t < 0.6 else 2)) + int(3 * clump * clump)
-        return int(round(v * scale))
+        big = vnoise(x, y * 0.7, z, 9, 9)
+        small = vnoise(x, y, z, 4, 10)
+        return int(round((3.4 * big ** 1.4 + 1.0 * small) * scale))
     return b
 
 
@@ -227,7 +227,7 @@ def mail(base="#9aa0a8", under=None, rust=0.25):
         vv = y % 3
         if uu in (1, 2) and vv == 1:
             return None                                   # ring hole
-        f = 1.18 if (uu == 0 or vv == 0) else 0.84
+        f = 1.1 if (uu == 0 or vv == 0) else 0.9
         c = mul(base, f * (0.86 + 0.22 * vnoise(x, y, z, 10, 21)))
         r = vnoise(x, y, z, 7, 22)
         if r > 1 - rust:
@@ -713,7 +713,7 @@ def berserker():
         arm_ring(m, ARM_R, y)
     # --- leg wraps and boots
     for part in (LEG_R, LEG_L):
-        m.sleeve(part, 12, 40, 0, 1, lambda x, y, z, d: hexc("#5c4e3e") if (u_of(x, z) + y) % 8 < 3 else hexc("#3e342a"),
+        m.sleeve(part, 12, 40, 0, 1, lambda x, y, z, d: hexc("#56493a") if (u_of(x, z) + y) % 8 < 3 else hexc("#463c30"),
                  bulge=lambda x, y, z: 1 if (u_of(x, z) + y) % 8 < 3 else 0)
         m.sleeve(part, 0, 14, 0, 2, leather(LEATHER))
         laces(m, part, 2, 13, 3, hexc("#c8b48a"))
@@ -807,7 +807,7 @@ def ulfhednar():
         m.sleeve(part, 52, 70, 2, 4, leather(LEATHER))
         studs(m, part, 54, 70, 4, col=hexc("#b07a34"), step=5)
     for part in (LEG_R, LEG_L):
-        m.sleeve(part, 10, 30, 0, 1, lambda x, y, z, d: hexc("#6a6460") if (u_of(x, z) - y) % 7 < 3 else hexc("#3e3a38"),
+        m.sleeve(part, 10, 30, 0, 1, lambda x, y, z, d: hexc("#5e5854") if (u_of(x, z) - y) % 7 < 3 else hexc("#4a4642"),
                  bulge=lambda x, y, z: 1 if (u_of(x, z) - y) % 7 < 3 else 0)
         m.sleeve(part, 0, 11, 0, 2, leather("#4a3220"))
         m.box(part[0] + 6, part[0] + 9, 7, 9, 10, 12, solid(IVORY))
@@ -1023,6 +1023,60 @@ def jarl():
     return m
 
 
+# ================================================================== smoothing
+def smooth(m, passes=2, threshold=46, cleanup=True):
+    """Smoother models: an edge-preserving colour blur (only neighbours of a similar colour are averaged, so trim,
+    rivets and runes stay crisp) and a light clean-up of stray voxels and pinholes."""
+    v = m.v
+    em = getattr(m, "emissive", set())
+    if cleanup:
+        nb = ((1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1))
+        stray = [p for p in v if sum((p[0] + a, p[1] + b, p[2] + c) in v for a, b, c in nb) <= 1]
+        for p in stray:
+            if p not in em:
+                del v[p]
+        holes = {}
+        for (x, y, z) in list(v):
+            for a, b, c in nb:
+                q = (x + a, y + b, z + c)
+                if q in v or q in holes:
+                    continue
+                around = [v[(q[0] + i, q[1] + j, q[2] + k)] for i, j, k in nb if (q[0] + i, q[1] + j, q[2] + k) in v]
+                if len(around) >= 6:
+                    holes[q] = tuple(sum(c[i] for c in around) // len(around) for i in range(3))
+        v.update(holes)
+    t2 = threshold * threshold
+    offs = [(1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1),
+            (1, 1, 0), (-1, 1, 0), (1, -1, 0), (-1, -1, 0), (0, 1, 1), (0, 1, -1), (0, -1, 1), (0, -1, -1),
+            (1, 0, 1), (-1, 0, 1), (1, 0, -1), (-1, 0, -1)]
+    for _ in range(passes):
+        out = {}
+        for (x, y, z), c in v.items():
+            if (x, y, z) in em:
+                out[(x, y, z)] = c
+                continue
+            r, g, b = c[0] * 2, c[1] * 2, c[2] * 2
+            n = 2
+            for a, bb, cc in offs:
+                q = v.get((x + a, y + bb, z + cc))
+                if q is None:
+                    continue
+                if (q[0] - c[0]) ** 2 + (q[1] - c[1]) ** 2 + (q[2] - c[2]) ** 2 <= t2:
+                    r += q[0]
+                    g += q[1]
+                    b += q[2]
+                    n += 1
+            out[(x, y, z)] = (r // n, g // n, b // n)
+        v = out
+    m.v = v
+    return m
+
+
+def finish(m):
+    """Every model goes through this before it is drawn or exported."""
+    return weather(smooth(m))
+
+
 # ================================================================== weathering
 def weather(m, mud_height=18):
     """Mud on the boots, scuffed (lighter) worn edges and corners."""
@@ -1033,7 +1087,7 @@ def weather(m, mud_height=18):
         exposed = sum(1 for q in ((x + 1, y, z), (x - 1, y, z), (x, y + 1, z), (x, y - 1, z), (x, y, z + 1), (x, y, z - 1))
                       if q not in v)
         if exposed >= 3:
-            c = mul(c, 1.12)                               # worn edge
+            c = mul(c, 1.05)                               # worn edge
         if y < mud_height:
             t = (1 - y / mud_height) * (0.35 + 0.65 * vnoise(x, y, z, 6, 61))
             if t > 0.25:
@@ -1177,7 +1231,7 @@ SETS = [
 def main():
     models = {}
     for name, title, sub, notes, fn, accent in SETS:
-        models[name] = weather(fn())
+        models[name] = finish(fn())
         sheet(name, title, sub, notes, models[name], accent)
         print("wrote", OUT / f"{name}.png", len(models[name].v), "voxels")
     views = [render_iso(models[n], s=2.6) for n, *_ in SETS]

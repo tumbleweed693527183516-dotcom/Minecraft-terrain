@@ -286,7 +286,7 @@ def trophy_icons():
 def main():
     (ASSETS / "textures/item").mkdir(parents=True, exist_ok=True)
     for name, fn in SETS.items():
-        model = va.weather(fn())
+        model = va.finish(fn())
         export_set(name, model)
         icons(name, model)
     trophy_icons()

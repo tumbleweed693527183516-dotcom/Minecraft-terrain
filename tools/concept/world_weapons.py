@@ -524,7 +524,7 @@ def sheet(name, title, sub, notes, model, accent):
 def main():
     models = []
     for name, title, sub, notes, fn, accent in WEAPONS:
-        m = fn()
+        m = va.smooth(fn())
         models.append((title, m))
         sheet(name, title, sub, notes, m, accent)
         print("wrote", name, len(m.v), "voxels")
