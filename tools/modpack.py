@@ -136,6 +136,7 @@ RESOLVE = [
     ("enchantment-descriptions", False),   # what each enchantment does, in its tooltip
     ("controlling", False),                # search and fix clashing keybinds (lots of mods)
     ("waystones", True),                   # waystones for fast travel across a huge world
+    ("way2wayfabric", False),              # every waystone you find shows up as a waypoint on Xaero's maps
     ("travelersbackpack", True),           # backpacks
     ("carry-on", True),                    # pick up chests and animals
     ("universal-graves", True),            # your items wait in a grave when you die

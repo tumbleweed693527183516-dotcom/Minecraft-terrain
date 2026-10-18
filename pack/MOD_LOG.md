@@ -282,6 +282,7 @@ Structure ids for boss spawns:
 | Enchantment Descriptions | Explains each enchantment in its tooltip |
 | Controlling | Search keybinds and find clashes |
 | Waystones | Fast travel across the world |
+| way2wayfabric | Every waystone you find appears as a waypoint on Xaero's Minimap and World Map |
 | Traveler's Backpack | Backpacks |
 | Carry On | Pick up chests and animals |
 | Universal Graves | Your items wait in a grave when you die |
