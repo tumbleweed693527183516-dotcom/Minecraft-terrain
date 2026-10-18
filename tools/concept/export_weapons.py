@@ -162,12 +162,17 @@ def export(wid, fn, grip_y, length, kind):
 
 
 def test_variants():
-    """Render-test-only item models: the same weapon with three candidate hand rotations."""
+    """Render-test-only item models. a: current transforms; b: right/left hand rotations swapped (cancels a
+    left-right mirror between our models and vanilla sprites); c: b with the first-person ones left unswapped."""
     base = handheld_display(24)
-    for name, dy in (("test_view_a", 0), ("test_view_b", 90), ("test_view_c", -90)):
-        disp = json.loads(json.dumps(base))
-        for k in ("thirdperson_righthand", "thirdperson_lefthand", "firstperson_righthand", "firstperson_lefthand"):
-            disp[k]["rotation"][1] += dy if "right" in k else -dy
+    swap = json.loads(json.dumps(base))
+    for k in ("thirdperson", "firstperson"):
+        r, l = swap[k + "_righthand"]["rotation"], swap[k + "_lefthand"]["rotation"]
+        swap[k + "_righthand"]["rotation"], swap[k + "_lefthand"]["rotation"] = l, r
+    third_only = json.loads(json.dumps(swap))
+    third_only["firstperson_righthand"] = base["firstperson_righthand"]
+    third_only["firstperson_lefthand"] = base["firstperson_lefthand"]
+    for name, disp in (("test_view_a", base), ("test_view_b", swap), ("test_view_c", third_only)):
         (ASSETS / f"models/item/{name}.json").write_text(json.dumps(
             {"parent": "builtin/entity", "gui_light": "front", "display": disp}, indent=2) + "\n")
 
