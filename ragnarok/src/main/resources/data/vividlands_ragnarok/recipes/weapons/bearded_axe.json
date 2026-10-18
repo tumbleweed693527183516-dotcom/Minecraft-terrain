@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_axe"
+    },
+    {
+      "item": "vividlands_ragnarok:bear_pelt"
+    },
+    {
+      "item": "vividlands_ragnarok:saber_fang"
+    }
+  ],
+  "result": {
+    "item": "vividlands_ragnarok:bearded_axe"
+  }
+}

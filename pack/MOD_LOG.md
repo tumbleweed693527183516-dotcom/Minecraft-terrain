@@ -327,3 +327,21 @@ and recipes from the boss trophies (each tier upgrades the previous one: its pie
 
 The trophies exist as items now; the bosses will drop them once they are built (until then: creative tab
 "Vivid Lands: Ragnarok").
+
+## Weapons in game (v0.22)
+
+15 weapons in Vivid Lands: Ragnarok, each with its 3D GeckoLib model generated from the concepts
+(tools/concept/export_weapons.py) and a Better Combat swing style. Stats are placeholders (to be balanced later).
+
+| Weapon | Kind | Swing style | How to get it (for now) |
+|--------|------|-------------|-------------------------|
+| Bearded Axe | axe | axe | iron axe + Cave Bear Pelt + Saber Fang |
+| Wolf Seax | sword | dagger | iron sword + Pelt of Geri and Freki + Eclipse Shard |
+| Valkyrie Sword | sword | sword | diamond sword + 2 Feathers of Thought and Memory + Sleipnir's Mane |
+| Jarl's Dane Axe | axe | heavy axe | Bearded Axe + 2 Fáfnir's Gold + Jörmungandr's Scale |
+| Gungnir | spear | spear | Odin's reward (creative until the bosses exist) |
+| Fenrir's Fang | greatsword | claymore | Fenrir's drop (creative until the bosses exist) |
+| Viking Round Shield | shield | - | shield + red dye + bone meal + iron ingot + leather |
+| Khopesh, Dragon Guandao, Gladius, Kopis | civilization | cutlass / glaive / sword / cutlass | Civilizations leaders' drops (later) |
+| Macuahuitl, Katana, Flamberge Zweihänder | civilization | mace / katana / claymore | Ancient Structures bosses (later) |
+| Ragnarök, Surtr's Blade | endgame, glowing molten core | claymore | Fenrir's Fang + 2 netherite ingots + magma block + blaze rod + Fáfnir's Gold + Jörmungandr's Scale |

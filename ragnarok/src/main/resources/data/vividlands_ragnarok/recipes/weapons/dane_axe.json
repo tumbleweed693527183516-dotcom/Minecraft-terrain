@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "vividlands_ragnarok:bearded_axe"
+    },
+    {
+      "item": "vividlands_ragnarok:dragon_gold"
+    },
+    {
+      "item": "vividlands_ragnarok:dragon_gold"
+    },
+    {
+      "item": "vividlands_ragnarok:serpent_scale"
+    }
+  ],
+  "result": {
+    "item": "vividlands_ragnarok:dane_axe"
+  }
+}

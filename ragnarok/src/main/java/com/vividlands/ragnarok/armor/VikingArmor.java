@@ -74,6 +74,7 @@ public final class VikingArmor {
                             for (Map<ArmorItem.Type, VikingArmorItem> set : PIECES.values()) {
                                 set.values().forEach(out::accept);
                             }
+                            com.vividlands.ragnarok.weapon.Weapons.ITEMS.forEach(out::accept);
                             TROPHIES.forEach(out::accept);
                             for (Block b : Generators.BLOCKS) out.accept(b);
                         })

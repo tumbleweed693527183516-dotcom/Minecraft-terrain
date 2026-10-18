@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "vividlands_ragnarok:fenrirs_fang"
+    },
+    {
+      "item": "minecraft:netherite_ingot"
+    },
+    {
+      "item": "minecraft:netherite_ingot"
+    },
+    {
+      "item": "minecraft:magma_block"
+    },
+    {
+      "item": "minecraft:blaze_rod"
+    },
+    {
+      "item": "vividlands_ragnarok:dragon_gold"
+    },
+    {
+      "item": "vividlands_ragnarok:serpent_scale"
+    }
+  ],
+  "result": {
+    "item": "vividlands_ragnarok:ragnarok"
+  }
+}

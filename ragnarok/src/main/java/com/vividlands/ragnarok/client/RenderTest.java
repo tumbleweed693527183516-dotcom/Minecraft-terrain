@@ -23,6 +23,9 @@ import java.util.List;
  */
 final class RenderTest {
     private static final String[] SETS = {"berserker", "ulfhednar", "valkyrie", "jarl"};
+    private static final String[] WEAPONS = {"bearded_axe", "wolf_seax", "valkyrie_sword", "dane_axe", "gungnir",
+            "fenrirs_fang", "round_shield", "khopesh", "guandao", "gladius", "kopis", "macuahuitl", "katana", "zweihander",
+            "ragnarok"};
     private static int tick;
     private static int stage;
     private static int wait;
@@ -84,6 +87,44 @@ final class RenderTest {
             steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f 201.5 2.6 145 12", x + 1.9)));
             steps.add(() -> shot(mc, set + "_angle"));
         }
+        // weapons: a row of armour stands holding them, facing the camera
+        steps.add(() -> {
+            mc.options.hideGui = true;
+            cmd(mc, "fill -14 199 6 14 199 14 minecraft:smooth_stone");
+            cmd(mc, "fill -14 200 6 14 206 14 minecraft:air");
+            for (int i = 0; i < WEAPONS.length; i++) {
+                cmd(mc, String.format(java.util.Locale.ROOT,
+                        "summon minecraft:armor_stand %.1f 200 11.5 {ShowArms:1b,NoBasePlate:1b,NoGravity:1b,Rotation:[180f,0f],"
+                                + "Pose:{RightArm:[-20f,0f,0f]},HandItems:[{id:\"vividlands_ragnarok:%s\",Count:1b},{}]}",
+                        -10.5 + i * 1.5, WEAPONS[i]));
+            }
+        });
+        steps.add(() -> cmd(mc, "tp @a 0.5 201.6 5.0 0 8"));
+        steps.add(() -> shot(mc, "weapons_row"));
+        steps.add(() -> cmd(mc, "tp @a -6.0 201.3 8.5 0 6"));
+        steps.add(() -> shot(mc, "weapons_left"));
+        steps.add(() -> cmd(mc, "tp @a 6.0 201.3 8.5 0 6"));
+        steps.add(() -> shot(mc, "weapons_right"));
+        // first person with the hotbar full of weapons
+        steps.add(() -> {
+            for (int i = 0; i < 9; i++) {
+                cmd(mc, "item replace entity @a hotbar." + i + " with vividlands_ragnarok:" + WEAPONS[i]);
+            }
+            cmd(mc, "item replace entity @a weapon.offhand with vividlands_ragnarok:round_shield");
+            cmd(mc, "tp @a 0.5 201 -20 0 0");
+            mc.options.hideGui = false;
+        });
+        for (int slot : new int[]{0, 3, 4, 5}) {
+            steps.add(() -> { if (mc.player != null) mc.player.getInventory().selected = slot; });
+            steps.add(() -> shot(mc, "firstperson_" + WEAPONS[slot]));
+        }
+        steps.add(() -> {
+            for (int i = 0; i < 6; i++) {
+                cmd(mc, "item replace entity @a hotbar." + i + " with vividlands_ragnarok:" + WEAPONS[9 + i]);
+            }
+            if (mc.player != null) mc.player.getInventory().selected = 5;
+        });
+        steps.add(() -> shot(mc, "firstperson_ragnarok"));
         steps.add(mc::stop);
     }
 

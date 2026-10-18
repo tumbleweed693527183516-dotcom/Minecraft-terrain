@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "minecraft:diamond_sword"
+    },
+    {
+      "item": "vividlands_ragnarok:raven_feather"
+    },
+    {
+      "item": "vividlands_ragnarok:raven_feather"
+    },
+    {
+      "item": "vividlands_ragnarok:sleipnir_hair"
+    }
+  ],
+  "result": {
+    "item": "vividlands_ragnarok:valkyrie_sword"
+  }
+}
