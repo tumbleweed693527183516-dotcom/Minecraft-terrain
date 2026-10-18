@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "PXP",
+    "S S"
+  ],
+  "key": {
+    "P": {
+      "item": "vividlands_ragnarok:raven_feather"
+    },
+    "S": {
+      "item": "vividlands_ragnarok:sleipnir_hair"
+    },
+    "X": {
+      "item": "vividlands_ragnarok:ulfhednar_boots"
+    }
+  },
+  "result": {
+    "item": "vividlands_ragnarok:valkyrie_boots"
+  }
+}

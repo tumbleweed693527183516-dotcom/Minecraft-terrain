@@ -18,12 +18,16 @@
   "entrypoints": {
     "main": [
       "com.vividlands.ragnarok.Ragnarok"
+    ],
+    "client": [
+      "com.vividlands.ragnarok.client.RagnarokClient"
     ]
   },
   "depends": {
     "fabricloader": ">=0.14.21",
     "minecraft": "1.20.1",
-    "fabric-api": "*"
+    "fabric-api": "*",
+    "geckolib": ">=4.4"
   },
   "recommends": {
     "create": "*"

@@ -26,7 +26,8 @@ def write(path, obj):
 
 
 def main():
-    lang = {}
+    lang_file = RES / f"assets/{NS}/lang/en_us.json"
+    lang = json.loads(lang_file.read_text()) if lang_file.exists() else {}      # merge: other tools add names too
     for tier, upgrade, rate in TIERS:
         n = f"cobblestone_generator_mk{tier}"
         write(RES / f"assets/{NS}/blockstates/{n}.json", {"variants": {"": {"model": f"{NS}:block/{n}"}}})

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "PSP",
+    "PXP",
+    "P P"
+  ],
+  "key": {
+    "P": {
+      "item": "vividlands_ragnarok:serpent_scale"
+    },
+    "S": {
+      "item": "vividlands_ragnarok:dragon_gold"
+    },
+    "X": {
+      "item": "vividlands_ragnarok:valkyrie_leggings"
+    }
+  },
+  "result": {
+    "item": "vividlands_ragnarok:jarl_leggings"
+  }
+}

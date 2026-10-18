@@ -12,6 +12,19 @@ loom {
     mixin {
         defaultRefmapName = 'vividlands_ragnarok.refmap.json'
     }
+    runs {
+        // Automatic render test (CI): opens a world, dresses armour stands, takes screenshots, quits.
+        renderTest {
+            inherit client
+            name 'Render Test'
+            vmArg '-Dvividlands.rendertest=true'
+            programArgs '--width', '1280', '--height', '720'
+        }
+    }
+}
+
+repositories {
+    maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
 }
 
 dependencies {
@@ -19,6 +32,7 @@ dependencies {
     mappings loom.officialMojangMappings()
     modImplementation 'net.fabricmc:fabric-loader:0.16.10'
     modImplementation 'net.fabricmc.fabric-api:fabric-api:0.92.2+1.20.1'
+    modImplementation 'software.bernie.geckolib:geckolib-fabric-1.20.1:4.8.4'
 }
 
 processResources {

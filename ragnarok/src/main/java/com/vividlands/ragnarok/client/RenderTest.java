@@ -1,0 +1,116 @@
+package com.vividlands.ragnarok.client;
+
+import com.vividlands.ragnarok.Ragnarok;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.Screenshot;
+import net.minecraft.client.gui.screens.TitleScreen;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.world.Difficulty;
+import net.minecraft.world.level.GameRules;
+import net.minecraft.world.level.GameType;
+import net.minecraft.world.level.LevelSettings;
+import net.minecraft.world.level.WorldDataConfiguration;
+import net.minecraft.world.level.levelgen.WorldOptions;
+import net.minecraft.world.level.levelgen.presets.WorldPresets;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Automatic render test (CI only, -Dvividlands.rendertest=true): creates a creative world, builds a platform in the
+ * sky, dresses four armour stands in the Viking sets, takes screenshots from several angles and closes the game.
+ */
+final class RenderTest {
+    private static final String[] SETS = {"berserker", "ulfhednar", "valkyrie", "jarl"};
+    private static int tick;
+    private static int stage;
+    private static int wait;
+    private static final List<Runnable> steps = new ArrayList<>();
+
+    private RenderTest() {
+    }
+
+    static void install() {
+        ClientTickEvents.END_CLIENT_TICK.register(RenderTest::onTick);
+    }
+
+    private static void cmd(Minecraft mc, String command) {
+        MinecraftServer server = mc.getSingleplayerServer();
+        if (server == null) return;
+        server.execute(() -> server.getCommands().performPrefixedCommand(server.createCommandSourceStack(), command));
+    }
+
+    private static void shot(Minecraft mc, String name) {
+        Screenshot.grab(mc.gameDirectory, name + ".png", mc.getMainRenderTarget(),
+                msg -> Ragnarok.LOG.info("render test screenshot: {}", msg.getString()));
+    }
+
+    private static String stand(String set, double x, double z, float yaw) {
+        String p = "vividlands_ragnarok:" + set + "_";
+        return String.format(java.util.Locale.ROOT,
+                "summon minecraft:armor_stand %.1f 200 %.1f {ShowArms:1b,NoBasePlate:1b,NoGravity:1b,Rotation:[%.0ff,0f],"
+                        + "Pose:{RightArm:[-10f,0f,10f],LeftArm:[-10f,0f,-10f]},ArmorItems:[{id:\"%sboots\",Count:1b},"
+                        + "{id:\"%sleggings\",Count:1b},{id:\"%schestplate\",Count:1b},{id:\"%shelmet\",Count:1b}]}",
+                x, z, yaw, p, p, p, p);
+    }
+
+    private static void plan(Minecraft mc) {
+        steps.add(() -> {
+            for (String c : new String[]{"gamerule doDaylightCycle false", "time set 6000", "weather clear",
+                    "gamerule doMobSpawning false", "tp @a 0.5 202 8.5 180 0"}) cmd(mc, c);
+        });
+        steps.add(() -> {
+            cmd(mc, "fill -10 199 -8 12 199 8 minecraft:smooth_stone");
+            cmd(mc, "fill -10 200 -8 12 206 8 minecraft:air");
+            for (int i = 0; i < SETS.length; i++) cmd(mc, stand(SETS[i], -4.5 + i * 3, 0.5, 0));
+            mc.options.hideGui = true;
+        });
+        // the whole line-up from the front, the back and an angle
+        steps.add(() -> cmd(mc, "tp @a 0.5 201.2 7.5 180 6"));
+        steps.add(() -> shot(mc, "lineup_front"));
+        steps.add(() -> cmd(mc, "tp @a 0.5 201.2 -6.5 0 6"));
+        steps.add(() -> shot(mc, "lineup_back"));
+        steps.add(() -> cmd(mc, "tp @a 8.5 202.2 6.0 125 14"));
+        steps.add(() -> shot(mc, "lineup_angle"));
+        // close-ups of every set, front and back
+        for (int i = 0; i < SETS.length; i++) {
+            double x = -4.5 + i * 3;
+            String set = SETS[i];
+            steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f 201.1 3.1 180 4", x)));
+            steps.add(() -> shot(mc, set + "_front"));
+            steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f 201.1 -2.1 0 4", x)));
+            steps.add(() -> shot(mc, set + "_back"));
+            steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f 201.5 2.6 145 12", x + 1.9)));
+            steps.add(() -> shot(mc, set + "_angle"));
+        }
+        steps.add(mc::stop);
+    }
+
+    private static void onTick(Minecraft mc) {
+        tick++;
+        if (stage == 0) {
+            if (mc.screen instanceof TitleScreen && tick > 40) {
+                stage = 1;
+                Ragnarok.LOG.info("render test: creating world");
+                mc.createWorldOpenFlows().createFreshLevel("rendertest",
+                        new LevelSettings("rendertest", GameType.CREATIVE, false, Difficulty.PEACEFUL, true,
+                                new GameRules(), WorldDataConfiguration.DEFAULT),
+                        new WorldOptions(20261018L, false, false), WorldPresets::createNormalWorldDimensions);
+            }
+            return;
+        }
+        if (stage == 1) {
+            if (mc.player != null && mc.level != null) {
+                stage = 2;
+                wait = 100;
+                plan(mc);
+                Ragnarok.LOG.info("render test: in world, {} steps", steps.size());
+            }
+            return;
+        }
+        if (--wait > 0 || steps.isEmpty()) return;
+        steps.remove(0).run();
+        wait = 50;                      // let chunks load and the camera settle between steps
+    }
+}

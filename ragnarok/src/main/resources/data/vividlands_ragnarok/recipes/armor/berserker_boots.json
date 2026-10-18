@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "P P",
+    "S S"
+  ],
+  "key": {
+    "P": {
+      "item": "vividlands_ragnarok:bear_pelt"
+    },
+    "S": {
+      "item": "vividlands_ragnarok:saber_fang"
+    }
+  },
+  "result": {
+    "item": "vividlands_ragnarok:berserker_boots"
+  }
+}

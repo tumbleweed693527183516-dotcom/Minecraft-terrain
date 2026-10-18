@@ -311,3 +311,19 @@ Skipped: Marium's Soulslike Weaponry (user: weapons not cool enough, and its bos
 Berserker (Chapter 1 trophies), Ulfhednar wolf-warrior (Geri and Freki, Skoll and Hati), Valkyrie (Huginn and Muninn,
 Sleipnir), Jarl / Einherjar (Fafnir's gold, Jormungandr's scale; the best armor in the pack). Weapons: Fenrir's Fang,
 Gungnir, Dane axe, round shield.
+
+## Viking endgame armor in game (v0.21)
+
+The four approved sets are real armor in Vivid Lands: Ragnarok: 16 pieces with 3D GeckoLib models generated from the
+concept models (tools/concept/export_geckolib.py; 1,600-2,600 cubes per set, one 1024x256 texture each), set bonuses,
+and recipes from the boss trophies (each tier upgrades the previous one: its piece goes in the middle of the recipe).
+
+| Set | Defense (helm/chest/legs/boots) | Toughness | Knockback res. | Made from | Full-set bonus |
+|-----|------------------|-----------|----------------|-----------|----------------|
+| Berserker | 3/7/6/3 | 1 | 0 | Cave Bear Pelt + Saber Fang | Strength below half health (II below a quarter) |
+| Úlfheðinn | 3/8/6/3 | 2 | 0.05 | Pelt of Geri and Freki + Eclipse Shard | Speed; Night Vision at night |
+| Valkyrie | 3/8/7/3 | 3 | 0.1 | Feather of Thought and Memory + Sleipnir's Mane | Jump Boost; Slow Falling as you fall |
+| Jarl of the Einherjar | 4/9/7/4 | 4 | 0.15 | Jörmungandr's Scale + Fáfnir's Gold | Resistance; Fire Resistance |
+
+The trophies exist as items now; the bosses will drop them once they are built (until then: creative tab
+"Vivid Lands: Ragnarok").
