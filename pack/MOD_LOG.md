@@ -259,3 +259,10 @@ Structure ids for boss spawns:
 - Seven Seas: dungeons_arise_seven_seas:corsair_corvette, pirate_junk, small_yacht, unicorn_galleon, victory_frigate
 - Strongholds: betterstrongholds:stronghold
 - Moog's Soaring Structures: 35 sky structures (pick Sleipnir's when building him)
+
+## Ships (v0.20)
+
+- **Small Ships** (already in): sailing ships on the sea, including the Viking drakkar.
+- **Valkyrien Skies 2** (https://modrinth.com/mod/valkyrien-skies, 2.4.11) + **Eureka! Ships** (https://modrinth.com/mod/eureka,
+  1.6.3): airships. Build any ship out of blocks, place a ship helm and balloons, and fly it. Pack test: loads with
+  everything else (181 mods); generation 6:50 for 16,641 chunks (6:28 without, within run-to-run noise).
