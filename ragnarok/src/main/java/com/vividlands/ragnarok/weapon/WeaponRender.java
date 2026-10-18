@@ -7,7 +7,6 @@ import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.animatable.client.RenderProvider;
 import software.bernie.geckolib.model.DefaultedItemGeoModel;
 import software.bernie.geckolib.renderer.GeoItemRenderer;
-import software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer;
 
 /** Client-only: builds the GeckoLib item renderer for a weapon (only ever called from createRenderer on the client). */
 final class WeaponRender {
@@ -24,7 +23,8 @@ final class WeaponRender {
                     this.renderer = new GeoItemRenderer<>(new DefaultedItemGeoModel<>(
                             new ResourceLocation("vividlands_ragnarok", "weapon/" + id)));
                     if (glow) {
-                        this.renderer.addRenderLayer(new AutoGlowingGeoLayer<>(this.renderer));
+                        this.renderer.addRenderLayer(new FullbrightLayer<>(this.renderer,
+                                new ResourceLocation("vividlands_ragnarok", "textures/item/weapon/" + id + "_glow.png")));
                     }
                 }
                 return this.renderer;

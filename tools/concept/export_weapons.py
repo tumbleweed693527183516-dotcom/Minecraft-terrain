@@ -2,7 +2,7 @@
 """
 Turns the weapon concept models into GeckoLib item models for Vivid Lands: Ragnarok:
   assets/vividlands_ragnarok/geo/item/weapon/<id>.geo.json
-  assets/vividlands_ragnarok/textures/item/weapon/<id>.png  (+ <id>_glowmask.png for glowing parts)
+  assets/vividlands_ragnarok/textures/item/weapon/<id>.png  (+ <id>_glow.png for glowing parts, drawn full-bright)
   assets/vividlands_ragnarok/animations/item/weapon/<id>.animation.json
   assets/vividlands_ragnarok/models/item/<id>.json          (builtin/entity with hand/GUI transforms)
 
@@ -153,7 +153,7 @@ def export(wid, fn, grip_y, length, kind):
     (ASSETS / f"geo/item/weapon/{wid}.geo.json").write_text(json.dumps(geo, separators=(",", ":")))
     tex.save(ASSETS / f"textures/item/weapon/{wid}.png")
     if gtex:
-        gtex.save(ASSETS / f"textures/item/weapon/{wid}_glowmask.png")
+        gtex.save(ASSETS / f"textures/item/weapon/{wid}_glow.png")
     (ASSETS / f"animations/item/weapon/{wid}.animation.json").write_text(json.dumps({"format_version": "1.8.0", "animations": {}}))
     model = {"parent": "builtin/entity", "gui_light": "front",
              "display": shield_display() if kind == "shield" else handheld_display(length)}
