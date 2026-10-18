@@ -121,6 +121,9 @@ RESOLVE = [
     ("saints-dragons", True),              # Fafnir and Nidhoggr
     # --- tech ---
     ("create-fabric", True),               # Create: makes everything the closed Nether and End would give
+    # --- ships: Small Ships on the sea, Valkyrien Skies + Eureka for airships (build any ship, add a helm and balloons) ---
+    ("valkyrien-skies", True),
+    ("eureka", True),
 ]
 API = "https://api.modrinth.com/v2"
 LOADER_FALLBACK = "0.19.5"
