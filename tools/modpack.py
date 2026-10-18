@@ -141,40 +141,6 @@ RESOLVE = [
     ("universal-graves", True),            # your items wait in a grave when you die
     ("polymorph", True),                   # choose between recipes that share the same ingredients
     ("clumps", True),                      # merges XP orbs (less lag after boss fights)
-    # --- quality of life (the usual modpack set) ---
-    ("emi", True),                         # recipe viewer (Create shows its machine recipes in it)
-    ("jade", True),                        # what am I looking at: block/mob name, mod, health, machine status
-    ("xaeros-minimap", False),             # minimap with waypoints and death point
-    ("xaeros-world-map", False),           # full-screen world map
-    ("appleskin", True),                   # food saturation and hunger previews
-    ("mouse-tweaks", False),               # drag and scroll to move items
-    ("inventory-profiles-next", False),    # sort inventories and chests, refill hotbar tools
-    ("shulkerboxtooltip", False),          # see inside shulker boxes on hover
-    ("enchantment-descriptions", False),   # what each enchantment does, in its tooltip
-    ("controlling", False),                # search and fix clashing keybinds (lots of mods)
-    ("waystones", True),                   # waystones for fast travel across a huge world
-    ("travelersbackpack", True),           # backpacks
-    ("carry-on", True),                    # pick up chests and animals
-    ("universal-graves", True),            # your items wait in a grave when you die
-    ("polymorph", True),                   # choose between recipes that share the same ingredients
-    ("clumps", True),                      # merges XP orbs (less lag after boss fights)
-    # --- quality of life (the usual modpack set) ---
-    ("emi", True),                         # recipe viewer (Create shows its machine recipes in it)
-    ("jade", True),                        # what am I looking at: block/mob name, mod, health, machine status
-    ("xaeros-minimap", False),             # minimap with waypoints and death point
-    ("xaeros-world-map", False),           # full-screen world map
-    ("appleskin", True),                   # food saturation and hunger previews
-    ("mouse-tweaks", False),               # drag and scroll to move items
-    ("inventory-profiles-next", False),    # sort inventories and chests, refill hotbar tools
-    ("shulkerboxtooltip", False),          # see inside shulker boxes on hover
-    ("enchantment-descriptions", False),   # what each enchantment does, in its tooltip
-    ("controlling", False),                # search and fix clashing keybinds (lots of mods)
-    ("waystones", True),                   # waystones for fast travel across a huge world
-    ("travelersbackpack", True),           # backpacks
-    ("carry-on", True),                    # pick up chests and animals
-    ("universal-graves", True),            # your items wait in a grave when you die
-    ("polymorph", True),                   # choose between recipes that share the same ingredients
-    ("clumps", True),                      # merges XP orbs (less lag after boss fights)
 ]
 API = "https://api.modrinth.com/v2"
 LOADER_FALLBACK = "0.19.5"
