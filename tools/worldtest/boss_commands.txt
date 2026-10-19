@@ -1,5 +1,35 @@
 ragnarok boss list
 gamerule vividlandsBossSpawning false
+forceload add 0 0 16 16
+sleep 10
+fill 0 199 0 10 199 10 minecraft:stone
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+loot spawn 5 201 5 loot minecraft:chests/stronghold_library
+sleep 3
+execute as @e[type=item,x=5,y=201,z=5,distance=..8] run data get entity @s Item.id
+kill @e[type=item]
 forceload add 168 -32 232 32
 sleep 15
 fill 172 199 -28 228 199 28 minecraft:smooth_stone
