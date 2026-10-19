@@ -63,6 +63,13 @@ public class Charge extends Ability {
             return;
         }
         m.getNavigation().stop();
+        // stop once past the target, or at a drop (it digs its hooves in at the edge)
+        double ahead = (target.getX() - m.getX()) * dir.x + (target.getZ() - m.getZ()) * dir.z;
+        if (ahead < -(2 + m.getBbWidth()) || dropAhead(f)) {
+            f.freeze();
+            f.finish();
+            return;
+        }
         double s = speed * (f.enraged() ? 1.2 : 1);
         m.setDeltaMovement(dir.x * s, m.getDeltaMovement().y, dir.z * s);
         float yaw = (float) (Math.atan2(dir.z, dir.x) * 180 / Math.PI) - 90f;
@@ -82,6 +89,18 @@ public class Charge extends Ability {
             f.groundRing(m.getBbWidth(), 16);
             f.stun(stunTicks);
         }
+    }
+
+    private boolean dropAhead(BossFight f) {
+        Mob m = f.mob();
+        if (!m.onGround()) return false;
+        Vec3 p = m.position().add(dir.scale(m.getBbWidth() * 0.5 + 1.2));
+        for (int dy = 1; dy <= 3; dy++) {
+            BlockPos b = BlockPos.containing(p.x, m.getY() - dy + 0.5, p.z);
+            if (!f.level().getBlockState(b).getCollisionShape(f.level(), b).isEmpty()) return false;
+            if (!f.level().getFluidState(b).isEmpty()) return false;
+        }
+        return true;
     }
 
     /** Breaks the soft blocks in front of the boss. @return true if it broke through (keeps charging) */

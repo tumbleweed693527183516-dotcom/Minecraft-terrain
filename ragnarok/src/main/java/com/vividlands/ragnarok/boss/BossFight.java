@@ -53,6 +53,7 @@ public final class BossFight {
     private boolean enraged;
     private float damageTaken;          // total damage taken (abilities use it to tell whether the player fought back)
     private LivingEntity target;
+    private LivingEntity lastAttacker;
 
     BossFight(Mob mob, BossDef def) {
         this.mob = mob;
@@ -163,6 +164,7 @@ public final class BossFight {
     void onDamaged(float amount, Entity attacker) {
         damageTaken += amount;
         if (attacker instanceof Player p) fighters.add(p.getUUID());
+        if (attacker instanceof LivingEntity l && !Bosses.isBoss(l) && !Bosses.isMinion(l)) lastAttacker = l;
     }
 
     private void applyEnrage(boolean announce) {
@@ -211,6 +213,10 @@ public final class BossFight {
             Player nearest = level().getNearestPlayer(mob.getX(), mob.getY(), mob.getZ(), AGGRO_RANGE,
                     e -> e instanceof Player p && fightable(p));
             if (nearest != null) t = nearest;
+        }
+        // creatures whose own AI keeps dropping targets still fight whoever hurt them
+        if (t == null && fightable(lastAttacker) && lastAttacker.level() == mob.level() && lastAttacker.distanceTo(mob) < AGGRO_RANGE) {
+            t = lastAttacker;
         }
         target = t;
         if (mob.getTarget() != t) mob.setTarget(t);
