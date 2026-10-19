@@ -195,7 +195,7 @@ public final class Bosses {
                         "vividlands:deep_temperate_ocean", "#minecraft:is_deep_ocean");
 
         def("mammoth").on("fossil:mammoth", "minecraft:ravager")
-                .stats(1000, 20, 14).scale(1.4f).melee(Melee.BOSS).reach(2.0f).knockback(1.4f).interval(30).bar(BossBarColor.WHITE)
+                .stats(1000, 20, 14).scale(1.8f).melee(Melee.BOSS).reach(2.0f).knockback(1.4f).interval(30).bar(BossBarColor.WHITE)
                 .ability(() -> new Shockwave(260, 24, 16, 0.5, 1.0))
                 .ability(() -> new Slam(220, 18, 7, 1.2, 0.8, () -> fx(MobEffects.MOVEMENT_SLOWDOWN, 80, 2)))
                 .ability(() -> new Charge(240, 26, 50, 0.7, 1.6, 3.0, true, 60))
