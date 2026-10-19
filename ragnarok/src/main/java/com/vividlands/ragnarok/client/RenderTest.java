@@ -61,39 +61,44 @@ final class RenderTest {
     private static void planBosses(Minecraft mc) {
         String[] ids = {"cave_bear", "irish_elk", "hippo", "crocodile", "silverback", "saber_tooth", "woolly_rhino",
                 "elephant", "bull_shark", "mammoth"};
-        double[] dist = {9, 10, 10, 11, 10, 9, 11, 13, 11, 18};
+        double[] dist = {17, 19, 17, 19, 17, 15, 20, 23, 0, 27};
         steps.add(() -> {
             for (String c : new String[]{"gamerule doDaylightCycle false", "time set 6000", "weather clear",
                     "gamerule doMobSpawning false", "gamerule vividlandsBossSpawning false", "tp @a 0.5 202 8.5 180 0"}) cmd(mc, c);
             mc.options.hideGui = true;
         });
         for (int i = 0; i < ids.length; i++) {
-            double x = i * 24 + 0.5;
+            int x = i * 44;
             String id = ids[i];
             double d = dist[i];
+            boolean sea = id.equals("bull_shark");
             steps.add(() -> {
-                cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 199 -10 %d 199 %d minecraft:grass_block", (int) x - 11, (int) x + 11, (int) d + 4));
-                cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 200 -10 %d 215 %d minecraft:air", (int) x - 11, (int) x + 11, (int) d + 4));
-                if (id.equals("bull_shark")) {
-                    cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 199 -6 %d 204 6 minecraft:glass", (int) x - 7, (int) x + 7));
-                    cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 200 -5 %d 204 5 minecraft:water", (int) x - 6, (int) x + 6));
+                cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 199 -20 %d 199 30 minecraft:grass_block", x - 21, x + 21));
+                cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 200 -20 %d 230 30 minecraft:air", x - 21, x + 21));
+                if (sea) {
+                    cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 196 -12 %d 199 12 minecraft:sand", x - 16, x + 16));
+                    cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 192 -12 %d 199 12 minecraft:water", x - 15, x + 15));
+                    cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 191 -13 %d 191 13 minecraft:sand", x - 16, x + 16));
                 }
-                cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f 203 %.1f 180 10", x, d));
+                cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %d.5 205 %.1f 180 10", x, d + 6));
             });
             steps.add(() -> {
-                cmd(mc, String.format(java.util.Locale.ROOT, "ragnarok boss summon %s %.1f %d 0.5", id, x, id.equals("bull_shark") ? 201 : 200));
+                cmd(mc, String.format(java.util.Locale.ROOT, "ragnarok boss summon %s %d.5 %d 0.5", id, x, sea ? 195 : 200));
                 cmd(mc, String.format(java.util.Locale.ROOT,
-                        "summon minecraft:armor_stand %.1f 200 3.5 {NoBasePlate:1b,NoGravity:1b,ShowArms:1b,Rotation:[180f,0f]}", x + 3.5));
+                        "summon minecraft:armor_stand %d.5 200 %.1f {NoBasePlate:1b,NoGravity:1b,ShowArms:1b,Rotation:[180f,0f]}",
+                        sea ? x + 3 : x + 2, sea ? 13.5 : d * 0.45));
             });
             steps.add(() -> {
                 cmd(mc, "execute as @e[tag=vividlands_ragnarok.boss." + id + "] run data merge entity @s {NoAI:1b,Rotation:[150f,0f]}");
-                cmd(mc, "execute as @e[tag=vividlands_ragnarok.boss." + id + "] at @s run tp @s " + x + " ~ 0.5 150 0");
+                cmd(mc, "execute as @e[tag=vividlands_ragnarok.boss." + id + "] at @s run tp @s " + x + ".5 ~ 0.5 150 0");
             });
-            steps.add(() -> cmd(mc, id.equals("bull_shark")
-                    ? String.format(java.util.Locale.ROOT, "tp @a %.1f 209 7.5 180 48", x)
-                    : String.format(java.util.Locale.ROOT, "tp @a %.1f %.1f %.1f 180 12", x, 201.0 + d * 0.18, d)));
+            steps.add(() -> cmd(mc, sea
+                    ? String.format(java.util.Locale.ROOT, "tp @a %d.5 212 20 180 40", x)
+                    : String.format(java.util.Locale.ROOT, "tp @a %d.5 %.1f %.1f 180 12", x, 201.5 + d * 0.2, d)));
             steps.add(() -> shot(mc, "boss_" + id));
-            steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f %.1f %.1f 135 14", x + d * 0.7, 201.5 + d * 0.2, d * 0.7)));
+            steps.add(() -> cmd(mc, sea
+                    ? String.format(java.util.Locale.ROOT, "tp @a %d.5 204 18 180 25", x + 6)
+                    : String.format(java.util.Locale.ROOT, "tp @a %.1f %.1f %.1f 135 10", x + d * 0.7, 201.0 + d * 0.15, d * 0.7)));
             steps.add(() -> shot(mc, "boss_" + id + "_angle"));
         }
         steps.add(mc::stop);

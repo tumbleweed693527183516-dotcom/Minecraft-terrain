@@ -112,7 +112,7 @@ final class BossSpawner {
                         continue;
                     }
                     if (bossNear(level, p.position(), 96)) continue;
-                    Vec3 at = findSpot(level, d, p.position(), 8, 16, start.getBoundingBox());
+                    Vec3 at = findSpot(level, d, p.position(), 14, 30, start.getBoundingBox());
                     if (at != null && Bosses.spawn(level, d, at) != null) progress.markSpawned(key);
                 }
             }
@@ -135,17 +135,17 @@ final class BossSpawner {
                 if (surface - floor < 5 || !level.getFluidState(new BlockPos(x, surface - 1, z)).is(FluidTags.WATER)) continue;
                 y = floor + (surface - floor) * 0.5;
             } else if (box != null) {
-                y = groundIn(level, x, (int) Math.floor(around.y), z);
-                if (Double.isNaN(y) || !box.isInside(new BlockPos(x, (int) y, z))) continue;
+                // structure bosses are far too big for the rooms: they wait on the ground around (or on top of) it
+                if (x < box.minX() - 6 || x > box.maxX() + 6 || z < box.minZ() - 6 || z > box.maxZ() + 6) continue;
+                y = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, x, z);
             } else {
                 y = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, x, z);
                 if (!level.getFluidState(new BlockPos(x, (int) y - 1, z)).isEmpty() && d.melee != BossDef.Melee.OWN) continue;
             }
             BlockPos at = BlockPos.containing(x + 0.5, y, z + 0.5);
             if (!d.biomes.isEmpty() && box == null && !biomeMatches(d, level.getBiome(at))) continue;
-            AABB aabb = type.get().getAABB(x + 0.5, y, z + 0.5);
-            double grow = (d.scale - 1) * 0.5;
-            aabb = aabb.inflate(aabb.getXsize() * grow, 0, aabb.getZsize() * grow).expandTowards(0, aabb.getYsize() * (d.scale - 1), 0);
+            // only the space around its legs has to be free: it tramples leaves and plants once it moves
+            AABB aabb = new AABB(x + 0.5 - 1, y + 0.05, z + 0.5 - 1, x + 0.5 + 1, y + 3, z + 0.5 + 1);
             if (!level.noCollision(aabb)) continue;
             return new Vec3(x + 0.5, y, z + 0.5);
         }

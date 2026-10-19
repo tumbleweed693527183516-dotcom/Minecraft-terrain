@@ -52,7 +52,7 @@ jobs:
         run: |
           set +e
           mkdir -p ragnarok/run
-          printf "onboardAccessibility:false\nrenderDistance:6\nsimulationDistance:5\nnarrator:0\npauseOnLostFocus:false\n" > ragnarok/run/options.txt
+          printf "onboardAccessibility:false\nrenderDistance:8\nsimulationDistance:5\nnarrator:0\npauseOnLostFocus:false\n" > ragnarok/run/options.txt
           timeout 40m xvfb-run -a -s "-screen 0 1280x720x24" gradle :ragnarok:runRenderTest -Pscene=${{ inputs.scene || 'armor' }} --no-daemon --console=plain > client.log 2>&1
           echo "exit: $?"
           tail -n 60 client.log

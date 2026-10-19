@@ -85,7 +85,9 @@ public final class BossFight {
         int age = mob.tickCount;
         if (age % 5 == 0) updateBar();
         if (age % 10 == 0) updateTarget();
+        if (age % 4 == 0 && mob.horizontalCollision) trample();
         if (age % 20 == 0) {
+            mob.setMaxUpStep(Math.min(3f, Math.max(1f, mob.getBbHeight() * 0.3f)));
             Compat.keepAwake(mob);
             Bosses.applyStats(mob, def);
         }
@@ -159,6 +161,24 @@ public final class BossFight {
             active = null;
         }
         mob.getNavigation().stop();
+    }
+
+    /** Something this big walks through leaves, plants, snow and the like (gamerule mobGriefing). */
+    private void trample() {
+        ServerLevel level = level();
+        if (!level.getGameRules().getBoolean(net.minecraft.world.level.GameRules.RULE_MOBGRIEFING)) return;
+        AABB box = mob.getBoundingBox().inflate(0.4, 0, 0.4);
+        int broken = 0;
+        for (BlockPos p : BlockPos.betweenClosed((int) Math.floor(box.minX), (int) Math.floor(box.minY + 0.6), (int) Math.floor(box.minZ),
+                (int) Math.floor(box.maxX), (int) Math.floor(box.maxY), (int) Math.floor(box.maxZ))) {
+            BlockState st = level.getBlockState(p);
+            if (st.isAir() || st.hasBlockEntity() || st.getCollisionShape(level, p).isEmpty()) continue;
+            float hardness = st.getDestroySpeed(level, p);
+            if (hardness >= 0 && hardness < 0.5f) {
+                level.destroyBlock(p.immutable(), true, mob);
+                if (++broken >= 24) return;
+            }
+        }
     }
 
     void onDamaged(float amount, Entity attacker) {
