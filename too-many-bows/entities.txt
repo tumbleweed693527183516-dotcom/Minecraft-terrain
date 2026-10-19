@@ -1,0 +1,2 @@
+"entity.too_many_bows.spectral_arrow": "Spectral Arrow"
+"entity.too_many_bows.vitality_arrow": "Vitality Arrow"

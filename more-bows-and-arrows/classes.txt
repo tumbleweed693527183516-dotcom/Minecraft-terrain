@@ -1,0 +1,282 @@
+== forge/com/cursee/more_bows_and_arrows/client/renderer/entity/ModArrowRenderer
+Compiled from "ModArrowRenderer.java"
+public class forge.com.cursee.more_bows_and_arrows.client.renderer.entity.ModArrowRenderer extends net.minecraft.client.renderer.entity.ArrowRenderer<forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow> {
+  private final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType type;
+  public forge.com.cursee.more_bows_and_arrows.client.renderer.entity.ModArrowRenderer(net.minecraft.client.renderer.entity.EntityRendererProvider$Context, forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType);
+  public net.minecraft.resources.ResourceLocation getTextureLocation(forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow);
+  public void render(forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow, float, float, com.mojang.blaze3d.vertex.PoseStack, net.minecraft.client.renderer.MultiBufferSource, int);
+  public boolean shouldRender(forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow, net.minecraft.client.renderer.culling.Frustum, double, double, double);
+  public void m_7392_(net.minecraft.world.entity.projectile.AbstractArrow, float, float, com.mojang.blaze3d.vertex.PoseStack, net.minecraft.client.renderer.MultiBufferSource, int);
+  public net.minecraft.resources.ResourceLocation m_5478_(net.minecraft.world.entity.Entity);
+  public void m_7392_(net.minecraft.world.entity.Entity, float, float, com.mojang.blaze3d.vertex.PoseStack, net.minecraft.client.renderer.MultiBufferSource, int);
+  public boolean m_5523_(net.minecraft.world.entity.Entity, net.minecraft.client.renderer.culling.Frustum, double, double, double);
+}
+== forge/com/cursee/more_bows_and_arrows/core/registry/ModEntities
+Compiled from "ModEntities.java"
+public class forge.com.cursee.more_bows_and_arrows.core.registry.ModEntities {
+  public static final java.util.LinkedHashMap<forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType, net.minecraft.world.entity.EntityType<forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow>> ENTITY_TYPE_FROM_TYPE_MAP;
+  public forge.com.cursee.more_bows_and_arrows.core.registry.ModEntities();
+  private static boolean forge();
+  public static void register(java.util.function.BiConsumer<net.minecraft.world.entity.EntityType<?>, net.minecraft.resources.ResourceLocation>);
+  private static forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow lambda$register$0(forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType, net.minecraft.world.entity.EntityType, net.minecraft.world.level.Level);
+  static {};
+}
+== forge/com/cursee/more_bows_and_arrows/core/world/entity/projectile/ModArrow
+Compiled from "ModArrow.java"
+public class forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow extends net.minecraft.world.entity.projectile.AbstractArrow implements forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.IModArrow {
+  private final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType type;
+  public forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow(net.minecraft.world.entity.EntityType<? extends net.minecraft.world.entity.projectile.AbstractArrow>, net.minecraft.world.level.Level, forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType);
+  public forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow(forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType, double, double, double, net.minecraft.world.level.Level);
+  public forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow(forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType, net.minecraft.world.entity.LivingEntity, net.minecraft.world.level.Level);
+  public boolean m_6000_(double, double, double);
+  public forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType getArrowType();
+  protected net.minecraft.world.item.ItemStack m_7941_();
+  public void m_6593_(net.minecraft.network.chat.Component);
+  protected void m_6532_(net.minecraft.world.phys.HitResult);
+  protected void m_8060_(net.minecraft.world.phys.BlockHitResult);
+  public void m_36745_(net.minecraft.world.entity.LivingEntity, float);
+  protected void m_5790_(net.minecraft.world.phys.EntityHitResult);
+}
+== forge/com/cursee/more_bows_and_arrows/core/world/entity/projectile/util/IModArrow$1
+Compiled from "IModArrow.java"
+class forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.IModArrow$1 {
+  static final int[] $SwitchMap$com$cursee$more_bows_and_arrows$core$world$entity$projectile$util$ArrowType;
+  static {};
+}
+== forge/com/cursee/more_bows_and_arrows/core/world/entity/projectile/util/ArrowType
+Compiled from "ArrowType.java"
+public final class forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType extends java.lang.Enum<forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType> {
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType NORMAL;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType REALLY_BIG;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType AMETHYST;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType BAMBOO;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType BLAZE_ROD;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType BONE;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType CACTUS;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType COAL;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType COPPER;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType DIAMOND;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType EMERALD;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType ENDER_PEARL;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType FLINT_AND_STEEL;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType FLINT;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType GOLD;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType IRON;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType LAPIS;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType MOSS;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType NETHERITE;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType OBSIDIAN;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType PAPER;
+  public static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType TNT;
+  private final float damageBonus;
+  private final net.minecraft.resources.ResourceLocation textureLocation;
+  private static final forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType[] $VALUES;
+  public static forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType[] values();
+  public static forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType valueOf(java.lang.String);
+  private forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType(float, net.minecraft.resources.ResourceLocation);
+  public float getAttackDamageBonus();
+  public net.minecraft.resources.ResourceLocation getTextureLocation();
+  public static void appendHoverText(forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType, java.util.List<net.minecraft.network.chat.Component>);
+  private static void addLore(java.lang.String, java.util.List<net.minecraft.network.chat.Component>);
+  private static forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType[] $values();
+  static {};
+}
+== forge/com/cursee/more_bows_and_arrows/core/world/entity/projectile/util/IModArrow
+Compiled from "IModArrow.java"
+public interface forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.IModArrow {
+  public abstract forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType getArrowType();
+  public default void processBlockInteraction(forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow, net.minecraft.world.phys.BlockHitResult);
+  public default void processEntityInteraction(forge.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow, net.minecraft.world.phys.EntityHitResult);
+  private static void igniteBlockOnHit(net.minecraft.world.phys.BlockHitResult, net.minecraft.world.level.Level, net.minecraft.core.BlockPos, net.minecraft.world.level.block.state.BlockState);
+  private static void bambooArrowHitsBlock(net.minecraft.world.level.Level, net.minecraft.core.BlockPos, net.minecraft.world.level.block.state.BlockState);
+  private static void paperArrowHitsBlock(net.minecraft.world.entity.Entity, net.minecraft.world.level.Level, net.minecraft.core.BlockPos);
+  private static void paperArrowHitsEntity(net.minecraft.world.entity.Entity, net.minecraft.world.level.Level, net.minecraft.world.entity.Entity);
+}
+== fabric/com/cursee/more_bows_and_arrows/client/renderer/entity/ModArrowRenderer
+Compiled from "ModArrowRenderer.java"
+public class fabric.com.cursee.more_bows_and_arrows.client.renderer.entity.ModArrowRenderer extends net.minecraft.class_876<fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow> {
+  private final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType type;
+  public fabric.com.cursee.more_bows_and_arrows.client.renderer.entity.ModArrowRenderer(net.minecraft.class_5617$class_5618, fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType);
+  public net.minecraft.class_2960 getTextureLocation(fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow);
+  public void render(fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public boolean shouldRender(fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow, net.minecraft.class_4604, double, double, double);
+  public void method_3875(net.minecraft.class_1665, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public boolean method_3933(net.minecraft.class_1297, net.minecraft.class_4604, double, double, double);
+}
+== fabric/com/cursee/more_bows_and_arrows/core/registry/ModEntities
+Compiled from "ModEntities.java"
+public class fabric.com.cursee.more_bows_and_arrows.core.registry.ModEntities {
+  public static final java.util.LinkedHashMap<fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType, net.minecraft.class_1299<fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow>> ENTITY_TYPE_FROM_TYPE_MAP;
+  public fabric.com.cursee.more_bows_and_arrows.core.registry.ModEntities();
+  private static boolean forge();
+  public static void register(java.util.function.BiConsumer<net.minecraft.class_1299<?>, net.minecraft.class_2960>);
+  private static fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow lambda$register$0(fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType, net.minecraft.class_1299, net.minecraft.class_1937);
+  static {};
+}
+== fabric/com/cursee/more_bows_and_arrows/core/world/entity/projectile/ModArrow
+Compiled from "ModArrow.java"
+public class fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow extends net.minecraft.class_1665 implements fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.IModArrow {
+  private final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType type;
+  public fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow(net.minecraft.class_1299<? extends net.minecraft.class_1665>, net.minecraft.class_1937, fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType);
+  public fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow(fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType, double, double, double, net.minecraft.class_1937);
+  public fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow(fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType, net.minecraft.class_1309, net.minecraft.class_1937);
+  public boolean method_5727(double, double, double);
+  public fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType getArrowType();
+  protected net.minecraft.class_1799 method_7445();
+  public void method_5665(net.minecraft.class_2561);
+  protected void method_7488(net.minecraft.class_239);
+  protected void method_24920(net.minecraft.class_3965);
+  public void method_7435(net.minecraft.class_1309, float);
+  protected void method_7454(net.minecraft.class_3966);
+}
+== fabric/com/cursee/more_bows_and_arrows/core/world/entity/projectile/util/IModArrow$1
+Compiled from "IModArrow.java"
+class fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.IModArrow$1 {
+  static final int[] $SwitchMap$com$cursee$more_bows_and_arrows$core$world$entity$projectile$util$ArrowType;
+  static {};
+}
+== fabric/com/cursee/more_bows_and_arrows/core/world/entity/projectile/util/ArrowType
+Compiled from "ArrowType.java"
+public final class fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType extends java.lang.Enum<fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType> {
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType NORMAL;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType REALLY_BIG;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType AMETHYST;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType BAMBOO;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType BLAZE_ROD;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType BONE;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType CACTUS;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType COAL;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType COPPER;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType DIAMOND;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType EMERALD;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType ENDER_PEARL;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType FLINT_AND_STEEL;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType FLINT;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType GOLD;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType IRON;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType LAPIS;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType MOSS;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType NETHERITE;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType OBSIDIAN;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType PAPER;
+  public static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType TNT;
+  private final float damageBonus;
+  private final net.minecraft.class_2960 textureLocation;
+  private static final fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType[] $VALUES;
+  public static fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType[] values();
+  public static fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType valueOf(java.lang.String);
+  private fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType(float, net.minecraft.class_2960);
+  public float getAttackDamageBonus();
+  public net.minecraft.class_2960 getTextureLocation();
+  public static void appendHoverText(fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType, java.util.List<net.minecraft.class_2561>);
+  private static void addLore(java.lang.String, java.util.List<net.minecraft.class_2561>);
+  private static fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType[] $values();
+  static {};
+}
+== fabric/com/cursee/more_bows_and_arrows/core/world/entity/projectile/util/IModArrow
+Compiled from "IModArrow.java"
+public interface fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.IModArrow {
+  public abstract fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType getArrowType();
+  public default void processBlockInteraction(fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow, net.minecraft.class_3965);
+  public default void processEntityInteraction(fabric.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow, net.minecraft.class_3966);
+  private static void igniteBlockOnHit(net.minecraft.class_3965, net.minecraft.class_1937, net.minecraft.class_2338, net.minecraft.class_2680);
+  private static void bambooArrowHitsBlock(net.minecraft.class_1937, net.minecraft.class_2338, net.minecraft.class_2680);
+  private static void paperArrowHitsBlock(net.minecraft.class_1297, net.minecraft.class_1937, net.minecraft.class_2338);
+  private static void paperArrowHitsEntity(net.minecraft.class_1297, net.minecraft.class_1937, net.minecraft.class_1297);
+}
+== common/com/cursee/more_bows_and_arrows/client/renderer/entity/ModArrowRenderer
+Compiled from "ModArrowRenderer.java"
+public class common.com.cursee.more_bows_and_arrows.client.renderer.entity.ModArrowRenderer extends net.minecraft.client.renderer.entity.ArrowRenderer<common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow> {
+  private final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType type;
+  public common.com.cursee.more_bows_and_arrows.client.renderer.entity.ModArrowRenderer(net.minecraft.client.renderer.entity.EntityRendererProvider$Context, common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType);
+  public net.minecraft.resources.ResourceLocation getTextureLocation(common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow);
+  public void render(common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow, float, float, com.mojang.blaze3d.vertex.PoseStack, net.minecraft.client.renderer.MultiBufferSource, int);
+  public boolean shouldRender(common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow, net.minecraft.client.renderer.culling.Frustum, double, double, double);
+  public void m_7392_(net.minecraft.world.entity.projectile.AbstractArrow, float, float, com.mojang.blaze3d.vertex.PoseStack, net.minecraft.client.renderer.MultiBufferSource, int);
+  public net.minecraft.resources.ResourceLocation m_5478_(net.minecraft.world.entity.Entity);
+  public void m_7392_(net.minecraft.world.entity.Entity, float, float, com.mojang.blaze3d.vertex.PoseStack, net.minecraft.client.renderer.MultiBufferSource, int);
+  public boolean m_5523_(net.minecraft.world.entity.Entity, net.minecraft.client.renderer.culling.Frustum, double, double, double);
+}
+== common/com/cursee/more_bows_and_arrows/core/registry/ModEntities
+Compiled from "ModEntities.java"
+public class common.com.cursee.more_bows_and_arrows.core.registry.ModEntities {
+  public static final java.util.LinkedHashMap<common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType, net.minecraft.world.entity.EntityType<common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow>> ENTITY_TYPE_FROM_TYPE_MAP;
+  public common.com.cursee.more_bows_and_arrows.core.registry.ModEntities();
+  private static boolean forge();
+  public static void register(java.util.function.BiConsumer<net.minecraft.world.entity.EntityType<?>, net.minecraft.resources.ResourceLocation>);
+  private static common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow lambda$register$0(common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType, net.minecraft.world.entity.EntityType, net.minecraft.world.level.Level);
+  static {};
+}
+== common/com/cursee/more_bows_and_arrows/core/world/entity/projectile/ModArrow
+Compiled from "ModArrow.java"
+public class common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow extends net.minecraft.world.entity.projectile.AbstractArrow implements common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.IModArrow {
+  private final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType type;
+  public common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow(net.minecraft.world.entity.EntityType<? extends net.minecraft.world.entity.projectile.AbstractArrow>, net.minecraft.world.level.Level, common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType);
+  public common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow(common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType, double, double, double, net.minecraft.world.level.Level);
+  public common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow(common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType, net.minecraft.world.entity.LivingEntity, net.minecraft.world.level.Level);
+  public boolean m_6000_(double, double, double);
+  public common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType getArrowType();
+  protected net.minecraft.world.item.ItemStack m_7941_();
+  public void m_6593_(net.minecraft.network.chat.Component);
+  protected void m_6532_(net.minecraft.world.phys.HitResult);
+  protected void m_8060_(net.minecraft.world.phys.BlockHitResult);
+  public void m_36745_(net.minecraft.world.entity.LivingEntity, float);
+  protected void m_5790_(net.minecraft.world.phys.EntityHitResult);
+}
+== common/com/cursee/more_bows_and_arrows/core/world/entity/projectile/util/IModArrow$1
+Compiled from "IModArrow.java"
+class common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.IModArrow$1 {
+  static final int[] $SwitchMap$com$cursee$more_bows_and_arrows$core$world$entity$projectile$util$ArrowType;
+  static {};
+}
+== common/com/cursee/more_bows_and_arrows/core/world/entity/projectile/util/ArrowType
+Compiled from "ArrowType.java"
+public final class common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType extends java.lang.Enum<common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType> {
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType NORMAL;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType REALLY_BIG;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType AMETHYST;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType BAMBOO;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType BLAZE_ROD;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType BONE;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType CACTUS;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType COAL;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType COPPER;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType DIAMOND;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType EMERALD;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType ENDER_PEARL;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType FLINT_AND_STEEL;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType FLINT;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType GOLD;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType IRON;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType LAPIS;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType MOSS;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType NETHERITE;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType OBSIDIAN;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType PAPER;
+  public static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType TNT;
+  private final float damageBonus;
+  private final net.minecraft.resources.ResourceLocation textureLocation;
+  private static final common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType[] $VALUES;
+  public static common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType[] values();
+  public static common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType valueOf(java.lang.String);
+  private common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType(float, net.minecraft.resources.ResourceLocation);
+  public float getAttackDamageBonus();
+  public net.minecraft.resources.ResourceLocation getTextureLocation();
+  public static void appendHoverText(common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType, java.util.List<net.minecraft.network.chat.Component>);
+  private static void addLore(java.lang.String, java.util.List<net.minecraft.network.chat.Component>);
+  private static common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType[] $values();
+  static {};
+}
+== common/com/cursee/more_bows_and_arrows/core/world/entity/projectile/util/IModArrow
+Compiled from "IModArrow.java"
+public interface common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.IModArrow {
+  public abstract common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.util.ArrowType getArrowType();
+  public default void processBlockInteraction(common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow, net.minecraft.world.phys.BlockHitResult);
+  public default void processEntityInteraction(common.com.cursee.more_bows_and_arrows.core.world.entity.projectile.ModArrow, net.minecraft.world.phys.EntityHitResult);
+  private static void igniteBlockOnHit(net.minecraft.world.phys.BlockHitResult, net.minecraft.world.level.Level, net.minecraft.core.BlockPos, net.minecraft.world.level.block.state.BlockState);
+  private static void bambooArrowHitsBlock(net.minecraft.world.level.Level, net.minecraft.core.BlockPos, net.minecraft.world.level.block.state.BlockState);
+  private static void paperArrowHitsBlock(net.minecraft.world.entity.Entity, net.minecraft.world.level.Level, net.minecraft.core.BlockPos);
+  private static void paperArrowHitsEntity(net.minecraft.world.entity.Entity, net.minecraft.world.level.Level, net.minecraft.world.entity.Entity);
+}

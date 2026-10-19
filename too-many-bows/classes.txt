@@ -1,0 +1,440 @@
+== net/bandit/many_bows/entity/SentinelArrow
+Compiled from "SentinelArrow.java"
+public class net.bandit.many_bows.entity.SentinelArrow extends net.minecraft.class_1665 {
+  private static final float DAMAGE_MULTIPLIER;
+  public net.bandit.many_bows.entity.SentinelArrow(net.minecraft.class_1299<? extends net.bandit.many_bows.entity.SentinelArrow>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.SentinelArrow(net.minecraft.class_1937, net.minecraft.class_1309);
+  protected void method_7454(net.minecraft.class_3966);
+  protected net.minecraft.class_1799 method_7445();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+  private boolean isRaidMob(net.minecraft.class_1309);
+}
+== net/bandit/many_bows/entity/TidalArrow
+Compiled from "TidalArrow.java"
+public class net.bandit.many_bows.entity.TidalArrow extends net.minecraft.class_1665 {
+  public net.bandit.many_bows.entity.TidalArrow(net.minecraft.class_1299<? extends net.bandit.many_bows.entity.TidalArrow>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.TidalArrow(net.minecraft.class_1937, net.minecraft.class_1309);
+  public void method_5773();
+  protected float method_7436();
+  protected void method_7454(net.minecraft.class_3966);
+  public double method_7448();
+  private void createWaterBindingEffect(net.minecraft.class_1309);
+  protected void method_24920(net.minecraft.class_3965);
+  private void createWaterSplash(net.minecraft.class_243);
+  protected net.minecraft.class_1799 method_7445();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+}
+== net/bandit/many_bows/entity/SonicBoomProjectile
+Compiled from "SonicBoomProjectile.java"
+public class net.bandit.many_bows.entity.SonicBoomProjectile extends net.minecraft.class_1665 {
+  private static final double DEFAULT_DAMAGE;
+  private int lifetime;
+  private int particleAge;
+  private int enchantmentKnockback;
+  public net.bandit.many_bows.entity.SonicBoomProjectile(net.minecraft.class_1299<? extends net.bandit.many_bows.entity.SonicBoomProjectile>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.SonicBoomProjectile(net.minecraft.class_1937, net.minecraft.class_1309);
+  public void setEnchantmentKnockback(int);
+  protected void method_7454(net.minecraft.class_3966);
+  public void method_5773();
+  private void createSonicBoomSpiral();
+  protected net.minecraft.class_1799 method_7445();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+}
+== net/bandit/many_bows/entity/HunterXPArrow
+Compiled from "HunterXPArrow.java"
+public class net.bandit.many_bows.entity.HunterXPArrow extends net.minecraft.class_1665 {
+  public net.bandit.many_bows.entity.HunterXPArrow(net.minecraft.class_1299<? extends net.minecraft.class_1665>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.HunterXPArrow(net.minecraft.class_1937, net.minecraft.class_1309);
+  protected void method_7454(net.minecraft.class_3966);
+  private void spawnExperienceOrb(net.minecraft.class_1309, int);
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+  public net.minecraft.class_1799 method_7445();
+}
+== net/bandit/many_bows/entity/HunterArrow
+Compiled from "HunterArrow.java"
+public class net.bandit.many_bows.entity.HunterArrow extends net.minecraft.class_1665 {
+  public net.bandit.many_bows.entity.HunterArrow(net.minecraft.class_1299<? extends net.bandit.many_bows.entity.HunterArrow>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.HunterArrow(net.minecraft.class_1937, net.minecraft.class_1309);
+  protected void method_7454(net.minecraft.class_3966);
+  protected net.minecraft.class_1799 method_7445();
+  private boolean isPassiveMob(net.minecraft.class_1309);
+  private void improveDrops(net.minecraft.class_1309);
+  private net.minecraft.class_2248 woolFor(net.minecraft.class_1767);
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+}
+== net/bandit/many_bows/entity/FrostbiteArrow
+Compiled from "FrostbiteArrow.java"
+public class net.bandit.many_bows.entity.FrostbiteArrow extends net.minecraft.class_1665 {
+  private boolean hasHit;
+  private int hitTimer;
+  private final int maxHitDuration;
+  public net.bandit.many_bows.entity.FrostbiteArrow(net.minecraft.class_1299<? extends net.bandit.many_bows.entity.FrostbiteArrow>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.FrostbiteArrow(net.minecraft.class_1937, net.minecraft.class_1309);
+  public void method_5773();
+  protected void method_7454(net.minecraft.class_3966);
+  protected void method_24920(net.minecraft.class_3965);
+  private void createFrostExplosion(net.minecraft.class_243, net.minecraft.class_1309);
+  protected net.minecraft.class_1799 method_7445();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+}
+== net/bandit/many_bows/entity/FlameArrow
+Compiled from "FlameArrow.java"
+public class net.bandit.many_bows.entity.FlameArrow extends net.minecraft.class_1665 {
+  private boolean hasHit;
+  private int hitTimer;
+  private final int maxHitDuration;
+  public net.bandit.many_bows.entity.FlameArrow(net.minecraft.class_1299<? extends net.bandit.many_bows.entity.FlameArrow>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.FlameArrow(net.minecraft.class_1937, net.minecraft.class_1309);
+  public void method_5773();
+  protected void method_7454(net.minecraft.class_3966);
+  protected void method_24920(net.minecraft.class_3965);
+  private void createFireExplosion(net.minecraft.class_243, net.minecraft.class_1309);
+  protected net.minecraft.class_1799 method_7445();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+}
+== net/bandit/many_bows/entity/VenomArrow
+Compiled from "VenomArrow.java"
+public class net.bandit.many_bows.entity.VenomArrow extends net.minecraft.class_1665 {
+  private boolean hasHit;
+  private int hitTimer;
+  private final int maxHitDuration;
+  public net.bandit.many_bows.entity.VenomArrow(net.minecraft.class_1299<? extends net.bandit.many_bows.entity.VenomArrow>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.VenomArrow(net.minecraft.class_1937, net.minecraft.class_1309);
+  public void method_5773();
+  protected void method_7454(net.minecraft.class_3966);
+  protected void method_24920(net.minecraft.class_3965);
+  private void createPoisonExplosion(net.minecraft.class_243, net.minecraft.class_1309);
+  protected net.minecraft.class_1799 method_7445();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+}
+== net/bandit/many_bows/entity/AuroraArrowEntity
+Compiled from "AuroraArrowEntity.java"
+public class net.bandit.many_bows.entity.AuroraArrowEntity extends net.minecraft.class_1665 {
+  public net.bandit.many_bows.entity.AuroraArrowEntity(net.minecraft.class_1299<? extends net.bandit.many_bows.entity.AuroraArrowEntity>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.AuroraArrowEntity(net.minecraft.class_1937, net.minecraft.class_1309);
+  protected void method_7454(net.minecraft.class_3966);
+  protected void method_24920(net.minecraft.class_3965);
+  private void spawnRift(net.minecraft.class_2338);
+  protected net.minecraft.class_1799 method_7445();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+}
+== net/bandit/many_bows/entity/RiftEntity
+Compiled from "RiftEntity.java"
+public class net.bandit.many_bows.entity.RiftEntity extends net.minecraft.class_1297 {
+  private int lifeTime;
+  private static final double PULL_RADIUS;
+  private static final double EXPLOSION_RADIUS;
+  private static final double PULL_STRENGTH;
+  private net.minecraft.class_1309 owner;
+  public net.bandit.many_bows.entity.RiftEntity(net.minecraft.class_1299<?>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.RiftEntity(net.minecraft.class_1937, double, double, double);
+  public net.bandit.many_bows.entity.RiftEntity(net.minecraft.class_1937, net.minecraft.class_1309, net.minecraft.class_2338);
+  public void method_5773();
+  private void explode();
+  protected void method_5693();
+  protected void method_5749(net.minecraft.class_2487);
+  protected void method_5652(net.minecraft.class_2487);
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+  private static boolean lambda$explode$0(net.minecraft.class_1309);
+}
+== net/bandit/many_bows/entity/SpectralArrow
+Compiled from "SpectralArrow.java"
+public class net.bandit.many_bows.entity.SpectralArrow extends net.minecraft.class_1665 {
+  private int remainingObstacles;
+  private int lifespan;
+  public net.bandit.many_bows.entity.SpectralArrow(net.minecraft.class_1299<? extends net.bandit.many_bows.entity.SpectralArrow>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.SpectralArrow(net.minecraft.class_1937, net.minecraft.class_1309, net.minecraft.class_1799);
+  public void method_5773();
+  protected void method_24920(net.minecraft.class_3965);
+  protected void method_7454(net.minecraft.class_3966);
+  public net.minecraft.class_3966 method_7434(net.minecraft.class_243, net.minecraft.class_243);
+  protected net.minecraft.class_1799 method_7445();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+  private boolean lambda$findHitEntity$0(net.minecraft.class_1297);
+}
+== net/bandit/many_bows/entity/LightOrbEntity
+Compiled from "LightOrbEntity.java"
+public class net.bandit.many_bows.entity.LightOrbEntity extends net.minecraft.class_1297 {
+  private static final double FOLLOW_DISTANCE;
+  private net.minecraft.class_2338 lastLightPos;
+  public net.bandit.many_bows.entity.LightOrbEntity(net.minecraft.class_1299<? extends net.bandit.many_bows.entity.LightOrbEntity>, net.minecraft.class_1937);
+  public void method_5773();
+  private boolean isPlayerHoldingTorchBow(net.minecraft.class_1657);
+  protected void method_5693();
+  protected void method_5749(net.minecraft.class_2487);
+  protected void method_5652(net.minecraft.class_2487);
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+}
+== net/bandit/many_bows/entity/TorchbearerArrow
+Compiled from "TorchbearerArrow.java"
+public class net.bandit.many_bows.entity.TorchbearerArrow extends net.minecraft.class_1665 {
+  public net.bandit.many_bows.entity.TorchbearerArrow(net.minecraft.class_1299<? extends net.minecraft.class_1665>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.TorchbearerArrow(net.minecraft.class_1937, net.minecraft.class_1309);
+  protected void method_7488(net.minecraft.class_239);
+  protected net.minecraft.class_1799 method_7445();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+}
+== net/bandit/many_bows/entity/ShulkerBlastProjectile
+Compiled from "ShulkerBlastProjectile.java"
+public class net.bandit.many_bows.entity.ShulkerBlastProjectile extends net.minecraft.class_1665 {
+  private static final double HOMING_RANGE;
+  private static final float SPEED;
+  private static final float DAMAGE;
+  private static final int LEVITATION_DURATION;
+  private static final int MAX_LIFETIME;
+  private int lifetime;
+  public net.bandit.many_bows.entity.ShulkerBlastProjectile(net.minecraft.class_1299<? extends net.minecraft.class_1665>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.ShulkerBlastProjectile(net.minecraft.class_1937, net.minecraft.class_1309);
+  public void method_5773();
+  private net.minecraft.class_1309 findNearestTarget();
+  protected void method_7454(net.minecraft.class_3966);
+  protected net.minecraft.class_1799 method_7445();
+  private int lambda$findNearestTarget$1(net.minecraft.class_1309, net.minecraft.class_1309);
+  private boolean lambda$findNearestTarget$0(net.minecraft.class_1309);
+}
+== net/bandit/many_bows/entity/CursedFlameArrow
+Compiled from "CursedFlameArrow.java"
+public class net.bandit.many_bows.entity.CursedFlameArrow extends net.minecraft.class_1665 {
+  private int particleTimer;
+  private static final int MAX_PARTICLE_DURATION;
+  public net.bandit.many_bows.entity.CursedFlameArrow(net.minecraft.class_1299<? extends net.bandit.many_bows.entity.CursedFlameArrow>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.CursedFlameArrow(net.minecraft.class_1937, net.minecraft.class_1309);
+  public void method_5773();
+  protected void method_7454(net.minecraft.class_3966);
+  protected void method_24920(net.minecraft.class_3965);
+  private void createCursedSoulFireParticles(net.minecraft.class_243);
+  protected net.minecraft.class_1799 method_7445();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+}
+== net/bandit/many_bows/entity/WebstringArrow
+Compiled from "WebstringArrow.java"
+public class net.bandit.many_bows.entity.WebstringArrow extends net.minecraft.class_1665 {
+  private static final int SLOW_DURATION;
+  public net.bandit.many_bows.entity.WebstringArrow(net.minecraft.class_1299<? extends net.bandit.many_bows.entity.WebstringArrow>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.WebstringArrow(net.minecraft.class_1937, net.minecraft.class_1309);
+  protected void method_7454(net.minecraft.class_3966);
+  protected net.minecraft.class_1799 method_7445();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+}
+== net/bandit/many_bows/entity/WindProjectile
+Compiled from "WindProjectile.java"
+public class net.bandit.many_bows.entity.WindProjectile extends net.minecraft.class_1665 {
+  private static final float BASE_DAMAGE;
+  private static final int LEVITATION_DURATION;
+  public net.bandit.many_bows.entity.WindProjectile(net.minecraft.class_1299<? extends net.bandit.many_bows.entity.WindProjectile>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.WindProjectile(net.minecraft.class_1937, net.minecraft.class_1309);
+  protected void method_7454(net.minecraft.class_3966);
+  public void method_5773();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+  protected net.minecraft.class_1799 method_7445();
+}
+== net/bandit/many_bows/entity/DragonsBreathArrow
+Compiled from "DragonsBreathArrow.java"
+public class net.bandit.many_bows.entity.DragonsBreathArrow extends net.minecraft.class_1665 {
+  private static final int PARTICLE_LIFESPAN;
+  private static final int MAX_LIFETIME;
+  private int particleTicksRemaining;
+  private int lifetime;
+  public net.bandit.many_bows.entity.DragonsBreathArrow(net.minecraft.class_1299<? extends net.minecraft.class_1665>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.DragonsBreathArrow(net.minecraft.class_1937, net.minecraft.class_1309);
+  protected void method_7454(net.minecraft.class_3966);
+  public void method_5773();
+  private void createImpactParticles(double, double, double);
+  private void createTrailParticles();
+  protected net.minecraft.class_1799 method_7445();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+  private static void lambda$onHitEntity$1(net.minecraft.class_1309, net.minecraft.class_1297);
+  private static boolean lambda$onHitEntity$0(net.minecraft.class_1297);
+}
+== net/bandit/many_bows/entity/IronCladArrow
+Compiled from "IronCladArrow.java"
+public class net.bandit.many_bows.entity.IronCladArrow extends net.minecraft.class_1665 {
+  private boolean hasLanded;
+  private int vacuumDuration;
+  public net.bandit.many_bows.entity.IronCladArrow(net.minecraft.class_1299<? extends net.minecraft.class_1665>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.IronCladArrow(net.minecraft.class_1937, net.minecraft.class_1309);
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+  protected net.minecraft.class_1799 method_7445();
+  public void method_5773();
+  protected void method_7488(net.minecraft.class_239);
+  private static boolean lambda$tick$0(net.minecraft.class_1297);
+}
+== net/bandit/many_bows/entity/AncientSageArrow
+Compiled from "AncientSageArrow.java"
+public class net.bandit.many_bows.entity.AncientSageArrow extends net.minecraft.class_1665 {
+  private static final float DEFAULT_ARMOR_PENETRATION_FACTOR;
+  private static final int PARTICLE_LIFESPAN;
+  private float armorPenetration;
+  private int particleTicksRemaining;
+  public net.bandit.many_bows.entity.AncientSageArrow(net.minecraft.class_1299<? extends net.bandit.many_bows.entity.AncientSageArrow>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.AncientSageArrow(net.minecraft.class_1937, net.minecraft.class_1309);
+  public void setArmorPenetration(float);
+  protected void method_7454(net.minecraft.class_3966);
+  public void method_5773();
+  private void createHitParticles();
+  private void createTrailParticles();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+  protected net.minecraft.class_1799 method_7445();
+}
+== net/bandit/many_bows/entity/VitalityArrow
+Compiled from "VitalityArrow.java"
+public class net.bandit.many_bows.entity.VitalityArrow extends net.minecraft.class_1665 {
+  private java.util.function.Consumer<net.minecraft.class_1309> onHitCallback;
+  public net.bandit.many_bows.entity.VitalityArrow(net.minecraft.class_1299<? extends net.bandit.many_bows.entity.VitalityArrow>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.VitalityArrow(net.minecraft.class_1937, net.minecraft.class_1309);
+  public void setOnHitCallback(java.util.function.Consumer<net.minecraft.class_1309>);
+  protected void method_7454(net.minecraft.class_3966);
+  protected net.minecraft.class_1799 method_7445();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+}
+== net/bandit/many_bows/entity/AstralArrow
+Compiled from "AstralArrow.java"
+public class net.bandit.many_bows.entity.AstralArrow extends net.minecraft.class_1665 {
+  private int maxRicochets;
+  private int ricochetCount;
+  public net.bandit.many_bows.entity.AstralArrow(net.minecraft.class_1299<? extends net.bandit.many_bows.entity.AstralArrow>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.AstralArrow(net.minecraft.class_1937, net.minecraft.class_1309, net.minecraft.class_1799);
+  protected void method_7454(net.minecraft.class_3966);
+  protected void method_24920(net.minecraft.class_3965);
+  public void method_5773();
+  protected net.minecraft.class_1799 method_7445();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+}
+== net/bandit/many_bows/entity/LightningArrow
+Compiled from "LightningArrow.java"
+public class net.bandit.many_bows.entity.LightningArrow extends net.minecraft.class_1665 {
+  private boolean lightningStruck;
+  public net.bandit.many_bows.entity.LightningArrow(net.minecraft.class_1299<? extends net.bandit.many_bows.entity.LightningArrow>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.LightningArrow(net.minecraft.class_1937, net.minecraft.class_1309);
+  protected void method_7454(net.minecraft.class_3966);
+  public void method_5773();
+  private void summonLightning(double, double, double);
+  private void createParticles();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+  protected net.minecraft.class_1799 method_7445();
+}
+== net/bandit/many_bows/entity/DuskReaperArrow
+Compiled from "DuskReaperArrow.java"
+public class net.bandit.many_bows.entity.DuskReaperArrow extends net.minecraft.class_1665 {
+  private static final float BASE_DAMAGE;
+  private static final int SLOWNESS_DURATION;
+  private static final int WEAKNESS_DURATION;
+  private static final int GLOW_DURATION;
+  private static final int HARM_DURATION;
+  private static final java.lang.String MARK_TAG;
+  private static final java.lang.String MARK_PREFIX;
+  private static final int MARK_DURATION_TICKS;
+  public net.bandit.many_bows.entity.DuskReaperArrow(net.minecraft.class_1299<? extends net.bandit.many_bows.entity.DuskReaperArrow>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.DuskReaperArrow(net.minecraft.class_1937, net.minecraft.class_1309);
+  protected void method_7454(net.minecraft.class_3966);
+  public void method_5773();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+  protected net.minecraft.class_1799 method_7445();
+  public static boolean isMarked(net.minecraft.class_1309);
+}
+== net/bandit/many_bows/entity/HunterArrow$1
+Compiled from "HunterArrow.java"
+class net.bandit.many_bows.entity.HunterArrow$1 {
+  static final int[] $SwitchMap$net$minecraft$world$item$DyeColor;
+  static {};
+}
+== net/bandit/many_bows/entity/IcicleJavelin
+Compiled from "IcicleJavelin.java"
+public class net.bandit.many_bows.entity.IcicleJavelin extends net.minecraft.class_1665 {
+  private boolean hasHit;
+  private int hitTimer;
+  private final int maxHitDuration;
+  public net.bandit.many_bows.entity.IcicleJavelin(net.minecraft.class_1299<? extends net.minecraft.class_1665>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.IcicleJavelin(net.minecraft.class_1937, net.minecraft.class_1309);
+  public void method_5773();
+  protected void method_7454(net.minecraft.class_3966);
+  protected void method_24920(net.minecraft.class_3965);
+  private void createFrostExplosion(net.minecraft.class_243, net.minecraft.class_1309);
+  protected net.minecraft.class_1799 method_7445();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002();
+}
+== net/bandit/many_bows/entity/RadiantArrow
+Compiled from "RadiantArrow.java"
+public class net.bandit.many_bows.entity.RadiantArrow extends net.minecraft.class_1665 {
+  private boolean hasExploded;
+  public net.bandit.many_bows.entity.RadiantArrow(net.minecraft.class_1299<? extends net.bandit.many_bows.entity.RadiantArrow>, net.minecraft.class_1937);
+  public net.bandit.many_bows.entity.RadiantArrow(net.minecraft.class_1937, net.minecraft.class_1309);
+  protected void method_7488(net.minecraft.class_239);
+  private void createRadiantExplosion(net.minecraft.class_1937, net.bandit.many_bows.entity.RadiantArrow);
+  protected net.minecraft.class_1799 method_7445();
+  private static void lambda$createRadiantExplosion$0(net.minecraft.class_1937, net.bandit.many_bows.entity.RadiantArrow, net.minecraft.class_1309);
+}
+== net/bandit/many_bows/registry/EntityRegistry
+Compiled from "EntityRegistry.java"
+public class net.bandit.many_bows.registry.EntityRegistry {
+  public static final dev.architectury.registry.registries.DeferredRegister<net.minecraft.class_1299<?>> ENTITY_TYPES;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.FrostbiteArrow>> FROSTBITE_ARROW;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.DragonsBreathArrow>> DRAGONS_BREATH_ARROW;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.SonicBoomProjectile>> SONIC_BOOM_PROJECTILE;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.VenomArrow>> VENOM_ARROW;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.FlameArrow>> FLAME_ARROW;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.TidalArrow>> TIDAL_ARROW;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.CursedFlameArrow>> CURSED_FLAME_ARROW;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.LightningArrow>> LIGHTNING_ARROW;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.WindProjectile>> WIND_PROJECTILE;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.IcicleJavelin>> ICICLE_JAVELIN;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.HunterArrow>> HUNTER_ARROW;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.AstralArrow>> ASTRAL_ARROW;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.HunterXPArrow>> HUNTER_XP_ARROW;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.AncientSageArrow>> ANCIENT_SAGE_ARROW;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.SentinelArrow>> SENTINEL_ARROW;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.VitalityArrow>> VITALITY_ARROW;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.ShulkerBlastProjectile>> SHULKER_BLAST_PROJECTILE;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.SpectralArrow>> SPECTRAL_ARROW;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.AuroraArrowEntity>> AURORA_ARROW;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.RiftEntity>> RIFT_ENTITY;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.RadiantArrow>> RADIANT_ARROW;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.DuskReaperArrow>> DUSK_REAPER_ARROW;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.WebstringArrow>> WEBSTRING_ARROW;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.IronCladArrow>> IRONCLAD_ARROW;
+  public static final dev.architectury.registry.registries.RegistrySupplier<net.minecraft.class_1299<net.bandit.many_bows.entity.LightOrbEntity>> LIGHT_ORB;
+  public net.bandit.many_bows.registry.EntityRegistry();
+  public static void register();
+  private static net.minecraft.class_1299 lambda$static$24();
+  private static net.minecraft.class_1299 lambda$static$23();
+  private static net.minecraft.class_1299 lambda$static$22();
+  private static net.minecraft.class_1299 lambda$static$21();
+  private static net.minecraft.class_1299 lambda$static$20();
+  private static net.minecraft.class_1299 lambda$static$19();
+  private static net.minecraft.class_1299 lambda$static$18();
+  private static net.minecraft.class_1299 lambda$static$17();
+  private static net.minecraft.class_1299 lambda$static$16();
+  private static net.minecraft.class_1299 lambda$static$15();
+  private static net.minecraft.class_1299 lambda$static$14();
+  private static net.minecraft.class_1299 lambda$static$13();
+  private static net.minecraft.class_1299 lambda$static$12();
+  private static net.minecraft.class_1299 lambda$static$11();
+  private static net.minecraft.class_1299 lambda$static$10();
+  private static net.minecraft.class_1299 lambda$static$9();
+  private static net.minecraft.class_1299 lambda$static$8();
+  private static net.minecraft.class_1299 lambda$static$7();
+  private static net.minecraft.class_1299 lambda$static$6();
+  private static net.minecraft.class_1299 lambda$static$5();
+  private static net.minecraft.class_1299 lambda$static$4();
+  private static net.minecraft.class_1299 lambda$static$3();
+  private static net.minecraft.class_1299 lambda$static$2();
+  private static net.minecraft.class_1299 lambda$static$1();
+  private static net.minecraft.class_1299 lambda$static$0();
+  static {};
+}
+== net/bandit/many_bows/mixin/LivingEntityMixin
+Compiled from "LivingEntityMixin.java"
+public abstract class net.bandit.many_bows.mixin.LivingEntityMixin {
+  public net.bandit.many_bows.mixin.LivingEntityMixin();
+  private static boolean tmb$hasCursed(net.minecraft.class_1309);
+  private void tmb$preventHealing(float, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  private void tmb$noSetHealthUp(float, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  private void tmb$afterBaseTick(org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+}
+== net/bandit/many_bows/mixin/EntityWaterExtinguishMixin
+Compiled from "EntityWaterExtinguishMixin.java"
+public abstract class net.bandit.many_bows.mixin.EntityWaterExtinguishMixin {
+  public net.bandit.many_bows.mixin.EntityWaterExtinguishMixin();
+  private static boolean tmb$hasCursed(net.minecraft.class_1297);
+  private void tmb$afterWater(org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+}
