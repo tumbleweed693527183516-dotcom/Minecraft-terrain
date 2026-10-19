@@ -1,0 +1,600 @@
+[05:10:23] [Server thread/INFO]: [boss] crocodile deals 13.0 to entity.minecraft.iron_golem (mob)
+[05:10:24] [Server thread/INFO]: Giant Crocodile, the River's Jaws has the following entity data: 479.38f
+[05:10:24] [Server thread/INFO]: [boss] crocodile deals 13.0 to entity.minecraft.iron_golem (mob)
+[05:10:25] [Server thread/INFO]: [boss] crocodile deals 13.0 to entity.minecraft.iron_golem (mob)
+[05:10:26] [Server thread/INFO]: Iron Golem has the following entity data: 344.1501f
+[05:10:26] [Server thread/INFO]: [boss] crocodile deals 13.0 to entity.minecraft.iron_golem (mob)
+[05:10:27] [Server thread/INFO]: [boss] crocodile deals 13.0 to entity.minecraft.iron_golem (mob)
+[05:10:28] [Server thread/INFO]: Named entity Alligator['Giant Crocodile, the River's Jaws'/592, l='ServerLevel[world]', x=413.43, y=200.00, z=17.63] died: Giant Crocodile, the River's Jaws was killed
+[05:10:28] [Server thread/INFO]: [boss] crocodile died (genericKill)
+[05:10:28] [Server thread/INFO]: Killed Giant Crocodile, the River's Jaws
+[05:10:33] [Server thread/INFO]: [Server] BOSSCHECK crocodile dropped items
+[05:10:35] [Server thread/INFO]: Killed Iron Golem
+[05:10:37] [Server thread/INFO]: Marked [27, -2] chunks in minecraft:overworld from [26, -2] to [30, 2] to be force loaded
+[05:10:54] [Server thread/INFO]: Successfully filled 3249 block(s)
+[05:10:56] [Server thread/INFO]: [boss] silverback is animalgarden_westerngorilla:westerngorilla (ModMob), 550.0 hp, 4.5045004x6.75 hitbox, baby false, adult null, age days null, scale 1.0
+[05:10:56] [Server thread/INFO]: Summoned boss silverback (animalgarden_westerngorilla:westerngorilla)
+[05:10:58] [Server thread/INFO]: Summoned new Iron Golem
+[05:11:03] [Server thread/INFO]: Applied 1.0 damage to Silverback, King of the Temple
+[05:11:03] [Server thread/INFO]: [boss] silverback uses Throw on entity.minecraft.iron_golem (41 ticks)
+[05:11:05] [Server thread/INFO]: [boss] silverback deals 12.6 to entity.minecraft.iron_golem (thrown)
+[05:11:05] [Server thread/INFO]: [boss] silverback deals 12.6 to entity.minecraft.iron_golem (thrown)
+[05:11:07] [Server thread/INFO]: [boss] silverback uses Roar on entity.minecraft.iron_golem (32 ticks)
+[05:11:10] [Server thread/INFO]: [boss] silverback uses Slam on entity.minecraft.iron_golem (24 ticks)
+[05:11:11] [Server thread/INFO]: [boss] silverback deals 11.093589 to entity.minecraft.iron_golem (mob)
+[05:11:12] [Server thread/INFO]: [boss] silverback melee hit on entity.minecraft.iron_golem
+[05:11:12] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:13] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:14] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:15] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:16] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:18] [Server thread/INFO]: [boss] silverback uses Throw on entity.minecraft.iron_golem (41 ticks)
+[05:11:18] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:19] [Server thread/INFO]: [boss] silverback deals 12.6 to entity.minecraft.iron_golem (thrown)
+[05:11:19] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:19] [Server thread/INFO]: [boss] silverback deals 12.6 to entity.minecraft.iron_golem (thrown)
+[05:11:20] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:21] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:23] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:24] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:24] [Server thread/INFO]: [boss] silverback uses Slam on entity.minecraft.iron_golem (24 ticks)
+[05:11:25] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:25] [Server thread/INFO]: [boss] silverback deals 11.991922 to entity.minecraft.iron_golem (mob)
+[05:11:26] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:27] [Server thread/INFO]: [boss] silverback uses Roar on entity.minecraft.iron_golem (32 ticks)
+[05:11:28] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:29] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:30] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:31] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:32] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:33] [Server thread/INFO]: [boss] silverback uses Throw on entity.minecraft.iron_golem (41 ticks)
+[05:11:34] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:34] [Server thread/INFO]: [boss] silverback deals 12.6 to entity.minecraft.iron_golem (thrown)
+[05:11:35] [Server thread/INFO]: [boss] silverback deals 12.6 to entity.minecraft.iron_golem (thrown)
+[05:11:35] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:36] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:37] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:39] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:40] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:40] [Server thread/INFO]: [boss] silverback uses Slam on entity.minecraft.iron_golem (24 ticks)
+[05:11:41] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:41] [Server thread/INFO]: [boss] silverback deals 11.755027 to entity.minecraft.iron_golem (mob)
+[05:11:42] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:43] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:44] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:45] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:45] [Server thread/INFO]: [boss] silverback uses Roar on entity.minecraft.iron_golem (32 ticks)
+[05:11:46] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:47] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:48] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:49] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:50] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:50] [Server thread/INFO]: [Silverback, King of the Temple] BOSSCHECK silverback alive
+[05:11:51] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:52] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:52] [Server thread/INFO]: Silverback, King of the Temple has the following entity data: 549.3f
+[05:11:53] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:54] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:54] [Server thread/INFO]: Iron Golem has the following entity data: 419.1065f
+[05:11:54] [Server thread/INFO]: [boss] silverback uses Slam on entity.minecraft.iron_golem (24 ticks)
+[05:11:55] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:55] [Server thread/INFO]: [boss] silverback deals 11.474618 to entity.minecraft.iron_golem (mob)
+[05:11:56] [Server thread/INFO]: [boss] silverback deals 14.0 to entity.minecraft.iron_golem (mob)
+[05:11:56] [Server thread/INFO]: Named entity ModMob['Silverback, King of the Temple'/602, l='ServerLevel[world]', x=473.47, y=200.00, z=3.48] died: Silverback, King of the Temple was killed
+[05:11:56] [Server thread/INFO]: [boss] silverback died (genericKill)
+[05:11:56] [Server thread/INFO]: Killed Silverback, King of the Temple
+[05:12:01] [Server thread/INFO]: [Server] BOSSCHECK silverback dropped items
+[05:12:03] [Server thread/INFO]: Killed Iron Golem
+[05:12:05] [Server thread/INFO]: Marked [31, -2] chunks in minecraft:overworld from [30, -2] to [34, 2] to be force loaded
+[05:12:22] [Server thread/INFO]: Successfully filled 3249 block(s)
+[05:12:24] [Server thread/INFO]: [boss] saber_tooth is fossil:smilodon (Smilodon), 520.0 hp, 3.6000001x4.2 hitbox, baby false, adult true, age days 8, scale 3.0
+[05:12:24] [Server thread/INFO]: Summoned boss saber_tooth (fossil:smilodon)
+[05:12:26] [Server thread/INFO]: Summoned new Iron Golem
+[05:12:31] [Server thread/INFO]: Applied 1.0 damage to Saber-tooth, the Unseen Hunter
+[05:12:31] [Server thread/INFO]: [boss] saber_tooth uses Leap on entity.minecraft.iron_golem (50 ticks)
+[05:12:32] [Server thread/INFO]: [boss] saber_tooth deals 21.0 to entity.minecraft.iron_golem (mob)
+[05:12:32] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:32] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:33] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:33] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:34] [Server thread/INFO]: [boss] saber_tooth uses Maul on entity.minecraft.iron_golem (32 ticks)
+[05:12:34] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:12:35] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:12:35] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:12:35] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:12:36] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:36] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:37] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:37] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:38] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:38] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:38] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:38] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:39] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:39] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:40] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:40] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:41] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:41] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:42] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:42] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:43] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:43] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:44] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:44] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:45] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:45] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:45] [Server thread/INFO]: [boss] saber_tooth uses Maul on entity.minecraft.iron_golem (32 ticks)
+[05:12:46] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:12:46] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:12:46] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:12:47] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:12:47] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:47] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:48] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:48] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:49] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:49] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:50] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:50] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:51] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:51] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:52] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:52] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:53] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:53] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:54] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:54] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:54] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:54] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:55] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:55] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:56] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:56] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:12:57] [Server thread/INFO]: [boss] saber_tooth uses Maul on entity.minecraft.iron_golem (32 ticks)
+[05:12:57] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:12:58] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:12:58] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:12:58] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:12:59] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:12:59] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:00] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:00] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:01] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:01] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:01] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:01] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:02] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:02] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:03] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:03] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:04] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:04] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:05] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:05] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:06] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:06] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:07] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:07] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:08] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:08] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:09] [Server thread/INFO]: [boss] saber_tooth uses Maul on entity.minecraft.iron_golem (32 ticks)
+[05:13:09] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:13:09] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:13:10] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:13:10] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:13:10] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:10] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:11] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:11] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:12] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:12] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:13] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:13] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:14] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:14] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:15] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:15] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:16] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:16] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:17] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:17] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:17] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:17] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:18] [Server thread/INFO]: [Saber-tooth, the Unseen Hunter] BOSSCHECK saber_tooth alive
+[05:13:18] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:18] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:19] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:19] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:20] [Server thread/INFO]: Saber-tooth, the Unseen Hunter has the following entity data: 520.0f
+[05:13:20] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:20] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:20] [Server thread/INFO]: [boss] saber_tooth uses Maul on entity.minecraft.iron_golem (32 ticks)
+[05:13:21] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:13:21] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:13:21] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:13:22] [Server thread/INFO]: [boss] saber_tooth deals 9.0 to entity.minecraft.iron_golem (mob)
+[05:13:22] [Server thread/INFO]: Iron Golem has the following entity data: 199.0f
+[05:13:23] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:23] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:24] [Server thread/INFO]: [boss] saber_tooth melee hit on entity.minecraft.iron_golem
+[05:13:24] [Server thread/INFO]: [boss] saber_tooth deals 15.0 to entity.minecraft.iron_golem (mob)
+[05:13:24] [Server thread/INFO]: Named entity Smilodon['Saber-tooth, the Unseen Hunter'/640, l='ServerLevel[world]', x=532.95, y=200.00, z=0.90] died: Saber-tooth, the Unseen Hunter was killed
+[05:13:24] [Server thread/INFO]: [boss] saber_tooth died (genericKill)
+[05:13:24] [Server thread/INFO]: Killed Saber-tooth, the Unseen Hunter
+[05:13:29] [Server thread/INFO]: [Server] BOSSCHECK saber_tooth dropped items
+[05:13:31] [Server thread/INFO]: Killed Iron Golem
+[05:13:33] [Server thread/INFO]: Marked [35, -2] chunks in minecraft:overworld from [34, -2] to [38, 2] to be force loaded
+[05:13:50] [Server thread/INFO]: Successfully filled 3249 block(s)
+[05:13:52] [Server thread/INFO]: [boss] woolly_rhino is fossil:elasmotherium (Elasmotherium), 700.0 hp, 6.3360004x8.448001 hitbox, baby false, adult true, age days 9, scale 4.2240005
+[05:13:52] [Server thread/INFO]: Summoned boss woolly_rhino (fossil:elasmotherium)
+[05:13:54] [Server thread/INFO]: Summoned new Iron Golem
+[05:13:59] [Server thread/INFO]: Applied 1.0 damage to Woolly Rhinoceros, the Tundra Ram
+[05:13:59] [Server thread/INFO]: [boss] woolly_rhino uses Charge on entity.minecraft.iron_golem (70 ticks)
+[05:14:01] [Server thread/INFO]: [boss] woolly_rhino deals 24.0 to entity.minecraft.iron_golem (mob)
+[05:14:05] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:05] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:06] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:06] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:07] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:07] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:09] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:09] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:09] [Server thread/INFO]: [boss] woolly_rhino uses Charge on entity.minecraft.iron_golem (70 ticks)
+[05:14:10] [Server thread/INFO]: [boss] woolly_rhino deals 24.0 to entity.minecraft.iron_golem (mob)
+[05:14:14] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:14] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:15] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:15] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:16] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:16] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:17] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:17] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:17] [Server thread/INFO]: [boss] woolly_rhino uses Charge on entity.minecraft.iron_golem (70 ticks)
+[05:14:19] [Server thread/INFO]: [boss] woolly_rhino deals 24.0 to entity.minecraft.iron_golem (mob)
+[05:14:23] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:23] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:24] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:24] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:25] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:25] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:26] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:26] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:27] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:27] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:29] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:29] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:30] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:30] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:31] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:31] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:32] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:32] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:33] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:33] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:35] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:35] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:36] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:36] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:37] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:37] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:38] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:38] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:39] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:39] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:41] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:41] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:42] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:42] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:43] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:43] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:44] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:44] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:45] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:45] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:46] [Server thread/INFO]: [Woolly Rhinoceros, the Tundra Ram] BOSSCHECK woolly_rhino alive
+[05:14:47] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:47] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:48] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:48] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:48] [Server thread/INFO]: Woolly Rhinoceros, the Tundra Ram has the following entity data: 700.0f
+[05:14:49] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:49] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:50] [Server thread/INFO]: Iron Golem has the following entity data: 432.0f
+[05:14:50] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:50] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:51] [Server thread/INFO]: [boss] woolly_rhino melee hit on entity.minecraft.iron_golem
+[05:14:51] [Server thread/INFO]: [boss] woolly_rhino deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:14:52] [Server thread/INFO]: Named entity Elasmotherium['Woolly Rhinoceros, the Tundra Ram'/663, l='ServerLevel[world]', x=602.39, y=200.00, z=3.64] died: Woolly Rhinoceros, the Tundra Ram was killed
+[05:14:52] [Server thread/INFO]: [boss] woolly_rhino died (genericKill)
+[05:14:52] [Server thread/INFO]: Killed Woolly Rhinoceros, the Tundra Ram
+[05:14:57] [Server thread/INFO]: [Server] BOSSCHECK woolly_rhino dropped items
+[05:14:59] [Server thread/INFO]: Killed Iron Golem
+[05:15:01] [Server thread/INFO]: Marked [39, -2] chunks in minecraft:overworld from [38, -2] to [42, 2] to be force loaded
+[05:15:18] [Server thread/INFO]: Successfully filled 3249 block(s)
+[05:15:20] [Server thread/INFO]: [boss] elephant is naturalist:elephant (Elephant), 850.0 hp, 6.25x8.75 hitbox, baby false, adult null, age days null, scale 1.0
+[05:15:20] [Server thread/INFO]: Summoned boss elephant (naturalist:elephant)
+[05:15:22] [Server thread/INFO]: Summoned new Iron Golem
+[05:15:27] [Server thread/INFO]: Applied 1.0 damage to Bull Elephant, Thunder of the Savanna
+[05:15:27] [Server thread/INFO]: [boss] elephant uses Charge on entity.minecraft.iron_golem (84 ticks)
+[05:15:29] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:29] [Server thread/INFO]: [boss] elephant deals 23.8 to entity.minecraft.iron_golem (mob)
+[05:15:32] [Server thread/INFO]: [boss] elephant uses Roar on entity.minecraft.iron_golem (32 ticks)
+[05:15:34] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:35] [Server thread/INFO]: [boss] elephant uses Fling on entity.minecraft.iron_golem (22 ticks)
+[05:15:35] [Server thread/INFO]: [boss] elephant deals 13.6 to entity.minecraft.iron_golem (mob)
+[05:15:35] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:36] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:37] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:38] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:39] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:40] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:41] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:42] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:43] [Server thread/INFO]: [boss] elephant uses Charge on entity.minecraft.iron_golem (84 ticks)
+[05:15:43] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:44] [Server thread/INFO]: [boss] elephant deals 23.8 to entity.minecraft.iron_golem (mob)
+[05:15:44] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:46] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:47] [Server thread/INFO]: [boss] elephant uses Slam on entity.minecraft.iron_golem (26 ticks)
+[05:15:47] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:47] [Server thread/INFO]: [boss] elephant deals 13.095783 to entity.minecraft.iron_golem (mob)
+[05:15:48] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:49] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:49] [Server thread/INFO]: [boss] elephant uses Fling on entity.minecraft.iron_golem (22 ticks)
+[05:15:50] [Server thread/INFO]: [boss] elephant deals 13.6 to entity.minecraft.iron_golem (mob)
+[05:15:50] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:51] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:52] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:53] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:54] [Server thread/INFO]: [boss] elephant uses Roar on entity.minecraft.iron_golem (32 ticks)
+[05:15:54] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:55] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:56] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:57] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:58] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:15:59] [Server thread/INFO]: [boss] elephant uses Charge on entity.minecraft.iron_golem (84 ticks)
+[05:15:59] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:00] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:00] [Server thread/INFO]: [boss] elephant deals 23.8 to entity.minecraft.iron_golem (mob)
+[05:16:01] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:02] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:03] [Server thread/INFO]: [boss] elephant uses Fling on entity.minecraft.iron_golem (22 ticks)
+[05:16:03] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:03] [Server thread/INFO]: [boss] elephant deals 13.6 to entity.minecraft.iron_golem (mob)
+[05:16:04] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:05] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:06] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:07] [Server thread/INFO]: [boss] elephant uses Slam on entity.minecraft.iron_golem (26 ticks)
+[05:16:07] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:08] [Server thread/INFO]: [boss] elephant deals 13.198018 to entity.minecraft.iron_golem (mob)
+[05:16:08] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:09] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:10] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:11] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:12] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:13] [Server thread/INFO]: [boss] elephant uses Fling on entity.minecraft.iron_golem (22 ticks)
+[05:16:13] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:14] [Server thread/INFO]: [Bull Elephant, Thunder of the Savanna] BOSSCHECK elephant alive
+[05:16:14] [Server thread/INFO]: [boss] elephant deals 13.6 to entity.minecraft.iron_golem (mob)
+[05:16:14] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:15] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:16] [Server thread/INFO]: Bull Elephant, Thunder of the Savanna has the following entity data: 849.38f
+[05:16:16] [Server thread/INFO]: [boss] elephant uses Roar on entity.minecraft.iron_golem (32 ticks)
+[05:16:16] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:17] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:18] [Server thread/INFO]: Iron Golem has the following entity data: 231.60004f
+[05:16:18] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:19] [Server thread/INFO]: [boss] elephant deals 17.0 to entity.minecraft.iron_golem (mob)
+[05:16:20] [Server thread/INFO]: Named entity Elephant['Bull Elephant, Thunder of the Savanna'/693, l='ServerLevel[world]', x=666.48, y=200.00, z=3.36] died: Bull Elephant, Thunder of the Savanna was killed
+[05:16:20] [Server thread/INFO]: [boss] elephant died (genericKill)
+[05:16:20] [Server thread/INFO]: Killed Bull Elephant, Thunder of the Savanna
+[05:16:25] [Server thread/INFO]: [Server] BOSSCHECK elephant dropped items
+[05:16:27] [Server thread/INFO]: Killed Iron Golem
+[05:16:29] [Server thread/INFO]: Marked [43, -2] chunks in minecraft:overworld from [42, -2] to [46, 2] to be force loaded
+[05:16:46] [Server thread/INFO]: Successfully filled 31213 block(s)
+[05:16:48] [Server thread/INFO]: Successfully filled 28717 block(s)
+[05:16:50] [Server thread/INFO]: [boss] bull_shark is animalgarden_bullshark:bullshark (ModMob), 650.0 hp, 7.4x3.0 hitbox, baby false, adult null, age days null, scale 1.0
+[05:16:50] [Server thread/INFO]: Summoned boss bull_shark (animalgarden_bullshark:bullshark)
+[05:16:52] [Server thread/INFO]: Summoned new Iron Golem
+[05:16:57] [Server thread/INFO]: Applied 1.0 damage to Giant Bull Shark, Blood in the Water
+[05:16:58] [Server thread/INFO]: [boss] bull_shark uses Leap on entity.minecraft.iron_golem (54 ticks)
+[05:17:00] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:00] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:01] [Server thread/INFO]: [boss] bull_shark uses Maul on entity.minecraft.iron_golem (32 ticks)
+[05:17:02] [Server thread/INFO]: [boss] bull_shark deals 9.6 to entity.minecraft.iron_golem (mob)
+[05:17:02] [Server thread/INFO]: [boss] bull_shark deals 9.6 to entity.minecraft.iron_golem (mob)
+[05:17:02] [Server thread/INFO]: [boss] bull_shark deals 9.6 to entity.minecraft.iron_golem (mob)
+[05:17:03] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:03] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:04] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:04] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:05] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:05] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:06] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:06] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:07] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:07] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:08] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:08] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:09] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:09] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:10] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:10] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:11] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:11] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:12] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:12] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:13] [Server thread/INFO]: [boss] bull_shark uses Maul on entity.minecraft.iron_golem (32 ticks)
+[05:17:13] [Server thread/INFO]: [boss] bull_shark deals 9.6 to entity.minecraft.iron_golem (mob)
+[05:17:14] [Server thread/INFO]: [boss] bull_shark deals 9.6 to entity.minecraft.iron_golem (mob)
+[05:17:14] [Server thread/INFO]: [boss] bull_shark deals 9.6 to entity.minecraft.iron_golem (mob)
+[05:17:14] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:14] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:15] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:15] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:16] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:16] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:17] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:17] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:18] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:18] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:19] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:19] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:20] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:20] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:21] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:21] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:22] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:22] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:23] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:23] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:24] [Server thread/INFO]: [boss] bull_shark uses Maul on entity.minecraft.iron_golem (32 ticks)
+[05:17:25] [Server thread/INFO]: [boss] bull_shark deals 9.6 to entity.minecraft.iron_golem (mob)
+[05:17:25] [Server thread/INFO]: [boss] bull_shark deals 9.6 to entity.minecraft.iron_golem (mob)
+[05:17:26] [Server thread/INFO]: [boss] bull_shark deals 9.6 to entity.minecraft.iron_golem (mob)
+[05:17:26] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:26] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:27] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:27] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:28] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:28] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:29] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:29] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:30] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:30] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:31] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:31] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:32] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:32] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:33] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:33] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:34] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:34] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:35] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:35] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:36] [Server thread/INFO]: [boss] bull_shark uses Maul on entity.minecraft.iron_golem (32 ticks)
+[05:17:36] [Server thread/INFO]: [boss] bull_shark deals 9.6 to entity.minecraft.iron_golem (mob)
+[05:17:37] [Server thread/INFO]: [boss] bull_shark deals 9.6 to entity.minecraft.iron_golem (mob)
+[05:17:37] [Server thread/INFO]: [boss] bull_shark deals 9.6 to entity.minecraft.iron_golem (mob)
+[05:17:38] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:38] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:39] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:39] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:40] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:40] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:41] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:41] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:42] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:42] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:43] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:43] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:44] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:44] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:44] [Server thread/INFO]: [Giant Bull Shark, Blood in the Water] BOSSCHECK bull_shark alive
+[05:17:45] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:45] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:46] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:46] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:46] [Server thread/INFO]: Giant Bull Shark, Blood in the Water has the following entity data: 649.2267f
+[05:17:47] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:47] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:47] [Server thread/INFO]: [boss] bull_shark uses Maul on entity.minecraft.iron_golem (32 ticks)
+[05:17:48] [Server thread/INFO]: Iron Golem has the following entity data: 266.20013f
+[05:17:48] [Server thread/INFO]: [boss] bull_shark deals 9.6 to entity.minecraft.iron_golem (mob)
+[05:17:48] [Server thread/INFO]: [boss] bull_shark deals 9.6 to entity.minecraft.iron_golem (mob)
+[05:17:49] [Server thread/INFO]: [boss] bull_shark deals 9.6 to entity.minecraft.iron_golem (mob)
+[05:17:49] [Server thread/INFO]: [boss] bull_shark melee hit on entity.minecraft.iron_golem
+[05:17:49] [Server thread/INFO]: [boss] bull_shark deals 16.0 to entity.minecraft.iron_golem (mob)
+[05:17:50] [Server thread/INFO]: Named entity ModMob['Giant Bull Shark, Blood in the Water'/721, l='ServerLevel[world]', x=726.50, y=194.42, z=0.50] died: Giant Bull Shark, Blood in the Water was killed
+[05:17:50] [Server thread/INFO]: [boss] bull_shark died (genericKill)
+[05:17:50] [Server thread/INFO]: Killed Giant Bull Shark, Blood in the Water
+[05:17:55] [Server thread/INFO]: [Server] BOSSCHECK bull_shark dropped items
+[05:17:57] [Server thread/INFO]: Killed Iron Golem
+[05:17:59] [Server thread/INFO]: Marked [47, -2] chunks in minecraft:overworld from [46, -2] to [50, 2] to be force loaded
+[05:18:16] [Server thread/INFO]: Successfully filled 3249 block(s)
+[05:18:18] [Server thread/INFO]: [boss] mammoth is fossil:mammoth (Mammoth), 1000.0 hp, 7.0380006x11.7300005 hitbox, baby false, adult true, age days 14, scale 5.8650002
+[05:18:18] [Server thread/INFO]: Summoned boss mammoth (fossil:mammoth)
+[05:18:20] [Server thread/INFO]: Summoned new Iron Golem
+[05:18:25] [Server thread/INFO]: Applied 1.0 damage to Woolly Mammoth, Skadi's Last Trial
+[05:18:25] [Server thread/INFO]: [boss] mammoth uses Charge on entity.minecraft.iron_golem (76 ticks)
+[05:18:27] [Server thread/INFO]: [boss] mammoth deals 32.0 to entity.minecraft.iron_golem (mob)
+[05:18:30] [Server thread/INFO]: [boss] mammoth uses Shockwave on entity.minecraft.iron_golem (58 ticks)
+[05:18:34] [Server thread/INFO]: [boss] mammoth uses Fling on entity.minecraft.iron_golem (24 ticks)
+[05:18:35] [Server thread/INFO]: [boss] mammoth deals 18.0 to entity.minecraft.iron_golem (mob)
+[05:18:36] [Server thread/INFO]: [boss] mammoth melee hit on entity.minecraft.iron_golem
+[05:18:36] [Server thread/INFO]: [boss] mammoth deals 20.0 to entity.minecraft.iron_golem (mob)
+[05:18:37] [Server thread/INFO]: [boss] mammoth melee hit on entity.minecraft.iron_golem
+[05:18:37] [Server thread/INFO]: [boss] mammoth deals 20.0 to entity.minecraft.iron_golem (mob)
+[05:18:39] [Server thread/INFO]: [boss] mammoth melee hit on entity.minecraft.iron_golem
+[05:18:39] [Server thread/INFO]: [boss] mammoth deals 20.0 to entity.minecraft.iron_golem (mob)
+[05:18:40] [Server thread/INFO]: [boss] mammoth melee hit on entity.minecraft.iron_golem
+[05:18:40] [Server thread/INFO]: [boss] mammoth deals 20.0 to entity.minecraft.iron_golem (mob)
+[05:18:42] [Server thread/INFO]: [boss] mammoth melee hit on entity.minecraft.iron_golem
+[05:18:42] [Server thread/INFO]: [boss] mammoth deals 20.0 to entity.minecraft.iron_golem (mob)
+[05:18:43] [Server thread/INFO]: [boss] mammoth melee hit on entity.minecraft.iron_golem
+[05:18:43] [Server thread/INFO]: [boss] mammoth deals 20.0 to entity.minecraft.iron_golem (mob)
+[05:18:44] [Server thread/INFO]: [boss] mammoth uses Charge on entity.minecraft.iron_golem (76 ticks)
+[05:18:46] [Server thread/INFO]: [boss] mammoth deals 32.0 to entity.minecraft.iron_golem (mob)
+[05:18:49] [Server thread/INFO]: [boss] mammoth uses Shockwave on entity.minecraft.iron_golem (58 ticks)
+[05:18:53] [Server thread/INFO]: [boss] mammoth melee hit on entity.minecraft.iron_golem
+[05:18:53] [Server thread/INFO]: [boss] mammoth deals 20.0 to entity.minecraft.iron_golem (mob)
+[05:18:54] [Server thread/INFO]: [boss] mammoth uses Fling on entity.minecraft.iron_golem (24 ticks)
+[05:18:54] [Server thread/INFO]: [boss] mammoth deals 18.0 to entity.minecraft.iron_golem (mob)
+[05:18:56] [Server thread/INFO]: [boss] mammoth melee hit on entity.minecraft.iron_golem
+[05:18:56] [Server thread/INFO]: [boss] mammoth deals 20.0 to entity.minecraft.iron_golem (mob)
+[05:18:57] [Server thread/INFO]: [boss] mammoth melee hit on entity.minecraft.iron_golem
+[05:18:57] [Server thread/INFO]: [boss] mammoth deals 20.0 to entity.minecraft.iron_golem (mob)
+[05:18:59] [Server thread/INFO]: [boss] mammoth melee hit on entity.minecraft.iron_golem
+[05:18:59] [Server thread/INFO]: [boss] mammoth deals 20.0 to entity.minecraft.iron_golem (mob)
+[05:19:00] [Server thread/INFO]: [boss] mammoth melee hit on entity.minecraft.iron_golem
+[05:19:00] [Server thread/INFO]: [boss] mammoth deals 20.0 to entity.minecraft.iron_golem (mob)
+[05:19:02] [Server thread/INFO]: [boss] mammoth melee hit on entity.minecraft.iron_golem
+[05:19:02] [Server thread/INFO]: [boss] mammoth deals 20.0 to entity.minecraft.iron_golem (mob)
+[05:19:03] [Server thread/INFO]: [boss] mammoth uses Charge on entity.minecraft.iron_golem (76 ticks)
+[05:19:04] [Server thread/INFO]: [boss] mammoth deals 32.0 to entity.minecraft.iron_golem (mob)
+[05:19:08] [Server thread/INFO]: [boss] mammoth uses Fling on entity.minecraft.iron_golem (24 ticks)
+[05:19:09] [Server thread/INFO]: [boss] mammoth deals 18.0 to entity.minecraft.iron_golem (mob)
+[05:19:10] [Server thread/INFO]: [boss] mammoth melee hit on entity.minecraft.iron_golem
+[05:19:10] [Server thread/INFO]: [boss] mammoth deals 20.0 to entity.minecraft.iron_golem (mob)
+[05:19:11] [Server thread/INFO]: [boss] mammoth uses Shockwave on entity.minecraft.iron_golem (58 ticks)
+[05:19:12] [Server thread/INFO]: [Woolly Mammoth, Skadi's Last Trial] BOSSCHECK mammoth alive
+[05:19:14] [Server thread/INFO]: Woolly Mammoth, Skadi's Last Trial has the following entity data: 1000.0f
+[05:19:15] [Server thread/INFO]: [boss] mammoth melee hit on entity.minecraft.iron_golem
+[05:19:15] [Server thread/INFO]: [boss] mammoth deals 20.0 to entity.minecraft.iron_golem (mob)
+[05:19:16] [Server thread/INFO]: Iron Golem has the following entity data: 570.0f
+[05:19:16] [Server thread/INFO]: [boss] mammoth melee hit on entity.minecraft.iron_golem
+[05:19:16] [Server thread/INFO]: [boss] mammoth deals 20.0 to entity.minecraft.iron_golem (mob)
+[05:19:18] [Server thread/INFO]: [boss] mammoth melee hit on entity.minecraft.iron_golem
+[05:19:18] [Server thread/INFO]: [boss] mammoth deals 20.0 to entity.minecraft.iron_golem (mob)
+[05:19:18] [Server thread/INFO]: Named entity Mammoth['Woolly Mammoth, Skadi's Last Trial'/803, l='ServerLevel[world]', x=796.37, y=200.00, z=-0.26] died: Woolly Mammoth, Skadi's Last Trial was killed
+[05:19:18] [Server thread/INFO]: [boss] mammoth died (genericKill)
+[05:19:18] [Server thread/INFO]: Killed Woolly Mammoth, Skadi's Last Trial
+[05:19:23] [Server thread/INFO]: [Server] BOSSCHECK mammoth dropped items
+[05:19:25] [Server thread/INFO]: Killed Iron Golem
+[05:19:27] [Server thread/INFO]: Saving the game (this may take a moment!)
+[05:19:28] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[05:19:28] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[05:19:28] [Server thread/INFO]: ThreadedAnvilChunkStorage (treasure_room): All chunks are saved
+[05:19:28] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[05:19:28] [Server thread/INFO]: ThreadedAnvilChunkStorage (anu_lair): All chunks are saved
+[05:19:28] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[05:19:28] [Server thread/INFO]: Saved the game
+[05:19:42] [Server thread/INFO]: Stopping the server
+[05:19:42] [Server thread/INFO]: Stopping server
+[05:19:42] [Server thread/INFO]: Saving players
+[05:19:42] [Server thread/INFO]: Saving worlds
+[05:19:42] [Physics thread/INFO]: Deleting VSPhysicsPipelineStage resources!
+[05:19:42] [Physics thread/WARN]: Physics pipeline ending
+[05:19:42] [DefaultDispatcher-worker-5/INFO]: VSPhysicsPipelineStage is fully deleted!
+[05:19:42] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[05:19:42] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[05:19:42] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/fossil:treasure_room
+[05:19:42] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[05:19:42] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/fossil:anu_lair
+[05:19:42] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[05:19:42] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[05:19:42] [Server thread/INFO]: ThreadedAnvilChunkStorage (treasure_room): All chunks are saved
+[05:19:42] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[05:19:42] [Server thread/INFO]: ThreadedAnvilChunkStorage (anu_lair): All chunks are saved
+[05:19:42] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
