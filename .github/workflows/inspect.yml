@@ -11,6 +11,9 @@ on:
       full:
         description: "Regex of class paths to dump in full (all members, string constants, goal registrations)"
         default: "prehistoric/base/Prehistoric$|prehistoric/(Mammoth|Smilodon|Megaloceros|Elasmotherium)$|naturalist/common/entity/(Bear|Hippo|Alligator|Elephant)$|animalgarden/[a-z]+/mob/ModMob$"
+      code:
+        description: "Regex of class paths to dump with full bytecode (javap -c)"
+        default: "prehistoric/base/Prehistoric$|prehistoric/Mammoth$|PrehistoricEntityInfo$|EntityInfo"
 
 permissions:
   contents: write
@@ -69,6 +72,10 @@ jobs:
               echo "--- registerGoals"
               javap -c -p -cp x_$n "${cls//\//.}" 2>/dev/null | awk '/registerGoals|method_5959/{f=1} f&&/new|invokevirtual.*add|method_6277/{print} f&&/return$/{f=0}'
             done > $o/full.txt
+            find x_$n -name "*.class" | sed "s#^x_$n/##; s#\.class\$##" | grep -E '${{ inputs.code }}' | while read cls; do
+              echo "=================== $cls"
+              javap -c -p -cp x_$n "${cls//\//.}" 2>/dev/null
+            done > $o/code.txt
           done
       - name: Publish to the inspect branch
         run: |

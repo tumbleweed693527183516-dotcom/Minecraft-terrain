@@ -17,7 +17,7 @@ Status: **pending** (not checked yet) · **ok** (Fabric 1.20.1, fits) · **no** 
 | # | Mod | Link | Loader / version | Licence | Creatures / models worth using | Status | Notes |
 |---|-----|------|------------------|---------|--------------------------------|--------|-------|
 
-| 6 | Naturalist (Starfish Studios) | https://modrinth.com/mod/naturalist | Fabric 1.20.1: yes (5.0pre4, beta) | Assets ARR, code MIT | GeckoLib models: bear, moose, deer, hippo, alligator, rhino, elephant, mammoth, lion, giraffe, boar, ostrich, vulture, snake, tortoise, capybara... | ok | CHOSEN: model source for Chapter 1: cave bear, elk (moose), hippo, crocodile (alligator), woolly rhino, elephant, mammoth. Needs GeckoLib (already in pack). |
+| 6 | Naturalist (Starfish Studios) | https://modrinth.com/mod/naturalist | Fabric 1.20.1: yes (5.0pre4, beta) | Assets ARR, code MIT | GeckoLib models: bear, deer, hippo, alligator, rhino, elephant, lion, giraffe, boar, zebra, ostrich, vulture, snakes, tortoise... (checked in the jar: no moose, no mammoth) | ok | CHOSEN: model source for Chapter 1: cave bear, hippo, crocodile (alligator), elephant. Needs GeckoLib (already in pack). |
 | 7 | Animal Garden series (Aquarius.playz) | https://modrinth.com/user/Aquarius.playz | Fabric 1.20.1: yes (one mod per animal) | ARR | Western Gorilla, Bull Shark, Crocodile, Hippopotamus, White Rhinoceros, Bison, Lion, Snow Leopard, Spotted Hyena... | ok | CHOSEN: gorilla and bull shark (install only those two). |
 | 8 | Fossils and Archeology: Revival | https://modrinth.com/mod/fossils-and-archeology-revival | Fabric 1.20.1: yes (9.3.4.0) | FA License | 60+ prehistoric creatures incl. mammoth, smilodon (saber-tooth), terror bird, dodo, dinosaurs (revived from fossils/DNA) | ok | CHOSEN for the saber-tooth (smilodon); brings a whole dinosaur system with it. Several dependencies. |
 
@@ -46,15 +46,15 @@ Fierce but believable, nothing mythical. Each tied to a Vivid Lands biome. Order
 | # | Boss | Home biome | Fight ideas (draft) | Model source |
 |---|------|------------|---------------------|--------------|
 | 1 | Cave Bear | taiga lakelands, Caledonian pinewood (cave lair) | Swipes, rearing roar that slows you; a good first boss | Naturalist bear |
-| 2 | Giant Irish Elk | highland moors | Antler charges, knockback; calls a small herd | Naturalist moose |
+| 2 | Giant Irish Elk | highland moors | Antler charges, knockback; calls a small herd | Fossils and Archeology megaloceros (the real Irish elk; Naturalist has no moose) |
 | 3 | Hippopotamus | oasis, tropical rivers | Hides underwater then lunges; huge bite, capsizes boats | Naturalist hippo |
 | 4 | Nile Crocodile (giant) | fen, tropical rivers | Ambush from water, death-roll grab | Naturalist alligator |
 | 5 | Silverback Gorilla | rainforest, cloud forest | Chest-beat stun, boulder throws, ground pound | Animal Garden gorilla |
 | 6 | Saber-tooth Cat | endless steppe, golden savanna | Stalks invisibly in tall grass, pounce and bleed | Fossils and Archeology smilodon (chosen) |
-| 7 | Woolly Rhinoceros | tundra, glacial outwash | Unstoppable charges that break blocks; dodge into walls to stun it | Naturalist rhino |
+| 7 | Woolly Rhinoceros | tundra, glacial outwash | Unstoppable charges that break blocks; dodge into walls to stun it | Fossils and Archeology elasmotherium (Ice Age rhino; Naturalist rhino as fallback) |
 | 8 | African Elephant bull | golden savanna | Stampede waves, trunk throw | Naturalist elephant |
 | 9 | Bull Shark (giant) | northern and temperate oceans | Naval fight around your ship; breaches and rams | Animal Garden bull shark |
-| 10 | Woolly Mammoth | glacier, tundra | Chapter 1 finale: tusk sweeps, trumpet shockwave, stomp quakes; maybe rideable reward | Naturalist mammoth |
+| 10 | Woolly Mammoth | glacier, tundra | Chapter 1 finale: tusk sweeps, trumpet shockwave, stomp quakes; maybe rideable reward | Fossils and Archeology mammoth (Naturalist has none) |
 
 ### Chapter 2: Norse mythology - custom, models to be supplied
 
@@ -345,3 +345,36 @@ The trophies exist as items now; the bosses will drop them once they are built (
 | Khopesh, Dragon Guandao, Gladius, Kopis | civilization | cutlass / glaive / sword / cutlass | Civilizations leaders' drops (later) |
 | Macuahuitl, Katana, Flamberge Zweihänder | civilization | mace / katana / claymore | Ancient Structures bosses (later) |
 | Ragnarök, Surtr's Blade | endgame, glowing molten core | claymore | Fenrir's Fang + 2 netherite ingots + magma block + blaze rod + Fáfnir's Gold + Jörmungandr's Scale |
+
+## Bosses (v0.23, code in ragnarok/src/main/java/com/vividlands/ragnarok/boss)
+
+How they work: each boss is a real creature from another mod, spawned as itself (so it keeps that mod's model, animations
+and sounds; nothing is copied), then made into a boss: drawn and hit-boxed bigger, much more health, armour and damage,
+a boss bar for everyone within 48 blocks, special moves on cooldowns, an enraged phase below half health (faster,
+harder hitting, moves come back sooner), immune to falling, suffocating and drowning, can't be fed, tamed or ridden,
+and back to full health if nobody fights it for 30 seconds. Beating one drops its trophy, gives a lot of XP, and counts
+for everyone who fought it ("Skadi's trials: 3 of 10 complete"). Creature ids were checked in the mod jars (Mod inspect
+workflow). Stats are placeholders, to be balanced later.
+
+Where they appear: the wild bosses roam their home biomes. Every 30 s a player in a boss's biome has a 1 in 6 chance to
+meet it 28-48 blocks away, if no other boss is near, the player has unlocked it, and it hasn't appeared in that
+1024 x 1024 region before. The Silverback appears once per Mayan temple when a player who unlocked it walks in.
+Gamerule `vividlandsBossSpawning` turns natural appearances off. Commands (operators): `/ragnarok boss summon <id> [pos]`,
+`list`, `progress <player>`, `forget <player>`, `resetspawns`.
+
+| # | Boss (id) | Creature (fallbacks) | Home | Unlocks after | Moves | Drops |
+|---|-----------|----------------------|------|---------------|-------|-------|
+| 1 | Cave Bear, Den-Mother of the Pines (cave_bear) | naturalist:bear (polar bear), x1.7 | taiga lakelands, Caledonian pinewood, boreal snowwoods, any taiga | - | own bite and swipe; roar (slows, weakens); 3-swipe maul; rearing ground smash | Cave Bear Pelt |
+| 2 | Great Irish Elk, Lord of the Moors (irish_elk) | fossil:megaloceros (goat) | highland moors, alpine meadow, meadow | - | antler charge (stunned if it hits a wall); calls 2 elk; rearing stomp | Great Antlers |
+| 3 | Hippopotamus, Terror of the Oasis (hippo) | naturalist:hippo (ravager), x1.5 | oasis, tropical river, river | - | own bite, attacks boats; lunge out of the water; capsizes boats and ships; double chomp | Hippo Hide |
+| 4 | Giant Crocodile, the River's Jaws (crocodile) | naturalist:alligator, x2.0 | fen, tropical river, swamp, mangrove | Hippopotamus | death roll (holds you in its jaws; hit it hard to break free); water lunge; tail sweep | Crocodile Scales |
+| 5 | Silverback, King of the Temple (silverback) | animalgarden_westerngorilla:westerngorilla (iron golem), x1.4 | Mayan temples (Ancient Structures) | any 3 | own punches; chest-beat roar (stuns); throws boulders; ground pound | Silverback Fist |
+| 6 | Saber-tooth, the Unseen Hunter (saber_tooth) | fossil:smilodon (wolf) | endless steppe, golden savanna, wildflower prairie, savanna | any 4 | invisible while it stalks from afar; pounce (heavy bleeding); 4-bite maul; every bite bleeds | Saber Fang |
+| 7 | Woolly Rhinoceros, the Tundra Ram (woolly_rhino) | fossil:elasmotherium (naturalist:rhino, ravager) | tundra, glacial outwash, snowy plains | Cave Bear | charge that smashes through soft blocks (dirt, sand, snow, leaves, glass) and is stunned by hard ones; stomp (slows) | Rhino Horn |
+| 8 | Bull Elephant, Thunder of the Savanna (elephant) | naturalist:elephant (ravager), x1.3 | golden savanna, savanna | any 6 | own attacks; stampede charge; trunk fling (throws you high); trumpet (weakens); stomp | Ivory x2 |
+| 9 | Giant Bull Shark, Blood in the Water (bull_shark) | animalgarden_bullshark:bullshark (dolphin), x2.0 | northern and temperate oceans, deep oceans | Crocodile | breach (leaps out of the water at you, heavy bleeding); rams boats and ships; bite flurry; every bite bleeds | Shark Tooth x2 |
+| 10 | Woolly Mammoth, Skadi's Last Trial (mammoth) | fossil:mammoth (ravager) | glacier, glacier peaks, ice spikes | all other 9 | trumpet shockwave (jump over the ring); stomp quake (slows); block-smashing charge; tusk fling | Mammoth Tusk x2, Frozen Heart |
+
+New: the Bleeding effect (1 damage a second per level, red particles) and thrown boulders (Silverback).
+Chapter 2 bosses come next (Huginn and Muninn, Geri and Freki, Sleipnir, Skoll and Hati, Garmr, Nidhoggr, Fafnir,
+Jormungandr, Fenrir), using the structures listed above.
