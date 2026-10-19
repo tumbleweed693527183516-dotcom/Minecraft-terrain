@@ -1,0 +1,69 @@
+name: Mod inspect
+
+# Downloads mods from Modrinth (Fabric 1.20.1) and lists what the boss code needs from them: entity ids,
+# GeckoLib model / animation names, entity classes and their AI goals. Results: inspect branch.
+on:
+  workflow_dispatch:
+    inputs:
+      mods:
+        description: "Modrinth slugs (space separated), slug@versionid to pin"
+        default: "naturalist@3B6AIHXy animal-garden-western-gorilla animal-garden-bull-shark animal-garden-common-raven fossils-and-archeology-revival saints-dragons backported-wolves civilizations mebahels-creatures-draugr"
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Download and inspect
+        run: |
+          mkdir -p jars out
+          python3 - <<'EOF'
+          import json, urllib.request, urllib.parse
+          H = {"User-Agent": "vividlands-inspect"}
+          def get(u):
+              return json.loads(urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=60).read())
+          for spec in "${{ inputs.mods }}".split():
+              slug, _, pin = spec.partition("@")
+              if pin:
+                  v = get(f"https://api.modrinth.com/v2/version/{pin}")
+              else:
+                  q = urllib.parse.urlencode({"loaders": '["fabric"]', "game_versions": '["1.20.1"]'})
+                  v = get(f"https://api.modrinth.com/v2/project/{slug}/version?{q}")[0]
+              f = next((x for x in v["files"] if x["primary"]), v["files"][0])
+              print(slug, v["version_number"], f["filename"])
+              open(f"jars/{slug}.jar", "wb").write(urllib.request.urlopen(urllib.request.Request(f["url"], headers=H), timeout=180).read())
+          EOF
+          cd jars
+          for j in *.jar; do
+            n=${j%.jar}; o=../out/$n; mkdir -p $o x_$n
+            unzip -q -o "$j" -d x_$n
+            # nested jars (jar-in-jar)
+            find x_$n -name "*.jar" | while read nj; do unzip -q -o "$nj" -d x_$n/_nested 2>/dev/null || true; done
+            find x_$n -type f | sed "s#^x_$n/##" | sort > $o/files.txt
+            find x_$n -path "*lang/en_us.json" -exec cat {} + | grep -oE '"entity\.[^"]+"\s*:\s*"[^"]*"' | sort -u > $o/entities.txt || true
+            find x_$n -name "*.animation.json" | while read a; do
+              echo "== ${a#x_$n/}"; python3 -c "import json,sys; d=json.load(open(sys.argv[1])); print('\n'.join(d.get('animations',{}).keys()))" "$a" 2>/dev/null
+            done > $o/animations.txt
+            # entity classes: their goals and the methods / fields they declare
+            find x_$n -name "*.class" -ipath "*entit*" | head -400 | while read c; do
+              cls=${c#x_$n/}; cls=${cls%.class}
+              echo "== $cls"
+              javap -p -cp x_$n "${cls//\//.}" 2>/dev/null | head -120
+              javap -c -p -cp x_$n "${cls//\//.}" 2>/dev/null | grep -oE "(Goal|goal)[A-Za-z$/]*" | sort -u | head -40
+            done > $o/classes.txt
+            cp x_$n/fabric.mod.json $o/ 2>/dev/null || true
+          done
+      - name: Publish to the inspect branch
+        run: |
+          cd out
+          git init -q && git checkout -q -b inspect
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -qm "Mod inspect ${{ github.run_id }}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:inspect
