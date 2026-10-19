@@ -4,6 +4,10 @@ name: Render test
 # software OpenGL, dresses armour stands in the Viking armour and takes screenshots. Results: rendertest branch.
 on:
   workflow_dispatch:
+    inputs:
+      scene:
+        description: "armor = armour and weapons; bosses = every boss, with the creature mods they are built on"
+        default: "armor"
 
 permissions:
   contents: write
@@ -23,6 +27,24 @@ jobs:
           gradle-version: "8.10.2"
       - name: Install virtual display and software OpenGL
         run: sudo apt-get update -q && sudo apt-get install -y -q xvfb libgl1-mesa-dri mesa-utils libglu1-mesa
+      - name: Creature mods for the bosses (from the latest modpack)
+        if: inputs.scene == 'bosses'
+        run: |
+          mkdir -p ragnarok/run/mods
+          git fetch -q origin dist && git show origin/dist:$(git ls-tree --name-only origin/dist | grep mrpack | head -1) > pack.mrpack
+          python3 - <<'PY'
+          import json, zipfile, urllib.request
+          z = zipfile.ZipFile("pack.mrpack")
+          idx = json.loads(z.read("modrinth.index.json"))
+          want = ("naturalist", "fossil", "animalgarden", "architectury", "terrablender", "cardinal", "morehitboxes", "cloth-config")
+          for f in idx["files"]:
+              name = f["path"].split("/")[-1]
+              if any(w in name.lower() for w in want):
+                  print("download", name)
+                  req = urllib.request.Request(f["downloads"][0], headers={"User-Agent": "vividlands-rendertest"})
+                  open("ragnarok/run/mods/" + name, "wb").write(urllib.request.urlopen(req, timeout=120).read())
+          PY
+          ls ragnarok/run/mods
       - name: Run the client and take screenshots
         env:
           LIBGL_ALWAYS_SOFTWARE: "1"
@@ -31,7 +53,7 @@ jobs:
           set +e
           mkdir -p ragnarok/run
           printf "onboardAccessibility:false\nrenderDistance:6\nsimulationDistance:5\nnarrator:0\npauseOnLostFocus:false\n" > ragnarok/run/options.txt
-          timeout 40m xvfb-run -a -s "-screen 0 1280x720x24" gradle :ragnarok:runRenderTest --no-daemon --console=plain > client.log 2>&1
+          timeout 40m xvfb-run -a -s "-screen 0 1280x720x24" gradle :ragnarok:runRenderTest -Pscene=${{ inputs.scene || 'armor' }} --no-daemon --console=plain > client.log 2>&1
           echo "exit: $?"
           tail -n 60 client.log
           ls -la ragnarok/run/screenshots || true

@@ -57,6 +57,46 @@ final class RenderTest {
                 x, z, yaw, p, p, p, p);
     }
 
+    /** Bosses scene (-Dvividlands.rendertest.scene=bosses): every boss posed on a platform next to a player-sized stand. */
+    private static void planBosses(Minecraft mc) {
+        String[] ids = {"cave_bear", "irish_elk", "hippo", "crocodile", "silverback", "saber_tooth", "woolly_rhino",
+                "elephant", "bull_shark", "mammoth"};
+        double[] dist = {9, 10, 10, 10, 9, 8, 11, 13, 11, 16};
+        steps.add(() -> {
+            for (String c : new String[]{"gamerule doDaylightCycle false", "time set 6000", "weather clear",
+                    "gamerule doMobSpawning false", "gamerule vividlandsBossSpawning false", "tp @a 0.5 202 8.5 180 0"}) cmd(mc, c);
+            mc.options.hideGui = true;
+        });
+        for (int i = 0; i < ids.length; i++) {
+            double x = i * 24 + 0.5;
+            String id = ids[i];
+            double d = dist[i];
+            steps.add(() -> {
+                cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 199 -10 %d 199 %d minecraft:grass_block", (int) x - 11, (int) x + 11, (int) d + 4));
+                cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 200 -10 %d 215 %d minecraft:air", (int) x - 11, (int) x + 11, (int) d + 4));
+                if (id.equals("bull_shark")) {
+                    cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 199 -6 %d 204 6 minecraft:glass", (int) x - 7, (int) x + 7));
+                    cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 200 -5 %d 204 5 minecraft:water", (int) x - 6, (int) x + 6));
+                }
+                cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f 203 %.1f 180 10", x, d));
+            });
+            steps.add(() -> {
+                cmd(mc, String.format(java.util.Locale.ROOT, "ragnarok boss summon %s %.1f %d 0.5", id, x, id.equals("bull_shark") ? 201 : 200));
+                cmd(mc, String.format(java.util.Locale.ROOT,
+                        "summon minecraft:armor_stand %.1f 200 3.5 {NoBasePlate:1b,NoGravity:1b,ShowArms:1b,Rotation:[180f,0f]}", x + 3.5));
+            });
+            steps.add(() -> {
+                cmd(mc, "execute as @e[tag=vividlands_ragnarok.boss." + id + "] run data merge entity @s {NoAI:1b,Rotation:[150f,0f]}");
+                cmd(mc, "execute as @e[tag=vividlands_ragnarok.boss." + id + "] at @s run tp @s " + x + " ~ 0.5 150 0");
+            });
+            steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f %.1f %.1f 180 12", x, 201.0 + d * 0.18, d)));
+            steps.add(() -> shot(mc, "boss_" + id));
+            steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f %.1f %.1f 135 14", x + d * 0.7, 201.5 + d * 0.2, d * 0.7)));
+            steps.add(() -> shot(mc, "boss_" + id + "_angle"));
+        }
+        steps.add(mc::stop);
+    }
+
     private static void plan(Minecraft mc) {
         steps.add(() -> {
             for (String c : new String[]{"gamerule doDaylightCycle false", "time set 6000", "weather clear",
@@ -180,7 +220,8 @@ final class RenderTest {
             if (mc.player != null && mc.level != null) {
                 stage = 2;
                 wait = 100;
-                plan(mc);
+                if ("bosses".equals(System.getProperty("vividlands.rendertest.scene"))) planBosses(mc);
+                else plan(mc);
                 Ragnarok.LOG.info("render test: in world, {} steps", steps.size());
             }
             return;
