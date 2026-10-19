@@ -64,7 +64,7 @@ public final class BossDef {
     BossDef interval(int ticks) { attackInterval = ticks; return this; }
     BossDef melee(Melee m) { melee = m; return this; }
     BossDef bar(BossEvent.BossBarColor c) { color = c; return this; }
-    BossDef aquatic() { aquatic = true; return this; }
+    BossDef inSea() { aquatic = true; return this; }
     BossDef ability(Supplier<Ability> a) { abilities.add(a); return this; }
     BossDef onHit(Supplier<MobEffectInstance> e) { onHit.add(e); return this; }
     BossDef drop(String item, int count) { drops.add(new String[]{item, Integer.toString(count)}); return this; }

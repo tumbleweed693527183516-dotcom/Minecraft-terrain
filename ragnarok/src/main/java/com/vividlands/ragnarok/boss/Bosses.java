@@ -178,7 +178,7 @@ public final class Bosses {
                 .biomes("vividlands:golden_savanna", "minecraft:savanna", "minecraft:savanna_plateau");
 
         def("bull_shark").on("animalgarden_bullshark:bullshark", "minecraft:dolphin")
-                .stats(650, 16, 6).scale(2.0f).melee(Melee.BOSS).reach(1.0f).interval(20).aquatic().bar(BossBarColor.BLUE)
+                .stats(650, 16, 6).scale(2.0f).melee(Melee.BOSS).reach(1.0f).interval(20).inSea().bar(BossBarColor.BLUE)
                 .onHit(() -> bleed(100, 0))
                 .ability(() -> new Leap(160, 14, 3, 14, 1.3, 0.7, true, () -> bleed(160, 1)))
                 .ability(() -> new Capsize(140, 20, 80))
@@ -288,12 +288,12 @@ public final class Bosses {
         for (ServerPlayer p : PlayerLookup.tracking(mob)) sync(p, mob);
     }
 
-    static int minionCount(BossFight f) {
+    public static int minionCount(BossFight f) {
         f.minions.removeIf(m -> !m.isAlive());
         return f.minions.size();
     }
 
-    static void spawnMinion(BossFight f, float health, float damage) {
+    public static void spawnMinion(BossFight f, float health, float damage) {
         Mob boss = f.mob();
         Entity e = boss.getType().create(f.level());
         if (!(e instanceof Mob m)) return;
