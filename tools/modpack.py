@@ -134,6 +134,9 @@ RESOLVE = [
     ("combat-roll", True),                 # dodge roll
     ("rogues-and-warriors", True),         # berserker-style warrior and rogue class gear and skills
     ("mythicmetals", True),                # many new ores, each with tools, weapons and armor
+    # --- bows ---
+    ("archers", True),                     # RPG Series archer: longbows, crossbows, archer armor, arrow skills
+    ("more-bows-and-arrows", True),        # ~50 bows and arrows with special effects, new bow enchantments
     # --- quality of life (the usual modpack set) ---
     ("emi", True),                         # recipe viewer (Create shows its machine recipes in it)
     ("jade", True),                        # what am I looking at: block/mob name, mod, health, machine status
