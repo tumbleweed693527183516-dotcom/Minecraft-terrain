@@ -86,6 +86,7 @@ public final class Bosses {
     public static MobEffect BLEEDING;
     public static GameRules.Key<GameRules.BooleanValue> SPAWNING;
     private static boolean addingMinion;
+    private static final List<Mob> LEFTOVER_MINIONS = new ArrayList<>();
     /** -Dvividlands.bossdebug=true: log every boss move (pack test). */
     public static final boolean DEBUG = Boolean.getBoolean("vividlands.bossdebug");
 
@@ -418,8 +419,7 @@ public final class Bosses {
         ServerEntityEvents.ENTITY_LOAD.register((entity, level) -> {
             if (!(entity instanceof Mob mob)) return;
             if (isMinion(mob)) {               // minions only live as long as the fight they were called into
-                if (addingMinion) return;
-                mob.discard();
+                if (!addingMinion) LEFTOVER_MINIONS.add(mob);      // removed next tick (not while the chunk loads)
                 return;
             }
             for (String tag : mob.getTags()) {
@@ -437,6 +437,10 @@ public final class Bosses {
             }
         });
         ServerTickEvents.END_WORLD_TICK.register(level -> {
+            if (!LEFTOVER_MINIONS.isEmpty()) {
+                LEFTOVER_MINIONS.forEach(Entity::discard);
+                LEFTOVER_MINIONS.clear();
+            }
             List<BossFight> list = new ArrayList<>();
             for (BossFight f : FIGHTS.values()) if (f.level() == level) list.add(f);
             for (BossFight f : list) {
