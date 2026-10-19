@@ -137,6 +137,11 @@ RESOLVE = [
     # --- bows ---
     ("archers", True),                     # RPG Series archer: longbows, crossbows, archer armor, arrow skills
     ("more-bows-and-arrows", True),        # ~50 bows and arrows with special effects, new bow enchantments
+    ("too-many-bows", True),               # 30+ bows, each with its own effect; Ricochet and Spectral enchantments
+    ("progressive-archery", True),         # tiered bows and arrows (better bows as you progress)
+    ("truly-modular-archery", True),       # build your own bow from parts (limbs, string, grip) with their own stats
+    ("arch-bows", True),                   # more bows
+    ("extra-bows", True),                  # more bows (mod form)
     # --- quality of life (the usual modpack set) ---
     ("emi", True),                         # recipe viewer (Create shows its machine recipes in it)
     ("jade", True),                        # what am I looking at: block/mob name, mod, health, machine status
