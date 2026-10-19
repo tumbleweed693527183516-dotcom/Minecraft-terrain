@@ -59,6 +59,7 @@ public final class BossFight {
         this.def = def;
         this.bar = new ServerBossEvent(Component.translatable(def.nameKey()), def.color, BossEvent.BossBarOverlay.NOTCHED_10);
         for (var s : def.abilities) abilities.add(s.get());
+        for (Ability a : abilities) cooldowns.put(a, 40 + mob.getRandom().nextInt(60));   // first moves after 2-5 s
         enraged = mob.getHealth() <= mob.getMaxHealth() * 0.5f;
         if (enraged) applyEnrage(false);
     }
@@ -83,7 +84,10 @@ public final class BossFight {
         int age = mob.tickCount;
         if (age % 5 == 0) updateBar();
         if (age % 10 == 0) updateTarget();
-        if (age % 20 == 0) Compat.keepAwake(mob);
+        if (age % 20 == 0) {
+            Compat.keepAwake(mob);
+            Bosses.applyStats(mob, def);
+        }
         bar.setProgress(Math.max(0f, mob.getHealth() / mob.getMaxHealth()));
 
         if (target == null) {

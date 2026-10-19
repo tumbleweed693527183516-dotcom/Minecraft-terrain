@@ -63,7 +63,14 @@ final class BossMeleeGoal extends Goal {
         double dx = t.getX() - mob.getX(), dz = t.getZ() - mob.getZ();
         double gap = Math.sqrt(dx * dx + dz * dz) - mob.getBbWidth() * 0.5 - t.getBbWidth() * 0.5;
         double speed = f != null && f.enraged() ? 1.35 : 1.15;
-        if (gap > reach - 0.2) {
+        if (mob.isInWater() && f != null && f.def().aquatic()) {
+            // sea bosses: swim straight at the target (their own swimming AI is too timid for a boss)
+            net.minecraft.world.phys.Vec3 to = t.position().add(0, t.getBbHeight() * 0.5, 0).subtract(mob.position()).normalize();
+            double s = speed * 0.09;
+            mob.setDeltaMovement(mob.getDeltaMovement().scale(0.85).add(to.scale(s)));
+            mob.setYRot((float) (Math.atan2(to.z, to.x) * 180 / Math.PI) - 90f);
+            mob.setYBodyRot(mob.getYRot());
+        } else if (gap > reach - 0.2) {
             if (--repath <= 0) {
                 repath = 8 + mob.getRandom().nextInt(5);
                 boolean ok = mob.getNavigation().moveTo(t, speed);

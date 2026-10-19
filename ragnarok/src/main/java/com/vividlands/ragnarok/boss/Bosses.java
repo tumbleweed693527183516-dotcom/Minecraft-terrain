@@ -123,7 +123,7 @@ public final class Bosses {
                         "#minecraft:is_taiga");
 
         def("irish_elk").on("fossil:megaloceros", "minecraft:goat")
-                .stats(360, 11, 6).melee(Melee.BOSS).reach(1.6f).knockback(1.4f).bar(BossBarColor.GREEN)
+                .stats(360, 11, 6).scale(1.3f).melee(Melee.BOSS).reach(1.6f).knockback(1.4f).bar(BossBarColor.GREEN)
                 .ability(() -> new Charge(160, 18, 40, 0.75, 1.3, 2.2, false, 50))
                 .ability(() -> new Summon(500, 2, 3, 40, 0.4f))
                 .ability(() -> new Slam(260, 12, 4, 0.9, 0.6, null))
@@ -147,7 +147,7 @@ public final class Bosses {
                 .biomes("vividlands:fen", "vividlands:tropical_river", "minecraft:swamp", "minecraft:mangrove_swamp");
 
         def("silverback").on("animalgarden_westerngorilla:westerngorilla", "minecraft:iron_golem")
-                .stats(550, 14, 8).scale(1.4f).reach(1.4f).bar(BossBarColor.WHITE)
+                .stats(550, 14, 8).scale(2.0f).reach(1.4f).bar(BossBarColor.WHITE)
                 .ability(() -> new Roar(260, 9, 20, 1.2, SoundEvents.RAVAGER_ROAR, 1.3f,
                         () -> BossFight.stunEffect(40), () -> fx(MobEffects.WEAKNESS, 100, 0)))
                 .ability(() -> new Throw(180, 16, 2, 10, 0.9))
@@ -157,7 +157,7 @@ public final class Bosses {
                         "ancientstructures:mayan_temple3", "ancientstructures:mayan_temple4");
 
         def("saber_tooth").on("fossil:smilodon", "minecraft:wolf")
-                .stats(520, 15, 6).melee(Melee.BOSS).reach(1.1f).interval(18).bar(BossBarColor.YELLOW)
+                .stats(520, 15, 6).scale(1.3f).melee(Melee.BOSS).reach(1.1f).interval(18).bar(BossBarColor.YELLOW)
                 .onHit(() -> bleed(100, 0))
                 .ability(() -> new Stalk(9))
                 .ability(() -> new Leap(140, 10, 5, 16, 1.4, 0.45, false, () -> bleed(160, 1)))
@@ -167,7 +167,7 @@ public final class Bosses {
                         "minecraft:savanna");
 
         def("woolly_rhino").on("fossil:elasmotherium", "naturalist:rhino", "minecraft:ravager")
-                .stats(700, 16, 12).melee(Melee.BOSS).reach(1.5f).knockback(1.2f).bar(BossBarColor.WHITE)
+                .stats(700, 16, 12).scale(1.2f).melee(Melee.BOSS).reach(1.5f).knockback(1.2f).bar(BossBarColor.WHITE)
                 .ability(() -> new Charge(140, 20, 50, 0.85, 1.5, 2.6, true, 80))
                 .ability(() -> new Slam(260, 14, 5, 0.9, 0.5, () -> fx(MobEffects.MOVEMENT_SLOWDOWN, 60, 1)))
                 .drop("vividlands_ragnarok:rhino_horn", 1).xp(450).after("cave_bear")
@@ -184,7 +184,7 @@ public final class Bosses {
                 .biomes("vividlands:golden_savanna", "minecraft:savanna", "minecraft:savanna_plateau");
 
         def("bull_shark").on("animalgarden_bullshark:bullshark", "minecraft:dolphin")
-                .stats(650, 16, 6).scale(2.0f).melee(Melee.BOSS).reach(1.0f).interval(20).inSea().bar(BossBarColor.BLUE)
+                .stats(650, 16, 6).scale(2.5f).melee(Melee.BOSS).reach(1.0f).interval(20).inSea().bar(BossBarColor.BLUE)
                 .onHit(() -> bleed(100, 0))
                 .ability(() -> new Leap(160, 14, 3, 14, 1.3, 0.7, true, () -> bleed(160, 1)))
                 .ability(() -> new Capsize(140, 20, 80))
@@ -194,7 +194,7 @@ public final class Bosses {
                         "vividlands:deep_temperate_ocean", "#minecraft:is_deep_ocean");
 
         def("mammoth").on("fossil:mammoth", "minecraft:ravager")
-                .stats(1000, 20, 14).melee(Melee.BOSS).reach(2.0f).knockback(1.4f).interval(30).bar(BossBarColor.WHITE)
+                .stats(1000, 20, 14).scale(1.4f).melee(Melee.BOSS).reach(2.0f).knockback(1.4f).interval(30).bar(BossBarColor.WHITE)
                 .ability(() -> new Shockwave(260, 24, 16, 0.5, 1.0))
                 .ability(() -> new Slam(220, 18, 7, 1.2, 0.8, () -> fx(MobEffects.MOVEMENT_SLOWDOWN, 80, 2)))
                 .ability(() -> new Charge(240, 26, 50, 0.7, 1.6, 3.0, true, 60))
@@ -268,15 +268,35 @@ public final class Bosses {
         if (i != null) i.setBaseValue(v);
     }
 
-    /** Applied on every load, so balancing changes reach bosses that already exist. */
-    private static void applyStats(Mob mob, BossDef def) {
+    private static final UUID HEALTH_ID = UUID.fromString("0b7d3c1e-5a2f-4c8e-9b6d-2e4f6a8c0d11");
+    private static final UUID ARMOR_ID = UUID.fromString("0b7d3c1e-5a2f-4c8e-9b6d-2e4f6a8c0d12");
+    private static final UUID DAMAGE_ID = UUID.fromString("0b7d3c1e-5a2f-4c8e-9b6d-2e4f6a8c0d13");
+
+    /**
+     * Sets an attribute to the boss's value with a saved modifier on top of whatever base the creature mod uses
+     * (some mods, like Fossils and Archeology, keep resetting the base value as their animals grow).
+     */
+    private static boolean target(Mob mob, net.minecraft.world.entity.ai.attributes.Attribute a, UUID id, double want) {
+        AttributeInstance inst = mob.getAttribute(a);
+        if (inst == null) return false;
+        double amount = want - inst.getBaseValue();
+        var m = inst.getModifier(id);
+        if (m != null && Math.abs(m.getAmount() - amount) < 1e-3) return false;
+        if (m != null) inst.removeModifier(id);
+        inst.addPermanentModifier(new net.minecraft.world.entity.ai.attributes.AttributeModifier(id, "vividlands boss",
+                amount, net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.ADDITION));
+        return true;
+    }
+
+    /** Applied on load and every second, so balancing changes reach existing bosses and nothing can undo them. */
+    static void applyStats(Mob mob, BossDef def) {
         float frac = mob.getMaxHealth() > 0 ? mob.getHealth() / mob.getMaxHealth() : 1f;
-        setBase(mob, Attributes.MAX_HEALTH, def.health);
-        setBase(mob, Attributes.ARMOR, def.armor);
-        setBase(mob, Attributes.ATTACK_DAMAGE, def.damage);
+        boolean changed = target(mob, Attributes.MAX_HEALTH, HEALTH_ID, def.health);
+        target(mob, Attributes.ARMOR, ARMOR_ID, def.armor);
+        target(mob, Attributes.ATTACK_DAMAGE, DAMAGE_ID, def.damage);
         setBase(mob, Attributes.KNOCKBACK_RESISTANCE, 0.75);
         setBase(mob, Attributes.FOLLOW_RANGE, 48);
-        if (mob.getHealth() > 0) mob.setHealth(Math.max(1f, frac * mob.getMaxHealth()));
+        if (changed && mob.getHealth() > 0) mob.setHealth(Math.max(1f, frac * mob.getMaxHealth()));
     }
 
     /** Turns a loaded mob carrying a boss tag into a running boss. */
@@ -286,10 +306,11 @@ public final class Bosses {
         applyStats(mob, def);
         mob.setPersistenceRequired();
         BossFight fight = new BossFight(mob, def);
-        if (def.melee == Melee.BOSS || mob.getAttribute(Attributes.ATTACK_DAMAGE) == null) {
-            ((MobGoalsAccessor) mob).vlr$goals().addGoal(0, new BossMeleeGoal(mob, () -> FIGHTS.get(mob), def.damage,
-                    def.reach, def.attackInterval));
-        }
+        // BOSS melee: the pack's goal comes first. OWN melee: the creature's attack goal comes first, and the pack's
+        // goal only takes over when that one gives up (so the boss never wanders off mid-fight).
+        boolean own = def.melee == Melee.OWN && mob.getAttribute(Attributes.ATTACK_DAMAGE) != null;
+        ((MobGoalsAccessor) mob).vlr$goals().addGoal(own ? 3 : 0, new BossMeleeGoal(mob, () -> FIGHTS.get(mob), def.damage,
+                def.reach, def.attackInterval));
         FIGHTS.put(mob, fight);
         debug("{} is {} ({}), {} hp, {}x{} hitbox", def.id, BuiltInRegistries.ENTITY_TYPE.getKey(mob.getType()),
                 mob.getClass().getSimpleName(), mob.getMaxHealth(), mob.getBbWidth(), mob.getBbHeight());
