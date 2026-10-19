@@ -383,3 +383,13 @@ scale (model and hitboxes match); the others are drawn and hit-boxed bigger by t
 New: the Bleeding effect (1 damage a second per level, red particles) and thrown boulders (Silverback).
 Chapter 2 bosses come next (Huginn and Muninn, Geri and Freki, Sleipnir, Skoll and Hati, Garmr, Nidhoggr, Fafnir,
 Jormungandr, Fenrir), using the structures listed above.
+
+## Bows (v0.23)
+
+| Mod | Link | Licence | Adds |
+|-----|------|---------|------|
+| Archers (RPG Series) | https://modrinth.com/mod/archers | ARR (modpack use allowed) | Archer class gear: longbows, heavy crossbows, archer armour with ranged bonuses, archery skills (works with any bow), auto-fire hook, rebalanced bow enchantments, archery ranges in villages. Uses Ranged Weapon API and Spell Engine; fits Better Combat. |
+| More Bows and Arrows | https://modrinth.com/mod/more-bows-and-arrows | ARR (modpack use allowed on Modrinth/CurseForge) | About 50 bows and arrows with special effects (TNT bows, high-damage bows...) and six bow enchantments. Needs MonoLib. Any Nether or End ingredients in its recipes are craftable from cobblestone with Create (pack rule). |
+
+Skipped: Archeries (no Fabric 1.20.1), Narrow Zone (Forge only), Too Many Bows (several of its bows only come from End
+City and Nether Fortress chests, which are closed in this pack).
