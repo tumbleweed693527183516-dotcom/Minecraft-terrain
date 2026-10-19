@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.vividlands.ragnarok.client.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "vividlands_ragnarok.refmap.json",
+  "client": [
+    "EntityRenderDispatcherMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -9,7 +9,9 @@
     "PortalShapeMixin",
     "EntityDimensionMixin",
     "ServerPlayerDimensionMixin",
-    "EnderEyeItemMixin"
+    "EnderEyeItemMixin",
+    "MobGoalsAccessor",
+    "EntityBossMixin"
   ],
   "injectors": {
     "defaultRequire": 1

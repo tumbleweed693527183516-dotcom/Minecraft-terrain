@@ -38,7 +38,11 @@ public final class VikingArmor {
     public static final List<Item> TROPHIES = new ArrayList<>();
     private static final String[][] TROPHY_IDS = {
             {"bear_pelt", "uncommon"}, {"saber_fang", "uncommon"}, {"wolf_pelt", "rare"}, {"eclipse_shard", "rare"},
-            {"raven_feather", "rare"}, {"sleipnir_hair", "rare"}, {"dragon_gold", "epic"}, {"serpent_scale", "epic"}};
+            {"raven_feather", "rare"}, {"sleipnir_hair", "rare"}, {"dragon_gold", "epic"}, {"serpent_scale", "epic"},
+            // Chapter 1 boss trophies (Skadi's trials)
+            {"great_antlers", "uncommon"}, {"hippo_hide", "uncommon"}, {"croc_scales", "uncommon"},
+            {"silverback_fist", "rare"}, {"rhino_horn", "rare"}, {"ivory", "rare"}, {"shark_tooth", "rare"},
+            {"mammoth_tusk", "epic"}, {"frozen_heart", "epic"}};
     private static final String[] PIECE_NAMES = {"helmet", "chestplate", "leggings", "boots"};
 
     private VikingArmor() {
