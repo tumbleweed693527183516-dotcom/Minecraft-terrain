@@ -1,10 +1,10 @@
 ragnarok boss list
 gamerule vividlandsBossSpawning false
-forceload add 176 -24 224 24
+forceload add 168 -32 232 32
 sleep 15
-fill 185 199 -15 215 199 15 minecraft:smooth_stone
+fill 172 199 -28 228 199 28 minecraft:smooth_stone
 ragnarok boss summon cave_bear 200 200 0
-summon minecraft:iron_golem 207 200 0 {NoAI:1b,Tags:["dummy_cave_bear"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+summon minecraft:iron_golem 214 200 0 {NoAI:1b,Tags:["dummy_cave_bear"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.cave_bear,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_cave_bear,limit=1]
 sleep 45
@@ -13,14 +13,13 @@ data get entity @e[tag=vividlands_ragnarok.boss.cave_bear,limit=1] Health
 data get entity @e[tag=dummy_cave_bear,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.cave_bear]
 sleep 3
-execute if entity @e[type=item,x=200,y=200,z=0,distance=..30] run say BOSSCHECK cave_bear dropped items
-execute as @e[type=item,x=200,y=200,z=0,distance=..30] run data get entity @s Item.id
+execute if entity @e[type=item,x=200,y=200,z=0,distance=..40] run say BOSSCHECK cave_bear dropped items
 kill @e[tag=dummy_cave_bear]
-forceload add 224 -24 272 24
+forceload add 232 -32 296 32
 sleep 15
-fill 233 199 -15 263 199 15 minecraft:smooth_stone
-ragnarok boss summon irish_elk 248 200 0
-summon minecraft:iron_golem 255 200 0 {NoAI:1b,Tags:["dummy_irish_elk"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+fill 236 199 -28 292 199 28 minecraft:smooth_stone
+ragnarok boss summon irish_elk 264 200 0
+summon minecraft:iron_golem 278 200 0 {NoAI:1b,Tags:["dummy_irish_elk"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.irish_elk,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_irish_elk,limit=1]
 sleep 45
@@ -29,14 +28,13 @@ data get entity @e[tag=vividlands_ragnarok.boss.irish_elk,limit=1] Health
 data get entity @e[tag=dummy_irish_elk,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.irish_elk]
 sleep 3
-execute if entity @e[type=item,x=248,y=200,z=0,distance=..30] run say BOSSCHECK irish_elk dropped items
-execute as @e[type=item,x=248,y=200,z=0,distance=..30] run data get entity @s Item.id
+execute if entity @e[type=item,x=264,y=200,z=0,distance=..40] run say BOSSCHECK irish_elk dropped items
 kill @e[tag=dummy_irish_elk]
-forceload add 272 -24 320 24
+forceload add 296 -32 360 32
 sleep 15
-fill 281 199 -15 311 199 15 minecraft:smooth_stone
-ragnarok boss summon hippo 296 200 0
-summon minecraft:iron_golem 303 200 0 {NoAI:1b,Tags:["dummy_hippo"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+fill 300 199 -28 356 199 28 minecraft:smooth_stone
+ragnarok boss summon hippo 328 200 0
+summon minecraft:iron_golem 342 200 0 {NoAI:1b,Tags:["dummy_hippo"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.hippo,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_hippo,limit=1]
 sleep 45
@@ -45,14 +43,13 @@ data get entity @e[tag=vividlands_ragnarok.boss.hippo,limit=1] Health
 data get entity @e[tag=dummy_hippo,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.hippo]
 sleep 3
-execute if entity @e[type=item,x=296,y=200,z=0,distance=..30] run say BOSSCHECK hippo dropped items
-execute as @e[type=item,x=296,y=200,z=0,distance=..30] run data get entity @s Item.id
+execute if entity @e[type=item,x=328,y=200,z=0,distance=..40] run say BOSSCHECK hippo dropped items
 kill @e[tag=dummy_hippo]
-forceload add 320 -24 368 24
+forceload add 360 -32 424 32
 sleep 15
-fill 329 199 -15 359 199 15 minecraft:smooth_stone
-ragnarok boss summon crocodile 344 200 0
-summon minecraft:iron_golem 351 200 0 {NoAI:1b,Tags:["dummy_crocodile"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+fill 364 199 -28 420 199 28 minecraft:smooth_stone
+ragnarok boss summon crocodile 392 200 0
+summon minecraft:iron_golem 406 200 0 {NoAI:1b,Tags:["dummy_crocodile"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.crocodile,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_crocodile,limit=1]
 sleep 45
@@ -61,14 +58,13 @@ data get entity @e[tag=vividlands_ragnarok.boss.crocodile,limit=1] Health
 data get entity @e[tag=dummy_crocodile,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.crocodile]
 sleep 3
-execute if entity @e[type=item,x=344,y=200,z=0,distance=..30] run say BOSSCHECK crocodile dropped items
-execute as @e[type=item,x=344,y=200,z=0,distance=..30] run data get entity @s Item.id
+execute if entity @e[type=item,x=392,y=200,z=0,distance=..40] run say BOSSCHECK crocodile dropped items
 kill @e[tag=dummy_crocodile]
-forceload add 368 -24 416 24
+forceload add 424 -32 488 32
 sleep 15
-fill 377 199 -15 407 199 15 minecraft:smooth_stone
-ragnarok boss summon silverback 392 200 0
-summon minecraft:iron_golem 399 200 0 {NoAI:1b,Tags:["dummy_silverback"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+fill 428 199 -28 484 199 28 minecraft:smooth_stone
+ragnarok boss summon silverback 456 200 0
+summon minecraft:iron_golem 470 200 0 {NoAI:1b,Tags:["dummy_silverback"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.silverback,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_silverback,limit=1]
 sleep 45
@@ -77,14 +73,13 @@ data get entity @e[tag=vividlands_ragnarok.boss.silverback,limit=1] Health
 data get entity @e[tag=dummy_silverback,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.silverback]
 sleep 3
-execute if entity @e[type=item,x=392,y=200,z=0,distance=..30] run say BOSSCHECK silverback dropped items
-execute as @e[type=item,x=392,y=200,z=0,distance=..30] run data get entity @s Item.id
+execute if entity @e[type=item,x=456,y=200,z=0,distance=..40] run say BOSSCHECK silverback dropped items
 kill @e[tag=dummy_silverback]
-forceload add 416 -24 464 24
+forceload add 488 -32 552 32
 sleep 15
-fill 425 199 -15 455 199 15 minecraft:smooth_stone
-ragnarok boss summon saber_tooth 440 200 0
-summon minecraft:iron_golem 447 200 0 {NoAI:1b,Tags:["dummy_saber_tooth"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+fill 492 199 -28 548 199 28 minecraft:smooth_stone
+ragnarok boss summon saber_tooth 520 200 0
+summon minecraft:iron_golem 534 200 0 {NoAI:1b,Tags:["dummy_saber_tooth"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.saber_tooth,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_saber_tooth,limit=1]
 sleep 45
@@ -93,14 +88,13 @@ data get entity @e[tag=vividlands_ragnarok.boss.saber_tooth,limit=1] Health
 data get entity @e[tag=dummy_saber_tooth,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.saber_tooth]
 sleep 3
-execute if entity @e[type=item,x=440,y=200,z=0,distance=..30] run say BOSSCHECK saber_tooth dropped items
-execute as @e[type=item,x=440,y=200,z=0,distance=..30] run data get entity @s Item.id
+execute if entity @e[type=item,x=520,y=200,z=0,distance=..40] run say BOSSCHECK saber_tooth dropped items
 kill @e[tag=dummy_saber_tooth]
-forceload add 464 -24 512 24
+forceload add 552 -32 616 32
 sleep 15
-fill 473 199 -15 503 199 15 minecraft:smooth_stone
-ragnarok boss summon woolly_rhino 488 200 0
-summon minecraft:iron_golem 495 200 0 {NoAI:1b,Tags:["dummy_woolly_rhino"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+fill 556 199 -28 612 199 28 minecraft:smooth_stone
+ragnarok boss summon woolly_rhino 584 200 0
+summon minecraft:iron_golem 598 200 0 {NoAI:1b,Tags:["dummy_woolly_rhino"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.woolly_rhino,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_woolly_rhino,limit=1]
 sleep 45
@@ -109,14 +103,13 @@ data get entity @e[tag=vividlands_ragnarok.boss.woolly_rhino,limit=1] Health
 data get entity @e[tag=dummy_woolly_rhino,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.woolly_rhino]
 sleep 3
-execute if entity @e[type=item,x=488,y=200,z=0,distance=..30] run say BOSSCHECK woolly_rhino dropped items
-execute as @e[type=item,x=488,y=200,z=0,distance=..30] run data get entity @s Item.id
+execute if entity @e[type=item,x=584,y=200,z=0,distance=..40] run say BOSSCHECK woolly_rhino dropped items
 kill @e[tag=dummy_woolly_rhino]
-forceload add 512 -24 560 24
+forceload add 616 -32 680 32
 sleep 15
-fill 521 199 -15 551 199 15 minecraft:smooth_stone
-ragnarok boss summon elephant 536 200 0
-summon minecraft:iron_golem 543 200 0 {NoAI:1b,Tags:["dummy_elephant"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+fill 620 199 -28 676 199 28 minecraft:smooth_stone
+ragnarok boss summon elephant 648 200 0
+summon minecraft:iron_golem 662 200 0 {NoAI:1b,Tags:["dummy_elephant"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.elephant,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_elephant,limit=1]
 sleep 45
@@ -125,15 +118,14 @@ data get entity @e[tag=vividlands_ragnarok.boss.elephant,limit=1] Health
 data get entity @e[tag=dummy_elephant,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.elephant]
 sleep 3
-execute if entity @e[type=item,x=536,y=200,z=0,distance=..30] run say BOSSCHECK elephant dropped items
-execute as @e[type=item,x=536,y=200,z=0,distance=..30] run data get entity @s Item.id
+execute if entity @e[type=item,x=648,y=200,z=0,distance=..40] run say BOSSCHECK elephant dropped items
 kill @e[tag=dummy_elephant]
-forceload add 560 -24 608 24
+forceload add 680 -32 744 32
 sleep 15
-fill 570 189 -14 598 199 14 minecraft:glass
-fill 571 190 -13 597 200 13 minecraft:water
-ragnarok boss summon bull_shark 584 193 0
-summon minecraft:iron_golem 591 193 0 {NoAI:1b,Tags:["dummy_bull_shark"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+fill 688 187 -24 736 199 24 minecraft:glass
+fill 689 188 -23 735 200 23 minecraft:water
+ragnarok boss summon bull_shark 712 193 0
+summon minecraft:iron_golem 726 193 0 {NoAI:1b,Tags:["dummy_bull_shark"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.bull_shark,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_bull_shark,limit=1]
 sleep 45
@@ -142,14 +134,13 @@ data get entity @e[tag=vividlands_ragnarok.boss.bull_shark,limit=1] Health
 data get entity @e[tag=dummy_bull_shark,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.bull_shark]
 sleep 3
-execute if entity @e[type=item,x=584,y=193,z=0,distance=..30] run say BOSSCHECK bull_shark dropped items
-execute as @e[type=item,x=584,y=193,z=0,distance=..30] run data get entity @s Item.id
+execute if entity @e[type=item,x=712,y=193,z=0,distance=..40] run say BOSSCHECK bull_shark dropped items
 kill @e[tag=dummy_bull_shark]
-forceload add 608 -24 656 24
+forceload add 744 -32 808 32
 sleep 15
-fill 617 199 -15 647 199 15 minecraft:smooth_stone
-ragnarok boss summon mammoth 632 200 0
-summon minecraft:iron_golem 639 200 0 {NoAI:1b,Tags:["dummy_mammoth"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+fill 748 199 -28 804 199 28 minecraft:smooth_stone
+ragnarok boss summon mammoth 776 200 0
+summon minecraft:iron_golem 790 200 0 {NoAI:1b,Tags:["dummy_mammoth"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.mammoth,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_mammoth,limit=1]
 sleep 45
@@ -158,6 +149,5 @@ data get entity @e[tag=vividlands_ragnarok.boss.mammoth,limit=1] Health
 data get entity @e[tag=dummy_mammoth,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.mammoth]
 sleep 3
-execute if entity @e[type=item,x=632,y=200,z=0,distance=..30] run say BOSSCHECK mammoth dropped items
-execute as @e[type=item,x=632,y=200,z=0,distance=..30] run data get entity @s Item.id
+execute if entity @e[type=item,x=776,y=200,z=0,distance=..40] run say BOSSCHECK mammoth dropped items
 kill @e[tag=dummy_mammoth]
