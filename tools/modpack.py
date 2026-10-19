@@ -140,7 +140,6 @@ RESOLVE = [
     ("too-many-bows", True),               # 30+ bows, each with its own effect; Ricochet and Spectral enchantments
     ("progressive-archery", True),         # tiered bows and arrows (better bows as you progress)
     ("truly-modular-archery", True),       # build your own bow from parts (limbs, string, grip) with their own stats
-    ("arch-bows", True),                   # more bows
     ("extra-bows", True),                  # more bows (mod form)
     # --- quality of life (the usual modpack set) ---
     ("emi", True),                         # recipe viewer (Create shows its machine recipes in it)
