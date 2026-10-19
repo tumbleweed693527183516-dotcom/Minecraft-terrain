@@ -8,6 +8,9 @@ on:
       mods:
         description: "Modrinth slugs (space separated), slug@versionid to pin"
         default: "naturalist@3B6AIHXy animal-garden-western-gorilla animal-garden-bull-shark animal-garden-common-raven fossils-and-archeology-revival saints-dragons backported-wolves civilizations mebahels-creatures-draugr"
+      full:
+        description: "Regex of class paths to dump in full (all members, string constants, goal registrations)"
+        default: "prehistoric/base/Prehistoric$|prehistoric/(Mammoth|Smilodon|Megaloceros|Elasmotherium)$|naturalist/common/entity/(Bear|Hippo|Alligator|Elephant)$|animalgarden/[a-z]+/mob/ModMob$"
 
 permissions:
   contents: write
@@ -58,6 +61,14 @@ jobs:
               javap -c -p -cp x_$n "${cls//\//.}" 2>/dev/null | grep -oE "(Goal|goal)[A-Za-z$/]*" | sort -u | head -40
             done > $o/classes.txt
             cp x_$n/fabric.mod.json $o/ 2>/dev/null || true
+            find x_$n -name "*.class" | sed "s#^x_$n/##; s#\.class\$##" | grep -E '${{ inputs.full }}' | while read cls; do
+              echo "=================== $cls"
+              javap -p -cp x_$n "${cls//\//.}" 2>/dev/null
+              echo "--- strings"
+              javap -v -p -cp x_$n "${cls//\//.}" 2>/dev/null | grep -E "= (String|Utf8) " | grep -E "String " | sed -E 's/.*\/\/ //' | sort -u
+              echo "--- registerGoals"
+              javap -c -p -cp x_$n "${cls//\//.}" 2>/dev/null | awk '/registerGoals|method_5959/{f=1} f&&/new|invokevirtual.*add|method_6277/{print} f&&/return$/{f=0}'
+            done > $o/full.txt
           done
       - name: Publish to the inspect branch
         run: |
