@@ -364,18 +364,20 @@ Gamerule `vividlandsBossSpawning` turns natural appearances off. Commands (opera
 
 | # | Boss (id) | Creature (fallbacks) | Home | Unlocks after | Moves | Drops |
 |---|-----------|----------------------|------|---------------|-------|-------|
-| 1 | Cave Bear, Den-Mother of the Pines (cave_bear) | naturalist:bear (polar bear), x1.7 | taiga lakelands, Caledonian pinewood, boreal snowwoods, any taiga | - | own bite and swipe; roar (slows, weakens); 3-swipe maul; rearing ground smash | Cave Bear Pelt |
-| 2 | Great Irish Elk, Lord of the Moors (irish_elk) | fossil:megaloceros (goat), x1.3 | highland moors, alpine meadow, meadow | - | antler charge (stunned if it hits a wall); calls 2 elk; rearing stomp | Great Antlers |
-| 3 | Hippopotamus, Terror of the Oasis (hippo) | naturalist:hippo (ravager), x1.5 | oasis, tropical river, river | - | own bite, attacks boats; lunge out of the water; capsizes boats and ships; double chomp | Hippo Hide |
-| 4 | Giant Crocodile, the River's Jaws (crocodile) | naturalist:alligator, x2.0 | fen, tropical river, swamp, mangrove | Hippopotamus | death roll (holds you in its jaws; hit it hard to break free); water lunge; tail sweep | Crocodile Scales |
-| 5 | Silverback, King of the Temple (silverback) | animalgarden_westerngorilla:westerngorilla (iron golem), x2.0 | Mayan temples (Ancient Structures) | any 3 | own punches; chest-beat roar (stuns); throws boulders; ground pound | Silverback Fist |
-| 6 | Saber-tooth, the Unseen Hunter (saber_tooth) | fossil:smilodon (wolf), x1.3 | endless steppe, golden savanna, wildflower prairie, savanna | any 4 | invisible while it stalks from afar; pounce (heavy bleeding); 4-bite maul; every bite bleeds | Saber Fang |
-| 7 | Woolly Rhinoceros, the Tundra Ram (woolly_rhino) | fossil:elasmotherium (naturalist:rhino, ravager), x1.2 | tundra, glacial outwash, snowy plains | Cave Bear | charge that smashes through soft blocks (dirt, sand, snow, leaves, glass) and is stunned by hard ones; stomp (slows) | Rhino Horn |
-| 8 | Bull Elephant, Thunder of the Savanna (elephant) | naturalist:elephant (ravager), x1.3 | golden savanna, savanna | any 6 | own attacks; stampede charge; trunk fling (throws you high); trumpet (weakens); stomp | Ivory x2 |
-| 9 | Giant Bull Shark, Blood in the Water (bull_shark) | animalgarden_bullshark:bullshark (dolphin), x2.5 | northern and temperate oceans, deep oceans | Crocodile | breach (leaps out of the water at you, heavy bleeding); rams boats and ships; bite flurry; every bite bleeds | Shark Tooth x2 |
-| 10 | Woolly Mammoth, Skadi's Last Trial (mammoth) | fossil:mammoth (ravager), x1.8 | glacier, glacier peaks, ice spikes | all other 9 | trumpet shockwave (jump over the ring); stomp quake (slows); block-smashing charge; tusk fling | Mammoth Tusk x2, Frozen Heart |
+| 1 | Cave Bear, Den-Mother of the Pines (cave_bear) | naturalist:bear (polar bear), x3.5 | taiga lakelands, Caledonian pinewood, boreal snowwoods, any taiga | - | own bite and swipe; roar (slows, weakens); 3-swipe maul; rearing ground smash | Cave Bear Pelt |
+| 2 | Great Irish Elk, Lord of the Moors (irish_elk) | fossil:megaloceros (goat), x2.8 | highland moors, alpine meadow, meadow | - | antler charge (stunned if it hits a wall); calls 2 elk; rearing stomp | Great Antlers |
+| 3 | Hippopotamus, Terror of the Oasis (hippo) | naturalist:hippo (ravager), x3.2 | oasis, tropical river, river | - | own bite, attacks boats; lunge out of the water; capsizes boats and ships; double chomp | Hippo Hide |
+| 4 | Giant Crocodile, the River's Jaws (crocodile) | naturalist:alligator, x4.0 | fen, tropical river, swamp, mangrove | Hippopotamus | death roll (holds you in its jaws; hit it hard to break free); water lunge; tail sweep | Crocodile Scales |
+| 5 | Silverback, King of the Temple (silverback) | animalgarden_westerngorilla:westerngorilla (iron golem), x4.5 | Mayan temples (Ancient Structures) | any 3 | own punches; chest-beat roar (stuns); throws boulders; ground pound | Silverback Fist |
+| 6 | Saber-tooth, the Unseen Hunter (saber_tooth) | fossil:smilodon (wolf), x3.0 | endless steppe, golden savanna, wildflower prairie, savanna | any 4 | invisible while it stalks from afar; pounce (heavy bleeding); 4-bite maul; every bite bleeds | Saber Fang |
+| 7 | Woolly Rhinoceros, the Tundra Ram (woolly_rhino) | fossil:elasmotherium (naturalist:rhino, ravager), x2.2 | tundra, glacial outwash, snowy plains | Cave Bear | charge that smashes through soft blocks (dirt, sand, snow, leaves, glass) and is stunned by hard ones; stomp (slows) | Rhino Horn |
+| 8 | Bull Elephant, Thunder of the Savanna (elephant) | naturalist:elephant (ravager), x2.5 | golden savanna, savanna | any 6 | own attacks; stampede charge; trunk fling (throws you high); trumpet (weakens); stomp | Ivory x2 |
+| 9 | Giant Bull Shark, Blood in the Water (bull_shark) | animalgarden_bullshark:bullshark (dolphin), x5.0 | northern and temperate oceans, deep oceans | Crocodile | breach (leaps out of the water at you, heavy bleeding); rams boats and ships; bite flurry; every bite bleeds | Shark Tooth x2 |
+| 10 | Woolly Mammoth, Skadi's Last Trial (mammoth) | fossil:mammoth (ravager), x3.0 | glacier, glacier peaks, ice spikes | all other 9 | trumpet shockwave (jump over the ring); stomp quake (slows); block-smashing charge; tusk fling | Mammoth Tusk x2, Frozen Heart |
 
-Charges stop once past the target and at drops. Fossils and Archeology animals are sized through that mod's own
+Bosses are massive (about 6 to 12 blocks tall: the mammoth is the biggest). They trample leaves, plants and snow
+as they walk (gamerule mobGriefing), step up tall ledges, and the Silverback waits outside its temple (too big for the
+rooms). Fossils and Archeology bosses are always male (antlers, tusks). Charges stop once past the target and at drops. Fossils and Archeology animals are sized through that mod's own
 scale (model and hitboxes match); the others are drawn and hit-boxed bigger by the pack.
 
 New: the Bleeding effect (1 damage a second per level, red particles) and thrown boulders (Silverback).
