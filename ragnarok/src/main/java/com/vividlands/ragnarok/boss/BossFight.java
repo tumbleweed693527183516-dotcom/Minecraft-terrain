@@ -96,6 +96,7 @@ public final class BossFight {
         }
         if (!enraged && mob.getHealth() <= mob.getMaxHealth() * 0.5f) {
             enraged = true;
+            Bosses.debug("{} enraged", def.id);
             applyEnrage(true);
         }
         minions.removeIf(m -> !m.isAlive());
@@ -134,6 +135,8 @@ public final class BossFight {
         active = pick;
         activeTicks = 0;
         activeDuration = Math.max(1, pick.start(this, target));
+        Bosses.debug("{} uses {} on {} ({} ticks)", def.id, pick.getClass().getSimpleName(),
+                target.getType().getDescriptionId(), activeDuration);
         cooldowns.put(pick, scaled(pick.cooldown()));
     }
 
@@ -242,6 +245,7 @@ public final class BossFight {
 
     /** A normal melee hit (the pack's own melee goal). */
     public void meleeHit(LivingEntity t) {
+        Bosses.debug("{} melee hit on {}", def.id, t.getType().getDescriptionId());
         mob.swing(InteractionHand.MAIN_HAND);
         Compat.attackAnimation(mob);
         if (hurt(t, attackDamage())) push(t, def.knockback, 0.25);

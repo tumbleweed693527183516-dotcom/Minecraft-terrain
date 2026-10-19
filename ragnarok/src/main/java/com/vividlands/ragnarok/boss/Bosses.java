@@ -86,6 +86,12 @@ public final class Bosses {
     public static MobEffect BLEEDING;
     public static GameRules.Key<GameRules.BooleanValue> SPAWNING;
     private static boolean addingMinion;
+    /** -Dvividlands.bossdebug=true: log every boss move (pack test). */
+    public static final boolean DEBUG = Boolean.getBoolean("vividlands.bossdebug");
+
+    public static void debug(String msg, Object... args) {
+        if (DEBUG) Ragnarok.LOG.info("[boss] " + msg, args);
+    }
 
     private Bosses() {
     }
@@ -285,6 +291,8 @@ public final class Bosses {
                     def.reach, def.attackInterval));
         }
         FIGHTS.put(mob, fight);
+        debug("{} is {} ({}), {} hp, {}x{} hitbox", def.id, BuiltInRegistries.ENTITY_TYPE.getKey(mob.getType()),
+                mob.getClass().getSimpleName(), mob.getMaxHealth(), mob.getBbWidth(), mob.getBbHeight());
         for (ServerPlayer p : PlayerLookup.tracking(mob)) sync(p, mob);
     }
 
@@ -433,6 +441,7 @@ public final class Bosses {
                 return false;
             }
             BossDef def = defOf(attacker);
+            if (def != null) debug("{} deals {} to {} ({})", def.id, amount, entity.getType().getDescriptionId(), source.getMsgId());
             if (def != null && source.getDirectEntity() == attacker && !isBoss(entity)) {
                 for (var e : def.onHit) entity.addEffect(e.get(), attacker);
             }
@@ -442,6 +451,7 @@ public final class Bosses {
             if (!(entity instanceof Mob mob)) return;
             BossDef def = defOf(mob);
             if (def == null) return;
+            debug("{} died ({})", def.id, source.getMsgId());
             reward(mob, def);
             BossFight f = FIGHTS.remove(mob);
             if (f != null) f.close();

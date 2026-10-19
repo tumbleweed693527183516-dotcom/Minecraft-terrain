@@ -12,6 +12,9 @@ on:
       radius:
         description: Radius to generate, in blocks (1024 = the earlier 16,641-chunk benchmark)
         default: "1024"
+      mode:
+        description: "full = generation timing + pack rules; bosses = summon and fight every boss against a dummy"
+        default: "full"
 
 permissions:
   contents: write
@@ -79,6 +82,9 @@ jobs:
           data get block 30 200 30 Items[0]
           data get block 32 200 30 Items
           EOF
+      - name: Boss test commands
+        if: inputs.mode == 'bosses'
+        run: cp tools/worldtest/boss_commands.txt server/commands.txt
       - name: Structure ids added by the pack's mods
         run: |
           cd server/mods
@@ -91,14 +97,19 @@ jobs:
       - name: Start server, time generation, check rules
         run: |
           start=$(date +%s)
-          bash tools/worldtest/run_server.sh "${{ inputs.radius }}"
+          if [ "${{ inputs.mode }}" = "bosses" ]; then
+            export CMD_GAP=2 JAVA_OPTS="-Dvividlands.bossdebug=true"
+            bash tools/worldtest/run_server.sh 32
+          else
+            bash tools/worldtest/run_server.sh "${{ inputs.radius }}"
+          fi
           echo "total seconds: $(( $(date +%s) - start ))" | tee out/timing.txt
       - name: Collect results
         if: always()
         run: |
           cp server/server.log out/ 2>/dev/null || true
           grep -iE "chunky|Done \(" server/server.log | tail -n 8 >> out/timing.txt 2>/dev/null || true
-          grep -E "RULECHECK|Ragnarok|has the following block data|Changed the block at 3[02]" server/server.log > out/rules.txt 2>/dev/null || true
+          grep -E "RULECHECK|BOSSCHECK|BOSS |\[boss\]|Ragnarok|has the following block data|has the following entity data|Changed the block at 3[02]|Summoned|None of|No boss" server/server.log > out/rules.txt 2>/dev/null || true
           grep -nE "ERROR|Exception|Caused by|Failed to|Mixin.*(fail|error)|Parsing error" server/server.log > out/problems.txt 2>/dev/null || true
           wc -l out/problems.txt || true
           cat out/rules.txt out/timing.txt || true

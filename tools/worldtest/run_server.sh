@@ -5,7 +5,7 @@ set -euo pipefail
 RADIUS="${1:-2048}"
 cd server
 rm -f console && mkfifo console
-tail -f console | java -Xms2G -Xmx11G -jar server.jar nogui > server.log 2>&1 &
+tail -f console | java ${JAVA_OPTS:-} -Xms2G -Xmx11G -jar server.jar nogui > server.log 2>&1 &
 PID=$!
 
 wait_for() {
@@ -36,7 +36,9 @@ if [ -f commands.txt ]; then
   echo "Running test commands..."
   while IFS= read -r cmd; do
     [ -z "$cmd" ] && continue
+    case "$cmd" in sleep\ *) sleep "${cmd#sleep }"; continue ;; esac
     echo "$cmd" > console
+    if [ -n "${CMD_GAP:-}" ]; then sleep "$CMD_GAP"; continue; fi
     case "$cmd" in forceload*) sleep 20 ;; *) sleep 25 ;; esac
   done < commands.txt
   # load the area around every far-away located structure so it generates naturally
