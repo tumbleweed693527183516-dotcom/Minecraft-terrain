@@ -77,8 +77,18 @@ final class Compat {
         return null;
     }
 
-    /** First spawn: grown up and fed. */
+    /** First spawn: grown up, male (antlers, tusks, bigger build) and fed. */
+    @SuppressWarnings({"unchecked", "rawtypes"})
     static void grownUp(Mob mob) {
+        Method getGender = find(mob.getClass(), "getGender");
+        if (getGender != null && getGender.getReturnType().isEnum()) {
+            try {
+                Object male = Enum.valueOf((Class<Enum>) getGender.getReturnType(), "MALE");
+                call(mob, "setGender", new Class<?>[]{getGender.getReturnType()}, male);
+            } catch (IllegalArgumentException ignored) {
+                // no MALE in this mod's gender enum
+            }
+        }
         if (mob instanceof AgeableMob a) a.setAge(0);
         Object adult = call(mob, "isAdult", new Class<?>[0]);
         for (int i = 0; i < 400 && Boolean.FALSE.equals(adult); i++) {
