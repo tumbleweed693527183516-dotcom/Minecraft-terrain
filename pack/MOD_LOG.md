@@ -391,5 +391,10 @@ Jormungandr, Fenrir), using the structures listed above.
 | Archers (RPG Series) | https://modrinth.com/mod/archers | ARR (modpack use allowed) | Archer class gear: longbows, heavy crossbows, archer armour with ranged bonuses, archery skills (works with any bow), auto-fire hook, rebalanced bow enchantments, archery ranges in villages. Uses Ranged Weapon API and Spell Engine; fits Better Combat. |
 | More Bows and Arrows | https://modrinth.com/mod/more-bows-and-arrows | ARR (modpack use allowed on Modrinth/CurseForge) | About 50 bows and arrows with special effects (TNT bows, high-damage bows...) and six bow enchantments. Needs MonoLib. Any Nether or End ingredients in its recipes are craftable from cobblestone with Create (pack rule). |
 
-Skipped: Archeries (no Fabric 1.20.1), Narrow Zone (Forge only), Too Many Bows (several of its bows only come from End
-City and Nether Fortress chests, which are closed in this pack).
+| Too Many Bows | https://modrinth.com/mod/too-many-bows | ARR | 30+ bows each with its own effect, bow charms, Ricochet and Spectral enchantments. Its bows that only came from Nether Fortress / End City chests are moved into Overworld treasure chests by the pack (strongholds, ancient cities, temples, mansions, buried treasure 25%; dungeons, mineshafts, outposts, shipwrecks 8%). Needs Architectury. |
+| Progressive Archery | https://modrinth.com/mod/progressive-archery | see page | Tiered bows and arrows. Uses Trinkets (already in the pack). |
+| Truly Modular: Archery | https://modrinth.com/mod/truly-modular-archery | see page | Build your own bow from parts (limbs, string, grip), each with stats. Needs Truly Modular (MiAPI). |
+| Extra Bows | https://modrinth.com/datapack/extra-bows | see page | More bows (the mod version). |
+
+Not possible on Fabric 1.20.1 (no version for it): Archeries (1.21 only), Narrow Zone (Forge only), Arch Bows.
+Bow Mechanics Overhaul is CurseForge only and makes left-click fire the bow, which clashes with Better Combat.
