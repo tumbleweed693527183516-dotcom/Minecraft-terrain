@@ -61,7 +61,7 @@ final class RenderTest {
     private static void planBosses(Minecraft mc) {
         String[] ids = {"cave_bear", "irish_elk", "hippo", "crocodile", "silverback", "saber_tooth", "woolly_rhino",
                 "elephant", "bull_shark", "mammoth"};
-        double[] dist = {9, 10, 10, 10, 9, 8, 11, 13, 11, 16};
+        double[] dist = {9, 10, 10, 11, 10, 9, 11, 13, 11, 18};
         steps.add(() -> {
             for (String c : new String[]{"gamerule doDaylightCycle false", "time set 6000", "weather clear",
                     "gamerule doMobSpawning false", "gamerule vividlandsBossSpawning false", "tp @a 0.5 202 8.5 180 0"}) cmd(mc, c);
@@ -89,7 +89,9 @@ final class RenderTest {
                 cmd(mc, "execute as @e[tag=vividlands_ragnarok.boss." + id + "] run data merge entity @s {NoAI:1b,Rotation:[150f,0f]}");
                 cmd(mc, "execute as @e[tag=vividlands_ragnarok.boss." + id + "] at @s run tp @s " + x + " ~ 0.5 150 0");
             });
-            steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f %.1f %.1f 180 12", x, 201.0 + d * 0.18, d)));
+            steps.add(() -> cmd(mc, id.equals("bull_shark")
+                    ? String.format(java.util.Locale.ROOT, "tp @a %.1f 209 7.5 180 48", x)
+                    : String.format(java.util.Locale.ROOT, "tp @a %.1f %.1f %.1f 180 12", x, 201.0 + d * 0.18, d)));
             steps.add(() -> shot(mc, "boss_" + id));
             steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f %.1f %.1f 135 14", x + d * 0.7, 201.5 + d * 0.2, d * 0.7)));
             steps.add(() -> shot(mc, "boss_" + id + "_angle"));
