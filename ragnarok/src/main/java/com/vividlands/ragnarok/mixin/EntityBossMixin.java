@@ -43,6 +43,6 @@ public abstract class EntityBossMixin implements BossHolder {
     private EntityDimensions vlr$bossSize(EntityDimensions original) {
         if (vlr$bossId == null) return original;
         float s = Bosses.scaleOf((Entity) (Object) this);
-        return s == 1f ? original : original.scale(s);
+        return s == 1f ? original : EntityDimensions.scalable(original.width * s, original.height * s);   // fixed sizes ignore scale()
     }
 }
