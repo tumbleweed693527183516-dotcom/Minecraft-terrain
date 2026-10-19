@@ -313,8 +313,10 @@ public final class Bosses {
         ((MobGoalsAccessor) mob).vlr$goals().addGoal(own ? 3 : 0, new BossMeleeGoal(mob, () -> FIGHTS.get(mob), def.damage,
                 def.reach, def.attackInterval));
         FIGHTS.put(mob, fight);
-        debug("{} is {} ({}), {} hp, {}x{} hitbox", def.id, BuiltInRegistries.ENTITY_TYPE.getKey(mob.getType()),
-                mob.getClass().getSimpleName(), mob.getMaxHealth(), mob.getBbWidth(), mob.getBbHeight());
+        debug("{} is {} ({}), {} hp, {}x{} hitbox, baby {}, adult {}, age days {}, scale {}", def.id,
+                BuiltInRegistries.ENTITY_TYPE.getKey(mob.getType()), mob.getClass().getSimpleName(), mob.getMaxHealth(),
+                mob.getBbWidth(), mob.getBbHeight(), mob.isBaby(), Compat.call(mob, "isAdult", new Class<?>[0]),
+                Compat.call(mob, "getAgeInDays", new Class<?>[0]), mob.getScale());
         for (ServerPlayer p : PlayerLookup.tracking(mob)) sync(p, mob);
     }
 

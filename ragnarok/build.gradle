@@ -18,6 +18,7 @@ loom {
             inherit client
             name 'Render Test'
             vmArg '-Dvividlands.rendertest=true'
+            vmArg '-Dvividlands.bossdebug=true'
             vmArg "-Dvividlands.rendertest.scene=${project.findProperty('scene') ?: 'armor'}"
             programArgs '--width', '1280', '--height', '720'
         }

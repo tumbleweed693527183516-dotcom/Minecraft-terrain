@@ -23,6 +23,9 @@ final class BossClient {
                 if (e instanceof BossHolder h) {
                     h.vlr$setBoss(boss);
                     e.refreshDimensions();
+                    Bosses.debug("client: {} is boss {}, {}x{}, baby {}, scale {}", e.getType().getDescriptionId(), boss,
+                            e.getBbWidth(), e.getBbHeight(), e instanceof net.minecraft.world.entity.LivingEntity l && l.isBaby(),
+                            e instanceof net.minecraft.world.entity.LivingEntity l2 ? l2.getScale() : 1f);
                 }
             });
         });
