@@ -54,7 +54,7 @@ jobs:
       - name: Publish build log to the build-logs branch
         if: always()
         run: |
-          mkdir -p logs && cp build.log modpack.log logs/ 2>/dev/null || echo "no build log" > logs/build.log
+          mkdir -p logs && for f in build.log modpack.log; do cp $f logs/ 2>/dev/null || true; done; [ -f logs/build.log ] || echo "no build log" > logs/build.log
           echo "${{ job.status }} $(git rev-parse --short HEAD)" > logs/status.txt
           cd logs && git init -q && git checkout -q -b build-logs
           git config user.name "github-actions[bot]"
