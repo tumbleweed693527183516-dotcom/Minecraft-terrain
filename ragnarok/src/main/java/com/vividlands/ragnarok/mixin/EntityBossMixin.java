@@ -15,6 +15,19 @@ public abstract class EntityBossMixin implements BossHolder {
     @Unique
     private String vlr$bossId;
 
+    @Unique
+    private boolean vlr$native;
+
+    @Override
+    public boolean vlr$nativeScale() {
+        return vlr$native;
+    }
+
+    @Override
+    public void vlr$setNativeScale(boolean value) {
+        vlr$native = value;
+    }
+
     @Override
     public String vlr$boss() {
         return vlr$bossId;

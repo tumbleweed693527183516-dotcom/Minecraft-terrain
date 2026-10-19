@@ -5,4 +5,9 @@ public interface BossHolder {
     String vlr$boss();
 
     void vlr$setBoss(String id);
+
+    /** True when the creature's own mod scales it (Fossils and Archeology), so the pack doesn't scale it again. */
+    boolean vlr$nativeScale();
+
+    void vlr$setNativeScale(boolean value);
 }

@@ -100,6 +100,18 @@ final class Compat {
         call(mob, "setSitting", new Class<?>[]{boolean.class}, false);
     }
 
+    /**
+     * Fossils and Archeology size their animals themselves (by age); for those the boss size goes through their own
+     * scale override so the model, hitbox and attack boxes all match. @return true if the mod took the scale
+     */
+    static boolean nativeScale(Mob mob, float scale) {
+        if (find(mob.getClass(), "setScaleOverride", float.class) == null) return false;
+        call(mob, "setScaleOverride", new Class<?>[]{float.class}, 0f);
+        float natural = mob.getScale();
+        call(mob, "setScaleOverride", new Class<?>[]{float.class}, natural * scale);
+        return true;
+    }
+
     /** Plays the creature's own attack animation where the mod has one we can trigger. */
     static void attackAnimation(Mob mob) {
         call(mob, "startAttack", new Class<?>[0]);

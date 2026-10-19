@@ -224,6 +224,7 @@ public final class Bosses {
 
     /** Size multiplier for hitbox (both sides) and rendering (client). */
     public static float scaleOf(Entity e) {
+        if (e instanceof BossHolder h && h.vlr$nativeScale()) return 1f;
         BossDef d = defOf(e);
         return d == null ? 1f : d.scale;
     }
@@ -302,8 +303,7 @@ public final class Bosses {
 
     /** Turns a loaded mob carrying a boss tag into a running boss. */
     private static void attach(Mob mob, BossDef def) {
-        ((BossHolder) mob).vlr$setBoss(def.id);
-        mob.refreshDimensions();
+        markBoss(mob, def.id);
         applyStats(mob, def);
         mob.setPersistenceRequired();
         BossFight fight = new BossFight(mob, def);
@@ -350,6 +350,17 @@ public final class Bosses {
         }
         f.particles(net.minecraft.core.particles.ParticleTypes.POOF, m.getX(), m.getY() + 0.5, m.getZ(), 12, 0.5, 0.5, 0.5, 0.05);
         f.minions.add(m);
+    }
+
+    /** Marks an entity as this boss on either side (server on load, client from the sync packet) and sizes it. */
+    public static void markBoss(Entity e, String id) {
+        if (!(e instanceof BossHolder h)) return;
+        h.vlr$setBoss(id);
+        BossDef def = DEFS.get(id);
+        if (def != null && def.scale != 1f && e instanceof Mob mob && !h.vlr$nativeScale() && Compat.nativeScale(mob, def.scale)) {
+            h.vlr$setNativeScale(true);
+        }
+        e.refreshDimensions();
     }
 
     // ------------------------------------------------------------------ progress
