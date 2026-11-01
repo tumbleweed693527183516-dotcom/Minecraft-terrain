@@ -11,7 +11,8 @@
     "ServerPlayerDimensionMixin",
     "EnderEyeItemMixin",
     "MobGoalsAccessor",
-    "EntityBossMixin"
+    "EntityBossMixin",
+    "MaxHealthCapMixin"
   ],
   "injectors": {
     "defaultRequire": 1
