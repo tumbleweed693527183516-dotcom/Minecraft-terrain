@@ -445,3 +445,15 @@ moves); stagger when hit hard and fast; 50% extra damage while a boss is stunned
 attacks land; new moves Combo, Breath, HazardRain, Grab, Spin, Swoop. New trophies for every new boss.
 Animations: tools/boss_anims2.py (every boss has idle/walk/run plus attack, roar, slam, charge, leap, roll, throw,
 hurt, combo, breath, grab, spin, swoop, stagger).
+
+## Ancient armor (v0.26)
+
+33 armor sets from ancient civilizations, 132 pieces, each a 3D GeckoLib model in the blocky Minecraft style with its
+own icons (tools/ancient_armor.py builds models, textures, icons, names and AncientSets.java; tools/armor_preview.py
+draws them on a mannequin). Order = tier, weakest to strongest:
+Sumerian, Egyptian, Minoan, Nubian, Hittite, Mycenaean, Assyrian, Babylonian, Celtic, Thracian, Athenian, Spartan,
+Macedonian, Scythian, Persian, Carthaginian, Roman Legionary, Gladiator, Centurion, Praetorian, Germanic, Qin
+Terracotta, Han, Mauryan, Sarmatian, Parthian, Byzantine, Mongol, Maya, Aztec, Inca, Samurai, Pharaoh.
+Stats are a straight line by tier (AncientArmorMaterial: defense leather -> a little above netherite, toughness 0 -> 4,
+knockback resistance 0 -> 0.15, durability, enchantability). Crafting recipes and repair materials still to come, on
+the same linear scale. Own creative tab: Ancient Armor.

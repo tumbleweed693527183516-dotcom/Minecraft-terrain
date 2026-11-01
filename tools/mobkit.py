@@ -185,7 +185,7 @@ class Model:
             col = np.broadcast_to(base, Ps.shape).copy()
             st = mat["style"]
             seed = s0 + sum(map(ord, mats_by_cube[id(c)])) % 997
-            if st in ("fur", "hide", "scales", "hair", "cloth", "plain", "membrane", "plates", "feather"):
+            if st in ("fur", "hide", "scales", "hair", "cloth", "plain", "membrane", "plates", "feather", "lamellar"):
                 col *= shade(Ps, seed, {"fur": 1.0, "hair": 0.6, "scales": 0.7, "hide": 0.8, "feather": 0.8}.get(st, 0.5))[..., None]
             ax = int(np.argmax(np.abs(nrm)))              # the two in-face axes
             u_ax, v_ax = [i for i in range(3) if i != ax]
@@ -219,6 +219,35 @@ class Model:
                     col *= 0.8
                 pit = cell(Ps, seed + 9) > 0.88
                 col = np.where(pit[..., None], col * 0.75, col)
+            if st == "mail":                          # rings: a dark dot on every other unit, offset each row
+                ring = (np.floor(Ps[..., u_ax]) + np.floor(Ps[..., v_ax])) % 2 == 0
+                col *= np.where(ring, 0.78, 1.04)[..., None] * (0.95 + 0.1 * (cell(Ps, seed) > 0.5))[..., None]
+                if nrm[1] > 0.5:
+                    col *= 1.1
+            if st == "lamellar":                      # small upright plates in rows, laced together
+                pv = Ps[..., 1] if ax != 1 else Ps[..., 2]
+                pu = Ps[..., u_ax] if ax != 1 else Ps[..., 0]
+                row = np.floor(pv / 2)
+                seam = (np.floor(pv) % 2 == 0) & (cell(np.stack([row, pu, row * 0], -1), seed + 2) > -1)
+                col = np.where(seam[..., None], col * 0.7, col * np.where((np.floor(pu + row) % 2) == 0, 1.06, 0.97)[..., None])
+                if mat.get("lace"):
+                    lace = (np.floor(pv) % 2 == 0) & (np.floor(pu) % 2 == 0)
+                    col = np.where(lace[..., None], hexrgb(mat["lace"]) * np.ones_like(col), col)
+            if mat.get("band"):                       # coloured bands: (colour, period, offset)
+                bc, per = mat["band"][0], mat["band"][1]
+                off = mat["band"][2] if len(mat["band"]) > 2 else 0
+                pv = Ps[..., 1] if ax != 1 else Ps[..., 2]
+                t = (np.floor(pv) + off) % per == 0
+                col = np.where(t[..., None], hexrgb(bc) * shade(Ps, seed + 30, 0.4)[..., None], col)
+            if mat.get("studs"):                      # rivets / studs on a grid: (colour, spacing)
+                sc, sp = mat["studs"]
+                t = (np.floor(Ps[..., u_ax]) % sp == 1) & (np.floor(Ps[..., v_ax]) % sp == 1)
+                col = np.where(t[..., None], hexrgb(sc) * np.ones_like(col), col)
+            if mat.get("trim"):                       # a contrasting rim along the face's top and bottom edge
+                pv = Ps[..., v_ax]
+                edge = (pv - pv.min() < 1) | (pv.max() - pv < 1)
+                if ax != 1:
+                    col = np.where(edge[..., None], hexrgb(mat["trim"]) * shade(Ps, seed + 31, 0.4)[..., None], col)
             if st == "bone":
                 col *= np.where(cell(Ps, seed + 5) > 0.8, 0.9, 1.0)[..., None]
                 if nrm[1] > 0.5:
@@ -283,16 +312,19 @@ class Model:
                 glow[y0:y1, x0:x1, 3] = np.where(gm, 255, 0)
         return img.astype(np.uint8), glow.astype(np.uint8)
 
-    def save(self):
+    def save(self, geo_dir=None, tex_dir=None, quiet=False):
+        geo_dir, tex_dir = geo_dir or GEO, tex_dir or TEX
         g = self.geo()
-        GEO.mkdir(parents=True, exist_ok=True)
-        (GEO / f"{self.id}.geo.json").write_text(json.dumps(g, indent=1))
+        geo_dir.mkdir(parents=True, exist_ok=True)
+        tex_dir.mkdir(parents=True, exist_ok=True)
+        (geo_dir / f"{self.id}.geo.json").write_text(json.dumps(g, indent=1))
         img, glow = self.paint(g)
-        Image.fromarray(img, "RGBA").save(TEX / f"{self.id}.png")
-        gp = TEX / f"{self.id}_glowmask.png"
+        Image.fromarray(img, "RGBA").save(tex_dir / f"{self.id}.png")
+        gp = tex_dir / f"{self.id}_glowmask.png"
         if glow[..., 3].any():
             Image.fromarray(glow, "RGBA").save(gp)
         elif gp.exists():
             gp.unlink()
-        print(f"{self.id}: {len(self.bones)} bones, {len(self.cubes)} cubes, texture {self.tex_w}x{self.tex_h}")
+        if not quiet:
+            print(f"{self.id}: {len(self.bones)} bones, {len(self.cubes)} cubes, texture {self.tex_w}x{self.tex_h}")
         return g
