@@ -473,3 +473,18 @@ the same linear scale. Own creative tab: Ancient Armor.
 - **More variation**: every set got its own accessories (shields and banners on the back, quivers, sashes, cross
   belts, tabards with emblems, collars, fur collars, half cloaks, feather fans, wings, a gladiator's manica, beads,
   tassels, knee guards) and its own sleeve colours.
+
+## v0.27.1: full test pass (2026-11-01)
+
+- **Render test, bosses:** all 25 bosses spawn and render in the real client. Their signature moves animate (combo, charge, breath, spin, grab, swoop, slam), as do stagger and attack.
+- **Render test, ancient:** all 49 ancient sets render on armor stands. Transmog works on armor stands and on players.
+  - The player case was broken: pieces drew out of place. Fixed by copying the wearer's pose first.
+- **Pack test, 25 boss fights** against an iron golem dummy with the whole modpack loaded:
+  - every boss fights, uses 2–5 abilities, survives a heavy hit and drops its loot
+  - 15 bosses entered phase 2; the heavily armoured ones stayed just above 50% from the test hit
+  - the ancient armor and Glamour Template items exist on the server
+  - no errors from our mod
+- **Fixes**
+  - Vanilla's 1024 max-health cap clamped Chapter 2 bosses outside the full pack. A mixin now raises it.
+  - Blank vanilla layer textures added for the ancient sets, which removes 98 missing-texture warnings.
+  - Agamemnon's eyes were hidden under the brows.
