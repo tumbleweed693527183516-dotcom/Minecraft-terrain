@@ -24,9 +24,35 @@ def rot(rx, ry, rz):
     return Z @ Y @ X
 
 
-def quads(geo, tex, ppu):
+def bone_mats(g, pose=None):
+    """World transform (R, t) of every bone: rest rotation + animated rotation/offset about its pivot, then the parent's."""
+    pose = pose or {}
+    by = {b["name"]: b for b in g["bones"]}
+    memo = {}
+
+    def get(name):
+        if name in memo:
+            return memo[name]
+        b = by[name]
+        piv = np.array(b.get("pivot", [0, 0, 0]), float)
+        r = np.array(b.get("rotation", [0, 0, 0]), float)
+        ar, ap = pose.get(name, ((0, 0, 0), (0, 0, 0)))
+        R = rot(*(r + np.array(ar, float)))
+        off = np.array([-ap[0], ap[1], ap[2]], float)
+        t = piv - R @ piv + off
+        if b.get("parent"):
+            PR, Pt = get(b["parent"])
+            R, t = PR @ R, PR @ t + Pt
+        memo[name] = (R, t)
+        return memo[name]
+    return {n: get(n) for n in by}
+
+
+def quads(geo, tex, ppu, pose=None):
     g = geo["minecraft:geometry"][0]
+    BM = bone_mats(g, pose)
     for bone in g["bones"]:
+        BR, Bt = BM[bone["name"]]
         for c in bone.get("cubes", []):
             uv = c.get("uv")
             if not isinstance(uv, dict):
@@ -61,10 +87,11 @@ def quads(geo, tex, ppu):
                 else:
                     P = np.stack([x0 + A * sx, np.full_like(A, y0), z0 + B * sz], -1); n = (0, -1, 0)
                 P = (P - piv) @ R.T + piv
-                yield P, R @ np.array(n, float), tex[py0:py1, px0:px1]
+                P = P @ BR.T + Bt
+                yield P, BR @ R @ np.array(n, float), tex[py0:py1, px0:px1]
 
 
-def view(geo, tex, ppu, yaw, size=700):
+def view(geo, tex, ppu, yaw, size=700, pose=None, frame=None):
     cy, sy_ = math.cos(math.radians(yaw)), math.sin(math.radians(yaw))
     pitch = math.radians(18)
     V = np.array([[cy, 0, -sy_], [0, 1, 0], [sy_, 0, cy]])
@@ -72,7 +99,7 @@ def view(geo, tex, ppu, yaw, size=700):
     M = Pt @ V
     light = np.array([0.4, 0.9, -0.3]); light /= np.linalg.norm(light)
     items = []
-    for P, n, t in quads(geo, tex, ppu):
+    for P, n, t in quads(geo, tex, ppu, pose):
         Q = P @ M.T
         nn = M @ n
         if nn[2] > 0.02:          # facing away (camera looks down +z)
@@ -80,6 +107,8 @@ def view(geo, tex, ppu, yaw, size=700):
         items.append((Q[..., 2].mean(), Q, t, 0.62 + 0.38 * max(0, n @ light)))
     allq = np.concatenate([q[1].reshape(-1, 3) for q in items])
     lo, hi = allq.min(0), allq.max(0)
+    if frame is not None:
+        lo, hi = frame
     sc = (size * 0.9) / max(hi[0] - lo[0], hi[1] - lo[1])
     img = Image.new("RGB", (size, size), (150, 185, 225))
     d = ImageDraw.Draw(img)
@@ -108,3 +137,36 @@ def preview(boss, out, tex_path=None):
 
 if __name__ == "__main__":
     preview(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else f"/tmp/{sys.argv[1]}_preview.png")
+
+
+def sample(track, t):
+    """Value of a keyframe channel at time t (linear)."""
+    if isinstance(track, list):
+        return track
+    ks = sorted((float(k), v) for k, v in track.items())
+    if t <= ks[0][0]:
+        return ks[0][1]
+    for (t0, v0), (t1, v1) in zip(ks, ks[1:]):
+        if t <= t1:
+            f = (t - t0) / (t1 - t0) if t1 > t0 else 1
+            return [a + (b - a) * f for a, b in zip(v0, v1)]
+    return ks[-1][1]
+
+
+def pose_at(anim, t):
+    out = {}
+    for bone, ch in anim.get("bones", {}).items():
+        r = sample(ch["rotation"], t) if "rotation" in ch else (0, 0, 0)
+        p = sample(ch["position"], t) if "position" in ch else (0, 0, 0)
+        out[bone] = (r, p)
+    return out
+
+
+def strip(geo, tex, ppu, anim, times, yaw=215, size=300):
+    """A row of frames of one animation, all framed the same."""
+    base = view(geo, tex, ppu, yaw, size)
+    frames = [view(geo, tex, ppu, yaw, size, pose_at(anim, t)) for t in times]
+    s = Image.new("RGB", (size * len(times), size))
+    for i, f in enumerate(frames):
+        s.paste(f, (i * size, 0))
+    return s

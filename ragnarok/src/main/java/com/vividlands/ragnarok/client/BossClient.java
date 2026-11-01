@@ -16,6 +16,9 @@ final class BossClient {
     private BossClient() {
     }
 
+    /** Bosses with a textures/entity/boss/<id>_glowmask.png: those parts (eyes, runes, Gleipnir) glow in the dark. */
+    private static final java.util.Set<String> GLOWING = java.util.Set.of("sleipnir", "fenrir", "jormungandr");
+
     @SuppressWarnings({"unchecked", "rawtypes"})
     private static void bossRenderers() {
         for (var e : com.vividlands.ragnarok.boss.entity.BossEntities.TYPES.entrySet()) {
@@ -24,6 +27,7 @@ final class BossClient {
                 var r = new software.bernie.geckolib.renderer.GeoEntityRenderer(ctx,
                         new software.bernie.geckolib.model.DefaultedEntityGeoModel(
                                 new net.minecraft.resources.ResourceLocation("vividlands_ragnarok", "boss/" + id), true));
+                if (GLOWING.contains(id)) r.addRenderLayer(new software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer(r));
                 return r;
             });
         }

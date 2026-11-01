@@ -103,6 +103,12 @@ public final class Bosses {
         return d;
     }
 
+    private static BossDef def2(String id) {
+        BossDef d = new BossDef(id, 2);
+        DEFS.put(id, d);
+        return d;
+    }
+
     private static MobEffectInstance fx(MobEffect e, int ticks, int level) {
         return new MobEffectInstance(e, ticks, level, false, true, true);
     }
@@ -202,6 +208,42 @@ public final class Bosses {
                 .ability(() -> new Fling(200, 14, 0.9, 1.6, 0.6))
                 .drop("vividlands_ragnarok:mammoth_tusk", 2).drop("vividlands_ragnarok:frozen_heart", 1).xp(1000).after(9)
                 .biomes("vividlands:glacier", "vividlands:glacier_peaks", "minecraft:ice_spikes");
+    }
+
+    // ------------------------------------------------------------------ Chapter 2: Odin's war against Ragnarok
+    static {
+        def2("sleipnir").on("vividlands_ragnarok:sleipnir")
+                .melee(Melee.BOSS).stats(1200, 18, 12).scale(2.4f).reach(1.6f).knockback(1.4f).bar(BossBarColor.BLUE)
+                .ability(() -> new Charge(140, 20, 50, 0.95, 1.6, 2.8, false, 60))
+                .ability(() -> new Leap(160, 14, 4, 16, 1.5, 0.6, false, null))
+                .ability(() -> new Slam(220, 16, 7, 1.2, 0.8, () -> fx(MobEffects.MOVEMENT_SLOWDOWN, 80, 1)))
+                .ability(() -> new Shockwave(300, 20, 14, 0.5, 1.0))
+                .drop("vividlands_ragnarok:sleipnir_hair", 2).xp(1500).after("mammoth")
+                .biomes("vividlands:endless_steppe", "vividlands:wildflower_prairie", "minecraft:plains");
+
+        def2("jormungandr").on("vividlands_ragnarok:jormungandr")
+                .melee(Melee.BOSS).stats(2000, 22, 14).scale(3.0f).reach(1.6f).interval(24).inSea().bar(BossBarColor.GREEN)
+                .onHit(() -> fx(MobEffects.POISON, 100, 1))
+                .ability(() -> new Roar(240, 14, 20, 1.0, SoundEvents.ENDER_DRAGON_GROWL, 0.6f,
+                        () -> fx(MobEffects.POISON, 160, 1), () -> fx(MobEffects.CONFUSION, 120, 0)))
+                .ability(() -> new Leap(180, 18, 4, 16, 1.4, 0.8, true, () -> fx(MobEffects.POISON, 100, 1)))
+                .ability(() -> new Capsize(140, 24, 80))
+                .ability(() -> new Maul(200, 3, 10, 0.6))
+                .drop("vividlands_ragnarok:serpent_scale", 3).xp(2500).after("sleipnir")
+                .biomes("vividlands:deep_northern_ocean", "vividlands:deep_temperate_ocean", "#minecraft:is_deep_ocean");
+
+        def2("fenrir").on("vividlands_ragnarok:fenrir")
+                .melee(Melee.BOSS).stats(3000, 26, 16).scale(4.5f).reach(1.4f).knockback(1.5f).interval(22).bar(BossBarColor.RED)
+                .onHit(() -> bleed(120, 1))
+                .ability(() -> new Roar(260, 16, 24, 1.4, SoundEvents.WOLF_HOWL, 0.5f,
+                        () -> fx(MobEffects.WEAKNESS, 140, 1), () -> fx(MobEffects.MOVEMENT_SLOWDOWN, 100, 1)))
+                .ability(() -> new Maul(160, 4, 8, 0.7))
+                .ability(() -> new Leap(180, 14, 5, 18, 1.5, 0.6, false, () -> bleed(160, 1)))
+                .ability(() -> new Slam(240, 18, 7, 1.3, 0.9, null))
+                .ability(() -> new Summon(500, 3, 4, 60, 0.4f))
+                .drop("vividlands_ragnarok:fenrirs_fang", 1).drop("vividlands_ragnarok:wolf_pelt", 3).xp(5000)
+                .after("jormungandr")
+                .structures("mebahelcreaturesdraugr:draugr_crypt");
     }
 
     // ------------------------------------------------------------------ lookups

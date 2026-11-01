@@ -54,5 +54,9 @@ public final class BossEntities {
         land("elephant", 1.6f, 2.6f, 0.27);
         sea("bull_shark", 1.0f, 0.7f, 1.2);
         land("mammoth", 1.6f, 3.2f, 0.27);
+        // Chapter 2: Odin's war against Ragnarok
+        land("sleipnir", 1.0f, 2.2f, 0.36);
+        sea("jormungandr", 1.0f, 0.9f, 1.3);
+        land("fenrir", 1.0f, 1.45f, 0.34);
     }
 }

@@ -26,6 +26,17 @@ BOSSES = {
     "elephant": "Bull Elephant, Thunder of the Savanna",
     "bull_shark": "Giant Bull Shark, Blood in the Water",
     "mammoth": "Woolly Mammoth, Skadi's Last Trial",
+    # Chapter 2
+    "sleipnir": "Sleipnir, Odin's Eight-Legged Steed",
+    "jormungandr": "Jormungandr, the World Serpent",
+    "fenrir": "Fenrir, the Wolf of Ragnarok",
+}
+
+ENTITY_NAMES = {
+    "cave_bear": "Cave Bear", "irish_elk": "Irish Elk", "hippo": "Hippopotamus", "crocodile": "Crocodile",
+    "silverback": "Silverback", "saber_tooth": "Saber-tooth", "woolly_rhino": "Woolly Rhinoceros",
+    "elephant": "Bull Elephant", "bull_shark": "Bull Shark", "mammoth": "Woolly Mammoth",
+    "sleipnir": "Sleipnir", "jormungandr": "Jormungandr", "fenrir": "Fenrir",
 }
 
 TROPHIES = {
@@ -255,6 +266,8 @@ def main():
     for k, v in TROPHIES.items():
         lang[f"item.{NS}.{k}"] = v
     lang.update(LANG)
+    for k, v in ENTITY_NAMES.items():
+        lang[f"entity.{NS}.{k}"] = v
     lang_file.write_text(json.dumps(dict(sorted(lang.items())), indent=2, ensure_ascii=False) + "\n")
     print(f"{len(BOSSES)} bosses, {len(icons)} trophies")
 
