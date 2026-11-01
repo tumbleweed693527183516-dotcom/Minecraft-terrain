@@ -49,6 +49,11 @@ public class AncientArmorItem extends ArmorItem implements GeoItem {
                                                                      HumanoidModel<LivingEntity> original) {
                 if (this.renderer == null) {
                     this.renderer = new GeoArmorRenderer<>(new DefaultedItemGeoModel<>(new ResourceLocation("vividlands_ragnarok", "armor/" + id)));
+                    // parts that glow in the dark (eyes, runes): textures/item/armor/<set>_glowmask.png, when the set has one
+                    if (net.minecraft.client.Minecraft.getInstance().getResourceManager()
+                            .getResource(new ResourceLocation("vividlands_ragnarok", "textures/item/armor/" + id + "_glowmask.png")).isPresent()) {
+                        this.renderer.addRenderLayer(new software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer<>(this.renderer));
+                    }
                 }
                 this.renderer.prepForRender(entity, stack, slot, original);
                 return this.renderer;

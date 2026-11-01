@@ -1084,14 +1084,25 @@ def h_wanax(m, P):
         box(m, H, -4.75, y, -4.75, 4.75, y + 0.9, 4.75, P["tusk"])
     box(m, H, -4.7, 24.2, -3.4, 4.7, 28.0, 4.7, P["helm"])                 # cheeks and neck
     box(m, H, -5.2, 24.4, 4.2, 5.2, 25.6, 6.0, P["helm"])                  # flared neck guard
-    # the gold death mask: eye slits, straight nose, beard
-    box(m, H, -4.3, 24.0, -5.05, 4.3, 27.2, -4.6, P["mask"])
-    m.sym(H, (-4.3, 27.2, -5.05), (-2.9, 28.6, -4.6), P["mask"])
-    box(m, H, -1.0, 27.2, -5.05, 1.0, 28.6, -4.6, P["mask"])
-    box(m, H, -0.6, 26.4, -5.5, 0.6, 28.8, -5.0, P["mask"])                # nose
-    m.sym(H, (-3.6, 28.6, -5.25), (-0.8, 29.2, -4.85), P["gold_dark"])     # brows
-    box(m, H, -3.4, 24.0, -5.25, 3.4, 25.0, -4.9, P["gold_dark"])          # beard edge
-    box(m, H, -1.1, 29.4, -5.3, 1.1, 31.4, -4.8, P["gold"])                # lion emblem on the brow
+    # the gold death mask, sculpted: brow ridge, glowing eyes, long nose, upturned moustache, braided beard
+    box(m, H, -4.3, 24.0, -5.0, 4.3, 27.2, -4.6, P["mask"])                # lower face
+    for i, x in enumerate((-3.6, -2.1, -0.6, 0.9, 2.4)):                     # a crown of gold rays above the brow
+        box(m, H, x, 29.4, -5.1, x + 1.2, 30.6 + (1.0 if i == 2 else 0.4 if i in (1, 3) else 0), -4.7, P["gold"])
+    box(m, H, -4.3, 28.2, -5.0, 4.3, 29.4, -4.6, P["mask"])                # forehead
+    box(m, H, -1.2, 27.2, -5.0, 1.2, 28.2, -4.6, P["mask"])                # between the eyes
+    m.sym(H, (-4.3, 27.2, -5.0), (-3.3, 28.2, -4.6), P["mask"])            # temples
+    m.sym(H, (-3.3, 27.2, -4.8), (-1.2, 28.2, -4.6), P["eyes"])            # glowing eyes, set deep
+    m.sym(H, (-3.9, 28.1, -5.45), (-0.5, 28.9, -4.95), P["gold_dark"], rot=(0, 0, -9), pivot=(-0.5, 28.5, -5.2))  # scowling brows
+    m.sym(H, (-4.1, 26.3, -5.3), (-2.3, 27.1, -4.95), P["mask"])           # cheekbones
+    box(m, H, -0.65, 25.9, -5.75, 0.65, 28.3, -5.0, P["mask"])             # long straight nose
+    box(m, H, -1.05, 25.7, -5.55, 1.05, 26.3, -5.0, P["mask"])             # nostrils
+    m.sym(H, (-2.9, 25.0, -5.45), (-0.3, 25.6, -5.0), P["gold_dark"], rot=(0, 0, 14), pivot=(-0.3, 25.3, -5.2))   # moustache, ends curled up
+    box(m, H, -1.5, 24.5, -5.1, 1.5, 24.85, -4.95, P["mouth"])             # thin mouth
+    box(m, H, -3.0, 22.2, -5.3, 3.0, 24.6, -4.5, P["beard"])               # braided beard below the chin
+    box(m, H, -2.0, 21.0, -5.15, 2.0, 22.3, -4.6, P["beard"])
+    box(m, H, -0.9, 20.0, -5.0, 0.9, 21.1, -4.7, P["beard"])
+    m.sym(H, (-4.85, 25.6, -3.6), (-4.45, 28.4, -2.4), P["mask"])          # ears
+    box(m, H, -1.1, 31.0, -5.3, 1.1, 32.4, -4.8, P["gold"])                # lion emblem on the brow
     m.sym(H, (-5.5, 28.8, -1.5), (-4.7, 33.6, 2.6), P["gold"])             # side plumes holders
     m.sym(H, (-5.4, 33.6, -0.6), (-4.8, 37.4, 1.4), P["plume"], rot=(0, 0, -12), pivot=(-5.1, 33.6, 0.4))
     # the great crest: on a gold stand, sweeping back and down
@@ -1149,7 +1160,9 @@ LEGS["royal"] = lambda m, P: l_thighguard(m, P, "bands")
 
 SETS.append(S("agamemnon", "Agamemnon's", "Mycenae (legendary)", "wanax", "royal", "lion", "none", "royal", "royal",
               pal(helm=("#7a4e2a", "metal", {}), chest=("#8a5a30", "metal", {}), trim=("#e0b040", "gold", {}),
-                  gold=("#e8b83a", "gold", {}), gold_dark=("#a8782a", "gold", {}), mask=("#ecc04a", "gold", {"band": ("#c89a30", 2, 1)}),
+                  gold=("#e8b83a", "gold", {}), gold_dark=("#9a6a22", "gold", {}), mask=("#f2c850", "gold", {}),
+                  eyes=("#ff4a14", "glow", {}), mouth=("#5a3a12", "dark", {}),
+                  beard=("#d8a838", "gold", {"band": ("#9a6a22", 2)}),
                   bands=("#8a5a30", "metal", {"band": ("#e0b040", 3)}), plume=("#8a1418", "hair", {}), crimson=("#8a1418", "cloth", {}),
                   mane=("#a8702a", "fur", {}), tusk=("#e8dcb8", "bone", {"band": ("#8a6a3a", 2)}), cloth=("#8a1418", "cloth", {}),
                   sleeve=("#8a1418", "cloth", {}), cloth3=("#5a1218", "cloth", {}), wrap=("#5a1218", "cloth", {}),
