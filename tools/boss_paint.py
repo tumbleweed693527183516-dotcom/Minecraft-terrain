@@ -91,6 +91,16 @@ def faces_of(geo, ppu):
     for b in g["bones"]:
         for c in b.get("cubes", []):
             uv = c.get("uv")
+            if isinstance(uv, list):                     # box UV: convert to per-face rectangles
+                w_, h_, d_ = (max(1, round(v)) if v > 0 else 0 for v in c["size"])
+                u, v = uv
+                fl = c.get("mirror", False)
+                uv = {"north": {"uv": [u + d_, v + d_], "uv_size": [w_, h_]},
+                      "south": {"uv": [u + 2 * d_ + w_, v + d_], "uv_size": [w_, h_]},
+                      ("west" if not fl else "east"): {"uv": [u + d_ + w_, v + d_], "uv_size": [d_, h_]},
+                      ("east" if not fl else "west"): {"uv": [u, v + d_], "uv_size": [d_, h_]},
+                      "up": {"uv": [u + d_ + w_, v + d_], "uv_size": [-w_, -d_]},
+                      "down": {"uv": [u + d_ + 2 * w_, v], "uv_size": [-w_, d_]}}
             if not isinstance(uv, dict):
                 continue
             x0, y0, z0 = c["origin"]

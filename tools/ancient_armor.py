@@ -265,6 +265,75 @@ def h_montefortino(m, P):
     h_rim(m, P)
 
 
+def h_negau(m, P):                                  # Etruscan: round bowl, rolled brim, a ridge on top
+    h_cap(m, P, low=28.0)
+    box(m, H, -5.2, 27.4, -5.2, 5.2, 28.4, 5.2, P["trim"])
+    box(m, H, -0.5, 32.4, -3.6, 0.5, 33.6, 3.6, P["trim"])
+    h_cheeks(m, P)
+
+
+def h_illyrian(m, P):                               # two parallel ridges on top, open face, long cheek plates
+    h_cap(m, P, low=27.4)
+    m.sym(H, (-1.8, 32.4, -4.4), (-1.0, 33.8, 4.4), P["trim"])
+    h_cheeks(m, P, 24.0)
+    h_neck(m, P, flare=False)
+    box(m, H, -0.6, 33.6, -2.0, 0.6, 37.4, 2.0, P["plume"])
+
+
+def h_shang(m, P):                                  # Shang bronze: a beast-mask brow and a plume tube
+    h_cap(m, P, low=27.0)
+    box(m, H, -4.8, 28.0, -5.2, 4.8, 31.0, -4.6, P["trim"])            # taotie mask
+    m.sym(H, (-3.4, 29.0, -5.5), (-1.6, 30.2, -5.1), P["accent"])      # its eyes
+    m.sym(H, (-5.0, 30.4, -1.2), (-4.6, 33.0, 1.2), P["trim"])         # ear knobs
+    box(m, H, -0.7, 32.6, -0.7, 0.7, 34.8, 0.7, P["trim"])
+    box(m, H, -0.6, 34.8, -0.6, 0.6, 38.0, 0.6, P["plume"])
+
+
+def h_olmec(m, P):                                  # the close cap of the colossal heads, with ear flaps
+    box(m, H, -4.75, 28.0, -4.75, 4.75, 33.0, 4.75, P["helm"])
+    m.sym(H, (-4.95, 24.0, -2.4), (-4.55, 29.0, 2.4), P["helm"])
+    for y in (29.0, 30.6):
+        box(m, H, -4.9, y, -4.9, 4.9, y + 0.8, -4.6, P["trim"])
+    box(m, H, -1.0, 31.6, -5.2, 1.0, 33.4, -4.8, P["accent"])
+
+
+def h_iberian(m, P):                                # sinew cap with a tall crest across
+    h_cap(m, P, low=27.4, mat="leather")
+    box(m, H, -0.6, 32.4, -0.6, 0.6, 33.4, 0.6, P["trim"])
+    box(m, H, -4.4, 33.2, -0.7, 4.4, 37.0, 0.7, P["plume"])
+    m.sym(H, (-4.8, 24.4, -1.0), (-4.6, 28.0, -0.4), P["trim"])
+
+
+def h_goguryeo(m, P):                               # lamellar bowl, long plume spike, lamellar neck flaps
+    h_cap(m, P, low=28.0, mat="lamellar")
+    box(m, H, -4.9, 24.6, -3.0, 4.9, 28.4, 5.0, P["lamellar"])
+    box(m, H, -4.85, 27.6, -4.85, 4.85, 28.4, 4.85, P["trim"])
+    box(m, H, -0.5, 32.6, -0.5, 0.5, 36.0, 0.5, P["trim"])
+    box(m, H, -0.9, 35.4, -0.9, 0.9, 38.4, 0.9, P["plume"])
+
+
+def h_mokot(m, P):                                  # Khmer tiered crown
+    box(m, H, -4.8, 28.0, -4.8, 4.8, 30.2, 4.8, P["gold"])
+    box(m, H, -3.8, 30.2, -3.8, 3.8, 32.4, 3.8, P["gold"])
+    box(m, H, -2.8, 32.4, -2.8, 2.8, 34.4, 2.8, P["gold"])
+    box(m, H, -1.8, 34.4, -1.8, 1.8, 36.2, 1.8, P["gold"])
+    box(m, H, -0.8, 36.2, -0.8, 0.8, 38.6, 0.8, P["gold"])
+    for y in (29.0, 31.2, 33.4):
+        box(m, H, -0.6, y, -5.0 + (y - 29) * 0.45, 0.6, y + 1.0, -4.6 + (y - 29) * 0.45, P["accent"])
+    m.sym(H, (-5.2, 26.0, -0.8), (-4.7, 29.0, 0.8), P["gold"])        # ear ornaments
+
+
+def h_suttonhoo(m, P):                              # Anglo-Saxon: full face mask with brows, nose and moustache
+    h_cap(m, P, low=28.0)
+    box(m, H, -0.6, 32.4, -4.8, 0.6, 33.6, 4.8, P["gold"])            # crest ridge
+    box(m, H, -4.65, 24.2, -3.4, 4.65, 28.6, 4.65, P["helm"])         # neck and cheek guards
+    m.sym(H, (-4.7, 24.4, -4.8), (-2.4, 27.0, -3.3), P["helm"])       # cheek plates
+    m.sym(H, (-4.0, 28.0, -5.0), (-0.6, 28.8, -4.6), P["gold"])       # eyebrows
+    box(m, H, -0.7, 25.6, -5.2, 0.7, 28.6, -4.6, P["gold"])           # nose
+    box(m, H, -2.4, 25.0, -5.0, 2.4, 25.8, -4.6, P["gold"])           # moustache
+    box(m, H, -4.8, 27.6, -4.8, 4.8, 28.2, 4.8, P["trim"])
+
+
 HELMETS = {
     "cap": lambda m, P: (h_cap(m, P), h_rim(m, P)),
     "conical": lambda m, P: (h_cap(m, P, 28.0), h_cone(m, P), h_nasal(m, P), h_rim(m, P, 28.0)),
@@ -291,7 +360,21 @@ HELMETS = {
     "sun": h_sun,
     "furhat": h_furhat,
     "topknot": h_topknot,
+    "negau": h_negau,
+    "illyrian": h_illyrian,
+    "shang": h_shang,
+    "olmec": h_olmec,
+    "iberian": h_iberian,
+    "goguryeo": h_goguryeo,
+    "mokot": h_mokot,
+    "suttonhoo": h_suttonhoo,
+    "akkad": lambda m, P: (h_cap(m, P, 27.0), h_rim(m, P, 27.0), h_cheeks(m, P), h_neck(m, P, flare=False)),
+    "hun": lambda m, P: (h_cap(m, P, 28.0), h_cone(m, P), h_furhat_brim(m, P), h_nasal(m, P)),
 }
+
+
+def h_furhat_brim(m, P):
+    box(m, H, -4.95, 27.0, -4.95, 4.95, 28.6, 4.95, P["fur"])
 
 
 # ================================================================== body (chestplate: armorBody + arms)
@@ -432,10 +515,16 @@ def s_sleeve(m, P, mat="scale", y0=16.0):
 
 
 def s_flap(m, P):
-    """No armour on the arms: short sleeves of the set's cloth."""
+    pass
+
+
+def sleeves(m, P):
+    """Every chestplate covers the whole arm (like the armour mods do): a sleeve of the set's sleeve material."""
     for bone, s_, xi, xo in arms(None):
-        lo, hi = sorted((xi, xo + s_ * 0.45))
-        box(m, bone, lo, 19.6, -2.45, hi, 24.45, 2.45, P["cloth"])
+        lo, hi = sorted((xi - s_ * 0.05, xo + s_ * 0.5))
+        box(m, bone, lo, 11.6, -2.5, hi, 24.5, 2.5, P["sleeve"])
+        lo, hi = sorted((xi - s_ * 0.05, xo + s_ * 0.6))
+        box(m, bone, lo, 11.5, -2.6, hi, 13.2, 2.6, P["cuff"])
 
 
 def cape(m, P, mat="cape"):
@@ -493,6 +582,7 @@ LEGS = {"trousers": l_trousers, "haidate": l_haidate, "wrap": l_wrap, "scale": l
 
 def f_sandal(m, P):
     for leg, boot, s, x0, x1 in legs():
+        box(m, boot, x0 - 0.25, 0.4, -2.3, x1 + 0.25, 6.4, 2.3, P["wrap"])          # leg wraps under the straps
         box(m, boot, x0 - 0.3, 0.0, -2.7, x1 + 0.3, 0.6, 2.4, P["leather"])
         for y in (1.4, 2.8, 4.2):
             box(m, boot, x0 - 0.35, y, -2.4, x1 + 0.35, y + 0.5, 2.4, P["leather"])
@@ -558,6 +648,8 @@ def pal(**kw):
             "beak": ("#e0b040", "bone", {}), "pelt": ("#c89a40", "fur", {"studs": ("#2a1c10", 2)}), "bone": MAT["bone"],
             "grill": ("#8a8d94", "mail", {}), "hair": ("#2a1c14", "hair", {})}
     base.update(kw)
+    base.setdefault("sleeve", base["cloth"])
+    base.setdefault("cuff", base["trim"])
     return base
 
 
@@ -689,7 +781,78 @@ SETS = [
       pal(helm=("#2e4a8a", "metal", {"studs": ("#d6a832", 2)}), cloth=("#ece8dc", "cloth", {}), cloth2=MAT["gold"],
           scale=("#d6a832", "scales", {"band": ("#2e4a8a", 3)}), chest=MAT["gold"], trim=MAT["gold"], accent=("#3a8aa8", "plain", {})),
       ("Blue War Crown", "Royal Broad Collar", "Golden Shendyt", "Pharaoh's Sandals"), bracer="gold", cloak=("#2e4a8a", "cloth", {"band": ("#d6a832", 4)})),
+    S("akkadian", "Akkadian", "Akkad", "akkad", "leather", "none", "kilt", "bare", "sandal",
+      pal(helm=MAT["copper"], trim=MAT["copper"], leather=("#5a4030", "hide", {"studs": ("#b8693e", 2)}),
+          cloth=("#d8c8a0", "cloth", {"band": ("#6a4a2c", 2)}), cloth2=MAT["linen"]),
+      ("Sargon's Helm", "Studded Leather Coat", "Fleece Kilt", "Sandals")),
+    S("shang", "Shang", "Shang China", "shang", "lamellar", "none", "panels", "trousers", "boots",
+      pal(helm=("#8a7a4a", "metal", {}), trim=("#6a8a6a", "metal", {}), accent=("#c84a2a", "plain", {}),
+          lamellar=("#6a4a30", "lamellar", {"lace": "#c84a2a"}), armor2=("#6a4a30", "lamellar", {}), cloth=("#c84a2a", "cloth", {}),
+          cloth3=("#3a3a3a", "cloth", {}), plume=("#c84a2a", "hair", {})),
+      ("Taotie Helm", "Hide Lamellar", "Bronze-Age Trousers", "Hide Boots")),
+    S("phoenician", "Phoenician", "Phoenicia", "conical", "scale", "sleeve", "kilt", "bare", "sandal",
+      pal(helm=MAT["bronze"], scale=("#b07a3a", "scales", {}), cloth=("#5e2a6a", "cloth", {"band": ("#d6a832", 4)}),
+          cloth2=("#5e2a6a", "cloth", {}), sleeve=("#5e2a6a", "cloth", {})),
+      ("Sea-Trader's Helm", "Tyrian Scale Coat", "Purple Kilt", "Sailor's Sandals")),
+    S("olmec", "Olmec", "Olmec", "olmec", "quilted", "none", "kilt", "wrap", "sandal",
+      pal(helm=("#6a7a5a", "hide", {}), trim=("#3a8a6a", "bone", {}), accent=("#3a8a6a", "plain", {}),
+          cloth=("#c8b88a", "cloth", {"band": ("#3a8a6a", 3)}), cloth2=("#3a8a6a", "cloth", {}),
+          wrap=("#c8b88a", "cloth", {"band": ("#6a7a5a", 2)})),
+      ("Colossal Head Cap", "Jade-Stitched Tunic", "Loincloth", "Jungle Sandals"), bracer="trim"),
+    S("etruscan", "Etruscan", "Etruria", "negau", "muscle", "none", "pteruges", "bare", "greaves",
+      pal(chest=("#c08a40", "metal", {}), cloth=("#2a2a2e", "cloth", {"band": ("#c84a2a", 3)}), strips=("#2a2a2e", "hide", {}),
+          plume=("#c84a2a", "hair", {})),
+      ("Negau Helmet", "Bell Cuirass", "Tebenna", "Bronze Greaves")),
+    S("illyrian", "Illyrian", "Illyria", "illyrian", "muscle", "none", "pteruges", "bare", "greaves",
+      pal(cloth=("#ece8dc", "cloth", {"band": ("#2e4a8a", 4)}), plume=("#2e4a8a", "hair", {}), strips=("#5a3a24", "hide", {})),
+      ("Illyrian Helmet", "Bronze Bell Cuirass", "Pleated Tunic", "Greaves")),
+    S("iberian", "Iberian", "Iberia", "iberian", "leather", "none", "kilt", "bare", "boots",
+      pal(leather=("#5a3a24", "hide", {"studs": ("#c8ccd2", 2)}), cloth=("#ece8dc", "cloth", {"band": ("#9a2a22", 3)}),
+          cloth2=("#9a2a22", "cloth", {}), plume=("#9a2a22", "hair", {}), trim=MAT["silver"]),
+      ("Sinew Helm", "Disc-Plate Harness", "Falcata Tunic", "Hill Boots")),
+    S("argyraspid", "Silver Shield", "Seleucia", "attic", "muscle", "plate", "pteruges", "bare", "greaves",
+      pal(helm=MAT["silver"], chest=MAT["silver"], trim=MAT["gold"], plume=("#ece8dc", "hair", {}), cloth=("#2e4a8a", "cloth", {}),
+          strips=("#2e4a8a", "cloth", {"trim": "#c8ccd2"})),
+      ("Argyraspid Helm", "Silvered Cuirass", "Veteran's Chiton", "Silvered Greaves"), cloak=("#2e4a8a", "cloth", {})),
+    S("numidian", "Numidian", "Numidia", "hood", "leather", "none", "kilt", "bare", "sandal",
+      pal(cloth=("#e8dcc0", "cloth", {}), leather=("#7a5434", "hide", {"studs": ("#d6a832", 3)}), cloth2=("#c8501e", "cloth", {}),
+          sleeve=("#e8dcc0", "cloth", {})),
+      ("Desert Rider's Hood", "Rider's Jerkin", "Light Kilt", "Riding Sandals")),
+    S("dacian", "Dacian", "Dacia", "phrygian", "scale", "sleeve", "none", "trousers", "boots",
+      pal(helm=MAT["iron"], scale=("#8a8d94", "scales", {}), cloth3=("#4a5a3a", "cloth", {"band": ("#2a2a2e", 2)}),
+          leather=("#4a3424", "hide", {}), sleeve=("#4a5a3a", "cloth", {})),
+      ("Wolf-Banner Helm", "Iron Scale Shirt", "Wool Trousers", "Mountain Boots")),
+    S("hun", "Hunnic", "Huns", "hun", "lamellar", "fur", "panels", "trousers", "fur_boots",
+      pal(helm=MAT["iron"], trim=MAT["gold"], fur=("#4a3a2a", "fur", {}), lamellar=("#5a5a62", "lamellar", {}),
+          armor2=("#5a5a62", "lamellar", {}), cloth3=("#6a4a2c", "cloth", {})),
+      ("Steppe Helm", "Horseman's Lamellar", "Leather Trousers", "Felt-Lined Boots")),
+    S("goguryeo", "Goguryeo", "Goguryeo", "goguryeo", "lamellar", "lamellar_sleeve", "panels", "haidate", "metal_boots",
+      pal(lamellar=("#6a6e78", "lamellar", {"lace": "#2e8a8a"}), armor2=("#6a6e78", "lamellar", {"lace": "#2e8a8a"}),
+          trim=("#2e8a8a", "cloth", {}), plume=("#c84a2a", "hair", {}), cloth3=("#2a2a2e", "cloth", {}), chest=MAT["steel"]),
+      ("Plumed Lamellar Helm", "Cavalry Lamellar", "Lamellar Thigh Guards", "Iron Boots")),
+    S("aksumite", "Aksumite", "Aksum", "feathers", "scale", "plate", "kilt", "bare", "sandal",
+      pal(scale=("#d6a832", "scales", {}), chest=MAT["gold"], plume=("#c89a40", "fur", {}), plume2=("#2a2a2e", "feather", {}),
+          cloth=("#ece8dc", "cloth", {"band": ("#d6a832", 4)}), cloth2=("#9a2a22", "cloth", {})),
+      ("Lion's Mane Crown", "Golden Scale Coat", "Royal Kilt", "Highland Sandals"), bracer="gold", cloak=("#c89a40", "fur", {})),
+    S("anglo_saxon", "Anglo-Saxon", "Wessex", "suttonhoo", "mail", "plate", "none", "trousers", "boots",
+      pal(helm=MAT["iron"], trim=MAT["gold"], chest=MAT["iron"], mail=("#8a8d94", "mail", {}), cloth3=("#6a4a2c", "cloth", {}),
+          sleeve=("#8a8d94", "mail", {})),
+      ("Sutton Hoo Helm", "Thegn's Byrnie", "Wool Leggings", "Leather Turnshoes"), cloak=("#2e4a8a", "cloth", {"trim": "#d6a832"})),
+    S("khmer", "Khmer", "Angkor", "mokot", "robe", "plate", "kilt", "bare", "sandal",
+      pal(gold=MAT["gold"], accent=("#c84a2a", "plain", {}), cloth=("#c84a2a", "cloth", {"band": ("#d6a832", 3)}),
+          cloth2=("#d6a832", "cloth", {}), scale=("#d6a832", "scales", {}), chest=MAT["gold"], trim=MAT["gold"]),
+      ("Mokot Crown", "Temple Guard Collar", "Sampot", "Temple Sandals"), bracer="gold"),
 ]
+
+
+ORDER = ["sumerian", "akkadian", "egyptian", "minoan", "shang", "nubian", "hittite", "phoenician", "mycenaean", "olmec",
+         "assyrian", "babylonian", "etruscan", "celtic", "illyrian", "thracian", "iberian", "athenian", "spartan",
+         "macedonian", "argyraspid", "scythian", "persian", "carthaginian", "numidian", "dacian", "roman", "gladiator",
+         "centurion", "praetorian", "germanic", "hun", "qin", "han", "goguryeo", "maurya", "aksumite", "sarmatian",
+         "parthian", "anglo_saxon", "byzantine", "khmer", "mongol", "maya", "aztec", "inca", "samurai", "pharaoh"]
+_by = {x["id"]: x for x in SETS}
+assert sorted(ORDER) == sorted(_by), set(ORDER) ^ set(_by)
+SETS = [_by[k] for k in ORDER]
 
 
 # ================================================================== build
@@ -703,6 +866,7 @@ def build(spec):
         P[role] = name
     HELMETS[spec["helmet"]](m, P)
     CHESTS[spec["chest"]](m, P)
+    sleeves(m, P)
     SHOULDERS[spec["shoulders"]](m, P)
     if spec["skirt"] != "none":
         skirt(m, P, spec["skirt"])
@@ -734,7 +898,7 @@ def icons(spec):
         helm = _c(spec, "pelt")
     elif hk in ("boar",):
         helm = _c(spec, "tusk")
-    elif hk in ("feathers", "sun"):
+    elif hk in ("feathers", "sun", "mokot"):
         helm = _c(spec, "gold")
     ck = spec["chest"]
     body = {"linothorax": "cloth", "scale": "scale", "lamellar": "lamellar", "segmentata": "chest", "mail": "mail",
@@ -790,7 +954,8 @@ def icons(spec):
     hrow = {"corinthian": "crest", "attic": "crest", "galea_crest": "crest", "galea_transverse": "crest", "murmillo": "crest",
             "conical": "cone", "conical_mail": "cone", "furhat": "cone", "khepresh": "cone", "horned": "horn",
             "horned_side": "horn", "feathers": "plumes", "sun": "plumes", "nemes": "cloth", "hood": "cloth",
-            "turban": "cloth", "kabuto": "horn", "montefortino": "crest"}.get(hk, "default")
+            "turban": "cloth", "kabuto": "horn", "montefortino": "crest", "illyrian": "crest", "iberian": "crest",
+            "shang": "crest", "goguryeo": "cone", "mokot": "cone", "hun": "cone", "suttonhoo": "default"}.get(hk, "default")
     plume = _c(spec, "horn") if hrow == "horn" and hk.startswith("horned") else (_c(spec, "gold") if hk == "kabuto" else _c(spec, "plume"))
     out["helmet"] = img(H_ROWS[hrow], {"h": helm, "H": helm, "t": trim, "T": trim, "p": plume, "q": _c(spec, "plume2")})
     out["chestplate"] = img(["................", "..ttt......ttt..", ".tbbbtttttttbbbt", ".bbbbbbbbbbbbbbb".replace("b", "b"),

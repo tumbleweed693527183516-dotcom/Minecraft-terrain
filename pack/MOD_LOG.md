@@ -448,12 +448,15 @@ hurt, combo, breath, grab, spin, swoop, stagger).
 
 ## Ancient armor (v0.26)
 
-33 armor sets from ancient civilizations, 132 pieces, each a 3D GeckoLib model in the blocky Minecraft style with its
+48 armor sets from ancient civilizations, 132 pieces, each a 3D GeckoLib model in the blocky Minecraft style with its
 own icons (tools/ancient_armor.py builds models, textures, icons, names and AncientSets.java; tools/armor_preview.py
 draws them on a mannequin). Order = tier, weakest to strongest:
-Sumerian, Egyptian, Minoan, Nubian, Hittite, Mycenaean, Assyrian, Babylonian, Celtic, Thracian, Athenian, Spartan,
-Macedonian, Scythian, Persian, Carthaginian, Roman Legionary, Gladiator, Centurion, Praetorian, Germanic, Qin
-Terracotta, Han, Mauryan, Sarmatian, Parthian, Byzantine, Mongol, Maya, Aztec, Inca, Samurai, Pharaoh.
+Sumerian, Akkadian, Egyptian, Minoan, Shang, Nubian, Hittite, Phoenician, Mycenaean, Olmec, Assyrian, Babylonian,
+Etruscan, Celtic, Illyrian, Thracian, Iberian, Athenian, Spartan, Macedonian, Silver Shield, Scythian, Persian,
+Carthaginian, Numidian, Dacian, Roman Legionary, Gladiator, Centurion, Praetorian, Germanic, Hunnic, Qin Terracotta,
+Han, Goguryeo, Mauryan, Aksumite, Sarmatian, Parthian, Anglo-Saxon, Byzantine, Khmer, Mongol, Maya, Aztec, Inca,
+Samurai, Pharaoh. Styled after the GeckoLib armour mods (Fantasy Armor, RPG Series): every piece covers its whole
+limb, plates sit a pixel off the body, and textures use pixel-art bevels (lit top edge, shaded bottom edge).
 Stats are a straight line by tier (AncientArmorMaterial: defense leather -> a little above netherite, toughness 0 -> 4,
 knockback resistance 0 -> 0.15, durability, enchantability). Crafting recipes and repair materials still to come, on
 the same linear scale. Own creative tab: Ancient Armor.

@@ -10,8 +10,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from ancient_armor import SETS, GEO_DIR, TEX_DIR  # noqa: E402
 from boss_preview import view  # noqa: E402
 
-SKIN = [((-4, 24, -4), (4, 32, 4)), ((-4, 12, -2), (4, 24, 2)), ((-8, 12, -2), (-4, 24, 2)), ((4, 12, -2), (8, 24, 2)),
-        ((-4, 0, -2), (0, 12, 2)), ((0, 0, -2), (4, 12, 2))]
+_S = [((-4, 24, -4), (4, 32, 4)), ((-4, 12, -2), (4, 24, 2)), ((-8, 12, -2), (-4, 24, 2)), ((4, 12, -2), (8, 24, 2)),
+      ((-4, 0, -2), (0, 12, 2)), ((0, 0, -2), (4, 12, 2))]
+SKIN = [(tuple(v + 0.35 for v in a), tuple(v - 0.35 for v in b)) for a, b in _S]     # a little inside the armour
 
 
 def with_mannequin(geo, tex):

@@ -55,6 +55,15 @@ def quads(geo, tex, ppu, pose=None):
         BR, Bt = BM[bone["name"]]
         for c in bone.get("cubes", []):
             uv = c.get("uv")
+            if isinstance(uv, list):
+                w_, h_, d_ = (max(1, round(v)) if v > 0 else 0 for v in c["size"])
+                u, v = uv
+                uv = {"north": {"uv": [u + d_, v + d_], "uv_size": [w_, h_]},
+                      "south": {"uv": [u + 2 * d_ + w_, v + d_], "uv_size": [w_, h_]},
+                      "west": {"uv": [u + d_ + w_, v + d_], "uv_size": [d_, h_]},
+                      "east": {"uv": [u, v + d_], "uv_size": [d_, h_]},
+                      "up": {"uv": [u + d_ + w_, v + d_], "uv_size": [-w_, -d_]},
+                      "down": {"uv": [u + d_ + 2 * w_, v], "uv_size": [-w_, d_]}}
             if not isinstance(uv, dict):
                 continue
             inf = c.get("inflate", 0)

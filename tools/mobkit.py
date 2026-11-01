@@ -248,6 +248,22 @@ class Model:
                 edge = (pv - pv.min() < 1) | (pv.max() - pv < 1)
                 if ax != 1:
                     col = np.where(edge[..., None], hexrgb(mat["trim"]) * shade(Ps, seed + 31, 0.4)[..., None], col)
+            bev = mat.get("bevel", {"metal": 0.22, "gold": 0.22, "plates": 0.16, "lamellar": 0.14, "scales": 0.12,
+                                    "bone": 0.14, "hide": 0.1, "cloth": 0.08, "mail": 0.1, "dark": 0.08}.get(st, 0.0))
+            if bev and ax != 1 and P.shape[0] > 1:     # pixel-art bevel: lit top-left edge, shaded bottom-right edge
+                pv, pu = Ps[..., 1], Ps[..., u_ax]
+                top = pv.max() - pv < 1
+                bot = pv - pv.min() < 1
+                lft = pu - pu.min() < 1
+                rgt = pu.max() - pu < 1
+                if ax == 2 and nrm[2] > 0 or ax == 0 and nrm[0] < 0:
+                    lft, rgt = rgt, lft
+                f = np.ones(Ps.shape[:2])
+                f = np.where(bot | rgt, 1 - bev, f)
+                f = np.where(top | lft, 1 + bev * 0.9, f)
+                col *= f[..., None]
+            elif bev and ax == 1:
+                col *= (1 + bev * 0.5 if nrm[1] > 0 else 1 - bev)
             if st == "bone":
                 col *= np.where(cell(Ps, seed + 5) > 0.8, 0.9, 1.0)[..., None]
                 if nrm[1] > 0.5:
