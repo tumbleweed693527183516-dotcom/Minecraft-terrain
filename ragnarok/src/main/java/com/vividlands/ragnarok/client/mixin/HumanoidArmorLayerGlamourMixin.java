@@ -6,6 +6,7 @@ import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.Model;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
+import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -31,6 +32,8 @@ public abstract class HumanoidArmorLayerGlamourMixin<T extends LivingEntity, M e
         if (look.isEmpty() || !(look.getItem() instanceof ArmorItem a) || a.getEquipmentSlot() != slot) return;
         Model model = RenderProvider.of(look).getGenericArmorModel(entity, look, slot, (HumanoidModel<LivingEntity>) (HumanoidModel) baseModel);
         if (!(model instanceof GeoArmorRenderer<?> geo)) return;
+        // as vanilla does: give the armour model the wearer's current pose first, or the pieces float out of place
+        ((RenderLayer<T, M>) (Object) this).getParentModel().copyPropertiesTo(baseModel);
         geo.prepForRender(entity, look, slot, baseModel);
         ((HumanoidModel) baseModel).copyPropertiesTo((HumanoidModel) geo);
         geo.renderToBuffer(poseStack, null, light, OverlayTexture.NO_OVERLAY, 1, 1, 1, 1);

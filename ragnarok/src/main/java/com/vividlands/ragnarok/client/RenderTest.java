@@ -140,7 +140,7 @@ final class RenderTest {
             steps.add(() -> {
                 cmd(mc, String.format(java.util.Locale.ROOT, "fill -12 199 %d 12 199 %d minecraft:smooth_stone", z - 5, z + 6));
                 for (int k = 0; k < 7 && rr * 7 + k < ids.size(); k++) {
-                    cmd(mc, stand(ids.get(rr * 7 + k), -9 + k * 3 + 0.5, z + 0.5, 0));
+                    cmd(mc, stand(ids.get(rr * 7 + k), -9 + k * 3 + 0.5, z + 0.5, 180));
                 }
             });
             steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a 0.5 201.6 %.1f 0 6", z - 9.5)));
@@ -164,12 +164,12 @@ final class RenderTest {
         // Agamemnon's mask up close, and at night to see the glowing eyes
         int az = (ids.indexOf("agamemnon") / 7) * 12;
         double ax = -9 + (ids.indexOf("agamemnon") % 7) * 3 + 0.5;
-        steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f 202.0 %.1f 0 6", ax, az - 1.5)));
+        steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f 200.15 %.1f 0 0", ax, az - 0.9)));
         steps.add(() -> shot(mc, "ancient_agamemnon_mask"));
-        steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f 202.2 %.1f 40 10", ax + 1.4, az - 1.2)));
+        steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f 200.2 %.1f 47 2", ax + 1.2, az - 0.6)));
         steps.add(() -> shot(mc, "ancient_agamemnon_mask_side"));
         steps.add(() -> cmd(mc, "time set 18000"));
-        steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f 202.0 %.1f 0 6", ax, az - 1.5)));
+        steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f 200.15 %.1f 0 0", ax, az - 0.9)));
         steps.add(() -> shot(mc, "ancient_agamemnon_mask_night"));
         steps.add(() -> cmd(mc, "time set 6000"));
         // transmog: plain iron, diamond and leather pieces glamoured to look like other sets, beside unglamoured copies
@@ -180,14 +180,14 @@ final class RenderTest {
             for (int k = 0; k < looks.length; k++) {
                 String m = looks[k][0], look = "vividlands_ragnarok:" + looks[k][1] + "_";
                 cmd(mc, String.format(java.util.Locale.ROOT,
-                        "summon minecraft:armor_stand %.1f 200 %d.5 {ShowArms:1b,NoBasePlate:1b,NoGravity:1b,Rotation:[0f,0f],ArmorItems:["
+                        "summon minecraft:armor_stand %.1f 200 %d.5 {ShowArms:1b,NoBasePlate:1b,NoGravity:1b,Rotation:[180f,0f],ArmorItems:["
                                 + "{id:\"minecraft:%s_boots\",Count:1b,tag:{VividGlamour:\"%sboots\"}},"
                                 + "{id:\"minecraft:%s_leggings\",Count:1b,tag:{VividGlamour:\"%sleggings\"}},"
                                 + "{id:\"minecraft:%s_chestplate\",Count:1b,tag:{VividGlamour:\"%schestplate\"}},"
                                 + "{id:\"minecraft:%s_helmet\",Count:1b,tag:{VividGlamour:\"%shelmet\"}}]}",
                         -9 + k * 6 + 0.5, z, m, look, m, look, m, look, m, look));
                 cmd(mc, String.format(java.util.Locale.ROOT,
-                        "summon minecraft:armor_stand %.1f 200 %d.5 {ShowArms:1b,NoBasePlate:1b,NoGravity:1b,Rotation:[0f,0f],ArmorItems:["
+                        "summon minecraft:armor_stand %.1f 200 %d.5 {ShowArms:1b,NoBasePlate:1b,NoGravity:1b,Rotation:[180f,0f],ArmorItems:["
                                 + "{id:\"minecraft:%s_boots\",Count:1b},{id:\"minecraft:%s_leggings\",Count:1b},"
                                 + "{id:\"minecraft:%s_chestplate\",Count:1b},{id:\"minecraft:%s_helmet\",Count:1b}]}",
                         -9 + k * 6 + 2.5, z, m, m, m, m));
