@@ -42,6 +42,7 @@ public class Throw extends Ability {
         if (t >= windup && (t - windup) % gap == 0 && (t - windup) / gap < throwsNow(f)) {
             Mob m = f.mob();
             m.swing(net.minecraft.world.InteractionHand.MAIN_HAND);
+            f.animate("throw");
             Boulder b = new Boulder(f.level(), m, (float) (f.attackDamage() * damageMul));
             b.setPos(m.getX(), m.getY() + m.getBbHeight() * 0.9, m.getZ());
             double dx = target.getX() - b.getX(), dz = target.getZ() - b.getZ();

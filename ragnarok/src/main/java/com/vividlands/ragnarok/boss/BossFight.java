@@ -142,9 +142,19 @@ public final class BossFight {
         active = pick;
         activeTicks = 0;
         activeDuration = Math.max(1, pick.start(this, target));
+        animate(MOVE_OF.getOrDefault(pick.getClass().getSimpleName(), "attack"));
         Bosses.debug("{} uses {} on {} ({} ticks)", def.id, pick.getClass().getSimpleName(),
                 target.getType().getDescriptionId(), activeDuration);
         cooldowns.put(pick, scaled(pick.cooldown()));
+    }
+
+    private static final Map<String, String> MOVE_OF = Map.of("Roar", "roar", "Charge", "charge", "Slam", "slam",
+            "Maul", "attack", "Leap", "leap", "Fling", "attack", "DeathRoll", "roll", "Capsize", "attack", "Shockwave", "roar",
+            "Summon", "roar");
+
+    /** Plays a one-shot animation on the pack's own boss models (no effect on other mods' creatures). */
+    public void animate(String move) {
+        if (mob instanceof com.vividlands.ragnarok.boss.entity.PackBoss p) p.playMove(move);
     }
 
     /** Ends the running ability now (e.g. a charge that hit something). */
@@ -182,6 +192,7 @@ public final class BossFight {
     }
 
     void onDamaged(float amount, Entity attacker) {
+        if (amount >= mob.getMaxHealth() * 0.04f && active == null) animate("hurt");
         damageTaken += amount;
         if (attacker instanceof Player p) fighters.add(p.getUUID());
         if (attacker instanceof LivingEntity l && !Bosses.isBoss(l) && !Bosses.isMinion(l)) lastAttacker = l;
@@ -277,6 +288,7 @@ public final class BossFight {
     public void meleeHit(LivingEntity t) {
         Bosses.debug("{} melee hit on {}", def.id, t.getType().getDescriptionId());
         mob.swing(InteractionHand.MAIN_HAND);
+        animate("attack");
         Compat.attackAnimation(mob);
         if (hurt(t, attackDamage())) push(t, def.knockback, 0.25);
     }

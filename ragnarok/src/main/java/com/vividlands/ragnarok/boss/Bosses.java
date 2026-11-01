@@ -113,8 +113,8 @@ public final class Bosses {
 
     // ------------------------------------------------------------------ Chapter 1: Skadi's trials
     static {
-        def("cave_bear").on("naturalist:bear", "minecraft:polar_bear")
-                .stats(300, 10, 6).scale(3.5f).reach(1.3f).bar(BossBarColor.RED)
+        def("cave_bear").on("vividlands_ragnarok:cave_bear")
+                .melee(Melee.BOSS).stats(300, 10, 6).scale(3.75f).reach(1.3f).bar(BossBarColor.RED)
                 .ability(() -> new Roar(240, 10, 20, 0.8, SoundEvents.POLAR_BEAR_WARNING, 0.5f,
                         () -> fx(MobEffects.MOVEMENT_SLOWDOWN, 80, 1), () -> fx(MobEffects.WEAKNESS, 100, 0)))
                 .ability(() -> new Maul(160, 3, 7, 0.7))
@@ -123,32 +123,32 @@ public final class Bosses {
                 .biomes("vividlands:taiga_lakelands", "vividlands:caledonian_pinewood", "vividlands:boreal_snowwoods",
                         "#minecraft:is_taiga");
 
-        def("irish_elk").on("fossil:megaloceros", "minecraft:goat")
-                .stats(360, 11, 6).scale(2.8f).melee(Melee.BOSS).reach(1.6f).knockback(1.4f).bar(BossBarColor.GREEN)
+        def("irish_elk").on("vividlands_ragnarok:irish_elk")
+                .melee(Melee.BOSS).stats(360, 11, 6).scale(2.6f).reach(1.6f).knockback(1.4f).bar(BossBarColor.GREEN)
                 .ability(() -> new Charge(160, 18, 40, 0.75, 1.3, 2.2, false, 50))
                 .ability(() -> new Summon(500, 2, 3, 40, 0.4f))
                 .ability(() -> new Slam(260, 12, 4, 0.9, 0.6, null))
                 .drop("vividlands_ragnarok:great_antlers", 1).xp(320).after(0)
                 .biomes("vividlands:highland_moors", "vividlands:alpine_meadow", "minecraft:meadow");
 
-        def("hippo").on("naturalist:hippo", "minecraft:ravager")
-                .stats(420, 14, 8).scale(3.2f).reach(1.4f).bar(BossBarColor.PURPLE)
+        def("hippo").on("vividlands_ragnarok:hippo")
+                .melee(Melee.BOSS).stats(420, 14, 8).scale(3.9f).reach(1.4f).bar(BossBarColor.PURPLE)
                 .ability(() -> new Leap(200, 15, 3, 14, 1.3, 0.5, true, null))
                 .ability(() -> new Capsize(160, 20, 60))
                 .ability(() -> new Maul(220, 2, 12, 1.0))
                 .drop("vividlands_ragnarok:hippo_hide", 1).xp(340)
                 .biomes("vividlands:oasis", "vividlands:tropical_river", "minecraft:river");
 
-        def("crocodile").on("naturalist:alligator")
-                .stats(480, 13, 10).scale(4.0f).reach(1.2f).bar(BossBarColor.GREEN)
+        def("crocodile").on("vividlands_ragnarok:crocodile")
+                .melee(Melee.BOSS).stats(480, 13, 10).scale(2.5f).reach(1.2f).bar(BossBarColor.GREEN)
                 .ability(() -> new DeathRoll(260, 60, 1.0, 0.08f))
                 .ability(() -> new Leap(180, 10, 3, 12, 1.1, 0.35, true, null))
                 .ability(() -> new Slam(240, 10, 4, 0.8, 0.4, null))
                 .drop("vividlands_ragnarok:croc_scales", 1).xp(360).after("hippo")
                 .biomes("vividlands:fen", "vividlands:tropical_river", "minecraft:swamp", "minecraft:mangrove_swamp");
 
-        def("silverback").on("animalgarden_westerngorilla:westerngorilla", "minecraft:iron_golem")
-                .stats(550, 14, 8).scale(4.5f).reach(1.4f).bar(BossBarColor.WHITE)
+        def("silverback").on("vividlands_ragnarok:silverback")
+                .melee(Melee.BOSS).stats(550, 14, 8).scale(3.2f).reach(1.4f).bar(BossBarColor.WHITE)
                 .ability(() -> new Roar(260, 9, 20, 1.2, SoundEvents.RAVAGER_ROAR, 1.3f,
                         () -> BossFight.stunEffect(40), () -> fx(MobEffects.WEAKNESS, 100, 0)))
                 .ability(() -> new Throw(180, 16, 2, 10, 0.9))
@@ -157,8 +157,8 @@ public final class Bosses {
                 .structures("ancientstructures:mayan_temple", "ancientstructures:mayan_temple2",
                         "ancientstructures:mayan_temple3", "ancientstructures:mayan_temple4");
 
-        def("saber_tooth").on("fossil:smilodon", "minecraft:wolf")
-                .stats(520, 15, 6).scale(3.0f).melee(Melee.BOSS).reach(1.1f).interval(18).bar(BossBarColor.YELLOW)
+        def("saber_tooth").on("vividlands_ragnarok:saber_tooth")
+                .melee(Melee.BOSS).stats(520, 15, 6).scale(3.0f).reach(1.1f).interval(18).bar(BossBarColor.YELLOW)
                 .onHit(() -> bleed(100, 0))
                 .ability(() -> new Stalk(9))
                 .ability(() -> new Leap(140, 10, 5, 16, 1.4, 0.45, false, () -> bleed(160, 1)))
@@ -167,15 +167,15 @@ public final class Bosses {
                 .biomes("vividlands:endless_steppe", "vividlands:golden_savanna", "vividlands:wildflower_prairie",
                         "minecraft:savanna");
 
-        def("woolly_rhino").on("fossil:elasmotherium", "naturalist:rhino", "minecraft:ravager")
-                .stats(700, 16, 12).scale(2.2f).melee(Melee.BOSS).reach(1.5f).knockback(1.2f).bar(BossBarColor.WHITE)
+        def("woolly_rhino").on("vividlands_ragnarok:woolly_rhino")
+                .melee(Melee.BOSS).stats(700, 16, 12).scale(3.5f).reach(1.5f).knockback(1.2f).bar(BossBarColor.WHITE)
                 .ability(() -> new Charge(140, 20, 50, 0.85, 1.5, 2.6, true, 80))
                 .ability(() -> new Slam(260, 14, 5, 0.9, 0.5, () -> fx(MobEffects.MOVEMENT_SLOWDOWN, 60, 1)))
                 .drop("vividlands_ragnarok:rhino_horn", 1).xp(450).after("cave_bear")
                 .biomes("vividlands:tundra", "vividlands:glacial_outwash", "minecraft:snowy_plains");
 
-        def("elephant").on("naturalist:elephant", "minecraft:ravager")
-                .stats(850, 17, 10).scale(2.5f).reach(1.8f).knockback(1.2f).bar(BossBarColor.YELLOW)
+        def("elephant").on("vividlands_ragnarok:elephant")
+                .melee(Melee.BOSS).stats(850, 17, 10).scale(3.2f).reach(1.8f).knockback(1.2f).bar(BossBarColor.YELLOW)
                 .ability(() -> new Charge(200, 24, 60, 0.7, 1.4, 2.4, false, 60))
                 .ability(() -> new Fling(160, 12, 0.8, 1.5, 0.4))
                 .ability(() -> new Roar(300, 14, 20, 1.6, SoundEvents.RAVAGER_ROAR, 1.6f,
@@ -184,8 +184,8 @@ public final class Bosses {
                 .drop("vividlands_ragnarok:ivory", 2).xp(500).after(6)
                 .biomes("vividlands:golden_savanna", "minecraft:savanna", "minecraft:savanna_plateau");
 
-        def("bull_shark").on("animalgarden_bullshark:bullshark", "minecraft:dolphin")
-                .stats(650, 16, 6).scale(5.0f).melee(Melee.BOSS).reach(1.0f).interval(20).inSea().bar(BossBarColor.BLUE)
+        def("bull_shark").on("vividlands_ragnarok:bull_shark")
+                .melee(Melee.BOSS).stats(650, 16, 6).scale(2.5f).reach(1.0f).interval(20).inSea().bar(BossBarColor.BLUE)
                 .onHit(() -> bleed(100, 0))
                 .ability(() -> new Leap(160, 14, 3, 14, 1.3, 0.7, true, () -> bleed(160, 1)))
                 .ability(() -> new Capsize(140, 20, 80))
@@ -194,8 +194,8 @@ public final class Bosses {
                 .biomes("vividlands:northern_ocean", "vividlands:temperate_ocean", "vividlands:deep_northern_ocean",
                         "vividlands:deep_temperate_ocean", "#minecraft:is_deep_ocean");
 
-        def("mammoth").on("fossil:mammoth", "minecraft:ravager")
-                .stats(1000, 20, 14).scale(3.0f).melee(Melee.BOSS).reach(2.0f).knockback(1.4f).interval(30).bar(BossBarColor.WHITE)
+        def("mammoth").on("vividlands_ragnarok:mammoth")
+                .melee(Melee.BOSS).stats(1000, 20, 14).scale(3.4f).reach(2.0f).knockback(1.4f).interval(30).bar(BossBarColor.WHITE)
                 .ability(() -> new Shockwave(260, 24, 16, 0.5, 1.0))
                 .ability(() -> new Slam(220, 18, 7, 1.2, 0.8, () -> fx(MobEffects.MOVEMENT_SLOWDOWN, 80, 2)))
                 .ability(() -> new Charge(240, 26, 50, 0.7, 1.6, 3.0, true, 60))
@@ -422,6 +422,7 @@ public final class Bosses {
 
     // ------------------------------------------------------------------ setup
     public static void register() {
+        com.vividlands.ragnarok.boss.entity.BossEntities.register();
         BLEEDING = Registry.register(BuiltInRegistries.MOB_EFFECT, new ResourceLocation(Ragnarok.MOD_ID, "bleeding"), new Bleeding());
         BOULDER = Registry.register(BuiltInRegistries.ENTITY_TYPE, new ResourceLocation(Ragnarok.MOD_ID, "boulder"),
                 EntityType.Builder.<Boulder>of(Boulder::new, MobCategory.MISC).sized(0.9f, 0.9f)
@@ -470,7 +471,7 @@ public final class Bosses {
         ServerLivingEntityEvents.ALLOW_DAMAGE.register((entity, source, amount) -> {
             Entity attacker = source.getEntity();
             boolean environment = source.is(DamageTypeTags.IS_FALL) || source.is(DamageTypes.IN_WALL)
-                    || source.is(DamageTypes.CRAMMING) || source.is(DamageTypes.DROWN) || source.is(DamageTypes.FLY_INTO_WALL);
+                    || source.is(DamageTypes.CRAMMING) || source.is(DamageTypes.DROWN) || source.is(DamageTypes.DRY_OUT) || source.is(DamageTypes.FLY_INTO_WALL);
             if (isBoss(entity)) {
                 if (environment || isBoss(attacker) || isMinion(attacker)) return false;
                 BossFight f = FIGHTS.get(entity);

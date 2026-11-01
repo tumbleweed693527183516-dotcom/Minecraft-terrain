@@ -36,6 +36,7 @@ public class Maul extends Ability {
         }
         if (t >= 8 && (t - 8) % interval == 0) {
             f.mob().swing(net.minecraft.world.InteractionHand.MAIN_HAND);
+            f.animate("attack");
             f.sound(SoundEvents.PLAYER_ATTACK_SWEEP, 1f, 0.6f);
             if (f.gap(target) <= f.def().reach() + 0.4 && f.hurt(target, (float) (f.attackDamage() * damageMul))) {
                 f.push(target, 0.25, 0.1);

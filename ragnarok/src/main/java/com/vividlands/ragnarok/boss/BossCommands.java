@@ -37,6 +37,22 @@ final class BossCommands {
                                                 .then(Commands.argument("pos", Vec3Argument.vec3())
                                                         .executes(c -> summon(c, Vec3Argument.getVec3(c, "pos"))))))
                                 .then(Commands.literal("list").executes(BossCommands::list))
+                                .then(Commands.literal("animate")
+                                        .then(Commands.argument("move", StringArgumentType.word())
+                                                .suggests((c, b) -> SharedSuggestionProvider.suggest(java.util.List.of(com.vividlands.ragnarok.boss.entity.BossAnimations.MOVES), b))
+                                                .executes(c -> {
+                                                    String move = StringArgumentType.getString(c, "move");
+                                                    var src = c.getSource();
+                                                    var box = new net.minecraft.world.phys.AABB(src.getPosition(), src.getPosition()).inflate(96);
+                                                    int n = 0;
+                                                    for (var e : src.getLevel().getEntities((net.minecraft.world.entity.Entity) null, box, e -> e instanceof com.vividlands.ragnarok.boss.entity.PackBoss)) {
+                                                        ((com.vividlands.ragnarok.boss.entity.PackBoss) e).playMove(move);
+                                                        n++;
+                                                    }
+                                                    int count = n;
+                                                    src.sendSuccess(() -> Component.literal("Played " + move + " on " + count + " bosses"), false);
+                                                    return n;
+                                                })))
                                 .then(Commands.literal("progress")
                                         .then(Commands.argument("player", EntityArgument.player()).executes(BossCommands::progress)))
                                 .then(Commands.literal("forget")

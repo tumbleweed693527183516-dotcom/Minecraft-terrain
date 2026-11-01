@@ -28,6 +28,7 @@ final class RenderTest {
     private static int tick;
     private static int stage;
     private static int wait;
+    private static int nextWait;
     private static final List<Runnable> steps = new ArrayList<>();
 
     private RenderTest() {
@@ -100,6 +101,11 @@ final class RenderTest {
                     ? String.format(java.util.Locale.ROOT, "tp @a %d.5 204 18 180 25", x + 6)
                     : String.format(java.util.Locale.ROOT, "tp @a %.1f %.1f %.1f 135 10", x + d * 0.7, 201.0 + d * 0.15, d * 0.7)));
             steps.add(() -> shot(mc, "boss_" + id + "_angle"));
+            String move = id.equals("silverback") ? "roar" : id.equals("crocodile") ? "roll" : id.equals("bull_shark") ? "leap" : "roar";
+            steps.add(() -> { cmd(mc, "ragnarok boss animate " + move); nextWait = 14; });
+            steps.add(() -> shot(mc, "boss_" + id + "_" + move));
+            steps.add(() -> { cmd(mc, "ragnarok boss animate attack"); nextWait = 5; });
+            steps.add(() -> shot(mc, "boss_" + id + "_attack"));
         }
         steps.add(mc::stop);
     }
@@ -235,6 +241,7 @@ final class RenderTest {
         }
         if (--wait > 0 || steps.isEmpty()) return;
         steps.remove(0).run();
-        wait = 50;                      // let chunks load and the camera settle between steps
+        wait = nextWait > 0 ? nextWait : 50;
+        nextWait = 0;                      // let chunks load and the camera settle between steps
     }
 }

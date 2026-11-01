@@ -16,7 +16,21 @@ final class BossClient {
     private BossClient() {
     }
 
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    private static void bossRenderers() {
+        for (var e : com.vividlands.ragnarok.boss.entity.BossEntities.TYPES.entrySet()) {
+            String id = e.getKey();
+            EntityRendererRegistry.register((net.minecraft.world.entity.EntityType) e.getValue(), ctx -> {
+                var r = new software.bernie.geckolib.renderer.GeoEntityRenderer(ctx,
+                        new software.bernie.geckolib.model.DefaultedEntityGeoModel(
+                                new net.minecraft.resources.ResourceLocation("vividlands_ragnarok", "boss/" + id), true));
+                return r;
+            });
+        }
+    }
+
     static void init() {
+        bossRenderers();
         ClientEntityEvents.ENTITY_LOAD.register((e, level) -> {
             String boss = PENDING.remove(e.getId());
             if (boss != null) Bosses.markBoss(e, boss);
