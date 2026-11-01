@@ -42,7 +42,11 @@ public final class VikingArmor {
             // Chapter 1 boss trophies (Skadi's trials)
             {"great_antlers", "uncommon"}, {"hippo_hide", "uncommon"}, {"croc_scales", "uncommon"},
             {"silverback_fist", "rare"}, {"rhino_horn", "rare"}, {"ivory", "rare"}, {"shark_tooth", "rare"},
-            {"mammoth_tusk", "epic"}, {"frozen_heart", "epic"}};
+            {"mammoth_tusk", "epic"}, {"frozen_heart", "epic"},
+            // trials 11-20 and Chapter 2
+            {"bison_horn", "uncommon"}, {"terror_claw", "uncommon"}, {"komodo_venom", "uncommon"},
+            {"glyptodon_plate", "rare"}, {"lion_mane", "rare"}, {"anaconda_skin", "rare"}, {"sloth_claw", "rare"},
+            {"eagle_feather", "rare"}, {"walrus_tusk", "rare"}, {"hel_key", "epic"}};
     private static final String[] PIECE_NAMES = {"helmet", "chestplate", "leggings", "boots"};
 
     private VikingArmor() {

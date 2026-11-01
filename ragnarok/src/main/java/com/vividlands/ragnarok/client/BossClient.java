@@ -17,7 +17,7 @@ final class BossClient {
     }
 
     /** Bosses with a textures/entity/boss/<id>_glowmask.png: those parts (eyes, runes, Gleipnir) glow in the dark. */
-    private static final java.util.Set<String> GLOWING = java.util.Set.of("sleipnir", "fenrir", "jormungandr");
+    private static final java.util.Set<String> GLOWING = java.util.Set.of("sleipnir", "garmr", "fafnir", "jormungandr", "fenrir");
 
     @SuppressWarnings({"unchecked", "rawtypes"})
     private static void bossRenderers() {

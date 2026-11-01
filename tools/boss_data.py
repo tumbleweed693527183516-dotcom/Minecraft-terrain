@@ -26,8 +26,20 @@ BOSSES = {
     "elephant": "Bull Elephant, Thunder of the Savanna",
     "bull_shark": "Giant Bull Shark, Blood in the Water",
     "mammoth": "Woolly Mammoth, Skadi's Last Trial",
+    "dire_wolf": "Dire Wolf Alpha, Leader of the Winter Pack",
+    "steppe_bison": "Steppe Bison, the Stampede",
+    "terror_bird": "Terror Bird, the Running Death",
+    "komodo": "Komodo Dragon, the Poison Jaw",
+    "glyptodon": "Glyptodon, the Living Fortress",
+    "cave_lion": "Cave Lion, King of the Frozen Steppe",
+    "anaconda": "Giant Anaconda, Coils of the River",
+    "ground_sloth": "Giant Ground Sloth, the Gentle Titan",
+    "haast_eagle": "Haast's Eagle, Shadow of the Peaks",
+    "walrus": "Walrus Bull, Tyrant of the Ice Shore",
     # Chapter 2
     "sleipnir": "Sleipnir, Odin's Eight-Legged Steed",
+    "garmr": "Garmr, Hound of Hel",
+    "fafnir": "Fafnir, the Cursed Hoard",
     "jormungandr": "Jormungandr, the World Serpent",
     "fenrir": "Fenrir, the Wolf of Ragnarok",
 }
@@ -36,7 +48,10 @@ ENTITY_NAMES = {
     "cave_bear": "Cave Bear", "irish_elk": "Irish Elk", "hippo": "Hippopotamus", "crocodile": "Crocodile",
     "silverback": "Silverback", "saber_tooth": "Saber-tooth", "woolly_rhino": "Woolly Rhinoceros",
     "elephant": "Bull Elephant", "bull_shark": "Bull Shark", "mammoth": "Woolly Mammoth",
-    "sleipnir": "Sleipnir", "jormungandr": "Jormungandr", "fenrir": "Fenrir",
+    "dire_wolf": "Dire Wolf", "steppe_bison": "Steppe Bison", "terror_bird": "Terror Bird", "komodo": "Komodo Dragon",
+    "glyptodon": "Glyptodon", "cave_lion": "Cave Lion", "anaconda": "Giant Anaconda", "ground_sloth": "Giant Ground Sloth",
+    "haast_eagle": "Haast's Eagle", "walrus": "Walrus Bull",
+    "sleipnir": "Sleipnir", "garmr": "Garmr", "fafnir": "Fafnir", "jormungandr": "Jormungandr", "fenrir": "Fenrir",
 }
 
 TROPHIES = {
@@ -49,6 +64,16 @@ TROPHIES = {
     "shark_tooth": "Shark Tooth",
     "mammoth_tusk": "Mammoth Tusk",
     "frozen_heart": "Frozen Heart",
+    "bison_horn": "Bison Horn",
+    "terror_claw": "Terror Bird Claw",
+    "komodo_venom": "Komodo Venom",
+    "glyptodon_plate": "Glyptodon Plate",
+    "lion_mane": "Cave Lion Mane",
+    "anaconda_skin": "Anaconda Skin",
+    "sloth_claw": "Ground Sloth Claw",
+    "eagle_feather": "Haast's Eagle Feather",
+    "walrus_tusk": "Walrus Tusk",
+    "hel_key": "Hel's Key",
 }
 
 LANG = {
@@ -59,6 +84,8 @@ LANG = {
     "effect.vividlands_ragnarok.bleeding": "Bleeding",
     "entity.vividlands_ragnarok.boulder": "Boulder",
     "gamerule.vividlandsBossSpawning": "Bosses appear in the wild",
+    "boss.vividlands_ragnarok.staggered": "%s staggers! Strike now!",
+    "boss.vividlands_ragnarok.grabbed": "You're caught! Hit it hard to break free!",
 }
 
 
@@ -220,6 +247,71 @@ def frozen_heart():
     return outline(img, (20, 40, 70))
 
 
+def claw(color="#e8dcc0", n=1):
+    """One or three hooked claws, curving down to the left."""
+    img, base = canvas(), hexc(color)
+    d = img.load()
+    for k in range(n):
+        ox = (k - (n - 1) / 2) * 4
+        for i in range(40):
+            t = i / 39
+            cx = 4 + ox + 8 * t
+            cy = 3 + 9 * t ** 0.6
+            r = 2.2 * (1 - t) + 0.4
+            for x in range(16):
+                for y in range(16):
+                    if math.hypot(x + 0.5 - cx, y + 0.5 - (16 - cy)) <= r:
+                        d[x, y] = mul(base, 0.85 + 0.25 * (1 - t) + 0.06 * noise(x, y)) + (255,)
+    return outline(img)
+
+
+def feather(color="#4a3424", tip="#22180f"):
+    img = canvas()
+    d = img.load()
+    b, tp = hexc(color), hexc(tip)
+    for i in range(14):
+        x, y = 3 + i * 0.7, 14 - i
+        w = 3 * math.sin(math.pi * min(1, (i + 1) / 14)) + 0.5
+        for dx in range(-3, 4):
+            px = int(x + dx)
+            if 0 <= px < 16 and abs(dx) <= w:
+                c = tp if i > 10 else b
+                d[px, int(y)] = mul(c, 0.85 + 0.25 * noise(px, int(y))) + (255,)
+        d[int(x), int(y)] = (200, 180, 140, 255)                # the quill
+    return outline(img)
+
+
+def vial(liquid="#9ad84a"):
+    img = canvas()
+    d = img.load()
+    for x in range(16):
+        for y in range(16):
+            body = math.hypot(x - 7.5, y - 10) < 4.5
+            neck = 6 <= x <= 9 and 2 <= y <= 6
+            if body or neck:
+                d[x, y] = ((225, 235, 240, 255) if neck and y < 4 else
+                           (mul(hexc(liquid), 0.85 + 0.3 * noise(x, y)) if body and y > 7 else (200, 220, 230)) + (255,))
+    for x in range(6, 10):
+        d[x, 2] = (120, 84, 52, 255)
+    return outline(img)
+
+
+def key():
+    img = canvas()
+    d = img.load()
+    bone, soul = (216, 206, 180), (90, 216, 255)
+    for x in range(16):
+        for y in range(16):
+            if 4 < math.hypot(x - 5, y - 5) < 4.6 or math.hypot(x - 5, y - 5) < 1.5:
+                d[x, y] = (soul if math.hypot(x - 5, y - 5) < 1.5 else bone) + (255,)
+    for i in range(8):
+        d[7 + i, 7 + i] = bone + (255,)
+        d[8 + i if 8 + i < 16 else 15, 7 + i] = mul(bone, 0.8) + (255,)
+    for x, y in ((12, 14), (13, 13), (14, 12)):
+        d[x, y] = bone + (255,)
+    return outline(img, (30, 20, 30))
+
+
 def bleeding_icon():
     img = canvas(18)
     d = img.load()
@@ -248,6 +340,16 @@ def main():
         "shark_tooth": tooth(),
         "mammoth_tusk": horn("#e2d3ae", 14, 0.9, 5),
         "frozen_heart": frozen_heart(),
+        "bison_horn": horn("#3a3632", 11, 0.6, 5),
+        "terror_claw": claw("#2a2420"),
+        "komodo_venom": vial("#b8d870"),
+        "glyptodon_plate": hide("#8a6a44", spots=True),
+        "lion_mane": hide("#a87c42"),
+        "anaconda_skin": scales(),
+        "sloth_claw": claw("#e6dcc0", 3),
+        "eagle_feather": feather(),
+        "walrus_tusk": horn("#efe6cc", 13, 0.15, 4),
+        "hel_key": key(),
     }
     models = ASSETS / "models/item"
     models.mkdir(parents=True, exist_ok=True)

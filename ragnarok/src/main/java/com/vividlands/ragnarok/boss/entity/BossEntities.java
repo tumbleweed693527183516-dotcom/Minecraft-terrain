@@ -61,8 +61,21 @@ public final class BossEntities {
         land("elephant", 1.6f, 2.6f, 0.27);
         sea("bull_shark", 1.0f, 0.7f, 1.2);
         land("mammoth", 1.6f, 3.2f, 0.27);
+        // trials 11-20
+        land("dire_wolf", 0.8f, 1.2f, 0.36);
+        land("steppe_bison", 1.1f, 1.7f, 0.3);
+        land("terror_bird", 0.8f, 2.3f, 0.38);
+        land("komodo", 0.9f, 0.6f, 0.28);
+        land("glyptodon", 1.2f, 1.3f, 0.24);
+        land("cave_lion", 0.9f, 1.3f, 0.35);
+        land("anaconda", 0.8f, 0.6f, 0.3);
+        land("ground_sloth", 1.1f, 2.0f, 0.26);
+        fly("haast_eagle", 1.0f, 0.9f, 0.3);
+        land("walrus", 1.2f, 1.1f, 0.24);
         // Chapter 2: Odin's war against Ragnarok
         land("sleipnir", 1.0f, 2.2f, 0.36);
+        land("garmr", 0.9f, 1.4f, 0.34);
+        land("fafnir", 1.2f, 1.6f, 0.3);
         sea("jormungandr", 1.0f, 0.9f, 1.3);
         land("fenrir", 1.0f, 1.45f, 0.34);
     }
