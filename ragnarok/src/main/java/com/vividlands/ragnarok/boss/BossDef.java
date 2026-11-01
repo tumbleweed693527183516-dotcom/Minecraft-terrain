@@ -30,6 +30,7 @@ public final class BossDef {
     BossEvent.BossBarColor color = BossEvent.BossBarColor.RED;
     boolean aquatic;
     final List<Supplier<Ability>> abilities = new ArrayList<>();
+    final List<Supplier<Ability>> phase2 = new ArrayList<>();     // learned at half health (second phase)
     final List<Supplier<MobEffectInstance>> onHit = new ArrayList<>();
     final List<String[]> drops = new ArrayList<>();             // {item id, count}
     int xp = 200;
@@ -66,6 +67,8 @@ public final class BossDef {
     BossDef bar(BossEvent.BossBarColor c) { color = c; return this; }
     BossDef inSea() { aquatic = true; return this; }
     BossDef ability(Supplier<Ability> a) { abilities.add(a); return this; }
+    /** A move it only starts using in its second phase (below half health). */
+    BossDef phase2(Supplier<Ability> a) { phase2.add(a); return this; }
     BossDef onHit(Supplier<MobEffectInstance> e) { onHit.add(e); return this; }
     BossDef drop(String item, int count) { drops.add(new String[]{item, Integer.toString(count)}); return this; }
     BossDef xp(int x) { xp = x; return this; }

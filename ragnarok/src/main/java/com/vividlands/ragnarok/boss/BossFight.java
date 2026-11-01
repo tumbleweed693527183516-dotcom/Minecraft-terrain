@@ -35,7 +35,15 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-/** The running fight of one boss (server side): target, boss bar, abilities, enrage, minions. */
+/**
+ * The running fight of one boss (server side): target, boss bar, abilities, enrage, minions.
+ * Fight rules borrowed from the boss fights players know:
+ *  - second phase: at half health it roars, throws everyone back, gets faster and learns its phase-2 moves;
+ *  - stagger: hit it hard enough in a short time and it reels, stunned (poise / knock-down);
+ *  - punish window: while stunned (staggered, dizzy after a spin, or a charge into a wall) it takes 50% more damage;
+ *  - telegraphs: big moves wind up first, and ground attacks mark their area before they land;
+ *  - sea fights: players near a sea boss swim fast and breathe and see underwater.
+ */
 public final class BossFight {
     private static final UUID ENRAGE_SPEED = UUID.fromString("6a4f3c5e-8d1b-4b7a-9c2e-1f0a5b6c7d81");
     private static final UUID ENRAGE_DAMAGE = UUID.fromString("6a4f3c5e-8d1b-4b7a-9c2e-1f0a5b6c7d82");
@@ -50,7 +58,9 @@ public final class BossFight {
     final List<Mob> minions = new ArrayList<>();
     private Ability active;
     private int activeTicks, activeDuration, globalCooldown = 60, idle, stun;
-    private boolean enraged;
+    private boolean enraged, phaseShifting;
+    private float poise;                // damage taken recently; too much at once and it staggers
+    private int staggerCooldown, phaseTicks;
     private float damageTaken;          // total damage taken (abilities use it to tell whether the player fought back)
     private LivingEntity target;
     private LivingEntity lastAttacker;
@@ -62,7 +72,10 @@ public final class BossFight {
         for (var s : def.abilities) abilities.add(s.get());
         for (Ability a : abilities) cooldowns.put(a, 40 + mob.getRandom().nextInt(60));   // first moves after 2-5 s
         enraged = mob.getHealth() <= mob.getMaxHealth() * 0.5f;
-        if (enraged) applyEnrage(false);
+        if (enraged) {
+            applyEnrage(false);
+            learnPhase2();
+        }
     }
 
     public Mob mob() { return mob; }
@@ -70,6 +83,7 @@ public final class BossFight {
     public ServerLevel level() { return (ServerLevel) mob.level(); }
     public boolean enraged() { return enraged; }
     public boolean busy() { return active != null || stun > 0; }
+    public boolean stunned() { return stun > 0; }
     public float damageTaken() { return damageTaken; }
     public LivingEntity target() { return target; }
     Set<UUID> fighters() { return fighters; }
@@ -105,7 +119,16 @@ public final class BossFight {
             enraged = true;
             Bosses.debug("{} enraged", def.id);
             applyEnrage(true);
+            learnPhase2();
+            phaseShift();
         }
+        if (phaseTicks > 0 && --phaseTicks == 0) {
+            mob.setInvulnerable(false);
+            phaseShifting = false;
+        }
+        poise = Math.max(0, poise - mob.getMaxHealth() * 0.0006f);      // poise recovers over ~5 s
+        if (staggerCooldown > 0) staggerCooldown--;
+        if (def.aquatic && age % 20 == 0) seaBlessing();
         minions.removeIf(m -> !m.isAlive());
 
         if (stun > 0) {
@@ -148,9 +171,45 @@ public final class BossFight {
         cooldowns.put(pick, scaled(pick.cooldown()));
     }
 
-    private static final Map<String, String> MOVE_OF = Map.of("Roar", "roar", "Charge", "charge", "Slam", "slam",
-            "Maul", "attack", "Leap", "leap", "Fling", "attack", "DeathRoll", "roll", "Capsize", "attack", "Shockwave", "roar",
-            "Summon", "roar");
+    private static final Map<String, String> MOVE_OF = Map.ofEntries(Map.entry("Roar", "roar"), Map.entry("Charge", "charge"),
+            Map.entry("Slam", "slam"), Map.entry("Maul", "attack"), Map.entry("Leap", "leap"), Map.entry("Fling", "attack"),
+            Map.entry("DeathRoll", "roll"), Map.entry("Capsize", "attack"), Map.entry("Shockwave", "roar"),
+            Map.entry("Summon", "roar"), Map.entry("Combo", "combo"), Map.entry("Breath", "breath"), Map.entry("Grab", "grab"),
+            Map.entry("Spin", "spin"), Map.entry("Swoop", "swoop"), Map.entry("HazardRain", "roar"), Map.entry("Throw", "throw"));
+
+    private void learnPhase2() {
+        for (var sup : def.phase2) {
+            Ability a = sup.get();
+            abilities.add(a);
+            cooldowns.put(a, 20 + mob.getRandom().nextInt(40));
+        }
+    }
+
+    /** Second phase: a roar that throws everyone back, while it can't be hurt for a moment. */
+    private void phaseShift() {
+        if (active != null) {
+            active.end(this);
+            active = null;
+        }
+        stun = 0;
+        phaseShifting = true;
+        mob.setInvulnerable(true);
+        animate("roar");
+        sound(net.minecraft.sounds.SoundEvents.ENDER_DRAGON_GROWL, 2.5f, 0.6f);
+        for (int r = 1; r <= 4; r++) groundRing(2.5 * r, 12 * r);
+        for (LivingEntity e : victims(10)) push(e, 1.6, 0.6);
+        globalCooldown = 50;
+        phaseTicks = 40;
+    }
+
+    /** Sea fights: everyone near a sea boss swims fast, breathes and sees underwater (Conduit Power, Dolphin's Grace). */
+    private void seaBlessing() {
+        for (ServerPlayer p : bar.getPlayers()) {
+            if (!p.isInWaterOrBubble() && !p.isPassenger()) continue;
+            p.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 60, 0, true, false, true));
+            p.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 60, 0, true, false, true));
+        }
+    }
 
     /** Plays a one-shot animation on the pack's own boss models (no effect on other mods' creatures). */
     public void animate(String move) {
@@ -192,6 +251,25 @@ public final class BossFight {
     }
 
     void onDamaged(float amount, Entity attacker) {
+        if (stun > 0 && amount > 0) {                    // punish window: 50% more damage while it is stunned
+            float extra = amount * 0.5f;
+            if (mob.getHealth() - amount - extra > 1) mob.setHealth(mob.getHealth() - extra);
+            particles(ParticleTypes.CRIT, mob.getX(), mob.getY() + mob.getBbHeight() * 0.6, mob.getZ(), 10, mob.getBbWidth() * 0.4, 0.4, mob.getBbWidth() * 0.4, 0.2);
+        }
+        if (attacker instanceof Player && stun <= 0 && !phaseShifting) {
+            poise += amount;
+            if (poise > mob.getMaxHealth() * 0.07f && staggerCooldown <= 0) {
+                poise = 0;
+                staggerCooldown = 500;
+                stun(70);
+                animate("stagger");
+                sound(net.minecraft.sounds.SoundEvents.RAVAGER_STUNNED, 2f, 0.7f);
+                for (ServerPlayer p : bar.getPlayers()) {
+                    p.displayClientMessage(Component.translatable("boss.vividlands_ragnarok.staggered", Component.translatable(def.nameKey())), true);
+                }
+                return;
+            }
+        }
         if (amount >= mob.getMaxHealth() * 0.04f && active == null) animate("hurt");
         damageTaken += amount;
         if (attacker instanceof Player p) fighters.add(p.getUUID());
@@ -345,6 +423,24 @@ public final class BossFight {
 
     public static MobEffectInstance stunEffect(int ticks) {
         return new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, ticks, 4, false, true, true);
+    }
+
+    /** A warning ring on the ground where an attack is about to land (red dust, or the given particle). */
+    public void marker(Vec3 c, double radius, ParticleOptions p) {
+        int n = Math.max(8, (int) (radius * 6));
+        for (int i = 0; i < n; i++) {
+            double a = Math.PI * 2 * i / n;
+            particles(p, c.x + Math.cos(a) * radius, c.y + 0.15, c.z + Math.sin(a) * radius, 1, 0.02, 0.0, 0.02, 0.0);
+        }
+    }
+
+    public static final ParticleOptions DANGER = new net.minecraft.core.particles.DustParticleOptions(new org.joml.Vector3f(0.9f, 0.1f, 0.05f), 2.0f);
+
+    /** Ground level below a point (for markers and falling hazards). */
+    public Vec3 groundAt(double x, double y, double z) {
+        BlockPos.MutableBlockPos p = BlockPos.containing(x, y + 3, z).mutable();
+        for (int i = 0; i < 24 && level().getBlockState(p).getCollisionShape(level(), p).isEmpty(); i++) p.move(0, -1, 0);
+        return new Vec3(x, p.getY() + 1, z);
     }
 
     public boolean inWater() {

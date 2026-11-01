@@ -13,7 +13,8 @@ import software.bernie.geckolib.core.object.PlayState;
  * looping idle / walk / swim, and one-shot moves started from the server when the boss uses an ability.
  */
 public final class BossAnimations {
-    public static final String[] MOVES = {"attack", "roar", "slam", "charge", "leap", "roll", "throw", "hurt"};
+    public static final String[] MOVES = {"attack", "roar", "slam", "charge", "leap", "roll", "throw", "hurt",
+            "combo", "breath", "grab", "spin", "swoop", "stagger"};
     private static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.boss.idle");
     private static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.boss.walk");
     private static final RawAnimation RUN = RawAnimation.begin().thenLoop("animation.boss.run");

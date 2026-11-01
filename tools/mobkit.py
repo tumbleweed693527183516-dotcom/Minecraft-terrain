@@ -185,8 +185,19 @@ class Model:
             col = np.broadcast_to(base, Ps.shape).copy()
             st = mat["style"]
             seed = s0 + sum(map(ord, mats_by_cube[id(c)])) % 997
-            if st in ("fur", "hide", "scales", "hair", "cloth", "plain", "membrane"):
-                col *= shade(Ps, seed, {"fur": 1.0, "hair": 0.6, "scales": 0.7, "hide": 0.8}.get(st, 0.5))[..., None]
+            if st in ("fur", "hide", "scales", "hair", "cloth", "plain", "membrane", "plates", "feather"):
+                col *= shade(Ps, seed, {"fur": 1.0, "hair": 0.6, "scales": 0.7, "hide": 0.8, "feather": 0.8}.get(st, 0.5))[..., None]
+            ax = int(np.argmax(np.abs(nrm)))              # the two in-face axes
+            u_ax, v_ax = [i for i in range(3) if i != ax]
+            if st == "plates":                        # armour plates: an offset grid of darker seams
+                pu, pv = Ps[..., u_ax], Ps[..., v_ax]
+                row = np.floor(pv / 3)
+                seam = (np.floor(pv) % 3 == 0) | (np.floor(pu + (row % 2) * 1.5) % 3 == 0)
+                col = np.where(seam[..., None], col * 0.72, col * np.where(cell(Ps, seed + 4, (3, 3, 3)) > 0.5, 1.06, 1.0)[..., None])
+            if st == "feather":                       # feather rows: each row a little darker at its lower edge
+                rows = np.floor(Ps[..., 1] * 0.5 + Ps[..., 2] * 0.25) if ax != 1 else np.floor(Ps[..., 2] * 0.5)
+                tip = (np.floor(Ps[..., 1]) % 2 == 0) if ax != 1 else (np.floor(Ps[..., 2]) % 2 == 0)
+                col = np.where((tip & (cell(np.stack([rows, Ps[..., u_ax], rows * 0], -1), seed + 6) > 0.4))[..., None], col * 0.84, col)
             if st == "fur" and nrm[1] < 0.5:
                 drip = cell(np.stack([Ps[..., 0], np.floor(Ps[..., 1] / 2), Ps[..., 2]], -1), seed + 7) > 0.85
                 col = np.where(drip[..., None], col * 0.85, col)
@@ -230,26 +241,44 @@ class Model:
             if "socks" in mk and "socks" in L:
                 t = Ps[..., 1] < L["socks_h"]
                 col = np.where(t[..., None], hexrgb(L["socks"]) * shade(Ps, seed + 15, 0.5)[..., None], col)
+            scar_px = np.zeros(Ps.shape[:2], bool)
             if "scars" in mk and "scars" in L:
                 for (a, b2) in L["scars"]:
                     a, b2 = np.array(a, float), np.array(b2, float)
                     ab = b2 - a
                     t = np.clip(((Ps - a) @ ab) / (ab @ ab), 0, 1)
                     d = np.linalg.norm(Ps - (a + t[..., None] * ab), axis=-1)
-                    col = np.where((d < 0.75)[..., None], hexrgb(L["scar_color"]) * shade(Ps, seed + 16, 0.4)[..., None], col)
+                    scar_px |= d < 0.75
+                col = np.where(scar_px[..., None], hexrgb(L["scar_color"]) * shade(Ps, seed + 16, 0.4)[..., None], col)
+            if "stripes" in mk and "stripes" in L:   # broken bands across the body
+                band = (np.floor(Ps[..., 2] + 40) % L.get("stripe_gap", 4) == 0)
+                keep = cell(np.stack([np.floor(Ps[..., 2]), np.floor(Ps[..., 1] / 2), Ps[..., 0] * 0], -1), seed + 18) > 0.35
+                t = band & keep & (yrel > L.get("stripe_min", 0.4))
+                col = np.where(t[..., None], hexrgb(L["stripes"]) * shade(Ps, seed + 19, 0.4)[..., None], col)
+            if "spots" in mk and "spots" in L:       # blotches (2x2 units) on the back and sides
+                sp = (cell(Ps, seed + 20, (2, 2, 2)) > L.get("spot_rate", 0.78)) & (yrel > L.get("spot_min", 0.0))
+                col = np.where(sp[..., None], hexrgb(L["spots"]) * shade(Ps, seed + 21, 0.4)[..., None], col)
+            gm = np.zeros(Ps.shape[:2], bool)
+            if L.get("scar_glow"):
+                gm |= scar_px
             if "runes" in mk:                         # glowing rune pixels in a stepped pattern
                 r = ((np.floor(Ps[..., 0] * 1 + Ps[..., 2]) + np.floor(Ps[..., 1])) % 4 == 0) & (cell(Ps, seed + 17) > 0.35)
                 col = np.where(r[..., None], hexrgb(mat["rune"]), col)
-                gm = r
-            else:
-                gm = None
+                gm |= r
+            if "lateral" in mk and "lateral" in L:   # a glowing line along each side (the serpent's venom line)
+                t = (np.abs(nrm[0]) > 0.5) & (np.abs(Ps[..., 1] - L["lateral_y"]) < 0.6) & (cell(Ps, seed + 22) > 0.25)
+                col = np.where(t[..., None], hexrgb(L["lateral"]), col)
+                gm |= t
+            if "coins" in mk and "coins" in L:       # gold coins stuck in the scales (Fafnir sleeps on his hoard)
+                t = (cell(Ps, seed + 23) > 0.965) & (nrm[1] > -0.5)
+                col = np.where(t[..., None], hexrgb(L["coins"]) * np.where(cell(Ps, seed + 24) > 0.5, 1.1, 0.9)[..., None], col)
             px = np.repeat(np.repeat(np.ones(Ps.shape[:2]), 1, 0), 1, 1)
             img[y0:y1, x0:x1, :3] = np.clip(col, 0, 255)
             img[y0:y1, x0:x1, 3] = 255 * px
             if st == "glow":
                 glow[y0:y1, x0:x1, :3] = np.clip(col, 0, 255)
                 glow[y0:y1, x0:x1, 3] = 255
-            elif gm is not None:
+            elif gm.any():
                 glow[y0:y1, x0:x1, :3] = np.where(gm[..., None], np.clip(col, 0, 255), 0)
                 glow[y0:y1, x0:x1, 3] = np.where(gm, 255, 0)
         return img.astype(np.uint8), glow.astype(np.uint8)

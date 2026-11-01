@@ -34,6 +34,9 @@ public class Slam extends Ability {
     public void tick(BossFight f, LivingEntity target, int t) {
         f.freeze();
         f.face(target);
+        if (t < windup && t % 3 == 0) {                 // telegraph: the area it will hit
+            f.marker(f.groundAt(f.mob().getX(), f.mob().getY(), f.mob().getZ()), radius, BossFight.DANGER);
+        }
         if (t == windup) {
             f.sound(SoundEvents.GENERIC_EXPLODE, 1.2f, 0.55f);
             f.sound(SoundEvents.ANVIL_LAND, 0.8f, 0.5f);

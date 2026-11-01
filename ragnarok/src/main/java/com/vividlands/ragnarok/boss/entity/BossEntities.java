@@ -43,6 +43,13 @@ public final class BossEntities {
         TYPES.put(id, t);
     }
 
+    private static void fly(String id, float w, float h, double speed) {
+        EntityType<FlyingBoss> t = Registry.register(BuiltInRegistries.ENTITY_TYPE, new ResourceLocation(Ragnarok.MOD_ID, id),
+                EntityType.Builder.<FlyingBoss>of(FlyingBoss::new, MobCategory.MONSTER).sized(w, h).clientTrackingRange(12).build(id));
+        FabricDefaultAttributeRegistry.register(t, attributes().add(Attributes.MOVEMENT_SPEED, speed).add(Attributes.FLYING_SPEED, speed * 1.6));
+        TYPES.put(id, t);
+    }
+
     public static void register() {
         land("cave_bear", 1.0f, 1.5f, 0.3);
         land("irish_elk", 1.0f, 2.0f, 0.32);
