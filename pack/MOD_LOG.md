@@ -460,3 +460,16 @@ limb, plates sit a pixel off the body, and textures use pixel-art bevels (lit to
 Stats are a straight line by tier (AncientArmorMaterial: defense leather -> a little above netherite, toughness 0 -> 4,
 knockback resistance 0 -> 0.15, durability, enchantability). Crafting recipes and repair materials still to come, on
 the same linear scale. Own creative tab: Ancient Armor.
+
+## Agamemnon's armor and transmog (v0.27)
+
+- **Agamemnon's set** (tier 49, legendary): an original design built from real Mycenaean finds - the gold funerary
+  "Mask of Agamemnon" as a face guard, boar-tusk bands, the Lion Gate lions on the breastplate and shoulders, Dendra
+  plate collar and hip plates, crimson crest, cloak and a shield on the back. (Not based on any film costume.)
+- **Transmog (Glamour Template)**: 4 templates from gold, lapis and paper. Smithing table: template + your armor piece
+  + any of the pack's 3D armor pieces for the same slot -> your piece keeps its stats, enchantments and durability but
+  looks like the other one (tooltip: "Looks like: ..."). Put a glamoured piece alone in a crafting grid to get its own
+  look back. Works on vanilla and modded armor (client mixin on HumanoidArmorLayer).
+- **More variation**: every set got its own accessories (shields and banners on the back, quivers, sashes, cross
+  belts, tabards with emblems, collars, fur collars, half cloaks, feather fans, wings, a gladiator's manica, beads,
+  tassels, knee guards) and its own sleeve colours.

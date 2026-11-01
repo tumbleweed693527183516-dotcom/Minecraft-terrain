@@ -855,6 +855,225 @@ assert sorted(ORDER) == sorted(_by), set(ORDER) ^ set(_by)
 SETS = [_by[k] for k in ORDER]
 
 
+# ================================================================== accessories: what makes each set its own
+def _m(m, name, color, style="cloth", **kw):
+    if name not in m.mats:
+        m.material(name, color, style, **kw)
+    return name
+
+
+def x_sash(m, c, flip=False):
+    n = _m(m, "x_sash_" + c, c, "cloth")
+    for i in range(7):                                      # a band from one shoulder to the other hip
+        x = (-4.6 + i * 1.4) * (-1 if flip else 1)
+        y = 23.0 - i * 1.6
+        lo, hi = sorted((x, x + (1.6 if not flip else -1.6)))
+        box(m, B, lo, y - 1.8, -3.25, hi, y, -2.85, n)
+        box(m, B, lo, y - 1.8, 2.85, hi, y, 3.25, n)
+
+
+def x_crossbelts(m, c, stud="#c8ccd2"):
+    n = _m(m, "x_belt_" + c, c, "hide", studs=(stud, 2))
+    for flip in (False, True):
+        for i in range(6):
+            x = (-4.2 + i * 1.5) * (-1 if flip else 1)
+            y = 23.4 - i * 1.8
+            lo, hi = sorted((x, x + (1.3 if not flip else -1.3)))
+            box(m, B, lo, y - 1.4, -3.2, hi, y, -2.9, n)
+
+
+def x_tabard(m, c, emblem=None, e="#e8c040"):
+    n = _m(m, "x_tabard_" + c, c, "cloth", trim=e)
+    box(m, B, -2.8, 7.0, -3.3, 2.8, 23.0, -2.9, n)
+    box(m, B, -2.8, 7.0, 2.9, 2.8, 23.0, 3.3, n)
+    if emblem:
+        en = _m(m, "x_emblem_" + e, e, "gold")
+        if emblem == "cross":
+            box(m, B, -0.5, 15.0, -3.5, 0.5, 21.0, -3.25, en)
+            box(m, B, -2.0, 17.5, -3.5, 2.0, 18.5, -3.25, en)
+        elif emblem == "sun":
+            box(m, B, -1.5, 16.5, -3.5, 1.5, 19.5, -3.25, en)
+        elif emblem == "chevron":
+            for i in range(3):
+                box(m, B, -2.0 + i * 0.5, 18.0 - i, -3.5, 2.0 - i * 0.5, 18.8 - i, -3.25, en)
+
+
+def x_collar(m, c, style="gold", c2=None):
+    n = _m(m, "x_collar_" + c, c, style, **({"band": (c2, 2)} if c2 else {}))
+    box(m, B, -5.0, 21.4, -3.3, 5.0, 24.8, 3.3, n)
+
+
+def x_furcollar(m, c="#e2ddd2"):
+    n = _m(m, "x_fur_" + c, c, "fur")
+    box(m, B, -5.2, 22.8, -3.4, 5.2, 25.6, 3.4, n)
+
+
+def x_halfcloak(m, c, trim="#e8c040"):
+    n = _m(m, "x_halfcloak_" + c, c, "cloth", trim=trim)
+    box(m, LA, 3.8, 14.0, -3.0, 9.0, 24.9, 3.0, n)              # over the left shoulder and arm
+    box(m, B, 0.0, 9.0, 2.8, 4.9, 24.6, 3.6, n)
+    br = _m(m, "x_brooch", "#e8c040", "gold")
+    box(m, B, -3.6, 22.4, -3.5, -2.2, 23.8, -3.1, br)
+
+
+def x_quiver(m, c="#6a4a2c", fletch="#ece8dc"):
+    n = _m(m, "x_quiver_" + c, c, "hide", trim="#3a2a1a")
+    f = _m(m, "x_fletch_" + fletch, fletch, "feather")
+    box(m, B, 0.8, 13.0, 3.0, 3.6, 22.5, 5.4, n, rot=(0, 0, -20), pivot=(2.2, 18, 4.2))
+    box(m, B, 1.2, 22.4, 3.3, 3.2, 25.4, 5.1, f, rot=(0, 0, -20), pivot=(2.2, 18, 4.2))
+
+
+def x_shield_back(m, c, rim="#c08a40", emblem="#2a2a2e"):
+    n = _m(m, "x_shield_" + c, c, "metal")
+    r = _m(m, "x_shieldrim_" + rim, rim, "metal")
+    e = _m(m, "x_shieldemb_" + emblem, emblem, "plain")
+    box(m, B, -5.4, 10.5, 3.3, 5.4, 21.5, 4.1, r)
+    box(m, B, -4.6, 11.3, 4.0, 4.6, 20.7, 4.6, n)
+    box(m, B, -1.6, 14.4, 4.5, 1.6, 17.6, 4.9, e)
+
+
+def x_banner(m, c, pole="#3a2a1a"):
+    p = _m(m, "x_pole", pole, "hide")
+    f = _m(m, "x_flag_" + c, c, "cloth", trim="#ece8dc")
+    box(m, B, -0.5, 18.0, 3.2, 0.5, 38.0, 4.2, p)
+    box(m, B, 0.5, 29.0, 3.4, 6.0, 37.6, 4.0, f)
+
+
+def x_featherfan(m, c1, c2):
+    a = _m(m, "x_fan1_" + c1, c1, "feather")
+    b = _m(m, "x_fan2_" + c2, c2, "feather")
+    for i in range(7):
+        ang = -54 + i * 18
+        box(m, B, -0.6, 22.0, 3.3, 0.6, 33.0, 3.9, a if i % 2 else b, rot=(0, 0, ang), pivot=(0, 21.0, 3.6))
+
+
+def x_manica(m, c="#aab0b8"):                                # segmented guard on the sword arm
+    n = _m(m, "x_manica_" + c, c, "metal")
+    for k in range(5):
+        y = 13.0 + k * 2.3
+        box(m, RA, -9.0 + k * 0.05, y, -2.9, -3.6, y + 2.0, 2.9, n)
+
+
+def x_spikes(m, c="#d8ceb4"):
+    n = _m(m, "x_spike_" + c, c, "bone")
+    for bone, s_, xi, xo in arms(None):
+        for z in (-1.6, 0.0, 1.6):
+            lo, hi = sorted((xo + s_ * 1.0, xo + s_ * 1.8))
+            box(m, bone, lo, 24.0, z - 0.4, hi, 27.0, z + 0.4, n, rot=(0, 0, -25 * s_), pivot=((lo + hi) / 2, 24.0, z))
+
+
+def x_beads(m, c1, c2):
+    a = _m(m, "x_bead1_" + c1, c1, "plain")
+    b = _m(m, "x_bead2_" + c2, c2, "plain")
+    for i in range(9):
+        x = -4.0 + i
+        y = 21.6 - abs(i - 4) * 0.5
+        box(m, B, x, y, -3.3, x + 0.8, y + 0.8, -2.9, a if i % 2 else b)
+
+
+def x_pouch(m, c="#6a4a2c"):
+    n = _m(m, "x_pouch_" + c, c, "hide", trim="#3a2a1a")
+    box(m, B, 2.4, 10.4, -3.6, 4.6, 12.8, -2.8, n)
+
+
+def x_pelt(m, c="#c89a40", spot="#2a1c10"):
+    n = _m(m, "x_pelt_" + c, c, "fur", studs=(spot, 2))
+    box(m, B, -5.0, 16.0, 2.8, 5.0, 24.9, 3.7, n)
+    box(m, B, -5.0, 22.4, -3.4, 5.0, 24.9, 3.7, n)
+    m.sym(B, (-2.4, 20.0, -3.6), (-1.0, 22.6, -3.3), n)          # paws knotted on the chest
+
+
+def x_tassels(m, c):
+    n = _m(m, "x_tassel_" + c, c, "hair")
+    m.sym(H, (-5.0, 22.0, -1.0), (-4.6, 27.6, 0.0), n)
+
+
+def x_kneeguards(m, c):
+    n = _m(m, "x_knee_" + c, c, "metal")
+    for leg, boot, s_, x0, x1 in legs():
+        box(m, leg, x0 - 0.6, 4.0, -2.9, x1 + 0.6, 6.4, -2.4, n)
+
+
+def x_wings(m, c="#ece8dc"):                                 # the winged hussar-like frame of the Khmer / Aksum guards
+    n = _m(m, "x_wing_" + c, c, "feather")
+    m.sym(B, (-5.0, 18.0, 3.3), (-3.6, 34.0, 4.1), n, rot=(0, 0, 14), pivot=(-4.3, 18.0, 3.7))
+
+
+def x_horsetail(m, c):
+    n = _m(m, "x_horsetail_" + c, c, "hair")
+    box(m, H, -0.8, 25.0, 4.6, 0.8, 33.0, 6.0, n)
+
+
+SLEEVES = {   # sleeve colours, so the sets don't all share the same linen arms
+    "sumerian": ("#6a4a30", "hide", {}), "akkadian": ("#5a4030", "hide", {}), "nubian": ("#8a5a30", "hide", {}),
+    "hittite": ("#7a3a2a", "cloth", {}), "mycenaean": ("#8a5a30", "hide", {}), "assyrian": ("#7a2a2a", "cloth", {"band": ("#d6a832", 4)}),
+    "celtic": ("#3a6a3a", "cloth", {"band": ("#9a2a22", 3)}), "thracian": ("#5e2a6a", "cloth", {"band": ("#d6a832", 3)}),
+    "persian": ("#5e2a6a", "cloth", {"band": ("#d6a832", 3)}), "germanic": ("#4a5a3a", "cloth", {}),
+    "hun": ("#6a4a2c", "hide", {}), "han": ("#2a2a2e", "cloth", {}), "goguryeo": ("#2a2a2e", "cloth", {}),
+    "sarmatian": ("#9aa0a8", "mail", {}), "parthian": ("#9aa0a8", "mail", {}), "byzantine": ("#a8aeb6", "mail", {}),
+    "mongol": ("#2e4a8a", "cloth", {}), "samurai": ("#2e3a6a", "cloth", {}), "scythian": ("#2e4a8a", "cloth", {}),
+    "carthaginian": ("#5e2a6a", "cloth", {}), "etruscan": ("#2a2a2e", "cloth", {"band": ("#c84a2a", 3)}),
+    "iberian": ("#9a2a22", "cloth", {}), "dacian": ("#4a5a3a", "cloth", {}), "hittite_": None,
+    "illyrian": ("#2e4a8a", "cloth", {}), "phoenician": ("#5e2a6a", "cloth", {}), "babylonian": ("#2e4a8a", "cloth", {"band": ("#d6a832", 4)}),
+    "maurya": ("#e8a030", "cloth", {}), "khmer": ("#c84a2a", "cloth", {}), "inca": ("#9a2a22", "cloth", {"band": ("#d6a832", 3)}),
+    "shang": ("#3a3a3a", "cloth", {}), "olmec": ("#6a7a5a", "hide", {}), "qin": ("#3a6a3a", "cloth", {}),
+    "centurion": ("#9a2a22", "cloth", {}), "roman": ("#9a2a22", "cloth", {}), "praetorian": ("#5e2a6a", "cloth", {}),
+    "argyraspid": ("#2e4a8a", "cloth", {}), "spartan": ("#8a2018", "cloth", {}),
+}
+
+EXTRAS = {
+    "sumerian": [(x_beads, "#3a6aa8", "#d6a832"), (x_pouch,)],
+    "akkadian": [(x_sash, "#9a2a22"), (x_beads, "#b8693e", "#ece8dc")],
+    "egyptian": [(x_collar, "#3a8aa8", "gold", "#d6a832")],
+    "minoan": [(x_sash, "#2e6aa8", True), (x_beads, "#2e6aa8", "#ece8dc")],
+    "shang": [(x_tabard, "#2a2a2e", "sun", "#c84a2a"), (x_tassels, "#c84a2a")],
+    "nubian": [(x_quiver, "#8a5a30", "#ece8dc"), (x_pelt, "#c89a40", "#2a1c10")],
+    "hittite": [(x_crossbelts, "#5a3a24", "#b07a3a"), (x_quiver, "#5a3a24", "#9a2a22")],
+    "phoenician": [(x_halfcloak, "#5e2a6a", "#d6a832")],
+    "mycenaean": [(x_shield_back, "#7a5434", "#c08a40", "#e8dcb8")],
+    "olmec": [(x_collar, "#3a8a6a", "bone", "#6a7a5a"), (x_beads, "#3a8a6a", "#c8b88a")],
+    "assyrian": [(x_quiver, "#5a3a24", "#9a2a22"), (x_tassels, "#9a2a22")],
+    "babylonian": [(x_sash, "#d6a832"), (x_beads, "#2e4a8a", "#d6a832")],
+    "etruscan": [(x_shield_back, "#c08a40", "#8a5a30", "#c84a2a")],
+    "celtic": [(x_halfcloak, "#3a6a3a", "#9a2a22"), (x_collar, "#d6a832", "gold")],
+    "illyrian": [(x_shield_back, "#ece8dc", "#b07a3a", "#2e4a8a"), (x_kneeguards, "#b07a3a")],
+    "thracian": [(x_halfcloak, "#5e2a6a", "#d6a832"), (x_horsetail, "#2a1c14")],
+    "iberian": [(x_crossbelts, "#3a2a1a", "#c8ccd2"), (x_shield_back, "#7a5434", "#c8ccd2", "#9a2a22")],
+    "athenian": [(x_shield_back, "#b07a3a", "#8a5a30", "#3a5a9a")],
+    "spartan": [(x_shield_back, "#b07a3a", "#8a5a30", "#8a2018")],
+    "macedonian": [(x_shield_back, "#c08a40", "#8a5a30", "#e8c040"), (x_kneeguards, "#c08a40")],
+    "argyraspid": [(x_shield_back, "#c8ccd2", "#d6a832", "#2e4a8a"), (x_horsetail, "#ece8dc")],
+    "scythian": [(x_quiver, "#9a2a22", "#d6a832"), (x_beads, "#d6a832", "#9a2a22")],
+    "persian": [(x_quiver, "#5e2a6a", "#d6a832"), (x_tassels, "#d6a832")],
+    "carthaginian": [(x_halfcloak, "#5e2a6a", "#ece8dc")],
+    "numidian": [(x_sash, "#c8501e", True), (x_quiver, "#7a5434", "#ece8dc")],
+    "dacian": [(x_banner, "#4a5a3a"), (x_furcollar, "#5a4632")],
+    "roman": [(x_shield_back, "#9a2a22", "#d6a832", "#d6a832"), (x_pouch, "#5a3a24")],
+    "gladiator": [(x_manica, "#aab0b8"), (x_crossbelts, "#5a3a24", "#b07a3a")],
+    "centurion": [(x_kneeguards, "#c8ccd2"), (x_crossbelts, "#5a3a24", "#d6a832")],
+    "praetorian": [(x_shield_back, "#5e2a6a", "#d6a832", "#d6a832")],
+    "germanic": [(x_furcollar, "#e2ddd2"), (x_pouch, "#3a2a1a")],
+    "hun": [(x_quiver, "#4a3a2a", "#9a2a22"), (x_furcollar, "#4a3a2a")],
+    "qin": [(x_crossbelts, "#c84a2a", "#d6a832")],
+    "han": [(x_banner, "#9a2a22"), (x_tassels, "#9a2a22")],
+    "goguryeo": [(x_quiver, "#2e8a8a", "#ece8dc"), (x_tassels, "#c84a2a")],
+    "maurya": [(x_sash, "#9a2a22"), (x_beads, "#d6a832", "#2e8a5a")],
+    "aksumite": [(x_wings, "#2a2a2e"), (x_beads, "#d6a832", "#9a2a22")],
+    "sarmatian": [(x_banner, "#ece8dc"), (x_kneeguards, "#9aa0a8")],
+    "parthian": [(x_quiver, "#5a3a24", "#d6a832"), (x_spikes, "#aab0b8")],
+    "anglo_saxon": [(x_shield_back, "#3a5a9a", "#d6a832", "#d6a832"), (x_pouch, "#3a2a1a")],
+    "byzantine": [(x_tabard, "#5e2a6a", "cross", "#d6a832")],
+    "khmer": [(x_wings, "#d6a832"), (x_beads, "#c84a2a", "#d6a832")],
+    "mongol": [(x_quiver, "#6a4a2c", "#ece8dc"), (x_furcollar, "#6a4a2c")],
+    "maya": [(x_featherfan, "#3a8a6a", "#e8c040"), (x_beads, "#3a8a6a", "#ece8dc")],
+    "aztec": [(x_featherfan, "#2e8a8a", "#c8282a"), (x_beads, "#2e8a8a", "#e8c040")],
+    "inca": [(x_tabard, "#d6a832", "sun", "#c8501e"), (x_featherfan, "#e8c040", "#9a2a22")],
+    "samurai": [(x_banner, "#c8282a"), (x_tassels, "#c8282a")],
+    "pharaoh": [(x_collar, "#2e4a8a", "gold", "#d6a832"), (x_wings, "#d6a832")],
+    "agamemnon": [(x_shield_back, "#8a5a30", "#e8b83a", "#8a1418")],
+}
+
+
 # ================================================================== the King of Mycenae (legendary set, also a glamour look)
 # Original design built from real Mycenaean finds: the gold funerary "Mask of Agamemnon", the Lion Gate,
 # the Dendra panoply and boar-tusk helmets. Not based on any film costume.
@@ -944,7 +1163,10 @@ def build(spec):
     m = Model(spec["id"], tex_w=256, seed=sum(map(ord, spec["id"])))
     skeleton(m)
     P = {}
-    for role, (col, style, extra) in spec["P"].items():
+    roles = dict(spec["P"])
+    if SLEEVES.get(spec["id"]):
+        roles["sleeve"] = SLEEVES[spec["id"]]
+    for role, (col, style, extra) in roles.items():
         name = role
         m.material(name, col, style, **extra)
         P[role] = name
@@ -963,6 +1185,8 @@ def build(spec):
         bracers(m, P, spec["bracer"])
     LEGS[spec["legs"]](m, P)
     FEET[spec["feet"]](m, P)
+    for fn, *args in EXTRAS.get(spec["id"], ()):
+        fn(m, *args)
     m.save(GEO_DIR, TEX_DIR, quiet=True)
     return m
 

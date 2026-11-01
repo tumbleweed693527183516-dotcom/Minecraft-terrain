@@ -32,7 +32,7 @@ def with_mannequin(geo, tex):
     return g, t
 
 
-def sheet(out, ids=None, cols=6, S=260):
+def sheet(out, ids=None, cols=6, S=260, both=False):
     sets = [s for s in SETS if not ids or s["id"] in ids]
     rows = (len(sets) + cols - 1) // cols
     img = Image.new("RGB", (cols * S, rows * (S + 20)), (150, 185, 225))
@@ -43,10 +43,14 @@ def sheet(out, ids=None, cols=6, S=260):
         g, t = with_mannequin(geo, tex)
         ppu = tex.shape[1] / geo["minecraft:geometry"][0]["description"]["texture_width"]
         x, y = (i % cols) * S, (i // cols) * (S + 20)
-        img.paste(view(g, t, ppu, 25, S), (x, y + 20))
+        if both:
+            img.paste(view(g, t, ppu, 25, S // 2 * 2).resize((S // 2, S)), (x, y + 20))
+            img.paste(view(g, t, ppu, 205, S // 2 * 2).resize((S // 2, S)), (x + S // 2, y + 20))
+        else:
+            img.paste(view(g, t, ppu, 25, S), (x, y + 20))
         d.text((x + 6, y + 4), f"{i + 1}. {s['title']} ({s['civ']})", fill=(20, 20, 30))
     img.save(out)
 
 
 if __name__ == "__main__":
-    sheet(sys.argv[1] if len(sys.argv) > 1 else "/tmp/armor.png", sys.argv[2:] or None)
+    sheet(sys.argv[1] if len(sys.argv) > 1 else "/tmp/armor.png", sys.argv[2:] or None, both=True, cols=7, S=300)
