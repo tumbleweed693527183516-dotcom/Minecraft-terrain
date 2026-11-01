@@ -50,6 +50,10 @@ public class VikingArmorItem extends ArmorItem implements GeoItem {
                 if (this.renderer == null) {
                     this.renderer = new GeoArmorRenderer<>(new DefaultedItemGeoModel<>(
                             new ResourceLocation("vividlands_ragnarok", "armor/" + set.id())));
+                    if (set == VikingArmorMaterial.JARL) {      // glowing eye slits and dragon eye
+                        this.renderer.addRenderLayer(new com.vividlands.ragnarok.weapon.FullbrightLayer<>(this.renderer,
+                                new ResourceLocation("vividlands_ragnarok", "textures/item/armor/jarl_glow.png")));
+                    }
                 }
                 this.renderer.prepForRender(entity, stack, slot, original);
                 return this.renderer;

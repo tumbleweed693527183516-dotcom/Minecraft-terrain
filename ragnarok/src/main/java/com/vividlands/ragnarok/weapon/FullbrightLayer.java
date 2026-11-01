@@ -15,11 +15,11 @@ import software.bernie.geckolib.renderer.layer.GeoRenderLayer;
  * Unlike GeckoLib's emissive layer it needs no special shader, so the molten core glows with or without shader
  * packs and keeps the base texture untouched.
  */
-final class FullbrightLayer<T extends GeoAnimatable> extends GeoRenderLayer<T> {
+public final class FullbrightLayer<T extends GeoAnimatable> extends GeoRenderLayer<T> {
     private static final int FULL_BRIGHT = 0xF000F0;
     private final ResourceLocation glowTexture;
 
-    FullbrightLayer(GeoRenderer<T> renderer, ResourceLocation glowTexture) {
+    public FullbrightLayer(GeoRenderer<T> renderer, ResourceLocation glowTexture) {
         super(renderer);
         this.glowTexture = glowTexture;
     }

@@ -131,10 +131,10 @@ public final class Weapons {
         WeaponTier v = WeaponTier.VIKING, l = WeaponTier.LEGENDARY;
         // id, damage, attack speed (placeholder stats - balanced later)
         reg("bearded_axe", new GeoAxe("bearded_axe", v, 8.0f, -3.0f, props(Rarity.UNCOMMON)));
-        reg("wolf_seax", new GeoSword("wolf_seax", v, 5, -2.0f, false, props(Rarity.RARE)));
-        reg("valkyrie_sword", new GeoSword("valkyrie_sword", v, 7, -2.4f, false, props(Rarity.RARE)));
+        reg("wolf_seax", new GeoSword("wolf_seax", v, 5, -2.0f, true, props(Rarity.RARE)));
+        reg("valkyrie_sword", new GeoSword("valkyrie_sword", v, 7, -2.4f, true, props(Rarity.RARE)));
         reg("dane_axe", new GeoAxe("dane_axe", v, 11.0f, -3.2f, props(Rarity.EPIC)));
-        reg("gungnir", new GeoSword("gungnir", l, 9, -2.8f, false, props(Rarity.EPIC)));
+        reg("gungnir", new GeoSword("gungnir", l, 9, -2.8f, true, props(Rarity.EPIC)));
         reg("fenrirs_fang", new GeoSword("fenrirs_fang", l, 11, -2.6f, false, props(Rarity.EPIC)));
         reg("round_shield", new GeoShield("round_shield", new Item.Properties().durability(672).rarity(Rarity.UNCOMMON)));
         reg("khopesh", new GeoSword("khopesh", v, 6, -2.3f, false, props(Rarity.RARE)));
