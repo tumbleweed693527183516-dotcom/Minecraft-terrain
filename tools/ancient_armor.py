@@ -1085,14 +1085,14 @@ def h_wanax(m, P):
     box(m, H, -4.7, 24.2, -3.4, 4.7, 28.0, 4.7, P["helm"])                 # cheeks and neck
     box(m, H, -5.2, 24.4, 4.2, 5.2, 25.6, 6.0, P["helm"])                  # flared neck guard
     # the gold death mask, sculpted: brow ridge, glowing eyes, long nose, upturned moustache, braided beard
-    box(m, H, -4.3, 24.0, -5.0, 4.3, 27.2, -4.6, P["mask"])                # lower face
+    box(m, H, -4.3, 24.0, -5.0, 4.3, 27.1, -4.6, P["mask"])                # lower face
     for i, x in enumerate((-3.6, -2.1, -0.6, 0.9, 2.4)):                     # a crown of gold rays above the brow
         box(m, H, x, 29.4, -5.1, x + 1.2, 30.6 + (1.0 if i == 2 else 0.4 if i in (1, 3) else 0), -4.7, P["gold"])
-    box(m, H, -4.3, 28.2, -5.0, 4.3, 29.4, -4.6, P["mask"])                # forehead
-    box(m, H, -1.2, 27.2, -5.0, 1.2, 28.2, -4.6, P["mask"])                # between the eyes
-    m.sym(H, (-4.3, 27.2, -5.0), (-3.3, 28.2, -4.6), P["mask"])            # temples
-    m.sym(H, (-3.3, 27.2, -4.8), (-1.2, 28.2, -4.6), P["eyes"])            # glowing eyes, set deep
-    m.sym(H, (-3.9, 28.1, -5.45), (-0.5, 28.9, -4.95), P["gold_dark"], rot=(0, 0, -9), pivot=(-0.5, 28.5, -5.2))  # scowling brows
+    box(m, H, -4.3, 28.0, -5.0, 4.3, 29.4, -4.6, P["mask"])                # forehead
+    box(m, H, -1.2, 27.1, -5.0, 1.2, 28.0, -4.6, P["mask"])                # between the eyes
+    m.sym(H, (-4.3, 27.1, -5.0), (-3.3, 28.0, -4.6), P["mask"])            # temples
+    m.sym(H, (-3.3, 27.1, -4.9), (-1.2, 28.0, -4.6), P["eyes"])            # glowing eyes, set just behind the mask
+    m.sym(H, (-3.9, 28.35, -5.45), (-0.5, 29.05, -4.95), P["gold_dark"], rot=(0, 0, -6), pivot=(-0.5, 28.7, -5.2))  # scowling brows
     m.sym(H, (-4.1, 26.3, -5.3), (-2.3, 27.1, -4.95), P["mask"])           # cheekbones
     box(m, H, -0.65, 25.9, -5.75, 0.65, 28.3, -5.0, P["mask"])             # long straight nose
     box(m, H, -1.05, 25.7, -5.55, 1.05, 26.3, -5.0, P["mask"])             # nostrils
