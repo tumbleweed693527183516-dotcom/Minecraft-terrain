@@ -62,10 +62,10 @@ final class RenderTest {
     private static void planBosses(Minecraft mc) {
         String[] ids = {"cave_bear", "irish_elk", "hippo", "crocodile", "silverback", "saber_tooth", "woolly_rhino",
                 "elephant", "bull_shark", "mammoth"};
-        double[] dist = {17, 19, 17, 19, 17, 15, 20, 23, 0, 27};
+        double[] dist = {13, 15, 13, 13, 13, 11, 14, 17, 0, 19};
         steps.add(() -> {
             for (String c : new String[]{"gamerule doDaylightCycle false", "time set 6000", "weather clear",
-                    "gamerule doMobSpawning false", "gamerule vividlandsBossSpawning false", "tp @a 0.5 202 8.5 180 0"}) cmd(mc, c);
+                    "gamerule doMobSpawning false", "gamerule vividlandsBossSpawning false", "gamemode spectator @a", "tp @a 0.5 202 8.5 180 0"}) cmd(mc, c);
             mc.options.hideGui = true;
         });
         for (int i = 0; i < ids.length; i++) {
@@ -84,27 +84,27 @@ final class RenderTest {
                 cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %d.5 205 %.1f 180 10", x, d + 6));
             });
             steps.add(() -> {
-                cmd(mc, String.format(java.util.Locale.ROOT, "ragnarok boss summon %s %d.5 %d 0.5", id, x, sea ? 195 : 200));
+                cmd(mc, String.format(java.util.Locale.ROOT, "ragnarok boss summon %s %d.5 %d 0.5", id, x, sea ? 197 : 200));
                 cmd(mc, String.format(java.util.Locale.ROOT,
                         "summon minecraft:armor_stand %d.5 200 %.1f {NoBasePlate:1b,NoGravity:1b,ShowArms:1b,Rotation:[180f,0f]}",
                         sea ? x + 3 : x + 2, sea ? 13.5 : d * 0.45));
             });
             steps.add(() -> {
-                cmd(mc, "execute as @e[tag=vividlands_ragnarok.boss." + id + "] run data merge entity @s {NoAI:1b,Rotation:[150f,0f]}");
-                cmd(mc, "execute as @e[tag=vividlands_ragnarok.boss." + id + "] at @s run tp @s " + x + ".5 ~ 0.5 150 0");
+                cmd(mc, "execute as @e[tag=vividlands_ragnarok.boss." + id + "] run data merge entity @s {NoAI:1b,Rotation:[330f,0f]}");
+                cmd(mc, "execute as @e[tag=vividlands_ragnarok.boss." + id + "] at @s run tp @s " + x + ".5 ~ 0.5 -30 0");
             });
             steps.add(() -> cmd(mc, sea
-                    ? String.format(java.util.Locale.ROOT, "tp @a %d.5 212 20 180 40", x)
+                    ? String.format(java.util.Locale.ROOT, "tp @a %d.5 204 13 180 35", x)
                     : String.format(java.util.Locale.ROOT, "tp @a %d.5 %.1f %.1f 180 12", x, 201.5 + d * 0.2, d)));
             steps.add(() -> shot(mc, "boss_" + id));
             steps.add(() -> cmd(mc, sea
-                    ? String.format(java.util.Locale.ROOT, "tp @a %d.5 204 18 180 25", x + 6)
+                    ? String.format(java.util.Locale.ROOT, "tp @a %d.5 202 11 160 28", x + 5)
                     : String.format(java.util.Locale.ROOT, "tp @a %.1f %.1f %.1f 135 10", x + d * 0.7, 201.0 + d * 0.15, d * 0.7)));
             steps.add(() -> shot(mc, "boss_" + id + "_angle"));
             String move = id.equals("silverback") ? "roar" : id.equals("crocodile") ? "roll" : id.equals("bull_shark") ? "leap" : "roar";
-            steps.add(() -> { cmd(mc, "ragnarok boss animate " + move); nextWait = 14; });
+            steps.add(() -> { cmd(mc, "execute positioned " + x + ".5 200 0.5 run ragnarok boss animate " + move); nextWait = 14; });
             steps.add(() -> shot(mc, "boss_" + id + "_" + move));
-            steps.add(() -> { cmd(mc, "ragnarok boss animate attack"); nextWait = 5; });
+            steps.add(() -> { cmd(mc, "execute positioned " + x + ".5 200 0.5 run ragnarok boss animate attack"); nextWait = 5; });
             steps.add(() -> shot(mc, "boss_" + id + "_attack"));
         }
         steps.add(mc::stop);
