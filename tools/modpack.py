@@ -116,7 +116,6 @@ RESOLVE = [
     ("animal-garden-western-gorilla", True),
     ("animal-garden-bull-shark", True),
     ("animal-garden-common-raven", True),
-    ("fossils-and-archeology-revival", True),   # smilodon (Saber-tooth)
     ("backported-wolves", True),
     ("saints-dragons", True),              # Fafnir and Nidhoggr
     # --- tech ---

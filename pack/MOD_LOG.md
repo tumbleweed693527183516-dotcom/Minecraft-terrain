@@ -398,3 +398,15 @@ Jormungandr, Fenrir), using the structures listed above.
 
 Not possible on Fabric 1.20.1 (no version for it): Archeries (1.21 only), Narrow Zone (Forge only), Arch Bows.
 Bow Mechanics Overhaul is CurseForge only and makes left-click fire the bow, which clashes with Better Combat.
+
+## Own boss models (v0.24)
+
+The Chapter 1 bosses are now the pack's own creatures (entity ids vividlands_ragnarok:<boss>), modeled in Blockbench
+(tools/models/bosses/*.bbmodel) with GeckoLib animations made by tools/boss_anims.py: idle, walk, run, and one-shot
+moves that the abilities play - attack (bite / gore / punch), roar (rears up, jaws wide; the Silverback beats its
+chest), slam (rears and crashes down; the crocodile whips its tail; the Silverback ground-pounds), charge (head down,
+full gallop), leap (crouch and pounce; the shark breaches), roll (the crocodile's death roll), throw (boulder), hurt.
+Operators can preview them with `/ragnarok boss animate <move>` (plays on every boss within 96 blocks).
+
+Fossils and Archeology is removed from the pack (only 4 of its animals were used, as boss models). Naturalist and
+Animal Garden stay for ordinary wildlife.
