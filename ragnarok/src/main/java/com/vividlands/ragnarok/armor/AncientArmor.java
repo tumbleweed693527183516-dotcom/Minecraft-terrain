@@ -46,8 +46,11 @@ public final class AncientArmor {
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(Ragnarok.MOD_ID, "ancient"),
                 FabricItemGroup.builder()
                         .title(Component.translatable("itemGroup.vividlands_ragnarok.ancient"))
-                        .icon(() -> new ItemStack(SETS.get("spartan").get(0)))
-                        .displayItems((params, out) -> SETS.values().forEach(l -> l.forEach(out::accept)))
+                        .icon(() -> new ItemStack(SETS.get("agamemnon").get(0)))
+                        .displayItems((params, out) -> {
+                            if (Glamour.TEMPLATE != null) out.accept(Glamour.TEMPLATE);
+                            SETS.values().forEach(l -> l.forEach(out::accept));
+                        })
                         .build());
     }
 }

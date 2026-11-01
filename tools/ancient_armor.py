@@ -855,6 +855,90 @@ assert sorted(ORDER) == sorted(_by), set(ORDER) ^ set(_by)
 SETS = [_by[k] for k in ORDER]
 
 
+# ================================================================== the King of Mycenae (legendary set, also a glamour look)
+# Original design built from real Mycenaean finds: the gold funerary "Mask of Agamemnon", the Lion Gate,
+# the Dendra panoply and boar-tusk helmets. Not based on any film costume.
+def h_wanax(m, P):
+    h_cap(m, P, low=28.0)
+    box(m, H, -4.9, 27.6, -4.9, 4.9, 28.6, 4.9, P["gold"])                 # gold rim
+    for y in (29.4, 31.0):                                                  # rows of boar tusks round the bowl
+        box(m, H, -4.75, y, -4.75, 4.75, y + 0.9, 4.75, P["tusk"])
+    box(m, H, -4.7, 24.2, -3.4, 4.7, 28.0, 4.7, P["helm"])                 # cheeks and neck
+    box(m, H, -5.2, 24.4, 4.2, 5.2, 25.6, 6.0, P["helm"])                  # flared neck guard
+    # the gold death mask: eye slits, straight nose, beard
+    box(m, H, -4.3, 24.0, -5.05, 4.3, 27.2, -4.6, P["mask"])
+    m.sym(H, (-4.3, 27.2, -5.05), (-2.9, 28.6, -4.6), P["mask"])
+    box(m, H, -1.0, 27.2, -5.05, 1.0, 28.6, -4.6, P["mask"])
+    box(m, H, -0.6, 26.4, -5.5, 0.6, 28.8, -5.0, P["mask"])                # nose
+    m.sym(H, (-3.6, 28.6, -5.25), (-0.8, 29.2, -4.85), P["gold_dark"])     # brows
+    box(m, H, -3.4, 24.0, -5.25, 3.4, 25.0, -4.9, P["gold_dark"])          # beard edge
+    box(m, H, -1.1, 29.4, -5.3, 1.1, 31.4, -4.8, P["gold"])                # lion emblem on the brow
+    m.sym(H, (-5.5, 28.8, -1.5), (-4.7, 33.6, 2.6), P["gold"])             # side plumes holders
+    m.sym(H, (-5.4, 33.6, -0.6), (-4.8, 37.4, 1.4), P["plume"], rot=(0, 0, -12), pivot=(-5.1, 33.6, 0.4))
+    # the great crest: on a gold stand, sweeping back and down
+    box(m, H, -0.5, 32.4, -1.5, 0.5, 35.4, 1.5, P["gold"])
+    box(m, H, -0.9, 35.4, -5.0, 0.9, 39.6, 5.4, P["plume"])
+    box(m, H, -0.9, 31.4, 5.2, 0.9, 39.0, 7.2, P["plume"])
+    box(m, H, -0.9, 26.0, 6.2, 0.9, 31.6, 7.8, P["plume"])
+
+
+def c_royal(m, P):
+    torso(m, P, "bands", w=5.2, d=3.2)
+    box(m, B, -4.9, 23.8, -3.4, 4.9, 26.2, 3.4, P["chest"])                # Dendra collar
+    box(m, B, -3.8, 17.2, -3.55, 3.8, 23.6, -3.1, P["gold"])               # gold breastplate
+    m.sym(B, (-3.6, 19.6, -3.75), (-0.6, 22.6, -3.45), P["gold"])          # two lions facing (the Lion Gate)
+    box(m, B, -0.5, 18.0, -3.8, 0.5, 23.2, -3.45, P["crimson"])            # the column between them
+    box(m, B, -1.4, 13.6, -3.65, 1.4, 16.2, -3.15, P["crimson"])           # rosette
+    box(m, B, -5.3, 11.8, -3.4, 5.3, 13.4, 3.4, P["gold"])                 # belt
+
+
+def s_lion(m, P):
+    for bone, s_, xi, xo in arms(None):
+        lo, hi = sorted((xi + s_ * -0.4, xo + s_ * 1.3))
+        box(m, bone, lo, 20.0, -3.2, hi, 25.2, 3.2, P["chest"])            # great shoulder bell
+        lo, hi = sorted((xi + s_ * -0.4, xo + s_ * 1.5))
+        box(m, bone, lo, 24.6, -3.3, hi, 25.6, 3.3, P["gold"])
+        lo, hi = sorted((xo + s_ * 1.2, xo + s_ * 2.3))
+        box(m, bone, lo, 20.6, -1.8, hi, 24.2, 1.8, P["mane"])             # lion's mane
+        lo, hi = sorted((xo + s_ * 2.2, xo + s_ * 2.8))
+        box(m, bone, lo, 21.2, -1.1, hi, 23.6, 1.1, P["gold"])             # lion's face
+        lo, hi = sorted((xi + s_ * -0.2, xo + s_ * 0.9))
+        box(m, bone, lo, 17.4, -3.0, hi, 20.2, 3.0, P["chest"])            # second lame
+        lo, hi = sorted((xi, xo + s_ * 0.7))
+        box(m, bone, lo, 11.8, -2.75, hi, 15.6, 2.75, P["chest"])          # vambrace
+        box(m, bone, lo, 15.2, -2.85, hi, 15.8, 2.85, P["gold"])
+
+
+def royal_skirt(m, P):
+    box(m, B, -5.3, 8.0, -3.4, 5.3, 12.0, 3.4, P["bands"])                 # Dendra hip plates
+    box(m, B, -1.6, 6.0, -3.6, 1.6, 12.0, -3.3, P["crimson"])              # front tabard
+    box(m, B, -1.6, 5.6, -3.7, 1.6, 6.4, -3.4, P["gold"])
+
+
+def f_royal(m, P):
+    f_greaves(m, P, "chest")
+    for leg, boot, s_, x0, x1 in legs():
+        box(m, boot, x0 - 0.55, 6.4, -3.0, x1 + 0.55, 8.0, -1.6, P["gold"])   # gold knee caps
+        box(m, boot, x0 + 1.0, 4.4, -2.95, x1 - 1.0, 6.2, -2.7, P["gold"])     # lion mask on the shin
+
+
+HELMETS["wanax"] = h_wanax
+CHESTS["royal"] = c_royal
+SHOULDERS["lion"] = s_lion
+FEET["royal"] = f_royal
+LEGS["royal"] = lambda m, P: l_thighguard(m, P, "bands")
+
+SETS.append(S("agamemnon", "Agamemnon's", "Mycenae (legendary)", "wanax", "royal", "lion", "none", "royal", "royal",
+              pal(helm=("#7a4e2a", "metal", {}), chest=("#8a5a30", "metal", {}), trim=("#e0b040", "gold", {}),
+                  gold=("#e8b83a", "gold", {}), gold_dark=("#a8782a", "gold", {}), mask=("#ecc04a", "gold", {"band": ("#c89a30", 2, 1)}),
+                  bands=("#8a5a30", "metal", {"band": ("#e0b040", 3)}), plume=("#8a1418", "hair", {}), crimson=("#8a1418", "cloth", {}),
+                  mane=("#a8702a", "fur", {}), tusk=("#e8dcb8", "bone", {"band": ("#8a6a3a", 2)}), cloth=("#8a1418", "cloth", {}),
+                  sleeve=("#8a1418", "cloth", {}), cloth3=("#5a1218", "cloth", {}), wrap=("#5a1218", "cloth", {}),
+                  belt=("#e8b83a", "gold", {})),
+              ("Golden Mask Helm", "Lion Gate Cuirass", "King's Thigh Guards", "Lion Greaves"),
+              belt_mat="belt", cloak=("#5e1a2a", "cloth", {"trim": "#e8b83a", "band": ("#e8b83a", 6, 3)})))
+
+
 # ================================================================== build
 def build(spec):
     m = Model(spec["id"], tex_w=256, seed=sum(map(ord, spec["id"])))
@@ -870,6 +954,8 @@ def build(spec):
     SHOULDERS[spec["shoulders"]](m, P)
     if spec["skirt"] != "none":
         skirt(m, P, spec["skirt"])
+    if spec["id"] == "agamemnon":
+        royal_skirt(m, P)
     belt(m, P, spec["belt"])
     if spec["cloak"]:
         cape(m, P)
@@ -896,6 +982,8 @@ def icons(spec):
         helm = _c(spec, "feather")
     elif hk in ("jaguar",):
         helm = _c(spec, "pelt")
+    elif hk in ("wanax",):
+        helm = _c(spec, "gold")
     elif hk in ("boar",):
         helm = _c(spec, "tusk")
     elif hk in ("feathers", "sun", "mokot"):
@@ -903,12 +991,12 @@ def icons(spec):
     ck = spec["chest"]
     body = {"linothorax": "cloth", "scale": "scale", "lamellar": "lamellar", "segmentata": "chest", "mail": "mail",
             "leather": "leather", "dendra": "chest", "quilted": "cloth", "oyoroi": "lamellar", "pelt": "fur",
-            "robe": "cloth", "muscle": "chest"}[ck]
+            "robe": "cloth", "muscle": "chest", "royal": "gold"}[ck]
     body_c = _c(spec, body)
     legs_c = _c(spec, {"trousers": "cloth3", "haidate": "lamellar", "wrap": "wrap", "scale": "scale", "mail": "mail",
-                       "thighguard": "chest", "bare": "cloth"}[spec["legs"]])
+                       "thighguard": "chest", "bare": "cloth", "royal": "bands"}[spec["legs"]])
     feet_c = _c(spec, {"sandal": "leather", "greaves": "chest", "boots": "leather", "fur_boots": "fur", "metal_boots": "chest",
-                       "upturned": "leather", "wrapped": "wrap", "lacquer_greaves": "armor2"}[spec["feet"]])
+                       "upturned": "leather", "wrapped": "wrap", "lacquer_greaves": "armor2", "royal": "chest"}[spec["feet"]])
 
     def img(rows, colors):
         a = np.zeros((16, 16, 4), np.uint8)
@@ -955,7 +1043,7 @@ def icons(spec):
             "conical": "cone", "conical_mail": "cone", "furhat": "cone", "khepresh": "cone", "horned": "horn",
             "horned_side": "horn", "feathers": "plumes", "sun": "plumes", "nemes": "cloth", "hood": "cloth",
             "turban": "cloth", "kabuto": "horn", "montefortino": "crest", "illyrian": "crest", "iberian": "crest",
-            "shang": "crest", "goguryeo": "cone", "mokot": "cone", "hun": "cone", "suttonhoo": "default"}.get(hk, "default")
+            "shang": "crest", "wanax": "crest", "goguryeo": "cone", "mokot": "cone", "hun": "cone", "suttonhoo": "default"}.get(hk, "default")
     plume = _c(spec, "horn") if hrow == "horn" and hk.startswith("horned") else (_c(spec, "gold") if hk == "kabuto" else _c(spec, "plume"))
     out["helmet"] = img(H_ROWS[hrow], {"h": helm, "H": helm, "t": trim, "T": trim, "p": plume, "q": _c(spec, "plume2")})
     out["chestplate"] = img(["................", "..ttt......ttt..", ".tbbbtttttttbbbt", ".bbbbbbbbbbbbbbb".replace("b", "b"),

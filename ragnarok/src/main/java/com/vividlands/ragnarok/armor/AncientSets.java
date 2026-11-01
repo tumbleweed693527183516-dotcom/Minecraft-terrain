@@ -58,7 +58,8 @@ public final class AncientSets {
             new Set("aztec", "Mexica"),
             new Set("inca", "Tawantinsuyu"),
             new Set("samurai", "Japan"),
-            new Set("pharaoh", "Egypt")
+            new Set("pharaoh", "Egypt"),
+            new Set("agamemnon", "Mycenae (legendary)")
     );
 
     private AncientSets() {
