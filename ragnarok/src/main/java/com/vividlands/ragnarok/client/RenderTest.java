@@ -61,25 +61,30 @@ final class RenderTest {
     /** Bosses scene (-Dvividlands.rendertest.scene=bosses): every boss posed on a platform next to a player-sized stand. */
     private static void planBosses(Minecraft mc) {
         String[] ids = {"cave_bear", "irish_elk", "hippo", "crocodile", "silverback", "saber_tooth", "woolly_rhino",
-                "elephant", "bull_shark", "mammoth"};
-        double[] dist = {13, 15, 13, 13, 13, 11, 14, 17, 0, 19};
+                "elephant", "bull_shark", "mammoth", "dire_wolf", "steppe_bison", "terror_bird", "komodo", "glyptodon",
+                "cave_lion", "anaconda", "ground_sloth", "haast_eagle", "walrus", "sleipnir", "garmr", "fafnir",
+                "jormungandr", "fenrir"};
+        double[] dist = {13, 15, 13, 13, 13, 11, 14, 17, 0, 19, 10, 11, 11, 12, 12, 10, 16, 12, 13, 12, 11, 12, 19, 0, 15};
+        // the move shown for each boss: its signature ability (the new moves for the new bosses), then stagger
+        String[] moves = {"roar", "roar", "roar", "roll", "roar", "roar", "roar", "roar", "leap", "roar", "combo", "charge",
+                "combo", "breath", "spin", "leap", "grab", "grab", "swoop", "slam", "combo", "breath", "breath", "breath",
+                "combo"};
         steps.add(() -> {
             for (String c : new String[]{"gamerule doDaylightCycle false", "time set 6000", "weather clear",
                     "gamerule doMobSpawning false", "gamerule vividlandsBossSpawning false", "gamemode spectator @a", "tp @a 0.5 202 8.5 180 0"}) cmd(mc, c);
             mc.options.hideGui = true;
         });
         for (int i = 0; i < ids.length; i++) {
-            int x = i * 44;
+            int x = i * 64;
             String id = ids[i];
             double d = dist[i];
-            boolean sea = id.equals("bull_shark");
+            boolean sea = id.equals("bull_shark") || id.equals("jormungandr");
+            int r = id.equals("jormungandr") ? 24 : 15;      // the world serpent needs a bigger pool
             steps.add(() -> {
-                cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 199 -20 %d 199 30 minecraft:grass_block", x - 21, x + 21));
-                cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 200 -20 %d 230 30 minecraft:air", x - 21, x + 21));
+                cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 199 -28 %d 199 36 minecraft:grass_block", x - 30, x + 30));
                 if (sea) {
-                    cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 196 -12 %d 199 12 minecraft:sand", x - 16, x + 16));
-                    cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 192 -12 %d 199 12 minecraft:water", x - 15, x + 15));
-                    cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 191 -13 %d 191 13 minecraft:sand", x - 16, x + 16));
+                    cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 191 %d %d 199 %d minecraft:sand", x - r - 1, -r - 1, x + r + 1, r + 1));
+                    cmd(mc, String.format(java.util.Locale.ROOT, "fill %d 192 %d %d 199 %d minecraft:water", x - r, -r, x + r, r));
                 }
                 cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %d.5 205 %.1f 180 10", x, d + 6));
             });
@@ -87,26 +92,121 @@ final class RenderTest {
                 cmd(mc, String.format(java.util.Locale.ROOT, "ragnarok boss summon %s %d.5 %d 0.5", id, x, sea ? 197 : 200));
                 cmd(mc, String.format(java.util.Locale.ROOT,
                         "summon minecraft:armor_stand %d.5 200 %.1f {NoBasePlate:1b,NoGravity:1b,ShowArms:1b,Rotation:[180f,0f]}",
-                        sea ? x + 3 : x + 2, sea ? 13.5 : d * 0.45));
+                        sea ? x + r - 2 : x + 2, sea ? r - 1.5 : d * 0.45));
             });
             steps.add(() -> {
                 cmd(mc, "execute as @e[tag=vividlands_ragnarok.boss." + id + "] run data merge entity @s {NoAI:1b,Rotation:[330f,0f]}");
                 cmd(mc, "execute as @e[tag=vividlands_ragnarok.boss." + id + "] at @s run tp @s " + x + ".5 ~ 0.5 -30 0");
             });
-            steps.add(() -> cmd(mc, sea
-                    ? String.format(java.util.Locale.ROOT, "tp @a %d.5 204 13 180 35", x)
-                    : String.format(java.util.Locale.ROOT, "tp @a %d.5 %.1f %.1f 180 12", x, 201.5 + d * 0.2, d)));
+            String front = id.equals("bull_shark") ? String.format(java.util.Locale.ROOT, "tp @a %d.5 204 13 180 35", x)
+                    : id.equals("jormungandr") ? String.format(java.util.Locale.ROOT, "tp @a %d.5 214 26 180 38", x)
+                    : String.format(java.util.Locale.ROOT, "tp @a %d.5 %.1f %.1f 180 12", x, 201.5 + d * 0.2, d);
+            String angle = id.equals("bull_shark") ? String.format(java.util.Locale.ROOT, "tp @a %d.5 202 11 160 28", x + 5)
+                    : id.equals("jormungandr") ? String.format(java.util.Locale.ROOT, "tp @a %d.5 210 20 135 30", x + 20)
+                    : String.format(java.util.Locale.ROOT, "tp @a %.1f %.1f %.1f 135 10", x + d * 0.7, 201.0 + d * 0.15, d * 0.7);
+            steps.add(() -> cmd(mc, front));
             steps.add(() -> shot(mc, "boss_" + id));
-            steps.add(() -> cmd(mc, sea
-                    ? String.format(java.util.Locale.ROOT, "tp @a %d.5 202 11 160 28", x + 5)
-                    : String.format(java.util.Locale.ROOT, "tp @a %.1f %.1f %.1f 135 10", x + d * 0.7, 201.0 + d * 0.15, d * 0.7)));
+            steps.add(() -> cmd(mc, angle));
             steps.add(() -> shot(mc, "boss_" + id + "_angle"));
-            String move = id.equals("silverback") ? "roar" : id.equals("crocodile") ? "roll" : id.equals("bull_shark") ? "leap" : "roar";
+            steps.add(() -> cmd(mc, front));
+            String move = moves[i];
             steps.add(() -> { cmd(mc, "execute positioned " + x + ".5 200 0.5 run ragnarok boss animate " + move); nextWait = 14; });
             steps.add(() -> shot(mc, "boss_" + id + "_" + move));
+            if (i >= 10) {
+                steps.add(() -> { cmd(mc, "execute positioned " + x + ".5 200 0.5 run ragnarok boss animate stagger"); nextWait = 16; });
+                steps.add(() -> shot(mc, "boss_" + id + "_stagger"));
+            }
             steps.add(() -> { cmd(mc, "execute positioned " + x + ".5 200 0.5 run ragnarok boss animate attack"); nextWait = 5; });
             steps.add(() -> shot(mc, "boss_" + id + "_attack"));
+            steps.add(() -> cmd(mc, "kill @e[tag=vividlands_ragnarok.boss." + id + "]"));
         }
+        steps.add(mc::stop);
+    }
+
+    /** The ancient-civilization sets on armour stands in rows of seven, close-ups of each, and a transmog check. */
+    private static void planAncient(Minecraft mc) {
+        java.util.List<String> ids = new ArrayList<>();
+        for (var s : com.vividlands.ragnarok.armor.AncientSets.ALL) ids.add(s.id());
+        steps.add(() -> {
+            for (String c : new String[]{"gamerule doDaylightCycle false", "time set 6000", "weather clear",
+                    "gamerule doMobSpawning false", "gamerule vividlandsBossSpawning false", "gamemode spectator @a",
+                    "tp @a 0.5 202 8.5 180 0"}) cmd(mc, c);
+            mc.options.hideGui = true;
+        });
+        int rows = (ids.size() + 6) / 7;
+        for (int row = 0; row < rows; row++) {
+            int z = row * 12;
+            int rr = row;
+            steps.add(() -> {
+                cmd(mc, String.format(java.util.Locale.ROOT, "fill -12 199 %d 12 199 %d minecraft:smooth_stone", z - 5, z + 6));
+                for (int k = 0; k < 7 && rr * 7 + k < ids.size(); k++) {
+                    cmd(mc, stand(ids.get(rr * 7 + k), -9 + k * 3 + 0.5, z + 0.5, 0));
+                }
+            });
+            steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a 0.5 201.6 %.1f 0 6", z - 9.5)));
+            steps.add(() -> shot(mc, "ancient_row" + rr + "_front"));
+            steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a 0.5 201.6 %.1f 180 6", z + 10.5)));
+            steps.add(() -> shot(mc, "ancient_row" + rr + "_back"));
+        }
+        // close-ups: every set from the front, every other from the back
+        for (int i = 0; i < ids.size(); i++) {
+            String id = ids.get(i);
+            double x = -9 + (i % 7) * 3 + 0.5;
+            int z = (i / 7) * 12;
+            boolean back = i % 2 == 0 || id.equals("agamemnon");
+            steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f 201.2 %.1f 0 4", x, z - 2.6)));
+            steps.add(() -> shot(mc, "ancient_" + id + "_front"));
+            if (back) {
+                steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f 201.2 %.1f 180 4", x, z + 3.6)));
+                steps.add(() -> shot(mc, "ancient_" + id + "_back"));
+            }
+        }
+        // Agamemnon's mask up close, and at night to see the glowing eyes
+        int az = (ids.indexOf("agamemnon") / 7) * 12;
+        double ax = -9 + (ids.indexOf("agamemnon") % 7) * 3 + 0.5;
+        steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f 202.0 %.1f 0 6", ax, az - 1.5)));
+        steps.add(() -> shot(mc, "ancient_agamemnon_mask"));
+        steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f 202.2 %.1f 40 10", ax + 1.4, az - 1.2)));
+        steps.add(() -> shot(mc, "ancient_agamemnon_mask_side"));
+        steps.add(() -> cmd(mc, "time set 18000"));
+        steps.add(() -> cmd(mc, String.format(java.util.Locale.ROOT, "tp @a %.1f 202.0 %.1f 0 6", ax, az - 1.5)));
+        steps.add(() -> shot(mc, "ancient_agamemnon_mask_night"));
+        steps.add(() -> cmd(mc, "time set 6000"));
+        // transmog: plain iron, diamond and leather pieces glamoured to look like other sets, beside unglamoured copies
+        steps.add(() -> {
+            int z = -20;
+            cmd(mc, String.format(java.util.Locale.ROOT, "fill -12 199 %d 12 199 %d minecraft:smooth_stone", z - 5, z + 6));
+            String[][] looks = {{"iron", "agamemnon"}, {"diamond", "egyptian"}, {"leather", "samurai"}, {"netherite", "mycenaean"}};
+            for (int k = 0; k < looks.length; k++) {
+                String m = looks[k][0], look = "vividlands_ragnarok:" + looks[k][1] + "_";
+                cmd(mc, String.format(java.util.Locale.ROOT,
+                        "summon minecraft:armor_stand %.1f 200 %d.5 {ShowArms:1b,NoBasePlate:1b,NoGravity:1b,Rotation:[0f,0f],ArmorItems:["
+                                + "{id:\"minecraft:%s_boots\",Count:1b,tag:{VividGlamour:\"%sboots\"}},"
+                                + "{id:\"minecraft:%s_leggings\",Count:1b,tag:{VividGlamour:\"%sleggings\"}},"
+                                + "{id:\"minecraft:%s_chestplate\",Count:1b,tag:{VividGlamour:\"%schestplate\"}},"
+                                + "{id:\"minecraft:%s_helmet\",Count:1b,tag:{VividGlamour:\"%shelmet\"}}]}",
+                        -9 + k * 6 + 0.5, z, m, look, m, look, m, look, m, look));
+                cmd(mc, String.format(java.util.Locale.ROOT,
+                        "summon minecraft:armor_stand %.1f 200 %d.5 {ShowArms:1b,NoBasePlate:1b,NoGravity:1b,Rotation:[0f,0f],ArmorItems:["
+                                + "{id:\"minecraft:%s_boots\",Count:1b},{id:\"minecraft:%s_leggings\",Count:1b},"
+                                + "{id:\"minecraft:%s_chestplate\",Count:1b},{id:\"minecraft:%s_helmet\",Count:1b}]}",
+                        -9 + k * 6 + 2.5, z, m, m, m, m));
+            }
+        });
+        steps.add(() -> cmd(mc, "tp @a 0.5 201.6 -29.5 0 6"));
+        steps.add(() -> shot(mc, "glamour_row"));
+        steps.add(() -> cmd(mc, "tp @a -7.5 201.2 -23.6 0 4"));
+        steps.add(() -> shot(mc, "glamour_iron_as_agamemnon"));
+        // a glamoured piece on the player, seen in third person
+        steps.add(() -> {
+            cmd(mc, "gamemode creative @a");
+            cmd(mc, "tp @a 0.5 200 -34.5 0 0");
+            cmd(mc, "item replace entity @a armor.chest with minecraft:iron_chestplate{VividGlamour:\"vividlands_ragnarok:agamemnon_chestplate\"}");
+            cmd(mc, "item replace entity @a armor.head with minecraft:iron_helmet{VividGlamour:\"vividlands_ragnarok:agamemnon_helmet\"}");
+            mc.options.setCameraType(net.minecraft.client.CameraType.THIRD_PERSON_FRONT);
+        });
+        steps.add(() -> shot(mc, "glamour_player"));
+        steps.add(() -> mc.options.setCameraType(net.minecraft.client.CameraType.FIRST_PERSON));
         steps.add(mc::stop);
     }
 
@@ -233,7 +333,9 @@ final class RenderTest {
             if (mc.player != null && mc.level != null) {
                 stage = 2;
                 wait = 100;
-                if ("bosses".equals(System.getProperty("vividlands.rendertest.scene"))) planBosses(mc);
+                String scene = System.getProperty("vividlands.rendertest.scene", "armor");
+                if ("bosses".equals(scene)) planBosses(mc);
+                else if ("ancient".equals(scene)) planAncient(mc);
                 else plan(mc);
                 Ragnarok.LOG.info("render test: in world, {} steps", steps.size());
             }

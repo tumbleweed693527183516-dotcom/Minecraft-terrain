@@ -29,6 +29,12 @@ loot spawn 5 201 5 loot minecraft:chests/stronghold_library
 loot spawn 5 201 5 loot minecraft:chests/stronghold_library
 sleep 3
 execute as @e[type=item,x=5,y=201,z=5,distance=..8] run data get entity @s Item.id
+summon minecraft:item 5 201 5 {Item:{id:"vividlands_ragnarok:agamemnon_helmet",Count:1b},Tags:["itemcheck"]}
+summon minecraft:item 5 201 5 {Item:{id:"vividlands_ragnarok:sumerian_chestplate",Count:1b},Tags:["itemcheck"]}
+summon minecraft:item 5 201 5 {Item:{id:"vividlands_ragnarok:samurai_leggings",Count:1b},Tags:["itemcheck"]}
+summon minecraft:item 5 201 5 {Item:{id:"vividlands_ragnarok:glamour_template",Count:1b},Tags:["itemcheck"]}
+sleep 2
+execute as @e[tag=itemcheck] run data get entity @s Item.id
 kill @e[type=item]
 forceload add 168 -32 232 32
 sleep 15
@@ -37,14 +43,24 @@ ragnarok boss summon cave_bear 200 200 0
 summon minecraft:iron_golem 214 200 0 {NoAI:1b,Tags:["dummy_cave_bear"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.cave_bear,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_cave_bear,limit=1]
-sleep 45
+sleep 30
 execute as @e[tag=vividlands_ragnarok.boss.cave_bear,limit=1] run say BOSSCHECK cave_bear alive
 data get entity @e[tag=vividlands_ragnarok.boss.cave_bear,limit=1] Health
+data get entity @e[tag=dummy_cave_bear,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.cave_bear,limit=1] 165 minecraft:mob_attack by @e[tag=dummy_cave_bear,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.cave_bear,limit=1] run say BOSSCHECK cave_bear after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.cave_bear,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.cave_bear,limit=1] run say BOSSCHECK cave_bear phase2 alive
 data get entity @e[tag=dummy_cave_bear,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.cave_bear]
 sleep 3
 execute if entity @e[type=item,x=200,y=200,z=0,distance=..40] run say BOSSCHECK cave_bear dropped items
 kill @e[tag=dummy_cave_bear]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 168 -32 232 32
 forceload add 232 -32 296 32
 sleep 15
 fill 236 199 -28 292 199 28 minecraft:smooth_stone
@@ -52,14 +68,24 @@ ragnarok boss summon irish_elk 264 200 0
 summon minecraft:iron_golem 278 200 0 {NoAI:1b,Tags:["dummy_irish_elk"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.irish_elk,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_irish_elk,limit=1]
-sleep 45
+sleep 30
 execute as @e[tag=vividlands_ragnarok.boss.irish_elk,limit=1] run say BOSSCHECK irish_elk alive
 data get entity @e[tag=vividlands_ragnarok.boss.irish_elk,limit=1] Health
+data get entity @e[tag=dummy_irish_elk,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.irish_elk,limit=1] 198 minecraft:mob_attack by @e[tag=dummy_irish_elk,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.irish_elk,limit=1] run say BOSSCHECK irish_elk after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.irish_elk,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.irish_elk,limit=1] run say BOSSCHECK irish_elk phase2 alive
 data get entity @e[tag=dummy_irish_elk,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.irish_elk]
 sleep 3
 execute if entity @e[type=item,x=264,y=200,z=0,distance=..40] run say BOSSCHECK irish_elk dropped items
 kill @e[tag=dummy_irish_elk]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 232 -32 296 32
 forceload add 296 -32 360 32
 sleep 15
 fill 300 199 -28 356 199 28 minecraft:smooth_stone
@@ -67,14 +93,24 @@ ragnarok boss summon hippo 328 200 0
 summon minecraft:iron_golem 342 200 0 {NoAI:1b,Tags:["dummy_hippo"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.hippo,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_hippo,limit=1]
-sleep 45
+sleep 30
 execute as @e[tag=vividlands_ragnarok.boss.hippo,limit=1] run say BOSSCHECK hippo alive
 data get entity @e[tag=vividlands_ragnarok.boss.hippo,limit=1] Health
+data get entity @e[tag=dummy_hippo,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.hippo,limit=1] 231 minecraft:mob_attack by @e[tag=dummy_hippo,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.hippo,limit=1] run say BOSSCHECK hippo after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.hippo,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.hippo,limit=1] run say BOSSCHECK hippo phase2 alive
 data get entity @e[tag=dummy_hippo,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.hippo]
 sleep 3
 execute if entity @e[type=item,x=328,y=200,z=0,distance=..40] run say BOSSCHECK hippo dropped items
 kill @e[tag=dummy_hippo]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 296 -32 360 32
 forceload add 360 -32 424 32
 sleep 15
 fill 364 199 -28 420 199 28 minecraft:smooth_stone
@@ -82,14 +118,24 @@ ragnarok boss summon crocodile 392 200 0
 summon minecraft:iron_golem 406 200 0 {NoAI:1b,Tags:["dummy_crocodile"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.crocodile,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_crocodile,limit=1]
-sleep 45
+sleep 30
 execute as @e[tag=vividlands_ragnarok.boss.crocodile,limit=1] run say BOSSCHECK crocodile alive
 data get entity @e[tag=vividlands_ragnarok.boss.crocodile,limit=1] Health
+data get entity @e[tag=dummy_crocodile,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.crocodile,limit=1] 264 minecraft:mob_attack by @e[tag=dummy_crocodile,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.crocodile,limit=1] run say BOSSCHECK crocodile after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.crocodile,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.crocodile,limit=1] run say BOSSCHECK crocodile phase2 alive
 data get entity @e[tag=dummy_crocodile,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.crocodile]
 sleep 3
 execute if entity @e[type=item,x=392,y=200,z=0,distance=..40] run say BOSSCHECK crocodile dropped items
 kill @e[tag=dummy_crocodile]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 360 -32 424 32
 forceload add 424 -32 488 32
 sleep 15
 fill 428 199 -28 484 199 28 minecraft:smooth_stone
@@ -97,14 +143,24 @@ ragnarok boss summon silverback 456 200 0
 summon minecraft:iron_golem 470 200 0 {NoAI:1b,Tags:["dummy_silverback"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.silverback,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_silverback,limit=1]
-sleep 45
+sleep 30
 execute as @e[tag=vividlands_ragnarok.boss.silverback,limit=1] run say BOSSCHECK silverback alive
 data get entity @e[tag=vividlands_ragnarok.boss.silverback,limit=1] Health
+data get entity @e[tag=dummy_silverback,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.silverback,limit=1] 302 minecraft:mob_attack by @e[tag=dummy_silverback,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.silverback,limit=1] run say BOSSCHECK silverback after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.silverback,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.silverback,limit=1] run say BOSSCHECK silverback phase2 alive
 data get entity @e[tag=dummy_silverback,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.silverback]
 sleep 3
 execute if entity @e[type=item,x=456,y=200,z=0,distance=..40] run say BOSSCHECK silverback dropped items
 kill @e[tag=dummy_silverback]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 424 -32 488 32
 forceload add 488 -32 552 32
 sleep 15
 fill 492 199 -28 548 199 28 minecraft:smooth_stone
@@ -112,14 +168,24 @@ ragnarok boss summon saber_tooth 520 200 0
 summon minecraft:iron_golem 534 200 0 {NoAI:1b,Tags:["dummy_saber_tooth"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.saber_tooth,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_saber_tooth,limit=1]
-sleep 45
+sleep 30
 execute as @e[tag=vividlands_ragnarok.boss.saber_tooth,limit=1] run say BOSSCHECK saber_tooth alive
 data get entity @e[tag=vividlands_ragnarok.boss.saber_tooth,limit=1] Health
+data get entity @e[tag=dummy_saber_tooth,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.saber_tooth,limit=1] 286 minecraft:mob_attack by @e[tag=dummy_saber_tooth,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.saber_tooth,limit=1] run say BOSSCHECK saber_tooth after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.saber_tooth,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.saber_tooth,limit=1] run say BOSSCHECK saber_tooth phase2 alive
 data get entity @e[tag=dummy_saber_tooth,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.saber_tooth]
 sleep 3
 execute if entity @e[type=item,x=520,y=200,z=0,distance=..40] run say BOSSCHECK saber_tooth dropped items
 kill @e[tag=dummy_saber_tooth]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 488 -32 552 32
 forceload add 552 -32 616 32
 sleep 15
 fill 556 199 -28 612 199 28 minecraft:smooth_stone
@@ -127,14 +193,24 @@ ragnarok boss summon woolly_rhino 584 200 0
 summon minecraft:iron_golem 598 200 0 {NoAI:1b,Tags:["dummy_woolly_rhino"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.woolly_rhino,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_woolly_rhino,limit=1]
-sleep 45
+sleep 30
 execute as @e[tag=vividlands_ragnarok.boss.woolly_rhino,limit=1] run say BOSSCHECK woolly_rhino alive
 data get entity @e[tag=vividlands_ragnarok.boss.woolly_rhino,limit=1] Health
+data get entity @e[tag=dummy_woolly_rhino,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.woolly_rhino,limit=1] 385 minecraft:mob_attack by @e[tag=dummy_woolly_rhino,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.woolly_rhino,limit=1] run say BOSSCHECK woolly_rhino after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.woolly_rhino,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.woolly_rhino,limit=1] run say BOSSCHECK woolly_rhino phase2 alive
 data get entity @e[tag=dummy_woolly_rhino,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.woolly_rhino]
 sleep 3
 execute if entity @e[type=item,x=584,y=200,z=0,distance=..40] run say BOSSCHECK woolly_rhino dropped items
 kill @e[tag=dummy_woolly_rhino]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 552 -32 616 32
 forceload add 616 -32 680 32
 sleep 15
 fill 620 199 -28 676 199 28 minecraft:smooth_stone
@@ -142,14 +218,24 @@ ragnarok boss summon elephant 648 200 0
 summon minecraft:iron_golem 662 200 0 {NoAI:1b,Tags:["dummy_elephant"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.elephant,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_elephant,limit=1]
-sleep 45
+sleep 30
 execute as @e[tag=vividlands_ragnarok.boss.elephant,limit=1] run say BOSSCHECK elephant alive
 data get entity @e[tag=vividlands_ragnarok.boss.elephant,limit=1] Health
+data get entity @e[tag=dummy_elephant,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.elephant,limit=1] 467 minecraft:mob_attack by @e[tag=dummy_elephant,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.elephant,limit=1] run say BOSSCHECK elephant after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.elephant,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.elephant,limit=1] run say BOSSCHECK elephant phase2 alive
 data get entity @e[tag=dummy_elephant,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.elephant]
 sleep 3
 execute if entity @e[type=item,x=648,y=200,z=0,distance=..40] run say BOSSCHECK elephant dropped items
 kill @e[tag=dummy_elephant]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 616 -32 680 32
 forceload add 680 -32 744 32
 sleep 15
 fill 688 187 -24 736 199 24 minecraft:glass
@@ -158,14 +244,24 @@ ragnarok boss summon bull_shark 712 193 0
 summon minecraft:iron_golem 726 193 0 {NoAI:1b,Tags:["dummy_bull_shark"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.bull_shark,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_bull_shark,limit=1]
-sleep 45
+sleep 30
 execute as @e[tag=vividlands_ragnarok.boss.bull_shark,limit=1] run say BOSSCHECK bull_shark alive
 data get entity @e[tag=vividlands_ragnarok.boss.bull_shark,limit=1] Health
+data get entity @e[tag=dummy_bull_shark,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.bull_shark,limit=1] 357 minecraft:mob_attack by @e[tag=dummy_bull_shark,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.bull_shark,limit=1] run say BOSSCHECK bull_shark after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.bull_shark,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.bull_shark,limit=1] run say BOSSCHECK bull_shark phase2 alive
 data get entity @e[tag=dummy_bull_shark,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.bull_shark]
 sleep 3
 execute if entity @e[type=item,x=712,y=193,z=0,distance=..40] run say BOSSCHECK bull_shark dropped items
 kill @e[tag=dummy_bull_shark]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 680 -32 744 32
 forceload add 744 -32 808 32
 sleep 15
 fill 748 199 -28 804 199 28 minecraft:smooth_stone
@@ -173,11 +269,397 @@ ragnarok boss summon mammoth 776 200 0
 summon minecraft:iron_golem 790 200 0 {NoAI:1b,Tags:["dummy_mammoth"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
 sleep 3
 damage @e[tag=vividlands_ragnarok.boss.mammoth,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_mammoth,limit=1]
-sleep 45
+sleep 30
 execute as @e[tag=vividlands_ragnarok.boss.mammoth,limit=1] run say BOSSCHECK mammoth alive
 data get entity @e[tag=vividlands_ragnarok.boss.mammoth,limit=1] Health
+data get entity @e[tag=dummy_mammoth,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.mammoth,limit=1] 550 minecraft:mob_attack by @e[tag=dummy_mammoth,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.mammoth,limit=1] run say BOSSCHECK mammoth after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.mammoth,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.mammoth,limit=1] run say BOSSCHECK mammoth phase2 alive
 data get entity @e[tag=dummy_mammoth,limit=1] Health
 kill @e[tag=vividlands_ragnarok.boss.mammoth]
 sleep 3
 execute if entity @e[type=item,x=776,y=200,z=0,distance=..40] run say BOSSCHECK mammoth dropped items
 kill @e[tag=dummy_mammoth]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 744 -32 808 32
+forceload add 808 -32 872 32
+sleep 15
+fill 812 199 -28 868 199 28 minecraft:smooth_stone
+ragnarok boss summon dire_wolf 840 200 0
+summon minecraft:iron_golem 854 200 0 {NoAI:1b,Tags:["dummy_dire_wolf"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+sleep 3
+damage @e[tag=vividlands_ragnarok.boss.dire_wolf,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_dire_wolf,limit=1]
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.dire_wolf,limit=1] run say BOSSCHECK dire_wolf alive
+data get entity @e[tag=vividlands_ragnarok.boss.dire_wolf,limit=1] Health
+data get entity @e[tag=dummy_dire_wolf,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.dire_wolf,limit=1] 187 minecraft:mob_attack by @e[tag=dummy_dire_wolf,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.dire_wolf,limit=1] run say BOSSCHECK dire_wolf after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.dire_wolf,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.dire_wolf,limit=1] run say BOSSCHECK dire_wolf phase2 alive
+data get entity @e[tag=dummy_dire_wolf,limit=1] Health
+kill @e[tag=vividlands_ragnarok.boss.dire_wolf]
+sleep 3
+execute if entity @e[type=item,x=840,y=200,z=0,distance=..40] run say BOSSCHECK dire_wolf dropped items
+kill @e[tag=dummy_dire_wolf]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 808 -32 872 32
+forceload add 872 -32 936 32
+sleep 15
+fill 876 199 -28 932 199 28 minecraft:smooth_stone
+ragnarok boss summon steppe_bison 904 200 0
+summon minecraft:iron_golem 918 200 0 {NoAI:1b,Tags:["dummy_steppe_bison"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+sleep 3
+damage @e[tag=vividlands_ragnarok.boss.steppe_bison,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_steppe_bison,limit=1]
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.steppe_bison,limit=1] run say BOSSCHECK steppe_bison alive
+data get entity @e[tag=vividlands_ragnarok.boss.steppe_bison,limit=1] Health
+data get entity @e[tag=dummy_steppe_bison,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.steppe_bison,limit=1] 220 minecraft:mob_attack by @e[tag=dummy_steppe_bison,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.steppe_bison,limit=1] run say BOSSCHECK steppe_bison after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.steppe_bison,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.steppe_bison,limit=1] run say BOSSCHECK steppe_bison phase2 alive
+data get entity @e[tag=dummy_steppe_bison,limit=1] Health
+kill @e[tag=vividlands_ragnarok.boss.steppe_bison]
+sleep 3
+execute if entity @e[type=item,x=904,y=200,z=0,distance=..40] run say BOSSCHECK steppe_bison dropped items
+kill @e[tag=dummy_steppe_bison]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 872 -32 936 32
+forceload add 936 -32 1000 32
+sleep 15
+fill 940 199 -28 996 199 28 minecraft:smooth_stone
+ragnarok boss summon terror_bird 968 200 0
+summon minecraft:iron_golem 982 200 0 {NoAI:1b,Tags:["dummy_terror_bird"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+sleep 3
+damage @e[tag=vividlands_ragnarok.boss.terror_bird,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_terror_bird,limit=1]
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.terror_bird,limit=1] run say BOSSCHECK terror_bird alive
+data get entity @e[tag=vividlands_ragnarok.boss.terror_bird,limit=1] Health
+data get entity @e[tag=dummy_terror_bird,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.terror_bird,limit=1] 209 minecraft:mob_attack by @e[tag=dummy_terror_bird,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.terror_bird,limit=1] run say BOSSCHECK terror_bird after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.terror_bird,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.terror_bird,limit=1] run say BOSSCHECK terror_bird phase2 alive
+data get entity @e[tag=dummy_terror_bird,limit=1] Health
+kill @e[tag=vividlands_ragnarok.boss.terror_bird]
+sleep 3
+execute if entity @e[type=item,x=968,y=200,z=0,distance=..40] run say BOSSCHECK terror_bird dropped items
+kill @e[tag=dummy_terror_bird]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 936 -32 1000 32
+forceload add 1000 -32 1064 32
+sleep 15
+fill 1004 199 -28 1060 199 28 minecraft:smooth_stone
+ragnarok boss summon komodo 1032 200 0
+summon minecraft:iron_golem 1046 200 0 {NoAI:1b,Tags:["dummy_komodo"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+sleep 3
+damage @e[tag=vividlands_ragnarok.boss.komodo,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_komodo,limit=1]
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.komodo,limit=1] run say BOSSCHECK komodo alive
+data get entity @e[tag=vividlands_ragnarok.boss.komodo,limit=1] Health
+data get entity @e[tag=dummy_komodo,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.komodo,limit=1] 253 minecraft:mob_attack by @e[tag=dummy_komodo,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.komodo,limit=1] run say BOSSCHECK komodo after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.komodo,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.komodo,limit=1] run say BOSSCHECK komodo phase2 alive
+data get entity @e[tag=dummy_komodo,limit=1] Health
+kill @e[tag=vividlands_ragnarok.boss.komodo]
+sleep 3
+execute if entity @e[type=item,x=1032,y=200,z=0,distance=..40] run say BOSSCHECK komodo dropped items
+kill @e[tag=dummy_komodo]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 1000 -32 1064 32
+forceload add 1064 -32 1128 32
+sleep 15
+fill 1068 199 -28 1124 199 28 minecraft:smooth_stone
+ragnarok boss summon glyptodon 1096 200 0
+summon minecraft:iron_golem 1110 200 0 {NoAI:1b,Tags:["dummy_glyptodon"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+sleep 3
+damage @e[tag=vividlands_ragnarok.boss.glyptodon,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_glyptodon,limit=1]
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.glyptodon,limit=1] run say BOSSCHECK glyptodon alive
+data get entity @e[tag=vividlands_ragnarok.boss.glyptodon,limit=1] Health
+data get entity @e[tag=dummy_glyptodon,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.glyptodon,limit=1] 308 minecraft:mob_attack by @e[tag=dummy_glyptodon,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.glyptodon,limit=1] run say BOSSCHECK glyptodon after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.glyptodon,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.glyptodon,limit=1] run say BOSSCHECK glyptodon phase2 alive
+data get entity @e[tag=dummy_glyptodon,limit=1] Health
+kill @e[tag=vividlands_ragnarok.boss.glyptodon]
+sleep 3
+execute if entity @e[type=item,x=1096,y=200,z=0,distance=..40] run say BOSSCHECK glyptodon dropped items
+kill @e[tag=dummy_glyptodon]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 1064 -32 1128 32
+forceload add 1128 -32 1192 32
+sleep 15
+fill 1132 199 -28 1188 199 28 minecraft:smooth_stone
+ragnarok boss summon cave_lion 1160 200 0
+summon minecraft:iron_golem 1174 200 0 {NoAI:1b,Tags:["dummy_cave_lion"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+sleep 3
+damage @e[tag=vividlands_ragnarok.boss.cave_lion,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_cave_lion,limit=1]
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.cave_lion,limit=1] run say BOSSCHECK cave_lion alive
+data get entity @e[tag=vividlands_ragnarok.boss.cave_lion,limit=1] Health
+data get entity @e[tag=dummy_cave_lion,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.cave_lion,limit=1] 275 minecraft:mob_attack by @e[tag=dummy_cave_lion,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.cave_lion,limit=1] run say BOSSCHECK cave_lion after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.cave_lion,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.cave_lion,limit=1] run say BOSSCHECK cave_lion phase2 alive
+data get entity @e[tag=dummy_cave_lion,limit=1] Health
+kill @e[tag=vividlands_ragnarok.boss.cave_lion]
+sleep 3
+execute if entity @e[type=item,x=1160,y=200,z=0,distance=..40] run say BOSSCHECK cave_lion dropped items
+kill @e[tag=dummy_cave_lion]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 1128 -32 1192 32
+forceload add 1192 -32 1256 32
+sleep 15
+fill 1196 199 -28 1252 199 28 minecraft:smooth_stone
+ragnarok boss summon anaconda 1224 200 0
+summon minecraft:iron_golem 1238 200 0 {NoAI:1b,Tags:["dummy_anaconda"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+sleep 3
+damage @e[tag=vividlands_ragnarok.boss.anaconda,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_anaconda,limit=1]
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.anaconda,limit=1] run say BOSSCHECK anaconda alive
+data get entity @e[tag=vividlands_ragnarok.boss.anaconda,limit=1] Health
+data get entity @e[tag=dummy_anaconda,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.anaconda,limit=1] 297 minecraft:mob_attack by @e[tag=dummy_anaconda,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.anaconda,limit=1] run say BOSSCHECK anaconda after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.anaconda,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.anaconda,limit=1] run say BOSSCHECK anaconda phase2 alive
+data get entity @e[tag=dummy_anaconda,limit=1] Health
+kill @e[tag=vividlands_ragnarok.boss.anaconda]
+sleep 3
+execute if entity @e[type=item,x=1224,y=200,z=0,distance=..40] run say BOSSCHECK anaconda dropped items
+kill @e[tag=dummy_anaconda]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 1192 -32 1256 32
+forceload add 1256 -32 1320 32
+sleep 15
+fill 1260 199 -28 1316 199 28 minecraft:smooth_stone
+ragnarok boss summon ground_sloth 1288 200 0
+summon minecraft:iron_golem 1302 200 0 {NoAI:1b,Tags:["dummy_ground_sloth"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+sleep 3
+damage @e[tag=vividlands_ragnarok.boss.ground_sloth,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_ground_sloth,limit=1]
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.ground_sloth,limit=1] run say BOSSCHECK ground_sloth alive
+data get entity @e[tag=vividlands_ragnarok.boss.ground_sloth,limit=1] Health
+data get entity @e[tag=dummy_ground_sloth,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.ground_sloth,limit=1] 352 minecraft:mob_attack by @e[tag=dummy_ground_sloth,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.ground_sloth,limit=1] run say BOSSCHECK ground_sloth after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.ground_sloth,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.ground_sloth,limit=1] run say BOSSCHECK ground_sloth phase2 alive
+data get entity @e[tag=dummy_ground_sloth,limit=1] Health
+kill @e[tag=vividlands_ragnarok.boss.ground_sloth]
+sleep 3
+execute if entity @e[type=item,x=1288,y=200,z=0,distance=..40] run say BOSSCHECK ground_sloth dropped items
+kill @e[tag=dummy_ground_sloth]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 1256 -32 1320 32
+forceload add 1320 -32 1384 32
+sleep 15
+fill 1324 199 -28 1380 199 28 minecraft:smooth_stone
+ragnarok boss summon haast_eagle 1352 200 0
+summon minecraft:iron_golem 1366 200 0 {NoAI:1b,Tags:["dummy_haast_eagle"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+sleep 3
+damage @e[tag=vividlands_ragnarok.boss.haast_eagle,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_haast_eagle,limit=1]
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.haast_eagle,limit=1] run say BOSSCHECK haast_eagle alive
+data get entity @e[tag=vividlands_ragnarok.boss.haast_eagle,limit=1] Health
+data get entity @e[tag=dummy_haast_eagle,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.haast_eagle,limit=1] 286 minecraft:mob_attack by @e[tag=dummy_haast_eagle,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.haast_eagle,limit=1] run say BOSSCHECK haast_eagle after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.haast_eagle,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.haast_eagle,limit=1] run say BOSSCHECK haast_eagle phase2 alive
+data get entity @e[tag=dummy_haast_eagle,limit=1] Health
+kill @e[tag=vividlands_ragnarok.boss.haast_eagle]
+sleep 3
+execute if entity @e[type=item,x=1352,y=200,z=0,distance=..40] run say BOSSCHECK haast_eagle dropped items
+kill @e[tag=dummy_haast_eagle]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 1320 -32 1384 32
+forceload add 1384 -32 1448 32
+sleep 15
+fill 1388 199 -28 1444 199 28 minecraft:smooth_stone
+ragnarok boss summon walrus 1416 200 0
+summon minecraft:iron_golem 1430 200 0 {NoAI:1b,Tags:["dummy_walrus"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+sleep 3
+damage @e[tag=vividlands_ragnarok.boss.walrus,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_walrus,limit=1]
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.walrus,limit=1] run say BOSSCHECK walrus alive
+data get entity @e[tag=vividlands_ragnarok.boss.walrus,limit=1] Health
+data get entity @e[tag=dummy_walrus,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.walrus,limit=1] 341 minecraft:mob_attack by @e[tag=dummy_walrus,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.walrus,limit=1] run say BOSSCHECK walrus after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.walrus,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.walrus,limit=1] run say BOSSCHECK walrus phase2 alive
+data get entity @e[tag=dummy_walrus,limit=1] Health
+kill @e[tag=vividlands_ragnarok.boss.walrus]
+sleep 3
+execute if entity @e[type=item,x=1416,y=200,z=0,distance=..40] run say BOSSCHECK walrus dropped items
+kill @e[tag=dummy_walrus]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 1384 -32 1448 32
+forceload add 1448 -32 1512 32
+sleep 15
+fill 1452 199 -28 1508 199 28 minecraft:smooth_stone
+ragnarok boss summon sleipnir 1480 200 0
+summon minecraft:iron_golem 1494 200 0 {NoAI:1b,Tags:["dummy_sleipnir"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+sleep 3
+damage @e[tag=vividlands_ragnarok.boss.sleipnir,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_sleipnir,limit=1]
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.sleipnir,limit=1] run say BOSSCHECK sleipnir alive
+data get entity @e[tag=vividlands_ragnarok.boss.sleipnir,limit=1] Health
+data get entity @e[tag=dummy_sleipnir,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.sleipnir,limit=1] 660 minecraft:mob_attack by @e[tag=dummy_sleipnir,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.sleipnir,limit=1] run say BOSSCHECK sleipnir after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.sleipnir,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.sleipnir,limit=1] run say BOSSCHECK sleipnir phase2 alive
+data get entity @e[tag=dummy_sleipnir,limit=1] Health
+kill @e[tag=vividlands_ragnarok.boss.sleipnir]
+sleep 3
+execute if entity @e[type=item,x=1480,y=200,z=0,distance=..40] run say BOSSCHECK sleipnir dropped items
+kill @e[tag=dummy_sleipnir]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 1448 -32 1512 32
+forceload add 1512 -32 1576 32
+sleep 15
+fill 1516 199 -28 1572 199 28 minecraft:smooth_stone
+ragnarok boss summon garmr 1544 200 0
+summon minecraft:iron_golem 1558 200 0 {NoAI:1b,Tags:["dummy_garmr"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+sleep 3
+damage @e[tag=vividlands_ragnarok.boss.garmr,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_garmr,limit=1]
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.garmr,limit=1] run say BOSSCHECK garmr alive
+data get entity @e[tag=vividlands_ragnarok.boss.garmr,limit=1] Health
+data get entity @e[tag=dummy_garmr,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.garmr,limit=1] 880 minecraft:mob_attack by @e[tag=dummy_garmr,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.garmr,limit=1] run say BOSSCHECK garmr after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.garmr,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.garmr,limit=1] run say BOSSCHECK garmr phase2 alive
+data get entity @e[tag=dummy_garmr,limit=1] Health
+kill @e[tag=vividlands_ragnarok.boss.garmr]
+sleep 3
+execute if entity @e[type=item,x=1544,y=200,z=0,distance=..40] run say BOSSCHECK garmr dropped items
+kill @e[tag=dummy_garmr]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 1512 -32 1576 32
+forceload add 1576 -32 1640 32
+sleep 15
+fill 1580 199 -28 1636 199 28 minecraft:smooth_stone
+ragnarok boss summon fafnir 1608 200 0
+summon minecraft:iron_golem 1622 200 0 {NoAI:1b,Tags:["dummy_fafnir"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+sleep 3
+damage @e[tag=vividlands_ragnarok.boss.fafnir,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_fafnir,limit=1]
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.fafnir,limit=1] run say BOSSCHECK fafnir alive
+data get entity @e[tag=vividlands_ragnarok.boss.fafnir,limit=1] Health
+data get entity @e[tag=dummy_fafnir,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.fafnir,limit=1] 1320 minecraft:mob_attack by @e[tag=dummy_fafnir,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.fafnir,limit=1] run say BOSSCHECK fafnir after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.fafnir,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.fafnir,limit=1] run say BOSSCHECK fafnir phase2 alive
+data get entity @e[tag=dummy_fafnir,limit=1] Health
+kill @e[tag=vividlands_ragnarok.boss.fafnir]
+sleep 3
+execute if entity @e[type=item,x=1608,y=200,z=0,distance=..40] run say BOSSCHECK fafnir dropped items
+kill @e[tag=dummy_fafnir]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 1576 -32 1640 32
+forceload add 1640 -32 1704 32
+sleep 15
+fill 1648 187 -24 1696 199 24 minecraft:glass
+fill 1649 188 -23 1695 200 23 minecraft:water
+ragnarok boss summon jormungandr 1672 193 0
+summon minecraft:iron_golem 1686 193 0 {NoAI:1b,Tags:["dummy_jormungandr"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+sleep 3
+damage @e[tag=vividlands_ragnarok.boss.jormungandr,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_jormungandr,limit=1]
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.jormungandr,limit=1] run say BOSSCHECK jormungandr alive
+data get entity @e[tag=vividlands_ragnarok.boss.jormungandr,limit=1] Health
+data get entity @e[tag=dummy_jormungandr,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.jormungandr,limit=1] 1650 minecraft:mob_attack by @e[tag=dummy_jormungandr,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.jormungandr,limit=1] run say BOSSCHECK jormungandr after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.jormungandr,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.jormungandr,limit=1] run say BOSSCHECK jormungandr phase2 alive
+data get entity @e[tag=dummy_jormungandr,limit=1] Health
+kill @e[tag=vividlands_ragnarok.boss.jormungandr]
+sleep 3
+execute if entity @e[type=item,x=1672,y=193,z=0,distance=..40] run say BOSSCHECK jormungandr dropped items
+kill @e[tag=dummy_jormungandr]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 1640 -32 1704 32
+forceload add 1704 -32 1768 32
+sleep 15
+fill 1708 199 -28 1764 199 28 minecraft:smooth_stone
+ragnarok boss summon fenrir 1736 200 0
+summon minecraft:iron_golem 1750 200 0 {NoAI:1b,Tags:["dummy_fenrir"],Health:1000f,Attributes:[{Name:"minecraft:generic.max_health",Base:1000d}]}
+sleep 3
+damage @e[tag=vividlands_ragnarok.boss.fenrir,limit=1] 1 minecraft:mob_attack by @e[tag=dummy_fenrir,limit=1]
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.fenrir,limit=1] run say BOSSCHECK fenrir alive
+data get entity @e[tag=vividlands_ragnarok.boss.fenrir,limit=1] Health
+data get entity @e[tag=dummy_fenrir,limit=1] Health
+damage @e[tag=vividlands_ragnarok.boss.fenrir,limit=1] 2200 minecraft:mob_attack by @e[tag=dummy_fenrir,limit=1]
+sleep 2
+execute as @e[tag=vividlands_ragnarok.boss.fenrir,limit=1] run say BOSSCHECK fenrir after heavy hit
+data get entity @e[tag=vividlands_ragnarok.boss.fenrir,limit=1] Health
+sleep 30
+execute as @e[tag=vividlands_ragnarok.boss.fenrir,limit=1] run say BOSSCHECK fenrir phase2 alive
+data get entity @e[tag=dummy_fenrir,limit=1] Health
+kill @e[tag=vividlands_ragnarok.boss.fenrir]
+sleep 3
+execute if entity @e[type=item,x=1736,y=200,z=0,distance=..40] run say BOSSCHECK fenrir dropped items
+kill @e[tag=dummy_fenrir]
+kill @e[tag=vividlands_ragnarok.minion]
+kill @e[type=item]
+forceload remove 1704 -32 1768 32
