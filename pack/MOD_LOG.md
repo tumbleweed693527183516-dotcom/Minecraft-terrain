@@ -423,3 +423,25 @@ Minecraft-style texture painted in 1-unit blocks, glow mask) and given hand-made
   calls shadow wolves. Draugr Crypt after Jormungandr. Drops Fenrir's Fang and wolf pelts.
 Still to build for Chapter 2: Huginn and Muninn, Geri and Freki, Skoll and Hati, Garmr, Nidhoggr, Fafnir.
 Old Chapter 2 models (box-UV, unused) removed. tools/boss_preview.py now renders bone hierarchy and animation poses.
+
+## 25 bosses and the new fight system (v0.25)
+
+Chapter 1 is now 20 animal trials, Chapter 2 five mythological bosses. Ocean fights are kept to two (Bull Shark,
+Jormungandr); near a sea boss players get Conduit Power and Dolphin's Grace.
+
+New trials 11-20 (tools/ch1_models.py): Dire Wolf Alpha (howl, pack, combo), Steppe Bison (block-smashing charge, herd
+in phase 2), Terror Bird (peck combo, sickle-claw leap), Komodo Dragon (venom bite and spray, stalks), Glyptodon (shell
+spin then dizzy, tail club), Cave Lion (roar, pounce, lionesses in phase 2), Giant Anaconda (constricts you; hit it to
+break free), Giant Ground Sloth (claw combo, bear hug, rock fall), Haast's Eagle (first flying boss: swoop dive, carries
+you up and drops you), Walrus Bull (tusk stabs, belly flop, icicles). The Mammoth now needs 15 trials.
+
+Chapter 2 (tools/ch2_models.py): Sleipnir -> Garmr (new: Hel's hound, shadow breath, raises hounds, soul-fire rain;
+stronghold) -> Fafnir (new: fire-breathing dragon, firebombs and dives in phase 2; Draugr Bastion) -> Jormungandr
+(26-segment serpent, venom breath, coils, sea storm) -> Fenrir (phase 2: fire breath, fire rain, wall-smashing charge).
+Final bosses keep the blocky style with stronger silhouettes: armour, spikes, glowing scars, runes and eyes.
+
+Fight rules (BossFight), ideas from other games' bosses: second phase at half health (roar and knockback, new
+moves); stagger when hit hard and fast; 50% extra damage while a boss is stunned; red warning rings before ground
+attacks land; new moves Combo, Breath, HazardRain, Grab, Spin, Swoop. New trophies for every new boss.
+Animations: tools/boss_anims2.py (every boss has idle/walk/run plus attack, roar, slam, charge, leap, roll, throw,
+hurt, combo, breath, grab, spin, swoop, stagger).
