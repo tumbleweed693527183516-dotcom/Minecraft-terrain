@@ -1201,6 +1201,9 @@ def build(spec):
     for fn, *args in EXTRAS.get(spec["id"], ()):
         fn(m, *args)
     m.save(GEO_DIR, TEX_DIR, quiet=True)
+    gm = TEX_DIR / f"{m.id}_glowmask.png"          # armour glow is drawn by FullbrightLayer from <id>_glow.png
+    if gm.exists():
+        gm.replace(TEX_DIR / f"{m.id}_glow.png")
     return m
 
 
