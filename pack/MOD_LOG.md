@@ -410,3 +410,16 @@ Operators can preview them with `/ragnarok boss animate <move>` (plays on every 
 
 Fossils and Archeology is removed from the pack (only 4 of its animals were used, as boss models). Naturalist and
 Animal Garden stay for ordinary wildlife.
+
+## Chapter 2 bosses, first three (v0.25)
+
+Sleipnir, Jormungandr and Fenrir rebuilt from scratch with tools/mobkit.py (Python spec -> GeckoLib geo, per-face UVs,
+Minecraft-style texture painted in 1-unit blocks, glow mask) and given hand-made animations (tools/ch2_anims.py).
+- Sleipnir: dappled grey, eight legs, Odin's blue-and-gold barding with glowing runes. Charge, Leap, Slam, Shockwave.
+  Plains/steppe after the Mammoth. Drops Sleipnir Hair.
+- Jormungandr: sea serpent, 10 segments, horns, venom. Venom roar (poison, nausea), breach, Capsize, bite. Deep ocean
+  after Sleipnir. Drops Serpent Scale.
+- Fenrir: giant black wolf with broken Gleipnir shackles (glowing), scars, glowing eyes. Howl, bite, pounce, slam,
+  calls shadow wolves. Draugr Crypt after Jormungandr. Drops Fenrir's Fang and wolf pelts.
+Still to build for Chapter 2: Huginn and Muninn, Geri and Freki, Skoll and Hati, Garmr, Nidhoggr, Fafnir.
+Old Chapter 2 models (box-UV, unused) removed. tools/boss_preview.py now renders bone hierarchy and animation poses.
