@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       scene:
-        description: "armor = armour and weapons; bosses = every boss, with the creature mods they are built on"
+        description: "armor = Viking armour and weapons; ancient = the 49 ancient sets and transmog; bosses = every boss, with the creature mods they are built on"
         default: "armor"
 
 permissions:
