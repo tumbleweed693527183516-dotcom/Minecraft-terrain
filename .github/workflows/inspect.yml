@@ -11,6 +11,9 @@ on:
       full:
         description: "Regex of class paths to dump in full (all members, string constants, goal registrations)"
         default: "prehistoric/base/Prehistoric$|prehistoric/(Mammoth|Smilodon|Megaloceros|Elasmotherium)$|naturalist/common/entity/(Bear|Hippo|Alligator|Elephant)$|animalgarden/[a-z]+/mob/ModMob$"
+      assets:
+        description: "Regex of asset paths to copy as they are (e.g. armor geo models and textures, for reference)"
+        default: ""
       code:
         description: "Regex of class paths to dump with full bytecode (javap -c)"
         default: "prehistoric/base/Prehistoric$|prehistoric/Mammoth$|PrehistoricEntityInfo$|EntityInfo"
@@ -64,6 +67,10 @@ jobs:
               javap -c -p -cp x_$n "${cls//\//.}" 2>/dev/null | grep -oE "(Goal|goal)[A-Za-z$/]*" | sort -u | head -40
             done > $o/classes.txt
             cp x_$n/fabric.mod.json $o/ 2>/dev/null || true
+            if [ -n "${{ inputs.assets }}" ]; then
+              (cd x_$n && find . -type f | sed 's#^\./##' | grep -E '${{ inputs.assets }}' | head -400 | while read a; do
+                mkdir -p "../$o/assets_copy/$(dirname "$a")"; cp "$a" "../$o/assets_copy/$a"; done)
+            fi
             find x_$n -name "*.class" | sed "s#^x_$n/##; s#\.class\$##" | grep -E '${{ inputs.full }}' | while read cls; do
               echo "=================== $cls"
               javap -p -cp x_$n "${cls//\//.}" 2>/dev/null
