@@ -1,0 +1,44 @@
+	- ftbquests 2001.4.22
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:submit_task
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:claim_reward
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:get_emergency_items
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:claim_all_rewards
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:claim_choice_reward
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:toggle_pinned
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:toggle_chapter_pinned
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:toggle_editing_mode
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:force_save
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:set_custom_image
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:task_screen_config_resp
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:give_item_to_player
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:reorder_item
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:change_progress
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:create_object
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:create_task_at
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:delete_object
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:edit_object
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:move_chapter
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:move_quest
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:change_chapter_group
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:move_chapter_group
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:copy_quest
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:copy_chapter_image
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:sync_structures_request
+[17:46:15] [main/INFO]: Registering C2S receiver with id ftbquests:request_team_data
+[17:46:21] [main/INFO]: Vivid Lands: Ragnarok - 25 bosses
+[17:46:21] [main/INFO]: Vivid Lands: Ragnarok - Warden disabled, Nether and End closed (5 rules); cobblestone generators MK1-MK5
+[17:46:26] [Server thread/WARN]: Incorrect key FTB Chunks was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[17:46:26] [Server thread/WARN]: Incorrect key FTB Chunks.shipsProtectedByClaims was corrected from null to its default, true. 
+[17:46:26] [Server thread/WARN]: Incorrect key FTB Chunks.shipsProtectionOutOfBuildHeight was corrected from null to its default, false. 
+[17:47:03] [Server thread/INFO]: Loading quests from /home/runner/work/Minecraft-terrain/Minecraft-terrain/server/config/ftbquests/quests
+[17:47:03] [Server thread/INFO]: Loaded 3 chapter groups, 16 chapters, 419 quests, 0 reward tables
+[17:47:06] [Server thread/INFO]: [Server] QUESTCHECK server up
+[17:47:07] [Server thread/INFO]: QUESTCHECK loaded 419 quests in 16 chapters, 631 tasks, 807 rewards, unknown types=0
+[17:47:07] [Server thread/INFO]: QUESTCHECK loaded 419 quests in 16 chapters, 631 tasks, 807 rewards, unknown types=0
+[17:47:11] [Server thread/INFO]: RULECHECK realms sealed
+[17:47:21] [Server thread/INFO]: [Server] RULECHECK sealed: nether portal blocked (good)
+[17:47:23] [Server thread/INFO]: RULECHECK realms open
+[17:47:31] [Server thread/INFO]: [Server] RULECHECK unsealed: nether portal LIT (good)
+[17:47:35] [Server thread/INFO]: RULECHECK realms sealed
+[17:47:37] [Server thread/INFO]: RULECHECK realms sealed
+[17:47:44] [Server thread/INFO]: [Server] QUESTCHECK done

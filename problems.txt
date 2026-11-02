@@ -1,0 +1,631 @@
+387:[17:46:05] [main/WARN]: Error loading class: net/minecraft/class_881 (java.lang.ClassNotFoundException: net/minecraft/class_881)
+389:[17:46:05] [main/WARN]: Error loading class: net/minecraft/class_525 (java.lang.ClassNotFoundException: net/minecraft/class_525)
+391:[17:46:05] [main/WARN]: Error loading class: net/minecraft/class_906 (java.lang.ClassNotFoundException: net/minecraft/class_906)
+403:[17:46:05] [main/WARN]: Error loading class: net/minecraftforge/common/ForgeHooks (java.lang.ClassNotFoundException: net/minecraftforge/common/ForgeHooks)
+404:[17:46:05] [main/WARN]: Error loading class: io/github/apace100/apoli/util/StackPowerUtil (java.lang.ClassNotFoundException: io/github/apace100/apoli/util/StackPowerUtil)
+406:[17:46:05] [main/WARN]: Error loading class: net/archers/item/misc/AutoFireHook (java.lang.ClassNotFoundException: net/archers/item/misc/AutoFireHook)
+408:[17:46:05] [main/WARN]: Error loading class: net/minecraft/class_287 (java.lang.ClassNotFoundException: net/minecraft/class_287)
+410:[17:46:05] [main/WARN]: Error loading class: net/minecraft/class_632 (java.lang.ClassNotFoundException: net/minecraft/class_632)
+412:[17:46:06] [main/WARN]: Error loading class: fr/catcore/server/translations/api/resource/language/SystemDelegatedLanguage (java.lang.ClassNotFoundException: fr/catcore/server/translations/api/resource/language/SystemDelegatedLanguage)
+413:[17:46:06] [main/WARN]: Error loading class: net/zestyblaze/lootr/block/entities/LootrChestBlockEntity (java.lang.ClassNotFoundException: net/zestyblaze/lootr/block/entities/LootrChestBlockEntity)
+414:[17:46:06] [main/WARN]: Error loading class: net/zestyblaze/lootr/block/entities/LootrBarrelBlockEntity (java.lang.ClassNotFoundException: net/zestyblaze/lootr/block/entities/LootrBarrelBlockEntity)
+415:[17:46:06] [main/WARN]: Error loading class: net/zestyblaze/lootr/block/entities/LootrShulkerBlockEntity (java.lang.ClassNotFoundException: net/zestyblaze/lootr/block/entities/LootrShulkerBlockEntity)
+416:[17:46:06] [main/WARN]: Error loading class: net/zestyblaze/lootr/entity/LootrChestMinecartEntity (java.lang.ClassNotFoundException: net/zestyblaze/lootr/entity/LootrChestMinecartEntity)
+417:[17:46:06] [main/WARN]: Error loading class: net/minecraft/class_898 (java.lang.ClassNotFoundException: net/minecraft/class_898)
+419:[17:46:06] [main/WARN]: Error loading class: dan200/computercraft/client/render/CustomLecternRenderer (java.lang.ClassNotFoundException: dan200/computercraft/client/render/CustomLecternRenderer)
+420:[17:46:06] [main/WARN]: Error loading class: dan200/computercraft/shared/peripheral/speaker/SpeakerPosition (java.lang.ClassNotFoundException: dan200/computercraft/shared/peripheral/speaker/SpeakerPosition)
+421:[17:46:06] [main/WARN]: Error loading class: dan200/computercraft/client/sound/SpeakerSound (java.lang.ClassNotFoundException: dan200/computercraft/client/sound/SpeakerSound)
+422:[17:46:06] [main/WARN]: Error loading class: dan200/computercraft/shared/turtle/core/TurtleBrain (java.lang.ClassNotFoundException: dan200/computercraft/shared/turtle/core/TurtleBrain)
+423:[17:46:06] [main/WARN]: Error loading class: dan200/computercraft/shared/turtle/core/TurtleMoveCommand (java.lang.ClassNotFoundException: dan200/computercraft/shared/turtle/core/TurtleMoveCommand)
+424:[17:46:06] [main/WARN]: Error loading class: dan200/computercraft/shared/peripheral/modem/wireless/WirelessNetwork (java.lang.ClassNotFoundException: dan200/computercraft/shared/peripheral/modem/wireless/WirelessNetwork)
+425:[17:46:06] [main/WARN]: Error loading class: rbasamoyai/createbigcannons/munitions/AbstractCannonProjectile (java.lang.ClassNotFoundException: rbasamoyai/createbigcannons/munitions/AbstractCannonProjectile)
+426:[17:46:06] [main/WARN]: Error loading class: rbasamoyai/createbigcannons/cannon_control/contraption/MountedAutocannonContraption (java.lang.ClassNotFoundException: rbasamoyai/createbigcannons/cannon_control/contraption/MountedAutocannonContraption)
+428:[17:46:06] [main/WARN]: Error loading class: rbasamoyai/createbigcannons/cannon_control/contraption/MountedBigCannonContraption (java.lang.ClassNotFoundException: rbasamoyai/createbigcannons/cannon_control/contraption/MountedBigCannonContraption)
+430:[17:46:06] [main/WARN]: Error loading class: rbasamoyai/createbigcannons/utils/CBCUtils (java.lang.ClassNotFoundException: rbasamoyai/createbigcannons/utils/CBCUtils)
+431:[17:46:06] [main/WARN]: Error loading class: rbasamoyai/createbigcannons/cannon_control/fixed_cannon_mount/FixedCannonMountBlockEntity$FixedCannonMountScrollValueBehaviour (java.lang.ClassNotFoundException: rbasamoyai/createbigcannons/cannon_control/fixed_cannon_mount/FixedCannonMountBlockEntity$FixedCannonMountScrollValueBehaviour)
+433:[17:46:06] [main/WARN]: Error loading class: rbasamoyai/createbigcannons/cannon_control/contraption/PitchOrientedContraptionEntity (java.lang.ClassNotFoundException: rbasamoyai/createbigcannons/cannon_control/contraption/PitchOrientedContraptionEntity)
+434:[17:46:06] [main/WARN]: Error loading class: rbasamoyai/ritchiesprojectilelib/RitchiesProjectileLib (java.lang.ClassNotFoundException: rbasamoyai/ritchiesprojectilelib/RitchiesProjectileLib)
+436:[17:46:06] [main/WARN]: Error loading class: rbasamoyai/createbigcannons/network/ServerboundSetFixedCannonMountValuePacket (java.lang.ClassNotFoundException: rbasamoyai/createbigcannons/network/ServerboundSetFixedCannonMountValuePacket)
+438:[17:46:06] [main/WARN]: Error loading class: me/duquee/createutilities/blocks/voidtypes/VoidLinkBehaviour (java.lang.ClassNotFoundException: me/duquee/createutilities/blocks/voidtypes/VoidLinkBehaviour)
+440:[17:46:06] [main/WARN]: Error loading class: fuzs/echochest/world/level/block/entity/EchoChestBlockEntity (java.lang.ClassNotFoundException: fuzs/echochest/world/level/block/entity/EchoChestBlockEntity)
+441:[17:46:06] [main/WARN]: Error loading class: fuzs/echochest/world/level/block/entity/EchoChestListener (java.lang.ClassNotFoundException: fuzs/echochest/world/level/block/entity/EchoChestListener)
+442:[17:46:06] [main/WARN]: Error loading class: dev/ftb/mods/ftbchunks/data/ClaimedChunkManagerImpl (java.lang.ClassNotFoundException: dev/ftb/mods/ftbchunks/data/ClaimedChunkManagerImpl)
+443:[17:46:06] [main/WARN]: Error loading class: at/petrak/hexcasting/client/render/HexAdditionalRenderers (java.lang.ClassNotFoundException: at/petrak/hexcasting/client/render/HexAdditionalRenderers)
+444:[17:46:06] [main/WARN]: Error loading class: at/petrak/hexcasting/common/casting/actions/raycast/OpEntityRaycast (java.lang.ClassNotFoundException: at/petrak/hexcasting/common/casting/actions/raycast/OpEntityRaycast)
+445:[17:46:06] [main/WARN]: Error loading class: at/petrak/hexcasting/common/casting/actions/spells/great/OpTeleport (java.lang.ClassNotFoundException: at/petrak/hexcasting/common/casting/actions/spells/great/OpTeleport)
+447:[17:46:06] [main/WARN]: Error loading class: at/petrak/hexcasting/common/casting/actions/spells/great/OpTeleport$Spell (java.lang.ClassNotFoundException: at/petrak/hexcasting/common/casting/actions/spells/great/OpTeleport$Spell)
+449:[17:46:06] [main/WARN]: Error loading class: net/beholderface/ephemera/casting/patterns/link/OpNetworkTeleport (java.lang.ClassNotFoundException: net/beholderface/ephemera/casting/patterns/link/OpNetworkTeleport)
+450:[17:46:06] [main/WARN]: Error loading class: ram/talia/hexal/common/casting/actions/spells/link/OpLink (java.lang.ClassNotFoundException: ram/talia/hexal/common/casting/actions/spells/link/OpLink)
+451:[17:46:06] [main/WARN]: Error loading class: ram/talia/hexal/common/casting/actions/spells/link/OpLinkOthers (java.lang.ClassNotFoundException: ram/talia/hexal/common/casting/actions/spells/link/OpLinkOthers)
+452:[17:46:06] [main/WARN]: Error loading class: ram/talia/hexal/client/RenderHelperKt (java.lang.ClassNotFoundException: ram/talia/hexal/client/RenderHelperKt)
+453:[17:46:06] [main/WARN]: Error loading class: ram/talia/hexal/api/linkable/ServerLinkableHolder (java.lang.ClassNotFoundException: ram/talia/hexal/api/linkable/ServerLinkableHolder)
+454:[17:46:06] [main/WARN]: Error loading class: net/mehvahdjukaar/moonlight/core/misc/FakeServerLevel (java.lang.ClassNotFoundException: net/mehvahdjukaar/moonlight/core/misc/FakeServerLevel)
+456:[17:46:06] [main/WARN]: Error loading class: li/cil/tis3d/common/entity/InfraredPacketEntity (java.lang.ClassNotFoundException: li/cil/tis3d/common/entity/InfraredPacketEntity)
+457:[17:46:06] [main/WARN]: Error loading class: com/github/legoatoom/connectiblechains/entity/Chainable (java.lang.ClassNotFoundException: com/github/legoatoom/connectiblechains/entity/Chainable)
+459:[17:46:06] [main/WARN]: Error loading class: com/github/legoatoom/connectiblechains/entity/ChainCollisionEntity (java.lang.ClassNotFoundException: com/github/legoatoom/connectiblechains/entity/ChainCollisionEntity)
+461:[17:46:06] [main/WARN]: Error loading class: dev/ftb/mods/ftbchunks/client/gui/LargeMapScreen (java.lang.ClassNotFoundException: dev/ftb/mods/ftbchunks/client/gui/LargeMapScreen)
+463:[17:46:06] [main/WARN]: Error loading class: dev/ftb/mods/ftbchunks/client/gui/RegionMapPanel (java.lang.ClassNotFoundException: dev/ftb/mods/ftbchunks/client/gui/RegionMapPanel)
+467:[17:46:06] [main/WARN]: Error loading class: net/minecraft/class_708 (java.lang.ClassNotFoundException: net/minecraft/class_708)
+470:[17:46:08] [main/INFO]: Renaming synthetic method lambda$onWriteJsonWithCodec$1(Ljava/lang/Object;Ljava/lang/String;)Lio/netty/handler/codec/EncoderException; to md75908e$nochatreports$lambda$onWriteJsonWithCodec$1$0 in mixins/common/nochatreports.mixins.json:common.MixinFriendlyByteBuf from mod nochatreports
+471:[17:46:08] [main/INFO]: Renaming synthetic method lambda$onReadJsonWithCodec$0(Ljava/lang/String;)Lio/netty/handler/codec/DecoderException; to md75908e$nochatreports$lambda$onReadJsonWithCodec$0$1 in mixins/common/nochatreports.mixins.json:common.MixinFriendlyByteBuf from mod nochatreports
+502:[17:46:13] [main/ERROR]: No data fixer registered for biomeswevegone:sign
+503:[17:46:13] [main/ERROR]: No data fixer registered for biomeswevegone:hanging_sign
+504:[17:46:13] [main/ERROR]: No data fixer registered for biomeswevegone:pumpkin_burrow
+765:[17:46:21] [main/ERROR]: No data fixer registered for ship_helm
+766:[17:46:21] [main/ERROR]: No data fixer registered for engine
+781:[17:46:23] [Worker-Main-2/ERROR]: Couldn't load tag c:bows as it is missing following references: too_many_bows:arcforge (from fabric)
+782:[17:46:23] [Worker-Main-2/ERROR]: Couldn't load tag c:tools as it is missing following references: #c:bows (from fabric)
+783:[17:46:24] [Worker-Main-1/ERROR]: Error while parsing loot table decoration entry. Found minecraft:red_x. Defaulting to MANSION
+784:[17:46:24] [Worker-Main-1/ERROR]: Error while parsing loot table decoration entry. Found minecraft:red_x. Defaulting to MANSION
+785:[17:46:24] [Worker-Main-1/ERROR]: Error while parsing loot table decoration entry. Found minecraft:red_x. Defaulting to MANSION
+786:[17:46:24] [Worker-Main-1/ERROR]: Error while parsing loot table decoration entry. Found minecraft:red_x. Defaulting to MANSION
+787:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/banglum/banglum_chakram
+788:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/banglum/banglum_chakram'
+810:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/runite/runite_greathammer
+811:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/runite/runite_greathammer'
+833:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/stormyx/stormyx_halberd
+834:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/stormyx/stormyx_halberd'
+856:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/carmot/carmot_longsword
+857:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_longsword'
+881:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/adamantite/adamantite_greataxe
+882:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/adamantite/adamantite_greataxe'
+904:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/osmium/osmium_katana
+905:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/osmium/osmium_katana'
+927:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/stormyx/stormyx_claymore
+928:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/stormyx/stormyx_claymore'
+950:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/celestium/celestium_claymore
+951:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/celestium/celestium_claymore'
+973:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/metallurgium/metallurgium_katana
+974:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/metallurgium/metallurgium_katana'
+996:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/star_platinum/star_platinum_glaive
+997:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/star_platinum/star_platinum_glaive'
+1019:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/prometheum/prometheum_rapier
+1020:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/prometheum/prometheum_rapier'
+1042:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/quadrillum/quadrillum_spear
+1043:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/quadrillum/quadrillum_spear'
+1065:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/palladium/palladium_greathammer
+1066:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/palladium/palladium_greathammer'
+1088:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/bronze/bronze_claymore
+1089:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/bronze/bronze_claymore'
+1111:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/celestium/celestium_twinblade
+1112:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/celestium/celestium_twinblade'
+1134:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/banglum/banglum_glaive
+1135:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/banglum/banglum_glaive'
+1157:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/orichalcum/orichalcum_cutlass
+1158:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/orichalcum/orichalcum_cutlass'
+1180:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/carmot/carmot_warglaive
+1181:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_warglaive'
+1205:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/quadrillum/quadrillum_cutlass
+1206:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/quadrillum/quadrillum_cutlass'
+1228:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/metallurgium/metallurgium_greathammer
+1229:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/metallurgium/metallurgium_greathammer'
+1251:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/adamantite/adamantite_chakram
+1252:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/adamantite/adamantite_chakram'
+1274:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/stormyx/stormyx_longsword
+1275:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/stormyx/stormyx_longsword'
+1297:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/mythril/mythril_greataxe
+1298:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/mythril/mythril_greataxe'
+1320:[17:46:25] [main/ERROR]: Parsing error loading recipe create:milling/compat/biomeswevegone/compat/biomeswevegone/white_sage
+1321:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:compat/biomeswevegone/white_sage'
+1346:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/stormyx/stormyx_chakram
+1347:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/stormyx/stormyx_chakram'
+1369:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/celestium/celestium_scythe
+1370:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/celestium/celestium_scythe'
+1392:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/carmot/carmot_twinblade
+1393:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_twinblade'
+1417:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/aquarium/aquarium_greathammer
+1418:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/aquarium/aquarium_greathammer'
+1440:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/steel/steel_katana
+1441:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/steel/steel_katana'
+1463:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/palladium/palladium_spear
+1464:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/palladium/palladium_spear'
+1486:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/stormyx/stormyx_katana
+1487:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/stormyx/stormyx_katana'
+1509:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/star_platinum/star_platinum_claymore
+1510:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/star_platinum/star_platinum_claymore'
+1532:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/carmot/carmot_scythe
+1533:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_scythe'
+1557:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/quadrillum/quadrillum_claymore
+1558:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/quadrillum/quadrillum_claymore'
+1580:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/bronze/bronze_greathammer
+1581:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/bronze/bronze_greathammer'
+1603:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/bronze/bronze_longsword
+1604:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/bronze/bronze_longsword'
+1626:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/aquarium/aquarium_chakram
+1627:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/aquarium/aquarium_chakram'
+1649:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/steel/steel_scythe
+1650:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/steel/steel_scythe'
+1672:[17:46:25] [main/ERROR]: Parsing error loading recipe create:crushing/compat/biomeswevegone/blue_nether_quartz_ore
+1673:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:blue_nether_quartz_ore'
+1698:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/steel/steel_halberd
+1699:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/steel/steel_halberd'
+1721:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/banglum/banglum_rapier
+1722:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/banglum/banglum_rapier'
+1744:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/bronze/bronze_twinblade
+1745:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/bronze/bronze_twinblade'
+1767:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/carmot/carmot_greataxe
+1768:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_greataxe'
+1792:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/celestium/celestium_chakram
+1793:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/celestium/celestium_chakram'
+1815:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/aquarium/aquarium_katana
+1816:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/aquarium/aquarium_katana'
+1838:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/banglum/banglum_warglaive
+1839:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/banglum/banglum_warglaive'
+1861:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/adamantite/adamantite_warglaive
+1862:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/adamantite/adamantite_warglaive'
+1884:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/carmot/carmot_chakram
+1885:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_chakram'
+1909:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/bronze/bronze_glaive
+1910:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/bronze/bronze_glaive'
+1932:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/kyber/kyber_claymore
+1933:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_claymore'
+1955:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/prometheum/prometheum_halberd
+1956:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/prometheum/prometheum_halberd'
+1978:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/steel/steel_greataxe
+1979:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/steel/steel_greataxe'
+2001:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/osmium/osmium_greathammer
+2002:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/osmium/osmium_greathammer'
+2024:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/orichalcum/orichalcum_sai
+2025:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/orichalcum/orichalcum_sai'
+2047:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/palladium/palladium_cutlass
+2048:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/palladium/palladium_cutlass'
+2070:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/celestium/celestium_glaive
+2071:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/celestium/celestium_glaive'
+2093:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/banglum/banglum_halberd
+2094:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/banglum/banglum_halberd'
+2116:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/palladium/palladium_scythe
+2117:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/palladium/palladium_scythe'
+2139:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/runite/runite_cutlass
+2140:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/runite/runite_cutlass'
+2162:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/osmium/osmium_spear
+2163:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/osmium/osmium_spear'
+2185:[17:46:25] [main/ERROR]: Parsing error loading recipe create:crushing/compat/biomeswevegone/brimstone_nether_quartz_ore
+2186:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:brimstone_nether_quartz_ore'
+2211:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/mythril/mythril_halberd
+2212:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/mythril/mythril_halberd'
+2234:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/bronze/bronze_warglaive
+2235:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/bronze/bronze_warglaive'
+2257:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/mythril/mythril_glaive
+2258:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/mythril/mythril_glaive'
+2280:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/prometheum/prometheum_scythe
+2281:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/prometheum/prometheum_scythe'
+2303:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/prometheum/prometheum_greathammer
+2304:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/prometheum/prometheum_greathammer'
+2326:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/adamantite/adamantite_greathammer
+2327:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/adamantite/adamantite_greathammer'
+2349:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/star_platinum/star_platinum_rapier
+2350:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/star_platinum/star_platinum_rapier'
+2372:[17:46:25] [main/ERROR]: Parsing error loading recipe create:crushing/compat/biomeswevegone/brimstone_nether_gold_ore
+2373:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:brimstone_nether_gold_ore'
+2398:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/osmium/osmium_cutlass
+2399:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/osmium/osmium_cutlass'
+2421:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/runite/runite_katana
+2422:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/runite/runite_katana'
+2444:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/palladium/palladium_greataxe
+2445:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/palladium/palladium_greataxe'
+2467:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/mythril/mythril_warglaive
+2468:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/mythril/mythril_warglaive'
+2490:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/osmium/osmium_claymore
+2491:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/osmium/osmium_claymore'
+2513:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/steel/steel_sai
+2514:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/steel/steel_sai'
+2536:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/mythril/mythril_chakram
+2537:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/mythril/mythril_chakram'
+2559:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/kyber/kyber_rapier
+2560:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_rapier'
+2582:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/mythril/mythril_longsword
+2583:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/mythril/mythril_longsword'
+2605:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/celestium/celestium_halberd
+2606:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/celestium/celestium_halberd'
+2628:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/quadrillum/quadrillum_sai
+2629:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/quadrillum/quadrillum_sai'
+2651:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/stormyx/stormyx_rapier
+2652:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/stormyx/stormyx_rapier'
+2674:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/kyber/kyber_chakram
+2675:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_chakram'
+2697:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/banglum/banglum_scythe
+2698:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/banglum/banglum_scythe'
+2720:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/prometheum/prometheum_cutlass
+2721:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/prometheum/prometheum_cutlass'
+2743:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/orichalcum/orichalcum_warglaive
+2744:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/orichalcum/orichalcum_warglaive'
+2766:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/stormyx/stormyx_scythe
+2767:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/stormyx/stormyx_scythe'
+2789:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/carmot/carmot_katana
+2790:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_katana'
+2814:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/mythril/mythril_sai
+2815:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/mythril/mythril_sai'
+2837:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/banglum/banglum_claymore
+2838:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/banglum/banglum_claymore'
+2860:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/bronze/bronze_halberd
+2861:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/bronze/bronze_halberd'
+2883:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/orichalcum/orichalcum_longsword
+2884:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/orichalcum/orichalcum_longsword'
+2906:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/prometheum/prometheum_sai
+2907:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/prometheum/prometheum_sai'
+2929:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/star_platinum/star_platinum_spear
+2930:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/star_platinum/star_platinum_spear'
+2952:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/orichalcum/orichalcum_twinblade
+2953:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/orichalcum/orichalcum_twinblade'
+2975:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/stormyx/stormyx_twinblade
+2976:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/stormyx/stormyx_twinblade'
+2998:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/stormyx/stormyx_sai
+2999:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/stormyx/stormyx_sai'
+3021:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/osmium/osmium_sai
+3022:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/osmium/osmium_sai'
+3044:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/metallurgium/metallurgium_chakram
+3045:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/metallurgium/metallurgium_chakram'
+3067:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/carmot/carmot_greathammer
+3068:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_greathammer'
+3092:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/mythril/mythril_cutlass
+3093:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/mythril/mythril_cutlass'
+3115:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/prometheum/prometheum_chakram
+3116:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/prometheum/prometheum_chakram'
+3138:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/metallurgium/metallurgium_scythe
+3139:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/metallurgium/metallurgium_scythe'
+3161:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/metallurgium/metallurgium_cutlass
+3162:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/metallurgium/metallurgium_cutlass'
+3184:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/orichalcum/orichalcum_rapier
+3185:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/orichalcum/orichalcum_rapier'
+3207:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/mythril/mythril_spear
+3208:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/mythril/mythril_spear'
+3230:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/kyber/kyber_scythe
+3231:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_scythe'
+3253:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/star_platinum/star_platinum_greathammer
+3254:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/star_platinum/star_platinum_greathammer'
+3276:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/steel/steel_glaive
+3277:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/steel/steel_glaive'
+3299:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/metallurgium/metallurgium_claymore
+3300:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/metallurgium/metallurgium_claymore'
+3322:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/quadrillum/quadrillum_katana
+3323:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/quadrillum/quadrillum_katana'
+3345:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/carmot/carmot_sai
+3346:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_sai'
+3370:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/prometheum/prometheum_greataxe
+3371:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/prometheum/prometheum_greataxe'
+3393:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/runite/runite_claymore
+3394:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/runite/runite_claymore'
+3416:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/adamantite/adamantite_halberd
+3417:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/adamantite/adamantite_halberd'
+3439:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/carmot/carmot_rapier
+3440:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_rapier'
+3464:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/mythril/mythril_twinblade
+3465:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/mythril/mythril_twinblade'
+3487:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/adamantite/adamantite_sai
+3488:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/adamantite/adamantite_sai'
+3510:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/aquarium/aquarium_scythe
+3511:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/aquarium/aquarium_scythe'
+3533:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/star_platinum/star_platinum_twinblade
+3534:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/star_platinum/star_platinum_twinblade'
+3556:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/runite/runite_halberd
+3557:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/runite/runite_halberd'
+3579:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/bronze/bronze_spear
+3580:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/bronze/bronze_spear'
+3602:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/palladium/palladium_halberd
+3603:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/palladium/palladium_halberd'
+3625:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/kyber/kyber_glaive
+3626:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_glaive'
+3648:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/steel/steel_greathammer
+3649:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/steel/steel_greathammer'
+3671:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/celestium/celestium_greathammer
+3672:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/celestium/celestium_greathammer'
+3694:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/metallurgium/metallurgium_glaive
+3695:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/metallurgium/metallurgium_glaive'
+3717:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/kyber/kyber_greathammer
+3718:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_greathammer'
+3740:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/steel/steel_chakram
+3741:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/steel/steel_chakram'
+3763:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/aquarium/aquarium_halberd
+3764:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/aquarium/aquarium_halberd'
+3786:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/mythril/mythril_claymore
+3787:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/mythril/mythril_claymore'
+3809:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/carmot/carmot_halberd
+3810:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_halberd'
+3834:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/prometheum/prometheum_katana
+3835:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/prometheum/prometheum_katana'
+3857:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/orichalcum/orichalcum_greataxe
+3858:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/orichalcum/orichalcum_greataxe'
+3880:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/kyber/kyber_halberd
+3881:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_halberd'
+3903:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/aquarium/aquarium_greataxe
+3904:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/aquarium/aquarium_greataxe'
+3926:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/stormyx/stormyx_warglaive
+3927:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/stormyx/stormyx_warglaive'
+3949:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/orichalcum/orichalcum_katana
+3950:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/orichalcum/orichalcum_katana'
+3972:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/kyber/kyber_spear
+3973:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_spear'
+3995:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/quadrillum/quadrillum_chakram
+3996:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/quadrillum/quadrillum_chakram'
+4018:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/star_platinum/star_platinum_warglaive
+4019:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/star_platinum/star_platinum_warglaive'
+4041:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/aquarium/aquarium_sai
+4042:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/aquarium/aquarium_sai'
+4064:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/quadrillum/quadrillum_twinblade
+4065:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/quadrillum/quadrillum_twinblade'
+4087:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/stormyx/stormyx_greathammer
+4088:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/stormyx/stormyx_greathammer'
+4110:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/metallurgium/metallurgium_spear
+4111:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/metallurgium/metallurgium_spear'
+4133:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/bronze/bronze_greataxe
+4134:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/bronze/bronze_greataxe'
+4156:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/runite/runite_chakram
+4157:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/runite/runite_chakram'
+4179:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/star_platinum/star_platinum_longsword
+4180:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/star_platinum/star_platinum_longsword'
+4202:[17:46:25] [main/ERROR]: Parsing error loading recipe create:milling/compat/biomeswevegone/purple_rose
+4203:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:purple_rose'
+4228:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/orichalcum/orichalcum_scythe
+4229:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/orichalcum/orichalcum_scythe'
+4251:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/prometheum/prometheum_twinblade
+4252:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/prometheum/prometheum_twinblade'
+4274:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/adamantite/adamantite_claymore
+4275:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/adamantite/adamantite_claymore'
+4297:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/aquarium/aquarium_cutlass
+4298:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/aquarium/aquarium_cutlass'
+4320:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/adamantite/adamantite_rapier
+4321:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/adamantite/adamantite_rapier'
+4343:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/star_platinum/star_platinum_katana
+4344:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/star_platinum/star_platinum_katana'
+4366:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/banglum/banglum_spear
+4367:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/banglum/banglum_spear'
+4389:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/quadrillum/quadrillum_greataxe
+4390:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/quadrillum/quadrillum_greataxe'
+4412:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/runite/runite_rapier
+4413:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/runite/runite_rapier'
+4435:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/star_platinum/star_platinum_greataxe
+4436:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/star_platinum/star_platinum_greataxe'
+4458:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/quadrillum/quadrillum_rapier
+4459:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/quadrillum/quadrillum_rapier'
+4481:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/stormyx/stormyx_cutlass
+4482:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/stormyx/stormyx_cutlass'
+4504:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/quadrillum/quadrillum_halberd
+4505:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/quadrillum/quadrillum_halberd'
+4527:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/runite/runite_warglaive
+4528:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/runite/runite_warglaive'
+4550:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/metallurgium/metallurgium_twinblade
+4551:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/metallurgium/metallurgium_twinblade'
+4573:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/mythril/mythril_katana
+4574:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/mythril/mythril_katana'
+4596:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/palladium/palladium_glaive
+4597:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/palladium/palladium_glaive'
+4619:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/aquarium/aquarium_longsword
+4620:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/aquarium/aquarium_longsword'
+4642:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/aquarium/aquarium_rapier
+4643:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/aquarium/aquarium_rapier'
+4665:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/palladium/palladium_chakram
+4666:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/palladium/palladium_chakram'
+4688:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/banglum/banglum_cutlass
+4689:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/banglum/banglum_cutlass'
+4711:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/carmot/carmot_claymore
+4712:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_claymore'
+4736:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/adamantite/adamantite_scythe
+4737:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/adamantite/adamantite_scythe'
+4759:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/prometheum/prometheum_claymore
+4760:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/prometheum/prometheum_claymore'
+4782:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/orichalcum/orichalcum_chakram
+4783:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/orichalcum/orichalcum_chakram'
+4805:[17:46:25] [main/ERROR]: Parsing error loading recipe create:pressing/compat/biomeswevegone/lush_grass_path
+4806:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:lush_grass'
+4831:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/kyber/kyber_sai
+4832:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_sai'
+4854:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/quadrillum/quadrillum_longsword
+4855:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/quadrillum/quadrillum_longsword'
+4877:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/quadrillum/quadrillum_greathammer
+4878:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/quadrillum/quadrillum_greathammer'
+4900:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/bronze/bronze_chakram
+4901:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/bronze/bronze_chakram'
+4923:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/steel/steel_spear
+4924:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/steel/steel_spear'
+4946:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/kyber/kyber_greataxe
+4947:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_greataxe'
+4969:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/aquarium/aquarium_spear
+4970:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/aquarium/aquarium_spear'
+4992:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/banglum/banglum_sai
+4993:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/banglum/banglum_sai'
+5015:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/bronze/bronze_sai
+5016:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/bronze/bronze_sai'
+5038:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/quadrillum/quadrillum_scythe
+5039:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/quadrillum/quadrillum_scythe'
+5061:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/aquarium/aquarium_glaive
+5062:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/aquarium/aquarium_glaive'
+5084:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/orichalcum/orichalcum_greathammer
+5085:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/orichalcum/orichalcum_greathammer'
+5107:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/bronze/bronze_scythe
+5108:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/bronze/bronze_scythe'
+5130:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/stormyx/stormyx_glaive
+5131:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/stormyx/stormyx_glaive'
+5153:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/banglum/banglum_katana
+5154:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/banglum/banglum_katana'
+5176:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/orichalcum/orichalcum_halberd
+5177:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/orichalcum/orichalcum_halberd'
+5199:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/metallurgium/metallurgium_rapier
+5200:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/metallurgium/metallurgium_rapier'
+5222:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/steel/steel_cutlass
+5223:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/steel/steel_cutlass'
+5245:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/stormyx/stormyx_spear
+5246:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/stormyx/stormyx_spear'
+5268:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/carmot/carmot_spear
+5269:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_spear'
+5293:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/metallurgium/metallurgium_halberd
+5294:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/metallurgium/metallurgium_halberd'
+5316:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/prometheum/prometheum_spear
+5317:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/prometheum/prometheum_spear'
+5339:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/osmium/osmium_rapier
+5340:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/osmium/osmium_rapier'
+5362:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/runite/runite_longsword
+5363:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/runite/runite_longsword'
+5385:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/kyber/kyber_katana
+5386:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_katana'
+5408:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/banglum/banglum_greathammer
+5409:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/banglum/banglum_greathammer'
+5431:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/carmot/carmot_glaive
+5432:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_glaive'
+5456:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/quadrillum/quadrillum_warglaive
+5457:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/quadrillum/quadrillum_warglaive'
+5479:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/runite/runite_scythe
+5480:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/runite/runite_scythe'
+5502:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/steel/steel_warglaive
+5503:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/steel/steel_warglaive'
+5525:[17:46:25] [main/ERROR]: Parsing error loading recipe create:milling/compat/biomeswevegone/orchid
+5526:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:orchid'
+5551:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/runite/runite_twinblade
+5552:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/runite/runite_twinblade'
+5574:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/adamantite/adamantite_cutlass
+5575:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/adamantite/adamantite_cutlass'
+5597:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/adamantite/adamantite_glaive
+5598:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/adamantite/adamantite_glaive'
+5620:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/celestium/celestium_greataxe
+5621:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/celestium/celestium_greataxe'
+5643:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/stormyx/stormyx_greataxe
+5644:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/stormyx/stormyx_greataxe'
+5666:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/osmium/osmium_twinblade
+5667:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/osmium/osmium_twinblade'
+5689:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/mythril/mythril_scythe
+5690:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/mythril/mythril_scythe'
+5712:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/star_platinum/star_platinum_halberd
+5713:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/star_platinum/star_platinum_halberd'
+5735:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/orichalcum/orichalcum_glaive
+5736:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/orichalcum/orichalcum_glaive'
+5758:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/star_platinum/star_platinum_scythe
+5759:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/star_platinum/star_platinum_scythe'
+5781:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/palladium/palladium_longsword
+5782:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/palladium/palladium_longsword'
+5804:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/osmium/osmium_greataxe
+5805:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/osmium/osmium_greataxe'
+5827:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/mythril/mythril_greathammer
+5828:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/mythril/mythril_greathammer'
+5850:[17:46:25] [main/ERROR]: Parsing error loading recipe create:crushing/compat/biomeswevegone/cryptic_redstone_ore
+5851:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:cryptic_redstone_ore'
+5876:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/steel/steel_rapier
+5877:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/steel/steel_rapier'
+5899:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/star_platinum/star_platinum_cutlass
+5900:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/star_platinum/star_platinum_cutlass'
+5922:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/palladium/palladium_rapier
+5923:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/palladium/palladium_rapier'
+5945:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/palladium/palladium_warglaive
+5946:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/palladium/palladium_warglaive'
+5968:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/banglum/banglum_twinblade
+5969:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/banglum/banglum_twinblade'
+5991:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/osmium/osmium_chakram
+5992:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/osmium/osmium_chakram'
+6014:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/celestium/celestium_katana
+6015:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/celestium/celestium_katana'
+6037:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/kyber/kyber_cutlass
+6038:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_cutlass'
+6060:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/steel/steel_twinblade
+6061:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/steel/steel_twinblade'
+6083:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/osmium/osmium_halberd
+6084:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/osmium/osmium_halberd'
+6106:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/adamantite/adamantite_katana
+6107:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/adamantite/adamantite_katana'
+6129:[17:46:25] [main/ERROR]: Parsing error loading recipe create:crushing/compat/biomeswevegone/blue_nether_gold_ore
+6130:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:blue_nether_gold_ore'
+6155:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/runite/runite_glaive
+6156:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/runite/runite_glaive'
+6178:[17:46:25] [main/ERROR]: Parsing error loading recipe create:milling/compat/biomeswevegone/lolipop_flower
+6179:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:lolipop_flower'
+6204:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/steel/steel_longsword
+6205:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/steel/steel_longsword'
+6227:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/steel/steel_claymore
+6228:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/steel/steel_claymore'
+6250:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/prometheum/prometheum_glaive
+6251:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/prometheum/prometheum_glaive'
+6273:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/adamantite/adamantite_twinblade
+6274:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/adamantite/adamantite_twinblade'
+6296:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/osmium/osmium_scythe
+6297:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/osmium/osmium_scythe'
+6319:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/metallurgium/metallurgium_longsword
+6320:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/metallurgium/metallurgium_longsword'
+6342:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/palladium/palladium_claymore
+6343:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/palladium/palladium_claymore'
+6365:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/carmot/carmot_cutlass
+6366:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_cutlass'
+6390:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/celestium/celestium_warglaive
+6391:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/celestium/celestium_warglaive'
+6413:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/palladium/palladium_twinblade
+6414:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/palladium/palladium_twinblade'
+6436:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/prometheum/prometheum_longsword
+6437:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/prometheum/prometheum_longsword'
+6459:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/kyber/kyber_longsword
+6460:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_longsword'
+6482:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/mythril/mythril_rapier
+6483:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/mythril/mythril_rapier'
+6505:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/adamantite/adamantite_longsword
+6506:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/adamantite/adamantite_longsword'
+6528:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/banglum/banglum_greataxe
+6529:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/banglum/banglum_greataxe'
+6551:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/celestium/celestium_sai
+6552:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/celestium/celestium_sai'
+6574:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/bronze/bronze_katana
+6575:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/bronze/bronze_katana'
+6597:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/kyber/kyber_warglaive
+6598:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_warglaive'
+6620:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/aquarium/aquarium_claymore
+6621:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/aquarium/aquarium_claymore'
+6643:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/aquarium/aquarium_twinblade
+6644:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/aquarium/aquarium_twinblade'
+6666:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/osmium/osmium_warglaive
+6667:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/osmium/osmium_warglaive'
+6689:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/banglum/banglum_longsword
+6690:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/banglum/banglum_longsword'
+6712:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/osmium/osmium_longsword
+6713:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/osmium/osmium_longsword'
+6735:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/quadrillum/quadrillum_glaive
+6736:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/quadrillum/quadrillum_glaive'
+6758:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/orichalcum/orichalcum_spear
+6759:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/orichalcum/orichalcum_spear'
+6781:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/orichalcum/orichalcum_claymore
+6782:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/orichalcum/orichalcum_claymore'
+6804:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/runite/runite_greataxe
+6805:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/runite/runite_greataxe'
+6827:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/prometheum/prometheum_warglaive
+6828:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/prometheum/prometheum_warglaive'
+6850:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/bronze/bronze_cutlass
+6851:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/bronze/bronze_cutlass'
+6873:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/palladium/palladium_sai
+6874:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/palladium/palladium_sai'
+6896:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/celestium/celestium_longsword
+6897:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/celestium/celestium_longsword'
+6919:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/star_platinum/star_platinum_sai
+6920:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/star_platinum/star_platinum_sai'
+6942:[17:46:25] [main/ERROR]: Parsing error loading recipe create:milling/compat/biomeswevegone/compat/biomeswevegone/winter_cyclamen
+6943:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:compat/biomeswevegone/winter_cyclamen'
+6968:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/star_platinum/star_platinum_chakram
+6969:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/star_platinum/star_platinum_chakram'
+6991:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/metallurgium/metallurgium_sai
+6992:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/metallurgium/metallurgium_sai'
+7014:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/runite/runite_sai
+7015:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/runite/runite_sai'
+7037:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/aquarium/aquarium_warglaive
+7038:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/aquarium/aquarium_warglaive'
+7060:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/bronze/bronze_rapier
+7061:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/bronze/bronze_rapier'
+7083:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/celestium/celestium_cutlass
+7084:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/celestium/celestium_cutlass'
+7106:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/celestium/celestium_rapier
+7107:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/celestium/celestium_rapier'
+7129:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/runite/runite_spear
+7130:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/runite/runite_spear'
+7152:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/metallurgium/metallurgium_warglaive
+7153:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/metallurgium/metallurgium_warglaive'
+7175:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/metallurgium/metallurgium_greataxe
+7176:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/metallurgium/metallurgium_greataxe'
+7198:[17:46:25] [main/ERROR]: Parsing error loading recipe create:milling/compat/biomeswevegone/torch_ginger
+7199:com.google.gson.JsonSyntaxException: Unknown item 'biomeswevegone:torch_ginger'
+7224:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/palladium/palladium_katana
+7225:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/palladium/palladium_katana'
+7247:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/kyber/kyber_twinblade
+7248:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/kyber/kyber_twinblade'
+7270:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/osmium/osmium_glaive
+7271:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/osmium/osmium_glaive'
+7293:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/adamantite/adamantite_spear
+7294:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/adamantite/adamantite_spear'
+7316:[17:46:25] [main/ERROR]: Parsing error loading recipe simplyswords:mythicmetals_compat/celestium/celestium_spear
+7317:com.google.gson.JsonSyntaxException: Unknown item 'simplyswords:mythicmetals_compat/celestium/celestium_spear'
+7966:[17:47:01] [Worker-Main-1/ERROR]: Hanging entity at invalid position: class_2338{x=-10, y=-56, z=36}
+7967:[17:47:01] [Worker-Main-1/ERROR]: Hanging entity at invalid position: class_2338{x=-8, y=-56, z=35}
+7968:[17:47:01] [Worker-Main-1/ERROR]: Hanging entity at invalid position: class_2338{x=-6, y=-56, z=35}
+7969:[17:47:01] [Worker-Main-1/ERROR]: Hanging entity at invalid position: class_2338{x=-10, y=-55, z=38}
+7970:[17:47:01] [Worker-Main-1/ERROR]: Hanging entity at invalid position: class_2338{x=-8, y=-56, z=39}
+7971:[17:47:01] [Worker-Main-1/ERROR]: Hanging entity at invalid position: class_2338{x=-13, y=-59, z=41}
