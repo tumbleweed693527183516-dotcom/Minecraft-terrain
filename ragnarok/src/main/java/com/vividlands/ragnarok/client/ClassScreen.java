@@ -22,13 +22,18 @@ public class ClassScreen extends Screen {
         return false;
     }
 
-    private int pw() { return Math.min(440, width - 20); }
-    private int ph() { return Math.min(250, height - 20); }
-    private int px() { return (width - pw()) / 2; }
-    private int py() { return (height - ph()) / 2; }
+    private static final int W = 440, H = 236;
+
+    /** Shrinks the whole panel on small screens instead of letting it spill over. */
+    private float scale() { return Math.min(1f, Math.min((width - 16) / (float) W, (height - 24) / (float) H)); }
+    private int pw() { return W; }
+    private int ph() { return H; }
+    private int px() { return Math.round((width / scale() - W) / 2); }
+    private int py() { return Math.round((height / scale() - H) / 2); }
 
     @Override
-    public boolean mouseClicked(double mx, double my, int button) {
+    public boolean mouseClicked(double rawX, double rawY, int button) {
+        double mx = rawX / scale(), my = rawY / scale();
         int x = px() + 8, y = py() + 20;
         for (int i = 0; i < NorseClass.values().length; i++) {
             if (mx >= x && mx < x + 92 && my >= y + i * 22 && my < y + i * 22 + 20) {
@@ -36,12 +41,17 @@ public class ClassScreen extends Screen {
                 return true;
             }
         }
-        return super.mouseClicked(mx, my, button);
+        return super.mouseClicked(rawX, rawY, button);
     }
 
     @Override
     public void render(GuiGraphics g, int mouseX, int mouseY, float partial) {
         renderBackground(g);
+        float sc = scale();
+        g.pose().pushPose();
+        g.pose().scale(sc, sc, 1);
+        mouseX = Math.round(mouseX / sc);
+        mouseY = Math.round(mouseY / sc);
         Font f = font;
         int x = px(), y = py(), w = pw(), h = ph();
         NorseUI.panel(g, x, y, w, h, NorseUI.BRONZE, NorseUI.SLATE);
@@ -64,7 +74,7 @@ public class ClassScreen extends Screen {
             String lv = String.valueOf(Math.max(1, ClassClient.levels[i]));
             g.drawString(f, lv, x + 96 - f.width(lv), ry + 6, NorseUI.MIST, false);
         }
-        g.drawWordWrap(f, Component.literal("Switch with a rune stone. Every path keeps its own level."), x + 12, y + h - 30, 86, NorseUI.MIST);
+        g.drawWordWrap(f, Component.literal("Switch with a rune stone. Every path keeps its own level."), x + 12, y + 136, 86, NorseUI.MIST);
 
         // right: the chosen path
         NorseClass c = all[shown];
@@ -92,7 +102,7 @@ public class ClassScreen extends Screen {
         // abilities
         for (int i = 0; i < 4; i++) {
             NorseClass.Ability a = c.abilities.get(i);
-            int ry = py + 22 + i * 44;
+            int ry = py + 22 + i * 42;
             boolean locked = lvl < a.unlock();
             g.fill(cx, ry, cx + cw, ry + 40, locked ? 0xC0141A21 : 0xE01D2632);
             NorseUI.outline(g, cx, ry, cw, 40, NorseUI.LOCKED);
@@ -114,8 +124,8 @@ public class ClassScreen extends Screen {
                         cx + 34, ry + 28, locked ? NorseUI.LOCKED_TEXT : NorseUI.GOLD, false);
             }
         }
-        g.drawCenteredString(f, "K or Esc to close", width / 2, y + h + 6, NorseUI.MIST);
-        super.render(g, mouseX, mouseY, partial);
+        g.drawCenteredString(f, "K or Esc to close", x + w / 2, y + h + 6, NorseUI.MIST);
+        g.pose().popPose();
     }
 
     @Override

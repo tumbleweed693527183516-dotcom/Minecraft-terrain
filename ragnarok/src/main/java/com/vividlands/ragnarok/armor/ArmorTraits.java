@@ -248,7 +248,6 @@ public final class ArmorTraits {
     public static void tooltip(AncientArmorMaterial m, List<Component> lines) {
         Trait t = traitOf(m.set().id());
         int ward = wardOfTier(m.tier());
-        lines.add(Component.literal(m.set().civilization() + " · tier " + m.tier()).withStyle(ChatFormatting.GRAY));
         lines.add(Component.literal("Boss Ward: ").withStyle(ChatFormatting.GRAY)
                 .append(Component.literal(stageName(ward)).withStyle(ChatFormatting.GREEN)));
         int worn = 0;
