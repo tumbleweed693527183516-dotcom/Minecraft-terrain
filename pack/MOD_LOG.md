@@ -507,3 +507,15 @@ the same linear scale. Own creative tab: Ancient Armor.
   - One class is active at a time. A rune stone (2 cobblestone + bone, feather, arrow, amethyst shard or leather) switches class, and each class keeps its own level.
   - Keys Z, X, C, V cast abilities. A HUD right of the hotbar shows level, XP and cooldowns. Commands: `/ragnarok class cast|set|ready`.
 - **Mods:** Archers and Rogues & Warriors are removed from the pack; the classes replace them.
+
+## v0.28: the quest book (2026-11-02)
+
+- **Quest mod:** Odyssey Quests (Heracles, MIT, on Modrinth), opened with U. FTB Quests isn't on Modrinth, so the pack can't download it.
+- **Quests:** tools/questbook/build_quests.py writes 419 quests in 16 chapters to pack/heracles. The modpack puts them in config/heracles.
+- **Tracking:** kills (our 25 bosses, Draugr, the Civilizations leaders and gods), items, biomes, structures, and custom stats (bosses killed, boss staggers). Hidden advancements, which the mod grants, cover class levels, ability use, full sets, ward match and fighting under-dressed. 162 hard-to-detect tasks are checkboxes.
+- **Rewards:** items, class XP (`ragnarok class xp`), and Rune Pouches as loot tables in 5 tiers (`vividlands_ragnarok:rune_pouch/<tier>`).
+- **Skin:** a Norse resource pack built into the mod and on by default. It covers quest icons (slate locked, bronze available, gold in progress, verdigris done), slate panels and a bronze header.
+- **Tests:**
+  - pack test `mode=quests`: `/ragnarok questcheck` reports 419 quests in 16 chapters, failed=false
+  - render test `scene=quests`: screenshots of chapters and quest pages
+- **Civilizations content confirmed:** leaders Björn Ironside, Julius Caesar, Alexander the Great, Pharaoh Khufu and Qin Shi Huang; gods Loki, Mercury, Artemis, Anubis and Sun Wukong. Kings of Midgard now has 20 quests.
