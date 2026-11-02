@@ -1,0 +1,58 @@
+name: FTB inspect
+
+# Downloads the Fabric 1.20.1 FTB Quests / Library / Teams jars from the FTB maven and lists their
+# metadata, assets and key classes (no jars are committed). Results: ftb branch.
+on:
+  workflow_dispatch:
+    inputs:
+      classes:
+        description: "Regex of class paths to dump with javap -p"
+        default: "quest/(ServerQuestFile|BaseQuestFile|Quest|Chapter)$|ThemeLoader$|QuestTheme$"
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Download and inspect
+        run: |
+          mkdir -p jars out
+          python3 - <<'EOF' | tee out/versions.txt
+          import re, urllib.request
+          H = {"User-Agent": "vividlands-inspect"}
+          for a in ["ftb-quests-fabric", "ftb-library-fabric", "ftb-teams-fabric"]:
+              base = f"https://maven.ftb.dev/releases/dev/ftb/mods/{a}/"
+              xml = urllib.request.urlopen(urllib.request.Request(base + "maven-metadata.xml", headers=H), timeout=60).read().decode()
+              vs = [v for v in re.findall(r"<version>([^<]+)</version>", xml) if v.startswith("2001.")]
+              key = lambda v: [int(x) if x.isdigit() else 0 for x in re.split(r"[.\-+]", v)]
+              v = sorted(vs, key=key)[-1]
+              url = f"{base}{v}/{a}-{v}.jar"
+              print(a, v, url, "all 2001:", sorted(vs, key=key)[-6:])
+              open(f"jars/{a}.jar", "wb").write(urllib.request.urlopen(urllib.request.Request(url, headers=H), timeout=180).read())
+          EOF
+          cd jars
+          for j in *.jar; do
+            n=${j%.jar}; o=../out/$n; mkdir -p $o x_$n
+            unzip -q -o "$j" -d x_$n
+            find x_$n -type f | sed "s#^x_$n/##" | sort > $o/files.txt
+            cp x_$n/fabric.mod.json $o/ 2>/dev/null || true
+            (cd x_$n && find . -type f ! -name "*.class" ! -name "*.png" ! -name "*.ogg" | sed 's#^\./##' | while read a; do
+              mkdir -p "../$o/res/$(dirname "$a")"; cp "$a" "../$o/res/$a"; done)
+            (cd x_$n && find . -name "*.png" -path "*textures*" | sed 's#^\./##' | while read a; do
+              mkdir -p "../$o/res/$(dirname "$a")"; cp "$a" "../$o/res/$a"; done)
+            find x_$n -name "*.class" | sed "s#^x_$n/##; s#\.class\$##" | grep -E '${{ inputs.classes }}' | while read cls; do
+              echo "=================== $cls"; javap -p -cp x_$n "${cls//\//.}" 2>/dev/null
+            done > $o/classes.txt
+          done
+      - name: Publish
+        run: |
+          cd out
+          git init -q -b ftb && git config user.name ci && git config user.email ci@example.com
+          git add -A && git commit -qm "ftb inspect"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" ftb
