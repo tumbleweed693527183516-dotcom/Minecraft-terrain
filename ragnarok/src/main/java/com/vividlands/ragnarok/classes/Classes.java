@@ -270,7 +270,7 @@ public final class Classes {
                     effect(a, MobEffects.ABSORPTION, 300, amp);
                     a.removeEffect(MobEffects.POISON);
                     a.removeEffect(MobEffects.WITHER);
-                    particles(p, GOLD, a.position().add(0, 1, 0), 20, 0.5, 0);
+                    particles(p, GOLD, a.position().add(0, 0.1, 0), 14, 0.7, 0);
                 }
                 sound(p, SoundEvents.BEACON_ACTIVATE, 0.8f, 1.6f);
             }
@@ -372,7 +372,7 @@ public final class Classes {
                 int ticks = (int) (L(p, 5, 10) * 20);
                 for (ServerPlayer a : allies(p, 8)) {
                     effect(a, MobEffects.REGENERATION, ticks, 1);
-                    particles(p, RUNE, a.position().add(0, 1, 0), 20, 0.5, 0);
+                    particles(p, RUNE, a.position().add(0, 0.1, 0), 14, 0.7, 0);
                 }
                 sound(p, SoundEvents.AMETHYST_BLOCK_CHIME, 1.5f, 0.8f);
             }
