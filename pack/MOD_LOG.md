@@ -488,3 +488,22 @@ the same linear scale. Own creative tab: Ancient Armor.
   - Vanilla's 1024 max-health cap clamped Chapter 2 bosses outside the full pack. A mixin now raises it.
   - Blank vanilla layer textures added for the ancient sets, which removes 98 missing-texture warnings.
   - Agamemnon's eyes were hidden under the brows.
+
+## v0.28: Chapter 1 acts, Boss Ward, classes (2026-11-01)
+
+- **Chapter 1** is 4 acts of 5 bosses. A boss only spawns once every boss of the act before it is dead. The Mammoth needs all other 19.
+- **Boss Ward** (armor/ArmorTraits.java): every full armor set has a ward, the story stage it was made for. A boss's hits on a player are scaled by how far the ward is behind that boss:
+  - caught up: ×0.5
+  - 1 stage behind: ×0.85
+  - 2 behind: ×1.2
+  - 3 or more behind: ×1.5
+  - Vanilla sets count: iron = 1, diamond = 2, netherite = 3. Viking sets: Berserker 2, Ulfhednar 3, Valkyrie 5, Jarl 9.
+- **Ancient armor rescaled:** 11 to 24 armor and 0 to 6 toughness across tiers 1 to 49.
+- **Set bonuses:** 10 family traits, for example Builder (Haste), Sun-Hardened (fire resistance), Phalanx, Horse Lord, Fury, Legion, Discipline, Jungle-Born, and King of Men for Agamemnon.
+- **Ancient armor recipes:** 196 recipes (tools/ancient_recipes.py). Each is the vanilla armor shape in the band's metal, plus a trophy from the act the set prepares you for, plus a dye that picks the set. Chapter 2 bosses drop 4 trophies each.
+- **Classes** (classes/):
+  - Berserker, Valkyrie, Huntsman, Volva, Ulfhednar. Each has a passive and 4 abilities that unlock at levels 1, 10, 20 and 35; every number grows linearly to level 50.
+  - XP: a kill gives max health / 4; a boss gives its full XP reward to everyone within 48 blocks. Level n needs 100 + 25(n-1) XP.
+  - One class is active at a time. A rune stone (2 cobblestone + bone, feather, arrow, amethyst shard or leather) switches class, and each class keeps its own level.
+  - Keys Z, X, C, V cast abilities. A HUD right of the hotbar shows level, XP and cooldowns. Commands: `/ragnarok class cast|set|ready`.
+- **Mods:** Archers and Rogues & Warriors are removed from the pack; the classes replace them.
