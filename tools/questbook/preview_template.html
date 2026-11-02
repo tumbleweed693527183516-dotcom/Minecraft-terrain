@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>Vivid Lands Quest Book</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,6 +88,18 @@ dl.stats dd { margin: 0; font-variant-numeric: tabular-nums; }
 .tip { font-size: 15px; background: rgba(217,101,63,0.12); border: 1px solid rgba(217,101,63,0.45); border-radius: 4px; padding: 8px 12px; }
 .empty { color: var(--mist); }
 .foot { color: var(--mist); font-size: 13px; }
+.guide { padding: 18px; display: flex; flex-direction: column; gap: 22px; }
+.band h3 { font-family: var(--display); font-size: 17px; margin: 0 0 4px; font-weight: 700; }
+.band p { margin: 0 0 10px; color: var(--mist); font-size: 14px; }
+.tw { overflow-x: auto; }
+table.sets { border-collapse: collapse; width: 100%; font-size: 14px; min-width: 620px; }
+table.sets th { text-align: left; font-weight: 500; color: var(--mist); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; padding: 6px 8px; border-bottom: 1px solid var(--rule); }
+table.sets td { padding: 6px 8px; border-bottom: 1px solid rgba(49,67,90,0.5); vertical-align: middle; }
+table.sets td.num { font-variant-numeric: tabular-nums; text-align: right; }
+table.sets img { width: 24px; height: 24px; image-rendering: pixelated; vertical-align: middle; margin-right: 8px; }
+.trait { color: var(--frost); }
+.wardtab { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 15px; }
+.wardtab b { font-variant-numeric: tabular-nums; }
 @media (max-width: 1100px) { .wrap { height: auto; min-height: 100%; } .book { grid-template-columns: 200px minmax(0, 1fr); } nav.panel { max-height: 80vh; } .mapbox { height: 80vh; } aside.panel { grid-column: 1 / -1; } }
 @media (max-width: 720px) {
   .book { grid-template-columns: minmax(0, 1fr); }
@@ -143,6 +156,8 @@ function iconFor(q) {
 
 function renderNav() {
   const nav = document.getElementById("nav"); nav.textContent = "";
+  const ab = el("button", { class: "chap", "aria-current": String(cur && cur.id === "armor") }, el("span", { class: "n" }, "Armor guide"), el("span", { class: "c" }, "49"), el("span", { class: "s" }, "Boss Ward, recipes, set bonuses"));
+  ab.onclick = () => { location.hash = "armor"; };
   for (const g of [["main", "Main quest"], ["side", "Side lines"]]) {
     nav.append(el("div", { class: "navhead" }, g[1]));
     for (const ch of DATA.chapters.filter(c => c.group === g[0])) {
@@ -153,6 +168,7 @@ function renderNav() {
       nav.append(b);
     }
   }
+  nav.append(el("div", { class: "navhead" }, "Reference"), ab);
 }
 
 function renderMap() {
@@ -234,15 +250,49 @@ function renderDetail() {
   }
 }
 
+
+const TRAIT_NAMES = () => Object.fromEntries(DATA.armor.traits.map(t => [t.id, t]));
+function renderArmor() {
+  document.getElementById("chTitle").textContent = "Armor guide";
+  document.getElementById("chSub").textContent = "49 ancient sets: the boss each is made for, its recipe and its set bonus";
+  const cv = document.getElementById("canvas"); cv.textContent = ""; cv.style.width = ""; cv.style.height = "";
+  const T = TRAIT_NAMES(), g = el("div", { class: "guide" });
+  for (const b of DATA.armor.bands) {
+    const first = b.sets[0], last = b.sets[b.sets.length - 1];
+    const tb = el("tbody");
+    for (const st of b.sets) tb.append(el("tr", {},
+      el("td", { class: "num" }, String(st.tier)),
+      el("td", {}, el("img", { src: DATA.icons[st.icon], alt: "" }), st.id.replace("_", " ").replace(/\b\w/g, c => c.toUpperCase())),
+      el("td", {}, st.civ),
+      el("td", { class: "num" }, String(st.armor)),
+      el("td", { class: "num" }, String(st.tough)),
+      el("td", { class: "trait" }, T[st.trait] ? T[st.trait].title : st.trait),
+      el("td", {}, `${st.metal} + ${st.trophy} + ${st.dye} dye`)));
+    g.append(el("section", { class: "band" },
+      el("h3", {}, `Ward ${b.ward}: for ${b.stage}`),
+      el("p", {}, `Tiers ${first.tier} to ${last.tier}. Each piece: the vanilla armor shape in ${first.metal}, plus 1 ${first.trophy} and 1 dye that picks the set.`),
+      el("div", { class: "tw" }, el("table", { class: "sets" },
+        el("thead", {}, el("tr", {}, ...["Tier", "Set", "Civilization", "Armor", "Toughness", "Full-set bonus", "Recipe (each piece)"].map(h => el("th", {}, h)))), tb))));
+  }
+  cv.append(g);
+  const box = document.getElementById("detail"); box.textContent = ""; box.style.setProperty("--k", "var(--gold)");
+  box.append(el("div", { class: "kind" }, "Reference"), el("h3", {}, "Boss Ward"),
+    el("p", {}, "Every boss belongs to a stage: Chapter 1 acts I to IV, then the five Chapter 2 bosses. Every full armor set has a ward, the stage it was made for. A boss's hits are scaled by how far your ward is behind the boss:"),
+    el("div", { class: "wardtab" }, el("b", {}, "×0.5"), el("span", {}, "ward caught up (the right armor)"), el("b", {}, "×0.85"), el("span", {}, "one stage behind"), el("b", {}, "×1.2"), el("span", {}, "two stages behind"), el("b", {}, "×1.5"), el("span", {}, "three or more behind")),
+    el("p", { class: "sub" }, "With the right set, a boss's normal hit takes about 6 to 8 hits to kill you. One stage behind, about 3. Vanilla gear counts too: full iron is ward 1, diamond 2, netherite 3."),
+    list("Full-set bonuses", DATA.armor.traits.map(t => `${t.title}: ${t.text}`), "var(--frost)"));
+}
 function route() {
-  cur = chapter(location.hash.slice(1)); sel = null;
+  sel = null;
+  if (location.hash === "#armor") { cur = { id: "armor" }; renderNav(); renderArmor(); document.getElementById("map").scrollTo(0, 0); return; }
+  cur = chapter(location.hash.slice(1));
   renderNav(); renderMap(); renderDetail();
   document.getElementById("map").scrollTo(0, 0);
 }
 const modeBtn = document.getElementById("mode"), resetBtn = document.getElementById("reset");
 function syncMode() { modeBtn.setAttribute("aria-pressed", String(play)); resetBtn.hidden = !play; }
-modeBtn.onclick = () => { play = !play; store.set("vl-play", play); syncMode(); renderNav(); renderMap(); renderDetail(); };
-resetBtn.onclick = () => { done.clear(); store.set("vl-done", []); renderNav(); renderMap(); renderDetail(); };
+modeBtn.onclick = () => { play = !play; store.set("vl-play", play); syncMode(); route(); };
+resetBtn.onclick = () => { done.clear(); store.set("vl-done", []); route(); };
 window.addEventListener("hashchange", route);
 syncMode(); route();
 </script>

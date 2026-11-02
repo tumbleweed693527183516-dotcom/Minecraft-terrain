@@ -36,7 +36,34 @@ for group, lst in (("main", MAIN), ("side", SIDE)):
         chapters.append({"id": ch["id"], "group": group, "name": ch["name"], "sub": ch["sub"],
                          "patron": ch.get("patron"), "acts": ch.get("acts", False), "quests": qs})
 
-data = json.dumps({"chapters": chapters, "icons": icons, "portraits": portraits}, ensure_ascii=False)
+# armor guide: bands, sets, recipes and set bonuses, read from the generators and ArmorTraits.java
+import re
+java = (ROOT / "ragnarok/src/main/java/com/vividlands/ragnarok/armor/ArmorTraits.java").read_text()
+trait_text = {m[0]: (m[1], m[2]) for m in re.findall(r'(\w+)\("([^"]+)", "([^"]+)"\)', java)}
+trait_of = dict(re.findall(r'Map\.entry\("(\w+)", Trait\.(\w+)\)', java))
+civ = dict(re.findall(r'new Set\("(\w+)", "([^"]+)"\)', (ROOT / "ragnarok/src/main/java/com/vividlands/ragnarok/armor/AncientSets.java").read_text()))
+recipes = {}
+for f in (ROOT / "ragnarok/src/main/resources/data/vividlands_ragnarok/recipes/ancient").glob("*_helmet.json"):
+    r = json.loads(f.read_text()); k = r["key"]
+    recipes[f.name[:-12]] = (k["M"]["item"].split(":")[1], (k["T"].get("item") or k["T"].get("tag")).split(":")[1], k["D"]["item"].split(":")[1])
+BANDS = [(1, 5, 1, "Act I"), (6, 15, 2, "Act II"), (16, 25, 3, "Act III"), (26, 35, 4, "Act IV"), (36, 40, 5, "Sleipnir"),
+         (41, 42, 6, "Garmr"), (43, 44, 7, "Fafnir"), (45, 46, 8, "Jormungandr"), (47, 49, 9, "Fenrir")]
+order = list(civ)
+armor = {"bands": [], "traits": [{"id": k, "title": v[0], "text": v[1]} for k, v in trait_text.items()]}
+for a, b, ward, stage in BANDS:
+    sets = []
+    for t in range(a, b + 1):
+        sid = order[t - 1]
+        m, tr, dye = recipes[sid]
+        icon = f"{sid}_helmet"
+        icons[icon] = b64(ITEMS / f"{icon}.png")
+        tot = sum(round(lo + (hi - lo) * (t - 1) / 48) for lo, hi in ((2, 4), (4, 9), (3, 7), (2, 4)))
+        sets.append({"tier": t, "id": sid, "civ": civ[sid], "icon": icon, "trait": trait_of.get(sid, "PHALANX"),
+                     "armor": tot, "tough": round((t - 1) * 6 / 48 * 2) / 2, "metal": m.replace("_", " "),
+                     "trophy": {"trophies/act1": "Act I trophy", "trophies/act2": "Act II trophy", "trophies/act3": "Act III trophy",
+                                "trophies/act4": "Act IV trophy"}.get(tr, tr.replace("_", " ")), "dye": dye.replace("_dye", "").replace("_", " ")})
+    armor["bands"].append({"ward": ward, "stage": stage, "sets": sets})
+data = json.dumps({"armor": armor, "chapters": chapters, "icons": icons, "portraits": portraits}, ensure_ascii=False)
 html = (Path(__file__).parent / "preview_template.html").read_text().replace("/*DATA*/null", data)
 OUT.write_text(html)
 print(OUT, len(html) // 1024, "KB")
