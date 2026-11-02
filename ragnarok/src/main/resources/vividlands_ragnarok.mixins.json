@@ -13,7 +13,9 @@
     "MobGoalsAccessor",
     "EntityBossMixin",
     "MaxHealthCapMixin",
-    "BossWardMixin"
+    "BossWardMixin",
+    "PlayerClassMixin",
+    "ClassDamageMixin"
   ],
   "injectors": {
     "defaultRequire": 1

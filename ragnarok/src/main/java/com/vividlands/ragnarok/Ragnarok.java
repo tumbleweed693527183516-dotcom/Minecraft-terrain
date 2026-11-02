@@ -36,6 +36,7 @@ public class Ragnarok implements ModInitializer {
         com.vividlands.ragnarok.armor.AncientArmor.register();
         com.vividlands.ragnarok.armor.Glamour.register();
         com.vividlands.ragnarok.armor.ArmorTraits.register();
+        com.vividlands.ragnarok.classes.Classes.register();
         com.vividlands.ragnarok.boss.Bosses.register();
         com.vividlands.ragnarok.loot.ClosedRealmLoot.register();
         LOG.info("Vivid Lands: Ragnarok - Warden disabled, Nether and End closed ({} rules); cobblestone generators MK1-MK5",

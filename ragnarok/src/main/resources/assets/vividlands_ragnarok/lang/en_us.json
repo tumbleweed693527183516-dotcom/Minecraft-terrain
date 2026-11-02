@@ -398,5 +398,15 @@
   "tooltip.vividlands_ragnarok.weapon.round_shield": "Painted linden planks, a domed iron boss, an arrow still stuck in it",
   "tooltip.vividlands_ragnarok.weapon.valkyrie_sword": "Valkyrie · winged guard, runes in the fuller",
   "tooltip.vividlands_ragnarok.weapon.wolf_seax": "Úlfheðinn · pattern-welded, with a bronze wolf-head pommel",
-  "tooltip.vividlands_ragnarok.weapon.zweihander": "Medieval Germany · a wavy blade with parrying hooks"
+  "tooltip.vividlands_ragnarok.weapon.zweihander": "Medieval Germany · a wavy blade with parrying hooks",
+  "item.vividlands_ragnarok.berserker_rune": "Berserker Rune Stone",
+  "item.vividlands_ragnarok.valkyrie_rune": "Valkyrie Rune Stone",
+  "item.vividlands_ragnarok.huntsman_rune": "Huntsman Rune Stone",
+  "item.vividlands_ragnarok.volva_rune": "Volva Rune Stone",
+  "item.vividlands_ragnarok.ulfhednar_rune": "Ulfhednar Rune Stone",
+  "key.vividlands_ragnarok.ability1": "Class ability 1",
+  "key.vividlands_ragnarok.ability2": "Class ability 2",
+  "key.vividlands_ragnarok.ability3": "Class ability 3",
+  "key.vividlands_ragnarok.ability4": "Class ability 4",
+  "key.categories.vividlands_ragnarok.classes": "Vivid Lands: Classes"
 }

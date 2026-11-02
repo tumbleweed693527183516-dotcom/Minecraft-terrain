@@ -72,6 +72,8 @@ public final class BossDef {
     BossDef onHit(Supplier<MobEffectInstance> e) { onHit.add(e); return this; }
     BossDef drop(String item, int count) { drops.add(new String[]{item, Integer.toString(count)}); return this; }
     BossDef xp(int x) { xp = x; return this; }
+
+    public int xpReward() { return xp; }
     BossDef biomes(String... b) { biomes.addAll(List.of(b)); return this; }
     BossDef structures(String... s) { structures.addAll(List.of(s)); return this; }
     BossDef after(int count) { requiresCount = count; return this; }
