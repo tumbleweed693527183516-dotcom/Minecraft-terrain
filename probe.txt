@@ -1,0 +1,11 @@
+PROJECT ftb-quests HTTP Error 404: Not Found
+   {'error': 'HTTP Error 404: Not Found'}
+PROJECT ftb-library HTTP Error 404: Not Found
+   {'error': 'HTTP Error 404: Not Found'}
+PROJECT ftb-teams HTTP Error 404: Not Found
+   {'error': 'HTTP Error 404: Not Found'}
+PROJECT architectury-api ('Architectury API', 'LGPL-3.0-only', 'required', 'required')
+   9.2.14+fabric WbL7MStR ['architectury-9.2.14-fabric.jar'] [('P7dR8mSH', 'required')]
+   9.1.13+fabric whUFAS71 ['architectury-9.1.13-fabric.jar'] [('P7dR8mSH', 'required')]
+SEARCH search:ftb+quests [('ftb-quests-freeze-fix', 'FTB Quests Freeze Fix', 'LicenseRef-Tonis-MMC-License'), ('ftb-quests-optimizer', 'FTB Quests Optimizer', 'MIT'), ('extraquests', 'ExtraQuests [FTB Quests]', 'MIT'), ('ftb-quests-entity-visualization', 'FTB Quests Entity Visualization', 'MIT'), ('ftb-quests-cobblemon-entity', 'Ftb Quests Cobblemon Entity', 'LicenseRef-All-Rights-Reserved'), ('certain-questing-additions', 'Certain Questing Additions', 'LicenseRef-All-Rights-Reserved'), ('re-ftbqkeys', 'Re-FTBQLocalizationKeys', 'CC-BY-4.0'), ('create-questing', 'Create Questing', 'CC-BY-SA-4.0'), ('cobblemon-quests', 'Cobblemon Quests', 'CC-BY-NC-4.0'), ('item-filters', 'Item Filters', 'GPL-3.0-only')]
+SEARCH search:ftb+library [('item-filters', 'Item Filters', 'GPL-3.0-only'), ('open-quests-api', 'Open Quests API', 'LGPL-3.0-or-later')]
