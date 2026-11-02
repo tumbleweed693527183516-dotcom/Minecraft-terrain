@@ -242,11 +242,25 @@ public final class ArmorTraits {
     }
 
     // ------------------------------------------------------------------ tooltip lines
+    /** The local player, set by the client, so tooltips can count how much of a set you wear. */
+    public static java.util.function.Supplier<LivingEntity> clientWearer = () -> null;
+
     public static void tooltip(AncientArmorMaterial m, List<Component> lines) {
         Trait t = traitOf(m.set().id());
-        lines.add(Component.literal("Tier " + m.tier() + " · Boss Ward: " + stageName(wardOfTier(m.tier())))
-                .withStyle(ChatFormatting.GRAY));
-        lines.add(Component.literal("Full set: " + t.title).withStyle(ChatFormatting.AQUA));
-        lines.add(Component.literal("  " + t.text).withStyle(ChatFormatting.DARK_AQUA));
+        int ward = wardOfTier(m.tier());
+        lines.add(Component.literal(m.set().civilization() + " · tier " + m.tier()).withStyle(ChatFormatting.GRAY));
+        lines.add(Component.literal("Boss Ward: ").withStyle(ChatFormatting.GRAY)
+                .append(Component.literal(stageName(ward)).withStyle(ChatFormatting.GREEN)));
+        int worn = 0;
+        LivingEntity e = clientWearer.get();
+        if (e != null) {
+            for (EquipmentSlot slot : ARMOR) {
+                if (e.getItemBySlot(slot).getItem() instanceof AncientArmorItem a && a.ancientMaterial() == m) worn++;
+            }
+        }
+        lines.add(Component.literal(t.title).withStyle(worn == 4 ? ChatFormatting.AQUA : ChatFormatting.DARK_AQUA)
+                .append(Component.literal("  set " + worn + "/4").withStyle(ChatFormatting.DARK_GRAY)));
+        lines.add(Component.literal(t.text).withStyle(ChatFormatting.GRAY));
     }
+
 }

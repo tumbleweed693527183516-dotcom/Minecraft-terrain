@@ -9,38 +9,44 @@ import java.util.List;
 public enum NorseClass {
     BERSERKER("berserker", "Berserker", 0xD0453A, "Battle Fury", "+1% melee damage per level",
             List.of(
-                    new Ability("Bloodrage", 1, 30, "For 6 to 11 s: Strength, and your hits heal you for 10% to 30% of the damage."),
-                    new Ability("Cleaving Leap", 10, 14, "Leap forward and crash down, dealing 6 to 21 damage around you."),
-                    new Ability("Bear Shirt", 20, 45, "12 s of Resistance and 4 to 14 absorption hearts."),
-                    new Ability("Undying Rage", 35, 300, "Passive once unlocked: a killing blow leaves you at 1 health and furious instead. Every 5 to 3 min."))),
+                    new Ability("Bloodrage", 1, 30, "For 6 to 11 s: Strength, and your hits heal you for 10% to 30% of the damage.", "ᛒ", "heals %s%% of damage", 10, 30),
+                    new Ability("Cleaving Leap", 10, 14, "Leap forward and crash down, dealing 6 to 21 damage around you.", "ᚦ", "%s damage", 6, 21),
+                    new Ability("Bear Shirt", 20, 45, "12 s of Resistance and 4 to 14 absorption hearts.", "ᛒ", "%s absorption hearts", 4, 14),
+                    new Ability("Undying Rage", 35, 300, "Passive once unlocked: a killing blow leaves you at 1 health and furious instead. Every 5 to 3 min.", "ᛟ", "every %s s", 300, 180))),
     VALKYRIE("valkyrie", "Valkyrie", 0xE0B65A, "Wings of Asgard", "No fall damage; +0.1 armor per level",
             List.of(
-                    new Ability("Spear of the Slain", 1, 6, "Hurl a spear of light up to 24 blocks: 5 to 20 damage to the first enemy."),
-                    new Ability("Ascent", 10, 16, "Spring into the sky and glide down slowly."),
-                    new Ability("Freyja's Aegis", 20, 40, "Shield yourself and allies within 10 blocks: 4 to 12 absorption hearts, cleanses poison and wither."),
-                    new Ability("Choose the Slain", 35, 60, "Mark the enemy you look at for 10 s: it takes +25% to +50% damage from everyone; if it dies you heal."))),
+                    new Ability("Spear of the Slain", 1, 6, "Hurl a spear of light up to 24 blocks: 5 to 20 damage to the first enemy.", "ᛏ", "%s damage", 5, 20),
+                    new Ability("Ascent", 10, 16, "Spring into the sky and glide down slowly.", "ᛖ", null, 0, 0),
+                    new Ability("Freyja's Aegis", 20, 40, "Shield yourself and allies within 10 blocks: 4 to 12 absorption hearts, cleanses poison and wither.", "ᛉ", "%s absorption hearts", 4, 12),
+                    new Ability("Choose the Slain", 35, 60, "Mark the enemy you look at for 10 s: it takes +25% to +50% damage from everyone; if it dies you heal.", "ᛊ", "+%s%% damage taken", 25, 50))),
     HUNTSMAN("huntsman", "Huntsman", 0x6FAF5A, "Skadi's Eye", "+1% arrow damage per level",
             List.of(
-                    new Ability("Volley", 1, 10, "Loose a fan of 3 to 8 arrows."),
-                    new Ability("Frost Snare", 10, 20, "Set a trap: the first enemies on it are frozen in place and take 4 to 14 damage."),
-                    new Ability("Hunter's Mark", 20, 30, "Every enemy within 32 blocks glows for 10 s and takes +10% to +25% from your arrows."),
-                    new Ability("Skadi's Hailstorm", 35, 60, "Arrows rain on the spot you look at for 5 s."))),
+                    new Ability("Volley", 1, 10, "Loose a fan of 3 to 8 arrows.", "ᚲ", "%s arrows", 3, 8),
+                    new Ability("Frost Snare", 10, 20, "Set a trap: the first enemies on it are frozen in place and take 4 to 14 damage.", "ᛁ", "%s damage", 4, 14),
+                    new Ability("Hunter's Mark", 20, 30, "Every enemy within 32 blocks glows for 10 s and takes +10% to +25% from your arrows.", "ᛉ", "+%s%% arrow damage", 10, 25),
+                    new Ability("Skadi's Hailstorm", 35, 60, "Arrows rain on the spot you look at for 5 s.", "ᚺ", "%s damage per arrow", 3, 6))),
     VOLVA("volva", "Volva", 0x9A6AD8, "Seidr", "Ability cooldowns 0.5% shorter per level",
             List.of(
-                    new Ability("Kenaz, the Torch", 1, 4, "A bolt of rune fire: 4 to 16 damage and sets the target alight."),
-                    new Ability("Isa, the Ice", 10, 14, "A cone of frost: 3 to 13 damage and Slowness III."),
-                    new Ability("Algiz, the Ward", 20, 35, "Regeneration II for you and allies within 8 blocks, for 5 to 10 s."),
-                    new Ability("Thurisaz, the Thunder", 35, 45, "Lightning strikes 3 to 8 enemies near you for 8 to 28 damage."))),
+                    new Ability("Kenaz, the Torch", 1, 4, "A bolt of rune fire: 4 to 16 damage and sets the target alight.", "ᚲ", "%s damage", 4, 16),
+                    new Ability("Isa, the Ice", 10, 14, "A cone of frost: 3 to 13 damage and Slowness III.", "ᛁ", "%s damage", 3, 13),
+                    new Ability("Algiz, the Ward", 20, 35, "Regeneration II for you and allies within 8 blocks, for 5 to 10 s.", "ᛉ", "%s s of regeneration", 5, 10),
+                    new Ability("Thurisaz, the Thunder", 35, 45, "Lightning strikes 3 to 8 enemies near you for 8 to 28 damage.", "ᚦ", "%s targets", 3, 8))),
     ULFHEDNAR("ulfhednar", "Ulfhednar", 0xB8C8D8, "Wolf Blood", "+0.4% movement speed per level",
             List.of(
-                    new Ability("Call the Pack", 1, 40, "Summon 1 to 4 spirit wolves for 30 s."),
-                    new Ability("Howl", 10, 25, "Enemies within 10 blocks are weakened and slowed; your wolves grow stronger."),
-                    new Ability("Wolf Form", 20, 60, "For 14 to 24 s: Speed II, Jump Boost II, Strength and Night Vision."),
-                    new Ability("Fenrir's Hunger", 35, 50, "For 8 s your hits make enemies bleed and heal you for 2 to 4 health.")));
+                    new Ability("Call the Pack", 1, 40, "Summon 1 to 4 spirit wolves for 30 s.", "ᚹ", "%s wolves", 1, 4),
+                    new Ability("Howl", 10, 25, "Enemies within 10 blocks are weakened and slowed; your wolves grow stronger.", "ᛞ", "%s s", 6, 11),
+                    new Ability("Wolf Form", 20, 60, "For 14 to 24 s: Speed II, Jump Boost II, Strength and Night Vision.", "ᚢ", "%s s", 14, 24),
+                    new Ability("Fenrir's Hunger", 35, 50, "For 8 s your hits make enemies bleed and heal you for 2 to 4 health.", "ᚠ", "heals %s per hit", 2, 4)));
 
     public static final int MAX_LEVEL = 50;
 
-    public record Ability(String name, int unlock, int cooldownSeconds, String text) {
+    /** An ability: its rune on the HUD, and the value that grows with level ({@code now} formats it, null if none). */
+    public record Ability(String name, int unlock, int cooldownSeconds, String text, String glyph, String now, double lo, double hi) {
+        public String nowAt(int level) {
+            if (now == null) return null;
+            double v = lerp(level, lo, hi);
+            return String.format(java.util.Locale.ROOT, now, Math.round(v));
+        }
     }
 
     public final String id, title, passive, passiveText;

@@ -17,6 +17,8 @@ import java.util.List;
 /** A class's rune stone: use it to switch to that class. Every class keeps its own level. */
 public class RuneStoneItem extends Item {
     private final NorseClass cls;
+    /** Your level in a class (by ordinal), set by the client for the tooltip. */
+    public static java.util.function.IntUnaryOperator clientLevel = i -> 0;
 
     public RuneStoneItem(NorseClass cls, Properties properties) {
         super(properties);
@@ -34,11 +36,19 @@ public class RuneStoneItem extends Item {
     }
 
     @Override
+    public Component getName(ItemStack stack) {
+        return super.getName(stack).copy().withStyle(st -> st.withColor(cls.color));
+    }
+
+    @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> lines, TooltipFlag flag) {
-        lines.add(Component.literal("Use to become a " + cls.title).withStyle(s -> s.withColor(cls.color)));
+        int lv = clientLevel.applyAsInt(cls.ordinal());
+        lines.add(Component.literal("Use to walk this path" + (lv > 0 ? " · your level " + lv : "")).withStyle(ChatFormatting.GRAY));
         lines.add(Component.literal(cls.passive + ": " + cls.passiveText).withStyle(ChatFormatting.GRAY));
         for (NorseClass.Ability a : cls.abilities) {
-            lines.add(Component.literal("Lv " + a.unlock() + "  " + a.name()).withStyle(ChatFormatting.DARK_AQUA));
+            boolean open = lv >= a.unlock();
+            lines.add(Component.literal("Lv " + a.unlock() + "  ").withStyle(open ? ChatFormatting.GOLD : ChatFormatting.DARK_GRAY)
+                    .append(Component.literal(a.name()).withStyle(open ? ChatFormatting.WHITE : ChatFormatting.DARK_GRAY)));
         }
     }
 }

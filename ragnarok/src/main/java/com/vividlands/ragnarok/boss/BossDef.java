@@ -74,6 +74,8 @@ public final class BossDef {
     BossDef xp(int x) { xp = x; return this; }
 
     public int xpReward() { return xp; }
+
+    public String firstDrop() { return drops.isEmpty() ? null : drops.get(0)[0]; }
     BossDef biomes(String... b) { biomes.addAll(List.of(b)); return this; }
     BossDef structures(String... s) { structures.addAll(List.of(s)); return this; }
     BossDef after(int count) { requiresCount = count; return this; }

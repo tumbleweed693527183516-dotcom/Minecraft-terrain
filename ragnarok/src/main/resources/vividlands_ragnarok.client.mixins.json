@@ -6,7 +6,10 @@
   "refmap": "vividlands_ragnarok.refmap.json",
   "client": [
     "EntityRenderDispatcherMixin",
-    "HumanoidArmorLayerGlamourMixin"
+    "HumanoidArmorLayerGlamourMixin",
+    "BossHealthOverlayMixin",
+    "GuiGraphicsTooltipMixin",
+    "TooltipRenderUtilMixin"
   ],
   "injectors": {
     "defaultRequire": 1

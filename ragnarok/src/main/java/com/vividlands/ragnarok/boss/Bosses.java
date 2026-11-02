@@ -86,6 +86,9 @@ public final class Bosses {
     public static final String TAG = "vividlands_ragnarok.boss.";
     public static final String MINION_TAG = "vividlands_ragnarok.minion";
     public static final ResourceLocation PACKET = new ResourceLocation(Ragnarok.MOD_ID, "boss");
+    public static final ResourceLocation HUD = new ResourceLocation(Ragnarok.MOD_ID, "boss_hud");
+    /** Pop-ups: kind 0 = a new act begins (args: act number), 1 = a boss appeared nearby (args: boss id, dx, dz). */
+    public static final ResourceLocation POPUP = new ResourceLocation(Ragnarok.MOD_ID, "popup");
     public static final Map<String, BossDef> DEFS = new LinkedHashMap<>();
     static final Map<Mob, BossFight> FIGHTS = new HashMap<>();
     public static EntityType<Boulder> BOULDER;
@@ -387,6 +390,10 @@ public final class Bosses {
     }
 
     // ------------------------------------------------------------------ lookups
+    public static BossDef byId(String id) {
+        return DEFS.get(id);
+    }
+
     public static String bossId(Entity e) {
         return e instanceof BossHolder h ? h.vlr$boss() : null;
     }
@@ -444,7 +451,21 @@ public final class Bosses {
         applyStats(mob, def);
         mob.setHealth(mob.getMaxHealth());
         level.addFreshEntityWithPassengers(mob);
+        notifyNearby(level, def, mob);
         return mob;
+    }
+
+    private static void notifyNearby(ServerLevel level, BossDef def, Mob mob) {
+        for (ServerPlayer p : level.players()) {
+            double dx = mob.getX() - p.getX(), dz = mob.getZ() - p.getZ();
+            if (dx * dx + dz * dz > 200 * 200) continue;
+            FriendlyByteBuf buf = PacketByteBufs.create();
+            buf.writeVarInt(1);
+            buf.writeUtf(def.id);
+            buf.writeVarInt((int) dx);
+            buf.writeVarInt((int) dz);
+            ServerPlayNetworking.send(p, POPUP, buf);
+        }
     }
 
     private static void setBase(Mob mob, net.minecraft.world.entity.ai.attributes.Attribute a, double v) {
@@ -576,7 +597,22 @@ public final class Bosses {
         BossProgress progress = BossProgress.get(level.getServer());
         Component name = Component.translatable(def.nameKey()).withStyle(ChatFormatting.GOLD);
         for (UUID u : winners) {
+            boolean first = !progress.defeated(u).contains(def.id);
             progress.defeat(u, def.id);
+            ServerPlayer actPlayer = level.getServer().getPlayerList().getPlayer(u);
+            Integer stage = com.vividlands.ragnarok.armor.ArmorTraits.BOSS_STAGE.get(def.id);
+            if (first && actPlayer != null && def.chapter == 1 && stage != null) {
+                Set<String> beaten = progress.defeated(u);
+                boolean actDone = com.vividlands.ragnarok.armor.ArmorTraits.BOSS_STAGE.entrySet().stream()
+                        .filter(e -> e.getValue().equals(stage) && DEFS.containsKey(e.getKey()) && DEFS.get(e.getKey()).chapter == 1)
+                        .allMatch(e -> beaten.contains(e.getKey()));
+                if (actDone && (stage < 4 || def.id.equals("mammoth"))) {
+                    FriendlyByteBuf buf = PacketByteBufs.create();
+                    buf.writeVarInt(0);
+                    buf.writeVarInt(stage + 1);
+                    ServerPlayNetworking.send(actPlayer, POPUP, buf);
+                }
+            }
             ServerPlayer p = level.getServer().getPlayerList().getPlayer(u);
             if (p == null) continue;
             p.sendSystemMessage(Component.translatable("boss.vividlands_ragnarok.slain", name));

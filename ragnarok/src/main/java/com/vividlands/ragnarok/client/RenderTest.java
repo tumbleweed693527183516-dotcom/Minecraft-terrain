@@ -254,6 +254,56 @@ final class RenderTest {
         steps.add(mc::stop);
     }
 
+    /** The Norse UI: class panel, boss bar in both phases, class screen, tooltips and pop-ups. */
+    static net.minecraft.world.item.ItemStack testTooltip = net.minecraft.world.item.ItemStack.EMPTY;
+
+    private static void planUi(Minecraft mc) {
+        net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback.EVENT.register((g, d) -> {
+            if (!testTooltip.isEmpty()) g.renderTooltip(mc.font, testTooltip, g.guiWidth() / 2 - 150, 90);
+        });
+        steps.add(() -> {
+            for (String c : new String[]{"gamerule doDaylightCycle false", "time set 6000", "weather clear", "gamerule doMobSpawning false",
+                    "gamerule vividlandsBossSpawning false", "difficulty peaceful", "gamemode creative @a",
+                    "fill -20 199 -8 20 199 40 minecraft:grass_block", "tp @a 0.5 200 0.5 0 5"}) cmd(mc, c);
+            mc.options.hideGui = false;
+        });
+        steps.add(() -> { cmd(mc, "execute as @p run ragnarok class set huntsman 26"); nextWait = 20; });
+        steps.add(() -> { cmd(mc, "execute as @p run ragnarok class xp 900"); nextWait = 30; });
+        steps.add(() -> shot(mc, "ui_levelup_toast"));
+        steps.add(() -> { cmd(mc, "execute as @p at @s anchored eyes facing 0.5 201 8 run ragnarok class cast 2"); nextWait = 10; });
+        steps.add(() -> shot(mc, "ui_class_panel_cooldown"));
+        steps.add(() -> {
+            cmd(mc, "item replace entity @p armor.head with vividlands_ragnarok:dacian_helmet");
+            cmd(mc, "item replace entity @p armor.chest with vividlands_ragnarok:dacian_chestplate");
+            cmd(mc, "item replace entity @p armor.legs with vividlands_ragnarok:dacian_leggings");
+            cmd(mc, "item replace entity @p armor.feet with vividlands_ragnarok:dacian_boots");
+            cmd(mc, "ragnarok boss summon cave_lion 0.5 200 16.5");
+            nextWait = 40;
+        });
+        steps.add(() -> shot(mc, "ui_beast_toast_bossbar"));
+        steps.add(() -> {
+            cmd(mc, "execute as @e[tag=vividlands_ragnarok.boss.cave_lion] run data merge entity @s {NoAI:1b}");
+            cmd(mc, "damage @e[tag=vividlands_ragnarok.boss.cave_lion,limit=1] 300 minecraft:generic");
+            nextWait = 80;
+        });
+        steps.add(() -> shot(mc, "ui_bossbar_phase2"));
+        steps.add(() -> { ClassClient.actBanner(3); nextWait = 30; });
+        steps.add(() -> shot(mc, "ui_act_banner"));
+        steps.add(() -> { mc.setScreen(new ClassScreen()); nextWait = 20; });
+        steps.add(() -> shot(mc, "ui_class_screen"));
+        steps.add(() -> { mc.setScreen(null); testTooltip = new net.minecraft.world.item.ItemStack(
+                net.minecraft.core.registries.BuiltInRegistries.ITEM.get(new net.minecraft.resources.ResourceLocation("vividlands_ragnarok:dacian_helmet"))); nextWait = 10; });
+        steps.add(() -> shot(mc, "ui_tooltip_armor"));
+        steps.add(() -> { testTooltip = new net.minecraft.world.item.ItemStack(com.vividlands.ragnarok.classes.Classes.RUNES.get(
+                com.vividlands.ragnarok.classes.NorseClass.BERSERKER)); nextWait = 10; });
+        steps.add(() -> shot(mc, "ui_tooltip_rune"));
+        steps.add(() -> { testTooltip = new net.minecraft.world.item.ItemStack(
+                net.minecraft.core.registries.BuiltInRegistries.ITEM.get(new net.minecraft.resources.ResourceLocation("vividlands_ragnarok:lion_mane"))); nextWait = 10; });
+        steps.add(() -> shot(mc, "ui_tooltip_trophy"));
+        steps.add(() -> testTooltip = net.minecraft.world.item.ItemStack.EMPTY);
+        steps.add(mc::stop);
+    }
+
     private static void plan(Minecraft mc) {
         steps.add(() -> {
             for (String c : new String[]{"gamerule doDaylightCycle false", "time set 6000", "weather clear",
@@ -381,6 +431,7 @@ final class RenderTest {
                 if ("bosses".equals(scene)) planBosses(mc);
                 else if ("ancient".equals(scene)) planAncient(mc);
                 else if ("classes".equals(scene)) planClasses(mc);
+                else if ("ui".equals(scene)) planUi(mc);
                 else plan(mc);
                 Ragnarok.LOG.info("render test: in world, {} steps", steps.size());
             }

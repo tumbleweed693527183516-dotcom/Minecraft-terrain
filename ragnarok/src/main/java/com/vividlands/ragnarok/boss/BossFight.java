@@ -97,7 +97,10 @@ public final class BossFight {
     void tick() {
         if (!mob.isAlive()) return;
         int age = mob.tickCount;
-        if (age % 5 == 0) updateBar();
+        if (age % 5 == 0) {
+            updateBar();
+            sendHud();
+        }
         if (age % 10 == 0) updateTarget();
         if (age % 4 == 0 && mob.horizontalCollision) trample();
         if (age % 20 == 0) {
@@ -293,6 +296,18 @@ public final class BossFight {
                 p.displayClientMessage(Component.translatable("boss.vividlands_ragnarok.enraged", Component.translatable(def.nameKey())), true);
             }
         }
+    }
+
+    /** The Norse boss bar on the client needs the phase and the stagger meter (client/NorseBossBar). */
+    private void sendHud() {
+        if (bar.getPlayers().isEmpty()) return;
+        net.minecraft.network.FriendlyByteBuf buf = net.fabricmc.fabric.api.networking.v1.PacketByteBufs.create();
+        buf.writeUUID(bar.getId());
+        buf.writeUtf(def.id);
+        buf.writeBoolean(enraged);
+        buf.writeFloat(Math.min(1f, poise / Math.max(1f, mob.getMaxHealth() * 0.07f)));
+        buf.writeBoolean(stun > 0);
+        for (ServerPlayer p : bar.getPlayers()) net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking.send(p, Bosses.HUD, buf);
     }
 
     // ------------------------------------------------------------------ boss bar and target

@@ -7,6 +7,9 @@ public class RagnarokClient implements ClientModInitializer {
     public void onInitializeClient() {
         BossClient.init();
         ClassClient.init();
+        NorseBossBar.init();
+        com.vividlands.ragnarok.classes.RuneStoneItem.clientLevel = i -> ClassClient.levels[i];
+        com.vividlands.ragnarok.armor.ArmorTraits.clientWearer = () -> net.minecraft.client.Minecraft.getInstance().player;
         net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback.EVENT.register((stack, context, lines) ->
                 com.vividlands.ragnarok.armor.Glamour.addTooltip(stack, lines));
         if (Boolean.getBoolean("vividlands.rendertest")) {

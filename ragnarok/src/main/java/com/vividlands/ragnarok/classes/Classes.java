@@ -490,13 +490,15 @@ public final class Classes {
         d.xp.merge(d.active, amount, Integer::sum);
         int after = d.level();
         if (after > before) {
-            p.displayClientMessage(Component.literal(d.active.title + " level " + after + "!").withStyle(ChatFormatting.GOLD), false);
-            for (NorseClass.Ability a : d.active.abilities) {
-                if (a.unlock() > before && a.unlock() <= after) {
-                    p.displayClientMessage(Component.literal("New ability: " + a.name()).withStyle(ChatFormatting.AQUA), false);
-                }
-            }
             sound(p, SoundEvents.PLAYER_LEVELUP, 0.8f, 0.8f);
+            FriendlyByteBuf t = PacketByteBufs.create();
+            t.writeVarInt(2);
+            t.writeVarInt(d.active.ordinal());
+            t.writeVarInt(after);
+            String unlocked = "";
+            for (NorseClass.Ability a : d.active.abilities) if (a.unlock() > before && a.unlock() <= after) unlocked = a.name();
+            t.writeUtf(unlocked);
+            ServerPlayNetworking.send(p, Bosses.POPUP, t);
             applyPassives(p);
         }
         sync(p);
@@ -560,6 +562,7 @@ public final class Classes {
     public static void sync(ServerPlayer p) {
         ClassData d = data(p);
         FriendlyByteBuf buf = PacketByteBufs.create();
+        for (NorseClass c : NorseClass.values()) buf.writeVarInt(d.level(c));
         buf.writeVarInt(d.active == null ? -1 : d.active.ordinal());
         if (d.active != null) {
             int level = d.level();
@@ -680,6 +683,11 @@ public final class Classes {
                                                     setClass(p, nc);
                                                     return 1;
                                                 }))))
+                        .then(Commands.literal("xp").requires(s -> s.hasPermission(2))
+                                .then(Commands.argument("amount", IntegerArgumentType.integer(1)).executes(c -> {
+                                    giveXp(c.getSource().getPlayerOrException(), IntegerArgumentType.getInteger(c, "amount"));
+                                    return 1;
+                                })))
                         .then(Commands.literal("ready").requires(s -> s.hasPermission(2)).executes(c -> {
                             ServerPlayer p = c.getSource().getPlayerOrException();
                             java.util.Arrays.fill(data(p).readyAt, 0);
