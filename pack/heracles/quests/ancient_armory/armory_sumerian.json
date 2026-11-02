@@ -1,0 +1,67 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:sumerian_helmet"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Sumerian",
+    "subtitle": "",
+    "description": [
+      "Tier 1.",
+      ""
+    ],
+    "groups": {
+      "Ancient Armory": {
+        "position": [
+          0,
+          112
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": true
+  },
+  "dependencies": [
+    "armory_first"
+  ],
+  "tasks": {
+    "t0_0": {
+      "title": "Sumerian helmet",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:sumerian_helmet",
+      "amount": 1
+    },
+    "t0_1": {
+      "title": "Sumerian chestplate",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:sumerian_chestplate",
+      "amount": 1
+    },
+    "t0_2": {
+      "title": "Sumerian leggings",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:sumerian_leggings",
+      "amount": 1
+    },
+    "t0_3": {
+      "title": "Sumerian boots",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:sumerian_boots",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/common"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:glyptodon_plate"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/circles.png",
+    "title": "Glyptodon",
+    "subtitle": "the Living Fortress",
+    "description": [
+      "Mimir: \"A fortress that walks, and when angered, rolls.\"",
+      "",
+      "Where: canyons, badlands",
+      "Health: 560",
+      "Spawns after: all 5 Act II trials",
+      "Moves: Spinning shell, tail club slam, fling",
+      "Phase 2: Longer spins",
+      "",
+      "Tip: After a spin it is dizzy: that is your window."
+    ],
+    "groups": {
+      "I. Skadi's Hunt": {
+        "position": [
+          72,
+          299
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": true,
+    "showDependencyArrow": true
+  },
+  "dependencies": [
+    "a3"
+  ],
+  "tasks": {
+    "kill": {
+      "type": "heracles:kill_entity",
+      "title": "Defeat the Glyptodon",
+      "entity": {
+        "type": "vividlands_ragnarok:glyptodon"
+      },
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 200"
+    }
+  }
+}

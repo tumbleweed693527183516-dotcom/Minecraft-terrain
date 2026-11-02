@@ -1,0 +1,49 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:netherite_scrap"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Superheated Scrap",
+    "subtitle": "",
+    "description": [
+      "Brokkr: \"Superheated, mixed, pressed. Ancient debris was never needed.\"",
+      ""
+    ],
+    "groups": {
+      "Dwarves' Forge": {
+        "position": [
+          0,
+          708
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": true
+  },
+  "dependencies": [
+    "forge_blaze"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Make netherite scrap by superheated mixing",
+      "type": "heracles:item",
+      "item": "minecraft:netherite_scrap",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/rare"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 250"
+    }
+  }
+}

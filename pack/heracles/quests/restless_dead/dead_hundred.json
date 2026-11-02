@@ -1,0 +1,51 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:skeleton_skull"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Gravekeeper",
+    "subtitle": "",
+    "description": [
+      "Mimir: \"Hel will notice you.\"",
+      ""
+    ],
+    "groups": {
+      "Restless Dead": {
+        "position": [
+          96,
+          26
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": true
+  },
+  "dependencies": [
+    "dead_ten"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Kill 100 draugr",
+      "type": "heracles:kill_entity",
+      "entity": {
+        "type": "mebahelcreaturesdraugr:draugr"
+      },
+      "amount": 100
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/rare"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 250"
+    }
+  }
+}

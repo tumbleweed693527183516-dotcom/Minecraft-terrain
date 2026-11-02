@@ -1,0 +1,67 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:agamemnon_helmet"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Agamemnon",
+    "subtitle": "",
+    "description": [
+      "Tier 49.",
+      ""
+    ],
+    "groups": {
+      "Ancient Armory": {
+        "position": [
+          48,
+          708
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": false
+  },
+  "dependencies": [
+    "armory_first"
+  ],
+  "tasks": {
+    "t0_0": {
+      "title": "Agamemnon helmet",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:agamemnon_helmet",
+      "amount": 1
+    },
+    "t0_1": {
+      "title": "Agamemnon chestplate",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:agamemnon_chestplate",
+      "amount": 1
+    },
+    "t0_2": {
+      "title": "Agamemnon leggings",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:agamemnon_leggings",
+      "amount": 1
+    },
+    "t0_3": {
+      "title": "Agamemnon boots",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:agamemnon_boots",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/legendary"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 800"
+    }
+  }
+}

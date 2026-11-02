@@ -1,0 +1,47 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:berserker_rune"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "A Named Blade",
+    "subtitle": "",
+    "description": [
+      "Tyr: \"Some swords have names.\"",
+      ""
+    ],
+    "groups": {
+      "Einherjar Paths": {
+        "position": [
+          96,
+          541
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": true
+  },
+  "dependencies": [
+    "paths_ss5"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Find a Simply Swords unique weapon",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/rare"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 250"
+    }
+  }
+}

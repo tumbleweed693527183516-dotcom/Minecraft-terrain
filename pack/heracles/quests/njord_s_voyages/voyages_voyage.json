@@ -22,7 +22,8 @@
   },
   "settings": {
     "hidden": "LOCKED",
-    "unlockNotification": true
+    "unlockNotification": true,
+    "showDependencyArrow": true
   },
   "dependencies": [
     "voyages_cargo"

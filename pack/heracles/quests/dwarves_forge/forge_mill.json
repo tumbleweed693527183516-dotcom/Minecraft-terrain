@@ -1,0 +1,58 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "create:millstone"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Millstone",
+    "subtitle": "",
+    "description": [
+      "Sindri: \"Grind it finer.\"",
+      ""
+    ],
+    "groups": {
+      "Dwarves' Forge": {
+        "position": [
+          0,
+          163
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": true
+  },
+  "dependencies": [
+    "forge_andesite"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Craft a millstone",
+      "type": "heracles:item",
+      "item": "create:millstone",
+      "amount": 1
+    },
+    "t1": {
+      "title": "Mill wheat into flour",
+      "type": "heracles:item",
+      "item": "create:wheat_flour",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:item",
+      "item": {
+        "id": "create:dough",
+        "count": 16
+      }
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

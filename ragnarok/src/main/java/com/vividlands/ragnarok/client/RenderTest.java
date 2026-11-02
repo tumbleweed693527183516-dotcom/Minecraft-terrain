@@ -333,8 +333,8 @@ final class RenderTest {
             mc.options.hideGui = false;
             nextWait = 60;
         });
-        String[][] views = {{"Prologue", null}, {"Prologue", "p1"}, {"Chapter 1 - Skadi's Hunt", null}, {"Chapter 1 - Skadi's Hunt", "cave_bear"},
-                {"Chapter 2 - Odin's War", null}, {"The Dwarves' Forge", null}, {"Paths of the Einherjar", null}, {"Hall of Trophies", null}};
+        String[][] views = {{"Prologue", null}, {"Prologue", "p1"}, {"I. Skadi's Hunt", null}, {"I. Skadi's Hunt", "cave_bear"},
+                {"II. Odin's War", null}, {"Dwarves' Forge", null}, {"Ancient Armory", null}, {"Hall of Trophies", null}};
         for (String[] v : views) {
             steps.add(() -> { mc.setScreen(null); heracles(v[0], v[1]); nextWait = 40; });
             steps.add(() -> shot(mc, "quests_" + v[0].replaceAll("[^A-Za-z0-9]+", "_") + (v[1] == null ? "" : "_" + v[1])));

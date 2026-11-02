@@ -1,0 +1,49 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:quartz"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Quartz",
+    "subtitle": "",
+    "description": [
+      "Sindri: \"Crushed blackstone hides it.\"",
+      ""
+    ],
+    "groups": {
+      "Dwarves' Forge": {
+        "position": [
+          48,
+          436
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": true
+  },
+  "dependencies": [
+    "forge_netherrack"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Make 16 nether quartz",
+      "type": "heracles:item",
+      "item": "minecraft:quartz",
+      "amount": 16
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/common"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

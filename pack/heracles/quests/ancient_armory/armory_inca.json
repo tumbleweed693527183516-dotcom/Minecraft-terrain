@@ -1,0 +1,67 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:inca_helmet"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Inca",
+    "subtitle": "",
+    "description": [
+      "Tier 46.",
+      ""
+    ],
+    "groups": {
+      "Ancient Armory": {
+        "position": [
+          192,
+          658
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": false
+  },
+  "dependencies": [
+    "armory_first"
+  ],
+  "tasks": {
+    "t0_0": {
+      "title": "Inca helmet",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:inca_helmet",
+      "amount": 1
+    },
+    "t0_1": {
+      "title": "Inca chestplate",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:inca_chestplate",
+      "amount": 1
+    },
+    "t0_2": {
+      "title": "Inca leggings",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:inca_leggings",
+      "amount": 1
+    },
+    "t0_3": {
+      "title": "Inca boots",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:inca_boots",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/legendary"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 800"
+    }
+  }
+}

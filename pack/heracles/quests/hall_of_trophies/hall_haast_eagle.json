@@ -22,7 +22,8 @@
   },
   "settings": {
     "hidden": "LOCKED",
-    "unlockNotification": false
+    "unlockNotification": false,
+    "showDependencyArrow": false
   },
   "dependencies": [
     "hall_open"

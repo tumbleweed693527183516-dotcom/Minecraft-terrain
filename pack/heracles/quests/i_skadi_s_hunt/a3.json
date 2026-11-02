@@ -1,0 +1,54 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:khopesh"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Bow and Mountain",
+    "subtitle": "",
+    "description": [
+      "Mimir: \"The next beasts live on peaks, in rivers and in temples. A diamond edge and a good bow.\"",
+      "",
+      "",
+      "Also: Act III trials open"
+    ],
+    "groups": {
+      "I. Skadi's Hunt": {
+        "position": [
+          0,
+          277
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": true
+  },
+  "dependencies": [
+    "g2"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "A diamond weapon",
+      "type": "heracles:check"
+    },
+    "t1": {
+      "title": "Any special bow (Ullr's Bow line)",
+      "type": "heracles:check"
+    },
+    "t2": {
+      "title": "Find a Mayan temple (Ancient Structures)",
+      "type": "heracles:structure",
+      "structures": "ancientstructures:mayan_temple"
+    }
+  },
+  "rewards": {
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

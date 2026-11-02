@@ -29,8 +29,10 @@ NS = "vividlands_ragnarok"
 H = "heracles:"
 STATS = Counter()
 
-GROUP = {"prologue": "Prologue", "chapter1": "Chapter 1 - Skadi's Hunt", "bridge": "The Bridge - Loki's Betrayal",
-         "chapter2": "Chapter 2 - Odin's War", "epilogue": "Epilogue - The Twilight Broken"}
+# short names: the book's chapter list is narrow
+GROUP = {"prologue": "Prologue", "chapter1": "I. Skadi's Hunt", "bridge": "Loki's Betrayal", "chapter2": "II. Odin's War",
+         "epilogue": "Twilight Broken", "dwarves": "Dwarves' Forge", "paths": "Einherjar Paths", "armory": "Ancient Armory",
+         "saga": "Wanderer's Saga", "dead": "Restless Dead", "forge": "Dwarves' Forge"}
 FALLBACK_ICON = {"prologue": "minecraft:writable_book", "chapter1": "minecraft:bow", "bridge": "minecraft:golden_helmet",
                  "chapter2": "minecraft:netherite_sword", "epilogue": "minecraft:nether_star", "tutorial": "minecraft:book",
                  "forge": "create:cogwheel", "voyages": "smallships:oak_cog", "dead": "minecraft:skeleton_skull",
@@ -273,7 +275,8 @@ def build():
                     "display": {"icon": icon(item_icon), "icon_background": f"heracles:textures/gui/quest_backgrounds/{bg}.png",
                                 "title": q["title"], "subtitle": q.get("subtitle", ""), "description": description(q),
                                 "groups": {gname: {"position": [round(q["x"] * 48), round(y * 44)]}}},
-                    "settings": {"hidden": "LOCKED", "unlockNotification": q["kind"] in ("boss", "gift")},
+                    "settings": {"hidden": "LOCKED", "unlockNotification": q["kind"] in ("boss", "gift"),
+                                 "showDependencyArrow": q.get("edge", "solid") != "none"},
                     "dependencies": deps, "tasks": tasks, "rewards": rewards}
                 (folder / f"{q['id']}.json").write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
                 total += 1

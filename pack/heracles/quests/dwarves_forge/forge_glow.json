@@ -1,0 +1,55 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:glowstone_dust"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Glowstone and Magma",
+    "subtitle": "",
+    "description": [
+      "Sindri: \"Light and heat.\"",
+      ""
+    ],
+    "groups": {
+      "Dwarves' Forge": {
+        "position": [
+          240,
+          436
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": true
+  },
+  "dependencies": [
+    "forge_blaze"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Make glowstone dust",
+      "type": "heracles:item",
+      "item": "minecraft:glowstone_dust",
+      "amount": 1
+    },
+    "t1": {
+      "title": "Make magma cream",
+      "type": "heracles:item",
+      "item": "minecraft:magma_cream",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/uncommon"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 120"
+    }
+  }
+}

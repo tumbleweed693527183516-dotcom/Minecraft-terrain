@@ -1,0 +1,57 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:volva_rune"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Algiz, the Ward",
+    "subtitle": "",
+    "description": [
+      "Freyja: \"Protection from a rune.\"",
+      ""
+    ],
+    "groups": {
+      "Einherjar Paths": {
+        "position": [
+          144,
+          370
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": true
+  },
+  "dependencies": [
+    "paths_volva_10"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Reach Volva level 20",
+      "type": "heracles:advancement",
+      "advancements": [
+        "vividlands_ragnarok:quest/class/volva_20"
+      ]
+    },
+    "t1": {
+      "title": "Use Algiz, the Ward",
+      "type": "heracles:advancement",
+      "advancements": [
+        "vividlands_ragnarok:quest/class/volva_ability_3"
+      ]
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/rare"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 250"
+    }
+  }
+}

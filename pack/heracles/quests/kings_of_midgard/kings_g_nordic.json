@@ -22,7 +22,8 @@
   },
   "settings": {
     "hidden": "LOCKED",
-    "unlockNotification": false
+    "unlockNotification": false,
+    "showDependencyArrow": true
   },
   "dependencies": [
     "kings_visit3"

@@ -1,0 +1,49 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:berserker_rune"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Simply Swords",
+    "subtitle": "",
+    "description": [
+      "Tyr: \"A new blade for every hand.\"",
+      ""
+    ],
+    "groups": {
+      "Einherjar Paths": {
+        "position": [
+          0,
+          541
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": true
+  },
+  "dependencies": [
+    "paths_lv5"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Craft a Simply Swords weapon",
+      "type": "heracles:item",
+      "item": "#simplyswords:simply_swords",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/common"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

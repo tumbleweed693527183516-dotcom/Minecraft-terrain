@@ -1,0 +1,49 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "mythicmetals:raw_orichalcum"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Orichalcum",
+    "subtitle": "",
+    "description": [
+      "Sindri: \"The metal of drowned kingdoms.\"",
+      ""
+    ],
+    "groups": {
+      "Dwarves' Forge": {
+        "position": [
+          0,
+          623
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": true
+  },
+  "dependencies": [
+    "forge_adamantite"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Mine orichalcum",
+      "type": "heracles:item",
+      "item": "mythicmetals:raw_orichalcum",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/rare"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 250"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:sumerian_helmet"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Dressed for the Hunt",
+    "subtitle": "",
+    "description": [
+      "Mimir: \"Sumer, Akkad, Egypt. The first armies.\"",
+      ""
+    ],
+    "groups": {
+      "Ancient Armory": {
+        "position": [
+          0,
+          26
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": true
+  },
+  "dependencies": [],
+  "tasks": {
+    "t0": {
+      "title": "Wear a full ancient set",
+      "type": "heracles:advancement",
+      "advancements": [
+        "vividlands_ragnarok:quest/armor/full_set"
+      ]
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/common"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

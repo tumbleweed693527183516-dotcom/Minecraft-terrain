@@ -1,0 +1,67 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:akkadian_helmet"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Akkadian",
+    "subtitle": "",
+    "description": [
+      "Tier 2.",
+      ""
+    ],
+    "groups": {
+      "Ancient Armory": {
+        "position": [
+          48,
+          112
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": false
+  },
+  "dependencies": [
+    "armory_first"
+  ],
+  "tasks": {
+    "t0_0": {
+      "title": "Akkadian helmet",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:akkadian_helmet",
+      "amount": 1
+    },
+    "t0_1": {
+      "title": "Akkadian chestplate",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:akkadian_chestplate",
+      "amount": 1
+    },
+    "t0_2": {
+      "title": "Akkadian leggings",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:akkadian_leggings",
+      "amount": 1
+    },
+    "t0_3": {
+      "title": "Akkadian boots",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:akkadian_boots",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/common"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:diamond_horse_armor"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Worthy Rider",
+    "subtitle": "",
+    "description": [
+      "Odin: \"My steed will not carry a stranger. Prove you can ride.\"",
+      "",
+      "",
+      "Also: Sleipnir's trial opens"
+    ],
+    "groups": {
+      "II. Odin's War": {
+        "position": [
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": true
+  },
+  "dependencies": [
+    "b4"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Tame a horse",
+      "type": "heracles:check"
+    },
+    "t1": {
+      "title": "Diamond horse armor",
+      "type": "heracles:item",
+      "item": "minecraft:diamond_horse_armor",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

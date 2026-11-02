@@ -1,0 +1,54 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:bear_pelt"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/circles.png",
+    "title": "Cave Bear",
+    "subtitle": "Den-Mother of the Pines",
+    "description": [
+      "Skadi: \"She guards her den in the pines. Take her pelt and wear it.\"",
+      "",
+      "Where: pine and boreal forests",
+      "Health: 300",
+      "Spawns after: nothing",
+      "Moves: Maul, roar, ground slam, combo",
+      "Phase 2: Faster combos",
+      "",
+      "Tip: She telegraphs the slam with red rings. Step out, then punish."
+    ],
+    "groups": {
+      "I. Skadi's Hunt": {
+        "position": [
+          48,
+          26
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": true,
+    "showDependencyArrow": true
+  },
+  "dependencies": [
+    "a1"
+  ],
+  "tasks": {
+    "kill": {
+      "type": "heracles:kill_entity",
+      "title": "Defeat the Cave Bear",
+      "entity": {
+        "type": "vividlands_ragnarok:cave_bear"
+      },
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 200"
+    }
+  }
+}

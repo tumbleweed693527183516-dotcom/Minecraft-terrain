@@ -1,0 +1,55 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "mythicmetals:raw_tin"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Tin and Silver",
+    "subtitle": "",
+    "description": [
+      "Sindri: \"The common metals of the deep.\"",
+      ""
+    ],
+    "groups": {
+      "Dwarves' Forge": {
+        "position": [
+          0,
+          572
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": true
+  },
+  "dependencies": [
+    "forge_crush"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Mine tin",
+      "type": "heracles:item",
+      "item": "mythicmetals:raw_tin",
+      "amount": 1
+    },
+    "t1": {
+      "title": "Mine silver",
+      "type": "heracles:item",
+      "item": "mythicmetals:raw_silver",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/common"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

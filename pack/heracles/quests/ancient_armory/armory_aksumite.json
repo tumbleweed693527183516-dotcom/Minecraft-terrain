@@ -1,0 +1,67 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:aksumite_helmet"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Aksumite",
+    "subtitle": "",
+    "description": [
+      "Tier 37.",
+      ""
+    ],
+    "groups": {
+      "Ancient Armory": {
+        "position": [
+          48,
+          607
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": false
+  },
+  "dependencies": [
+    "armory_first"
+  ],
+  "tasks": {
+    "t0_0": {
+      "title": "Aksumite helmet",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:aksumite_helmet",
+      "amount": 1
+    },
+    "t0_1": {
+      "title": "Aksumite chestplate",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:aksumite_chestplate",
+      "amount": 1
+    },
+    "t0_2": {
+      "title": "Aksumite leggings",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:aksumite_leggings",
+      "amount": 1
+    },
+    "t0_3": {
+      "title": "Aksumite boots",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:aksumite_boots",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/legendary"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 800"
+    }
+  }
+}

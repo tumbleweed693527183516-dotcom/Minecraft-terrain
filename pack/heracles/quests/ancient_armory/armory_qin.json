@@ -1,0 +1,67 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:qin_helmet"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Qin",
+    "subtitle": "",
+    "description": [
+      "Tier 33.",
+      ""
+    ],
+    "groups": {
+      "Ancient Armory": {
+        "position": [
+          48,
+          521
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": false
+  },
+  "dependencies": [
+    "armory_first"
+  ],
+  "tasks": {
+    "t0_0": {
+      "title": "Qin helmet",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:qin_helmet",
+      "amount": 1
+    },
+    "t0_1": {
+      "title": "Qin chestplate",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:qin_chestplate",
+      "amount": 1
+    },
+    "t0_2": {
+      "title": "Qin leggings",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:qin_leggings",
+      "amount": 1
+    },
+    "t0_3": {
+      "title": "Qin boots",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:qin_boots",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/epic"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 450"
+    }
+  }
+}

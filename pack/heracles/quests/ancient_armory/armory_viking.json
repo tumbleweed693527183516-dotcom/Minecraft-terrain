@@ -1,0 +1,47 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:jarl_helmet"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/diamonds.png",
+    "title": "The Viking Sets",
+    "subtitle": "",
+    "description": [
+      "Mimir: \"Berserker, Ulfhednar, Valkyrie, Jarl.\"",
+      ""
+    ],
+    "groups": {
+      "Ancient Armory": {
+        "position": [
+          192,
+          794
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": true,
+    "showDependencyArrow": true
+  },
+  "dependencies": [
+    "armory_fa"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Craft all four Viking sets",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/legendary"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 800"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:byzantine_helmet"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Byzantine",
+    "subtitle": "",
+    "description": [
+      "Tier 41.",
+      ""
+    ],
+    "groups": {
+      "Ancient Armory": {
+        "position": [
+          240,
+          607
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": false
+  },
+  "dependencies": [
+    "armory_first"
+  ],
+  "tasks": {
+    "t0_0": {
+      "title": "Byzantine helmet",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:byzantine_helmet",
+      "amount": 1
+    },
+    "t0_1": {
+      "title": "Byzantine chestplate",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:byzantine_chestplate",
+      "amount": 1
+    },
+    "t0_2": {
+      "title": "Byzantine leggings",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:byzantine_leggings",
+      "amount": 1
+    },
+    "t0_3": {
+      "title": "Byzantine boots",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:byzantine_boots",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/legendary"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 800"
+    }
+  }
+}

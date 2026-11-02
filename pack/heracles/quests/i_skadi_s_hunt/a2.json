@@ -1,0 +1,51 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:bear_pelt"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Warm Hide",
+    "subtitle": "",
+    "description": [
+      "Skadi: \"Rivers, jungles and the frozen steppe. Dress for all of them.\"",
+      "",
+      "",
+      "Also: Act II trials open"
+    ],
+    "groups": {
+      "I. Skadi's Hunt": {
+        "position": [
+          0,
+          163
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false,
+    "showDependencyArrow": true
+  },
+  "dependencies": [
+    "g1"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Wear Bear Pelt armor",
+      "type": "heracles:check"
+    },
+    "t1": {
+      "title": "Bring milk for poison",
+      "type": "heracles:item",
+      "item": "minecraft:milk_bucket",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}
