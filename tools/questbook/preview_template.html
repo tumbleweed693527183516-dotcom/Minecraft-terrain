@@ -125,7 +125,7 @@ dl.stats dd { margin: 0; font-variant-numeric: tabular-nums; }
 <script>
 const DATA = /*DATA*/null;
 const CX = 132, CY = 112, PAD = 70;
-const ACTS = [["Act I · The Forest's Teeth", 0], ["Act II · Rivers and Plains", 2.6], ["Act III · The Far Lands", 5.2], ["Act IV · The Titans", 7.8], ["Act V · The Roof of the World", 10.4]];
+const ACTS = [["Act I · Forest and Plain", 0], ["Act II · Rivers and Claws", 2.6], ["Act III · The Far Lands", 5.2], ["Act IV · The Titans", 7.8]];
 const KIND = { quest: ["Quest", "var(--frost)"], boss: ["Boss trial", "var(--ember)"], boss2: ["Boss fight (Civilizations)", "var(--ember)"], gift: ["Gift", "var(--gold)"] };
 const store = { get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
 let play = store.get("vl-play", false), done = new Set(store.get("vl-done", [])), cur = null, sel = null;
@@ -197,7 +197,7 @@ function renderDetail() {
   const q = cur.quests.find(x => x.id === sel);
   if (!q) {
     box.append(el("div", { class: "kind" }, cur.group === "main" ? "Main quest" : "Side line"), el("h3", {}, cur.name), el("div", { class: "sub" }, cur.sub),
-      el("p", { class: "empty" }, "Pick a quest on the map to read it."),
+      el("p", { class: "empty" }, cur.acts ? "Pick a quest on the map to read it. Each act has 5 trials, and the next act's beasts only appear once all 5 are dead." : "Pick a quest on the map to read it."),
       el("p", { class: "empty" }, cur.group === "main" ? "Bosses are round and red, gifts are gold diamonds, ordinary quests are blue squares." : `Optional. Patron: ${cur.patron}.`));
     return;
   }

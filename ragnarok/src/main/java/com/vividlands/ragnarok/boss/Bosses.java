@@ -142,7 +142,7 @@ public final class Bosses {
                 .ability(() -> new Summon(500, 2, 3, 40, 0.4f))
                 .ability(() -> new Slam(260, 12, 4, 0.9, 0.6, null))
                 .phase2(() -> new Combo(220, 2, 10, 0.7, 14, 1.5))
-                .drop("vividlands_ragnarok:great_antlers", 1).xp(320).after(0)
+                .drop("vividlands_ragnarok:great_antlers", 1).xp(320)
                 .biomes("vividlands:highland_moors", "vividlands:alpine_meadow", "minecraft:meadow");
 
         def("hippo").on("vividlands_ragnarok:hippo")
@@ -151,7 +151,7 @@ public final class Bosses {
                 .ability(() -> new Capsize(160, 20, 60))
                 .ability(() -> new Maul(220, 2, 12, 1.0))
                 .phase2(() -> new Spin(300, 14, 50, 4, 0.35, 0.6, 50))
-                .drop("vividlands_ragnarok:hippo_hide", 1).xp(340)
+                .drop("vividlands_ragnarok:hippo_hide", 1).xp(340).after("cave_bear", "dire_wolf", "irish_elk", "terror_bird", "steppe_bison")
                 .biomes("vividlands:oasis", "vividlands:tropical_river", "minecraft:river");
 
         def("crocodile").on("vividlands_ragnarok:crocodile")
@@ -160,7 +160,7 @@ public final class Bosses {
                 .ability(() -> new Leap(180, 10, 3, 12, 1.1, 0.35, true, null))
                 .ability(() -> new Slam(240, 10, 4, 0.8, 0.4, null))
                 .phase2(() -> new Grab(260, 50, 0.4, Grab.Mode.SQUEEZE, 0))
-                .drop("vividlands_ragnarok:croc_scales", 1).xp(360).after("hippo")
+                .drop("vividlands_ragnarok:croc_scales", 1).xp(360).after("cave_bear", "dire_wolf", "irish_elk", "terror_bird", "steppe_bison")
                 .biomes("vividlands:fen", "vividlands:tropical_river", "minecraft:swamp", "minecraft:mangrove_swamp");
 
         def("silverback").on("vividlands_ragnarok:silverback")
@@ -171,7 +171,7 @@ public final class Bosses {
                 .ability(() -> new Slam(220, 14, 6, 1.1, 0.8, null))
                 .phase2(() -> new Combo(200, 3, 8, 0.6, 16, 1.7))
                 .phase2(() -> new HazardRain(400, 2, 4, 26, 2.5, 7, 0.9, HazardRain.Kind.ROCK))
-                .drop("vividlands_ragnarok:silverback_fist", 1).xp(400).after(3)
+                .drop("vividlands_ragnarok:silverback_fist", 1).xp(400).after("hippo", "komodo", "crocodile", "cave_lion", "saber_tooth")
                 .structures("ancientstructures:mayan_temple", "ancientstructures:mayan_temple2",
                         "ancientstructures:mayan_temple3", "ancientstructures:mayan_temple4");
 
@@ -182,7 +182,7 @@ public final class Bosses {
                 .ability(() -> new Leap(140, 10, 5, 16, 1.4, 0.45, false, () -> bleed(160, 1)))
                 .ability(() -> new Maul(200, 4, 6, 0.6))
                 .phase2(() -> new Combo(180, 3, 7, 0.6, 12, 1.5))
-                .drop("vividlands_ragnarok:saber_fang", 1).xp(420).after(4)
+                .drop("vividlands_ragnarok:saber_fang", 1).xp(420).after("cave_bear", "dire_wolf", "irish_elk", "terror_bird", "steppe_bison")
                 .biomes("vividlands:endless_steppe", "vividlands:golden_savanna", "vividlands:wildflower_prairie",
                         "minecraft:savanna");
 
@@ -191,7 +191,7 @@ public final class Bosses {
                 .ability(() -> new Charge(140, 20, 50, 0.85, 1.5, 2.6, true, 80))
                 .ability(() -> new Slam(260, 14, 5, 0.9, 0.5, () -> fx(MobEffects.MOVEMENT_SLOWDOWN, 60, 1)))
                 .phase2(() -> new HazardRain(380, 2, 4, 26, 2.5, 7, 0.8, HazardRain.Kind.ICICLE))
-                .drop("vividlands_ragnarok:rhino_horn", 1).xp(450).after("cave_bear")
+                .drop("vividlands_ragnarok:rhino_horn", 1).xp(450).after("haast_eagle", "anaconda", "silverback", "glyptodon", "walrus")
                 .biomes("vividlands:tundra", "vividlands:glacial_outwash", "minecraft:snowy_plains");
 
         def("elephant").on("vividlands_ragnarok:elephant")
@@ -202,7 +202,7 @@ public final class Bosses {
                         () -> fx(MobEffects.WEAKNESS, 120, 0), () -> fx(MobEffects.MOVEMENT_SLOWDOWN, 60, 0)))
                 .ability(() -> new Slam(260, 16, 6, 1.0, 0.6, null))
                 .phase2(() -> new Combo(220, 2, 10, 0.7, 16, 1.7))
-                .drop("vividlands_ragnarok:ivory", 2).xp(500).after(6)
+                .drop("vividlands_ragnarok:ivory", 2).xp(500).after("haast_eagle", "anaconda", "silverback", "glyptodon", "walrus")
                 .biomes("vividlands:golden_savanna", "minecraft:savanna", "minecraft:savanna_plateau");
 
         def("bull_shark").on("vividlands_ragnarok:bull_shark")
@@ -212,7 +212,7 @@ public final class Bosses {
                 .ability(() -> new Capsize(140, 20, 80))
                 .ability(() -> new Maul(200, 3, 8, 0.6))
                 .phase2(() -> new Combo(200, 3, 8, 0.6, 12, 1.4))
-                .drop("vividlands_ragnarok:shark_tooth", 2).xp(480).after("crocodile")
+                .drop("vividlands_ragnarok:shark_tooth", 2).xp(480).after("haast_eagle", "anaconda", "silverback", "glyptodon", "walrus")
                 .biomes("vividlands:northern_ocean", "vividlands:temperate_ocean", "vividlands:deep_northern_ocean",
                         "vividlands:deep_temperate_ocean", "#minecraft:is_deep_ocean");
 
@@ -224,7 +224,7 @@ public final class Bosses {
                 .ability(() -> new Fling(200, 14, 0.9, 1.6, 0.6))
                 .phase2(() -> new HazardRain(340, 3, 5, 24, 2.5, 8, 0.9, HazardRain.Kind.ICICLE))
                 .phase2(() -> new Breath(300, 24, 60, 12, 50, 0.25, Breath.Kind.FROST))
-                .drop("vividlands_ragnarok:mammoth_tusk", 2).drop("vividlands_ragnarok:frozen_heart", 1).xp(1000).after(15)
+                .drop("vividlands_ragnarok:mammoth_tusk", 2).drop("vividlands_ragnarok:frozen_heart", 1).xp(1000).after("haast_eagle", "anaconda", "silverback", "glyptodon", "walrus", "ground_sloth", "bull_shark", "woolly_rhino", "elephant")
                 .biomes("vividlands:glacier", "vividlands:glacier_peaks", "minecraft:ice_spikes");
 
         // ---- trials 11-20 (more of Midgard's great beasts)
@@ -235,7 +235,7 @@ public final class Bosses {
                 .ability(() -> new Combo(180, 2, 8, 0.7, 12, 1.4))
                 .ability(() -> new Leap(160, 10, 4, 12, 1.2, 0.45, false, null))
                 .phase2(() -> new Summon(360, 3, 5, 30, 0.4f))
-                .drop("vividlands_ragnarok:wolf_pelt", 2).xp(320).after(1)
+                .drop("vividlands_ragnarok:wolf_pelt", 2).xp(320)
                 .biomes("vividlands:boreal_snowwoods", "vividlands:caledonian_pinewood", "minecraft:snowy_taiga", "#minecraft:is_taiga");
 
         def("steppe_bison").on("vividlands_ragnarok:steppe_bison")
@@ -244,7 +244,7 @@ public final class Bosses {
                 .ability(() -> new Fling(160, 10, 0.8, 1.2, 0.8))
                 .ability(() -> new Slam(260, 14, 5, 0.9, 0.5, null))
                 .phase2(() -> new Summon(400, 3, 4, 40, 0.5f))                      // the herd stampedes with it
-                .drop("vividlands_ragnarok:bison_horn", 1).xp(340).after(2)
+                .drop("vividlands_ragnarok:bison_horn", 1).xp(340)
                 .biomes("vividlands:endless_steppe", "vividlands:wildflower_prairie", "minecraft:plains");
 
         def("terror_bird").on("vividlands_ragnarok:terror_bird")
@@ -253,7 +253,7 @@ public final class Bosses {
                 .ability(() -> new Leap(140, 8, 4, 14, 1.3, 0.55, false, () -> bleed(100, 0)))
                 .ability(() -> new Charge(200, 12, 40, 1.0, 1.1, 1.6, false, 50))
                 .phase2(() -> new Roar(300, 10, 18, 0.8, SoundEvents.RAVAGER_ROAR, 1.8f, () -> BossFight.stunEffect(30)))
-                .drop("vividlands_ragnarok:terror_claw", 1).xp(360).after(3)
+                .drop("vividlands_ragnarok:terror_claw", 1).xp(360)
                 .biomes("vividlands:golden_savanna", "vividlands:endless_steppe", "minecraft:savanna");
 
         def("komodo").on("vividlands_ragnarok:komodo")
@@ -263,7 +263,7 @@ public final class Bosses {
                 .ability(() -> new Stalk(8))
                 .ability(() -> new Breath(320, 20, 40, 7, 45, 0.15, Breath.Kind.VENOM))   // a spray of toxic drool
                 .phase2(() -> new Leap(180, 10, 3, 12, 1.2, 0.4, false, () -> fx(MobEffects.POISON, 160, 2)))
-                .drop("vividlands_ragnarok:komodo_venom", 1).xp(380).after(4)
+                .drop("vividlands_ragnarok:komodo_venom", 1).xp(380).after("cave_bear", "dire_wolf", "irish_elk", "terror_bird", "steppe_bison")
                 .biomes("vividlands:rainforest", "vividlands:tropical_beach", "minecraft:jungle", "vividlands:jungle");
 
         def("glyptodon").on("vividlands_ragnarok:glyptodon")
@@ -272,7 +272,7 @@ public final class Bosses {
                 .ability(() -> new Slam(200, 14, 5, 1.0, 0.6, null))                   // tail club
                 .ability(() -> new Fling(180, 10, 0.8, 1.4, 0.6))
                 .phase2(() -> new Spin(180, 12, 80, 4.5, 0.5, 0.8, 50))
-                .drop("vividlands_ragnarok:glyptodon_plate", 2).xp(400).after(5)
+                .drop("vividlands_ragnarok:glyptodon_plate", 2).xp(400).after("hippo", "komodo", "crocodile", "cave_lion", "saber_tooth")
                 .biomes("vividlands:red_canyonlands", "vividlands:badlands", "vividlands:rocky_hamada", "#minecraft:is_badlands");
 
         def("cave_lion").on("vividlands_ragnarok:cave_lion")
@@ -282,7 +282,7 @@ public final class Bosses {
                 .ability(() -> new Leap(140, 10, 5, 16, 1.4, 0.5, false, () -> bleed(140, 1)))
                 .ability(() -> new Combo(180, 3, 7, 0.6, 12, 1.5))
                 .phase2(() -> new Summon(420, 2, 2, 60, 0.6f))                      // its lionesses join in
-                .drop("vividlands_ragnarok:lion_mane", 1).xp(420).after(6)
+                .drop("vividlands_ragnarok:lion_mane", 1).xp(420).after("cave_bear", "dire_wolf", "irish_elk", "terror_bird", "steppe_bison")
                 .biomes("vividlands:tundra", "vividlands:endless_steppe", "vividlands:glacial_outwash");
 
         def("anaconda").on("vividlands_ragnarok:anaconda")
@@ -291,7 +291,7 @@ public final class Bosses {
                 .ability(() -> new Combo(180, 2, 8, 0.6, 14, 1.4))
                 .ability(() -> new Slam(240, 12, 5, 0.9, 0.4, null))                   // tail slam
                 .phase2(() -> new Leap(160, 8, 4, 14, 1.3, 0.5, true, null))         // strikes from the river
-                .drop("vividlands_ragnarok:anaconda_skin", 1).xp(440).after(7)
+                .drop("vividlands_ragnarok:anaconda_skin", 1).xp(440).after("hippo", "komodo", "crocodile", "cave_lion", "saber_tooth")
                 .biomes("vividlands:tropical_river", "vividlands:rainforest", "vividlands:fen", "minecraft:swamp");
 
         def("ground_sloth").on("vividlands_ragnarok:ground_sloth")
@@ -300,7 +300,7 @@ public final class Bosses {
                 .ability(() -> new Grab(280, 50, 0.4, Grab.Mode.SQUEEZE, 0))        // bear hug
                 .ability(() -> new Slam(240, 18, 6, 1.1, 0.6, null))
                 .phase2(() -> new HazardRain(380, 2, 4, 28, 2.5, 7, 0.9, HazardRain.Kind.ROCK))   // shakes rocks loose
-                .drop("vividlands_ragnarok:sloth_claw", 1).xp(460).after(8)
+                .drop("vividlands_ragnarok:sloth_claw", 1).xp(460).after("haast_eagle", "anaconda", "silverback", "glyptodon", "walrus")
                 .biomes("vividlands:cloud_forest", "vividlands:old_growth_oakwood", "vividlands:redwood_giants", "#minecraft:is_forest");
 
         def("haast_eagle").on("vividlands_ragnarok:haast_eagle")
@@ -309,7 +309,7 @@ public final class Bosses {
                 .ability(() -> new Grab(300, 50, 0.6, Grab.Mode.CARRY, 14))          // carries you up and drops you
                 .ability(() -> new Maul(180, 3, 8, 0.6))
                 .phase2(() -> new HazardRain(360, 2, 4, 28, 2.5, 7, 0.8, HazardRain.Kind.ROCK))   // drops rocks from above
-                .drop("vividlands_ragnarok:eagle_feather", 2).xp(500).after(10)
+                .drop("vividlands_ragnarok:eagle_feather", 2).xp(500).after("hippo", "komodo", "crocodile", "cave_lion", "saber_tooth")
                 .biomes("vividlands:alpine_peaks", "vividlands:highland_crags", "vividlands:jagged_spires", "minecraft:jagged_peaks");
 
         def("walrus").on("vividlands_ragnarok:walrus")
@@ -318,7 +318,7 @@ public final class Bosses {
                 .ability(() -> new Slam(240, 16, 6, 1.1, 0.7, () -> fx(MobEffects.MOVEMENT_SLOWDOWN, 60, 1)))   // belly flop
                 .ability(() -> new Leap(220, 14, 4, 12, 1.2, 0.5, true, null))
                 .phase2(() -> new HazardRain(360, 2, 4, 26, 2.5, 7, 0.8, HazardRain.Kind.ICICLE))
-                .drop("vividlands_ragnarok:walrus_tusk", 2).xp(520).after(12)
+                .drop("vividlands_ragnarok:walrus_tusk", 2).xp(520).after("hippo", "komodo", "crocodile", "cave_lion", "saber_tooth")
                 .biomes("vividlands:snowy_shore", "vividlands:glacial_ocean", "minecraft:frozen_ocean", "minecraft:snowy_beach");
     }
 
