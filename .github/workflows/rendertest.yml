@@ -45,6 +45,24 @@ jobs:
                   open("ragnarok/run/mods/" + name, "wb").write(urllib.request.urlopen(req, timeout=120).read())
           PY
           ls ragnarok/run/mods
+      - name: Quest book mod and the pack's quests
+        if: inputs.scene == 'quests'
+        run: |
+          mkdir -p ragnarok/run/mods ragnarok/run/config
+          git fetch -q origin dist && git show origin/dist:$(git ls-tree --name-only origin/dist | grep mrpack | head -1) > pack.mrpack
+          python3 - <<'PY'
+          import json, zipfile, urllib.request
+          z = zipfile.ZipFile("pack.mrpack")
+          idx = json.loads(z.read("modrinth.index.json"))
+          for f in idx["files"]:
+              name = f["path"].split("/")[-1]
+              if any(w in name.lower() for w in ("heracles", "resourcefullib")):
+                  print("download", name)
+                  req = urllib.request.Request(f["downloads"][0], headers={"User-Agent": "vividlands-rendertest"})
+                  open("ragnarok/run/mods/" + name, "wb").write(urllib.request.urlopen(req, timeout=120).read())
+          PY
+          cp -r pack/heracles ragnarok/run/config/heracles
+          ls ragnarok/run/mods ragnarok/run/config/heracles
       - name: Run the client and take screenshots
         env:
           LIBGL_ALWAYS_SOFTWARE: "1"

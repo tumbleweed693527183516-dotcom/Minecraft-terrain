@@ -304,6 +304,44 @@ final class RenderTest {
         steps.add(mc::stop);
     }
 
+    /** The quest book (Odyssey Quests): a few chapters and quests, opened through its own packets (reflection). */
+    private static void heracles(String group, String quest) {
+        try {
+            Class.forName("earth.terrarium.heracles.client.handlers.DisplayConfig").getField("showTutorial").setBoolean(null, false);
+            Object channel = Class.forName("earth.terrarium.heracles.common.network.NetworkHandler").getField("CHANNEL").get(null);
+            Object packet = quest == null
+                    ? Class.forName("earth.terrarium.heracles.common.network.packets.groups.OpenGroupPacket")
+                        .getConstructor(String.class, boolean.class).newInstance(group, false)
+                    : Class.forName("earth.terrarium.heracles.common.network.packets.quests.OpenQuestPacket")
+                        .getConstructor(String.class, String.class, boolean.class).newInstance(group, quest, false);
+            for (var m : channel.getClass().getMethods()) {
+                if (m.getName().equals("sendToServer") && m.getParameterCount() == 1) {
+                    m.invoke(channel, packet);
+                    return;
+                }
+            }
+            Ragnarok.LOG.warn("render test: no sendToServer on the quest channel");
+        } catch (ReflectiveOperationException | RuntimeException e) {
+            Ragnarok.LOG.warn("render test: could not open the quest book", e);
+        }
+    }
+
+    private static void planQuests(Minecraft mc) {
+        steps.add(() -> {
+            for (String c : new String[]{"gamerule doDaylightCycle false", "time set 6000", "weather clear", "gamerule doMobSpawning false",
+                    "gamerule vividlandsBossSpawning false", "gamemode creative @a", "tp @a 0.5 200 0.5 0 5", "ragnarok questcheck"}) cmd(mc, c);
+            mc.options.hideGui = false;
+            nextWait = 60;
+        });
+        String[][] views = {{"Prologue", null}, {"Prologue", "p1"}, {"Chapter 1 - Skadi's Hunt", null}, {"Chapter 1 - Skadi's Hunt", "cave_bear"},
+                {"Chapter 2 - Odin's War", null}, {"The Dwarves' Forge", null}, {"Paths of the Einherjar", null}, {"Hall of Trophies", null}};
+        for (String[] v : views) {
+            steps.add(() -> { mc.setScreen(null); heracles(v[0], v[1]); nextWait = 40; });
+            steps.add(() -> shot(mc, "quests_" + v[0].replaceAll("[^A-Za-z0-9]+", "_") + (v[1] == null ? "" : "_" + v[1])));
+        }
+        steps.add(mc::stop);
+    }
+
     private static void plan(Minecraft mc) {
         steps.add(() -> {
             for (String c : new String[]{"gamerule doDaylightCycle false", "time set 6000", "weather clear",
@@ -432,6 +470,7 @@ final class RenderTest {
                 else if ("ancient".equals(scene)) planAncient(mc);
                 else if ("classes".equals(scene)) planClasses(mc);
                 else if ("ui".equals(scene)) planUi(mc);
+                else if ("quests".equals(scene)) planQuests(mc);
                 else plan(mc);
                 Ragnarok.LOG.info("render test: in world, {} steps", steps.size());
             }
