@@ -34,7 +34,8 @@ for group, lst in (("main", MAIN), ("side", SIDE)):
                 icons[key] = b64(ITEMS / f"{key}.png")
             qs.append(qd)
         chapters.append({"id": ch["id"], "group": group, "name": ch["name"], "sub": ch["sub"],
-                         "patron": ch.get("patron"), "acts": ch.get("acts", False), "quests": qs})
+                         "patron": ch.get("patron"), "acts": ch.get("acts", False), "tab": ch.get("tab"),
+                         "labels": ch.get("labels"), "quests": qs})
 
 # armor guide: bands, sets, recipes and set bonuses, read from the generators and ArmorTraits.java
 import re
