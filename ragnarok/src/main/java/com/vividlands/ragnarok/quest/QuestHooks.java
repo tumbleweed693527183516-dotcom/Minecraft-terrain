@@ -12,7 +12,7 @@ import net.minecraft.stats.StatFormatter;
 import net.minecraft.stats.Stats;
 
 /**
- * What the quest book (Odyssey Quests / Heracles) tracks from this mod: hidden advancements under
+ * What the quest book (FTB Quests) tracks from this mod: hidden advancements under
  * vividlands_ragnarok:quest/... (data/vividlands_ragnarok/advancements/quest, made by tools/questbook/build_quests.py)
  * and two custom statistics.
  */
@@ -35,11 +35,23 @@ public final class QuestHooks {
                         .requires(s -> s.hasPermission(2)).executes(c -> {
                             String msg;
                             try {
-                                Class<?> h = Class.forName("earth.terrarium.heracles.common.handlers.quests.QuestHandler");
-                                java.util.Map<?, ?> quests = (java.util.Map<?, ?>) h.getMethod("quests").invoke(null);
-                                java.util.List<?> groups = (java.util.List<?>) h.getMethod("groups").invoke(null);
-                                boolean failed = h.getField("failedToLoad").getBoolean(null);
-                                msg = "QUESTCHECK loaded " + quests.size() + " quests in " + groups.size() + " chapters, failed=" + failed;
+                                Object file = Class.forName("dev.ftb.mods.ftbquests.quest.ServerQuestFile").getField("INSTANCE").get(null);
+                                java.util.List<?> chapters = (java.util.List<?>) file.getClass().getMethod("getAllChapters").invoke(file);
+                                int quests = 0, tasks = 0, rewards = 0, unknown = 0;
+                                for (Object ch : chapters) {
+                                    for (Object q : (java.util.List<?>) ch.getClass().getMethod("getQuests").invoke(ch)) {
+                                        quests++;
+                                        for (String part : new String[]{"getTasks", "getRewards"}) {
+                                            for (Object o : (java.util.Collection<?>) q.getClass().getMethod(part).invoke(q)) {
+                                                if (part.equals("getTasks")) tasks++; else rewards++;
+                                                Object title = o.getClass().getMethod("getRawTitle").invoke(o);
+                                                if (String.valueOf(title).startsWith("Unknown type")) unknown++;
+                                            }
+                                        }
+                                    }
+                                }
+                                msg = "QUESTCHECK loaded " + quests + " quests in " + chapters.size() + " chapters, " + tasks + " tasks, "
+                                        + rewards + " rewards, unknown types=" + unknown;
                             } catch (ReflectiveOperationException | RuntimeException e) {
                                 msg = "QUESTCHECK no quest book: " + e;
                             }

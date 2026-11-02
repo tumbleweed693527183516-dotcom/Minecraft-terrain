@@ -36,6 +36,14 @@ ships with the pack) with every mod updated to its newest 1.20.1 release, plus w
 
 Default settings come from Fabulously Optimized's tuned configs with render distance 10, simulation distance 6, smaller biome blend and fewer particles.
 
+**The quest book needs 3 mods added by hand once.** FTB Quests and the two mods it needs are only on CurseForge, so the
+pack file can't download them. After importing the pack, put the Fabric 1.20.1 versions of these into the instance's
+`mods` folder (or add them from Prism Launcher's CurseForge mod browser):
+[FTB Quests (Fabric)](https://www.curseforge.com/minecraft/mc-mods/ftb-quests-fabric) 2001.4.x,
+[FTB Library (Fabric)](https://www.curseforge.com/minecraft/mc-mods/ftb-library-fabric) 2001.2.x,
+[FTB Teams (Fabric)](https://www.curseforge.com/minecraft/mc-mods/ftb-teams-fabric) 2001.3.x.
+The quests themselves are already in the pack (`config/ftbquests/quests`); open the book from the inventory's side button.
+
 Give the instance **6-8 GB of RAM** (Modrinth App: instance settings > Java and memory); raise it as you add more mods. Always create a **new world**.
 
 ## Performance

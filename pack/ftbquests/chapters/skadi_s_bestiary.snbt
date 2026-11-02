@@ -1,0 +1,2035 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "skadi_s_bestiary"
+	group: "96A912181A061CEA"
+	icon: {
+		Count: 1b
+		id: "minecraft:lead"
+	}
+	id: "12FA8BE15B131B37"
+	images: [
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/bestiary_0.png"
+			rotation: 0.0d
+			width: 5.689d
+			x: 2.245d
+			y: 0.1d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/bestiary_1.png"
+			rotation: 0.0d
+			width: 5.002d
+			x: 1.901d
+			y: 3.22d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/bestiary_2.png"
+			rotation: 0.0d
+			width: 3.856d
+			x: 1.328d
+			y: 11.86d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/bestiary_3.png"
+			rotation: 0.0d
+			width: 5.46d
+			x: 2.13d
+			y: 14.98d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/bestiary_4.png"
+			rotation: 0.0d
+			width: 4.085d
+			x: 1.443d
+			y: 18.1d
+		}
+	]
+	order_index: 14
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Skadi: \"A hunter knows every animal, not only the ones she kills.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "28E6E7C1786A5F90"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "7121F795943ABAB5"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "DCBE7F8E4BA12474"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_first"
+			]
+			tasks: [
+				{
+					id: "AEF8D97EF505E1FB"
+					title: "Find 5 Naturalist animals"
+					type: "checkmark"
+				}
+			]
+			title: "A Hunter's Eye"
+			x: 0.0d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Skadi: \"Small things too.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "C96BF6DE96ACE751"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "B0673D803215C0F9"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "AABCCFB4E587E71D"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_net"
+			]
+			tasks: [
+				{
+					id: "CCABA2A603E88775"
+					title: "Catch a butterfly or firefly"
+					type: "checkmark"
+				}
+			]
+			title: "Bug Net"
+			x: 1.75d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"C96BF6DE96ACE751"
+			]
+			description: [
+				"Skadi: \"Keep looking.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "1F11BBA2D3C2CB1B"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "A6728DB8E053F736"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "3B87BC9EC41E6367"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_ten"
+			]
+			tasks: [
+				{
+					id: "8CED91687041CEB4"
+					title: "Find 10 Naturalist animals"
+					type: "checkmark"
+				}
+			]
+			title: "Ten Kinds"
+			x: 3.5d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"1F11BBA2D3C2CB1B"
+			]
+			description: [
+				"Skadi: \"Now you know my lands as I do.\""
+				""
+				""
+				"Also: Title: Huntress's Friend"
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "23645AB2163F462F"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "F77A506946C30216"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B18EB82E145B7304"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_bestiary_all"
+			]
+			tasks: [
+				{
+					id: "18233F5A2B3595C5"
+					title: "Find every animal in the grid below"
+					type: "checkmark"
+				}
+			]
+			title: "The Full Bestiary"
+			x: 5.25d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "544B0337ABA8DFD9"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "A1C62E118038D3F7"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6254CBB8EFCAAB4E"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_bear"
+			]
+			tasks: [
+				{
+					id: "66F38A399B757BE5"
+					title: "Find a bear"
+					type: "checkmark"
+				}
+			]
+			title: "Bear"
+			x: 0.0d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "5858FB41A147F1E4"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "E59AAEA941FCE536"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "F1B070ECE1C1A226"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_deer"
+			]
+			tasks: [
+				{
+					id: "7D58F6EAE7B4EA5F"
+					title: "Find a deer"
+					type: "checkmark"
+				}
+			]
+			title: "Deer"
+			x: 1.75d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "314BE7A68AC4781A"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "B8E3D2A496DF04BA"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "287AE77B82744A93"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_boar"
+			]
+			tasks: [
+				{
+					id: "FB32805141A39FEC"
+					title: "Find a boar"
+					type: "checkmark"
+				}
+			]
+			title: "Boar"
+			x: 3.5d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "11D5AD4B96F82521"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "C1AAB589121B8E81"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "13FB32CCC09D1641"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_lion"
+			]
+			tasks: [
+				{
+					id: "72A634AE263142B8"
+					title: "Find a lion"
+					type: "checkmark"
+				}
+			]
+			title: "Lion"
+			x: 5.25d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "F286C0E7B41C4C15"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "E54ADB2B0ACD8AC8"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "5128BA89C5B6CADF"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_rhino"
+			]
+			tasks: [
+				{
+					id: "AA331741FF95477A"
+					title: "Find a rhino"
+					type: "checkmark"
+				}
+			]
+			title: "Rhino"
+			x: 7.0d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "20ADA9F1C923A20C"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "16A1A77074937F52"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B94DFE00AD9FADB8"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_elephant"
+			]
+			tasks: [
+				{
+					id: "5E1D78F6CE7AE394"
+					title: "Find a elephant"
+					type: "checkmark"
+				}
+			]
+			title: "Elephant"
+			x: 8.75d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "4EC3ACC448213E8C"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "C4C005BEBA2E899B"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "C1511EA11995DAE6"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_zebra"
+			]
+			tasks: [
+				{
+					id: "33E4F8473FB9532B"
+					title: "Find a zebra"
+					type: "checkmark"
+				}
+			]
+			title: "Zebra"
+			x: 0.0d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "C3F9C2456C1721B5"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "B9FCD9EFE3212E15"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "69FE04708535EBB1"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_giraffe"
+			]
+			tasks: [
+				{
+					id: "30AAA6D43092C598"
+					title: "Find a giraffe"
+					type: "checkmark"
+				}
+			]
+			title: "Giraffe"
+			x: 1.75d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "EA34B6A5FC6801DE"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "7C537F344224B7CF"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "CF3BC4DCCEEEC70F"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_hippo"
+			]
+			tasks: [
+				{
+					id: "99B7E4BD3484C2F7"
+					title: "Find a hippo"
+					type: "checkmark"
+				}
+			]
+			title: "Hippo"
+			x: 3.5d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "819B4B431397DD25"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "C75D68933F29A212"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "F146FC0EB0ED8223"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_alligator"
+			]
+			tasks: [
+				{
+					id: "CB0E6FE7DC3C425C"
+					title: "Find a alligator"
+					type: "checkmark"
+				}
+			]
+			title: "Alligator"
+			x: 5.25d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "504104920FB87472"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "A34F4675EA3D00FB"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1B618A23276C2C5D"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_vulture"
+			]
+			tasks: [
+				{
+					id: "A3B8F6E50E348D36"
+					title: "Find a vulture"
+					type: "checkmark"
+				}
+			]
+			title: "Vulture"
+			x: 7.0d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "50ACF56BCE84F815"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "FEFCC805EA305A67"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "E049466DE9F5D702"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_tortoise"
+			]
+			tasks: [
+				{
+					id: "7157E94F0DE4D402"
+					title: "Find a tortoise"
+					type: "checkmark"
+				}
+			]
+			title: "Tortoise"
+			x: 8.75d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "4158AA688C949DEA"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "8C9223D56FEFEBBA"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "5091C53E878F0EFF"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_snail"
+			]
+			tasks: [
+				{
+					id: "1330132E0D0AA79D"
+					title: "Find a snail"
+					type: "checkmark"
+				}
+			]
+			title: "Snail"
+			x: 0.0d
+			y: 7.76d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "605F94D8859B8159"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "E4F1B79370CAF7AD"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "5F4A086FDD723044"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_butterfly"
+			]
+			tasks: [
+				{
+					id: "4FBC1D131D10CF84"
+					title: "Find a butterfly"
+					type: "checkmark"
+				}
+			]
+			title: "Butterfly"
+			x: 1.75d
+			y: 7.76d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "FA411A89A458794C"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "FE386BA84D4049AD"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "3E126D9447F5DBAA"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_firefly"
+			]
+			tasks: [
+				{
+					id: "3D9A4ADF748DBA90"
+					title: "Find a firefly"
+					type: "checkmark"
+				}
+			]
+			title: "Firefly"
+			x: 3.5d
+			y: 7.76d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "CCBF22E800FDBFD2"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "64196F41C6FB039E"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "862816CC030BC4EE"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_duck"
+			]
+			tasks: [
+				{
+					id: "A916AA883023E351"
+					title: "Find a duck"
+					type: "checkmark"
+				}
+			]
+			title: "Duck"
+			x: 5.25d
+			y: 7.76d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "801BF4303C77A703"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "9412B2168ACE338D"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "75689D4099B7B357"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_rattlesnake"
+			]
+			tasks: [
+				{
+					id: "5C6367CA83745888"
+					title: "Find a rattlesnake"
+					type: "checkmark"
+				}
+			]
+			title: "Rattlesnake"
+			x: 7.0d
+			y: 7.76d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "184261A637E49689"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "20E205FC16641D18"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "150F2DB67557DFB1"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_coral_snake"
+			]
+			tasks: [
+				{
+					id: "D6447FF7D60B8EC3"
+					title: "Find a coral snake"
+					type: "checkmark"
+				}
+			]
+			title: "Coral Snake"
+			x: 8.75d
+			y: 7.76d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "E66E9E14089BF603"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "38F7874EBECCE007"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "C151748E885D14E6"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_bass"
+			]
+			tasks: [
+				{
+					id: "C44D4868BE964AB6"
+					title: "Find a bass"
+					type: "checkmark"
+				}
+			]
+			title: "Bass"
+			x: 0.0d
+			y: 9.6d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Seen in the wild."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:lead"
+			}
+			id: "1A651AFB6DFE409C"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "3DFD23AD742D7FC4"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6E0B87EB8EDC307F"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_catfish"
+			]
+			tasks: [
+				{
+					id: "25EBCE949C92C464"
+					title: "Find a catfish"
+					type: "checkmark"
+				}
+			]
+			title: "Catfish"
+			x: 1.75d
+			y: 9.6d
+		}
+		{
+			dependencies: [
+				"28E6E7C1786A5F90"
+			]
+			description: [
+				"Skadi: \"Even I keep wolves.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:wolf_pelt"
+			}
+			id: "4D1EA5E660E381B3"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "2A232D843EDA72FB"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "EC92407D28E3A7F0"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_wolf"
+			]
+			tasks: [
+				{
+					id: "300D3012B99BADE5"
+					title: "Tame a wolf"
+					type: "checkmark"
+				}
+			]
+			title: "A Loyal Wolf"
+			x: 0.0d
+			y: 12.72d
+		}
+		{
+			dependencies: [
+				"4D1EA5E660E381B3"
+			]
+			description: [
+				"Skadi: \"Woods, ashen, snowy, spotted...\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:wolf_pelt"
+			}
+			id: "8366BEAFCFF70148"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "FC2D8EF8DF3968E2"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "857EF9AE9AAE4811"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_variants"
+			]
+			tasks: [
+				{
+					id: "4571917D2B55FB62"
+					title: "Tame 4 different wolf variants"
+					type: "checkmark"
+				}
+			]
+			title: "Every Coat"
+			x: 1.75d
+			y: 12.72d
+		}
+		{
+			dependencies: [
+				"8366BEAFCFF70148"
+			]
+			description: [
+				"Skadi: \"Five wolves at your heel.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:wolf_pelt"
+			}
+			id: "436CF8AE33674FA4"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "4206496409299335"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "ECF287DA9757784F"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_pack"
+			]
+			tasks: [
+				{
+					id: "7EC11A06439C5650"
+					title: "Have 5 tamed wolves"
+					type: "checkmark"
+				}
+			]
+			title: "Your Own Pack"
+			x: 3.5d
+			y: 12.72d
+		}
+		{
+			dependencies: [
+				"436CF8AE33674FA4"
+			]
+			description: [
+				"Skadi: \"Bring your pack to the Dire Wolf.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:wolf_pelt"
+			}
+			id: "53CCBA6276CAE9C6"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "F50014847B74357A"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "67406130C822571F"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_bestiary_alpha"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:dire_wolf"
+					id: "6F77A86CBC69C4DA"
+					title: "Defeat the Dire Wolf Alpha with a tamed wolf alive"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Pack Against Pack"
+			x: 5.25d
+			y: 12.72d
+		}
+		{
+			dependencies: [
+				"1F11BBA2D3C2CB1B"
+			]
+			description: [
+				"Skadi: \"Odin has two ravens. Find yours.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:raven_feather"
+			}
+			id: "B169B1578115A476"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "C7044F65C8FABC37"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "F669456A22BC1F13"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_raven"
+			]
+			tasks: [
+				{
+					id: "A1C53C965CA07633"
+					title: "Find a common raven"
+					type: "checkmark"
+				}
+			]
+			title: "Ravens of Your Own"
+			x: 0.0d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"B169B1578115A476"
+			]
+			description: [
+				"Skadi: \"The Silverback's smaller cousins.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:silverback_fist"
+			}
+			id: "1519654704E8B6F7"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "6785460DB8D998E7"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B34FC0412E745616"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_gorilla"
+			]
+			tasks: [
+				{
+					id: "84F7381B2CDB9220"
+					title: "Find a western gorilla"
+					type: "checkmark"
+				}
+			]
+			title: "The Gorilla"
+			x: 1.75d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"1519654704E8B6F7"
+			]
+			description: [
+				"Skadi: \"Know the shark before you fight its king.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:shark_tooth"
+			}
+			id: "C15AAD3F196A968C"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "F3A46CACC05B6433"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 300"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "24DE11893FA01AAC"
+					silent: true
+					title: "300 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_bestiary_shark"
+			]
+			tasks: [
+				{
+					id: "6CED3ED58E06DA4B"
+					title: "Find a bull shark"
+					type: "checkmark"
+				}
+			]
+			title: "Fins"
+			x: 3.5d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"1F11BBA2D3C2CB1B"
+			]
+			description: [
+				"Mimir: \"Not every dragon is Fafnir. Some can be raised.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:dragon_gold"
+			}
+			id: "F126D10CDDB4A7EF"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "FFFF4B0C421B2056"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "23220F04E7C95524"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_egg"
+			]
+			tasks: [
+				{
+					id: "3DB5EAAB5ED1743B"
+					title: "Find a dragon egg (Saint's Dragons)"
+					type: "checkmark"
+				}
+			]
+			title: "Dragon's Egg"
+			x: 0.0d
+			y: 18.96d
+		}
+		{
+			dependencies: [
+				"F126D10CDDB4A7EF"
+			]
+			description: [
+				"Mimir: \"Keep it warm.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:dragon_gold"
+			}
+			id: "720477C4F88AEC19"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "1B2BE0CED00600A6"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6EA483C25B9E03AB"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_hatch"
+			]
+			tasks: [
+				{
+					id: "81EEF9FB2B1672C5"
+					title: "Hatch a dragon"
+					type: "checkmark"
+				}
+			]
+			title: "Hatchling"
+			x: 1.75d
+			y: 18.96d
+		}
+		{
+			dependencies: [
+				"720477C4F88AEC19"
+			]
+			description: [
+				"Mimir: \"It eats a lot.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:dragon_gold"
+			}
+			id: "20EBDDECB20EA9D7"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "557BE4A7F2243B3D"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B55B16665924A6EE"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_grow"
+			]
+			tasks: [
+				{
+					id: "C8B5AD9A22DF8B65"
+					title: "Raise a dragon to adult"
+					type: "checkmark"
+				}
+			]
+			title: "Growing Up"
+			x: 3.5d
+			y: 18.96d
+		}
+		{
+			dependencies: [
+				"20EBDDECB20EA9D7"
+			]
+			description: [
+				"Mimir: \"Hold on.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:dragon_gold"
+			}
+			id: "E65F3D55601A38EE"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "155100C8D8602CD3"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "FFC4C757A065CCE1"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bestiary_saddle"
+			]
+			tasks: [
+				{
+					id: "EB84E650B95BE447"
+					title: "Saddle a dragon"
+					type: "checkmark"
+				}
+			]
+			title: "Saddled"
+			x: 5.25d
+			y: 18.96d
+		}
+		{
+			dependencies: [
+				"E65F3D55601A38EE"
+			]
+			description: [
+				"Skadi: \"Fight a dragon from the back of a dragon.\""
+				""
+				""
+				"Also: Counts for Chapter 2: Dragon-Slayer"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:dragon_gold"
+			}
+			id: "6AD1D98AA404FF93"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "893C9EF427E99B84"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "83B6207BBFC5B41A"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_bestiary_ride"
+			]
+			tasks: [
+				{
+					id: "6A84B770A9650E72"
+					title: "Ride a grown dragon"
+					type: "checkmark"
+				}
+			]
+			title: "Wings Before Fafnir"
+			x: 7.0d
+			y: 18.96d
+		}
+	]
+	subtitle: [
+		"Naturalist, Animal Garden, Backported Wolves, Saint's Dragons"
+	]
+	title: "Skadi's Bestiary"
+}

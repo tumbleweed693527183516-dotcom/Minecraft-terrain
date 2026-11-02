@@ -1,0 +1,1206 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "kings_of_midgard"
+	group: "96A912181A061CEA"
+	icon: {
+		Count: 1b
+		id: "minecraft:golden_helmet"
+	}
+	id: "E204EF3A36920E5E"
+	images: [
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/kings_0.png"
+			rotation: 0.0d
+			width: 5.231d
+			x: 2.015d
+			y: 0.1d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/kings_1.png"
+			rotation: 0.0d
+			width: 5.002d
+			x: 1.901d
+			y: 3.22d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/kings_2.png"
+			rotation: 0.0d
+			width: 4.085d
+			x: 1.443d
+			y: 6.34d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/kings_3.png"
+			rotation: 0.0d
+			width: 6.835d
+			x: 2.817d
+			y: 9.46d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/kings_4.png"
+			rotation: 0.0d
+			width: 5.918d
+			x: 2.359d
+			y: 12.58d
+		}
+	]
+	order_index: 12
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Mimir: \"Midgard has many kings. Most of them want your head.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "11E7B981B2667CDB"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "1A49F24486B48476"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "F2E2F046BDE52881"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_kings_visit"
+			]
+			tasks: [
+				{
+					id: "12A0CDE566276FEA"
+					structure: "civilizations:nordic"
+					title: "Visit a Civilizations settlement"
+					type: "structure"
+				}
+			]
+			title: "Strangers"
+			x: 0.0d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"11E7B981B2667CDB"
+			]
+			description: [
+				"Mimir: \"Learn who rules where.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "865226C69C072AC4"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "156C26A1BAF3B4FB"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "D51E2331E29C60D2"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_kings_visit3"
+			]
+			tasks: [
+				{
+					id: "45E2E6C1673489BC"
+					title: "Visit 3 different Civilizations settlements"
+					type: "checkmark"
+				}
+			]
+			title: "Three Peoples"
+			x: 1.75d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"865226C69C072AC4"
+			]
+			description: [
+				"Mimir: \"You have seen every people in Midgard.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "2F7249FD44E7DC40"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "FCEABD2C313D170D"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "C9C2FEBD8FD496E2"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_kings_all"
+			]
+			tasks: [
+				{
+					id: "AC78D2173DB66937"
+					title: "Visit all five Civilizations settlements"
+					type: "checkmark"
+				}
+			]
+			title: "Every Banner"
+			x: 3.5d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"11E7B981B2667CDB"
+			]
+			description: [
+				"Mimir: \"Your own people. For now.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "9894361262A5B9EF"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "8C3716C009FF2ABC"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "150101E8459967F8"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_kings_v_nordic"
+			]
+			tasks: [
+				{
+					id: "8EAF09E8ACD87A2F"
+					structure: "civilizations:nordic"
+					title: "Visit the The Northmen settlement"
+					type: "structure"
+				}
+			]
+			title: "The Northmen"
+			x: 0.0d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"11E7B981B2667CDB"
+			]
+			description: [
+				"Mimir: \"Legions in neat squares.\""
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "9234659CA12D3AE5"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "B58E044C97A4F6F4"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "5518A474B28A7E27"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_kings_v_rome"
+			]
+			tasks: [
+				{
+					id: "AF66E5708063E4C2"
+					structure: "civilizations:rome"
+					title: "Visit the Rome settlement"
+					type: "structure"
+				}
+			]
+			title: "Rome"
+			x: 1.75d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"11E7B981B2667CDB"
+			]
+			description: [
+				"Mimir: \"Marble, olives and spears.\""
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "3BD9A107F2BDCFA9"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "DBD9789999867398"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "5D7D2872424E71B5"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_kings_v_greece"
+			]
+			tasks: [
+				{
+					id: "24B6DA5E70CABF94"
+					structure: "civilizations:greece"
+					title: "Visit the Greece settlement"
+					type: "structure"
+				}
+			]
+			title: "Greece"
+			x: 3.5d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"11E7B981B2667CDB"
+			]
+			description: [
+				"Mimir: \"Kings who built mountains for their tombs.\""
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "88598EA1F805E0A6"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "677880E1853E6A14"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1A7709448B3CBD89"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_kings_v_egypt"
+			]
+			tasks: [
+				{
+					id: "41AC463D67CB90F3"
+					structure: "civilizations:egypt"
+					title: "Visit the Egypt settlement"
+					type: "structure"
+				}
+			]
+			title: "Egypt"
+			x: 5.25d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"11E7B981B2667CDB"
+			]
+			description: [
+				"Mimir: \"An empire behind a great wall.\""
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "FB4E9CD672D13FB7"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "1D5DCCE5BD3FE37C"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "8F905185FEDB64E8"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_kings_v_china"
+			]
+			tasks: [
+				{
+					id: "1AC75C1C5A973A31"
+					structure: "civilizations:china"
+					title: "Visit the China settlement"
+					type: "structure"
+				}
+			]
+			title: "China"
+			x: 7.0d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"865226C69C072AC4"
+			]
+			description: [
+				"Mimir: \"King Bjorn Ironside leads The Northmen. Leads, for now.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "630F8BBA0640C36E"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "60E4E5795D8AE56F"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6526676CF72E0C68"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_kings_l_nordic"
+			]
+			tasks: [
+				{
+					entity: "civilizations:nordic_boss"
+					id: "CA445EFE5E9D2062"
+					title: "Defeat King Bjorn Ironside"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "King Bjorn Ironside"
+			x: 0.0d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"865226C69C072AC4"
+			]
+			description: [
+				"Mimir: \"General Julius Caesar leads Rome. Leads, for now.\""
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "13F5817A53C89BA2"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "2B68EB2D3FEF4C70"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "BD15B0753868EF72"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_kings_l_rome"
+			]
+			tasks: [
+				{
+					entity: "civilizations:rome_boss"
+					id: "8765D8D279CD40F6"
+					title: "Defeat General Julius Caesar"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "General Julius Caesar"
+			x: 1.75d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"865226C69C072AC4"
+			]
+			description: [
+				"Mimir: \"Alexander the Great leads Greece. Leads, for now.\""
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "A4ABEBB649C26E0A"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "3ABE95AB59ADA0C1"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "5CC805283D0166CA"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_kings_l_greece"
+			]
+			tasks: [
+				{
+					entity: "civilizations:greece_boss"
+					id: "9982AA432089C069"
+					title: "Defeat Alexander the Great"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Alexander the Great"
+			x: 3.5d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"865226C69C072AC4"
+			]
+			description: [
+				"Mimir: \"Pharaoh Khufu leads Egypt. Leads, for now.\""
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "8DEFAF42C9EB5284"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "EE53CBA44E799668"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "D967C192D5B97A39"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_kings_l_egypt"
+			]
+			tasks: [
+				{
+					entity: "civilizations:egypt_boss"
+					id: "174C9D52ED245690"
+					title: "Defeat Pharaoh Khufu"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Pharaoh Khufu"
+			x: 5.25d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"865226C69C072AC4"
+			]
+			description: [
+				"Mimir: \"Emperor Qin Shi Huang leads China. Leads, for now.\""
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "581DA1C8FB909E62"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "24BA384DFF5CECEC"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "84F3B4025360923D"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_kings_l_china"
+			]
+			tasks: [
+				{
+					entity: "civilizations:china_boss"
+					id: "F4C19F1A0793F9FC"
+					title: "Defeat Emperor Qin Shi Huang"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Emperor Qin Shi Huang"
+			x: 7.0d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"865226C69C072AC4"
+			]
+			description: [
+				"Mimir: \"Odin is not the only god who walks Midgard. Loki does too.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "CD78E10DB97254FE"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "70BEA01F485167AA"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "8301D24A8B551964"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_kings_g_nordic"
+			]
+			tasks: [
+				{
+					entity: "civilizations:boss_loki"
+					id: "E9C9AFC481225EB9"
+					title: "Defeat Loki"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Loki"
+			x: 0.0d
+			y: 10.32d
+		}
+		{
+			dependencies: [
+				"865226C69C072AC4"
+			]
+			description: [
+				"Mimir: \"Odin is not the only god who walks Midgard. Mercury does too.\""
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "17937E2E4CD863E7"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "6270E228B063F19E"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "BF29C1023A10E50F"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_kings_g_rome"
+			]
+			tasks: [
+				{
+					entity: "civilizations:boss_mercury"
+					id: "14FD8D32DA10FF54"
+					title: "Defeat Mercury"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Mercury"
+			x: 1.75d
+			y: 10.32d
+		}
+		{
+			dependencies: [
+				"865226C69C072AC4"
+			]
+			description: [
+				"Mimir: \"Odin is not the only god who walks Midgard. Artemis does too.\""
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "36518CACB0DBDCB4"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "5AC7AF05781115B8"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "8D9EE2BD81A1F982"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_kings_g_greece"
+			]
+			tasks: [
+				{
+					entity: "civilizations:boss_artemis"
+					id: "FC7061E1F31E3971"
+					title: "Defeat Artemis"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Artemis"
+			x: 3.5d
+			y: 10.32d
+		}
+		{
+			dependencies: [
+				"865226C69C072AC4"
+			]
+			description: [
+				"Mimir: \"Odin is not the only god who walks Midgard. Anubis does too.\""
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "7A3B6B5577AA3253"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "BF7451D4C4A4915D"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1A171662D215F8FF"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_kings_g_egypt"
+			]
+			tasks: [
+				{
+					entity: "civilizations:boss_anubis"
+					id: "54D9E768D9C1F492"
+					title: "Defeat Anubis"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Anubis"
+			x: 5.25d
+			y: 10.32d
+		}
+		{
+			dependencies: [
+				"865226C69C072AC4"
+			]
+			description: [
+				"Mimir: \"Odin is not the only god who walks Midgard. Sun Wukong does too.\""
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "DD98072C3108AF1E"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "20420B1E9FC47F39"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "8560964470A3D0F2"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_kings_g_china"
+			]
+			tasks: [
+				{
+					entity: "civilizations:boss_wukong"
+					id: "214B1EE6FA9FFDD3"
+					title: "Defeat Sun Wukong"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Sun Wukong"
+			x: 7.0d
+			y: 10.32d
+		}
+		{
+			dependencies: [
+				"2F7249FD44E7DC40"
+			]
+			description: [
+				"Mimir: \"Five crowns. Midgard will remember your name.\""
+				""
+				""
+				"Also: Title: Kingslayer"
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "FE4FC77846A05D98"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "CBE78E31CEFB0A63"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "4EC685460B97A624"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_kings_leaders"
+			]
+			tasks: [
+				{
+					id: "564CF4751C5A0D31"
+					title: "Defeat all five leaders"
+					type: "checkmark"
+				}
+			]
+			title: "Kingslayer"
+			x: 0.0d
+			y: 13.44d
+		}
+		{
+			dependencies: [
+				"FE4FC77846A05D98"
+			]
+			description: [
+				"Mimir: \"Ragnarok is not only ours.\""
+				""
+				""
+				"Also: Title: Godslayer"
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "C23DC321CD6D9692"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "A256CE734E82E2A0"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "C605144FDF2E384F"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_kings_gods"
+			]
+			tasks: [
+				{
+					id: "7AA049670263F789"
+					title: "Defeat all five gods"
+					type: "checkmark"
+				}
+			]
+			title: "Twilight of Many Gods"
+			x: 1.75d
+			y: 13.44d
+		}
+	]
+	subtitle: [
+		"Civilizations: five peoples, their leaders and their gods"
+	]
+	title: "Kings of Midgard"
+}

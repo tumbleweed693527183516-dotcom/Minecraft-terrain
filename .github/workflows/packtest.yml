@@ -67,6 +67,7 @@ jobs:
                   os.makedirs(os.path.dirname(dest), exist_ok=True)
                   open(dest, "wb").write(z.read(n))
           EOF
+          python3 ../tools/ftb_jars.py mods      # the quest book mods (CurseForge-only, players add them by hand)
           ls mods | tee ../out/server_mods.txt
           curl -fsSL -o server.jar "https://meta.fabricmc.net/v2/versions/loader/1.20.1/$(cat loader.txt)/1.0.1/server/jar"
           echo "eula=true" > eula.txt
@@ -120,7 +121,7 @@ jobs:
         run: |
           cp server/server.log out/ 2>/dev/null || true
           grep -iE "chunky|Done \(" server/server.log | tail -n 8 >> out/timing.txt 2>/dev/null || true
-          grep -E "RULECHECK|BOSSCHECK|QUESTCHECK|[Hh]eracles|[Qq]uest|BOSS |\[boss\]|Ragnarok|has the following block data|has the following entity data|Changed the block at 3[02]|Summoned|None of|No boss" server/server.log > out/rules.txt 2>/dev/null || true
+          grep -E "RULECHECK|BOSSCHECK|QUESTCHECK|FTB|ftbquests|[Qq]uest|BOSS |\[boss\]|Ragnarok|has the following block data|has the following entity data|Changed the block at 3[02]|Summoned|None of|No boss" server/server.log > out/rules.txt 2>/dev/null || true
           grep -nE "ERROR|Exception|Caused by|Failed to|Mixin.*(fail|error)|Parsing error" server/server.log > out/problems.txt 2>/dev/null || true
           wc -l out/problems.txt || true
           cat out/rules.txt out/timing.txt || true

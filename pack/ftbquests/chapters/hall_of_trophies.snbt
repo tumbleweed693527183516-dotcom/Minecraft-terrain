@@ -1,0 +1,2100 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "hall_of_trophies"
+	group: "96A912181A061CEA"
+	icon: {
+		Count: 1b
+		id: "minecraft:item_frame"
+	}
+	id: "C3A8F6F1BB7C00D3"
+	images: [
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/hall_0.png"
+			rotation: 0.0d
+			width: 4.315d
+			x: 1.557d
+			y: 0.1d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/hall_1.png"
+			rotation: 0.0d
+			width: 7.293d
+			x: 3.046d
+			y: 3.22d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/hall_2.png"
+			rotation: 0.0d
+			width: 7.293d
+			x: 3.046d
+			y: 11.86d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/hall_3.png"
+			rotation: 0.0d
+			width: 5.46d
+			x: 2.13d
+			y: 14.98d
+		}
+	]
+	order_index: 15
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Odin: \"Every einherjar keeps a hall of trophies. Yours is empty.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:item_frame"
+			}
+			id: "2058303E278A9AFB"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "DA79F13399B236B6"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6181521D3D669D70"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_hall_open"
+			]
+			tasks: [
+				{
+					id: "CCF53AF3CA8D4BE4"
+					stat: "vividlands_ragnarok:bosses_killed"
+					title: "Defeat any boss"
+					type: "stat"
+					value: 1
+				}
+			]
+			title: "An Empty Hall"
+			x: 0.0d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Odin: \"Put a trophy on a stand where guests can see it.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:item_frame"
+			}
+			id: "1AB80D27184595D2"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "387AA2E9D7B91F78"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "3096D03BBDA53C78"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_hall_stand"
+			]
+			tasks: [
+				{
+					id: "5860112C6E1067D2"
+					title: "Place a trophy in an item frame"
+					type: "checkmark"
+				}
+			]
+			title: "Display It"
+			x: 1.75d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:bear_pelt"
+			}
+			id: "65831B408F558719"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "F563FC856C5F27F5"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "22963B5E264BDAD7"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_cave_bear"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "28DD01B3C4ABD83B"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:bear_pelt"
+					}
+					title: "Hand in 1 Bear Pelt"
+					type: "item"
+				}
+			]
+			title: "Cave Bear"
+			x: 0.0d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:wolf_pelt"
+			}
+			id: "D9DF5351181A3251"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "C8AC80D119BC3BE8"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "3E5827483B64A6DD"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_dire_wolf"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "7299BFC11079FAB2"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:wolf_pelt"
+					}
+					title: "Hand in 1 Wolf Pelt"
+					type: "item"
+				}
+			]
+			title: "Dire Wolf"
+			x: 1.75d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:great_antlers"
+			}
+			id: "64B03D73F5BCB8EA"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "1940AD4890291550"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "ED39A85DE4013939"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_irish_elk"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "8D26D7AA998AE280"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:great_antlers"
+					}
+					title: "Hand in 1 Great Antlers"
+					type: "item"
+				}
+			]
+			title: "Irish Elk"
+			x: 3.5d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:terror_claw"
+			}
+			id: "817C23E4B00A045F"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "510B95B1EF60F9B0"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "9D84B9E7F9A14E88"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_terror_bird"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "94D87ED829297F1F"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:terror_claw"
+					}
+					title: "Hand in 1 Terror Claw"
+					type: "item"
+				}
+			]
+			title: "Terror Bird"
+			x: 5.25d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:bison_horn"
+			}
+			id: "3141186AB0FC9A1F"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "FB119F7E5013300B"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6AB25EBAF23B9F09"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_steppe_bison"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "C242CA4B381B9EDD"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:bison_horn"
+					}
+					title: "Hand in 1 Bison Horn"
+					type: "item"
+				}
+			]
+			title: "Steppe Bison"
+			x: 7.0d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:hippo_hide"
+			}
+			id: "E17C8094E6DA70FB"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "E2B0CEEC2C96CD07"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "5AB8B53EEC3F5457"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_hippo"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "3E2FA1E8C229C231"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:hippo_hide"
+					}
+					title: "Hand in 1 Hippo Hide"
+					type: "item"
+				}
+			]
+			title: "Hippo"
+			x: 8.75d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:komodo_venom"
+			}
+			id: "FC15C0826E93AEA8"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "1FF6471A904B03FF"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "31B81059C8E32CF6"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_komodo"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "3FBBF5D1E74E40D7"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:komodo_venom"
+					}
+					title: "Hand in 1 Komodo Venom"
+					type: "item"
+				}
+			]
+			title: "Komodo"
+			x: 0.0d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:croc_scales"
+			}
+			id: "E72AF425A654B285"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "920707059BC72077"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "2172EC9EF5CF8F8C"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_crocodile"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "576ED3ED08A8F530"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:croc_scales"
+					}
+					title: "Hand in 1 Croc Scales"
+					type: "item"
+				}
+			]
+			title: "Crocodile"
+			x: 1.75d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:lion_mane"
+			}
+			id: "85A7DD290F09284C"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "3E83706DB394BE72"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "F2476A4CE5AB17F9"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_cave_lion"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "1F4847B87F12B605"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:lion_mane"
+					}
+					title: "Hand in 1 Lion Mane"
+					type: "item"
+				}
+			]
+			title: "Cave Lion"
+			x: 3.5d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:saber_fang"
+			}
+			id: "216D5AD63CAE0A06"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "A7E056A596F967FF"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "A693977FDB11CC14"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_saber_tooth"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "9D9A155A596F4045"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:saber_fang"
+					}
+					title: "Hand in 1 Saber Fang"
+					type: "item"
+				}
+			]
+			title: "Saber Tooth"
+			x: 5.25d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:eagle_feather"
+			}
+			id: "5C725647116064C0"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "30F3EE91E6ACB73F"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "A53E61060FA4E456"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_haast_eagle"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "3FF07A6D72E88366"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:eagle_feather"
+					}
+					title: "Hand in 1 Eagle Feather"
+					type: "item"
+				}
+			]
+			title: "Haast Eagle"
+			x: 7.0d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:anaconda_skin"
+			}
+			id: "1398EB381D4ABCB2"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "8F7784FD597E5A99"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "28438C0CA2498E6F"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_anaconda"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "68ACCAD5CC877643"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:anaconda_skin"
+					}
+					title: "Hand in 1 Anaconda Skin"
+					type: "item"
+				}
+			]
+			title: "Anaconda"
+			x: 8.75d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:silverback_fist"
+			}
+			id: "84BE966E16B07BC6"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "7AD4B0BD60339D89"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "18DBBC3DC9DCF6F8"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_silverback"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "45AA5AF62AD22555"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:silverback_fist"
+					}
+					title: "Hand in 1 Silverback Fist"
+					type: "item"
+				}
+			]
+			title: "Silverback"
+			x: 0.0d
+			y: 7.76d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:glyptodon_plate"
+			}
+			id: "45B07029092EB259"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "1C9587CC4DA8F5CE"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "473CFF1DBBEAB206"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_glyptodon"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "4E9B8A7A45C9062A"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:glyptodon_plate"
+					}
+					title: "Hand in 1 Glyptodon Plate"
+					type: "item"
+				}
+			]
+			title: "Glyptodon"
+			x: 1.75d
+			y: 7.76d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:walrus_tusk"
+			}
+			id: "B3DF53168DD1571B"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "4125BF3548CC758D"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "7BC2CE4E50DB61C3"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_walrus"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "6A66378BA34420E5"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:walrus_tusk"
+					}
+					title: "Hand in 1 Walrus Tusk"
+					type: "item"
+				}
+			]
+			title: "Walrus"
+			x: 3.5d
+			y: 7.76d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:sloth_claw"
+			}
+			id: "8B75D2C9DF50F0CC"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "B4960494B19885C2"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6B2CA15A9AA20472"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_ground_sloth"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "B81DDF6D76B96C7D"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:sloth_claw"
+					}
+					title: "Hand in 1 Sloth Claw"
+					type: "item"
+				}
+			]
+			title: "Ground Sloth"
+			x: 5.25d
+			y: 7.76d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:shark_tooth"
+			}
+			id: "D4C4F85F67BE6203"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "94262D3D4C88C9B0"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "FF625E7D05485E99"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_bull_shark"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "A63EA43731BFC4F0"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:shark_tooth"
+					}
+					title: "Hand in 1 Shark Tooth"
+					type: "item"
+				}
+			]
+			title: "Bull Shark"
+			x: 7.0d
+			y: 7.76d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:rhino_horn"
+			}
+			id: "23D1E4CDA4F69D4E"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "96AC1F67BF8D58ED"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "43D25E0F6A623DB6"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_woolly_rhino"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "D3BD5A5825015464"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:rhino_horn"
+					}
+					title: "Hand in 1 Rhino Horn"
+					type: "item"
+				}
+			]
+			title: "Woolly Rhino"
+			x: 8.75d
+			y: 7.76d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:ivory"
+			}
+			id: "56937F913820ECB5"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "34808B7AA22D81CF"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "F102607698346E6B"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_elephant"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "6EA3F5F602D5517F"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:ivory"
+					}
+					title: "Hand in 1 Ivory"
+					type: "item"
+				}
+			]
+			title: "Elephant"
+			x: 0.0d
+			y: 9.6d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:mammoth_tusk"
+			}
+			id: "B2191D8F16AC0CF8"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "687DFB036DC460D9"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B1F56574707B235C"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_mammoth"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "F8CC3C26970C2AF0"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:mammoth_tusk"
+					}
+					title: "Hand in 1 Mammoth Tusk"
+					type: "item"
+				}
+			]
+			title: "Mammoth"
+			x: 1.75d
+			y: 9.6d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:sleipnir_hair"
+			}
+			id: "52130A838B865107"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "46BF3860D1D13445"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B015E4F1D88C29A6"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_sleipnir"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "465FB0E2104915E0"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:sleipnir_hair"
+					}
+					title: "Hand in 1 Sleipnir Hair"
+					type: "item"
+				}
+			]
+			title: "Sleipnir"
+			x: 0.0d
+			y: 12.72d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:hel_key"
+			}
+			id: "FA9662036E2A4D75"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "1CCE2F05C6CAA6CD"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "25595BA6D5045C07"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_garmr"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "A2741DB40F31C6E4"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:hel_key"
+					}
+					title: "Hand in 1 Hel Key"
+					type: "item"
+				}
+			]
+			title: "Garmr"
+			x: 1.75d
+			y: 12.72d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:dragon_gold"
+			}
+			id: "9FE66B72BBDC5C33"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "5750D48459A8D397"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "599FA8C6D687CCD4"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_fafnir"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "4A6C9FA358C124BC"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:dragon_gold"
+					}
+					title: "Hand in 1 Dragon Gold"
+					type: "item"
+				}
+			]
+			title: "Fafnir"
+			x: 3.5d
+			y: 12.72d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:serpent_scale"
+			}
+			id: "10A8291B5A4E9858"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "53D527B4D645BC84"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "EDFE461A3195213E"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_jormungandr"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "246013B474A81ABB"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:serpent_scale"
+					}
+					title: "Hand in 1 Serpent Scale"
+					type: "item"
+				}
+			]
+			title: "Jormungandr"
+			x: 5.25d
+			y: 12.72d
+		}
+		{
+			dependencies: [
+				"2058303E278A9AFB"
+			]
+			description: [
+				"Hand in the trophy."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:fenrirs_fang"
+			}
+			id: "D2AE032D00597EF3"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "36C488C2FC5D5C58"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "89784D21035615A3"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_hall_fenrir"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "2BA642E101BBB0B6"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:fenrirs_fang"
+					}
+					title: "Hand in 1 Fenrirs Fang"
+					type: "item"
+				}
+			]
+			title: "Fenrir"
+			x: 7.0d
+			y: 12.72d
+		}
+		{
+			dependencies: [
+				"1AB80D27184595D2"
+			]
+			description: [
+				"Odin: \"Once is luck.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:item_frame"
+			}
+			id: "72FAA6CAAA077365"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "82DF33DE3D05DDC9"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "D17D23586FBB6D93"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_hall_v1"
+			]
+			tasks: [
+				{
+					id: "8EFBED70A7152E07"
+					stat: "vividlands_ragnarok:bosses_killed"
+					title: "Defeat any boss a second time"
+					type: "stat"
+					value: 2
+				}
+			]
+			title: "Again"
+			x: 0.0d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"72FAA6CAAA077365"
+			]
+			description: [
+				"Odin: \"Ten is skill.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:item_frame"
+			}
+			id: "AADE76F4B1682BFC"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "ECD6BF4F798E18BF"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "A3A8582169DEC673"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_hall_v10"
+			]
+			tasks: [
+				{
+					id: "AC2C81C82EC7A0C3"
+					stat: "vividlands_ragnarok:bosses_killed"
+					title: "Defeat 10 bosses in total"
+					type: "stat"
+					value: 10
+				}
+			]
+			title: "Ten Hunts"
+			x: 1.75d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"AADE76F4B1682BFC"
+			]
+			description: [
+				"Odin: \"Fifty is a legend.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:item_frame"
+			}
+			id: "E0E2BB2E7D72EB29"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "9952EDEDD6AAF07C"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B4D9A848EA085B02"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_hall_v50"
+			]
+			tasks: [
+				{
+					id: "1FAE406C0C272A21"
+					stat: "vividlands_ragnarok:bosses_killed"
+					title: "Defeat 50 bosses in total"
+					type: "stat"
+					value: 50
+				}
+			]
+			title: "Fifty Hunts"
+			x: 3.5d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"E0E2BB2E7D72EB29"
+			]
+			description: [
+				"Odin: \"Stagger 25 bosses.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:item_frame"
+			}
+			id: "57E04A8DD7902374"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "27CD7522C0E2CC9F"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "7BD73C5B3FAA0816"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_hall_stagger"
+			]
+			tasks: [
+				{
+					id: "BC53266BFC2920BD"
+					stat: "vividlands_ragnarok:boss_staggers"
+					title: "Stagger bosses 25 times"
+					type: "stat"
+					value: 25
+				}
+			]
+			title: "Breaker"
+			x: 5.25d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"57E04A8DD7902374"
+			]
+			description: [
+				"Odin: \"Kill a boss without taking a hit.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:item_frame"
+			}
+			id: "18697277CE6C9283"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "F1A66308B7AFAC10"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "22120E9AC37B97F2"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_hall_nohit"
+			]
+			tasks: [
+				{
+					id: "F2CE098D00F3DC76"
+					title: "Defeat a boss without taking damage"
+					type: "checkmark"
+				}
+			]
+			title: "Untouched"
+			x: 7.0d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"18697277CE6C9283"
+			]
+			description: [
+				"Odin: \"Kill a boss two acts above your armor's ward.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:item_frame"
+			}
+			id: "5866E59ECA255425"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "6A0ED71C5D645C47"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "FE38577E85E1EDFC"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_hall_under"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/boss/underdressed"
+					criterion: ""
+					id: "66D6252A20C94258"
+					title: "Defeat a boss while two stages behind on ward"
+					type: "advancement"
+				}
+			]
+			title: "Underdressed"
+			x: 8.75d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"5866E59ECA255425"
+			]
+			description: [
+				"Odin: \"Every trophy of Midgard. Valhalla has a seat for you.\""
+				""
+				""
+				"Also: Title: Einherjar Champion"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:agamemnon_helmet"
+			}
+			id: "58C1D5E5E2DE0F5C"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "5A15ED78793D293B"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "BE32E32D27913A30"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_hall_all"
+			]
+			tasks: [
+				{
+					id: "6D78079D3074B7DD"
+					title: "Every trophy handed in"
+					type: "checkmark"
+				}
+			]
+			title: "The Full Hall"
+			x: 0.0d
+			y: 17.68d
+		}
+	]
+	subtitle: [
+		"Every boss, beaten again and again"
+	]
+	title: "Hall of Trophies"
+}

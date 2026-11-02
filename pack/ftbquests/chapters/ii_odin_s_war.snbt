@@ -1,0 +1,524 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "ii_odin_s_war"
+	group: "5367FBBD604DCF21"
+	icon: {
+		Count: 1b
+		id: "minecraft:netherite_sword"
+	}
+	id: "8BB9D350C72AB4D7"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"F4DF44534249B519"
+			]
+			description: [
+				"Odin: \"My steed will not carry a stranger. Prove you can ride.\""
+				""
+				""
+				"Also: Sleipnir's trial opens"
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:diamond_horse_armor"
+			}
+			id: "B75ECBE2EE6234C8"
+			rewards: [
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "4F257A3CDB427AAE"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_c1"
+			]
+			tasks: [
+				{
+					id: "1293842296C4D000"
+					title: "Tame a horse"
+					type: "checkmark"
+				}
+				{
+					id: "66D0A056AF4D266A"
+					item: {
+						Count: 1b
+						id: "minecraft:diamond_horse_armor"
+					}
+					title: "Diamond horse armor"
+					type: "item"
+				}
+			]
+			title: "Worthy Rider"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"B75ECBE2EE6234C8"
+			]
+			description: [
+				"Odin: \"Eight legs, and none of them will stop for you. A trial, not a hunt.\""
+				""
+				"Where: steppe and prairie"
+				"Health: 1200"
+				"Spawns after: the Mammoth"
+				"Moves: Eight-hoof charge, double kick and stomp, leap, shockwave"
+				"Phase 2: Odin's lightning storm"
+				""
+				"Tip: A trial of worthiness. Stand your ground."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:sleipnir_hair"
+			}
+			id: "A816A83C1D13B037"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "87AD13246DFDFC3A"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "Odin's Eight-Legged Steed"
+			tags: [
+				"boss"
+				"q_sleipnir"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:sleipnir"
+					id: "996E6C0A210727CB"
+					title: "Defeat the Sleipnir"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Sleipnir"
+			x: 0.0d
+			y: 1.6d
+		}
+		{
+			dependencies: [
+				"A816A83C1D13B037"
+			]
+			description: [
+				"Mimir: \"Hel's hound waits behind the sealed gate. Netherite, mortal. From the dwarves' forge.\""
+				""
+				""
+				"Also: Garmr's gate opens"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:zweihander"
+			}
+			id: "313B177239ABBB68"
+			rewards: [
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1CAF65319EBC9F15"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_c2"
+			]
+			tasks: [
+				{
+					id: "9C2D1F0A940586F0"
+					item: {
+						Count: 1b
+						id: "minecraft:netherite_chestplate"
+					}
+					title: "Craft a netherite chestplate (Create forge line)"
+					type: "item"
+				}
+			]
+			title: "Light in the Dark"
+			x: 1.75d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"313B177239ABBB68"
+			]
+			description: [
+				"Mimir: \"The hound of Hel guards the gate under the stronghold. Do not let it see you run.\""
+				""
+				"Where: the portal room of a stronghold"
+				"Health: 1600"
+				"Spawns after: Sleipnir"
+				"Moves: Shadow breath, bite combo, Hel's hounds, leap (wither)"
+				"Phase 2: Soul fire rains down"
+				""
+				"Tip: The shadow breath is a cone. Get behind it."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:hel_key"
+			}
+			id: "2940BC26FCA4D1B5"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "782F213FA0633FD8"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "Hound of Hel"
+			tags: [
+				"boss"
+				"q_garmr"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:garmr"
+					id: "F6FA9E4A09E4D919"
+					title: "Defeat the Garmr"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Garmr"
+			x: 1.75d
+			y: 1.6d
+		}
+		{
+			dependencies: [
+				"2940BC26FCA4D1B5"
+			]
+			description: [
+				"Mimir: \"Fafnir was a dwarf once. Greed turned him into a dragon. Fire turns you into ash.\""
+				""
+				""
+				"Also: Fafnir's hoard opens"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:dragon_gold"
+			}
+			id: "B109A1C94CA4C9C3"
+			rewards: [
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B6322F11A2B9DC2D"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_c3"
+			]
+			tasks: [
+				{
+					id: "E8C959AC88C74DED"
+					title: "8 potions of fire resistance"
+					type: "checkmark"
+				}
+				{
+					id: "E8C7030CB19E67E9"
+					title: "A dragon-tier weapon"
+					type: "checkmark"
+				}
+			]
+			title: "Dragon-Slayer"
+			x: 3.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"B109A1C94CA4C9C3"
+			]
+			description: [
+				"Odin: \"He sleeps on cursed gold in the Draugr Bastion. Wake him.\""
+				""
+				"Where: a Draugr Bastion (Draugr Invasion)"
+				"Health: 2400"
+				"Spawns after: Garmr"
+				"Moves: Fire breath, claw and tail combo, tail sweep, leap"
+				"Phase 2: Takes wing: firebombs and swoops"
+				""
+				"Tip: Fire resistance potions are not optional."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:dragon_gold"
+			}
+			id: "C8F04FC70CC6BF07"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1D58708E43599CCA"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "the Cursed Hoard"
+			tags: [
+				"boss"
+				"q_fafnir"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:fafnir"
+					id: "E6858CF98E076D85"
+					title: "Defeat the Fafnir"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Fafnir"
+			x: 3.5d
+			y: 1.6d
+		}
+		{
+			dependencies: [
+				"C8F04FC70CC6BF07"
+			]
+			description: [
+				"Mimir: \"The World Serpent circles all of Midgard. You will need a bigger boat.\""
+				""
+				""
+				"Also: Jormungandr surfaces"
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:netherite_sword"
+			}
+			id: "B760298DFBD6E91D"
+			rewards: [
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "BC16951302C4B946"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_c4"
+			]
+			tasks: [
+				{
+					id: "AED73FCDC2C60F7F"
+					title: "Build a warship (Njord's Voyages line)"
+					type: "checkmark"
+				}
+			]
+			title: "A Warship"
+			x: 5.25d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"B760298DFBD6E91D"
+			]
+			description: [
+				"Odin: \"Thor was meant to fight it. Thor is not here.\""
+				""
+				"Where: deep ocean"
+				"Health: 3000"
+				"Spawns after: Fafnir"
+				"Moves: Venom breath, leap from the sea, capsize, combo"
+				"Phase 2: Coils round you; a storm at sea"
+				""
+				"Tip: Bring a warship. The sea blessing keeps you fast in the water."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:serpent_scale"
+			}
+			id: "590BC554861101F1"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "EDACEA9AF0A42ABD"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "the World Serpent"
+			tags: [
+				"boss"
+				"q_jormungandr"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:jormungandr"
+					id: "FBB6D05D3F7F94DE"
+					title: "Defeat the Jormungandr"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Jormungandr"
+			x: 5.25d
+			y: 1.6d
+		}
+		{
+			dependencies: [
+				"590BC554861101F1"
+			]
+			description: [
+				"Odin: \"The wolf waits in the deepest crypt. Wear the best that mortals ever forged.\""
+				""
+				""
+				"Also: Fenrir's crypt opens"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:mycenaean_helmet"
+			}
+			id: "DA6941D62C3EA0EF"
+			rewards: [
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "69E885613247F57E"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_c5"
+			]
+			tasks: [
+				{
+					id: "7E97EFC9BC23FB64"
+					title: "Full ancient armor, tier 45 or higher"
+					type: "checkmark"
+				}
+			]
+			title: "The Last Stand"
+			x: 7.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"DA6941D62C3EA0EF"
+			]
+			description: [
+				"Odin: \"The prophecy says he swallows me. Change it.\""
+				""
+				"Where: a Draugr Crypt (Draugr Invasion)"
+				"Health: 4000"
+				"Spawns after: Jormungandr"
+				"Moves: Howl (weakness, slowness), bite combo, leap (bleed), slam, wolves"
+				"Phase 2: Ragnarok's fire: breath, fire rain, burning charge"
+				""
+				"Tip: The wolf that was meant to kill Odin. You stand in Odin's place."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:fenrirs_fang"
+			}
+			id: "AD7E9FE74616140E"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "EFAC3C9D592B35D4"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "the Wolf of Ragnarok"
+			tags: [
+				"boss"
+				"q_fenrir"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:fenrir"
+					id: "F18CEF6B93D0A3F6"
+					title: "Defeat the Fenrir"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Fenrir"
+			x: 7.0d
+			y: 1.6d
+		}
+	]
+	title: "II. Odin's War"
+}

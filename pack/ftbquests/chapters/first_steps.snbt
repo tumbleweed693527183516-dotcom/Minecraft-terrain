@@ -1,0 +1,732 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "first_steps"
+	group: "96A912181A061CEA"
+	icon: {
+		Count: 1b
+		id: "minecraft:book"
+	}
+	id: "1189D53B72C28489"
+	images: [
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/tutorial_0.png"
+			rotation: 0.0d
+			width: 6.147d
+			x: 2.474d
+			y: 0.1d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/tutorial_1.png"
+			rotation: 0.0d
+			width: 4.544d
+			x: 1.672d
+			y: 3.22d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/tutorial_2.png"
+			rotation: 0.0d
+			width: 4.315d
+			x: 1.557d
+			y: 6.34d
+		}
+	]
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Every chapter here is optional except the main quest. Side lines pay off in the boss fights."
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:book"
+			}
+			id: "FA442BC1A0F052D1"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "8B25F264640D760E"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B390BC07AC611792"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_tutorial_book"
+			]
+			tasks: [
+				{
+					id: "6CFC9E7EAD146252"
+					title: "Open the quest book"
+					type: "checkmark"
+				}
+			]
+			title: "The Quest Book"
+			x: 0.0d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"FA442BC1A0F052D1"
+			]
+			description: [
+				"EMI shows every recipe in the pack, including the Create ones for Nether items."
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:book"
+			}
+			id: "9ACB9D734BB56597"
+			rewards: [
+				{
+					count: 8
+					id: "36DB780884844B35"
+					item: {
+						Count: 1b
+						id: "minecraft:bread"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "4D2529945FE2C84A"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_tutorial_emi"
+			]
+			tasks: [
+				{
+					id: "9EC6FB5E5258E1BB"
+					title: "Open EMI and look up a recipe (press R on an item)"
+					type: "checkmark"
+				}
+			]
+			title: "Look It Up"
+			x: 1.75d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"9ACB9D734BB56597"
+			]
+			description: [
+				"Jade names whatever block or creature you look at, and which mod it comes from."
+				""
+				""
+				"Also: 4 torches"
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:book"
+			}
+			id: "8031B094850A28CB"
+			rewards: [
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "EA5191299FAC8702"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_tutorial_jade"
+			]
+			tasks: [
+				{
+					id: "8F072ED846AE8DA5"
+					title: "Look at a modded block with Jade"
+					type: "checkmark"
+				}
+			]
+			title: "What Is That?"
+			x: 3.5d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"8031B094850A28CB"
+			]
+			description: [
+				"Xaero's map remembers everywhere you have been."
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:book"
+			}
+			id: "6FF5C958E8D092A3"
+			rewards: [
+				{
+					id: "9BD753A2501A9337"
+					item: {
+						Count: 1b
+						id: "minecraft:compass"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "DA2536A81C07881B"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_tutorial_map"
+			]
+			tasks: [
+				{
+					id: "9FE06AB529C07369"
+					title: "Open the world map (M)"
+					type: "checkmark"
+				}
+				{
+					id: "10C34DE482BA6755"
+					title: "Set a waypoint"
+					type: "checkmark"
+				}
+			]
+			title: "The World Map"
+			x: 5.25d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"6FF5C958E8D092A3"
+			]
+			description: [
+				"Waystones link the world. Every one you find is one you never walk to again."
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:book"
+			}
+			id: "6CD8E87531383DBF"
+			rewards: [
+				{
+					count: 2
+					id: "D709F0A5073C78C7"
+					item: {
+						Count: 1b
+						id: "waystones:warp_stone"
+					}
+					type: "item"
+				}
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "F66AB6DEEA6599E8"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "54122FEAA349D4A8"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_tutorial_way"
+			]
+			tasks: [
+				{
+					id: "5A56A6C507830B71"
+					title: "Activate a waystone"
+					type: "checkmark"
+				}
+				{
+					id: "6BD71F41FD419861"
+					title: "Travel with a waystone"
+					type: "checkmark"
+				}
+			]
+			title: "The Old Roads"
+			x: 7.0d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"FA442BC1A0F052D1"
+			]
+			description: [
+				"When you die, your things wait in a grave where you fell."
+				""
+				""
+				"Also: Totem-free advice"
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:book"
+			}
+			id: "3182C454892EEEBA"
+			rewards: [
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "FD30D80FC5D95960"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_tutorial_grave"
+			]
+			tasks: [
+				{
+					id: "AE6BA0D632575652"
+					title: "Read about graves (check this box)"
+					type: "checkmark"
+				}
+			]
+			title: "Death Is a Detour"
+			x: 0.0d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"3182C454892EEEBA"
+			]
+			description: [
+				"Pick up chests and animals and carry them."
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:book"
+			}
+			id: "D77DA0E7F86D4098"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "9E074AF28CB04621"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "D469CDEF46DAF135"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_tutorial_carry"
+			]
+			tasks: [
+				{
+					id: "B7ED415344BD08C3"
+					title: "Pick up a chest with an empty hand while sneaking"
+					type: "checkmark"
+				}
+			]
+			title: "Carry On"
+			x: 1.75d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"D77DA0E7F86D4098"
+			]
+			description: [
+				"Bosses are far away. Bring more than your pockets hold."
+				""
+				""
+				"Also: Sleeping bag"
+			]
+			icon: {
+				Count: 1b
+				id: "travelersbackpack:standard"
+			}
+			id: "1FEFDBABF2C18C0D"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "56470CAD98064A82"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "D9AAE73D17298B5A"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_tutorial_pack"
+			]
+			tasks: [
+				{
+					id: "7F8E6998EF03B3C3"
+					item: {
+						Count: 1b
+						id: "travelersbackpack:standard"
+					}
+					title: "Craft a Traveler's Backpack"
+					type: "item"
+				}
+			]
+			title: "A Traveler's Backpack"
+			x: 3.5d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"1FEFDBABF2C18C0D"
+			]
+			description: [
+				"AppleSkin shows how much a meal really fills you."
+				""
+				""
+				"Also: 16 cooked mutton"
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:book"
+			}
+			id: "17553F6366E40C36"
+			rewards: [
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "CE76A4A3D5C550E1"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_tutorial_food"
+			]
+			tasks: [
+				{
+					id: "5F982E51E98F0855"
+					title: "Eat 5 different foods"
+					type: "checkmark"
+				}
+			]
+			title: "Know Your Food"
+			x: 5.25d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"FA442BC1A0F052D1"
+			]
+			description: [
+				"Combat Roll lets you dodge. Bosses telegraph their big hits: roll out of the red rings."
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:book"
+			}
+			id: "7A83EB902F5CA1E6"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "BC16BAB476BB60F8"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "2E19B8738B84A911"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_tutorial_roll"
+			]
+			tasks: [
+				{
+					id: "8222502213A43071"
+					title: "Dodge-roll 10 times"
+					type: "checkmark"
+				}
+			]
+			title: "The Roll"
+			x: 0.0d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"7A83EB902F5CA1E6"
+			]
+			description: [
+				"Weapons swing in arcs and combos. Two-handed weapons hit everything in front of you."
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:book"
+			}
+			id: "9A22782FCEFDC7F0"
+			rewards: [
+				{
+					id: "469436B9C532B82B"
+					item: {
+						Count: 1b
+						id: "minecraft:iron_sword"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "2A199C40D09F7DD2"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_tutorial_swing"
+			]
+			tasks: [
+				{
+					id: "E70BE70F075F6578"
+					title: "Kill a mob with a two-handed weapon"
+					type: "checkmark"
+				}
+			]
+			title: "Better Combat"
+			x: 1.75d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"9A22782FCEFDC7F0"
+			]
+			description: [
+				"Armor made for a boss's act halves its hits. Armor from two acts back makes them hurt more."
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:berserker_helmet"
+			}
+			id: "7137608410E4A691"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "9E00A883F1AF6E6E"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "DB0819E0D0D3A268"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_tutorial_ward"
+			]
+			tasks: [
+				{
+					id: "7660A7FAAA498960"
+					title: "Read the armor guide (check this box)"
+					type: "checkmark"
+				}
+			]
+			title: "Boss Ward"
+			x: 3.5d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"7137608410E4A691"
+			]
+			description: [
+				"Hit a boss hard and fast and it staggers: it takes 50% more damage until it recovers."
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:book"
+			}
+			id: "F1A24B2B7B324862"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "FAD0402088173ACC"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "D05BD099AE5110AE"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_tutorial_stagger"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/boss/staggered"
+					criterion: ""
+					id: "95B28D31B3312A7F"
+					title: "Stagger any boss"
+					type: "advancement"
+				}
+			]
+			title: "Strike While It Reels"
+			x: 5.25d
+			y: 7.2d
+		}
+	]
+	subtitle: [
+		"How the pack works"
+	]
+	title: "First Steps"
+}

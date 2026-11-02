@@ -1,0 +1,195 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "twilight_broken"
+	group: "5367FBBD604DCF21"
+	icon: {
+		Count: 1b
+		id: "minecraft:nether_star"
+	}
+	id: "CC2D8FFCA5B93BFF"
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"AD7E9FE74616140E"
+			]
+			description: [
+				"Odin: \"The wolf was meant to swallow me. Instead, you stand here.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:fenrirs_fang"
+			}
+			id: "B3DF7F2B69AD78EB"
+			rewards: [
+				{
+					id: "B871C0C2B7966BA3"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:fenrirs_fang"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "FC6A52EEF3EB6097"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_e1"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:fenrir"
+					id: "D5FF494E4DEFF37B"
+					title: "Defeat Fenrir"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Twilight Broken"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"B3DF7F2B69AD78EB"
+			]
+			description: [
+				"Mimir: \"The seals were tied to the prophecy. You broke it, so they broke too. Muspelheim burns beyond the portal.\""
+				""
+				""
+				"Also: The Nether and the End unseal for everyone"
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:nether_star"
+			}
+			id: "3165F9C5136DF918"
+			rewards: [
+				{
+					command: "/ragnarok class xp 300"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "4023A95C78B9597C"
+					silent: true
+					title: "300 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_e2"
+			]
+			tasks: [
+				{
+					id: "D02EEA705DD35890"
+					title: "Light a Nether portal"
+					type: "checkmark"
+				}
+			]
+			title: "The Realms Open"
+			x: 1.75d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"3165F9C5136DF918"
+			]
+			description: [
+				"Odin: \"A seat in Valhalla. And a king's armor for the one who would not kneel to fate.\""
+				""
+				""
+				"Also: Agamemnon's set; Title: Einherjar; Credits"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:agamemnon_helmet"
+			}
+			id: "72534EF9AD89CC2C"
+			rewards: [
+				{
+					id: "392E44372CBDBF5F"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:agamemnon_helmet"
+					}
+					type: "item"
+				}
+				{
+					id: "515FEF58D815AABA"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:agamemnon_chestplate"
+					}
+					type: "item"
+				}
+				{
+					id: "29B6340126999929"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:agamemnon_leggings"
+					}
+					type: "item"
+				}
+				{
+					id: "5478C4EF61BBE07B"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:agamemnon_boots"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 300"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1EEF68468B9B11D2"
+					silent: true
+					title: "300 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_e3"
+			]
+			tasks: [
+				{
+					id: "5E592BD52FA10829"
+					title: "Hand in all 25 boss trophies"
+					type: "checkmark"
+				}
+			]
+			title: "Hall of the Einherjar"
+			x: 3.5d
+			y: 0.0d
+		}
+	]
+	subtitle: [
+		"The twilight broken"
+	]
+	title: "Twilight Broken"
+}

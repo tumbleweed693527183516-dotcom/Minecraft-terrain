@@ -1,0 +1,1012 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "restless_dead"
+	group: "96A912181A061CEA"
+	icon: {
+		Count: 1b
+		id: "minecraft:skeleton_skull"
+	}
+	id: "405B223E36FE4871"
+	images: [
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/dead_0.png"
+			rotation: 0.0d
+			width: 5.46d
+			x: 2.13d
+			y: 0.1d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/dead_1.png"
+			rotation: 0.0d
+			width: 6.376d
+			x: 2.588d
+			y: 3.22d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/dead_2.png"
+			rotation: 0.0d
+			width: 4.315d
+			x: 1.557d
+			y: 6.34d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/dead_3.png"
+			rotation: 0.0d
+			width: 5.231d
+			x: 2.015d
+			y: 9.46d
+		}
+	]
+	order_index: 8
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Mimir: \"The draugr do not stay buried. Find out why.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:skeleton_skull"
+			}
+			id: "E8B56D3F76116949"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "8FA012BDB26320BD"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B29AA65973A7CE90"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_dead_first"
+			]
+			tasks: [
+				{
+					entity: "mebahelcreaturesdraugr:draugr"
+					id: "3F3177AD87B7E037"
+					title: "Kill a draugr"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Cold Hands"
+			x: 0.0d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"E8B56D3F76116949"
+			]
+			description: [
+				"Mimir: \"Again.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:skeleton_skull"
+			}
+			id: "6175EA08EB30EB40"
+			rewards: [
+				{
+					count: 8
+					id: "B9DE8E92227B10FE"
+					item: {
+						Count: 1b
+						id: "minecraft:golden_carrot"
+					}
+					type: "item"
+				}
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "93D84EE5C241E321"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "7D6AAFCCA0902B85"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_dead_ten"
+			]
+			tasks: [
+				{
+					entity: "mebahelcreaturesdraugr:draugr"
+					id: "BA6DE1293FB0910E"
+					title: "Kill 25 draugr"
+					type: "kill"
+					value: 25L
+				}
+			]
+			title: "Put Them Down"
+			x: 1.75d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"6175EA08EB30EB40"
+			]
+			description: [
+				"Mimir: \"Hel will notice you.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:skeleton_skull"
+			}
+			id: "8A53F5B4A61EFA50"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "248A9CA76D7E101D"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6B8C98854F703754"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_dead_hundred"
+			]
+			tasks: [
+				{
+					entity: "mebahelcreaturesdraugr:draugr"
+					id: "7524D0840ACC2FA6"
+					title: "Kill 100 draugr"
+					type: "kill"
+					value: 100L
+				}
+			]
+			title: "Gravekeeper"
+			x: 3.5d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"8A53F5B4A61EFA50"
+			]
+			description: [
+				"Mimir: \"They were buried with their weapons.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:skeleton_skull"
+			}
+			id: "12FC0C28CC1F4140"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "37D260E5AC6EEB3E"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "A1FD283CAC3592FB"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_dead_loot"
+			]
+			tasks: [
+				{
+					id: "347A34B714AD8956"
+					title: "Collect 5 different draugr drops"
+					type: "checkmark"
+				}
+			]
+			title: "Grave Goods"
+			x: 5.25d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"E8B56D3F76116949"
+			]
+			description: [
+				"Mimir: \"They keep watch from towers on the hills.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:skeleton_skull"
+			}
+			id: "3CFDF733C4550EFB"
+			rewards: [
+				{
+					id: "DD6FAD26467D2613"
+					item: {
+						Count: 1b
+						id: "minecraft:spyglass"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B8FC809172255B60"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_dead_tower"
+			]
+			tasks: [
+				{
+					id: "CEFB556F8AF3ABF6"
+					structure: "mebahelcreaturesdraugr:draugr_tower"
+					title: "Find a Draugr Tower"
+					type: "structure"
+				}
+			]
+			title: "The Watchtower"
+			x: 0.0d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"3CFDF733C4550EFB"
+			]
+			description: [
+				"Mimir: \"Climb it.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:skeleton_skull"
+			}
+			id: "47DE09BF784A6E7C"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "2A67C4BC49BDA412"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6B9D2F48B6611CCD"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_dead_towerc"
+			]
+			tasks: [
+				{
+					id: "9B07BED9C1C51D92"
+					title: "Reach the top of a Draugr Tower"
+					type: "checkmark"
+				}
+			]
+			title: "Take the Tower"
+			x: 1.75d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"47DE09BF784A6E7C"
+			]
+			description: [
+				"Mimir: \"A fort full of the dead. Clear it.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:skeleton_skull"
+			}
+			id: "BDE71C7C384E9301"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "669AF10EEA5595F6"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "870835B15A8901D9"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_dead_fort"
+			]
+			tasks: [
+				{
+					id: "88920FFB027F54AA"
+					structure: "mebahelcreaturesdraugr:draugr_fort"
+					title: "Find a Draugr Fort"
+					type: "structure"
+				}
+				{
+					id: "BC0EFCBA5EF35A4F"
+					title: "Clear it"
+					type: "checkmark"
+				}
+			]
+			title: "Fort of the Dead"
+			x: 3.5d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"BDE71C7C384E9301"
+			]
+			description: [
+				"Mimir: \"Their lord sits in the Bastion. Fafnir sleeps beneath one.\""
+				""
+				""
+				"Also: Waypoint"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:dragon_gold"
+			}
+			id: "F6EAE379BFF4E8AE"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "23E21318CFC65459"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "A7893A9871FAB205"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_dead_bastion"
+			]
+			tasks: [
+				{
+					id: "FEC7055B512BB9EE"
+					structure: "mebahelcreaturesdraugr:draugr_bastion"
+					title: "Find a Draugr Bastion"
+					type: "structure"
+				}
+			]
+			title: "The Bastion"
+			x: 5.25d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"F6EAE379BFF4E8AE"
+			]
+			description: [
+				"Mimir: \"The deepest, rarest crypt. Something huge is chained in one.\""
+				""
+				""
+				"Also: Waypoint"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:fenrirs_fang"
+			}
+			id: "114E0C9368051415"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "3FB5B19C669EC03B"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "41E6A5B509EF2359"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_dead_crypt"
+			]
+			tasks: [
+				{
+					id: "1D5C53605DDF6092"
+					structure: "mebahelcreaturesdraugr:draugr_crypt"
+					title: "Find a Draugr Crypt"
+					type: "structure"
+				}
+			]
+			title: "The Crypt"
+			x: 7.0d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"114E0C9368051415"
+			]
+			description: [
+				"Mimir: \"Now you know where they sleep.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:skeleton_skull"
+			}
+			id: "5E04BB8BD72D85FC"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "739AA6AEE9675FF4"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "2FEB2D5DD04BC8C0"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_dead_all"
+			]
+			tasks: [
+				{
+					id: "502BDBC9973B03F3"
+					title: "All four Draugr structures found"
+					type: "checkmark"
+				}
+			]
+			title: "Map of the Dead"
+			x: 8.75d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"6175EA08EB30EB40"
+			]
+			description: [
+				"Mimir: \"When they come for the living, hold the line.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:skeleton_skull"
+			}
+			id: "DA4BFC82DEE91CB5"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "7CAF1E596B1113EF"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "86B4D00ADE4D0DD8"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_dead_horn"
+			]
+			tasks: [
+				{
+					id: "6B84B9F08E46F37D"
+					title: "Trigger a draugr raid"
+					type: "checkmark"
+				}
+			]
+			title: "The Horn Sounds"
+			x: 0.0d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"DA4BFC82DEE91CB5"
+			]
+			description: [
+				"Mimir: \"There are always more.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:skeleton_skull"
+			}
+			id: "94F7593913710225"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "144531B68457D238"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "5BAF0DBCD03D2F78"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_dead_wave"
+			]
+			tasks: [
+				{
+					id: "EA1290703083B245"
+					title: "Survive the first wave"
+					type: "checkmark"
+				}
+			]
+			title: "First Wave"
+			x: 1.75d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"94F7593913710225"
+			]
+			description: [
+				"Mimir: \"No villager falls.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:skeleton_skull"
+			}
+			id: "D7538A46A583C36B"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "7A24DC4B22084E9B"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "CDA9618A1DDD6FD4"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_dead_hold"
+			]
+			tasks: [
+				{
+					id: "C6FFA0903059591D"
+					title: "Win a raid without losing a villager"
+					type: "checkmark"
+				}
+			]
+			title: "Hold the Village"
+			x: 3.5d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"D7538A46A583C36B"
+			]
+			description: [
+				"Mimir: \"They keep coming. So do you.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:skeleton_skull"
+			}
+			id: "A724914BB1C6C6F8"
+			rewards: [
+				{
+					id: "D161246592A09A0F"
+					item: {
+						Count: 1b
+						id: "minecraft:totem_of_undying"
+					}
+					type: "item"
+				}
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "DEF54AEFC4277965"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "201FCF3F71B00F53"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_dead_three"
+			]
+			tasks: [
+				{
+					id: "C59D9CBF79F42D2D"
+					title: "Win 3 draugr raids"
+					type: "checkmark"
+				}
+			]
+			title: "Three Raids"
+			x: 5.25d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"F6EAE379BFF4E8AE"
+			]
+			description: [
+				"Mimir: \"The Overlord waits at the heart of the Bastion.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:skeleton_skull"
+			}
+			id: "A3E9F0504B5469C5"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "177D41B8E15DD6A0"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6686EE2D1614ADD9"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_dead_find"
+			]
+			tasks: [
+				{
+					id: "355A369C5ECA004F"
+					title: "Reach the Overlord's chamber"
+					type: "checkmark"
+				}
+			]
+			title: "The Throne Room"
+			x: 0.0d
+			y: 10.32d
+		}
+		{
+			dependencies: [
+				"A3E9F0504B5469C5"
+			]
+			description: [
+				"Mimir: \"A king of the dead, dead again.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:skeleton_skull"
+			}
+			id: "C95A232CF9750EB9"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "710F0AE0C72948C7"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "7689A832E929ED6E"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_dead_kill"
+			]
+			tasks: [
+				{
+					entity: "mebahelcreaturesdraugr:draugr_overlord"
+					id: "94EFD9FECAB5E19A"
+					title: "Defeat the Draugr Overlord"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "The Overlord Falls"
+			x: 1.75d
+			y: 10.32d
+		}
+		{
+			dependencies: [
+				"C95A232CF9750EB9"
+			]
+			description: [
+				"Hel: \"You are interesting, mortal. When you come to my gate, I will remember.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:hel_key"
+			}
+			id: "FA23309830D30DF8"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "F39166DAD6EA50D2"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "648DC3E0893AA5FA"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_dead_relic"
+			]
+			tasks: [
+				{
+					entity: "mebahelcreaturesdraugr:draugr_overlord"
+					id: "7DEC758F5D285ABC"
+					title: "Defeat the Draugr Overlord twice"
+					type: "kill"
+					value: 2L
+				}
+			]
+			title: "Hel's Favor"
+			x: 3.5d
+			y: 10.32d
+		}
+	]
+	subtitle: [
+		"Mebahel's Draugr Invasion"
+	]
+	title: "Restless Dead"
+}

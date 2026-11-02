@@ -1,0 +1,4948 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "ancient_armory"
+	group: "96A912181A061CEA"
+	icon: {
+		Count: 1b
+		id: "minecraft:iron_chestplate"
+	}
+	id: "C55CA2A0D24C387F"
+	images: [
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/armory_0.png"
+			rotation: 0.0d
+			width: 5.002d
+			x: 1.901d
+			y: 0.1d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/armory_1.png"
+			rotation: 0.0d
+			width: 6.376d
+			x: 2.588d
+			y: 3.22d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/armory_2.png"
+			rotation: 0.0d
+			width: 6.605d
+			x: 2.703d
+			y: 6.34d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/armory_3.png"
+			rotation: 0.0d
+			width: 6.835d
+			x: 2.817d
+			y: 11.3d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/armory_4.png"
+			rotation: 0.0d
+			width: 6.605d
+			x: 2.703d
+			y: 16.26d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/armory_5.png"
+			rotation: 0.0d
+			width: 8.667d
+			x: 3.734d
+			y: 21.22d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/armory_6.png"
+			rotation: 0.0d
+			width: 5.231d
+			x: 2.015d
+			y: 28.02d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/armory_7.png"
+			rotation: 0.0d
+			width: 5.46d
+			x: 2.13d
+			y: 31.14d
+		}
+	]
+	order_index: 11
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Mimir: \"Sumer, Akkad, Egypt. The first armies.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:sumerian_helmet"
+			}
+			id: "C5A2F43042E7526A"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "B36938D196C20585"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "E921BD85CD44B155"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_first"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/armor/full_set"
+					criterion: ""
+					id: "655874562D86231B"
+					title: "Wear a full ancient set"
+					type: "advancement"
+				}
+			]
+			title: "Dressed for the Hunt"
+			x: 0.0d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Mimir: \"Strength from one set, looks from another.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:glamour_template"
+			}
+			id: "295179A98BF8114C"
+			rewards: [
+				{
+					count: 4
+					id: "E3D5BCA2AFAE2E91"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:glamour_template"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "3337183CFA05D477"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_glam"
+			]
+			tasks: [
+				{
+					id: "DD7357C005A8420D"
+					title: "Glamour an armor piece"
+					type: "checkmark"
+				}
+			]
+			title: "Wear What You Like"
+			x: 1.75d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"295179A98BF8114C"
+			]
+			description: [
+				"Mimir: \"A full set gives its people's gift.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:iron_chestplate"
+			}
+			id: "F692A15DE970CAF4"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "12AE4B9DDBF2CE87"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "D6EA9379F7DB78D2"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_bonus"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/armor/full_set"
+					criterion: ""
+					id: "133FDFDA35A123AA"
+					title: "Have a full-set bonus active"
+					type: "advancement"
+				}
+			]
+			title: "Set Bonus"
+			x: 3.5d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"F692A15DE970CAF4"
+			]
+			description: [
+				"Mimir: \"Fight a boss with armor made for it.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:berserker_helmet"
+			}
+			id: "7768ACC5A9AE574C"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "3DF4DD6EF7CB579F"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "D182288B65120606"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_ward"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/armor/ward_matched"
+					criterion: ""
+					id: "135C6D338CB355B5"
+					title: "Hit a boss while your ward matches it"
+					type: "advancement"
+				}
+			]
+			title: "Caught Up"
+			x: 5.25d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 1."
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:sumerian_helmet"
+			}
+			id: "65219C0C33824157"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "D8B219CA6BEB020A"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1AFACBD14DF27C87"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_sumerian"
+			]
+			tasks: [
+				{
+					id: "18D434BFB551A1BA"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:sumerian_helmet"
+					}
+					title: "Sumerian helmet"
+					type: "item"
+				}
+				{
+					id: "73E2448A9DD5F24B"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:sumerian_chestplate"
+					}
+					title: "Sumerian chestplate"
+					type: "item"
+				}
+				{
+					id: "4801327E4A282A5A"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:sumerian_leggings"
+					}
+					title: "Sumerian leggings"
+					type: "item"
+				}
+				{
+					id: "F62A77264B1FD328"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:sumerian_boots"
+					}
+					title: "Sumerian boots"
+					type: "item"
+				}
+			]
+			title: "Sumerian"
+			x: 0.0d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 2."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:akkadian_helmet"
+			}
+			id: "1BE4C7C1505CAD5F"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "1512E9AD506CE7A9"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "194E040824D78A18"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_akkadian"
+			]
+			tasks: [
+				{
+					id: "C4EAB5AAD29F8C26"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:akkadian_helmet"
+					}
+					title: "Akkadian helmet"
+					type: "item"
+				}
+				{
+					id: "148DFE61A84BF54B"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:akkadian_chestplate"
+					}
+					title: "Akkadian chestplate"
+					type: "item"
+				}
+				{
+					id: "369B32956A3F8E11"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:akkadian_leggings"
+					}
+					title: "Akkadian leggings"
+					type: "item"
+				}
+				{
+					id: "227475218FC7BD9B"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:akkadian_boots"
+					}
+					title: "Akkadian boots"
+					type: "item"
+				}
+			]
+			title: "Akkadian"
+			x: 1.75d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 3."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:egyptian_helmet"
+			}
+			id: "4851A4199A158D4E"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "34D1FE6529110DF3"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "F9DEF748C2EFCA3D"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_egyptian"
+			]
+			tasks: [
+				{
+					id: "D7DA0185B792F460"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:egyptian_helmet"
+					}
+					title: "Egyptian helmet"
+					type: "item"
+				}
+				{
+					id: "AD1E4323A27A4488"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:egyptian_chestplate"
+					}
+					title: "Egyptian chestplate"
+					type: "item"
+				}
+				{
+					id: "ECCF8DD810A97E4E"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:egyptian_leggings"
+					}
+					title: "Egyptian leggings"
+					type: "item"
+				}
+				{
+					id: "6002CB61A9A34087"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:egyptian_boots"
+					}
+					title: "Egyptian boots"
+					type: "item"
+				}
+			]
+			title: "Egyptian"
+			x: 3.5d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 4."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:minoan_helmet"
+			}
+			id: "DFD32652533E7B85"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "1A8153E225019CC3"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6BD0B6807D134236"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_minoan"
+			]
+			tasks: [
+				{
+					id: "18D6B25FC9C87DED"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:minoan_helmet"
+					}
+					title: "Minoan helmet"
+					type: "item"
+				}
+				{
+					id: "393DFD11097342E1"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:minoan_chestplate"
+					}
+					title: "Minoan chestplate"
+					type: "item"
+				}
+				{
+					id: "248FAF129880FB45"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:minoan_leggings"
+					}
+					title: "Minoan leggings"
+					type: "item"
+				}
+				{
+					id: "428DF6DB75D88370"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:minoan_boots"
+					}
+					title: "Minoan boots"
+					type: "item"
+				}
+			]
+			title: "Minoan"
+			x: 5.25d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 5."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:shang_helmet"
+			}
+			id: "8806A182848EFA3E"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "3D4B869103F0A765"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "DDD9D0961B2F83FC"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_shang"
+			]
+			tasks: [
+				{
+					id: "910BB01C014763EA"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:shang_helmet"
+					}
+					title: "Shang helmet"
+					type: "item"
+				}
+				{
+					id: "BBB36F5B1C8B3B26"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:shang_chestplate"
+					}
+					title: "Shang chestplate"
+					type: "item"
+				}
+				{
+					id: "7DA8DB206B455F05"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:shang_leggings"
+					}
+					title: "Shang leggings"
+					type: "item"
+				}
+				{
+					id: "EDF535E6D4827DF1"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:shang_boots"
+					}
+					title: "Shang boots"
+					type: "item"
+				}
+			]
+			title: "Shang"
+			x: 7.0d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 6."
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:nubian_helmet"
+			}
+			id: "27823673B46FABE3"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "2D9A5D6624A48E5C"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "97B328CDC42D1988"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_nubian"
+			]
+			tasks: [
+				{
+					id: "D1D98127017ED4A7"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:nubian_helmet"
+					}
+					title: "Nubian helmet"
+					type: "item"
+				}
+				{
+					id: "38DD46EE354BD92B"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:nubian_chestplate"
+					}
+					title: "Nubian chestplate"
+					type: "item"
+				}
+				{
+					id: "96C0563464D3B73B"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:nubian_leggings"
+					}
+					title: "Nubian leggings"
+					type: "item"
+				}
+				{
+					id: "EC34E994E0D5C901"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:nubian_boots"
+					}
+					title: "Nubian boots"
+					type: "item"
+				}
+			]
+			title: "Nubian"
+			x: 0.0d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 7."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:hittite_helmet"
+			}
+			id: "6E0DF04C73A1293F"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "30F2A67EB8DC64B0"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "282FBF843AB35CEE"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_hittite"
+			]
+			tasks: [
+				{
+					id: "15B2AEC40EA5385A"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:hittite_helmet"
+					}
+					title: "Hittite helmet"
+					type: "item"
+				}
+				{
+					id: "A735D83653732467"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:hittite_chestplate"
+					}
+					title: "Hittite chestplate"
+					type: "item"
+				}
+				{
+					id: "DFEE2732304A72F1"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:hittite_leggings"
+					}
+					title: "Hittite leggings"
+					type: "item"
+				}
+				{
+					id: "11630DB3B81D6832"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:hittite_boots"
+					}
+					title: "Hittite boots"
+					type: "item"
+				}
+			]
+			title: "Hittite"
+			x: 1.75d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 8."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:phoenician_helmet"
+			}
+			id: "E42B7A682347D415"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "CABD2DBB3D450FDB"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "A37041312AF38705"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_phoenician"
+			]
+			tasks: [
+				{
+					id: "DBF574CAD876744E"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:phoenician_helmet"
+					}
+					title: "Phoenician helmet"
+					type: "item"
+				}
+				{
+					id: "477483EBA21B5BFC"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:phoenician_chestplate"
+					}
+					title: "Phoenician chestplate"
+					type: "item"
+				}
+				{
+					id: "8A22775BE7D7AE6E"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:phoenician_leggings"
+					}
+					title: "Phoenician leggings"
+					type: "item"
+				}
+				{
+					id: "2FEE719C682E4AB1"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:phoenician_boots"
+					}
+					title: "Phoenician boots"
+					type: "item"
+				}
+			]
+			title: "Phoenician"
+			x: 3.5d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 9."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:mycenaean_helmet"
+			}
+			id: "8C6F07D8E57EF99B"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "78D3D8CB3E06ECDB"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "7A43CE964B65ABB2"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_mycenaean"
+			]
+			tasks: [
+				{
+					id: "A81B44506C2F3771"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:mycenaean_helmet"
+					}
+					title: "Mycenaean helmet"
+					type: "item"
+				}
+				{
+					id: "A6C28D9FF94FB8D7"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:mycenaean_chestplate"
+					}
+					title: "Mycenaean chestplate"
+					type: "item"
+				}
+				{
+					id: "C8BCDCA93C7D161D"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:mycenaean_leggings"
+					}
+					title: "Mycenaean leggings"
+					type: "item"
+				}
+				{
+					id: "68FB20A0CE433544"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:mycenaean_boots"
+					}
+					title: "Mycenaean boots"
+					type: "item"
+				}
+			]
+			title: "Mycenaean"
+			x: 5.25d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 10."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:olmec_helmet"
+			}
+			id: "DFF39B3B01CC731E"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "27F8D25D83CE3E83"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "4DEE84A38FA00015"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_olmec"
+			]
+			tasks: [
+				{
+					id: "A7F8BB7A8B87035C"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:olmec_helmet"
+					}
+					title: "Olmec helmet"
+					type: "item"
+				}
+				{
+					id: "BA1E1EBE71770082"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:olmec_chestplate"
+					}
+					title: "Olmec chestplate"
+					type: "item"
+				}
+				{
+					id: "113EE6BA8F31873F"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:olmec_leggings"
+					}
+					title: "Olmec leggings"
+					type: "item"
+				}
+				{
+					id: "2B6E32D50F9A6F3C"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:olmec_boots"
+					}
+					title: "Olmec boots"
+					type: "item"
+				}
+			]
+			title: "Olmec"
+			x: 7.0d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 11."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:assyrian_helmet"
+			}
+			id: "6657ED3BEC43499C"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "95787CBC10DA23C0"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "5BF73EA33E0C323C"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_assyrian"
+			]
+			tasks: [
+				{
+					id: "2F00EF57E0A4CE60"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:assyrian_helmet"
+					}
+					title: "Assyrian helmet"
+					type: "item"
+				}
+				{
+					id: "F03BEF5796436AA8"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:assyrian_chestplate"
+					}
+					title: "Assyrian chestplate"
+					type: "item"
+				}
+				{
+					id: "F8780D84A6BCA7FF"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:assyrian_leggings"
+					}
+					title: "Assyrian leggings"
+					type: "item"
+				}
+				{
+					id: "174A63FFE3C57D5B"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:assyrian_boots"
+					}
+					title: "Assyrian boots"
+					type: "item"
+				}
+			]
+			title: "Assyrian"
+			x: 8.75d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 12."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:babylonian_helmet"
+			}
+			id: "5C549639CC577C56"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "63DD54E608A17327"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "5157B7AAAD7E71D7"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_babylonian"
+			]
+			tasks: [
+				{
+					id: "19821522230FA2E5"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:babylonian_helmet"
+					}
+					title: "Babylonian helmet"
+					type: "item"
+				}
+				{
+					id: "C8040458CA1407C1"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:babylonian_chestplate"
+					}
+					title: "Babylonian chestplate"
+					type: "item"
+				}
+				{
+					id: "743545EE0DCC6B44"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:babylonian_leggings"
+					}
+					title: "Babylonian leggings"
+					type: "item"
+				}
+				{
+					id: "E12EFEB881B08DEE"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:babylonian_boots"
+					}
+					title: "Babylonian boots"
+					type: "item"
+				}
+			]
+			title: "Babylonian"
+			x: 0.0d
+			y: 9.04d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 13."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:etruscan_helmet"
+			}
+			id: "3B1350BD059A1EB1"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "3D20D0BE8EFE47C1"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "7088DDCA67573FC7"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_etruscan"
+			]
+			tasks: [
+				{
+					id: "4028D3A85FE4231B"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:etruscan_helmet"
+					}
+					title: "Etruscan helmet"
+					type: "item"
+				}
+				{
+					id: "401CE688F77FDFE1"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:etruscan_chestplate"
+					}
+					title: "Etruscan chestplate"
+					type: "item"
+				}
+				{
+					id: "31A0727396B349FA"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:etruscan_leggings"
+					}
+					title: "Etruscan leggings"
+					type: "item"
+				}
+				{
+					id: "72B1398AA2E259F8"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:etruscan_boots"
+					}
+					title: "Etruscan boots"
+					type: "item"
+				}
+			]
+			title: "Etruscan"
+			x: 1.75d
+			y: 9.04d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 14."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:celtic_helmet"
+			}
+			id: "6271E7919CADE52A"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "1F66D3FBA3B44A2C"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "3675487400C14EF8"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_celtic"
+			]
+			tasks: [
+				{
+					id: "AF41C58873F35DCE"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:celtic_helmet"
+					}
+					title: "Celtic helmet"
+					type: "item"
+				}
+				{
+					id: "983982BE2F17CC07"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:celtic_chestplate"
+					}
+					title: "Celtic chestplate"
+					type: "item"
+				}
+				{
+					id: "66DADEAA5A237BC9"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:celtic_leggings"
+					}
+					title: "Celtic leggings"
+					type: "item"
+				}
+				{
+					id: "2B143665502F8515"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:celtic_boots"
+					}
+					title: "Celtic boots"
+					type: "item"
+				}
+			]
+			title: "Celtic"
+			x: 3.5d
+			y: 9.04d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 15."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:illyrian_helmet"
+			}
+			id: "D2BC0C7DDADF9A42"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "14F2B93686EDADAF"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "423F6988F271D41E"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_illyrian"
+			]
+			tasks: [
+				{
+					id: "B58CE5FD5EB384F9"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:illyrian_helmet"
+					}
+					title: "Illyrian helmet"
+					type: "item"
+				}
+				{
+					id: "EA9127879A2122FB"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:illyrian_chestplate"
+					}
+					title: "Illyrian chestplate"
+					type: "item"
+				}
+				{
+					id: "2DC1A39B8123A10E"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:illyrian_leggings"
+					}
+					title: "Illyrian leggings"
+					type: "item"
+				}
+				{
+					id: "73A574D014D2AB25"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:illyrian_boots"
+					}
+					title: "Illyrian boots"
+					type: "item"
+				}
+			]
+			title: "Illyrian"
+			x: 5.25d
+			y: 9.04d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 16."
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:thracian_helmet"
+			}
+			id: "337D465DE315AD02"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "236D1D7BF5800261"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "116F951A4A31BBBD"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_thracian"
+			]
+			tasks: [
+				{
+					id: "915E2999B78CFECB"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:thracian_helmet"
+					}
+					title: "Thracian helmet"
+					type: "item"
+				}
+				{
+					id: "1694A2D826E30823"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:thracian_chestplate"
+					}
+					title: "Thracian chestplate"
+					type: "item"
+				}
+				{
+					id: "E20480FEE6951A68"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:thracian_leggings"
+					}
+					title: "Thracian leggings"
+					type: "item"
+				}
+				{
+					id: "CC2B3E1A514D229B"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:thracian_boots"
+					}
+					title: "Thracian boots"
+					type: "item"
+				}
+			]
+			title: "Thracian"
+			x: 0.0d
+			y: 12.16d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 17."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:iberian_helmet"
+			}
+			id: "16B1B0DCF3238C9F"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "B1E7C9AAC30746E7"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "107CB27249F0C6D0"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_iberian"
+			]
+			tasks: [
+				{
+					id: "882A9DA7E265962B"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:iberian_helmet"
+					}
+					title: "Iberian helmet"
+					type: "item"
+				}
+				{
+					id: "68B2075EBD7934A0"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:iberian_chestplate"
+					}
+					title: "Iberian chestplate"
+					type: "item"
+				}
+				{
+					id: "B1F0FD9AD89EDCCF"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:iberian_leggings"
+					}
+					title: "Iberian leggings"
+					type: "item"
+				}
+				{
+					id: "ED47A6278D2E63D9"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:iberian_boots"
+					}
+					title: "Iberian boots"
+					type: "item"
+				}
+			]
+			title: "Iberian"
+			x: 1.75d
+			y: 12.16d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 18."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:athenian_helmet"
+			}
+			id: "C352F6CEE77F3551"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "A47F831630BB14FF"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "7F9C840B77C495B2"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_athenian"
+			]
+			tasks: [
+				{
+					id: "AB10D9257F675B33"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:athenian_helmet"
+					}
+					title: "Athenian helmet"
+					type: "item"
+				}
+				{
+					id: "9A12668D6248B167"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:athenian_chestplate"
+					}
+					title: "Athenian chestplate"
+					type: "item"
+				}
+				{
+					id: "DBDE053D2EE056DE"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:athenian_leggings"
+					}
+					title: "Athenian leggings"
+					type: "item"
+				}
+				{
+					id: "435550A831CFDF3C"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:athenian_boots"
+					}
+					title: "Athenian boots"
+					type: "item"
+				}
+			]
+			title: "Athenian"
+			x: 3.5d
+			y: 12.16d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 19."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:spartan_helmet"
+			}
+			id: "88C158C6FCD2265A"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "949C5054225AB56A"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "D5E44D5E6F5565E2"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_spartan"
+			]
+			tasks: [
+				{
+					id: "1701FCA9247A05A9"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:spartan_helmet"
+					}
+					title: "Spartan helmet"
+					type: "item"
+				}
+				{
+					id: "BB2149F3F2710E1B"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:spartan_chestplate"
+					}
+					title: "Spartan chestplate"
+					type: "item"
+				}
+				{
+					id: "B5DA2F676C71054E"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:spartan_leggings"
+					}
+					title: "Spartan leggings"
+					type: "item"
+				}
+				{
+					id: "EBF94AE6EFDE9A74"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:spartan_boots"
+					}
+					title: "Spartan boots"
+					type: "item"
+				}
+			]
+			title: "Spartan"
+			x: 5.25d
+			y: 12.16d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 20."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:macedonian_helmet"
+			}
+			id: "26942806ED31FEC5"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "9DAF3A6444E3FB1D"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1DC998C35A44D801"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_macedonian"
+			]
+			tasks: [
+				{
+					id: "12339C38DD9BAFF0"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:macedonian_helmet"
+					}
+					title: "Macedonian helmet"
+					type: "item"
+				}
+				{
+					id: "4648ECAA3B01508D"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:macedonian_chestplate"
+					}
+					title: "Macedonian chestplate"
+					type: "item"
+				}
+				{
+					id: "883B212380C60EFB"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:macedonian_leggings"
+					}
+					title: "Macedonian leggings"
+					type: "item"
+				}
+				{
+					id: "133796FE75AF264F"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:macedonian_boots"
+					}
+					title: "Macedonian boots"
+					type: "item"
+				}
+			]
+			title: "Macedonian"
+			x: 7.0d
+			y: 12.16d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 21."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:argyraspid_helmet"
+			}
+			id: "CA990E9E7661AAE4"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "29B86996098DF690"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "8EF5318B06FAE03C"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_argyraspid"
+			]
+			tasks: [
+				{
+					id: "A929FC6FE385CEB6"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:argyraspid_helmet"
+					}
+					title: "Argyraspid helmet"
+					type: "item"
+				}
+				{
+					id: "19D74FE6CD971570"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:argyraspid_chestplate"
+					}
+					title: "Argyraspid chestplate"
+					type: "item"
+				}
+				{
+					id: "D86F02A44C4F4B9F"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:argyraspid_leggings"
+					}
+					title: "Argyraspid leggings"
+					type: "item"
+				}
+				{
+					id: "7A88C59406AA8586"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:argyraspid_boots"
+					}
+					title: "Argyraspid boots"
+					type: "item"
+				}
+			]
+			title: "Argyraspid"
+			x: 8.75d
+			y: 12.16d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 22."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:scythian_helmet"
+			}
+			id: "20AF2C46F3B7A582"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "EDE7F765B933A770"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "448F16F6AF43AFAA"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_scythian"
+			]
+			tasks: [
+				{
+					id: "708DD5C755AF78B8"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:scythian_helmet"
+					}
+					title: "Scythian helmet"
+					type: "item"
+				}
+				{
+					id: "A52A396153C5E70B"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:scythian_chestplate"
+					}
+					title: "Scythian chestplate"
+					type: "item"
+				}
+				{
+					id: "3DA18193BC9C5FBC"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:scythian_leggings"
+					}
+					title: "Scythian leggings"
+					type: "item"
+				}
+				{
+					id: "B12DD41AD4AEFFBA"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:scythian_boots"
+					}
+					title: "Scythian boots"
+					type: "item"
+				}
+			]
+			title: "Scythian"
+			x: 0.0d
+			y: 14.0d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 23."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:persian_helmet"
+			}
+			id: "DF88C93469D650A4"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "B8F8F3FA4F290C79"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "9C055912C9C1700E"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_persian"
+			]
+			tasks: [
+				{
+					id: "797BEFA304731160"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:persian_helmet"
+					}
+					title: "Persian helmet"
+					type: "item"
+				}
+				{
+					id: "AD46CAF4CAF17541"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:persian_chestplate"
+					}
+					title: "Persian chestplate"
+					type: "item"
+				}
+				{
+					id: "A65B5B775B84B63D"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:persian_leggings"
+					}
+					title: "Persian leggings"
+					type: "item"
+				}
+				{
+					id: "73BF98084D3BE8C7"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:persian_boots"
+					}
+					title: "Persian boots"
+					type: "item"
+				}
+			]
+			title: "Persian"
+			x: 1.75d
+			y: 14.0d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 24."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:carthaginian_helmet"
+			}
+			id: "D2B6BEEFD0501E4A"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "2D78EDC4EA423FB6"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "4EA614E5AB816BF1"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_carthaginian"
+			]
+			tasks: [
+				{
+					id: "AE64C698BDBE0DBB"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:carthaginian_helmet"
+					}
+					title: "Carthaginian helmet"
+					type: "item"
+				}
+				{
+					id: "6117624532531981"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:carthaginian_chestplate"
+					}
+					title: "Carthaginian chestplate"
+					type: "item"
+				}
+				{
+					id: "8DAB0A3506B15F4A"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:carthaginian_leggings"
+					}
+					title: "Carthaginian leggings"
+					type: "item"
+				}
+				{
+					id: "5D970DBBE6859FA2"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:carthaginian_boots"
+					}
+					title: "Carthaginian boots"
+					type: "item"
+				}
+			]
+			title: "Carthaginian"
+			x: 3.5d
+			y: 14.0d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 25."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:numidian_helmet"
+			}
+			id: "88D31B691CA0A07C"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "F1273E76A9BC4D88"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B3AD04E1069CE357"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_numidian"
+			]
+			tasks: [
+				{
+					id: "1C84DBA842C90566"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:numidian_helmet"
+					}
+					title: "Numidian helmet"
+					type: "item"
+				}
+				{
+					id: "D49DD51559B191A8"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:numidian_chestplate"
+					}
+					title: "Numidian chestplate"
+					type: "item"
+				}
+				{
+					id: "841A877519C025A9"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:numidian_leggings"
+					}
+					title: "Numidian leggings"
+					type: "item"
+				}
+				{
+					id: "64147EB58BE97AA3"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:numidian_boots"
+					}
+					title: "Numidian boots"
+					type: "item"
+				}
+			]
+			title: "Numidian"
+			x: 5.25d
+			y: 14.0d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 26."
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:dacian_helmet"
+			}
+			id: "8E9A293CF0EA18ED"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "8CAE8D99BCFB849F"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "34CD85870BDCCF2E"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_dacian"
+			]
+			tasks: [
+				{
+					id: "D6EB665A2E0D50C8"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:dacian_helmet"
+					}
+					title: "Dacian helmet"
+					type: "item"
+				}
+				{
+					id: "1F3CEF00D304A2DF"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:dacian_chestplate"
+					}
+					title: "Dacian chestplate"
+					type: "item"
+				}
+				{
+					id: "5BCB36CC7F270EF6"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:dacian_leggings"
+					}
+					title: "Dacian leggings"
+					type: "item"
+				}
+				{
+					id: "A3D80BE60FD73A45"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:dacian_boots"
+					}
+					title: "Dacian boots"
+					type: "item"
+				}
+			]
+			title: "Dacian"
+			x: 0.0d
+			y: 17.12d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 27."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:roman_helmet"
+			}
+			id: "8D9DF025AE367794"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "55A6DBC3BC63D9AB"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "CB817D9CC387D77B"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_roman"
+			]
+			tasks: [
+				{
+					id: "5E7C8ED5CFE53BFC"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:roman_helmet"
+					}
+					title: "Roman helmet"
+					type: "item"
+				}
+				{
+					id: "CDB8897429A6488E"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:roman_chestplate"
+					}
+					title: "Roman chestplate"
+					type: "item"
+				}
+				{
+					id: "71A88124DAD965C6"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:roman_leggings"
+					}
+					title: "Roman leggings"
+					type: "item"
+				}
+				{
+					id: "F6C32EBD4A29E8A1"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:roman_boots"
+					}
+					title: "Roman boots"
+					type: "item"
+				}
+			]
+			title: "Roman"
+			x: 1.75d
+			y: 17.12d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 28."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:gladiator_helmet"
+			}
+			id: "CA3A86EAC4D6EFC1"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "C17115197C3EDDB8"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B39AA3C0C568127B"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_gladiator"
+			]
+			tasks: [
+				{
+					id: "4E753CA24FA619DE"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:gladiator_helmet"
+					}
+					title: "Gladiator helmet"
+					type: "item"
+				}
+				{
+					id: "1890FD918258A749"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:gladiator_chestplate"
+					}
+					title: "Gladiator chestplate"
+					type: "item"
+				}
+				{
+					id: "31F1E78DEC06E6CB"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:gladiator_leggings"
+					}
+					title: "Gladiator leggings"
+					type: "item"
+				}
+				{
+					id: "B150A272055DA419"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:gladiator_boots"
+					}
+					title: "Gladiator boots"
+					type: "item"
+				}
+			]
+			title: "Gladiator"
+			x: 3.5d
+			y: 17.12d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 29."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:centurion_helmet"
+			}
+			id: "2E455BBE164513E6"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "257BAE78C52AC0E9"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "FA21C52BC92ECD29"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_centurion"
+			]
+			tasks: [
+				{
+					id: "2DEB237D323C92BA"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:centurion_helmet"
+					}
+					title: "Centurion helmet"
+					type: "item"
+				}
+				{
+					id: "14B8F7DDF6B48059"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:centurion_chestplate"
+					}
+					title: "Centurion chestplate"
+					type: "item"
+				}
+				{
+					id: "5F73C3553C448E0D"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:centurion_leggings"
+					}
+					title: "Centurion leggings"
+					type: "item"
+				}
+				{
+					id: "7493507E8373652F"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:centurion_boots"
+					}
+					title: "Centurion boots"
+					type: "item"
+				}
+			]
+			title: "Centurion"
+			x: 5.25d
+			y: 17.12d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 30."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:praetorian_helmet"
+			}
+			id: "5DCE99D7BB6CA3A1"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "B1CAF4F409990C06"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1C697F521FDFD277"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_praetorian"
+			]
+			tasks: [
+				{
+					id: "EC059C97AF2E386E"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:praetorian_helmet"
+					}
+					title: "Praetorian helmet"
+					type: "item"
+				}
+				{
+					id: "997D8B10046E0E99"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:praetorian_chestplate"
+					}
+					title: "Praetorian chestplate"
+					type: "item"
+				}
+				{
+					id: "C9039E31AFFDC439"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:praetorian_leggings"
+					}
+					title: "Praetorian leggings"
+					type: "item"
+				}
+				{
+					id: "EBE9D87114DCA7C5"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:praetorian_boots"
+					}
+					title: "Praetorian boots"
+					type: "item"
+				}
+			]
+			title: "Praetorian"
+			x: 7.0d
+			y: 17.12d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 31."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:germanic_helmet"
+			}
+			id: "4C22A6D25EFC853F"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "46EA527CE0B850A4"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "65B33D62CE2F2A2F"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_germanic"
+			]
+			tasks: [
+				{
+					id: "9E7F3876CAFF404A"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:germanic_helmet"
+					}
+					title: "Germanic helmet"
+					type: "item"
+				}
+				{
+					id: "89A12C7B14141FED"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:germanic_chestplate"
+					}
+					title: "Germanic chestplate"
+					type: "item"
+				}
+				{
+					id: "AD60F0FB49DBB43F"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:germanic_leggings"
+					}
+					title: "Germanic leggings"
+					type: "item"
+				}
+				{
+					id: "C081C1503806C741"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:germanic_boots"
+					}
+					title: "Germanic boots"
+					type: "item"
+				}
+			]
+			title: "Germanic"
+			x: 8.75d
+			y: 17.12d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 32."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:hun_helmet"
+			}
+			id: "80677B7D8876FD58"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "8E38806257EF9B0A"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B45E1103C50BF66F"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_hun"
+			]
+			tasks: [
+				{
+					id: "59C7AAA4B15EF75E"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:hun_helmet"
+					}
+					title: "Hun helmet"
+					type: "item"
+				}
+				{
+					id: "F617DEC6C76DF93A"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:hun_chestplate"
+					}
+					title: "Hun chestplate"
+					type: "item"
+				}
+				{
+					id: "B2E1E5036747B134"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:hun_leggings"
+					}
+					title: "Hun leggings"
+					type: "item"
+				}
+				{
+					id: "50D709B06852F3D3"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:hun_boots"
+					}
+					title: "Hun boots"
+					type: "item"
+				}
+			]
+			title: "Hun"
+			x: 0.0d
+			y: 18.96d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 33."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:qin_helmet"
+			}
+			id: "5DFF0325225C8B6A"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "AB2D2B844483AAD7"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "EC129B16207F3C4E"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_qin"
+			]
+			tasks: [
+				{
+					id: "FB554608E39657C9"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:qin_helmet"
+					}
+					title: "Qin helmet"
+					type: "item"
+				}
+				{
+					id: "8DA13EC6AE4AC698"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:qin_chestplate"
+					}
+					title: "Qin chestplate"
+					type: "item"
+				}
+				{
+					id: "400604D9902ED6E3"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:qin_leggings"
+					}
+					title: "Qin leggings"
+					type: "item"
+				}
+				{
+					id: "A07C6CECA00B5A0C"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:qin_boots"
+					}
+					title: "Qin boots"
+					type: "item"
+				}
+			]
+			title: "Qin"
+			x: 1.75d
+			y: 18.96d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 34."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:han_helmet"
+			}
+			id: "23FD501460583055"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "4E968F03E1D91F75"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "7A498A76A43853F3"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_han"
+			]
+			tasks: [
+				{
+					id: "C612FAD4042A81D9"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:han_helmet"
+					}
+					title: "Han helmet"
+					type: "item"
+				}
+				{
+					id: "299D0619194F3ED8"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:han_chestplate"
+					}
+					title: "Han chestplate"
+					type: "item"
+				}
+				{
+					id: "D72D2D6366624B77"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:han_leggings"
+					}
+					title: "Han leggings"
+					type: "item"
+				}
+				{
+					id: "9A6247DB3B728C61"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:han_boots"
+					}
+					title: "Han boots"
+					type: "item"
+				}
+			]
+			title: "Han"
+			x: 3.5d
+			y: 18.96d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 35."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:goguryeo_helmet"
+			}
+			id: "5CFFC3CE677A134C"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "4D09F353232B708B"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "DCE95B160613CAE6"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_goguryeo"
+			]
+			tasks: [
+				{
+					id: "8A7FD3337B087736"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:goguryeo_helmet"
+					}
+					title: "Goguryeo helmet"
+					type: "item"
+				}
+				{
+					id: "B1637A18277AFC42"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:goguryeo_chestplate"
+					}
+					title: "Goguryeo chestplate"
+					type: "item"
+				}
+				{
+					id: "C10AE6D36943E612"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:goguryeo_leggings"
+					}
+					title: "Goguryeo leggings"
+					type: "item"
+				}
+				{
+					id: "3C98F16A70008AE8"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:goguryeo_boots"
+					}
+					title: "Goguryeo boots"
+					type: "item"
+				}
+			]
+			title: "Goguryeo"
+			x: 5.25d
+			y: 18.96d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 36."
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:maurya_helmet"
+			}
+			id: "8B75791E59832DD6"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "CBE1AED1FDBDCB8B"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "A9819C388141C97B"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_maurya"
+			]
+			tasks: [
+				{
+					id: "4942024F9B961911"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:maurya_helmet"
+					}
+					title: "Maurya helmet"
+					type: "item"
+				}
+				{
+					id: "160EAD68EB881E97"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:maurya_chestplate"
+					}
+					title: "Maurya chestplate"
+					type: "item"
+				}
+				{
+					id: "75D60B30C67480F5"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:maurya_leggings"
+					}
+					title: "Maurya leggings"
+					type: "item"
+				}
+				{
+					id: "FB2B98FF363B954E"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:maurya_boots"
+					}
+					title: "Maurya boots"
+					type: "item"
+				}
+			]
+			title: "Maurya"
+			x: 0.0d
+			y: 22.08d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 37."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:aksumite_helmet"
+			}
+			id: "BF5FA47CC8AEA615"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "CEBA860470DFED49"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1BDA56E43BFE0403"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_aksumite"
+			]
+			tasks: [
+				{
+					id: "C6DC6146FDA4ACA6"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:aksumite_helmet"
+					}
+					title: "Aksumite helmet"
+					type: "item"
+				}
+				{
+					id: "CD0227D3F51AFAD6"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:aksumite_chestplate"
+					}
+					title: "Aksumite chestplate"
+					type: "item"
+				}
+				{
+					id: "A6C3A91740E3AF93"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:aksumite_leggings"
+					}
+					title: "Aksumite leggings"
+					type: "item"
+				}
+				{
+					id: "8BD4521956C64D3F"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:aksumite_boots"
+					}
+					title: "Aksumite boots"
+					type: "item"
+				}
+			]
+			title: "Aksumite"
+			x: 1.75d
+			y: 22.08d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 38."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:sarmatian_helmet"
+			}
+			id: "29D06131D13BF3EB"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "FC5AEB647A6728A5"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "2A7C8D3ED7AF2166"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_sarmatian"
+			]
+			tasks: [
+				{
+					id: "7D84F93E2E2090CB"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:sarmatian_helmet"
+					}
+					title: "Sarmatian helmet"
+					type: "item"
+				}
+				{
+					id: "1F1EBD73B71F5687"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:sarmatian_chestplate"
+					}
+					title: "Sarmatian chestplate"
+					type: "item"
+				}
+				{
+					id: "D15ED07E836A02D4"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:sarmatian_leggings"
+					}
+					title: "Sarmatian leggings"
+					type: "item"
+				}
+				{
+					id: "CCCCDE5B2C76F1BE"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:sarmatian_boots"
+					}
+					title: "Sarmatian boots"
+					type: "item"
+				}
+			]
+			title: "Sarmatian"
+			x: 3.5d
+			y: 22.08d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 39."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:parthian_helmet"
+			}
+			id: "4B09F2DB70587840"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "B38F13FC8230EFBF"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "97DC27FFD6E0A1FA"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_parthian"
+			]
+			tasks: [
+				{
+					id: "A67955CC6DA721FE"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:parthian_helmet"
+					}
+					title: "Parthian helmet"
+					type: "item"
+				}
+				{
+					id: "959A18DCB5FB867D"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:parthian_chestplate"
+					}
+					title: "Parthian chestplate"
+					type: "item"
+				}
+				{
+					id: "B00B7288D39DB49E"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:parthian_leggings"
+					}
+					title: "Parthian leggings"
+					type: "item"
+				}
+				{
+					id: "FD90A4786587AFBC"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:parthian_boots"
+					}
+					title: "Parthian boots"
+					type: "item"
+				}
+			]
+			title: "Parthian"
+			x: 5.25d
+			y: 22.08d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 40."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:anglo_saxon_helmet"
+			}
+			id: "76BFCD1347175EC4"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "566AD00E56AC0970"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "FF886E0F57424285"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_anglo_saxon"
+			]
+			tasks: [
+				{
+					id: "B8527F988F014575"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:anglo_saxon_helmet"
+					}
+					title: "Anglo Saxon helmet"
+					type: "item"
+				}
+				{
+					id: "31C088AF2985E394"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:anglo_saxon_chestplate"
+					}
+					title: "Anglo Saxon chestplate"
+					type: "item"
+				}
+				{
+					id: "BF2A40D5A491EA1A"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:anglo_saxon_leggings"
+					}
+					title: "Anglo Saxon leggings"
+					type: "item"
+				}
+				{
+					id: "18082807A75C1183"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:anglo_saxon_boots"
+					}
+					title: "Anglo Saxon boots"
+					type: "item"
+				}
+			]
+			title: "Anglo Saxon"
+			x: 7.0d
+			y: 22.08d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 41."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:byzantine_helmet"
+			}
+			id: "69C8302A0FD6EB9C"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "1F9F29F39B86F060"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "99FA168897FDA6F5"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_byzantine"
+			]
+			tasks: [
+				{
+					id: "DCF040A1A0DF9AE0"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:byzantine_helmet"
+					}
+					title: "Byzantine helmet"
+					type: "item"
+				}
+				{
+					id: "1366EF83FDC1615B"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:byzantine_chestplate"
+					}
+					title: "Byzantine chestplate"
+					type: "item"
+				}
+				{
+					id: "562A7B3D21F4FD86"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:byzantine_leggings"
+					}
+					title: "Byzantine leggings"
+					type: "item"
+				}
+				{
+					id: "B928461C51F17B83"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:byzantine_boots"
+					}
+					title: "Byzantine boots"
+					type: "item"
+				}
+			]
+			title: "Byzantine"
+			x: 8.75d
+			y: 22.08d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 42."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:khmer_helmet"
+			}
+			id: "4E07636C2DFFAA1A"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "832B642AE282358C"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "ECD0DA7B9F03A010"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_khmer"
+			]
+			tasks: [
+				{
+					id: "2CCE216D707FC991"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:khmer_helmet"
+					}
+					title: "Khmer helmet"
+					type: "item"
+				}
+				{
+					id: "6E47950FBF2F4649"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:khmer_chestplate"
+					}
+					title: "Khmer chestplate"
+					type: "item"
+				}
+				{
+					id: "2A3F582E2F24FE24"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:khmer_leggings"
+					}
+					title: "Khmer leggings"
+					type: "item"
+				}
+				{
+					id: "4909893BF4102235"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:khmer_boots"
+					}
+					title: "Khmer boots"
+					type: "item"
+				}
+			]
+			title: "Khmer"
+			x: 0.0d
+			y: 23.92d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 43."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:mongol_helmet"
+			}
+			id: "EE45BD2376D25D50"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "1AF5DEA4905DC3EA"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "946980D63E6510BD"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_mongol"
+			]
+			tasks: [
+				{
+					id: "233EE26A126CFD74"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:mongol_helmet"
+					}
+					title: "Mongol helmet"
+					type: "item"
+				}
+				{
+					id: "4E43C08D1348937D"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:mongol_chestplate"
+					}
+					title: "Mongol chestplate"
+					type: "item"
+				}
+				{
+					id: "A237126B27B327F4"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:mongol_leggings"
+					}
+					title: "Mongol leggings"
+					type: "item"
+				}
+				{
+					id: "1900C922F9290A4F"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:mongol_boots"
+					}
+					title: "Mongol boots"
+					type: "item"
+				}
+			]
+			title: "Mongol"
+			x: 1.75d
+			y: 23.92d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 44."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:maya_helmet"
+			}
+			id: "6634361B68336E29"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "5C22D732BC2DC2F4"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "AD4AC53B9F8AC8F8"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_maya"
+			]
+			tasks: [
+				{
+					id: "B57ABBD07D992343"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:maya_helmet"
+					}
+					title: "Maya helmet"
+					type: "item"
+				}
+				{
+					id: "8C06FEDF62F8E49C"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:maya_chestplate"
+					}
+					title: "Maya chestplate"
+					type: "item"
+				}
+				{
+					id: "1E53DB76B4634A52"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:maya_leggings"
+					}
+					title: "Maya leggings"
+					type: "item"
+				}
+				{
+					id: "86F1ED40960D8A3A"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:maya_boots"
+					}
+					title: "Maya boots"
+					type: "item"
+				}
+			]
+			title: "Maya"
+			x: 3.5d
+			y: 23.92d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 45."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:aztec_helmet"
+			}
+			id: "B19A9C32B3836B0F"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "73CB04A012A2ABAC"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1C66FDCF12D79856"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_aztec"
+			]
+			tasks: [
+				{
+					id: "BA65F16EBB65B3AD"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:aztec_helmet"
+					}
+					title: "Aztec helmet"
+					type: "item"
+				}
+				{
+					id: "5E955CF439D5E322"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:aztec_chestplate"
+					}
+					title: "Aztec chestplate"
+					type: "item"
+				}
+				{
+					id: "863DBE649FE7091F"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:aztec_leggings"
+					}
+					title: "Aztec leggings"
+					type: "item"
+				}
+				{
+					id: "3B79D0B3A4AD7856"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:aztec_boots"
+					}
+					title: "Aztec boots"
+					type: "item"
+				}
+			]
+			title: "Aztec"
+			x: 5.25d
+			y: 23.92d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 46."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:inca_helmet"
+			}
+			id: "36E4C727FEFE5C87"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "A8ABFA2E4B5A3BF6"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "73D4AA4354B25DFF"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_inca"
+			]
+			tasks: [
+				{
+					id: "3A5F98516221DDF3"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:inca_helmet"
+					}
+					title: "Inca helmet"
+					type: "item"
+				}
+				{
+					id: "827A658FB4E6FA22"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:inca_chestplate"
+					}
+					title: "Inca chestplate"
+					type: "item"
+				}
+				{
+					id: "6408E2C6E1FE1AFE"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:inca_leggings"
+					}
+					title: "Inca leggings"
+					type: "item"
+				}
+				{
+					id: "93A4B198A3FDCF5B"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:inca_boots"
+					}
+					title: "Inca boots"
+					type: "item"
+				}
+			]
+			title: "Inca"
+			x: 7.0d
+			y: 23.92d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 47."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:samurai_helmet"
+			}
+			id: "3AC3A993B636FC9E"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "C6F8909F65D50966"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "319424CDC959ABF7"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_samurai"
+			]
+			tasks: [
+				{
+					id: "45399EAC6764FAB9"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:samurai_helmet"
+					}
+					title: "Samurai helmet"
+					type: "item"
+				}
+				{
+					id: "4383E9F8ECD379AD"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:samurai_chestplate"
+					}
+					title: "Samurai chestplate"
+					type: "item"
+				}
+				{
+					id: "BC25C3B964DD5D33"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:samurai_leggings"
+					}
+					title: "Samurai leggings"
+					type: "item"
+				}
+				{
+					id: "BCAAB64C7A70C801"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:samurai_boots"
+					}
+					title: "Samurai boots"
+					type: "item"
+				}
+			]
+			title: "Samurai"
+			x: 8.75d
+			y: 23.92d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 48."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:pharaoh_helmet"
+			}
+			id: "24271C73F3568EF6"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "CE8B1D65EE90A00C"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "32B58D4617A13FAC"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_pharaoh"
+			]
+			tasks: [
+				{
+					id: "A2B27D215715A145"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:pharaoh_helmet"
+					}
+					title: "Pharaoh helmet"
+					type: "item"
+				}
+				{
+					id: "42C90C0DCF418E8E"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:pharaoh_chestplate"
+					}
+					title: "Pharaoh chestplate"
+					type: "item"
+				}
+				{
+					id: "8AF3DF207E5BE27B"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:pharaoh_leggings"
+					}
+					title: "Pharaoh leggings"
+					type: "item"
+				}
+				{
+					id: "9E3D77FC96578245"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:pharaoh_boots"
+					}
+					title: "Pharaoh boots"
+					type: "item"
+				}
+			]
+			title: "Pharaoh"
+			x: 0.0d
+			y: 25.76d
+		}
+		{
+			dependencies: [
+				"C5A2F43042E7526A"
+			]
+			description: [
+				"Tier 49."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:agamemnon_helmet"
+			}
+			id: "9016A2BB5E414E75"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "6D153B5EDE022BDC"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "92CB836A49B01037"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_agamemnon"
+			]
+			tasks: [
+				{
+					id: "E9A9A9CCAE90ABCA"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:agamemnon_helmet"
+					}
+					title: "Agamemnon helmet"
+					type: "item"
+				}
+				{
+					id: "8F85054D8C94C147"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:agamemnon_chestplate"
+					}
+					title: "Agamemnon chestplate"
+					type: "item"
+				}
+				{
+					id: "DB55C36077056E33"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:agamemnon_leggings"
+					}
+					title: "Agamemnon leggings"
+					type: "item"
+				}
+				{
+					id: "DA7D9EBDEDD341F7"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:agamemnon_boots"
+					}
+					title: "Agamemnon boots"
+					type: "item"
+				}
+			]
+			title: "Agamemnon"
+			x: 1.75d
+			y: 25.76d
+		}
+		{
+			dependencies: [
+				"F692A15DE970CAF4"
+			]
+			description: [
+				"Mimir: \"Plate and mail from the west.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:iron_chestplate"
+			}
+			id: "D8CA7B997C74407E"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "3D8CE81C233AF936"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "2FB9131BEF40A056"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_ek"
+			]
+			tasks: [
+				{
+					id: "90A1AFD16AB58461"
+					title: "Craft a full Epic Knights set"
+					type: "checkmark"
+				}
+			]
+			title: "Epic Knights"
+			x: 0.0d
+			y: 28.88d
+		}
+		{
+			dependencies: [
+				"D8CA7B997C74407E"
+			]
+			description: [
+				"Mimir: \"Bone, wither, divine.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:iron_chestplate"
+			}
+			id: "22D9677AEB18EC48"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "80198498E76CB7AB"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "BED6698A189820C1"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_ia"
+			]
+			tasks: [
+				{
+					id: "E700276E8CFC9076"
+					title: "Craft a full Immersive Armors set"
+					type: "checkmark"
+				}
+			]
+			title: "Immersive Armors"
+			x: 1.75d
+			y: 28.88d
+		}
+		{
+			dependencies: [
+				"22D9677AEB18EC48"
+			]
+			description: [
+				"Mimir: \"From the builders of Dawn of Time.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:iron_chestplate"
+			}
+			id: "8F9858D183E6BA46"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "F7E58364C0AF2619"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "4D043F0C5A0F2535"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_aota"
+			]
+			tasks: [
+				{
+					id: "1EA17B49B147E1A1"
+					title: "Craft a full Armor of the Ages set"
+					type: "checkmark"
+				}
+			]
+			title: "Armor of the Ages"
+			x: 3.5d
+			y: 28.88d
+		}
+		{
+			dependencies: [
+				"8F9858D183E6BA46"
+			]
+			description: [
+				"Mimir: \"Strange shapes.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:iron_chestplate"
+			}
+			id: "531B2ECF45768C5C"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "98628ADD4BEFF0EB"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "2A17B557ABE50C4B"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_fa"
+			]
+			tasks: [
+				{
+					id: "8A32051C6D058D5C"
+					title: "Craft a full Fantasy Armor set"
+					type: "checkmark"
+				}
+			]
+			title: "Fantasy Armor"
+			x: 5.25d
+			y: 28.88d
+		}
+		{
+			dependencies: [
+				"531B2ECF45768C5C"
+			]
+			description: [
+				"Mimir: \"Berserker, Ulfhednar, Valkyrie, Jarl.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:jarl_helmet"
+			}
+			id: "1C6BE8A70C0AEEFD"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "15CEF6BEC8E44FB0"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "50E64591B0B12B45"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_armory_viking"
+			]
+			tasks: [
+				{
+					id: "D66A120B430ACE84"
+					title: "Craft all four Viking sets"
+					type: "checkmark"
+				}
+			]
+			title: "The Viking Sets"
+			x: 7.0d
+			y: 28.88d
+		}
+		{
+			dependencies: [
+				"7768ACC5A9AE574C"
+			]
+			description: [
+				"Mimir: \"A small museum.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:iron_chestplate"
+			}
+			id: "CB91338D09D60888"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "59655B8F4153A73A"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1CEB500CF02A78C6"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_c10"
+			]
+			tasks: [
+				{
+					id: "9981F30AF80BC107"
+					title: "Craft 10 ancient sets"
+					type: "checkmark"
+				}
+			]
+			title: "Ten Sets"
+			x: 0.0d
+			y: 32.0d
+		}
+		{
+			dependencies: [
+				"CB91338D09D60888"
+			]
+			description: [
+				"Mimir: \"Half the old world.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:iron_chestplate"
+			}
+			id: "1C5FAAED8EC92E29"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "82B62CE6EC054179"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "655A10D91E197924"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_armory_c25"
+			]
+			tasks: [
+				{
+					id: "3CAFD929B8C373E5"
+					title: "Craft 25 ancient sets"
+					type: "checkmark"
+				}
+			]
+			title: "Twenty-Five Sets"
+			x: 1.75d
+			y: 32.0d
+		}
+		{
+			dependencies: [
+				"1C5FAAED8EC92E29"
+			]
+			description: [
+				"Mimir: \"All forty-nine. Not even Odin has that.\""
+				""
+				""
+				"Also: Title: Collector"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:agamemnon_helmet"
+			}
+			id: "1B461E5D8DE9D041"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "D7D7862ABA66EB2D"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1737C774CC47C92C"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_armory_c49"
+			]
+			tasks: [
+				{
+					id: "7835310DA50B2536"
+					title: "Craft all 49 ancient sets"
+					type: "checkmark"
+				}
+			]
+			title: "Every Army of the Old World"
+			x: 3.5d
+			y: 32.0d
+		}
+	]
+	subtitle: [
+		"the 49 ancient sets and the other armor mods"
+	]
+	title: "Ancient Armory"
+}

@@ -1,0 +1,2723 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "wanderer_s_saga"
+	group: "96A912181A061CEA"
+	icon: {
+		Count: 1b
+		id: "minecraft:compass"
+	}
+	id: "5811AACC371B6A77"
+	images: [
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/saga_0.png"
+			rotation: 0.0d
+			width: 5.231d
+			x: 2.015d
+			y: 0.1d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/saga_1.png"
+			rotation: 0.0d
+			width: 6.605d
+			x: 2.703d
+			y: 3.22d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/saga_2.png"
+			rotation: 0.0d
+			width: 4.085d
+			x: 1.443d
+			y: 8.18d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/saga_3.png"
+			rotation: 0.0d
+			width: 7.98d
+			x: 3.39d
+			y: 11.3d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/saga_4.png"
+			rotation: 0.0d
+			width: 3.627d
+			x: 1.214d
+			y: 21.78d
+		}
+	]
+	order_index: 13
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Odin: \"I walked Midgard in a grey cloak for a thousand years. Walk it too.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "13A9E990A2C13E3B"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "1629694CE30CCC65"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "C0390E6997294621"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_start"
+			]
+			tasks: [
+				{
+					id: "1838372D9D42CF2B"
+					stat: "minecraft:walk_one_cm"
+					title: "Travel 5000 blocks"
+					type: "stat"
+					value: 500000
+				}
+			]
+			title: "The Grey Cloak"
+			x: 0.0d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"Odin: \"Farther.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "7BD50B4F7687F185"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "390BEE49CFFB4FF4"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "2DD4E5D9F74AC80E"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_far"
+			]
+			tasks: [
+				{
+					id: "9D87C6AC05275AD5"
+					stat: "minecraft:walk_one_cm"
+					title: "Travel 25000 blocks"
+					type: "stat"
+					value: 2500000
+				}
+			]
+			title: "Ten Thousand Steps"
+			x: 1.75d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"7BD50B4F7687F185"
+			]
+			description: [
+				"Odin: \"Ten old roads.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "D399A98CD6FA7015"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "3E108A7C438D48DF"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "EC0D8F353F399102"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_ways"
+			]
+			tasks: [
+				{
+					id: "6C6069AF842B4904"
+					title: "Activate 10 waystones"
+					type: "checkmark"
+				}
+			]
+			title: "Waystone Network"
+			x: 3.5d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"D399A98CD6FA7015"
+			]
+			description: [
+				"Odin: \"Go where no one has been.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "A6660A2BAC4E8F46"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "9CE9D4C7BB91FA08"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "129BB3A27F4B5436"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_saga_edge"
+			]
+			tasks: [
+				{
+					id: "8E541FD767604676"
+					title: "Travel 10000 blocks from spawn"
+					type: "checkmark"
+				}
+			]
+			title: "The Edge of the Map"
+			x: 5.25d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"Odin: \"Stepped pyramids in the jungle. The Silverback rules one.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "482361AA3DFA9178"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "BDBAF508FB06C4EB"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "BF9406F7882C2349"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_maya"
+			]
+			tasks: [
+				{
+					id: "442F42C79E72B689"
+					structure: "ancientstructures:mayan_temple"
+					title: "Find a Mayan site"
+					type: "structure"
+				}
+			]
+			title: "The Mayan Temple"
+			x: 0.0d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"482361AA3DFA9178"
+			]
+			description: [
+				"Odin: \"An empire's bones.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "4B7B1939E5F48F79"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "D2FDC93F8A6D3C52"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "7D3BD24C62314CC4"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_rome"
+			]
+			tasks: [
+				{
+					id: "B12BBF15BD02FAED"
+					structure: "ancientstructures:roman_temple"
+					title: "Find a Roman site"
+					type: "structure"
+				}
+			]
+			title: "Roman Ruins"
+			x: 1.75d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"4B7B1939E5F48F79"
+			]
+			description: [
+				"Odin: \"Torii gates and quiet halls.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "87FFF5636E9A2CE5"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "1101FA0E45E957FB"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "C72BCEFFE29FA9C0"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_japan"
+			]
+			tasks: [
+				{
+					id: "54BB1E1610C642DB"
+					structure: "ancientstructures:japanese_temple"
+					title: "Find a Japanese site"
+					type: "structure"
+				}
+			]
+			title: "The Shrine"
+			x: 3.5d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"87FFF5636E9A2CE5"
+			]
+			description: [
+				"Odin: \"A northern hall. Almost home.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "DF0EB0AA1AE501BF"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "9E878620C8FA6926"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "55EE2AD1B76BC379"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_german"
+			]
+			tasks: [
+				{
+					id: "A1F30C49E781E77C"
+					structure: "ancientstructures:german_town"
+					title: "Find a German site"
+					type: "structure"
+				}
+			]
+			title: "The Hall"
+			x: 5.25d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"DF0EB0AA1AE501BF"
+			]
+			description: [
+				"Odin: \"The builders hid things.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "33B64DC9182CB6D3"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "B4605CEDFA29E80E"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "25AA79E81DBA7525"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_secret"
+			]
+			tasks: [
+				{
+					id: "FC156DC1E07192B4"
+					title: "Find a secret passage in an Ancient Structures site"
+					type: "checkmark"
+				}
+			]
+			title: "Secret Passage"
+			x: 7.0d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"33B64DC9182CB6D3"
+			]
+			description: [
+				"Odin: \"Some sites have keepers.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "C0F5D3ED4FCCC3AF"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "3F6464D980EEF023"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "CBE4C5B32B4FF9D6"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_minib"
+			]
+			tasks: [
+				{
+					id: "1D36DC31258D48A8"
+					title: "Defeat an Ancient Structures guardian"
+					type: "checkmark"
+				}
+			]
+			title: "Guardians"
+			x: 8.75d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"C0F5D3ED4FCCC3AF"
+			]
+			description: [
+				"Odin: \"A village of the old ways.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "9FA9343440F5B882"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "8624B23D449FD014"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "A63BD8631BE5D027"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_village"
+			]
+			tasks: [
+				{
+					id: "E051F67CF305A2DF"
+					title: "Find an Ancient Villages village"
+					type: "checkmark"
+				}
+			]
+			title: "Ancient Villages"
+			x: 0.0d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"9FA9343440F5B882"
+			]
+			description: [
+				"Odin: \"You have seen all four peoples who built them.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "7C07353C94D49854"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "FA2B254D78F074DB"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6D3A4CE95EE91751"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_saga_all4"
+			]
+			tasks: [
+				{
+					id: "2B40E8B8FBF73A06"
+					title: "All four Ancient Structures cultures found"
+					type: "checkmark"
+				}
+			]
+			title: "Four Cultures"
+			x: 1.75d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"7BD50B4F7687F185"
+			]
+			description: [
+				"Odin: \"Cities of kings, empty now.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "5B3B4FEE9B66E8A5"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "5622420C66215664"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "3C44258F3EE7E099"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_capital"
+			]
+			tasks: [
+				{
+					id: "BBBAAC5A9BE981B4"
+					title: "Visit a Luki's Grand Capitals city"
+					type: "checkmark"
+				}
+			]
+			title: "Grand Capitals"
+			x: 0.0d
+			y: 9.04d
+		}
+		{
+			dependencies: [
+				"5B3B4FEE9B66E8A5"
+			]
+			description: [
+				"Odin: \"Each built by a different hand.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "E122035688C26B7A"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "2DF9F25FD8B867FB"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "4870292F5E438157"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_capital2"
+			]
+			tasks: [
+				{
+					id: "202055CC9F404735"
+					title: "Visit 3 grand capitals"
+					type: "checkmark"
+				}
+			]
+			title: "Three Capitals"
+			x: 1.75d
+			y: 9.04d
+		}
+		{
+			dependencies: [
+				"E122035688C26B7A"
+			]
+			description: [
+				"Odin: \"Some ruins float. Do not look down.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "46985667CB5E58B0"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "58940404C30B1317"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "E0EA77EECCDAE61E"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_sky"
+			]
+			tasks: [
+				{
+					id: "12472D6030C6D394"
+					title: "Reach a Soaring Structures island"
+					type: "checkmark"
+				}
+			]
+			title: "Islands in the Sky"
+			x: 3.5d
+			y: 9.04d
+		}
+		{
+			dependencies: [
+				"46985667CB5E58B0"
+			]
+			description: [
+				"Odin: \"Three of them.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "2E47C730D73E2B80"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "FF3F9C52864F4439"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1B27C74A5E1FC84D"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_sky3"
+			]
+			tasks: [
+				{
+					id: "8332B6A7E5DC9D0A"
+					title: "Reach 3 floating islands"
+					type: "checkmark"
+				}
+			]
+			title: "Sky Walker"
+			x: 5.25d
+			y: 9.04d
+		}
+		{
+			dependencies: [
+				"2E47C730D73E2B80"
+			]
+			description: [
+				"Odin: \"Better Strongholds go deep.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "18362FD00312058D"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "EC4850FFAD580775"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "EBF206E106D37837"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_hold"
+			]
+			tasks: [
+				{
+					id: "9190865FAC12A744"
+					structure: "betterstrongholds:stronghold"
+					title: "Find a stronghold"
+					type: "structure"
+				}
+			]
+			title: "The Stronghold"
+			x: 7.0d
+			y: 9.04d
+		}
+		{
+			dependencies: [
+				"18362FD00312058D"
+			]
+			description: [
+				"Odin: \"Under one stronghold, Hel's gate waits. Find it before Garmr finds you.\""
+				""
+				""
+				"Also: Waypoint for Chapter 2: Garmr"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:hel_key"
+			}
+			id: "8939CE75C3FA4E73"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "F8515112C379245E"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "E9B42004D4407736"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_saga_gate"
+			]
+			tasks: [
+				{
+					id: "3F5B20F57D74567F"
+					structure: "betterstrongholds:stronghold"
+					title: "Find the stronghold portal room"
+					type: "structure"
+				}
+			]
+			title: "The Gate Below"
+			x: 8.75d
+			y: 9.04d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "B080E74C7C55BFE5"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "1D639D722F1417E2"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "10412A056B36BA12"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_taiga_lakelands"
+			]
+			tasks: [
+				{
+					biome: "vividlands:taiga_lakelands"
+					id: "6902A8743B75424C"
+					title: "Visit Taiga Lakelands"
+					type: "biome"
+				}
+			]
+			title: "Taiga Lakelands"
+			x: 0.0d
+			y: 12.16d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "A9FEB4406FA4C481"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "DAEB9B8879E7A3A2"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "D36BAD8433B32F91"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_caledonian_pinewood"
+			]
+			tasks: [
+				{
+					biome: "vividlands:caledonian_pinewood"
+					id: "172CE5D01F178822"
+					title: "Visit Caledonian Pinewood"
+					type: "biome"
+				}
+			]
+			title: "Caledonian Pinewood"
+			x: 1.75d
+			y: 12.16d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "1FB08BE0B09A82F7"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "65BCE48E2CA4FD42"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6A1C3677547CDBC8"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_boreal_snowwoods"
+			]
+			tasks: [
+				{
+					biome: "vividlands:boreal_snowwoods"
+					id: "CDA2CB62AE77C4A3"
+					title: "Visit Boreal Snowwoods"
+					type: "biome"
+				}
+			]
+			title: "Boreal Snowwoods"
+			x: 3.5d
+			y: 12.16d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "451FEF90215FD738"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "AF8C2D2ED76C66DC"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "19A04A69F54DA4C5"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_highland_moors"
+			]
+			tasks: [
+				{
+					biome: "vividlands:highland_moors"
+					id: "CE2B50CDB7F61B03"
+					title: "Visit Highland Moors"
+					type: "biome"
+				}
+			]
+			title: "Highland Moors"
+			x: 5.25d
+			y: 12.16d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "4AAEF792B7BA229D"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "29F10410B1A14F34"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "A28DA5155B1F267C"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_alpine_meadow"
+			]
+			tasks: [
+				{
+					biome: "vividlands:alpine_meadow"
+					id: "1FDFE3F976555C27"
+					title: "Visit Alpine Meadow"
+					type: "biome"
+				}
+			]
+			title: "Alpine Meadow"
+			x: 7.0d
+			y: 12.16d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "774880C607D92756"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "1E8ED338BD89DE2B"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "E8E63DDF11E489B1"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_oasis"
+			]
+			tasks: [
+				{
+					biome: "vividlands:oasis"
+					id: "630B67C4B760C5F9"
+					title: "Visit Oasis"
+					type: "biome"
+				}
+			]
+			title: "Oasis"
+			x: 8.75d
+			y: 12.16d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "8E66844EE5ECDEEA"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "A36AC7610C58AB86"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1130C768FA51F413"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_tropical_river"
+			]
+			tasks: [
+				{
+					biome: "vividlands:tropical_river"
+					id: "1585420BA37BEFD6"
+					title: "Visit Tropical River"
+					type: "biome"
+				}
+			]
+			title: "Tropical River"
+			x: 0.0d
+			y: 14.0d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "C006F9E44A6BB862"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "45C4C9CF764CDC67"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "882545B25D3C38DE"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_fen"
+			]
+			tasks: [
+				{
+					biome: "vividlands:fen"
+					id: "E5D956037A274DF9"
+					title: "Visit Fen"
+					type: "biome"
+				}
+			]
+			title: "Fen"
+			x: 1.75d
+			y: 14.0d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "7E6852BD8569B7F1"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "B9BDE0C1F486861E"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "74943FEAC63B501C"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_endless_steppe"
+			]
+			tasks: [
+				{
+					biome: "vividlands:endless_steppe"
+					id: "6D6E9B4B04BF9DBD"
+					title: "Visit Endless Steppe"
+					type: "biome"
+				}
+			]
+			title: "Endless Steppe"
+			x: 3.5d
+			y: 14.0d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "A6C55E560AD10F6E"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "CA9DFFB058EA20A3"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "5A5F6A5FA261DDEA"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_golden_savanna"
+			]
+			tasks: [
+				{
+					biome: "vividlands:golden_savanna"
+					id: "FA57B1FC759261DF"
+					title: "Visit Golden Savanna"
+					type: "biome"
+				}
+			]
+			title: "Golden Savanna"
+			x: 5.25d
+			y: 14.0d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "2E0496B5260920A0"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "8B7F5DF1C5034C9D"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "69319A3E80103B50"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_wildflower_prairie"
+			]
+			tasks: [
+				{
+					biome: "vividlands:wildflower_prairie"
+					id: "93DCE836121983EB"
+					title: "Visit Wildflower Prairie"
+					type: "biome"
+				}
+			]
+			title: "Wildflower Prairie"
+			x: 7.0d
+			y: 14.0d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "925903D7883C3A7A"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "7DC6A704FE34DC36"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B9306807315B858F"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_tundra"
+			]
+			tasks: [
+				{
+					biome: "vividlands:tundra"
+					id: "211C3D1D1884EDB8"
+					title: "Visit Tundra"
+					type: "biome"
+				}
+			]
+			title: "Tundra"
+			x: 8.75d
+			y: 14.0d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "19942BE16C44CCB9"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "C09A182730C1734A"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "42BC3FCB1CAF92B6"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_glacial_outwash"
+			]
+			tasks: [
+				{
+					biome: "vividlands:glacial_outwash"
+					id: "87438BBE21FC80C7"
+					title: "Visit Glacial Outwash"
+					type: "biome"
+				}
+			]
+			title: "Glacial Outwash"
+			x: 0.0d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "C22FBBC336378949"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "7E5BE179D816A5AD"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "C3C4965674109189"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_glacier"
+			]
+			tasks: [
+				{
+					biome: "vividlands:glacier"
+					id: "5678C22E772DABA5"
+					title: "Visit Glacier"
+					type: "biome"
+				}
+			]
+			title: "Glacier"
+			x: 1.75d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "198343BA3D7E6430"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "ED684B29FAA8ED44"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "DD1E54708D615C32"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_rainforest"
+			]
+			tasks: [
+				{
+					biome: "vividlands:rainforest"
+					id: "DB82A50061F299FD"
+					title: "Visit Rainforest"
+					type: "biome"
+				}
+			]
+			title: "Rainforest"
+			x: 3.5d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "D863E7DDCD5F333C"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "1A1467585E7B2F8D"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "8AAEBA7BD13E26C3"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_tropical_beach"
+			]
+			tasks: [
+				{
+					biome: "vividlands:tropical_beach"
+					id: "50ADEAC52B8ABC9F"
+					title: "Visit Tropical Beach"
+					type: "biome"
+				}
+			]
+			title: "Tropical Beach"
+			x: 5.25d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "777E687C891F9919"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "5A1C054D463DB852"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "14B039C61B19CDAD"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_red_canyonlands"
+			]
+			tasks: [
+				{
+					biome: "vividlands:red_canyonlands"
+					id: "422497A6BB156A78"
+					title: "Visit Red Canyonlands"
+					type: "biome"
+				}
+			]
+			title: "Red Canyonlands"
+			x: 7.0d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "BE975559CB575B64"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "F352085BFEF80DA3"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1977180EFA3F19CF"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_rocky_hamada"
+			]
+			tasks: [
+				{
+					biome: "vividlands:rocky_hamada"
+					id: "FC0ED898D0C29757"
+					title: "Visit Rocky Hamada"
+					type: "biome"
+				}
+			]
+			title: "Rocky Hamada"
+			x: 8.75d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "1E4221361B961B96"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "39BE2C58B1F002D3"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "CE711CF6E61AC92F"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_cloud_forest"
+			]
+			tasks: [
+				{
+					biome: "vividlands:cloud_forest"
+					id: "167DD6CBCA5325DD"
+					title: "Visit Cloud Forest"
+					type: "biome"
+				}
+			]
+			title: "Cloud Forest"
+			x: 0.0d
+			y: 17.68d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "2ABF035C42CDC59F"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "314B4186775E1C6C"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "F8FD14EEA7461F32"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_old_growth_oakwood"
+			]
+			tasks: [
+				{
+					biome: "vividlands:old_growth_oakwood"
+					id: "B14E2949ACB65B74"
+					title: "Visit Old Growth Oakwood"
+					type: "biome"
+				}
+			]
+			title: "Old Growth Oakwood"
+			x: 1.75d
+			y: 17.68d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "DB5B4AFF08A78EC7"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "C1307D945E0316AB"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "707B77579CEA291E"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_redwood_giants"
+			]
+			tasks: [
+				{
+					biome: "vividlands:redwood_giants"
+					id: "D14C9C0C3F2A0DAC"
+					title: "Visit Redwood Giants"
+					type: "biome"
+				}
+			]
+			title: "Redwood Giants"
+			x: 3.5d
+			y: 17.68d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "FDE02A62B05AF642"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "4201BF372CDF337C"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "4E05AA44C5ED9D9B"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_alpine_peaks"
+			]
+			tasks: [
+				{
+					biome: "vividlands:alpine_peaks"
+					id: "247C7113856F89CF"
+					title: "Visit Alpine Peaks"
+					type: "biome"
+				}
+			]
+			title: "Alpine Peaks"
+			x: 5.25d
+			y: 17.68d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "8E88B1FF90C28FCF"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "14C389A3F2041519"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6D10F8BD959F5587"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_highland_crags"
+			]
+			tasks: [
+				{
+					biome: "vividlands:highland_crags"
+					id: "E4358EE0B28AD8E7"
+					title: "Visit Highland Crags"
+					type: "biome"
+				}
+			]
+			title: "Highland Crags"
+			x: 7.0d
+			y: 17.68d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "765E0348F7EDEA55"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "AA13F939A3ACD044"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "A54496FF10E70B18"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_jagged_spires"
+			]
+			tasks: [
+				{
+					biome: "vividlands:jagged_spires"
+					id: "F58886C15B640ABB"
+					title: "Visit Jagged Spires"
+					type: "biome"
+				}
+			]
+			title: "Jagged Spires"
+			x: 8.75d
+			y: 17.68d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "C1CDB95681284B36"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "2A2DC6973A4B653D"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "7DD406195368D2A5"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_snowy_shore"
+			]
+			tasks: [
+				{
+					biome: "vividlands:snowy_shore"
+					id: "F7ECB7E1E596602C"
+					title: "Visit Snowy Shore"
+					type: "biome"
+				}
+			]
+			title: "Snowy Shore"
+			x: 0.0d
+			y: 19.52d
+		}
+		{
+			dependencies: [
+				"13A9E990A2C13E3B"
+			]
+			description: [
+				"A land of Midgard."
+				""
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "518BC5F86AF3EC30"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "4FAB2A280C6FDD8E"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "FB22E4FF088C2006"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_northern_ocean"
+			]
+			tasks: [
+				{
+					biome: "vividlands:northern_ocean"
+					id: "F07FE4DF3D43B358"
+					title: "Visit Northern Ocean"
+					type: "biome"
+				}
+			]
+			title: "Northern Ocean"
+			x: 1.75d
+			y: 19.52d
+		}
+		{
+			dependencies: [
+				"D399A98CD6FA7015"
+			]
+			description: [
+				"Odin: \"Every land has its beast.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "6839E578C38595BD"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "CEAC9D7A3195E339"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "446D25C0E12F4D9E"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_b10"
+			]
+			tasks: [
+				{
+					id: "8936B62FC82EB2DF"
+					title: "Visit 10 Vivid Lands biomes"
+					type: "checkmark"
+				}
+			]
+			title: "Ten Lands"
+			x: 0.0d
+			y: 22.64d
+		}
+		{
+			dependencies: [
+				"6839E578C38595BD"
+			]
+			description: [
+				"Odin: \"Know them all.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "FF5DB66A2F1459E2"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "4D7B86DA75AE21C3"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "EA8ABC44DAB415F3"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_b20"
+			]
+			tasks: [
+				{
+					id: "4BDE385A714F25EB"
+					title: "Visit 20 Vivid Lands biomes"
+					type: "checkmark"
+				}
+			]
+			title: "Twenty Lands"
+			x: 1.75d
+			y: 22.64d
+		}
+		{
+			dependencies: [
+				"FF5DB66A2F1459E2"
+			]
+			description: [
+				"Odin: \"Even stranger lands.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "6D11D66C953C3245"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "EFE404431E15D2A9"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "58E36DE5C3395580"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_saga_otbwg"
+			]
+			tasks: [
+				{
+					id: "40EFFF603C041D67"
+					title: "Visit 10 Oh The Biomes We've Gone biomes"
+					type: "checkmark"
+				}
+			]
+			title: "Oh The Biomes"
+			x: 3.5d
+			y: 22.64d
+		}
+		{
+			dependencies: [
+				"6D11D66C953C3245"
+			]
+			description: [
+				"Odin: \"You know Midgard better than I do.\""
+				""
+				""
+				"Also: Title: Wanderer"
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:compass"
+			}
+			id: "3731D8F6F0A24D73"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "689566853E79233A"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "C2C71443FB532E21"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_saga_atlas"
+			]
+			tasks: [
+				{
+					id: "88CDC869760A515C"
+					title: "Visit every Vivid Lands biome"
+					type: "checkmark"
+				}
+			]
+			title: "Atlas of Midgard"
+			x: 5.25d
+			y: 22.64d
+		}
+	]
+	subtitle: [
+		"Ancient Structures, Ancient Villages, Grand Capitals, Soaring Structures, Better Strongholds, Vivid Lands biomes"
+	]
+	title: "Wanderer's Saga"
+}

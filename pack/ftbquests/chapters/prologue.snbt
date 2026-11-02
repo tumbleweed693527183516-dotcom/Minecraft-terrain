@@ -1,0 +1,366 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "prologue"
+	group: "5367FBBD604DCF21"
+	icon: {
+		Count: 1b
+		id: "minecraft:writable_book"
+	}
+	id: "C10EFC27263EC432"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Mimir: \"The Norns have seen the end of the world, mortal. They have also seen you standing in it. Read on.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:writable_book"
+			}
+			id: "924480D1359E83CC"
+			rewards: [
+				{
+					id: "354C8D7BCE076404"
+					item: {
+						Count: 1b
+						id: "minecraft:map"
+					}
+					type: "item"
+				}
+				{
+					count: 8
+					id: "940D0730DDB9E2EA"
+					item: {
+						Count: 1b
+						id: "minecraft:bread"
+					}
+					type: "item"
+				}
+				{
+					id: "12B8751103EBDCA7"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:glamour_template"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6C8D0E694E8B17E0"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_p1"
+			]
+			tasks: [
+				{
+					id: "80A69B24B0B174C2"
+					title: "Open the quest book"
+					type: "checkmark"
+				}
+			]
+			title: "A Raven's Message"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"924480D1359E83CC"
+			]
+			description: [
+				"Mimir: \"The cold is Skadi's first test, and she is not patient. Sleep under a roof.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:chest"
+			}
+			id: "DE7F0AA7567B00D4"
+			rewards: [
+				{
+					count: 16
+					id: "A0C51E2A33B0F85A"
+					item: {
+						Count: 1b
+						id: "minecraft:torch"
+					}
+					type: "item"
+				}
+				{
+					id: "E61B3DA1A679E40F"
+					item: {
+						Count: 1b
+						id: "minecraft:leather_chestplate"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "CF8069B6248D5EB3"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_p2"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/has/minecraft_beds"
+					criterion: ""
+					id: "556DC5F098E087F9"
+					title: "Craft a bed"
+					type: "advancement"
+				}
+				{
+					id: "CD701FFC33D8FC92"
+					item: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					title: "Craft a chest"
+					type: "item"
+				}
+			]
+			title: "Shelter Before Winter"
+			x: 1.75d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"DE7F0AA7567B00D4"
+			]
+			description: [
+				"Mimir: \"Bronze and iron. The first civilizations learned it, and so will you.\""
+				""
+				""
+				"Also: Ancient armor tiers 1 to 5 unlocked"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:sumerian_helmet"
+			}
+			id: "1A266965A2FC1A3C"
+			rewards: [
+				{
+					id: "2780E6D8F27A4481"
+					item: {
+						Count: 1b
+						id: "minecraft:iron_sword"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "AAA702AFFAAA7F19"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_p3"
+			]
+			tasks: [
+				{
+					id: "7C146640B0643581"
+					title: "Wear a full iron armor set, or the Sumerian set"
+					type: "checkmark"
+				}
+			]
+			title: "Iron for a Mortal's Hide"
+			x: 3.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"1A266965A2FC1A3C"
+			]
+			description: [
+				"Mimir: \"Skadi's beasts roam every corner of Midgard. Learn the old roads.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "waystones:waystone"
+			}
+			id: "D2ADFE0D7D3691FB"
+			rewards: [
+				{
+					count: 2
+					id: "BE6C0B7CD4EAA92A"
+					item: {
+						Count: 1b
+						id: "waystones:warp_stone"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "124A7F10CBA556F2"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_p4"
+			]
+			tasks: [
+				{
+					id: "9A12375488DA4B7F"
+					item: {
+						Count: 1b
+						id: "waystones:waystone"
+					}
+					title: "Find or craft a waystone"
+					type: "item"
+				}
+			]
+			title: "The Waystones"
+			x: 3.5d
+			y: 1.6d
+		}
+		{
+			dependencies: [
+				"D2ADFE0D7D3691FB"
+			]
+			description: [
+				"Mimir: \"Pine, steppe, fen, glacier. Each land has its own beast. Walk them.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:writable_book"
+			}
+			id: "20C36E9B8994ABC1"
+			rewards: [
+				{
+					id: "ADE47AD15AB7BC19"
+					item: {
+						Count: 1b
+						id: "minecraft:spyglass"
+					}
+					type: "item"
+				}
+				{
+					count: 16
+					id: "8E4C789944E1DA3F"
+					item: {
+						Count: 1b
+						id: "minecraft:arrow"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6739AD2B0F4D282B"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_p5"
+			]
+			tasks: [
+				{
+					id: "1EB1F96E09A0AD54"
+					title: "Visit 3 different Vivid Lands biomes"
+					type: "checkmark"
+				}
+			]
+			title: "Read the Land"
+			x: 1.75d
+			y: 1.6d
+		}
+		{
+			dependencies: [
+				"20C36E9B8994ABC1"
+			]
+			description: [
+				"Skadi: \"So Odin's ravens chose a mortal. We will see. The bear of the pines is your first trial.\""
+				""
+				""
+				"Also: Chapter 1 opens"
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:writable_book"
+			}
+			id: "DFA5A0B157A45401"
+			rewards: [
+				{
+					command: "/ragnarok class xp 300"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "4FF21D44E1BDFB2C"
+					silent: true
+					title: "300 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_p6"
+			]
+			tasks: [
+				{
+					biome: "vividlands:boreal_snowwoods"
+					id: "38E000B9DC1F128C"
+					title: "Travel to a pine or boreal forest"
+					type: "biome"
+				}
+			]
+			title: "Skadi's Summons"
+			x: 0.0d
+			y: 1.6d
+		}
+	]
+	subtitle: [
+		"The chosen mortal"
+	]
+	title: "Prologue"
+}

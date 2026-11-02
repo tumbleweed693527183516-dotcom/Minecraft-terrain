@@ -1,0 +1,1613 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "njord_s_voyages"
+	group: "96A912181A061CEA"
+	icon: {
+		Count: 1b
+		id: "smallships:oak_cog"
+	}
+	id: "D03F73DD16933705"
+	images: [
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/voyages_0.png"
+			rotation: 0.0d
+			width: 4.773d
+			x: 1.786d
+			y: 0.1d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/voyages_1.png"
+			rotation: 0.0d
+			width: 4.544d
+			x: 1.672d
+			y: 5.06d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/voyages_2.png"
+			rotation: 0.0d
+			width: 5.689d
+			x: 2.245d
+			y: 8.18d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/voyages_3.png"
+			rotation: 0.0d
+			width: 5.689d
+			x: 2.245d
+			y: 11.3d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/voyages_4.png"
+			rotation: 0.0d
+			width: 5.231d
+			x: 2.015d
+			y: 16.26d
+		}
+	]
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Njord: \"A boat is a promise that you will come home.\""
+				""
+				""
+				"Also: Paddle"
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "82C819A8786AF8C4"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "102D67DC8B0FD966"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "8318608ED2DD3361"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_cog"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/has/smallships_cogs"
+					criterion: ""
+					id: "436260759212F3DE"
+					title: "Build a cog (Small Ships)"
+					type: "advancement"
+				}
+			]
+			title: "First Keel"
+			x: 0.0d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"82C819A8786AF8C4"
+			]
+			description: [
+				"Njord: \"Your sail is your banner.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "593F6FA98E42112E"
+			rewards: [
+				{
+					count: 16
+					id: "DE20FC52A3E0B34A"
+					item: {
+						Count: 1b
+						id: "minecraft:white_wool"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "28CF1A1CEB6A6790"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_sail"
+			]
+			tasks: [
+				{
+					id: "52BE6D7D614CC86F"
+					title: "Dye a ship's sail"
+					type: "checkmark"
+				}
+			]
+			title: "Colors on the Mast"
+			x: 1.75d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"593F6FA98E42112E"
+			]
+			description: [
+				"Njord: \"Bigger hull, more cargo.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "843CD35CADB2151B"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "3F825A91B1E06B24"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "CAFF8E3C51DF34BC"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_brigg"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/has/smallships_briggs"
+					criterion: ""
+					id: "A34EFD4C60E48270"
+					title: "Build a brigg"
+					type: "advancement"
+				}
+			]
+			title: "The Brigg"
+			x: 3.5d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"843CD35CADB2151B"
+			]
+			description: [
+				"Njord: \"Oars when the wind dies.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "96819261355D8D86"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "9342AA2ACD01C1F9"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "C6F48A0373675682"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_galley"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/has/smallships_galleys"
+					criterion: ""
+					id: "8B69E676F8824008"
+					title: "Build a galley"
+					type: "advancement"
+				}
+			]
+			title: "The Galley"
+			x: 5.25d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"96819261355D8D86"
+			]
+			description: [
+				"Njord: \"A dragon-prowed longship. The ship of the north.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "112A012ED92B3BA3"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "F0D85CAADDEE724A"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "FF1CF1032309B120"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_drakkar"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/has/smallships_drakkars"
+					criterion: ""
+					id: "A91168543AC5A295"
+					title: "Build a drakkar"
+					type: "advancement"
+				}
+			]
+			title: "The Drakkar"
+			x: 7.0d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"112A012ED92B3BA3"
+			]
+			description: [
+				"Njord: \"A ship that carries nothing is a raft.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "25EDAF487EC56D9C"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "78C72A931F440369"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B07378A0444E69A4"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_cargo"
+			]
+			tasks: [
+				{
+					id: "1A2FFDBEFABC39A5"
+					title: "Load a chest onto a ship"
+					type: "checkmark"
+				}
+			]
+			title: "Cargo"
+			x: 8.75d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"25EDAF487EC56D9C"
+			]
+			description: [
+				"Njord: \"Cross the open sea.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "1B32E0E07E5FA3BC"
+			rewards: [
+				{
+					id: "738D95983F4AA789"
+					item: {
+						Count: 1b
+						id: "minecraft:spyglass"
+					}
+					type: "item"
+				}
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "18FEE2E53D4C7179"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 300"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1E45B629A52C456A"
+					silent: true
+					title: "300 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_voyages_voyage"
+			]
+			tasks: [
+				{
+					id: "FB2B1369CE46EB9E"
+					title: "Sail 2000 blocks in one trip"
+					type: "checkmark"
+				}
+			]
+			title: "The Long Voyage"
+			x: 0.0d
+			y: 2.8d
+		}
+		{
+			dependencies: [
+				"843CD35CADB2151B"
+			]
+			description: [
+				"Njord: \"The sea is not friendly. Neither should you be.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:cannon"
+			}
+			id: "C177428A1B4350C5"
+			rewards: [
+				{
+					count: 16
+					id: "F11815C921B7272B"
+					item: {
+						Count: 1b
+						id: "smallships:cannon_ball"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "E469E4DCFD84DE46"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_cannon"
+			]
+			tasks: [
+				{
+					id: "8C25D22E24512E0A"
+					item: {
+						Count: 1b
+						id: "smallships:cannon"
+					}
+					title: "Craft a ship cannon"
+					type: "item"
+				}
+				{
+					id: "C4818876890E2C6F"
+					title: "Mount it on a ship"
+					type: "checkmark"
+				}
+			]
+			title: "Cannons"
+			x: 0.0d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"C177428A1B4350C5"
+			]
+			description: [
+				"Njord: \"Four guns fire as one.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "18B9F56963B38BB5"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "87BA1BB01E674C98"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B980316180215152"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_broadside"
+			]
+			tasks: [
+				{
+					id: "8189969BF466155D"
+					title: "Put 4 cannons on one ship"
+					type: "checkmark"
+				}
+			]
+			title: "Broadside"
+			x: 1.75d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"18B9F56963B38BB5"
+			]
+			description: [
+				"Njord: \"Prove the cannons work.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "1DB85C2CB42E51BE"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "3F9E484845AF8F75"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "BB7FC590BD0448F6"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_sink"
+			]
+			tasks: [
+				{
+					id: "286634D27A63A08F"
+					title: "Destroy a ship with cannon fire"
+					type: "checkmark"
+				}
+			]
+			title: "Sink Something"
+			x: 3.5d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"1DB85C2CB42E51BE"
+			]
+			description: [
+				"Njord: \"The bull shark hunts near ships. Let it come to you.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:shark_tooth"
+			}
+			id: "989FDFCF6BED8AB4"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "72480A8C4EF23082"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "AA3CD5A07B057314"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_voyages_shark"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:bull_shark"
+					id: "ED849167D1751965"
+					title: "Defeat the Giant Bull Shark from a ship"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Blood in the Water"
+			x: 5.25d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"989FDFCF6BED8AB4"
+			]
+			description: [
+				"Njord: \"Big enough for the World Serpent? Nothing is. Build it anyway.\""
+				""
+				""
+				"Also: Counts for Chapter 2: A Warship"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:serpent_scale"
+			}
+			id: "217AA9BF538DAE02"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "784EE18E56C488C6"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "EC808C0F54355A5A"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_voyages_warship"
+			]
+			tasks: [
+				{
+					id: "862E4D4621CDFF46"
+					title: "A ship with 4 or more cannons and 2 or more crew"
+					type: "checkmark"
+				}
+			]
+			title: "Warship"
+			x: 7.0d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"96819261355D8D86"
+			]
+			description: [
+				"Njord: \"Pirate ships sail the deep water.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "D94C61D152792104"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "19546A1EEC1EA99C"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "614B166B989C173A"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_spot"
+			]
+			tasks: [
+				{
+					id: "135A48D391D671CB"
+					title: "Find a When Dungeons Arise ship at sea"
+					type: "checkmark"
+				}
+			]
+			title: "Sails on the Horizon"
+			x: 0.0d
+			y: 9.04d
+		}
+		{
+			dependencies: [
+				"D94C61D152792104"
+			]
+			description: [
+				"Njord: \"Grapple close, jump across.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "162A0834952CC0AD"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "ACDE13EC379DE158"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "261F339C3BB9F0C0"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_board"
+			]
+			tasks: [
+				{
+					id: "7E12518C34102975"
+					structure: "dungeons_arise_seven_seas:pirate_junk"
+					title: "Board a pirate ship"
+					type: "structure"
+				}
+			]
+			title: "Boarding Party"
+			x: 1.75d
+			y: 9.04d
+		}
+		{
+			dependencies: [
+				"162A0834952CC0AD"
+			]
+			description: [
+				"Njord: \"Painted sails, full holds.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "6C35892EDFF985E9"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "E7FFB80588410390"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "A0139A15E68CA560"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_junk"
+			]
+			tasks: [
+				{
+					id: "BC13D4791F6230E5"
+					structure: "dungeons_arise_seven_seas:pirate_junk"
+					title: "Loot a Pirate Junk"
+					type: "structure"
+				}
+			]
+			title: "The Pirate Junk"
+			x: 3.5d
+			y: 9.04d
+		}
+		{
+			dependencies: [
+				"6C35892EDFF985E9"
+			]
+			description: [
+				"Njord: \"Fast and mean.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "2292F2AD5646BEE4"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "56D9309FA446A7FC"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "11A0DA971097CB6E"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_corvette"
+			]
+			tasks: [
+				{
+					id: "26C046317A38DE7C"
+					structure: "dungeons_arise_seven_seas:corsair_corvette"
+					title: "Loot a Corsair Corvette"
+					type: "structure"
+				}
+			]
+			title: "The Corsair Corvette"
+			x: 5.25d
+			y: 9.04d
+		}
+		{
+			dependencies: [
+				"2292F2AD5646BEE4"
+			]
+			description: [
+				"Njord: \"Floating castles.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "430EA7C5B9E8B30A"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "E5C9BFFF17747882"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "34C46F547BA6BEAE"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_galleon"
+			]
+			tasks: [
+				{
+					id: "5DCB65354997506C"
+					structure: "dungeons_arise_seven_seas:unicorn_galleon"
+					title: "Loot a Victorious or Unicorn Galleon"
+					type: "structure"
+				}
+			]
+			title: "The Great Galleons"
+			x: 7.0d
+			y: 9.04d
+		}
+		{
+			dependencies: [
+				"430EA7C5B9E8B30A"
+			]
+			description: [
+				"Njord: \"Every captain hides one chest.\""
+				""
+				""
+				"Also: Treasure map"
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "24DB158AACC687FE"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "B70539D9AD1D97A0"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "17E3179859E7E435"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_voyages_captain"
+			]
+			tasks: [
+				{
+					id: "3E73EC5412F9896F"
+					title: "Find a captain's chest"
+					type: "checkmark"
+				}
+			]
+			title: "Captain's Treasure"
+			x: 8.75d
+			y: 9.04d
+		}
+		{
+			dependencies: [
+				"112A012ED92B3BA3"
+			]
+			description: [
+				"Njord: \"Some dwarves say a ship can sail the sky.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "468173E1B09EE1A8"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "FEAB593C9CD08D98"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "2866654ED9E0CA77"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_helm"
+			]
+			tasks: [
+				{
+					id: "19480511E9280CCD"
+					title: "Craft a ship helm (Eureka)"
+					type: "checkmark"
+				}
+			]
+			title: "The Helm"
+			x: 0.0d
+			y: 12.16d
+		}
+		{
+			dependencies: [
+				"468173E1B09EE1A8"
+			]
+			description: [
+				"Njord: \"Blocks become a ship.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "B1948F3730BA47CB"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "1CDB84D5301A677B"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "81B231B16D941F46"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_assemble"
+			]
+			tasks: [
+				{
+					id: "42E5F6438E80C86E"
+					title: "Assemble a Valkyrien Skies ship"
+					type: "checkmark"
+				}
+			]
+			title: "Assemble"
+			x: 1.75d
+			y: 12.16d
+		}
+		{
+			dependencies: [
+				"B1948F3730BA47CB"
+			]
+			description: [
+				"Njord: \"Push.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "B16178EDF8B92C22"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "85A4B8B5B4CFB567"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "FC275E7DCABC41A6"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_engine"
+			]
+			tasks: [
+				{
+					id: "C348CCE7013143F1"
+					title: "Add an engine and fuel it"
+					type: "checkmark"
+				}
+			]
+			title: "Engines"
+			x: 3.5d
+			y: 12.16d
+		}
+		{
+			dependencies: [
+				"B16178EDF8B92C22"
+			]
+			description: [
+				"Njord: \"Lift.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "B1FA57D11C7C2C9B"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "A7F9AD95D4B4500B"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "7423E1F35A28A7B0"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_balloon"
+			]
+			tasks: [
+				{
+					id: "9DD72CD117E88E9B"
+					title: "Lift a ship with balloons"
+					type: "checkmark"
+				}
+			]
+			title: "Balloons"
+			x: 5.25d
+			y: 12.16d
+		}
+		{
+			dependencies: [
+				"B1FA57D11C7C2C9B"
+			]
+			description: [
+				"Njord: \"Stay where you are.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "2E41FF1CB5C08E17"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "EBD8839FAF0446D1"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "620A35E7B975524E"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_anchor"
+			]
+			tasks: [
+				{
+					id: "3F064A311124E5F0"
+					title: "Anchor a flying ship"
+					type: "checkmark"
+				}
+			]
+			title: "Anchor"
+			x: 7.0d
+			y: 12.16d
+		}
+		{
+			dependencies: [
+				"2E41FF1CB5C08E17"
+			]
+			description: [
+				"Njord: \"Fly a ship over a mountain.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "CAC890B1BDD0D7F7"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "8653155E5F7A4F51"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "7478FB7942C60393"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_sky"
+			]
+			tasks: [
+				{
+					id: "3AC196778EB3A4FB"
+					title: "Fly a ship above Y 200"
+					type: "checkmark"
+				}
+			]
+			title: "Skyfarer"
+			x: 8.75d
+			y: 12.16d
+		}
+		{
+			dependencies: [
+				"CAC890B1BDD0D7F7"
+			]
+			description: [
+				"Njord: \"Dock at a floating island.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "8FCA9838CDA5DD9D"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "1CAB8583CD103FE0"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "8836F3A55733A8FE"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_voyages_island"
+			]
+			tasks: [
+				{
+					id: "7A84B374C2BAA454"
+					title: "Land a flying ship on a Soaring Structures island"
+					type: "checkmark"
+				}
+			]
+			title: "Harbor in the Clouds"
+			x: 0.0d
+			y: 14.0d
+		}
+		{
+			dependencies: [
+				"1B32E0E07E5FA3BC"
+			]
+			description: [
+				"Njord: \"Near the beasts of the sea, I swim with you.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "9EC3D5D3146DB0BE"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "74B880B4F0C7C62D"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "9CD7956268B167A3"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_bless"
+			]
+			tasks: [
+				{
+					id: "5E097E6BED5AAC34"
+					title: "Receive the sea blessing near an ocean boss"
+					type: "checkmark"
+				}
+			]
+			title: "Njord's Blessing"
+			x: 0.0d
+			y: 17.12d
+		}
+		{
+			dependencies: [
+				"9EC3D5D3146DB0BE"
+			]
+			description: [
+				"Njord: \"The World Serpent waits in deep water.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "3FDE27006BAA7C47"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "C433FF7E19ED443C"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "18AB4CEF08EE4A88"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_voyages_deep"
+			]
+			tasks: [
+				{
+					id: "837B87D8895F314E"
+					title: "Find a deep ocean"
+					type: "checkmark"
+				}
+			]
+			title: "The Deep"
+			x: 1.75d
+			y: 17.12d
+		}
+		{
+			dependencies: [
+				"3FDE27006BAA7C47"
+			]
+			description: [
+				"Njord: \"Sail through a thunderstorm.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "smallships:oak_cog"
+			}
+			id: "8A14B1ADE90DABA5"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "76C0875052FBB2E3"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 300"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "7603449CCEC1A4A3"
+					silent: true
+					title: "300 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_voyages_storm"
+			]
+			tasks: [
+				{
+					id: "9BC8B8BCD088782A"
+					title: "Be on a ship during a thunderstorm"
+					type: "checkmark"
+				}
+			]
+			title: "Storm at Sea"
+			x: 3.5d
+			y: 17.12d
+		}
+	]
+	subtitle: [
+		"Small Ships, Valkyrien Skies, Eureka, Seven Seas"
+	]
+	title: "Njord's Voyages"
+}

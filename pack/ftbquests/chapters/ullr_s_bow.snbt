@@ -1,0 +1,1438 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "ullr_s_bow"
+	group: "96A912181A061CEA"
+	icon: {
+		Count: 1b
+		id: "minecraft:bow"
+	}
+	id: "48A1C8005BACACCA"
+	images: [
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/bow_0.png"
+			rotation: 0.0d
+			width: 5.689d
+			x: 2.245d
+			y: 0.1d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/bow_1.png"
+			rotation: 0.0d
+			width: 5.46d
+			x: 2.13d
+			y: 3.22d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/bow_2.png"
+			rotation: 0.0d
+			width: 7.064d
+			x: 2.932d
+			y: 6.34d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/bow_3.png"
+			rotation: 0.0d
+			width: 8.667d
+			x: 3.734d
+			y: 9.46d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/bow_4.png"
+			rotation: 0.0d
+			width: 6.376d
+			x: 2.588d
+			y: 12.58d
+		}
+	]
+	order_index: 9
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Ullr: \"A hunter who cannot shoot is only half a hunter.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "14900056D1273567"
+			rewards: [
+				{
+					count: 32
+					id: "19B4A05E581D14D8"
+					item: {
+						Count: 1b
+						id: "minecraft:arrow"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "A148B6809682B0C6"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_bow"
+			]
+			tasks: [
+				{
+					id: "E60FF0F91B34AE72"
+					item: {
+						Count: 1b
+						id: "minecraft:bow"
+					}
+					title: "Craft a bow"
+					type: "item"
+				}
+			]
+			title: "A Hunter's Bow"
+			x: 0.0d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"14900056D1273567"
+			]
+			description: [
+				"Ullr: \"Hit something far away.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "E7205587B32342AE"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "E8D4FE3B8427DF37"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "BD4CDD3B649F30EE"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_hit"
+			]
+			tasks: [
+				{
+					id: "925955710F43DCC4"
+					title: "Hit a mob from 30 blocks"
+					type: "checkmark"
+				}
+			]
+			title: "Thirty Paces"
+			x: 1.75d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"E7205587B32342AE"
+			]
+			description: [
+				"Ullr: \"Slow, but it punches.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:crossbow"
+			}
+			id: "129DF44C3A6305CE"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "6192EC599698D58B"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "976184D2804A1AE1"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_cross"
+			]
+			tasks: [
+				{
+					id: "F78C116A2498D7E0"
+					item: {
+						Count: 1b
+						id: "minecraft:crossbow"
+					}
+					title: "Craft a crossbow"
+					type: "item"
+				}
+			]
+			title: "The Crossbow"
+			x: 3.5d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"129DF44C3A6305CE"
+			]
+			description: [
+				"Ullr: \"Enchant it.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "7E4487DAD755162B"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "4465D9299705D056"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "39C1BE341ADB1026"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_ench"
+			]
+			tasks: [
+				{
+					id: "D5B8C418C2748013"
+					title: "Enchant a bow with Power"
+					type: "checkmark"
+				}
+			]
+			title: "Power and Flame"
+			x: 5.25d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"7E4487DAD755162B"
+			]
+			description: [
+				"Ullr: \"Farther.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "137A73564F0A1F1B"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "9C5DCCF0B9F80596"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 300"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "BF74C5BBC3E1DE19"
+					silent: true
+					title: "300 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_bow_far"
+			]
+			tasks: [
+				{
+					id: "8553D3FBA3A5CE50"
+					title: "Hit a mob from 60 blocks"
+					type: "checkmark"
+				}
+			]
+			title: "Sixty Paces"
+			x: 7.0d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"14900056D1273567"
+			]
+			description: [
+				"Ullr: \"Each bow has a trick. Learn some.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "84B68ABCB0AF8E4D"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "845ABD86A83B6122"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "7CBDB36307AC357D"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_tmb1"
+			]
+			tasks: [
+				{
+					id: "7855AA79383638EB"
+					title: "Craft 1 different bows from Too Many Bows"
+					type: "checkmark"
+				}
+			]
+			title: "Too Many Bows: 1"
+			x: 0.0d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"84B68ABCB0AF8E4D"
+			]
+			description: [
+				"Ullr: \"More tricks.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "6D7083B747F4FAE2"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "1041DB00FAD0205E"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1C31773BE961FB24"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_tmb3"
+			]
+			tasks: [
+				{
+					id: "25302CC1CCB05313"
+					title: "Craft 3 different bows from Too Many Bows"
+					type: "checkmark"
+				}
+			]
+			title: "Too Many Bows: 3"
+			x: 1.75d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"6D7083B747F4FAE2"
+			]
+			description: [
+				"Ullr: \"Most hunters stop here.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "1E5925EEC4637522"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "13BC1929166A34D4"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6798030474414AD8"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_tmb6"
+			]
+			tasks: [
+				{
+					id: "9EFD6891C0AE6C5B"
+					title: "Craft 6 different bows from Too Many Bows"
+					type: "checkmark"
+				}
+			]
+			title: "Too Many Bows: 6"
+			x: 3.5d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"1E5925EEC4637522"
+			]
+			description: [
+				"Ullr: \"Every bow in the rack.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "15E75BA073F4B48D"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "C886E9F7ADCCB689"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6F5CDAA3BAB96715"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_tmb10"
+			]
+			tasks: [
+				{
+					id: "8FC74083392D0927"
+					title: "Craft 10 different bows from Too Many Bows"
+					type: "checkmark"
+				}
+			]
+			title: "Too Many Bows: 10"
+			x: 5.25d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"15E75BA073F4B48D"
+			]
+			description: [
+				"Ullr: \"A charm on the string.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "30F6C4B4024FAFD2"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "A9DFBB1C4E79502E"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "5004304FBF9EDA63"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_charm"
+			]
+			tasks: [
+				{
+					id: "8F537104623B230E"
+					title: "Craft a bow charm"
+					type: "checkmark"
+				}
+			]
+			title: "Bow Charms"
+			x: 7.0d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"30F6C4B4024FAFD2"
+			]
+			description: [
+				"Ullr: \"One arrow, two targets.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "AB08A1FDFC3EF8E6"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "1D36E53C7C9D2D1A"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 300"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "CA8C3BAB0BA5F68E"
+					silent: true
+					title: "300 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_bow_ricochet"
+			]
+			tasks: [
+				{
+					id: "D165A13E70136286"
+					title: "Enchant a bow with Ricochet"
+					type: "checkmark"
+				}
+			]
+			title: "Ricochet"
+			x: 8.75d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"14900056D1273567"
+			]
+			description: [
+				"Ullr: \"Each bow has a trick. Learn some.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "C190865D3CA19C5A"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "524CC7163F79F3B9"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "4F7856427C2C5C72"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_mba1"
+			]
+			tasks: [
+				{
+					id: "EDEC10B27390E548"
+					title: "Craft 1 different bows from More Bows and Arrows"
+					type: "checkmark"
+				}
+			]
+			title: "More Bows and Arrows: 1"
+			x: 0.0d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"C190865D3CA19C5A"
+			]
+			description: [
+				"Ullr: \"More tricks.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "BDCF70FDA2666694"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "579F3B7C3350BAFA"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "850D67B593C51DA7"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_mba5"
+			]
+			tasks: [
+				{
+					id: "C54A12E5D47B7969"
+					title: "Craft 5 different bows from More Bows and Arrows"
+					type: "checkmark"
+				}
+			]
+			title: "More Bows and Arrows: 5"
+			x: 1.75d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"BDCF70FDA2666694"
+			]
+			description: [
+				"Ullr: \"Most hunters stop here.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "DC5A1F745714B9A0"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "EA240196469984A2"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "53613361D945262A"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_mba10"
+			]
+			tasks: [
+				{
+					id: "DB8D382D7021E0BE"
+					title: "Craft 10 different bows from More Bows and Arrows"
+					type: "checkmark"
+				}
+			]
+			title: "More Bows and Arrows: 10"
+			x: 3.5d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"DC5A1F745714B9A0"
+			]
+			description: [
+				"Ullr: \"Fire, ice, explosions. Arrows are only the start.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "26B8FD9985B1B220"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "8E8650176F9F9BA5"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "3398061231583F1E"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_arrows"
+			]
+			tasks: [
+				{
+					id: "A0218735DF84BFF8"
+					title: "Craft 5 kinds of special arrows"
+					type: "checkmark"
+				}
+			]
+			title: "Arrows With Teeth"
+			x: 5.25d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"26B8FD9985B1B220"
+			]
+			description: [
+				"Ullr: \"Careful.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "40747A900B75F16F"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "AD5614FD00E0F8DD"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 300"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "4277C16DCB9A276C"
+					silent: true
+					title: "300 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_bow_tnt"
+			]
+			tasks: [
+				{
+					id: "CD64A3064794C47E"
+					title: "Kill a mob with an explosive arrow"
+					type: "checkmark"
+				}
+			]
+			title: "Loud Arrows"
+			x: 7.0d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"129DF44C3A6305CE"
+			]
+			description: [
+				"Ullr: \"Each bow has a trick. Learn some.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "178F482CD03C8BE0"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "B8E795855554A7A0"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "8FDEE2599ACCA311"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_eb1"
+			]
+			tasks: [
+				{
+					id: "6FB6DB16CC82A42A"
+					title: "Craft 1 different bows from Extra Bows"
+					type: "checkmark"
+				}
+			]
+			title: "Extra Bows: 1"
+			x: 0.0d
+			y: 10.32d
+		}
+		{
+			dependencies: [
+				"178F482CD03C8BE0"
+			]
+			description: [
+				"Ullr: \"More tricks.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "78A431C84CDE3FF2"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "87ED3BED256E70E5"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "CEA9B4168D487648"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_eb4"
+			]
+			tasks: [
+				{
+					id: "21CE2E43D6D60883"
+					title: "Craft 4 different bows from Extra Bows"
+					type: "checkmark"
+				}
+			]
+			title: "Extra Bows: 4"
+			x: 1.75d
+			y: 10.32d
+		}
+		{
+			dependencies: [
+				"78A431C84CDE3FF2"
+			]
+			description: [
+				"Ullr: \"Choose the limbs, the grip, the string.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "197341818F5FFF82"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "7727EFF161D31568"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "8C667CF07A81B171"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_miapi"
+			]
+			tasks: [
+				{
+					id: "3C5BF4BF4C92D14C"
+					title: "Build a modular bow (Truly Modular)"
+					type: "checkmark"
+				}
+			]
+			title: "Build a Bow"
+			x: 3.5d
+			y: 10.32d
+		}
+		{
+			dependencies: [
+				"197341818F5FFF82"
+			]
+			description: [
+				"Ullr: \"Make one better than any in a chest.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "2DB9A6D11C99C730"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "598B28CEF360FB43"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "F9A74C1F0EE253C2"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_bow_miapi2"
+			]
+			tasks: [
+				{
+					id: "A9EB64F3C8690D97"
+					title: "Build a modular bow from a Mythic Metal"
+					type: "checkmark"
+				}
+			]
+			title: "Your Best Bow"
+			x: 5.25d
+			y: 10.32d
+		}
+		{
+			dependencies: [
+				"E7205587B32342AE"
+			]
+			description: [
+				"Ullr: \"Draw faster.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "6EC34B4BE137F23E"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "58AF747BF8A12581"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "A3EC07977F12E795"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_lv5"
+			]
+			tasks: [
+				{
+					id: "3867402E4DFBF37D"
+					title: "Reach archery level 5 (Progressive Archery)"
+					type: "checkmark"
+				}
+			]
+			title: "Archery 5"
+			x: 0.0d
+			y: 13.44d
+		}
+		{
+			dependencies: [
+				"6EC34B4BE137F23E"
+			]
+			description: [
+				"Ullr: \"Hold steadier.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "9145C2FC9A32A3F3"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "4AE1A87F580EF334"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "2E43E042CBD19537"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_lv10"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/archery_10"
+					criterion: ""
+					id: "C95AD1B4725A8BBA"
+					title: "Reach archery level 10"
+					type: "advancement"
+				}
+			]
+			title: "Archery 10"
+			x: 1.75d
+			y: 13.44d
+		}
+		{
+			dependencies: [
+				"9145C2FC9A32A3F3"
+			]
+			description: [
+				"Ullr: \"Now you are a hunter.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "6A1177708C79DBE6"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "9BBE7397A31842D0"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B692C352D2EA3282"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_lv20"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/archery_20"
+					criterion: ""
+					id: "30647140A477D463"
+					title: "Reach archery level 20"
+					type: "advancement"
+				}
+			]
+			title: "Archery 20"
+			x: 3.5d
+			y: 13.44d
+		}
+		{
+			dependencies: [
+				"6A1177708C79DBE6"
+			]
+			description: [
+				"Ullr: \"Now you are mine.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "5CC3B162A2993EA6"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "F4ADA9C815AC638C"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "F7A314989CDAE474"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_bow_lv30"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/archery_30"
+					criterion: ""
+					id: "B82FD9EBAD3F087E"
+					title: "Reach archery level 30"
+					type: "advancement"
+				}
+			]
+			title: "Archery 30"
+			x: 5.25d
+			y: 13.44d
+		}
+		{
+			dependencies: [
+				"5CC3B162A2993EA6"
+			]
+			description: [
+				"Ullr: \"Now you are ready for the eagle.\""
+				""
+				""
+				"Also: Counts for Act III: Bow and Mountain"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:eagle_feather"
+			}
+			id: "2650C0C178319D31"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "7AD4BBC229039805"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "FBF89D8E11C4E676"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_bow_eagle"
+			]
+			tasks: [
+				{
+					id: "81B4B56A7B40C7FC"
+					title: "Shoot down a flying mob from 40 blocks"
+					type: "checkmark"
+				}
+				{
+					entity: "vividlands_ragnarok:haast_eagle"
+					id: "53F60DEF61C9BC20"
+					title: "Defeat Haast's Eagle"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Shadow of the Peaks"
+			x: 7.0d
+			y: 13.44d
+		}
+	]
+	subtitle: [
+		"Too Many Bows, More Bows and Arrows, Extra Bows, Progressive Archery, Truly Modular"
+	]
+	title: "Ullr's Bow"
+}

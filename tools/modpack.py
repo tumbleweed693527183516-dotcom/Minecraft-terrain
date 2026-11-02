@@ -76,6 +76,7 @@ RESOLVE = [
     ("9s6osm5g", True),   # Cloth Config
     ("1eAoo2KR", True),   # YetAnotherConfigLib (Armor of the Ages needs it on servers too)
     ("Ha28R6CL", True),   # Fabric Language Kotlin
+    ("architectury-api", True),  # Architectury (FTB Quests, FTB Library and FTB Teams need it)
     # --- Fabulously Optimized: performance ---
     ("PtjYWJkn", False),  # Sodium Extra
     ("Bh37bMuy", False),  # Reese's Sodium Options
@@ -141,7 +142,8 @@ RESOLVE = [
     ("truly-modular-archery", True),       # build your own bow from parts (limbs, string, grip) with their own stats
     ("extra-bows", True),                  # more bows (mod form)
     # --- quality of life (the usual modpack set) ---
-    ("odyssey-quests", True),              # quest book (Heracles): the pack's quests live in config/heracles, open with U
+    # quest book: FTB Quests + FTB Library + FTB Teams are only on CurseForge, so players add those 3 jars by hand
+    # (see pack/README); the pack's quests ship in config/ftbquests/quests
     ("emi", True),                         # recipe viewer (Create shows its machine recipes in it)
     ("jade", True),                        # what am I looking at: block/mob name, mod, health, machine status
     ("xaeros-minimap", False),             # minimap with waypoints and death point
@@ -256,11 +258,11 @@ def build(out_name, title, summary, entries, jars):
         for f in sorted(defaults.rglob("*")):
             if f.is_file():
                 z.write(f, f"overrides/config/yosbr/{f.relative_to(defaults).as_posix()}")
-        # the quest book (tools/questbook/build_quests.py writes pack/heracles)
-        quests = PACK / "heracles"
+        # the quest book for FTB Quests (tools/questbook/build_quests.py writes pack/ftbquests)
+        quests = PACK / "ftbquests"
         for f in sorted(quests.rglob("*")):
             if f.is_file():
-                z.write(f, f"overrides/config/heracles/{f.relative_to(quests).as_posix()}")
+                z.write(f, f"overrides/config/ftbquests/quests/{f.relative_to(quests).as_posix()}")
         z.write(PACK / "FABULOUSLY-OPTIMIZED-LICENSE.md", "overrides/FABULOUSLY-OPTIMIZED-LICENSE.md")
     print(f"Built {out.name} ({len(files)} downloads)")
 

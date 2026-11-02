@@ -1,0 +1,45 @@
+// Vivid Lands: the Norse quest book. Slate panels, bronze borders, gold for what's ready, green for what's done.
+// Colours match the approved UI design: slate #18202A, bronze #A8793A, gold #E0B65A, bone #ECE3CF, frost #7FC8D6.
+[*]
+background:          vividlands_ragnarok:textures/gui/quest_book/background.png; tile_size=16
+selected_chapter_highlight_1: #70E0B65A
+selected_chapter_highlight_2: #20E0B65A
+
+text_color:          #ECE3CF
+hover_text_color:    #F3D48A
+disabled_text_color: #6B7A8A
+
+widget_border:     #A8793A
+widget_background: #C010161D
+symbol_in:         #E0B65A
+symbol_out:        #A8793A
+
+button:                #1D2632 + hollow_rectangle:#5A4426
+panel:                 #18202A + hollow_rectangle:#2C3A4A
+disabled_button:       #161D26 + hollow_rectangle:#2C3A4A
+hover_button:          #2A2116 + hollow_rectangle:#E0B65A
+context_menu:          #18202A + hollow_rectangle:#A8793A
+scroll_bar_background: #10161D
+scroll_bar:            #2C3A4A + hollow_rectangle:#A8793A
+container_slot:        #10161D + hollow_rectangle:#2C3A4A
+text_box:              #10161D + hollow_rectangle:#A8793A
+
+tasks_text_color:                   #7FC8D6
+rewards_text_color:                 #E0B65A
+quest_view_background:              #18202A + hollow_rectangle:#A8793A
+quest_view_border:                  #A8793A
+quest_view_title:                   #E0B65A
+quest_completed_color:              #FF7CC28C
+quest_started_color:                #FFE0B65A
+quest_not_started_color:            #FFA8793A
+quest_locked_color:                 #FF4A5868
+dependency_line_completed_color:    #7CC28C
+dependency_line_uncompleted_color:  #C04A5868
+dependency_line_requires_color:     #7FC8D6
+dependency_line_required_for_color: #E0B65A
+dependency_line_thickness:          0.12
+
+// bosses burn ember-red until they fall
+[#boss | #boss2]
+quest_not_started_color: #FFC8553D
+quest_started_color:     #FFE46A58

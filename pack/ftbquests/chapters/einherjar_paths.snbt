@@ -1,0 +1,2505 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "einherjar_paths"
+	group: "96A912181A061CEA"
+	icon: {
+		Count: 1b
+		id: "vividlands_ragnarok:berserker_rune"
+	}
+	id: "21D3A9F855191B93"
+	images: [
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/paths_0.png"
+			rotation: 0.0d
+			width: 5.46d
+			x: 2.13d
+			y: 0.1d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/paths_1.png"
+			rotation: 0.0d
+			width: 4.544d
+			x: 1.672d
+			y: 3.22d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/paths_2.png"
+			rotation: 0.0d
+			width: 4.315d
+			x: 1.557d
+			y: 6.34d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/paths_3.png"
+			rotation: 0.0d
+			width: 4.315d
+			x: 1.557d
+			y: 9.46d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/paths_4.png"
+			rotation: 0.0d
+			width: 3.627d
+			x: 1.214d
+			y: 12.58d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/paths_5.png"
+			rotation: 0.0d
+			width: 4.544d
+			x: 1.672d
+			y: 15.7d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/paths_6.png"
+			rotation: 0.0d
+			width: 5.46d
+			x: 2.13d
+			y: 18.82d
+		}
+	]
+	order_index: 10
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Tyr: \"Berserker, Valkyrie, Huntsman, Volva or Ulfhednar. Every einherjar fights their own way.\""
+				""
+				""
+				"Also: Class starter kit"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:berserker_rune"
+			}
+			id: "DBD59AC0EB7010F5"
+			rewards: [
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "BFA95D7A1338DC6B"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_choose"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/use_rune"
+					criterion: ""
+					id: "4415D127F0ED19F8"
+					title: "Use any class rune stone"
+					type: "advancement"
+				}
+			]
+			title: "Five Paths"
+			x: 0.0d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"DBD59AC0EB7010F5"
+			]
+			description: [
+				"Tyr: \"Every kill teaches. Bosses teach the most.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:berserker_rune"
+			}
+			id: "E5C4FA434543DDE5"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "4D52B025AD68B620"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "28D8BCBEA4B51906"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_lv5"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/any_5"
+					criterion: ""
+					id: "8AE44B4711CEBFCA"
+					title: "Reach level 5 in any class"
+					type: "advancement"
+				}
+			]
+			title: "First Blood"
+			x: 1.75d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"E5C4FA434543DDE5"
+			]
+			description: [
+				"Tyr: \"Switch any time. Each path keeps its own level.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:berserker_rune"
+			}
+			id: "E98AB5A6D05366AF"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "F290D1620AC1EEC6"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "5D40424BD4050D46"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_two"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/two_10"
+					criterion: ""
+					id: "AF71B4C73763F494"
+					title: "Reach level 10 in two classes"
+					type: "advancement"
+				}
+			]
+			title: "A Second Path"
+			x: 3.5d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"E98AB5A6D05366AF"
+			]
+			description: [
+				"Tyr: \"Few walk them all.\""
+				""
+				""
+				"Also: Title: Einherjar of Five Paths"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:berserker_rune"
+			}
+			id: "B115C2F6D0EE39C9"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "3042BE3DDE5C7EF3"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B5D8EC90AC6C7B8D"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_paths_all5"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/all_20"
+					criterion: ""
+					id: "F0E0E334427843E6"
+					title: "Reach level 20 in all five classes"
+					type: "advancement"
+				}
+			]
+			title: "All Five Paths"
+			x: 5.25d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"DBD59AC0EB7010F5"
+			]
+			description: [
+				"Tyr: \"Carve the rune and walk the path.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:berserker_rune"
+			}
+			id: "7D84C8E3936436C9"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "765BE6D511C7BEF6"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "3D132489E33402B6"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_berserker_rune"
+			]
+			tasks: [
+				{
+					id: "469541691C5182D3"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:berserker_rune"
+					}
+					title: "Craft the Berserker Rune Stone (2 cobblestone + bone)"
+					type: "item"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/use_rune"
+					criterion: ""
+					id: "8FF4B74FC494B3C8"
+					title: "Use it"
+					type: "advancement"
+				}
+			]
+			title: "Path of the Berserker"
+			x: 0.0d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"7D84C8E3936436C9"
+			]
+			description: [
+				"Tyr: \"Rage is a weapon. Learn to hold it.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:berserker_rune"
+			}
+			id: "C4BB10243A4EFE17"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "89EDEAF6088F094F"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "DEBB4436DB6EABCC"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_berserker_1"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/berserker_1"
+					criterion: ""
+					id: "F2F61A6393433BB2"
+					title: "Reach Berserker level 1"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/berserker_ability_1"
+					criterion: ""
+					id: "231160D7C2016890"
+					title: "Use Bloodrage"
+					type: "advancement"
+				}
+			]
+			title: "Bloodrage"
+			x: 1.75d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"C4BB10243A4EFE17"
+			]
+			description: [
+				"Tyr: \"Leap and crash down.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:berserker_rune"
+			}
+			id: "D7EFD96C60002318"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "2A02726D054832D1"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "FF37220C788C3B99"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_berserker_10"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/berserker_10"
+					criterion: ""
+					id: "58DAB65EB5718CD9"
+					title: "Reach Berserker level 10"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/berserker_ability_2"
+					criterion: ""
+					id: "54729B4DB6FA364B"
+					title: "Use Cleaving Leap"
+					type: "advancement"
+				}
+			]
+			title: "Cleaving Leap"
+			x: 3.5d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"D7EFD96C60002318"
+			]
+			description: [
+				"Tyr: \"Wear the bear.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:berserker_rune"
+			}
+			id: "172FB7153881CC00"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "C3A0822DE53EAD83"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B7A886B190E0FB55"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_berserker_20"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/berserker_20"
+					criterion: ""
+					id: "73D2AC66F049D7C1"
+					title: "Reach Berserker level 20"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/berserker_ability_3"
+					criterion: ""
+					id: "DC776C9CD19969C0"
+					title: "Use Bear Shirt"
+					type: "advancement"
+				}
+			]
+			title: "Bear Shirt"
+			x: 5.25d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"172FB7153881CC00"
+			]
+			description: [
+				"Tyr: \"Death will have to wait.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:berserker_rune"
+			}
+			id: "F7D639D47DFC734C"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "6E305A327238F532"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "D61A1A9C403F94FC"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_berserker_35"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/berserker_35"
+					criterion: ""
+					id: "4FE58258CC1FB674"
+					title: "Reach Berserker level 35"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/berserker_ability_4"
+					criterion: ""
+					id: "C45E278EA28C4A97"
+					title: "Survive a killing blow with Undying Rage"
+					type: "advancement"
+				}
+			]
+			title: "Undying Rage"
+			x: 7.0d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"F7D639D47DFC734C"
+			]
+			description: [
+				"Tyr: \"Level 50. There is no more to teach you.\""
+				""
+				""
+				"Also: Title: Berserker Master"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:berserker_rune"
+			}
+			id: "9F35D597B97B4F95"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "451607B7E85F90CB"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "636D299BA246BC82"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_paths_berserker_50"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/berserker_50"
+					criterion: ""
+					id: "50933C4AE9305445"
+					title: "Reach Berserker level 50"
+					type: "advancement"
+				}
+			]
+			title: "Berserker Master"
+			x: 8.75d
+			y: 4.08d
+		}
+		{
+			dependencies: [
+				"DBD59AC0EB7010F5"
+			]
+			description: [
+				"Freyja: \"Carve the rune and walk the path.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:valkyrie_rune"
+			}
+			id: "E3087ECA23477E05"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "33EACB8ECD35E7D0"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "BDFCAEDC6288F93A"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_valkyrie_rune"
+			]
+			tasks: [
+				{
+					id: "1081FF44D48FF774"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:valkyrie_rune"
+					}
+					title: "Craft the Valkyrie Rune Stone (2 cobblestone + feather)"
+					type: "item"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/use_rune"
+					criterion: ""
+					id: "90A4FD4FDE2719E3"
+					title: "Use it"
+					type: "advancement"
+				}
+			]
+			title: "Path of the Valkyrie"
+			x: 0.0d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"E3087ECA23477E05"
+			]
+			description: [
+				"Freyja: \"Throw true.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:valkyrie_rune"
+			}
+			id: "492385A56429896E"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "E2512D5FBD385A7B"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1608069B846F30A3"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_valkyrie_1"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/valkyrie_1"
+					criterion: ""
+					id: "4EB3E85997814422"
+					title: "Reach Valkyrie level 1"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/valkyrie_ability_1"
+					criterion: ""
+					id: "86A6663FABA524F8"
+					title: "Use Spear of the Slain"
+					type: "advancement"
+				}
+			]
+			title: "Spear of the Slain"
+			x: 1.75d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"492385A56429896E"
+			]
+			description: [
+				"Freyja: \"Take to the sky.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:valkyrie_rune"
+			}
+			id: "C9D957155BBC08B3"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "46D82088A80A06BE"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "73F17983929D4742"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_valkyrie_10"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/valkyrie_10"
+					criterion: ""
+					id: "B11D9798A0FF6B53"
+					title: "Reach Valkyrie level 10"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/valkyrie_ability_2"
+					criterion: ""
+					id: "63E2217B4397646E"
+					title: "Use Ascent"
+					type: "advancement"
+				}
+			]
+			title: "Ascent"
+			x: 3.5d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"C9D957155BBC08B3"
+			]
+			description: [
+				"Freyja: \"Shield your sisters.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:valkyrie_rune"
+			}
+			id: "1F22B6CB16367468"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "4392221F2E747F8E"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "5175E641F25DAC1E"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_valkyrie_20"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/valkyrie_20"
+					criterion: ""
+					id: "FA881347019F0069"
+					title: "Reach Valkyrie level 20"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/valkyrie_ability_3"
+					criterion: ""
+					id: "ED760A8933309D3E"
+					title: "Use Freyja's Aegis"
+					type: "advancement"
+				}
+			]
+			title: "Freyja's Aegis"
+			x: 5.25d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"1F22B6CB16367468"
+			]
+			description: [
+				"Freyja: \"Choose who falls.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:valkyrie_rune"
+			}
+			id: "9514DF4A98596A36"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "A4DDE80152BF8E3B"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "26B39CB5CFBCFF00"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_valkyrie_35"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/valkyrie_35"
+					criterion: ""
+					id: "4394CAA2FF9BF349"
+					title: "Reach Valkyrie level 35"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/valkyrie_ability_4"
+					criterion: ""
+					id: "7A172DDFD9B06A6E"
+					title: "Use Choose the Slain"
+					type: "advancement"
+				}
+			]
+			title: "Choose the Slain"
+			x: 7.0d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"9514DF4A98596A36"
+			]
+			description: [
+				"Freyja: \"Level 50. There is no more to teach you.\""
+				""
+				""
+				"Also: Title: Valkyrie Master"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:valkyrie_rune"
+			}
+			id: "FF4D236B2CBB783D"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "CEA73F96ED484395"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "DF82E5055FEFEFEE"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_paths_valkyrie_50"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/valkyrie_50"
+					criterion: ""
+					id: "7B91FC4BD55CB206"
+					title: "Reach Valkyrie level 50"
+					type: "advancement"
+				}
+			]
+			title: "Valkyrie Master"
+			x: 8.75d
+			y: 7.2d
+		}
+		{
+			dependencies: [
+				"DBD59AC0EB7010F5"
+			]
+			description: [
+				"Skadi: \"Carve the rune and walk the path.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:huntsman_rune"
+			}
+			id: "86883A18F7F63EAB"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "B7D20989584DB884"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "67C6C8327DF4B731"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_huntsman_rune"
+			]
+			tasks: [
+				{
+					id: "544FB407ABD1A915"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:huntsman_rune"
+					}
+					title: "Craft the Huntsman Rune Stone (2 cobblestone + arrow)"
+					type: "item"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/use_rune"
+					criterion: ""
+					id: "E7F4E5876D4EB2D9"
+					title: "Use it"
+					type: "advancement"
+				}
+			]
+			title: "Path of the Huntsman"
+			x: 0.0d
+			y: 10.32d
+		}
+		{
+			dependencies: [
+				"86883A18F7F63EAB"
+			]
+			description: [
+				"Skadi: \"Many arrows.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:huntsman_rune"
+			}
+			id: "EAF9EC7FB528807A"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "7096AE259A08F057"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "437EA9817292F044"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_huntsman_1"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/huntsman_1"
+					criterion: ""
+					id: "9C9DF8A75E4AB65D"
+					title: "Reach Huntsman level 1"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/huntsman_ability_1"
+					criterion: ""
+					id: "DA8F7D418B11CF93"
+					title: "Use Volley"
+					type: "advancement"
+				}
+			]
+			title: "Volley"
+			x: 1.75d
+			y: 10.32d
+		}
+		{
+			dependencies: [
+				"EAF9EC7FB528807A"
+			]
+			description: [
+				"Skadi: \"Let them walk into it.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:huntsman_rune"
+			}
+			id: "5502C3C108CAAFB9"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "AEB8A593BB89A06E"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "B8C3A8898C763CDE"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_huntsman_10"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/huntsman_10"
+					criterion: ""
+					id: "5FAF85721856E041"
+					title: "Reach Huntsman level 10"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/huntsman_ability_2"
+					criterion: ""
+					id: "13AE98499EB4BF3D"
+					title: "Use Frost Snare"
+					type: "advancement"
+				}
+			]
+			title: "Frost Snare"
+			x: 3.5d
+			y: 10.32d
+		}
+		{
+			dependencies: [
+				"5502C3C108CAAFB9"
+			]
+			description: [
+				"Skadi: \"Nothing hides from you.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:huntsman_rune"
+			}
+			id: "13A4269FA077F2DD"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "63BD0E18AD66DB9D"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "3893858809059C52"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_huntsman_20"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/huntsman_20"
+					criterion: ""
+					id: "41A964CD7E5EC0EF"
+					title: "Reach Huntsman level 20"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/huntsman_ability_3"
+					criterion: ""
+					id: "6AA8EB45AA918FDB"
+					title: "Use Hunter's Mark"
+					type: "advancement"
+				}
+			]
+			title: "Hunter's Mark"
+			x: 5.25d
+			y: 10.32d
+		}
+		{
+			dependencies: [
+				"13A4269FA077F2DD"
+			]
+			description: [
+				"Skadi: \"Make it rain.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:huntsman_rune"
+			}
+			id: "A7A82CF4849D0F45"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "17888DE18DFFBEFB"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "C15BF221A0566693"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_huntsman_35"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/huntsman_35"
+					criterion: ""
+					id: "B4F1B1951E3C5E75"
+					title: "Reach Huntsman level 35"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/huntsman_ability_4"
+					criterion: ""
+					id: "169411FC2D5664BF"
+					title: "Use Skadi's Hailstorm"
+					type: "advancement"
+				}
+			]
+			title: "Skadi's Hailstorm"
+			x: 7.0d
+			y: 10.32d
+		}
+		{
+			dependencies: [
+				"A7A82CF4849D0F45"
+			]
+			description: [
+				"Skadi: \"Level 50. There is no more to teach you.\""
+				""
+				""
+				"Also: Title: Huntsman Master"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:huntsman_rune"
+			}
+			id: "D43AD435F4F82343"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "80BEFA9B2C01FD5F"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "EB1F3BA6A02059B9"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_paths_huntsman_50"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/huntsman_50"
+					criterion: ""
+					id: "9956F48CE9F5F154"
+					title: "Reach Huntsman level 50"
+					type: "advancement"
+				}
+			]
+			title: "Huntsman Master"
+			x: 8.75d
+			y: 10.32d
+		}
+		{
+			dependencies: [
+				"DBD59AC0EB7010F5"
+			]
+			description: [
+				"Freyja: \"Carve the rune and walk the path.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:volva_rune"
+			}
+			id: "C0525AAB2B6D1FB8"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "F28B41A293AB54F9"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "46A4ABD96B7BF640"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_volva_rune"
+			]
+			tasks: [
+				{
+					id: "D0702A8FE3C8994C"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:volva_rune"
+					}
+					title: "Craft the Volva Rune Stone (2 cobblestone + amethyst shard)"
+					type: "item"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/use_rune"
+					criterion: ""
+					id: "573FFCA7ABFEA3AD"
+					title: "Use it"
+					type: "advancement"
+				}
+			]
+			title: "Path of the Volva"
+			x: 0.0d
+			y: 13.44d
+		}
+		{
+			dependencies: [
+				"C0525AAB2B6D1FB8"
+			]
+			description: [
+				"Freyja: \"Fire from a rune.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:volva_rune"
+			}
+			id: "42A53E703D57B2E9"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "B798020BEB88C8AD"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1AC7F729CB081BEB"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_volva_1"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/volva_1"
+					criterion: ""
+					id: "C1CC38E2310102A6"
+					title: "Reach Volva level 1"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/volva_ability_1"
+					criterion: ""
+					id: "9831F8A4D5474C50"
+					title: "Use Kenaz, the Torch"
+					type: "advancement"
+				}
+			]
+			title: "Kenaz, the Torch"
+			x: 1.75d
+			y: 13.44d
+		}
+		{
+			dependencies: [
+				"42A53E703D57B2E9"
+			]
+			description: [
+				"Freyja: \"Ice from a rune.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:volva_rune"
+			}
+			id: "C8F83DB74DCC01ED"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "828671D6603CA06F"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "C2834778D2711362"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_volva_10"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/volva_10"
+					criterion: ""
+					id: "3FD60984F8CA0231"
+					title: "Reach Volva level 10"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/volva_ability_2"
+					criterion: ""
+					id: "192E53F15FE6B2CC"
+					title: "Use Isa, the Ice"
+					type: "advancement"
+				}
+			]
+			title: "Isa, the Ice"
+			x: 3.5d
+			y: 13.44d
+		}
+		{
+			dependencies: [
+				"C8F83DB74DCC01ED"
+			]
+			description: [
+				"Freyja: \"Protection from a rune.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:volva_rune"
+			}
+			id: "62A5764B2EA4A1C5"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "FCAD4259BA7B2167"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1F0A496FB7E9AF1D"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_volva_20"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/volva_20"
+					criterion: ""
+					id: "D99A811AE81BA03B"
+					title: "Reach Volva level 20"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/volva_ability_3"
+					criterion: ""
+					id: "DBE106DC4DEDEBEE"
+					title: "Use Algiz, the Ward"
+					type: "advancement"
+				}
+			]
+			title: "Algiz, the Ward"
+			x: 5.25d
+			y: 13.44d
+		}
+		{
+			dependencies: [
+				"62A5764B2EA4A1C5"
+			]
+			description: [
+				"Freyja: \"Thunder from a rune.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:volva_rune"
+			}
+			id: "DB7BFAB2486BAFDC"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "B6A3054F9365FC69"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "200D79A54B4C73D7"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_volva_35"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/volva_35"
+					criterion: ""
+					id: "4281D763965B7932"
+					title: "Reach Volva level 35"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/volva_ability_4"
+					criterion: ""
+					id: "53397DF787A6F48A"
+					title: "Use Thurisaz, the Thunder"
+					type: "advancement"
+				}
+			]
+			title: "Thurisaz, the Thunder"
+			x: 7.0d
+			y: 13.44d
+		}
+		{
+			dependencies: [
+				"DB7BFAB2486BAFDC"
+			]
+			description: [
+				"Freyja: \"Level 50. There is no more to teach you.\""
+				""
+				""
+				"Also: Title: Volva Master"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:volva_rune"
+			}
+			id: "1BFDBC3D576D0279"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "AD51A64B2ABA122D"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "3EAAE340C1D8D3D2"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_paths_volva_50"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/volva_50"
+					criterion: ""
+					id: "A23027179DCF880F"
+					title: "Reach Volva level 50"
+					type: "advancement"
+				}
+			]
+			title: "Volva Master"
+			x: 8.75d
+			y: 13.44d
+		}
+		{
+			dependencies: [
+				"DBD59AC0EB7010F5"
+			]
+			description: [
+				"Odin: \"Carve the rune and walk the path.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:ulfhednar_rune"
+			}
+			id: "E09C0C9322F92340"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "3E76CC4D9E7EB60C"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "EC8B16F19893A90B"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_ulfhednar_rune"
+			]
+			tasks: [
+				{
+					id: "2230AC6C2F35FF19"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:ulfhednar_rune"
+					}
+					title: "Craft the Ulfhednar Rune Stone (2 cobblestone + leather)"
+					type: "item"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/use_rune"
+					criterion: ""
+					id: "AC685BF76EA675BC"
+					title: "Use it"
+					type: "advancement"
+				}
+			]
+			title: "Path of the Ulfhednar"
+			x: 0.0d
+			y: 16.56d
+		}
+		{
+			dependencies: [
+				"E09C0C9322F92340"
+			]
+			description: [
+				"Odin: \"Never hunt alone.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:ulfhednar_rune"
+			}
+			id: "EC43CDBA4D33C0DF"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "861FB0C93CE56D14"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "D6851F9F88955390"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_ulfhednar_1"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/ulfhednar_1"
+					criterion: ""
+					id: "F2B5F0A2497C05BD"
+					title: "Reach Ulfhednar level 1"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/ulfhednar_ability_1"
+					criterion: ""
+					id: "A7376A9FB6E519A7"
+					title: "Use Call the Pack"
+					type: "advancement"
+				}
+			]
+			title: "Call the Pack"
+			x: 1.75d
+			y: 16.56d
+		}
+		{
+			dependencies: [
+				"EC43CDBA4D33C0DF"
+			]
+			description: [
+				"Odin: \"Let them hear you.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:ulfhednar_rune"
+			}
+			id: "9FCB0EDD30AF06C7"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "56E848AF0CB4A9F3"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "4F5169832C7AE674"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_ulfhednar_10"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/ulfhednar_10"
+					criterion: ""
+					id: "4B8B32C9D1E0728D"
+					title: "Reach Ulfhednar level 10"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/ulfhednar_ability_2"
+					criterion: ""
+					id: "13E3716BE93F7429"
+					title: "Use Howl"
+					type: "advancement"
+				}
+			]
+			title: "Howl"
+			x: 3.5d
+			y: 16.56d
+		}
+		{
+			dependencies: [
+				"9FCB0EDD30AF06C7"
+			]
+			description: [
+				"Odin: \"Become the wolf.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:ulfhednar_rune"
+			}
+			id: "8A2C7F57115846BC"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "97CD781563A35273"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "571BF47267858B61"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_ulfhednar_20"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/ulfhednar_20"
+					criterion: ""
+					id: "72C0A92AEDC592FB"
+					title: "Reach Ulfhednar level 20"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/ulfhednar_ability_3"
+					criterion: ""
+					id: "77D5CF7B5D4470C9"
+					title: "Use Wolf Form"
+					type: "advancement"
+				}
+			]
+			title: "Wolf Form"
+			x: 5.25d
+			y: 16.56d
+		}
+		{
+			dependencies: [
+				"8A2C7F57115846BC"
+			]
+			description: [
+				"Odin: \"Feed on the fight.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:ulfhednar_rune"
+			}
+			id: "6A492974794A03C3"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "8EF9DB4A4A248A9F"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "8217820A63E04782"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_ulfhednar_35"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/ulfhednar_35"
+					criterion: ""
+					id: "1A73E9302D9B0DA8"
+					title: "Reach Ulfhednar level 35"
+					type: "advancement"
+				}
+				{
+					advancement: "vividlands_ragnarok:quest/class/ulfhednar_ability_4"
+					criterion: ""
+					id: "E738993139A61140"
+					title: "Use Fenrir's Hunger"
+					type: "advancement"
+				}
+			]
+			title: "Fenrir's Hunger"
+			x: 7.0d
+			y: 16.56d
+		}
+		{
+			dependencies: [
+				"6A492974794A03C3"
+			]
+			description: [
+				"Odin: \"Level 50. There is no more to teach you.\""
+				""
+				""
+				"Also: Title: Ulfhednar Master"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:ulfhednar_rune"
+			}
+			id: "A4C719A8D6732FDE"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "4191FE57E4AD9736"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "E814F47F85E44840"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_paths_ulfhednar_50"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/class/ulfhednar_50"
+					criterion: ""
+					id: "31B52882D384515A"
+					title: "Reach Ulfhednar level 50"
+					type: "advancement"
+				}
+			]
+			title: "Ulfhednar Master"
+			x: 8.75d
+			y: 16.56d
+		}
+		{
+			dependencies: [
+				"E5C4FA434543DDE5"
+			]
+			description: [
+				"Tyr: \"A new blade for every hand.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:berserker_rune"
+			}
+			id: "201C657B0C23194B"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "7938ABA310BF02FA"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1B5D99C65292F362"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_ss1"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/has/simplyswords_simply_swords"
+					criterion: ""
+					id: "21E6B1771B29F1FE"
+					title: "Craft a Simply Swords weapon"
+					type: "advancement"
+				}
+			]
+			title: "Simply Swords"
+			x: 0.0d
+			y: 19.68d
+		}
+		{
+			dependencies: [
+				"201C657B0C23194B"
+			]
+			description: [
+				"Tyr: \"Longsword, rapier, katana, glaive, scythe.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:berserker_rune"
+			}
+			id: "B9B75B01D7C13303"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "EA7047A9EFCC9E13"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "F9CEE7C039FECBF9"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_ss5"
+			]
+			tasks: [
+				{
+					id: "1DD0104A5C652BFD"
+					title: "Craft 5 different Simply Swords weapon types"
+					type: "checkmark"
+				}
+			]
+			title: "Five Shapes"
+			x: 1.75d
+			y: 19.68d
+		}
+		{
+			dependencies: [
+				"B9B75B01D7C13303"
+			]
+			description: [
+				"Tyr: \"Some swords have names.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:berserker_rune"
+			}
+			id: "296E2063D9206346"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "61C3106CF2A75E05"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "80796913B87F169F"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_unique"
+			]
+			tasks: [
+				{
+					id: "41F56B0637A15269"
+					title: "Find a Simply Swords unique weapon"
+					type: "checkmark"
+				}
+			]
+			title: "A Named Blade"
+			x: 3.5d
+			y: 19.68d
+		}
+		{
+			dependencies: [
+				"296E2063D9206346"
+			]
+			description: [
+				"Tyr: \"Stranger steel.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:berserker_rune"
+			}
+			id: "E8EF21A6214214EF"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "1BC58C01C438A5AC"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "CD891BBA622587AD"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_fw"
+			]
+			tasks: [
+				{
+					id: "A4ACEDBCB1800A30"
+					title: "Craft a Fantasy Weapons weapon"
+					type: "checkmark"
+				}
+			]
+			title: "Fantasy Weapons"
+			x: 5.25d
+			y: 19.68d
+		}
+		{
+			dependencies: [
+				"E8EF21A6214214EF"
+			]
+			description: [
+				"Tyr: \"Khopesh, gladius, kopis, macuahuitl.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:khopesh"
+			}
+			id: "CC66C172D94CAA31"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "D255BACA40EFA0F6"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "73E5AF4A4CFE496C"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_paths_ancient"
+			]
+			tasks: [
+				{
+					id: "EA7751060E78B8B8"
+					title: "Kill a mob with 4 different Vivid Lands weapons"
+					type: "checkmark"
+				}
+			]
+			title: "Weapons of the Ancients"
+			x: 7.0d
+			y: 19.68d
+		}
+		{
+			dependencies: [
+				"CC66C172D94CAA31"
+			]
+			description: [
+				"Tyr: \"Swing every weapon the way it was meant to be swung.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:ragnarok"
+			}
+			id: "CF69E3DD6AFF767F"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "8080B2A2889E3BE0"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1C9ED002FFF75219"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_paths_all"
+			]
+			tasks: [
+				{
+					id: "FB1B542EDF4FFD8E"
+					title: "Kill a mob with 10 different weapon types"
+					type: "checkmark"
+				}
+			]
+			title: "Master of Arms"
+			x: 8.75d
+			y: 19.68d
+		}
+	]
+	subtitle: [
+		"the five classes, Better Combat, Simply Swords, Fantasy Weapons"
+	]
+	title: "Einherjar Paths"
+}

@@ -1,0 +1,212 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "loki_s_betrayal"
+	group: "5367FBBD604DCF21"
+	icon: {
+		Count: 1b
+		id: "minecraft:golden_helmet"
+	}
+	id: "5055017E1C8DD46E"
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"BC110673386916E7"
+			]
+			description: [
+				"Mimir: \"The All-Father needs champions for the last battle. The einherjar. You are invited.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:raven_feather"
+			}
+			id: "66E751FDA2A4CF5B"
+			rewards: [
+				{
+					id: "C229734003BB3F38"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:raven_feather"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "3433526DB52C3217"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_b1"
+			]
+			tasks: [
+				{
+					id: "A7B8CC35EF6D179D"
+					structure: "civilizations:nordic"
+					title: "Reach a Civilizations Norse settlement"
+					type: "structure"
+				}
+			]
+			title: "Odin's Summons"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"66E751FDA2A4CF5B"
+			]
+			description: [
+				"Mimir: \"The Norse follow strength. Show them yours.\""
+				""
+				""
+				"Also: Ancient armor tiers 36 to 38"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:jarl_helmet"
+			}
+			id: "4CCD03E17415C896"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "16EE890DA30AB72C"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_b2"
+			]
+			tasks: [
+				{
+					entity: "civilizations:nordic_boss"
+					id: "B607A77415EF6509"
+					title: "Defeat Bjorn Ironside (Civilizations)"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "The Jarl's Challenge"
+			x: 1.75d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"4CCD03E17415C896"
+			]
+			description: [
+				"Loki: \"Kill me if you like, little champion. My children are already loose.\""
+				""
+				""
+				"Also: Odin's Sigil; Ancient armor tiers 39 to 40"
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:golden_helmet"
+			}
+			id: "5BE3F55A329EAF6B"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "A4A2BEA946C39B24"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			tags: [
+				"boss2"
+				"q_b3"
+			]
+			tasks: [
+				{
+					entity: "civilizations:boss_loki"
+					id: "1788BD2D4B783C6D"
+					title: "Defeat Loki (Civilizations)"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "The Trickster Unbound"
+			x: 3.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"5BE3F55A329EAF6B"
+			]
+			description: [
+				"Odin: \"The wolf has slipped his chains. The serpent stirs. We go to war.\""
+				""
+				""
+				"Also: Chapter 2 opens"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:eclipse_shard"
+			}
+			id: "F4DF44534249B519"
+			rewards: [
+				{
+					command: "/ragnarok class xp 300"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "107DE86A825A8C83"
+					silent: true
+					title: "300 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_b4"
+			]
+			tasks: [
+				{
+					id: "A446AA25099524C6"
+					title: "Read Odin's war council"
+					type: "checkmark"
+				}
+			]
+			title: "Ragnarok Begins"
+			x: 5.25d
+			y: 0.0d
+		}
+	]
+	subtitle: [
+		"Loki's betrayal"
+	]
+	title: "Loki's Betrayal"
+}

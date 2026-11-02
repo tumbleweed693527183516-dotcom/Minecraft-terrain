@@ -1,0 +1,2830 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "dwarves_forge"
+	group: "96A912181A061CEA"
+	icon: {
+		Count: 1b
+		id: "create:cogwheel"
+	}
+	id: "24EBF38DC485FF64"
+	images: [
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/forge_0.png"
+			rotation: 0.0d
+			width: 4.315d
+			x: 1.557d
+			y: 0.1d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/forge_1.png"
+			rotation: 0.0d
+			width: 4.773d
+			x: 1.786d
+			y: 5.06d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/forge_2.png"
+			rotation: 0.0d
+			width: 4.544d
+			x: 1.672d
+			y: 10.02d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/forge_3.png"
+			rotation: 0.0d
+			width: 7.98d
+			x: 3.39d
+			y: 14.98d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/forge_4.png"
+			rotation: 0.0d
+			width: 5.46d
+			x: 2.13d
+			y: 19.94d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/forge_5.png"
+			rotation: 0.0d
+			width: 8.896d
+			x: 3.848d
+			y: 24.9d
+		}
+	]
+	order_index: 6
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Brokkr: \"Iron nuggets and andesite. The stone every machine is made of.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:andesite_alloy"
+			}
+			id: "6EB9172F537C691D"
+			rewards: [
+				{
+					id: "80C2D043A1B9481D"
+					item: {
+						Count: 1b
+						id: "create:wrench"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "DA889AE55B9A5EDD"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_andesite"
+			]
+			tasks: [
+				{
+					count: 32L
+					id: "DEE36E3C31F93D64"
+					item: {
+						Count: 1b
+						id: "create:andesite_alloy"
+					}
+					title: "Craft 32 andesite alloy"
+					type: "item"
+				}
+			]
+			title: "Andesite Alloy"
+			x: 0.0d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"6EB9172F537C691D"
+			]
+			description: [
+				"Sindri: \"Rotation is the forge's breath. Carry it.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:shaft"
+			}
+			id: "1B3CCC2828284C4A"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "FDE1E9E0DE28AA4A"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "3C43D888B46F4C89"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_shaft"
+			]
+			tasks: [
+				{
+					count: 16L
+					id: "5BA85779BEE2FF7E"
+					item: {
+						Count: 1b
+						id: "create:shaft"
+					}
+					title: "Craft 16 shafts"
+					type: "item"
+				}
+				{
+					id: "C87F682390EEB122"
+					title: "Craft 8 cogwheels and 4 large cogwheels"
+					type: "checkmark"
+				}
+			]
+			title: "Shafts and Cogs"
+			x: 1.75d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"1B3CCC2828284C4A"
+			]
+			description: [
+				"Brokkr: \"Every forge starts with something that turns.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:water_wheel"
+			}
+			id: "14F7A14FC3E91705"
+			rewards: [
+				{
+					count: 4
+					id: "B7004CE6B1B0AFAE"
+					item: {
+						Count: 1b
+						id: "create:water_wheel"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "D4394A9D7FA09AF4"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_wheel"
+			]
+			tasks: [
+				{
+					id: "C3AF8FA3A131F7AE"
+					item: {
+						Count: 1b
+						id: "create:water_wheel"
+					}
+					title: "Place a water wheel"
+					type: "item"
+				}
+				{
+					id: "228E8EA9A370DCEC"
+					title: "Power a shaft with it"
+					type: "checkmark"
+				}
+			]
+			title: "The Water Wheel"
+			x: 3.5d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"14F7A14FC3E91705"
+			]
+			description: [
+				"Sindri: \"Turn the turning. Up, down, sideways.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:gearbox"
+			}
+			id: "6904BA69708AB642"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "5DED859027CFE23A"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "C068AC574E5D354B"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_gear"
+			]
+			tasks: [
+				{
+					id: "F396E321D481ADC1"
+					item: {
+						Count: 1b
+						id: "create:gearbox"
+					}
+					title: "Craft a gearbox"
+					type: "item"
+				}
+				{
+					id: "91FDD55CC6F76D9A"
+					item: {
+						Count: 1b
+						id: "create:clutch"
+					}
+					title: "Craft a clutch"
+					type: "item"
+				}
+				{
+					id: "DA0E5A23F2A1129D"
+					item: {
+						Count: 1b
+						id: "create:gearshift"
+					}
+					title: "Craft a gearshift"
+					type: "item"
+				}
+			]
+			title: "Gearboxes"
+			x: 5.25d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"6904BA69708AB642"
+			]
+			description: [
+				"Brokkr: \"See the stress before the shaft snaps.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:goggles"
+			}
+			id: "55AD0483BA15444B"
+			rewards: [
+				{
+					id: "B2F248D9F33D6ECC"
+					item: {
+						Count: 1b
+						id: "create:stressometer"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "E13E23F0FF06BEDA"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_goggles"
+			]
+			tasks: [
+				{
+					id: "B7C50DC0F5C7569F"
+					item: {
+						Count: 1b
+						id: "create:goggles"
+					}
+					title: "Craft Engineer's Goggles"
+					type: "item"
+				}
+			]
+			title: "Engineer's Goggles"
+			x: 7.0d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"55AD0483BA15444B"
+			]
+			description: [
+				"Sindri: \"Wind is free. Sails are not.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:cogwheel"
+			}
+			id: "1246B60D101503BE"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "FEBFDDC9E50FA72D"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "9D9AF91B8FF7C8FB"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_wind"
+			]
+			tasks: [
+				{
+					id: "B5F2DD3DBE8742FD"
+					title: "Build a windmill with a windmill bearing and 8 sails"
+					type: "checkmark"
+				}
+			]
+			title: "The Windmill"
+			x: 8.75d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"1246B60D101503BE"
+			]
+			description: [
+				"Brokkr: \"Fire and water, tamed. Real power.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:cogwheel"
+			}
+			id: "E49FDDD1A4A79224"
+			rewards: [
+				{
+					id: "80C911A3FF3AD331"
+					item: {
+						Count: 1b
+						id: "create:steam_engine"
+					}
+					type: "item"
+				}
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "C4893E7867C4032A"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 300"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "9F9AC9A186725B47"
+					silent: true
+					title: "300 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_forge_steam"
+			]
+			tasks: [
+				{
+					id: "5D3A8C6AC4519DB8"
+					title: "Build a steam engine on a fluid tank with a blaze burner"
+					type: "checkmark"
+				}
+			]
+			title: "Steam Engine"
+			x: 0.0d
+			y: 2.8d
+		}
+		{
+			dependencies: [
+				"6EB9172F537C691D"
+			]
+			description: [
+				"Sindri: \"Grind it finer.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:millstone"
+			}
+			id: "C80F86B6496C9AB6"
+			rewards: [
+				{
+					count: 16
+					id: "FFD9CBE614F23C83"
+					item: {
+						Count: 1b
+						id: "create:dough"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "870C4DAB97BAC844"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_mill"
+			]
+			tasks: [
+				{
+					id: "3D3C4BBAFA234532"
+					item: {
+						Count: 1b
+						id: "create:millstone"
+					}
+					title: "Craft a millstone"
+					type: "item"
+				}
+				{
+					id: "626557583B04BA60"
+					item: {
+						Count: 1b
+						id: "create:wheat_flour"
+					}
+					title: "Mill wheat into flour"
+					type: "item"
+				}
+			]
+			title: "Millstone"
+			x: 0.0d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"C80F86B6496C9AB6"
+			]
+			description: [
+				"Brokkr: \"Ingots become sheets.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:iron_sheet"
+			}
+			id: "8E6D4D0C2A411C08"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "3865D857DA6119DB"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "2F7279EB20127DF2"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_press"
+			]
+			tasks: [
+				{
+					count: 16L
+					id: "9BF43D20A15188A6"
+					item: {
+						Count: 1b
+						id: "create:iron_sheet"
+					}
+					title: "Press 16 iron sheets"
+					type: "item"
+				}
+			]
+			title: "Mechanical Press"
+			x: 1.75d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"8E6D4D0C2A411C08"
+			]
+			description: [
+				"Sindri: \"Ore is just stone that has not been asked nicely.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:crushing_wheel"
+			}
+			id: "31FB9430D61A623A"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "7B55338573629474"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "915FCB8970BE2441"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_crush"
+			]
+			tasks: [
+				{
+					count: 2L
+					id: "5B2ED588D013666C"
+					item: {
+						Count: 1b
+						id: "create:crushing_wheel"
+					}
+					title: "Build a pair of crushing wheels"
+					type: "item"
+				}
+				{
+					id: "E79576FD0FDB9352"
+					title: "Crush 32 raw ore"
+					type: "checkmark"
+				}
+			]
+			title: "Crushing Wheels"
+			x: 3.5d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"31FB9430D61A623A"
+			]
+			description: [
+				"Brokkr: \"An encased fan does three jobs, depending on what you blow it through.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:cogwheel"
+			}
+			id: "EB826C637DA437F2"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "D8FEC72988F6E50E"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1B0053069F193394"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_wash"
+			]
+			tasks: [
+				{
+					id: "3C066D55B4AC8C53"
+					title: "Wash gravel with a fan through water"
+					type: "checkmark"
+				}
+				{
+					id: "AC12FCCC836BA773"
+					title: "Smoke food with a fan through fire"
+					type: "checkmark"
+				}
+				{
+					id: "E7154E71E5E6E320"
+					title: "Haunt with a fan through soul fire"
+					type: "checkmark"
+				}
+			]
+			title: "Wash, Smoke, Haunt"
+			x: 5.25d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"EB826C637DA437F2"
+			]
+			description: [
+				"Sindri: \"Stir.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:mechanical_mixer"
+			}
+			id: "F18A494753C34155"
+			rewards: [
+				{
+					id: "AB9FFE35DD3AA2AC"
+					item: {
+						Count: 1b
+						id: "create:basin"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6A7DAC25A7B48271"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_mix"
+			]
+			tasks: [
+				{
+					id: "B308F13D632A8512"
+					item: {
+						Count: 1b
+						id: "create:mechanical_mixer"
+					}
+					title: "Build a mechanical mixer over a basin"
+					type: "item"
+				}
+			]
+			title: "Mixer and Basin"
+			x: 7.0d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"F18A494753C34155"
+			]
+			description: [
+				"Brokkr: \"Copper and zinc, mixed hot. The start of real machines.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:brass_ingot"
+			}
+			id: "CF1D251B96AD45A1"
+			rewards: [
+				{
+					count: 16
+					id: "2CEE72D163750FE0"
+					item: {
+						Count: 1b
+						id: "create:brass_ingot"
+					}
+					type: "item"
+				}
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "9C3A1CC5B339B35A"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "AA0E2386B57E42CF"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_brass"
+			]
+			tasks: [
+				{
+					count: 16L
+					id: "FA83894552975DC9"
+					item: {
+						Count: 1b
+						id: "create:brass_ingot"
+					}
+					title: "Make 16 brass ingots in a heated basin"
+					type: "item"
+				}
+			]
+			title: "Brass"
+			x: 8.75d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"CF1D251B96AD45A1"
+			]
+			description: [
+				"Sindri: \"A hand that never tires.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:deployer"
+			}
+			id: "D8D2A88FF9898DEF"
+			rewards: [
+				{
+					id: "A357EBCDDE06F032"
+					item: {
+						Count: 1b
+						id: "create:brass_hand"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "9528D71981035690"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_deploy"
+			]
+			tasks: [
+				{
+					id: "29B3B21AC3F66BA1"
+					item: {
+						Count: 1b
+						id: "create:deployer"
+					}
+					title: "Craft a deployer"
+					type: "item"
+				}
+			]
+			title: "The Deployer"
+			x: 0.0d
+			y: 7.76d
+		}
+		{
+			dependencies: [
+				"D8D2A88FF9898DEF"
+			]
+			description: [
+				"Brokkr: \"Sequenced assembly. Five steps, one part.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:precision_mechanism"
+			}
+			id: "A4EF1E9AC5DAC86F"
+			rewards: [
+				{
+					count: 3
+					id: "45D935C3815E6541"
+					item: {
+						Count: 1b
+						id: "create:precision_mechanism"
+					}
+					type: "item"
+				}
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "563D3A7330A042C1"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 300"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "8B2317621D97B50E"
+					silent: true
+					title: "300 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_forge_seq"
+			]
+			tasks: [
+				{
+					id: "9C1632854D9BB53F"
+					item: {
+						Count: 1b
+						id: "create:precision_mechanism"
+					}
+					title: "Make a precision mechanism"
+					type: "item"
+				}
+			]
+			title: "Precision Mechanism"
+			x: 1.75d
+			y: 7.76d
+		}
+		{
+			dependencies: [
+				"CF1D251B96AD45A1"
+			]
+			description: [
+				"Sindri: \"Move it without carrying it.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:belt_connector"
+			}
+			id: "C271FBC3D6CA5712"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "E3E1CC63C18BB293"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "AE70DBF5FB7A68D0"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_belt"
+			]
+			tasks: [
+				{
+					count: 16L
+					id: "C7306CD200687BBA"
+					item: {
+						Count: 1b
+						id: "create:belt_connector"
+					}
+					title: "Place 16 mechanical belts"
+					type: "item"
+				}
+			]
+			title: "Belts"
+			x: 0.0d
+			y: 10.88d
+		}
+		{
+			dependencies: [
+				"C271FBC3D6CA5712"
+			]
+			description: [
+				"Brokkr: \"In, out, sorted.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:cogwheel"
+			}
+			id: "C57B432F75A02BCA"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "6AC71AEC2F9F5857"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "9F60EB9C50F9A89B"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_funnel"
+			]
+			tasks: [
+				{
+					id: "16CE14FC7CC710C5"
+					title: "Use a brass funnel with a filter"
+					type: "checkmark"
+				}
+			]
+			title: "Funnels and Tunnels"
+			x: 1.75d
+			y: 10.88d
+		}
+		{
+			dependencies: [
+				"C57B432F75A02BCA"
+			]
+			description: [
+				"Sindri: \"It picks, it places, it never complains.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:mechanical_arm"
+			}
+			id: "B2726C656457B347"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "76DF3F8EDEADE640"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "2D5CAFE3E84F34C1"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_arm"
+			]
+			tasks: [
+				{
+					id: "58BF60DD32D6CC85"
+					item: {
+						Count: 1b
+						id: "create:mechanical_arm"
+					}
+					title: "Craft a mechanical arm"
+					type: "item"
+				}
+			]
+			title: "Mechanical Arm"
+			x: 3.5d
+			y: 10.88d
+		}
+		{
+			dependencies: [
+				"B2726C656457B347"
+			]
+			description: [
+				"Brokkr: \"Some recipes need a bigger table.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:mechanical_crafter"
+			}
+			id: "2BAD39DC695CF909"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "B7A52E9D0E2FEA09"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "4426202674C73D28"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_crafter"
+			]
+			tasks: [
+				{
+					count: 9L
+					id: "3132A0DD6919AAE5"
+					item: {
+						Count: 1b
+						id: "create:mechanical_crafter"
+					}
+					title: "Craft 9 mechanical crafters"
+					type: "item"
+				}
+			]
+			title: "Mechanical Crafters"
+			x: 5.25d
+			y: 10.88d
+		}
+		{
+			dependencies: [
+				"2BAD39DC695CF909"
+			]
+			description: [
+				"Sindri: \"Box it, label it, send it.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:packager"
+			}
+			id: "99E7697CA5118A73"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "5CEC16FFCCB1DF2E"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1B73A722776DC763"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_packager"
+			]
+			tasks: [
+				{
+					id: "59407B26191593A2"
+					item: {
+						Count: 1b
+						id: "create:packager"
+					}
+					title: "Craft a packager"
+					type: "item"
+				}
+				{
+					id: "54E2011B5D9344A6"
+					title: "Send a package"
+					type: "checkmark"
+				}
+			]
+			title: "Packages"
+			x: 7.0d
+			y: 10.88d
+		}
+		{
+			dependencies: [
+				"99E7697CA5118A73"
+			]
+			description: [
+				"Brokkr: \"Do not ask why it is a frog.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:package_frogport"
+			}
+			id: "95B213A7A780C4A9"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "1DF7E05C0F9CD3E6"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "3D25C2D418D4E8FB"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_frog"
+			]
+			tasks: [
+				{
+					id: "663B4B3E70916337"
+					item: {
+						Count: 1b
+						id: "create:package_frogport"
+					}
+					title: "Deliver a package by frogport"
+					type: "item"
+				}
+			]
+			title: "Frogports"
+			x: 8.75d
+			y: 10.88d
+		}
+		{
+			dependencies: [
+				"95B213A7A780C4A9"
+			]
+			description: [
+				"Sindri: \"Know what you own.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:stock_ticker"
+			}
+			id: "3389EFF4D9BC53FC"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "453457FAE8007E15"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "783357E547DDAF67"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_stock"
+			]
+			tasks: [
+				{
+					id: "4D49F61EC912ABD7"
+					item: {
+						Count: 1b
+						id: "create:stock_ticker"
+					}
+					title: "Order items from a stock keeper"
+					type: "item"
+				}
+			]
+			title: "Stock Keeper"
+			x: 0.0d
+			y: 12.72d
+		}
+		{
+			dependencies: [
+				"3389EFF4D9BC53FC"
+			]
+			description: [
+				"Brokkr: \"A train to the far biomes, where the beasts are.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:cogwheel"
+			}
+			id: "F8BC9CFD6A9F76B3"
+			rewards: [
+				{
+					id: "44FD85D3F238AB10"
+					item: {
+						Count: 1b
+						id: "create:controls"
+					}
+					type: "item"
+				}
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "54B11A1D52B0A22B"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "48CF6DC96FC0CF43"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_forge_train"
+			]
+			tasks: [
+				{
+					id: "9A86CD9EB6C4B245"
+					title: "Build a train with a station and 64 tracks"
+					type: "checkmark"
+				}
+			]
+			title: "The Iron Road"
+			x: 1.75d
+			y: 12.72d
+		}
+		{
+			dependencies: [
+				"F18A494753C34155"
+			]
+			description: [
+				"Brokkr: \"The Nether is sealed. Its stone is not. Cobblestone and lava.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:netherrack"
+			}
+			id: "1502B52C79909D41"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "E9E49C084AE1B6EE"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "326AE6E91084AD49"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_netherrack"
+			]
+			tasks: [
+				{
+					count: 32L
+					id: "8F243054131ECA35"
+					item: {
+						Count: 1b
+						id: "minecraft:netherrack"
+					}
+					title: "Mix 32 netherrack"
+					type: "item"
+				}
+			]
+			title: "Netherrack"
+			x: 0.0d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"1502B52C79909D41"
+			]
+			description: [
+				"Sindri: \"Crushed blackstone hides it.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:quartz"
+			}
+			id: "7F48C2982C2F127F"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "5525840D7B867FD0"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "446BF6DECC3B8B0B"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_quartz"
+			]
+			tasks: [
+				{
+					count: 16L
+					id: "E78039702A1C306E"
+					item: {
+						Count: 1b
+						id: "minecraft:quartz"
+					}
+					title: "Make 16 nether quartz"
+					type: "item"
+				}
+			]
+			title: "Quartz"
+			x: 1.75d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"7F48C2982C2F127F"
+			]
+			description: [
+				"Brokkr: \"Haunted sand. Soul fire and a fan.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:soul_sand"
+			}
+			id: "D5007BB93AA0F4F4"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "FBEE75FC432FE51E"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "371BBF3D70DE4FC6"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_soul"
+			]
+			tasks: [
+				{
+					count: 16L
+					id: "E1110D87ADAFAFBB"
+					item: {
+						Count: 1b
+						id: "minecraft:soul_sand"
+					}
+					title: "Make 16 soul sand"
+					type: "item"
+				}
+			]
+			title: "Soul Sand"
+			x: 3.5d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"D5007BB93AA0F4F4"
+			]
+			description: [
+				"Sindri: \"Every brewer needs it.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:nether_wart"
+			}
+			id: "126E3D669C1FD7C7"
+			rewards: [
+				{
+					id: "F14E0288B6080199"
+					item: {
+						Count: 1b
+						id: "minecraft:brewing_stand"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "C762F6E337F45B35"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_wart"
+			]
+			tasks: [
+				{
+					id: "DFAC60729DDE9FDF"
+					item: {
+						Count: 1b
+						id: "minecraft:nether_wart"
+					}
+					title: "Mix nether wart"
+					type: "item"
+				}
+				{
+					count: 16L
+					id: "97FD1FF1C7879BDA"
+					item: {
+						Count: 1b
+						id: "minecraft:nether_wart"
+					}
+					title: "Grow 16 nether wart"
+					type: "item"
+				}
+			]
+			title: "Nether Wart"
+			x: 5.25d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"126E3D669C1FD7C7"
+			]
+			description: [
+				"Brokkr: \"Compacted fire.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:blaze_rod"
+			}
+			id: "E2F9057D60972529"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "5458FD3AB78F0C6A"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "6750A52D749A0166"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_blaze"
+			]
+			tasks: [
+				{
+					count: 8L
+					id: "26AEC439391FD447"
+					item: {
+						Count: 1b
+						id: "minecraft:blaze_rod"
+					}
+					title: "Make 8 blaze rods"
+					type: "item"
+				}
+			]
+			title: "Blaze Rods"
+			x: 7.0d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"E2F9057D60972529"
+			]
+			description: [
+				"Sindri: \"Light and heat.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:glowstone_dust"
+			}
+			id: "463C15CF4943C922"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "70AE8844BA43CA1C"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "EFA90942482BA374"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_glow"
+			]
+			tasks: [
+				{
+					id: "F7075815B3247F1E"
+					item: {
+						Count: 1b
+						id: "minecraft:glowstone_dust"
+					}
+					title: "Make glowstone dust"
+					type: "item"
+				}
+				{
+					id: "7DADDBA995F74BC2"
+					item: {
+						Count: 1b
+						id: "minecraft:magma_cream"
+					}
+					title: "Make magma cream"
+					type: "item"
+				}
+			]
+			title: "Glowstone and Magma"
+			x: 8.75d
+			y: 15.84d
+		}
+		{
+			dependencies: [
+				"463C15CF4943C922"
+			]
+			description: [
+				"Brokkr: \"The End is sealed too. Not its stone.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:end_stone"
+			}
+			id: "C13321B27AA25C7B"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "2FD320CD4F0A4D26"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "C3F9463241980445"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_pearl"
+			]
+			tasks: [
+				{
+					count: 16L
+					id: "BDBEFD8044D42581"
+					item: {
+						Count: 1b
+						id: "minecraft:end_stone"
+					}
+					title: "Mix 16 end stone"
+					type: "item"
+				}
+			]
+			title: "End Stone and Pearls"
+			x: 0.0d
+			y: 17.68d
+		}
+		{
+			dependencies: [
+				"C13321B27AA25C7B"
+			]
+			description: [
+				"Sindri: \"No End City, no problem.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:raven_feather"
+			}
+			id: "498091B5CFB92DC7"
+			rewards: [
+				{
+					id: "E954C882024656E2"
+					item: {
+						Count: 1b
+						id: "minecraft:elytra"
+					}
+					type: "item"
+				}
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "183C5A4634855558"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "E7291362F8CBC898"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_forge_elytra"
+			]
+			tasks: [
+				{
+					id: "880085F3321A02DE"
+					item: {
+						Count: 1b
+						id: "minecraft:elytra"
+					}
+					title: "Craft an elytra (pack recipe)"
+					type: "item"
+				}
+			]
+			title: "Wings Without a City"
+			x: 1.75d
+			y: 17.68d
+		}
+		{
+			dependencies: [
+				"31FB9430D61A623A"
+			]
+			description: [
+				"Sindri: \"The common metals of the deep.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "mythicmetals:raw_tin"
+			}
+			id: "ECBCCBF327EF0A2E"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/common"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "E61F2848BDED3BD7"
+					silent: true
+					title: "Rune Pouch (Common)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1725D697F831BD0E"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_tin"
+			]
+			tasks: [
+				{
+					id: "220EAD8F24507EDD"
+					item: {
+						Count: 1b
+						id: "mythicmetals:raw_tin"
+					}
+					title: "Mine tin"
+					type: "item"
+				}
+				{
+					id: "4590491E716FD57E"
+					item: {
+						Count: 1b
+						id: "mythicmetals:raw_silver"
+					}
+					title: "Mine silver"
+					type: "item"
+				}
+			]
+			title: "Tin and Silver"
+			x: 0.0d
+			y: 20.8d
+		}
+		{
+			dependencies: [
+				"ECBCCBF327EF0A2E"
+			]
+			description: [
+				"Brokkr: \"Real alloys need a real forge.\""
+				""
+				""
+				"Also: Forge controller"
+			]
+			icon: {
+				Count: 1b
+				id: "create:cogwheel"
+			}
+			id: "362BADCED1D5E497"
+			rewards: [
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "9A14F4023D1F26C5"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_forge"
+			]
+			tasks: [
+				{
+					id: "7A1E7BA8D9FDF5B3"
+					title: "Build an Alloy Forgery forge"
+					type: "checkmark"
+				}
+			]
+			title: "The Alloy Forgery"
+			x: 1.75d
+			y: 20.8d
+		}
+		{
+			dependencies: [
+				"362BADCED1D5E497"
+			]
+			description: [
+				"Sindri: \"Copper and tin. Older than iron.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "mythicmetals:bronze_ingot"
+			}
+			id: "DC12ABB33B1AE411"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "19419CD4E67A5B16"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "DA35E00A0C77FFF0"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_bronze"
+			]
+			tasks: [
+				{
+					count: 16L
+					id: "2DD301A23E3B4C2E"
+					item: {
+						Count: 1b
+						id: "mythicmetals:bronze_ingot"
+					}
+					title: "Forge 16 bronze"
+					type: "item"
+				}
+			]
+			title: "Bronze"
+			x: 3.5d
+			y: 20.8d
+		}
+		{
+			dependencies: [
+				"DC12ABB33B1AE411"
+			]
+			description: [
+				"Brokkr: \"Iron, made stronger.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "mythicmetals:steel_ingot"
+			}
+			id: "1E9C192B52F653FA"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "46AAFF4FCFBC1E30"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "E03B66D07816E443"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_steel"
+			]
+			tasks: [
+				{
+					count: 16L
+					id: "9C07A33601862CE3"
+					item: {
+						Count: 1b
+						id: "mythicmetals:steel_ingot"
+					}
+					title: "Forge 16 steel"
+					type: "item"
+				}
+			]
+			title: "Steel"
+			x: 5.25d
+			y: 20.8d
+		}
+		{
+			dependencies: [
+				"1E9C192B52F653FA"
+			]
+			description: [
+				"Sindri: \"Light as a feather.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "mythicmetals:raw_mythril"
+			}
+			id: "632B2DB9B027B742"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/uncommon"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:chest"
+					}
+					id: "F2B790F3F78F4C65"
+					silent: true
+					title: "Rune Pouch (Uncommon)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 120"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "CE2160EC724F154D"
+					silent: true
+					title: "120 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_mythril"
+			]
+			tasks: [
+				{
+					id: "831906470EABDE30"
+					item: {
+						Count: 1b
+						id: "mythicmetals:raw_mythril"
+					}
+					title: "Mine mythril"
+					type: "item"
+				}
+				{
+					id: "DD741097482DFEBB"
+					item: {
+						Count: 1b
+						id: "mythicmetals:mythril_pickaxe"
+					}
+					title: "Craft a mythril pickaxe"
+					type: "item"
+				}
+			]
+			title: "Mythril"
+			x: 7.0d
+			y: 20.8d
+		}
+		{
+			dependencies: [
+				"632B2DB9B027B742"
+			]
+			description: [
+				"Brokkr: \"Hard as a giant's heart.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "mythicmetals:raw_adamantite"
+			}
+			id: "FEE4ECF6B8A20A0A"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "39228E6FBC5BEC73"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1E1148641109378F"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_adamantite"
+			]
+			tasks: [
+				{
+					id: "B106DCBE574E6E89"
+					item: {
+						Count: 1b
+						id: "mythicmetals:raw_adamantite"
+					}
+					title: "Mine adamantite"
+					type: "item"
+				}
+			]
+			title: "Adamantite"
+			x: 8.75d
+			y: 20.8d
+		}
+		{
+			dependencies: [
+				"FEE4ECF6B8A20A0A"
+			]
+			description: [
+				"Sindri: \"The metal of drowned kingdoms.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "mythicmetals:raw_orichalcum"
+			}
+			id: "18B173E9BA84B779"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "EA21E0A280410CCC"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "40406A6CAD5B5EC9"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_orichalcum"
+			]
+			tasks: [
+				{
+					id: "48DE99477A4E8EDE"
+					item: {
+						Count: 1b
+						id: "mythicmetals:raw_orichalcum"
+					}
+					title: "Mine orichalcum"
+					type: "item"
+				}
+			]
+			title: "Orichalcum"
+			x: 0.0d
+			y: 22.64d
+		}
+		{
+			dependencies: [
+				"18B173E9BA84B779"
+			]
+			description: [
+				"Brokkr: \"An alloy fit for the gods.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "mythicmetals:hallowed_ingot"
+			}
+			id: "FE047340F650A38A"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "ABC4A5C8B20A1A2A"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "DAF0DEA956D870B8"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_hallowed"
+			]
+			tasks: [
+				{
+					id: "D788A1D291993FAE"
+					item: {
+						Count: 1b
+						id: "mythicmetals:hallowed_ingot"
+					}
+					title: "Forge hallowed"
+					type: "item"
+				}
+			]
+			title: "Hallowed"
+			x: 1.75d
+			y: 22.64d
+		}
+		{
+			dependencies: [
+				"FE047340F650A38A"
+			]
+			description: [
+				"Sindri: \"Starlight in metal.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "mythicmetals:celestium_ingot"
+			}
+			id: "FCEB38EF6A61E3ED"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "F8AF420883BDD0C9"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "9735481E7A416A84"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_celestium"
+			]
+			tasks: [
+				{
+					id: "2F1E5B94156244EB"
+					item: {
+						Count: 1b
+						id: "mythicmetals:celestium_ingot"
+					}
+					title: "Forge celestium"
+					type: "item"
+				}
+			]
+			title: "Celestium"
+			x: 3.5d
+			y: 22.64d
+		}
+		{
+			dependencies: [
+				"FCEB38EF6A61E3ED"
+			]
+			description: [
+				"Brokkr: \"The rarest thing we have ever forged.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "mythicmetals:star_platinum"
+			}
+			id: "A20DE9F82274498B"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/epic"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "53E327FE73D27C3E"
+					silent: true
+					title: "Rune Pouch (Epic)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 450"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1F0F92FF11A437A7"
+					silent: true
+					title: "450 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_star"
+			]
+			tasks: [
+				{
+					id: "84B018BDBE56CC35"
+					item: {
+						Count: 1b
+						id: "mythicmetals:star_platinum"
+					}
+					title: "Forge star platinum"
+					type: "item"
+				}
+			]
+			title: "Star Platinum"
+			x: 5.25d
+			y: 22.64d
+		}
+		{
+			dependencies: [
+				"A20DE9F82274498B"
+			]
+			description: [
+				"Sindri: \"A full set of tools from one mythic metal.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "create:cogwheel"
+			}
+			id: "27BE683EDAFA1716"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "FB3F6C08EC2F64BB"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "E6B5DBF7D20C7CDD"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_forge_full"
+			]
+			tasks: [
+				{
+					id: "6B816FF39EBEE847"
+					title: "A pickaxe, axe, shovel, sword and hoe from one Mythic Metal"
+					type: "checkmark"
+				}
+			]
+			title: "Mythic Arsenal"
+			x: 7.0d
+			y: 22.64d
+		}
+		{
+			dependencies: [
+				"E2F9057D60972529"
+			]
+			description: [
+				"Brokkr: \"Superheated, mixed, pressed. Ancient debris was never needed.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:netherite_scrap"
+			}
+			id: "1B05E04A918321C2"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "FE4F255FB58BE20E"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "7D360925DCB89F5A"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_scrap"
+			]
+			tasks: [
+				{
+					id: "83BC0DEA41D69D4E"
+					item: {
+						Count: 1b
+						id: "minecraft:netherite_scrap"
+					}
+					title: "Make netherite scrap by superheated mixing"
+					type: "item"
+				}
+			]
+			title: "Superheated Scrap"
+			x: 0.0d
+			y: 25.76d
+		}
+		{
+			dependencies: [
+				"1B05E04A918321C2"
+			]
+			description: [
+				"Sindri: \"Now the hound of Hel can bite.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:zweihander"
+			}
+			id: "A986D46996FC88B5"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "9C82BD63846AB663"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "404E709E1F08A2B7"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_ingot"
+			]
+			tasks: [
+				{
+					id: "B84D5C52087F52A0"
+					item: {
+						Count: 1b
+						id: "minecraft:netherite_ingot"
+					}
+					title: "Craft a netherite ingot"
+					type: "item"
+				}
+			]
+			title: "The Netherite Ingot"
+			x: 1.75d
+			y: 25.76d
+		}
+		{
+			dependencies: [
+				"A986D46996FC88B5"
+			]
+			description: [
+				"Brokkr: \"Seven diamonds. Worth it.\""
+				""
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:netherite_upgrade_smithing_template"
+			}
+			id: "4D3F069BBF28CF28"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/rare"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:barrel"
+					}
+					id: "3E41219D6A97413D"
+					silent: true
+					title: "Rune Pouch (Rare)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 250"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "72B74D319E38FF64"
+					silent: true
+					title: "250 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_forge_template"
+			]
+			tasks: [
+				{
+					id: "C07380D3AA16F781"
+					item: {
+						Count: 1b
+						id: "minecraft:netherite_upgrade_smithing_template"
+					}
+					title: "Craft a netherite upgrade template"
+					type: "item"
+				}
+			]
+			title: "Upgrade Template"
+			x: 3.5d
+			y: 25.76d
+		}
+		{
+			dependencies: [
+				"4D3F069BBF28CF28"
+			]
+			description: [
+				"Sindri: \"Full netherite. Counts for Chapter 2.\""
+				""
+				""
+				"Also: Counts for Chapter 2: Light in the Dark"
+			]
+			icon: {
+				Count: 1b
+				id: "create:cogwheel"
+			}
+			id: "A3506C84B7C6B733"
+			rewards: [
+				{
+					command: "/loot give @s loot vividlands_ragnarok:rune_pouch/legendary"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:ender_chest"
+					}
+					id: "CF999CE886A081D5"
+					silent: true
+					title: "Rune Pouch (Legendary)"
+					type: "command"
+				}
+				{
+					command: "/ragnarok class xp 800"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "EB3EE4BB02581FE1"
+					silent: true
+					title: "800 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_forge_set"
+			]
+			tasks: [
+				{
+					id: "9AD3897D9959E5FA"
+					title: "Wear full netherite armor"
+					type: "checkmark"
+				}
+			]
+			title: "Netherite Kit"
+			x: 5.25d
+			y: 25.76d
+		}
+	]
+	subtitle: [
+		"Create, Mythic Metals, Alloy Forgery"
+	]
+	title: "Dwarves' Forge"
+}

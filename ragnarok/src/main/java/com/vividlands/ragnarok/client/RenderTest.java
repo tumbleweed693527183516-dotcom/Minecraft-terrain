@@ -304,24 +304,16 @@ final class RenderTest {
         steps.add(mc::stop);
     }
 
-    /** The quest book (Odyssey Quests): a few chapters and quests, opened through its own packets (reflection). */
-    private static void heracles(String group, String quest) {
+    /** The quest book (FTB Quests): opens a chapter or quest by the id tools/questbook/build_quests.py gave it (reflection). */
+    private static void questBook(String key) {
         try {
-            Class.forName("earth.terrarium.heracles.client.handlers.DisplayConfig").getField("showTutorial").setBoolean(null, false);
-            Object channel = Class.forName("earth.terrarium.heracles.common.network.NetworkHandler").getField("CHANNEL").get(null);
-            Object packet = quest == null
-                    ? Class.forName("earth.terrarium.heracles.common.network.packets.groups.OpenGroupPacket")
-                        .getConstructor(String.class, boolean.class).newInstance(group, false)
-                    : Class.forName("earth.terrarium.heracles.common.network.packets.quests.OpenQuestPacket")
-                        .getConstructor(String.class, String.class, boolean.class).newInstance(group, quest, false);
-            for (var m : channel.getClass().getMethods()) {
-                if (m.getName().equals("sendToServer") && m.getParameterCount() == 1) {
-                    m.invoke(channel, packet);
-                    return;
-                }
-            }
-            Ragnarok.LOG.warn("render test: no sendToServer on the quest channel");
-        } catch (ReflectiveOperationException | RuntimeException e) {
+            byte[] h = java.security.MessageDigest.getInstance("SHA-1").digest(("vividlands:" + key).getBytes(java.nio.charset.StandardCharsets.UTF_8));
+            StringBuilder hex = new StringBuilder();
+            for (int i = 0; i < 8; i++) hex.append(String.format("%02X", h[i]));
+            if (hex.charAt(0) == '0') hex.setCharAt(0, '1');
+            long id = Long.parseUnsignedLong(hex.toString(), 16);
+            Class.forName("dev.ftb.mods.ftbquests.client.ClientQuestFile").getMethod("openBookToQuestObject", long.class).invoke(null, id);
+        } catch (Exception e) {
             Ragnarok.LOG.warn("render test: could not open the quest book", e);
         }
     }
@@ -333,11 +325,12 @@ final class RenderTest {
             mc.options.hideGui = false;
             nextWait = 60;
         });
-        String[][] views = {{"Prologue", null}, {"Prologue", "p1"}, {"I. Skadi's Hunt", null}, {"I. Skadi's Hunt", "cave_bear"},
-                {"II. Odin's War", null}, {"Dwarves' Forge", null}, {"Ancient Armory", null}, {"Hall of Trophies", null}};
-        for (String[] v : views) {
-            steps.add(() -> { mc.setScreen(null); heracles(v[0], v[1]); nextWait = 40; });
-            steps.add(() -> shot(mc, "quests_" + v[0].replaceAll("[^A-Za-z0-9]+", "_") + (v[1] == null ? "" : "_" + v[1])));
+        steps.add(() -> { cmd(mc, "gamemode survival @a"); nextWait = 20; });
+        String[] views = {"chapter/prologue", "quest/p1", "chapter/chapter1", "quest/cave_bear", "chapter/chapter2", "chapter/forge",
+                "chapter/armory", "chapter/paths", "chapter/hall"};
+        for (String v : views) {
+            steps.add(() -> { mc.setScreen(null); questBook(v); nextWait = 40; });
+            steps.add(() -> shot(mc, "quests_" + v.replace('/', '_')));
         }
         steps.add(mc::stop);
     }

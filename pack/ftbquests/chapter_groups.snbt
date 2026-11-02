@@ -1,0 +1,20 @@
+{
+	chapter_groups: [
+		{
+			icon: {
+				Count: 1b
+				id: "minecraft:writable_book"
+			}
+			id: "5367FBBD604DCF21"
+			title: "Main Quest"
+		}
+		{
+			icon: {
+				Count: 1b
+				id: "minecraft:map"
+			}
+			id: "96A912181A061CEA"
+			title: "Side Lines"
+		}
+	]
+}

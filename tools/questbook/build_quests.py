@@ -1,13 +1,14 @@
 """
-Writes the real quest book for Odyssey Quests (Heracles) from quests.py / side_quests.py:
+Writes the real quest book for FTB Quests from quests.py / side_quests.py:
 
-    pack/heracles/groups.txt                       chapter order (shown in the book's sidebar)
-    pack/heracles/quests/<chapter>/<quest>.json    one file per quest
-    ragnarok/.../data/vividlands_ragnarok/advancements/quest/...   hidden advancements the book tracks
+    pack/ftbquests/data.snbt, chapter_groups.snbt     book settings and the two chapter groups (Main Quest, Side Lines)
+    pack/ftbquests/chapters/<chapter>.snbt            one file per chapter, all its quests inside
+    ragnarok/.../assets/vividlands_ragnarok/textures/gui/quest_labels/   the section labels drawn on the chapter maps
+    ragnarok/.../data/vividlands_ragnarok/advancements/quest/...         hidden advancements the book tracks
 
-Tools/modpack.py puts pack/heracles into the modpack as config/heracles. Every task is mapped to something the game
-tracks (a kill, an item, a biome, a structure, a stat, an advancement our mod grants); what can't be tracked becomes
-a checkbox the player ticks.
+Tools/modpack.py puts pack/ftbquests into the modpack as config/ftbquests/quests. Every task is mapped to something
+the game tracks (a kill, an item, a biome, a structure, a stat, an advancement our mod grants); what can't be tracked
+becomes a checkbox the player ticks.
 
     python3 tools/questbook/build_quests.py
 """
@@ -23,7 +24,7 @@ from quests import BOSS, MAIN, SIDE  # noqa: E402
 from side_quests import CLASSES, CIVS, VIVID, ANIMALS, SETS, nice  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "pack/heracles"
+OUT = ROOT / "pack/ftbquests"
 ADV = ROOT / "ragnarok/src/main/resources/data/vividlands_ragnarok/advancements/quest"
 NS = "vividlands_ragnarok"
 H = "heracles:"
@@ -232,57 +233,253 @@ def description(q):
 
 # ------------------------------------------------------------------ chapter links (the main line runs on)
 CHAIN = {"a1": ["p6"], "b1": ["g4"], "c1": ["b4"], "e1": ["fenrir"]}
+ACTS = [("Act I · Forest and Plain", 0), ("Act II · Rivers and Claws", 2.6), ("Act III · The Far Lands", 5.2), ("Act IV · The Titans", 7.8)]
+SX, SY = 1.75, 1.6          # FTB grid units per layout unit
+TAG_ADV = {}                # "#ns:tag" -> advancement path (for "have any item of a tag" tasks)
+
+
+# ------------------------------------------------------------------ SNBT (the FTB Quests file format)
+class D(float):
+    """A double, written as 1.5d."""
+
+
+class L(int):
+    """A long, written as 5L."""
+
+
+class B(int):
+    """A byte, written as 1b."""
+
+
+def snbt(v, ind=0):
+    pad = "\t" * ind
+    if isinstance(v, bool):
+        return "true" if v else "false"
+    if isinstance(v, D):
+        return f"{float(v)!r}d"
+    if isinstance(v, L):
+        return f"{int(v)}L"
+    if isinstance(v, B):
+        return f"{int(v)}b"
+    if isinstance(v, int):
+        return str(v)
+    if isinstance(v, str):
+        return '"' + v.replace("\\", "\\\\").replace('"', '\\"') + '"'
+    if isinstance(v, list):
+        if not v:
+            return "[ ]"
+        return "[\n" + "\n".join(pad + "\t" + snbt(x, ind + 1) for x in v) + "\n" + pad + "]"
+    if isinstance(v, dict):
+        if not v:
+            return "{ }"
+        return "{\n" + "\n".join(f"{pad}\t{k}: {snbt(x, ind + 1)}" for k, x in sorted(v.items())) + "\n" + pad + "}"
+    raise TypeError(v)
+
+
+def fid(key):
+    """Stable 16-hex-digit FTB object id from a name."""
+    import hashlib
+    h = hashlib.sha1(("vividlands:" + key).encode()).hexdigest()[:16].upper()
+    return ("1" + h[1:]) if h[0] == "0" else h
+
+
+def stack(item, count=1):
+    return {"id": item, "Count": B(count)}
+
+
+# ------------------------------------------------------------------ Heracles-style task/reward dicts -> FTB
+def ftb_task(key, t):
+    ty = t["type"][len(H):]
+    out = {"id": fid(key)}
+    if t.get("title"):
+        out["title"] = t["title"]
+    if ty == "item":
+        if t["item"].startswith("#"):
+            tag = t["item"][1:]
+            path = "has/" + tag.replace(":", "_").replace("/", "_")
+            TAG_ADV[tag] = path
+            out.update(type="advancement", advancement=f"{NS}:quest/{path}", criterion="")
+        else:
+            out.update(type="item", item=stack(t["item"]))
+            if t.get("amount", 1) > 1:
+                out["count"] = L(t["amount"])
+            if t.get("collection") == "MANUAL":
+                out["consume_items"] = True
+    elif ty == "kill_entity":
+        out.update(type="kill", entity=t["entity"]["type"], value=L(t["amount"]))
+    elif ty == "biome":
+        out.update(type="biome", biome=t["biomes"])
+    elif ty == "structure":
+        out.update(type="structure", structure=t["structures"])
+    elif ty == "advancement":
+        out.update(type="advancement", advancement=t["advancements"][0], criterion="")
+    elif ty == "stat":
+        out.update(type="stat", stat=t["stat"], value=t["target"])
+    elif ty == "check":
+        out.update(type="checkmark")
+    else:
+        raise ValueError(ty)
+    return out
+
+
+POUCH_ICON = {"common": "minecraft:chest", "uncommon": "minecraft:chest", "rare": "minecraft:barrel",
+              "epic": "minecraft:ender_chest", "legendary": "minecraft:ender_chest"}
+
+
+def ftb_reward(key, r):
+    ty = r["type"][len(H):]
+    out = {"id": fid(key)}
+    if ty == "item":
+        out.update(type="item", item=stack(r["item"]["id"]))
+        if r["item"]["count"] > 1:
+            out["count"] = r["item"]["count"]
+    elif ty == "loottable":
+        tier = r["loot_table"].split("/")[-1]
+        out.update(type="command", command=f"/loot give @s loot {r['loot_table']}", elevate_perms=True, silent=True,
+                   title=f"Rune Pouch ({tier.title()})", icon=stack(POUCH_ICON[tier]))
+    elif ty == "command":
+        n = r["command"].split()[-1]
+        out.update(type="command", command="/" + r["command"], elevate_perms=True, silent=True,
+                   title=f"{n} class XP", icon=stack("minecraft:experience_bottle"))
+    else:
+        raise ValueError(ty)
+    return out
+
+
+def ftb_text(line):
+    """FTB reads & as a colour code and a leading { or [ as JSON; keep our text literal."""
+    line = line.replace("&", "and")
+    return (" " + line) if line[:1] and line[:1] in "{[" else line
+
+
+# ------------------------------------------------------------------ section labels: little pixel-font images on the map
+FONT = {  # 5x7, rows top to bottom, '#' = ink
+    "A": ".###.#...##...#######...##...##...#", "B": "####.#...##...#####.#...##...#####.", "C": ".###.#...##....#....#....#...#.###.",
+    "D": "####.#...##...##...##...##...#####.", "E": "######....#....####.#....#....#####", "F": "######....#....####.#....#....#....",
+    "G": ".###.#...##....#.####...##...#.####", "H": "#...##...##...#######...##...##...#", "I": ".###...#....#....#....#....#...###.",
+    "J": "..###...#....#....#....#.#..#..##..", "K": "#...##..#.#.#..##...#.#..#..#.#...#", "L": "#....#....#....#....#....#....#####",
+    "M": "#...###.###.#.##.#.##...##...##...#", "N": "#...###..##.#.##..###...##...##...#", "O": ".###.#...##...##...##...##...#.###.",
+    "P": "####.#...##...#####.#....#....#....", "Q": ".###.#...##...##...##.#.##..#..##.#", "R": "####.#...##...#####.#.#..#..#.#...#",
+    "S": ".#####....#.....###.....#....#####.", "T": "#####..#....#....#....#....#....#..", "U": "#...##...##...##...##...##...#.###.",
+    "V": "#...##...##...##...##...#.#.#...#..", "W": "#...##...##...##.#.##.#.##.#.#.#.#.", "X": "#...##...#.#.#...#...#.#.#...##...#",
+    "Y": "#...##...#.#.#...#....#....#....#..", "Z": "#####....#...#...#...#...#....#####",
+    "0": ".###.#...##..###.#.###..##...#.###.", "1": "..#...##....#....#....#....#...###.", "2": ".###.#...#....#...#...#...#...#####",
+    "3": ".###.#...#....#..##.....##...#.###.", "4": "...#...##..#.#.#..#.#####...#....#.", "5": "######....####.....#....##...#.###.",
+    "6": "..##..#...#....####.#...##...#.###.", "7": "#####....#...#...#...#....#....#...", "8": ".###.#...##...#.###.#...##...#.###.",
+    "9": ".###.#...##...#.####....#...#..##..", " ": "." * 35, ":": "......##...##........##...##.......",
+    "'": "..#....#...#.......................", "·": ".................#.................", ".": "..............................##...",
+    "-": "................###................", ",": "...........................##...#..", "&": ".##..#..#.#.#...#...#.#.##..#..##.#",
+    "(": "...#...#...#....#....#.....#.....#.", ")": ".#.....#.....#....#....#...#...#...", "/": "....#...#...#...#...#...#....#.....",
+}
+LABEL_DIR = ROOT / "ragnarok/src/main/resources/assets/vividlands_ragnarok/textures/gui/quest_labels"
+
+
+def label_image(name, text):
+    """Gold pixel text with a fading rule after it; returns (texture id, width/height ratio)."""
+    from PIL import Image
+    text = text.upper()
+    w = sum(6 for _ in text) + 3 + 60
+    img = Image.new("RGBA", (w + 2, 11), (0, 0, 0, 0))
+    gold, shade = (224, 182, 90, 255), (12, 17, 22, 200)
+    x = 1
+    for c in text:
+        g = (FONT.get(c) or FONT[" "]).ljust(35, ".")
+        for i, ch in enumerate(g[:35]):
+            if ch == "#":
+                px, py = x + i % 5, 2 + i // 5
+                img.putpixel((px + 1, py + 1), shade)
+                img.putpixel((px, py), gold)
+        x += 6
+    x += 3
+    for k in range(60):  # the rule fades out
+        a = int(200 * (1 - k / 60))
+        img.putpixel((x + k, 5), (168, 121, 58, a))
+    LABEL_DIR.mkdir(parents=True, exist_ok=True)
+    img.save(LABEL_DIR / f"{name}.png")
+    return f"{NS}:textures/gui/quest_labels/{name}.png", img.width / img.height
 
 
 def build():
     if OUT.exists():
         shutil.rmtree(OUT)
-    (OUT / "quests").mkdir(parents=True)
-    groups, total = [], 0
+    if LABEL_DIR.exists():
+        shutil.rmtree(LABEL_DIR)
+    (OUT / "chapters").mkdir(parents=True)
+    group_ids = {"main": fid("group/main"), "side": fid("group/side")}
+    (OUT / "chapter_groups.snbt").write_text(snbt({"chapter_groups": [
+        {"id": group_ids["main"], "title": "Main Quest", "icon": stack("minecraft:writable_book")},
+        {"id": group_ids["side"], "title": "Side Lines", "icon": stack("minecraft:map")}]}) + "\n")
+    (OUT / "data.snbt").write_text(snbt({
+        "version": 13, "title": "Vivid Lands: Ragnarok", "icon": stack("minecraft:writable_book"),
+        "default_reward_team": False, "default_consume_items": False, "default_autoclaim_rewards": "disabled",
+        "default_quest_shape": "square", "default_quest_disable_jei": False, "emergency_items_cooldown": 300,
+        "drop_loot_crates": False, "disable_gui": False, "grid_scale": D(0.5), "pause_game": False, "lock_message": "",
+        "progression_mode": "linear", "detection_delay": 20, "show_lock_icons": True, "drop_book_on_death": False}) + "\n")
+    total, order = 0, 0
     for group, chapters in (("main", MAIN), ("side", SIDE)):
         for ch in chapters:
             gname = GROUP.get(ch["id"], ch["name"])
-            groups.append(gname)
-            folder = OUT / "quests" / re.sub(r"[^a-z0-9]+", "_", gname.lower()).strip("_")
-            folder.mkdir()
+            fname = re.sub(r"[^a-z0-9]+", "_", gname.lower()).strip("_")
+            quests, images = [], []
+            labels = ACTS if ch.get("acts") else (ch.get("labels") or [])
+            for k, (text, ly) in enumerate(labels):
+                tex, ratio = label_image(f"{ch['id']}_{k}", text)
+                h = 0.42
+                images.append({"x": D(round(-0.6 + h * ratio / 2, 3)), "y": D(round(ly * SY + 0.1, 3)), "width": D(round(h * ratio, 3)),
+                               "height": D(h), "rotation": D(0.0), "image": tex})
             for q in ch["quests"]:
                 q = dict(q)
                 if q["kind"] == "boss":
                     b = BOSS[q["id"]]
                     q.update(title=b[0].split(",")[0], subtitle=b[0].split(", ", 1)[1] if ", " in b[0] else "",
                              tasks=[], rewards=[], icon="item:" + b[5])
-                tasks, main_item = {}, None
+                tasks, main_item = [], None
                 if q["kind"] == "boss":
-                    tasks["kill"] = {"type": H + "kill_entity", "title": f"Defeat the {q['title']}",
-                                     "entity": {"type": f"{NS}:{q['id']}"}, "amount": 1}
+                    tasks.append(ftb_task(f"{q['id']}/kill", {"type": H + "kill_entity", "title": f"Defeat the {q['title']}",
+                                                             "entity": {"type": f"{NS}:{q['id']}"}, "amount": 1}))
                 for i, t in enumerate(q["tasks"]):
                     item, ts = task_for(t, ch["id"], q, i)
                     main_item = main_item or item
                     for k, td in enumerate(ts):
-                        tasks[f"t{i}_{k}" if len(ts) > 1 else f"t{i}"] = td
+                        tasks.append(ftb_task(f"{q['id']}/t{i}_{k}", td))
                 rewards, xp = rewards_for(q)
                 ic = q["icon"]
-                if ic.startswith("item:"):
-                    item_icon = f"{NS}:{ic[5:].split('/')[-1]}"
-                else:
-                    item_icon = main_item or FALLBACK_ICON.get(ch["id"], "minecraft:book")
-                bg = {"boss": "circles", "boss2": "circles", "gift": "diamonds"}.get(q["kind"], "default")
+                item_icon = f"{NS}:{ic[5:].split('/')[-1]}" if ic.startswith("item:") else (main_item or FALLBACK_ICON.get(ch["id"], "minecraft:book"))
                 y = q["y"] + (0.6 if ch.get("acts") else 0)
                 if ch.get("acts"):
                     y += 0.4 * int((q["y"] + 0.1) // 2.2)
                 deps = list(q["deps"]) + CHAIN.get(q["id"], [])
-                data = {
-                    "display": {"icon": icon(item_icon), "icon_background": f"heracles:textures/gui/quest_backgrounds/{bg}.png",
-                                "title": q["title"], "subtitle": q.get("subtitle", ""), "description": description(q),
-                                "groups": {gname: {"position": [round(q["x"] * 48), round(y * 44)]}}},
-                    "settings": {"hidden": "LOCKED", "unlockNotification": q["kind"] in ("boss", "gift"),
-                                 "showDependencyArrow": q.get("edge", "solid") != "none"},
-                    "dependencies": deps, "tasks": tasks, "rewards": rewards}
-                (folder / f"{q['id']}.json").write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
+                kind = q["kind"]
+                quest = {"id": fid("quest/" + q["id"]), "title": ftb_text(q["title"]), "icon": stack(item_icon),
+                         "x": D(round(q["x"] * SX, 3)), "y": D(round(y * SY, 3)),
+                         "description": [ftb_text(l) for l in description(q)], "tags": [kind, "q_" + q["id"]],
+                         "tasks": tasks, "rewards": [ftb_reward(f"{q['id']}/{rk}", r) for rk, r in rewards.items()]}
+                if q.get("subtitle"):
+                    quest["subtitle"] = ftb_text(q["subtitle"])
+                if deps:
+                    quest["dependencies"] = [fid("quest/" + d) for d in deps]
+                if kind in ("boss", "boss2"):
+                    quest.update(shape="circle", size=D(1.5))
+                elif kind == "gift":
+                    quest.update(shape="diamond", size=D(1.25))
+                if q.get("edge", "solid") == "none":
+                    quest["hide_dependency_lines"] = True
+                quests.append(quest)
                 total += 1
-                STATS[q["kind"]] += 1
-    (OUT / "groups.txt").write_text("\n".join(groups) + "\n")
+                STATS[kind] += 1
+            chapter = {"id": fid("chapter/" + ch["id"]), "group": group_ids[group], "order_index": order, "filename": fname,
+                       "title": gname, "icon": stack(FALLBACK_ICON.get(ch["id"], "minecraft:book")),
+                       "default_quest_shape": "", "default_hide_dependency_lines": False, "quest_links": [], "quests": quests}
+            sub = ch["sub"] if gname != ch["sub"] and not gname.endswith(ch["sub"]) else ""
+            if sub:
+                chapter["subtitle"] = [ftb_text(sub)]
+            if images:
+                chapter["images"] = images
+            (OUT / "chapters" / f"{fname}.snbt").write_text(snbt(chapter) + "\n")
+            order += 1
     return total
+
+
 
 
 def advancements():
@@ -298,7 +495,12 @@ def advancements():
         f = ADV / f"{p}.json"
         f.parent.mkdir(parents=True, exist_ok=True)
         f.write_text(json.dumps({"criteria": {"done": {"trigger": "minecraft:impossible"}}}) + "\n")
-    return len(paths)
+    for tag, p in TAG_ADV.items():  # "have any item of this tag" (FTB item tasks can't take a tag on their own)
+        f = ADV / f"{p}.json"
+        f.parent.mkdir(parents=True, exist_ok=True)
+        f.write_text(json.dumps({"criteria": {"has": {"trigger": "minecraft:inventory_changed",
+                                                      "conditions": {"items": [{"tag": tag}]}}}}) + "\n")
+    return len(paths) + len(TAG_ADV)
 
 
 if __name__ == "__main__":

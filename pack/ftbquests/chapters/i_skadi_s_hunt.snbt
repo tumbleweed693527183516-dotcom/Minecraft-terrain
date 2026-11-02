@@ -1,0 +1,1704 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "i_skadi_s_hunt"
+	group: "5367FBBD604DCF21"
+	icon: {
+		Count: 1b
+		id: "minecraft:bow"
+	}
+	id: "74D52E6299FF29F3"
+	images: [
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/chapter1_0.png"
+			rotation: 0.0d
+			width: 7.98d
+			x: 3.39d
+			y: 0.1d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/chapter1_1.png"
+			rotation: 0.0d
+			width: 8.209d
+			x: 3.505d
+			y: 4.26d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/chapter1_2.png"
+			rotation: 0.0d
+			width: 7.751d
+			x: 3.275d
+			y: 8.42d
+		}
+		{
+			height: 0.42d
+			image: "vividlands_ragnarok:textures/gui/quest_labels/chapter1_3.png"
+			rotation: 0.0d
+			width: 6.835d
+			x: 2.817d
+			y: 12.58d
+		}
+	]
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"DFA5A0B157A45401"
+			]
+			description: [
+				"Skadi: \"Only a fool hunts a bear with bare hands. Come prepared.\""
+				""
+				""
+				"Also: Act I trials open"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:round_shield"
+			}
+			id: "8F87289C0EAEAC34"
+			rewards: [
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "D3D3A2C563216154"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_a1"
+			]
+			tasks: [
+				{
+					id: "A1873C89CB8FD9E6"
+					item: {
+						Count: 1b
+						id: "minecraft:shield"
+					}
+					title: "Craft a shield"
+					type: "item"
+				}
+				{
+					count: 16L
+					id: "B1C96B6B1D8E8A14"
+					item: {
+						Count: 1b
+						id: "minecraft:arrow"
+					}
+					title: "16 arrows"
+					type: "item"
+				}
+				{
+					id: "BDBF7468834D2773"
+					title: "2 potions of healing"
+					type: "checkmark"
+				}
+			]
+			title: "A Hunter's Kit"
+			x: 0.0d
+			y: 1.76d
+		}
+		{
+			dependencies: [
+				"8F87289C0EAEAC34"
+			]
+			description: [
+				"Skadi: \"She guards her den in the pines. Take her pelt and wear it.\""
+				""
+				"Where: pine and boreal forests"
+				"Health: 300"
+				"Spawns after: nothing"
+				"Moves: Maul, roar, ground slam, combo"
+				"Phase 2: Faster combos"
+				""
+				"Tip: She telegraphs the slam with red rings. Step out, then punish."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:bear_pelt"
+			}
+			id: "15A17C80DFD55E1D"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "C98B24CD8A4A1C4A"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "Den-Mother of the Pines"
+			tags: [
+				"boss"
+				"q_cave_bear"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:cave_bear"
+					id: "AB75A3FDDC322FBB"
+					title: "Defeat the Cave Bear"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Cave Bear"
+			x: 1.75d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"8F87289C0EAEAC34"
+			]
+			description: [
+				"Skadi: \"Wolves hunt in packs. So does their alpha. Kill the pack first.\""
+				""
+				"Where: boreal snowwoods, taiga"
+				"Health: 340"
+				"Spawns after: nothing"
+				"Moves: Howl (weakness), pounce, combo, summons wolves"
+				"Phase 2: Calls more of the pack"
+				""
+				"Tip: Kill the pack first or they will flank you."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:wolf_pelt"
+			}
+			id: "5F64154A41E8D31A"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "F30E68B59596950E"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "Leader of the Winter Pack"
+			tags: [
+				"boss"
+				"q_dire_wolf"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:dire_wolf"
+					id: "BB452FCD3C695E1B"
+					title: "Defeat the Dire Wolf Alpha"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Dire Wolf Alpha"
+			x: 3.5d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"8F87289C0EAEAC34"
+			]
+			description: [
+				"Skadi: \"The lord of the moors carries a crown of antlers wider than a cart.\""
+				""
+				"Where: highland moors, alpine meadows"
+				"Health: 360"
+				"Spawns after: nothing"
+				"Moves: Charge, antler slam, combo, calls its herd"
+				"Phase 2: Longer charges"
+				""
+				"Tip: Sidestep the charge; it stuns itself on trees and walls."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:great_antlers"
+			}
+			id: "E238DACA34C4ABE0"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "30DA2386A1D8EF73"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "Lord of the Moors"
+			tags: [
+				"boss"
+				"q_irish_elk"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:irish_elk"
+					id: "EF980A7FD39DB138"
+					title: "Defeat the Great Irish Elk"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Great Irish Elk"
+			x: 5.25d
+			y: 0.96d
+		}
+		{
+			dependencies: [
+				"8F87289C0EAEAC34"
+			]
+			description: [
+				"Mimir: \"A bird that never flew, because it never needed to run away.\""
+				""
+				"Where: savanna, steppe"
+				"Health: 380"
+				"Spawns after: nothing"
+				"Moves: Three-hit beak combo, leaping kick (bleed), charge"
+				"Phase 2: Shrieks to stun"
+				""
+				"Tip: It is fragile. Block the combo, then strike."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:terror_claw"
+			}
+			id: "FA98979714C42BBD"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "4C3612F3213DB196"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "the Running Death"
+			tags: [
+				"boss"
+				"q_terror_bird"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:terror_bird"
+					id: "5648F66CFE03DAF3"
+					title: "Defeat the Terror Bird"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Terror Bird"
+			x: 2.625d
+			y: 2.56d
+		}
+		{
+			dependencies: [
+				"8F87289C0EAEAC34"
+			]
+			description: [
+				"Skadi: \"Where one bison runs, a thousand follow.\""
+				""
+				"Where: steppe, prairie"
+				"Health: 400"
+				"Spawns after: nothing"
+				"Moves: Charge, fling, slam"
+				"Phase 2: Its herd stampedes with it"
+				""
+				"Tip: Never stand between it and open ground."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:bison_horn"
+			}
+			id: "A3F8DC08588C22F1"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "FC47E0B512053609"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "the Stampede"
+			tags: [
+				"boss"
+				"q_steppe_bison"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:steppe_bison"
+					id: "F9096AD9037F95D7"
+					title: "Defeat the Steppe Bison"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Steppe Bison"
+			x: 4.375d
+			y: 2.56d
+		}
+		{
+			dependencies: [
+				"15A17C80DFD55E1D"
+				"5F64154A41E8D31A"
+				"E238DACA34C4ABE0"
+				"FA98979714C42BBD"
+				"A3F8DC08588C22F1"
+			]
+			description: [
+				"Skadi: \"Five trophies. You are still alive. That is more than most.\""
+				""
+				""
+				"Also: Act II trials can spawn; Ancient armor tiers 6 to 15; Berserker armor recipe"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:berserker_helmet"
+			}
+			id: "A94FE38A54720291"
+			rewards: [
+				{
+					command: "/ragnarok class xp 300"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "499FF4C78BA5C15B"
+					silent: true
+					title: "300 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_g1"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "1BD8FAB6A08C4365"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:bear_pelt"
+					}
+					title: "Bear Pelt"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "D5DF772BBFD9C104"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:wolf_pelt"
+					}
+					title: "Wolf Pelt"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "EAEC42DA07E8FBFF"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:great_antlers"
+					}
+					title: "Great Antlers"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "6BBF66A1D60F6684"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:terror_claw"
+					}
+					title: "Terror Claw"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "C7C6BAB4899CAE10"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:bison_horn"
+					}
+					title: "Bison Horn"
+					type: "item"
+				}
+			]
+			title: "Skadi's First Gift"
+			x: 7.0d
+			y: 1.76d
+		}
+		{
+			dependencies: [
+				"A94FE38A54720291"
+			]
+			description: [
+				"Skadi: \"Rivers, jungles and the frozen steppe. Dress for all of them.\""
+				""
+				""
+				"Also: Act II trials open"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:bear_pelt"
+			}
+			id: "1962E20D4E7B4ABB"
+			rewards: [
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "7072CFB297607EB9"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_a2"
+			]
+			tasks: [
+				{
+					id: "F238DC2511A076A0"
+					title: "Wear Bear Pelt armor"
+					type: "checkmark"
+				}
+				{
+					id: "83E8F815D7A3BC3A"
+					item: {
+						Count: 1b
+						id: "minecraft:milk_bucket"
+					}
+					title: "Bring milk for poison"
+					type: "item"
+				}
+			]
+			title: "Warm Hide"
+			x: 0.0d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"1962E20D4E7B4ABB"
+			]
+			description: [
+				"Mimir: \"Men laugh at the river horse. Men who meet it do not.\""
+				""
+				"Where: oases, tropical rivers"
+				"Health: 420"
+				"Spawns after: all 5 Act I trials"
+				"Moves: Maul, spin"
+				"Phase 2: Spins more often"
+				""
+				"Tip: Fight it on land. In water it is far faster than you."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:hippo_hide"
+			}
+			id: "8C9A3E9AB78B394C"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "AA2E82C605D8744C"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "Terror of the Oasis"
+			tags: [
+				"boss"
+				"q_hippo"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:hippo"
+					id: "1C674167D5A4CAA2"
+					title: "Defeat the Hippopotamus"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Hippopotamus"
+			x: 1.75d
+			y: 5.12d
+		}
+		{
+			dependencies: [
+				"1962E20D4E7B4ABB"
+			]
+			description: [
+				"Mimir: \"One bite. Then it simply follows you until you fall.\""
+				""
+				"Where: rainforest, tropical beach"
+				"Health: 460"
+				"Spawns after: all 5 Act I trials"
+				"Moves: Venom spray, stalking, combo, poison bite"
+				"Phase 2: Poison pounce"
+				""
+				"Tip: Bring milk or a cure for the poison."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:komodo_venom"
+			}
+			id: "514314DEF0AA6DDC"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "862616AF1AD43DBD"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "the Poison Jaw"
+			tags: [
+				"boss"
+				"q_komodo"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:komodo"
+					id: "433E20EC93536A07"
+					title: "Defeat the Komodo Dragon"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Komodo Dragon"
+			x: 3.5d
+			y: 5.12d
+		}
+		{
+			dependencies: [
+				"1962E20D4E7B4ABB"
+			]
+			description: [
+				"Mimir: \"It waited in the fens before the first king was born.\""
+				""
+				"Where: fens, swamps"
+				"Health: 480"
+				"Spawns after: all 5 Act I trials"
+				"Moves: Death roll, grab, tail slam"
+				"Phase 2: Rolls longer"
+				""
+				"Tip: If it grabs you, keep hitting: damage breaks the hold."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:croc_scales"
+			}
+			id: "13A5391887240EB2"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "86985F7DCEC41A4F"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "the River's Jaws"
+			tags: [
+				"boss"
+				"q_crocodile"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:crocodile"
+					id: "53D76FF140A7E537"
+					title: "Defeat the Giant Crocodile"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Giant Crocodile"
+			x: 5.25d
+			y: 5.12d
+		}
+		{
+			dependencies: [
+				"1962E20D4E7B4ABB"
+			]
+			description: [
+				"Skadi: \"The king of the frozen steppe does not hunt alone for long.\""
+				""
+				"Where: tundra, steppe"
+				"Health: 500"
+				"Spawns after: all 5 Act I trials"
+				"Moves: Roar (stun), bleeding leap, combo"
+				"Phase 2: Its lionesses join in"
+				""
+				"Tip: The roar stuns: be out of range when its mane bristles."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:lion_mane"
+			}
+			id: "240C63076DA97FC2"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "7B8E563EBB97B95E"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "King of the Frozen Steppe"
+			tags: [
+				"boss"
+				"q_cave_lion"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:cave_lion"
+					id: "FB49EE612EE5F1FC"
+					title: "Defeat the Cave Lion"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Cave Lion"
+			x: 2.625d
+			y: 6.72d
+		}
+		{
+			dependencies: [
+				"1962E20D4E7B4ABB"
+			]
+			description: [
+				"Skadi: \"You will not see it. You will only see where it was.\""
+				""
+				"Where: steppe, savanna"
+				"Health: 520"
+				"Spawns after: all 5 Act I trials"
+				"Moves: Stalks unseen, pounce, maul, combo"
+				"Phase 2: Attacks faster"
+				""
+				"Tip: Keep your back to a wall so it cannot ambush you."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:saber_fang"
+			}
+			id: "E5268762080A3327"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1F4BB692CA761D51"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "the Unseen Hunter"
+			tags: [
+				"boss"
+				"q_saber_tooth"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:saber_tooth"
+					id: "69ADAEED3169CB05"
+					title: "Defeat the Saber-tooth"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Saber-tooth"
+			x: 4.375d
+			y: 6.72d
+		}
+		{
+			dependencies: [
+				"8C9A3E9AB78B394C"
+				"514314DEF0AA6DDC"
+				"13A5391887240EB2"
+				"240C63076DA97FC2"
+				"E5268762080A3327"
+			]
+			description: [
+				"Skadi: \"Ten. You hunt like one of mine now.\""
+				""
+				""
+				"Also: Act III trials can spawn; Ancient armor tiers 16 to 25"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:ulfhednar_helmet"
+			}
+			id: "5A129A6B5885BAA6"
+			rewards: [
+				{
+					id: "D70DB1607236FE72"
+					item: {
+						Count: 1b
+						id: "waystones:waystone"
+					}
+					type: "item"
+				}
+				{
+					command: "/ragnarok class xp 300"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "38B40D6ACDE5769E"
+					silent: true
+					title: "300 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_g2"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "41E017B286931860"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:hippo_hide"
+					}
+					title: "Hippo Hide"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "8143CD0AAE352987"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:komodo_venom"
+					}
+					title: "Komodo Venom"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "157939CFB5E40946"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:croc_scales"
+					}
+					title: "Croc Scales"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "2EB0F3BCE59E4F3F"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:lion_mane"
+					}
+					title: "Lion Mane"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "A3E7D8488079EA0D"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:saber_fang"
+					}
+					title: "Saber Fang"
+					type: "item"
+				}
+			]
+			title: "Skadi's Second Gift"
+			x: 7.0d
+			y: 5.92d
+		}
+		{
+			dependencies: [
+				"5A129A6B5885BAA6"
+			]
+			description: [
+				"Mimir: \"The next beasts live on peaks, in rivers and in temples. A diamond edge and a good bow.\""
+				""
+				""
+				"Also: Act III trials open"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:khopesh"
+			}
+			id: "562635BA2E9A236B"
+			rewards: [
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "501D63635B0D2AE3"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_a3"
+			]
+			tasks: [
+				{
+					id: "FC6C9E6DB8BE12F2"
+					title: "A diamond weapon"
+					type: "checkmark"
+				}
+				{
+					id: "9C2CF35166F0F7A8"
+					title: "Any special bow (Ullr's Bow line)"
+					type: "checkmark"
+				}
+				{
+					id: "BEA966DCEB651A22"
+					structure: "ancientstructures:mayan_temple"
+					title: "Find a Mayan temple (Ancient Structures)"
+					type: "structure"
+				}
+			]
+			title: "Bow and Mountain"
+			x: 0.0d
+			y: 10.08d
+		}
+		{
+			dependencies: [
+				"562635BA2E9A236B"
+			]
+			description: [
+				"Skadi: \"It took my hunters from the peaks, one by one. Bring it down.\""
+				""
+				"Where: alpine peaks, crags"
+				"Health: 520"
+				"Spawns after: all 5 Act II trials"
+				"Moves: Swoop, carry and drop, talon maul"
+				"Phase 2: Drops rocks from above"
+				""
+				"Tip: Bring a bow and slow falling. It lifts you up."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:eagle_feather"
+			}
+			id: "AE142E389209A829"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "4A1B72C685597D32"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "Shadow of the Peaks"
+			tags: [
+				"boss"
+				"q_haast_eagle"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:haast_eagle"
+					id: "559A485677B231C4"
+					title: "Defeat the Haast's Eagle"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Haast's Eagle"
+			x: 1.75d
+			y: 9.28d
+		}
+		{
+			dependencies: [
+				"562635BA2E9A236B"
+			]
+			description: [
+				"Mimir: \"It does not bite to kill. It hugs.\""
+				""
+				"Where: tropical rivers, fens"
+				"Health: 540"
+				"Spawns after: all 5 Act II trials"
+				"Moves: Coil squeeze, strike combo, tail slam"
+				"Phase 2: Strikes from the river"
+				""
+				"Tip: Fight away from water if you can."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:anaconda_skin"
+			}
+			id: "FCFDF1BF7F355B7E"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "BEDA3443FFD799D1"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "Coils of the River"
+			tags: [
+				"boss"
+				"q_anaconda"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:anaconda"
+					id: "C3076C003B6EEB66"
+					title: "Defeat the Giant Anaconda"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Giant Anaconda"
+			x: 3.5d
+			y: 9.28d
+		}
+		{
+			dependencies: [
+				"562635BA2E9A236B"
+			]
+			description: [
+				"Mimir: \"A king in a dead king's temple. He will not share it.\""
+				""
+				"Where: Mayan temples (Ancient Structures)"
+				"Health: 550"
+				"Spawns after: all 5 Act II trials"
+				"Moves: Chest-beat roar, slam, boulder throw, rock rain, combo"
+				"Phase 2: Rocks fall from the temple roof"
+				""
+				"Tip: Watch for the boulder throw at range."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:silverback_fist"
+			}
+			id: "36C0E164D6104E4A"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1D9D19BE8610BAC3"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "King of the Temple"
+			tags: [
+				"boss"
+				"q_silverback"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:silverback"
+					id: "3E942F2A6AFF1327"
+					title: "Defeat the Silverback"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Silverback"
+			x: 5.25d
+			y: 9.28d
+		}
+		{
+			dependencies: [
+				"562635BA2E9A236B"
+			]
+			description: [
+				"Mimir: \"A fortress that walks, and when angered, rolls.\""
+				""
+				"Where: canyons, badlands"
+				"Health: 560"
+				"Spawns after: all 5 Act II trials"
+				"Moves: Spinning shell, tail club slam, fling"
+				"Phase 2: Longer spins"
+				""
+				"Tip: After a spin it is dizzy: that is your window."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:glyptodon_plate"
+			}
+			id: "386464639B5EAB69"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "53280914C2FD70D9"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "the Living Fortress"
+			tags: [
+				"boss"
+				"q_glyptodon"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:glyptodon"
+					id: "6527C52BDFF050B8"
+					title: "Defeat the Glyptodon"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Glyptodon"
+			x: 2.625d
+			y: 10.88d
+		}
+		{
+			dependencies: [
+				"562635BA2E9A236B"
+			]
+			description: [
+				"Mimir: \"Tusks like spears and a temper like a winter storm.\""
+				""
+				"Where: snowy shores, frozen ocean"
+				"Health: 620"
+				"Spawns after: all 5 Act II trials"
+				"Moves: Tusk stabs, belly flop (slowness), leap"
+				"Phase 2: Icicles fall"
+				""
+				"Tip: Keep it on the ice, away from the water."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:walrus_tusk"
+			}
+			id: "1E18BCB52A892F41"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "A73C923BB1B4067A"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "Tyrant of the Ice Shore"
+			tags: [
+				"boss"
+				"q_walrus"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:walrus"
+					id: "78520F846E973B10"
+					title: "Defeat the Walrus Bull"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Walrus Bull"
+			x: 4.375d
+			y: 10.88d
+		}
+		{
+			dependencies: [
+				"AE142E389209A829"
+				"FCFDF1BF7F355B7E"
+				"36C0E164D6104E4A"
+				"386464639B5EAB69"
+				"1E18BCB52A892F41"
+			]
+			description: [
+				"Skadi: \"Fifteen. Even the gods have started to watch you hunt.\""
+				""
+				""
+				"Also: Act IV trials can spawn; Ancient armor tiers 26 to 35"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:samurai_helmet"
+			}
+			id: "11F3E3BCBA6894E3"
+			rewards: [
+				{
+					command: "/ragnarok class xp 300"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "3CAF8441C8887058"
+					silent: true
+					title: "300 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_g3"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "F97A0FB69F093943"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:eagle_feather"
+					}
+					title: "Eagle Feather"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "50AADEE32AA74A56"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:anaconda_skin"
+					}
+					title: "Anaconda Skin"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "58BF0EF298902211"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:silverback_fist"
+					}
+					title: "Silverback Fist"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "DE14BF2907D2EBEA"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:glyptodon_plate"
+					}
+					title: "Glyptodon Plate"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "F0CD882F52A6B805"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:walrus_tusk"
+					}
+					title: "Walrus Tusk"
+					type: "item"
+				}
+			]
+			title: "Skadi's Third Gift"
+			x: 7.0d
+			y: 10.08d
+		}
+		{
+			dependencies: [
+				"11F3E3BCBA6894E3"
+			]
+			description: [
+				"Mimir: \"The sea, the tundra and the glacier. Feet and furs will not be enough.\""
+				""
+				""
+				"Also: Act IV trials open"
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:bow"
+			}
+			id: "BBF4E6149CD8ED00"
+			rewards: [
+				{
+					command: "/ragnarok class xp 50"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "7B8E7F72069B9C13"
+					silent: true
+					title: "50 class XP"
+					type: "command"
+				}
+			]
+			tags: [
+				"quest"
+				"q_a4"
+			]
+			tasks: [
+				{
+					advancement: "vividlands_ragnarok:quest/has/smallships_ships"
+					criterion: ""
+					id: "2761F0D9DB93EF48"
+					title: "Build a Small Ships boat (Njord's Voyages line)"
+					type: "advancement"
+				}
+				{
+					id: "BC07EF06F2C23754"
+					title: "Frost protection"
+					type: "checkmark"
+				}
+				{
+					id: "AEF22F936A136925"
+					title: "32 cooked food"
+					type: "checkmark"
+				}
+			]
+			title: "A Ship and the Long Cold"
+			x: 0.0d
+			y: 14.24d
+		}
+		{
+			dependencies: [
+				"BBF4E6149CD8ED00"
+			]
+			description: [
+				"Skadi: \"Gentle, they call it. Until it stands up.\""
+				""
+				"Where: cloud forest, redwoods"
+				"Health: 640"
+				"Spawns after: all 5 Act III trials"
+				"Moves: Claw combo, bear hug, slam"
+				"Phase 2: Shakes rocks loose"
+				""
+				"Tip: Slow but huge reach. Dodge-roll through the combo."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:sloth_claw"
+			}
+			id: "BFA322FD8BD5C9F1"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "1E958A22874D606A"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "the Gentle Titan"
+			tags: [
+				"boss"
+				"q_ground_sloth"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:ground_sloth"
+					id: "F72A71B48D9E7EC1"
+					title: "Defeat the Giant Ground Sloth"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Giant Ground Sloth"
+			x: 1.75d
+			y: 13.44d
+		}
+		{
+			dependencies: [
+				"BBF4E6149CD8ED00"
+			]
+			description: [
+				"Mimir: \"Blood in the water. Do not let it be yours.\""
+				""
+				"Where: open ocean"
+				"Health: 650"
+				"Spawns after: all 5 Act III trials"
+				"Moves: Bite, leap from the water, combo"
+				"Phase 2: Leaps more"
+				""
+				"Tip: Fight from a ship. The sea blessing helps you swim."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:shark_tooth"
+			}
+			id: "E1F5F40C657E067C"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "C24A8B58841B54D1"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "Blood in the Water"
+			tags: [
+				"boss"
+				"q_bull_shark"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:bull_shark"
+					id: "1F8F24402846DF69"
+					title: "Defeat the Giant Bull Shark"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Giant Bull Shark"
+			x: 3.5d
+			y: 13.44d
+		}
+		{
+			dependencies: [
+				"BBF4E6149CD8ED00"
+			]
+			description: [
+				"Skadi: \"The tundra ram. Its horn has broken longships.\""
+				""
+				"Where: tundra"
+				"Health: 700"
+				"Spawns after: all 5 Act III trials"
+				"Moves: Charge, horn slam"
+				"Phase 2: Charges break blocks"
+				""
+				"Tip: Wear the Bear Pelt: the tundra cold is the real enemy."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:rhino_horn"
+			}
+			id: "24723E453D1E8156"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "9BE2D8D775357978"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "the Tundra Ram"
+			tags: [
+				"boss"
+				"q_woolly_rhino"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:woolly_rhino"
+					id: "CE08FDD0A637709E"
+					title: "Defeat the Woolly Rhinoceros"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Woolly Rhinoceros"
+			x: 1.75d
+			y: 15.04d
+		}
+		{
+			dependencies: [
+				"BBF4E6149CD8ED00"
+			]
+			description: [
+				"Skadi: \"Thunder of the savanna. The ground tells you it is coming.\""
+				""
+				"Where: golden savanna"
+				"Health: 850"
+				"Spawns after: all 5 Act III trials"
+				"Moves: Trumpet roar, charge, trunk fling, stomp, combo"
+				"Phase 2: Stomp quakes"
+				""
+				"Tip: Stay at its side, away from tusks and trunk."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:ivory"
+			}
+			id: "35D1FDAC9335F609"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "17B6C66267AD9A1A"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "Thunder of the Savanna"
+			tags: [
+				"boss"
+				"q_elephant"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:elephant"
+					id: "8791F74C8ED1796B"
+					title: "Defeat the Bull Elephant"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Bull Elephant"
+			x: 3.5d
+			y: 15.04d
+		}
+		{
+			dependencies: [
+				"BFA322FD8BD5C9F1"
+				"E1F5F40C657E067C"
+				"24723E453D1E8156"
+				"35D1FDAC9335F609"
+			]
+			description: [
+				"Skadi: \"Bring me its frozen heart, and I will tell the All-Father your name.\""
+				""
+				"Where: glaciers"
+				"Health: 1000"
+				"Spawns after: every other Chapter 1 trial"
+				"Moves: Tusk sweep, trumpet shockwave, charge, fling, stomp"
+				"Phase 2: Icicle rain, frost breath"
+				""
+				"Tip: Skadi's final test. Bring everything you have learned."
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:mammoth_tusk"
+			}
+			id: "A60416B234A39AF3"
+			rewards: [
+				{
+					command: "/ragnarok class xp 200"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "A8A04E9498626F14"
+					silent: true
+					title: "200 class XP"
+					type: "command"
+				}
+			]
+			shape: "circle"
+			size: 1.5d
+			subtitle: "Skadi's Last Trial"
+			tags: [
+				"boss"
+				"q_mammoth"
+			]
+			tasks: [
+				{
+					entity: "vividlands_ragnarok:mammoth"
+					id: "88922891EDCE3DA2"
+					title: "Defeat the Woolly Mammoth"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "Woolly Mammoth"
+			x: 5.25d
+			y: 14.24d
+		}
+		{
+			dependencies: [
+				"A60416B234A39AF3"
+			]
+			description: [
+				"Skadi: \"Twenty. You hunt like one of us. Go to Odin, and do not make me regret it.\""
+				""
+				""
+				"Also: The Bridge opens"
+			]
+			icon: {
+				Count: 1b
+				id: "vividlands_ragnarok:frozen_heart"
+			}
+			id: "BC110673386916E7"
+			rewards: [
+				{
+					command: "/ragnarok class xp 300"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "minecraft:experience_bottle"
+					}
+					id: "BE697B21C6CAFA56"
+					silent: true
+					title: "300 class XP"
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.25d
+			tags: [
+				"gift"
+				"q_g4"
+			]
+			tasks: [
+				{
+					consume_items: true
+					id: "517BA217157CC776"
+					item: {
+						Count: 1b
+						id: "vividlands_ragnarok:frozen_heart"
+					}
+					title: "Hand in the Frozen Heart"
+					type: "item"
+				}
+			]
+			title: "The Frozen Heart"
+			x: 7.0d
+			y: 14.24d
+		}
+	]
+	title: "I. Skadi's Hunt"
+}
