@@ -1,0 +1,20 @@
+{
+  "mappings": {
+    "dev/ftb/mods/ftblibrary/core/mixin/fabric/KeyMappingAccessor": {
+      "key": "field_1655:Lnet/minecraft/class_3675$class_306;"
+    },
+    "dev/ftb/mods/ftblibrary/core/mixin/fabric/PlayerMixin": {
+      "getDisplayName": "Lnet/minecraft/class_1657;method_5476()Lnet/minecraft/class_2561;"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "dev/ftb/mods/ftblibrary/core/mixin/fabric/KeyMappingAccessor": {
+        "key": "field_1655:Lnet/minecraft/class_3675$class_306;"
+      },
+      "dev/ftb/mods/ftblibrary/core/mixin/fabric/PlayerMixin": {
+        "getDisplayName": "Lnet/minecraft/class_1657;method_5476()Lnet/minecraft/class_2561;"
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "mappings": {
+    "dev/ftb/mods/ftblibrary/core/mixin/common/CompoundContainerMixin": {
+      "container1": "field_5769:Lnet/minecraft/class_1263;",
+      "container2": "field_5771:Lnet/minecraft/class_1263;"
+    },
+    "dev/ftb/mods/ftblibrary/core/mixin/common/DisplayInfoMixin": {
+      "icon": "field_1241:Lnet/minecraft/class_1799;"
+    },
+    "dev/ftb/mods/ftblibrary/core/mixin/common/ItemMixin": {
+      "craftingRemainingItem": "field_8008:Lnet/minecraft/class_1792;"
+    },
+    "dev/ftb/mods/ftblibrary/core/mixin/common/MultilineTextFieldAccess": {
+      "selectCursor": "field_39517:I"
+    },
+    "dev/ftb/mods/ftblibrary/core/mixin/common/ResourceLocationMixin": {
+      "isValidNamespace": "Lnet/minecraft/class_2960;method_20209(Ljava/lang/String;)Z",
+      "isValidPath": "Lnet/minecraft/class_2960;method_20208(Ljava/lang/String;)Z",
+      "validNamespaceChar": "Lnet/minecraft/class_2960;method_29185(C)Z",
+      "validPathChar": "Lnet/minecraft/class_2960;method_29184(C)Z"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "dev/ftb/mods/ftblibrary/core/mixin/common/CompoundContainerMixin": {
+        "container1": "field_5769:Lnet/minecraft/class_1263;",
+        "container2": "field_5771:Lnet/minecraft/class_1263;"
+      },
+      "dev/ftb/mods/ftblibrary/core/mixin/common/DisplayInfoMixin": {
+        "icon": "field_1241:Lnet/minecraft/class_1799;"
+      },
+      "dev/ftb/mods/ftblibrary/core/mixin/common/ItemMixin": {
+        "craftingRemainingItem": "field_8008:Lnet/minecraft/class_1792;"
+      },
+      "dev/ftb/mods/ftblibrary/core/mixin/common/MultilineTextFieldAccess": {
+        "selectCursor": "field_39517:I"
+      },
+      "dev/ftb/mods/ftblibrary/core/mixin/common/ResourceLocationMixin": {
+        "isValidNamespace": "Lnet/minecraft/class_2960;method_20209(Ljava/lang/String;)Z",
+        "isValidPath": "Lnet/minecraft/class_2960;method_20208(Ljava/lang/String;)Z",
+        "validNamespaceChar": "Lnet/minecraft/class_2960;method_29185(C)Z",
+        "validPathChar": "Lnet/minecraft/class_2960;method_29184(C)Z"
+      }
+    }
+  }
+}
