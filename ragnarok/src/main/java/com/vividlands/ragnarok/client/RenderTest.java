@@ -312,7 +312,14 @@ final class RenderTest {
             for (int i = 0; i < 8; i++) hex.append(String.format("%02X", h[i]));
             if (hex.charAt(0) == '0') hex.setCharAt(0, '1');
             long id = Long.parseUnsignedLong(hex.toString(), 16);
-            Class.forName("dev.ftb.mods.ftbquests.client.ClientQuestFile").getMethod("openBookToQuestObject", long.class).invoke(null, id);
+            // a fresh screen every time (openBookToQuestObject reuses a closed one and shows nothing)
+            Class<?> cqf = Class.forName("dev.ftb.mods.ftbquests.client.ClientQuestFile");
+            Object file = cqf.getField("INSTANCE").get(null);
+            Object obj = cqf.getMethod("get", long.class).invoke(file, id);
+            Object screen = cqf.getMethod("openGui").invoke(null);
+            for (var m : screen.getClass().getMethods()) {
+                if (m.getName().equals("open") && m.getParameterCount() == 2) { m.invoke(screen, obj, true); break; }
+            }
         } catch (Exception e) {
             Ragnarok.LOG.warn("render test: could not open the quest book", e);
         }
