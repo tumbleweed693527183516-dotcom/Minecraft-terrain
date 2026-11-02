@@ -332,7 +332,7 @@ public final class Bosses {
                 .ability(() -> new Leap(160, 14, 4, 16, 1.5, 0.6, false, null))
                 .ability(() -> new Shockwave(300, 20, 14, 0.5, 1.0))
                 .phase2(() -> new HazardRain(320, 3, 5, 22, 2.5, 8, 1.0, HazardRain.Kind.LIGHTNING))   // Odin's storm
-                .drop("vividlands_ragnarok:sleipnir_hair", 2).xp(1500).after("mammoth")
+                .drop("vividlands_ragnarok:sleipnir_hair", 4).xp(1500).after("mammoth")
                 .biomes("vividlands:endless_steppe", "vividlands:wildflower_prairie", "minecraft:plains");
 
         def2("garmr").on("vividlands_ragnarok:garmr")
@@ -343,7 +343,7 @@ public final class Bosses {
                 .ability(() -> new Summon(420, 3, 5, 50, 0.4f))                      // Hel's hounds
                 .ability(() -> new Leap(180, 12, 4, 14, 1.4, 0.5, false, () -> bleed(140, 1)))
                 .phase2(() -> new HazardRain(340, 3, 5, 24, 2.5, 8, 1.0, HazardRain.Kind.FIRE))     // soul-fire falls
-                .drop("vividlands_ragnarok:hel_key", 1).xp(2000).after("sleipnir")
+                .drop("vividlands_ragnarok:hel_key", 4).xp(2000).after("sleipnir")
                 .structures("betterstrongholds:stronghold");
 
         def2("fafnir").on("vividlands_ragnarok:fafnir")
@@ -354,7 +354,7 @@ public final class Bosses {
                 .ability(() -> new Leap(200, 16, 5, 18, 1.5, 0.8, false, null))
                 .phase2(() -> new HazardRain(300, 3, 6, 22, 2.5, 9, 1.0, HazardRain.Kind.FIRE))     // takes wing: firebombs
                 .phase2(() -> new Swoop(260, 40, 12, 4, 1.4))
-                .drop("vividlands_ragnarok:dragon_gold", 3).xp(3000).after("garmr")
+                .drop("vividlands_ragnarok:dragon_gold", 4).xp(3000).after("garmr")
                 .structures("mebahelcreaturesdraugr:draugr_bastion");
 
         def2("jormungandr").on("vividlands_ragnarok:jormungandr")
@@ -366,7 +366,7 @@ public final class Bosses {
                 .ability(() -> new Combo(200, 2, 10, 0.7, 14, 1.6))
                 .phase2(() -> new Grab(280, 60, 0.4, Grab.Mode.SQUEEZE, 0))          // coils round you
                 .phase2(() -> new HazardRain(340, 3, 5, 24, 2.5, 8, 0.9, HazardRain.Kind.LIGHTNING))   // the storm at sea
-                .drop("vividlands_ragnarok:serpent_scale", 3).xp(4000).after("fafnir")
+                .drop("vividlands_ragnarok:serpent_scale", 4).xp(4000).after("fafnir")
                 .biomes("vividlands:deep_northern_ocean", "vividlands:deep_temperate_ocean", "#minecraft:is_deep_ocean");
 
         def2("fenrir").on("vividlands_ragnarok:fenrir")

@@ -8,11 +8,12 @@ import net.minecraft.world.item.crafting.Ingredient;
 
 /**
  * One ancient armor set's material. Every stat is a straight line from the weakest set (tier 1, about leather) to the
- * strongest (the last tier, a little above netherite), so each set is a small, even step up from the one before.
+ * strongest (the last tier, above netherite): 11 to 24 armor, 0 to 6 toughness, so each set is a small, even step up.
+ * What a set is really for is its Boss Ward and set bonus (ArmorTraits).
  */
 public final class AncientArmorMaterial implements ArmorMaterial {
     // per slot: helmet, chestplate, leggings, boots
-    private static final double[] DEF_MIN = {1, 3, 2, 1}, DEF_MAX = {4, 9, 7, 4};
+    private static final double[] DEF_MIN = {2, 4, 3, 2}, DEF_MAX = {4, 9, 7, 4};
     private static final int[] BASE_DURABILITY = {11, 16, 15, 13};
 
     private final AncientSets.Set set;
@@ -85,7 +86,7 @@ public final class AncientArmorMaterial implements ArmorMaterial {
 
     @Override
     public float getToughness() {
-        return (float) (Math.round(lerp(0, 4) * 2) / 2.0);
+        return (float) (Math.round(lerp(0, 6) * 2) / 2.0);
     }
 
     @Override

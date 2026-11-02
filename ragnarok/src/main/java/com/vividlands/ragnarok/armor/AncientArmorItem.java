@@ -80,5 +80,6 @@ public class AncientArmorItem extends ArmorItem implements GeoItem {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
         tooltip.add(Component.translatable("tooltip.vividlands_ragnarok.ancient." + material.set().id()).withStyle(ChatFormatting.GOLD));
+        ArmorTraits.tooltip(material, tooltip);
     }
 }

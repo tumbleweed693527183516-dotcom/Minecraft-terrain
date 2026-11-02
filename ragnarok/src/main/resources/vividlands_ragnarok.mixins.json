@@ -12,7 +12,8 @@
     "EnderEyeItemMixin",
     "MobGoalsAccessor",
     "EntityBossMixin",
-    "MaxHealthCapMixin"
+    "MaxHealthCapMixin",
+    "BossWardMixin"
   ],
   "injectors": {
     "defaultRequire": 1
