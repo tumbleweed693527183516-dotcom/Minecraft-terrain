@@ -1,0 +1,1943 @@
+== net/_void/civilizations/entity/custom/RomeGuardVariant
+Compiled from "RomeGuardVariant.java"
+public final class net._void.civilizations.entity.custom.RomeGuardVariant extends java.lang.Enum<net._void.civilizations.entity.custom.RomeGuardVariant> {
+  public static final net._void.civilizations.entity.custom.RomeGuardVariant CIVILIAN1;
+  public static final net._void.civilizations.entity.custom.RomeGuardVariant CIVILIAN2;
+  private static final net._void.civilizations.entity.custom.RomeGuardVariant[] BY_ID;
+  private final int id;
+  private static final net._void.civilizations.entity.custom.RomeGuardVariant[] $VALUES;
+  public static net._void.civilizations.entity.custom.RomeGuardVariant[] values();
+  public static net._void.civilizations.entity.custom.RomeGuardVariant valueOf(java.lang.String);
+  private net._void.civilizations.entity.custom.RomeGuardVariant(int);
+  public int getId();
+  public static net._void.civilizations.entity.custom.RomeGuardVariant byId(int);
+  private static net._void.civilizations.entity.custom.RomeGuardVariant[] lambda$static$0(int);
+  private static net._void.civilizations.entity.custom.RomeGuardVariant[] $values();
+  static {};
+}
+== net/_void/civilizations/entity/custom/RomeCivilianEntity$1
+Compiled from "RomeCivilianEntity.java"
+class net._void.civilizations.entity.custom.RomeCivilianEntity$1 extends java.util.HashMap<net.minecraft.class_1792, java.lang.Integer> {
+  final net._void.civilizations.entity.custom.RomeCivilianEntity this$0;
+  net._void.civilizations.entity.custom.RomeCivilianEntity$1(net._void.civilizations.entity.custom.RomeCivilianEntity);
+}
+== net/_void/civilizations/entity/custom/BossLokiEntity
+Compiled from "BossLokiEntity.java"
+public class net._void.civilizations.entity.custom.BossLokiEntity extends net.minecraft.class_1429 {
+  private static final net.minecraft.class_2940<java.lang.Boolean> ATTACK;
+  private static final net.minecraft.class_2940<java.lang.Boolean> POTION;
+  private static final net.minecraft.class_2940<java.lang.Boolean> CLONE;
+  private static final net.minecraft.class_2940<java.lang.Boolean> SUMMON;
+  public final net.minecraft.class_7094 idleAnimationState;
+  private int idleAnimationTimeout;
+  public final net.minecraft.class_7094 attackAnimationState;
+  public int attackAnimationTimeout;
+  public final net.minecraft.class_7094 potionAnimationState;
+  public int potionAnimationTimeout;
+  public final net.minecraft.class_7094 cloneAnimationState;
+  public int cloneAnimationTimeout;
+  public final net.minecraft.class_7094 summonAnimationState;
+  public int summonAnimationTimeout;
+  private static net.minecraft.class_2940<java.lang.Integer> X;
+  private static net.minecraft.class_2940<java.lang.Integer> Y;
+  private static net.minecraft.class_2940<java.lang.Integer> Z;
+  private final net.minecraft.class_3213 bossBar;
+  public void setCoords(int, int, int);
+  public int getCoordsX();
+  public int getCoordsY();
+  public int getCoordsZ();
+  public net._void.civilizations.entity.custom.BossLokiEntity(net.minecraft.class_1299<? extends net.minecraft.class_1429>, net.minecraft.class_1937);
+  private void setupAnimationStates();
+  protected void method_48565(float);
+  public void method_5773();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 createBossAttributes();
+  public void method_19540(boolean);
+  public boolean method_6510();
+  public void setPotioning(boolean);
+  public boolean isPotioning();
+  public void setCloning(boolean);
+  public boolean isCloning();
+  public void setSummoning(boolean);
+  public boolean isSummoning();
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  public void method_5837(net.minecraft.class_3222);
+  public void method_5742(net.minecraft.class_3222);
+  protected void method_5958();
+  protected void method_5693();
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+  public boolean method_5643(net.minecraft.class_1282, float);
+  public void method_6078(net.minecraft.class_1282);
+  public boolean method_5810();
+  public boolean method_5931(net.minecraft.class_1657);
+  static {};
+}
+Goal
+== net/_void/civilizations/entity/custom/ChinaCivilianVariant
+Compiled from "ChinaCivilianVariant.java"
+public final class net._void.civilizations.entity.custom.ChinaCivilianVariant extends java.lang.Enum<net._void.civilizations.entity.custom.ChinaCivilianVariant> {
+  public static final net._void.civilizations.entity.custom.ChinaCivilianVariant CIVILIAN1;
+  public static final net._void.civilizations.entity.custom.ChinaCivilianVariant CIVILIAN2;
+  public static final net._void.civilizations.entity.custom.ChinaCivilianVariant CIVILIAN3;
+  public static final net._void.civilizations.entity.custom.ChinaCivilianVariant CIVILIAN4;
+  public static final net._void.civilizations.entity.custom.ChinaCivilianVariant CIVILIAN5;
+  public static final net._void.civilizations.entity.custom.ChinaCivilianVariant CIVILIAN6;
+  public static final net._void.civilizations.entity.custom.ChinaCivilianVariant CIVILIAN7;
+  public static final net._void.civilizations.entity.custom.ChinaCivilianVariant CIVILIAN8;
+  private static final net._void.civilizations.entity.custom.ChinaCivilianVariant[] BY_ID;
+  private final int id;
+  private static final net._void.civilizations.entity.custom.ChinaCivilianVariant[] $VALUES;
+  public static net._void.civilizations.entity.custom.ChinaCivilianVariant[] values();
+  public static net._void.civilizations.entity.custom.ChinaCivilianVariant valueOf(java.lang.String);
+  private net._void.civilizations.entity.custom.ChinaCivilianVariant(int);
+  public int getId();
+  public static net._void.civilizations.entity.custom.ChinaCivilianVariant byId(int);
+  private static net._void.civilizations.entity.custom.ChinaCivilianVariant[] lambda$static$0(int);
+  private static net._void.civilizations.entity.custom.ChinaCivilianVariant[] $values();
+  static {};
+}
+== net/_void/civilizations/entity/custom/GreeceCivilianEntity$5
+Compiled from "GreeceCivilianEntity.java"
+class net._void.civilizations.entity.custom.GreeceCivilianEntity$5 extends java.util.HashMap<net.minecraft.class_1792, java.lang.Integer> {
+  final net._void.civilizations.entity.custom.GreeceCivilianEntity this$0;
+  net._void.civilizations.entity.custom.GreeceCivilianEntity$5(net._void.civilizations.entity.custom.GreeceCivilianEntity);
+}
+== net/_void/civilizations/entity/custom/BossMercuryEntity
+Compiled from "BossMercuryEntity.java"
+public class net._void.civilizations.entity.custom.BossMercuryEntity extends net.minecraft.class_1429 {
+  private static final net.minecraft.class_2940<java.lang.Boolean> ATTACK;
+  public final net.minecraft.class_7094 idleAnimationState;
+  private int idleAnimationTimeout;
+  public final net.minecraft.class_7094 attackAnimationState;
+  public int attackAnimationTimeout;
+  private int timer;
+  private static net.minecraft.class_2940<java.lang.Integer> X;
+  private static net.minecraft.class_2940<java.lang.Integer> Y;
+  private static net.minecraft.class_2940<java.lang.Integer> Z;
+  private final net.minecraft.class_3213 bossBar;
+  public void setCoords(int, int, int);
+  public int getCoordsX();
+  public int getCoordsY();
+  public int getCoordsZ();
+  public net._void.civilizations.entity.custom.BossMercuryEntity(net.minecraft.class_1299<? extends net.minecraft.class_1429>, net.minecraft.class_1937);
+  private void setupAnimationStates();
+  protected void method_48565(float);
+  public void method_5773();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 createBossAttributes();
+  public void method_19540(boolean);
+  public boolean method_6510();
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  public void method_5837(net.minecraft.class_3222);
+  public void method_5742(net.minecraft.class_3222);
+  protected void method_5958();
+  protected void method_5693();
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+  public boolean method_5643(net.minecraft.class_1282, float);
+  public void method_6078(net.minecraft.class_1282);
+  public boolean method_5810();
+  public boolean method_5931(net.minecraft.class_1657);
+  static {};
+}
+Goal
+== net/_void/civilizations/entity/custom/GreeceCivilianEntity$4
+Compiled from "GreeceCivilianEntity.java"
+class net._void.civilizations.entity.custom.GreeceCivilianEntity$4 extends java.util.HashMap<net.minecraft.class_1792, java.lang.Integer> {
+  final net._void.civilizations.entity.custom.GreeceCivilianEntity this$0;
+  net._void.civilizations.entity.custom.GreeceCivilianEntity$4(net._void.civilizations.entity.custom.GreeceCivilianEntity);
+}
+== net/_void/civilizations/entity/custom/GreeceCivilianEntity$3
+Compiled from "GreeceCivilianEntity.java"
+class net._void.civilizations.entity.custom.GreeceCivilianEntity$3 extends java.util.HashMap<net.minecraft.class_1792, java.lang.Integer> {
+  final net._void.civilizations.entity.custom.GreeceCivilianEntity this$0;
+  net._void.civilizations.entity.custom.GreeceCivilianEntity$3(net._void.civilizations.entity.custom.GreeceCivilianEntity);
+}
+== net/_void/civilizations/entity/custom/ChinaCivilianEntity$1
+Compiled from "ChinaCivilianEntity.java"
+class net._void.civilizations.entity.custom.ChinaCivilianEntity$1 extends java.util.HashMap<net.minecraft.class_1792, java.lang.Integer> {
+  final net._void.civilizations.entity.custom.ChinaCivilianEntity this$0;
+  net._void.civilizations.entity.custom.ChinaCivilianEntity$1(net._void.civilizations.entity.custom.ChinaCivilianEntity);
+}
+== net/_void/civilizations/entity/custom/RomeBossEntity
+Compiled from "RomeBossEntity.java"
+public class net._void.civilizations.entity.custom.RomeBossEntity extends net.minecraft.class_1429 {
+  private static final net.minecraft.class_2940<java.lang.Boolean> ATTACKING;
+  public final net.minecraft.class_7094 idleAnimationState;
+  private int idleAnimationTimeout;
+  public final net.minecraft.class_7094 attackAnimationState;
+  public int attackAnimationTimeout;
+  int guardsKilled;
+  int guardsSpawned;
+  int spawnTick;
+  private final net.minecraft.class_3213 bossBar;
+  public net._void.civilizations.entity.custom.RomeBossEntity(net.minecraft.class_1299<? extends net.minecraft.class_1429>, net.minecraft.class_1937);
+  private void setupAnimationStates();
+  protected void method_48565(float);
+  public void method_5773();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 createBossAttributes();
+  public void method_19540(boolean);
+  public boolean method_6510();
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  public void method_5837(net.minecraft.class_3222);
+  public void method_5742(net.minecraft.class_3222);
+  protected void method_5958();
+  protected void method_5693();
+  public boolean method_5643(net.minecraft.class_1282, float);
+  public void method_6078(net.minecraft.class_1282);
+  protected void method_6099(net.minecraft.class_1282, int, boolean);
+  public boolean method_5810();
+  public boolean method_5931(net.minecraft.class_1657);
+  static {};
+}
+Goal
+== net/_void/civilizations/entity/custom/RomeGuardEntity
+Compiled from "RomeGuardEntity.java"
+public class net._void.civilizations.entity.custom.RomeGuardEntity extends net.minecraft.class_1429 {
+  private static final net.minecraft.class_2940<java.lang.Boolean> ATTACKING;
+  public final net.minecraft.class_7094 idleAnimationState;
+  private int idleAnimationTimeout;
+  public final net.minecraft.class_7094 attackAnimationState;
+  public int attackAnimationTimeout;
+  private static final net.minecraft.class_2940<java.lang.Integer> DATA_ID_TYPE_VARIANT;
+  public net._void.civilizations.entity.custom.RomeGuardEntity(net.minecraft.class_1299<? extends net.minecraft.class_1429>, net.minecraft.class_1937);
+  private void setupAnimationStates();
+  protected void method_48565(float);
+  public void method_5773();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 createCivilianAttributes();
+  public void method_19540(boolean);
+  public boolean method_6510();
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  protected void method_5693();
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+  public net.minecraft.class_1315 method_5943(net.minecraft.class_5425, net.minecraft.class_1266, net.minecraft.class_3730, net.minecraft.class_1315, net.minecraft.class_2487);
+  public net._void.civilizations.entity.custom.RomeGuardVariant getVariant();
+  private int getTypeVariant();
+  private void setVariant(net._void.civilizations.entity.custom.RomeGuardVariant);
+  public void method_6078(net.minecraft.class_1282);
+  public boolean method_5931(net.minecraft.class_1657);
+  static {};
+}
+Goal
+== net/_void/civilizations/entity/custom/EgyptCivilianEntity
+Compiled from "EgyptCivilianEntity.java"
+public class net._void.civilizations.entity.custom.EgyptCivilianEntity extends net.minecraft.class_1429 {
+  private static final net.minecraft.class_2940<java.lang.Boolean> ATTACKING;
+  public final net.minecraft.class_7094 idleAnimationState;
+  private int idleAnimationTimeout;
+  public final net.minecraft.class_7094 attackAnimationState;
+  public int attackAnimationTimeout;
+  net.minecraft.class_1297 trader;
+  int trading;
+  int tradingDuration;
+  java.util.Map<net.minecraft.class_1792, java.lang.Integer> outputItems;
+  private static final net.minecraft.class_2940<java.lang.Integer> DATA_ID_TYPE_VARIANT;
+  public net._void.civilizations.entity.custom.EgyptCivilianEntity(net.minecraft.class_1299<? extends net.minecraft.class_1429>, net.minecraft.class_1937);
+  private void setupAnimationStates();
+  protected void method_48565(float);
+  public void method_5773();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 createCivilianAttributes();
+  public void method_19540(boolean);
+  public boolean method_6510();
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  protected void method_5693();
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+  public net.minecraft.class_1315 method_5943(net.minecraft.class_5425, net.minecraft.class_1266, net.minecraft.class_3730, net.minecraft.class_1315, net.minecraft.class_2487);
+  public net._void.civilizations.entity.custom.EgyptCivilianVariant getVariant();
+  private int getTypeVariant();
+  private void setVariant(net._void.civilizations.entity.custom.EgyptCivilianVariant);
+  protected void method_5958();
+  public net.minecraft.class_1269 method_5992(net.minecraft.class_1657, net.minecraft.class_1268);
+  public boolean method_5931(net.minecraft.class_1657);
+  static {};
+}
+Goal
+== net/_void/civilizations/entity/custom/ChinaCivilianEntity
+Compiled from "ChinaCivilianEntity.java"
+public class net._void.civilizations.entity.custom.ChinaCivilianEntity extends net.minecraft.class_1429 {
+  private static final net.minecraft.class_2940<java.lang.Boolean> ATTACKING;
+  public final net.minecraft.class_7094 idleAnimationState;
+  private int idleAnimationTimeout;
+  public final net.minecraft.class_7094 attackAnimationState;
+  public int attackAnimationTimeout;
+  net.minecraft.class_1297 trader;
+  int trading;
+  int tradingDuration;
+  java.util.Map<net.minecraft.class_1792, java.lang.Integer> outputItems;
+  private static final net.minecraft.class_2940<java.lang.Integer> DATA_ID_TYPE_VARIANT;
+  public net._void.civilizations.entity.custom.ChinaCivilianEntity(net.minecraft.class_1299<? extends net.minecraft.class_1429>, net.minecraft.class_1937);
+  private void setupAnimationStates();
+  protected void method_48565(float);
+  public void method_5773();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 createCivilianAttributes();
+  public void method_19540(boolean);
+  public boolean method_6510();
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  protected void method_5693();
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+  public net.minecraft.class_1315 method_5943(net.minecraft.class_5425, net.minecraft.class_1266, net.minecraft.class_3730, net.minecraft.class_1315, net.minecraft.class_2487);
+  public net._void.civilizations.entity.custom.ChinaCivilianVariant getVariant();
+  private int getTypeVariant();
+  private void setVariant(net._void.civilizations.entity.custom.ChinaCivilianVariant);
+  protected void method_5958();
+  public net.minecraft.class_1269 method_5992(net.minecraft.class_1657, net.minecraft.class_1268);
+  public boolean method_5931(net.minecraft.class_1657);
+  static {};
+}
+Goal
+== net/_void/civilizations/entity/custom/GreeceCivilianEntity$2
+Compiled from "GreeceCivilianEntity.java"
+class net._void.civilizations.entity.custom.GreeceCivilianEntity$2 extends java.util.HashMap<net.minecraft.class_1792, java.lang.Integer> {
+  final net._void.civilizations.entity.custom.GreeceCivilianEntity this$0;
+  net._void.civilizations.entity.custom.GreeceCivilianEntity$2(net._void.civilizations.entity.custom.GreeceCivilianEntity);
+}
+== net/_void/civilizations/entity/custom/BossWukongEntity
+Compiled from "BossWukongEntity.java"
+public class net._void.civilizations.entity.custom.BossWukongEntity extends net.minecraft.class_1429 {
+  private static final net.minecraft.class_2940<java.lang.Boolean> ATTACK;
+  private static final net.minecraft.class_2940<java.lang.Boolean> SPELL;
+  public final net.minecraft.class_7094 idleAnimationState;
+  private int idleAnimationTimeout;
+  public final net.minecraft.class_7094 attackAnimationState;
+  public int attackAnimationTimeout;
+  public final net.minecraft.class_7094 spellAnimationState;
+  public int spellAnimationTimeout;
+  private static net.minecraft.class_2940<java.lang.Integer> X;
+  private static net.minecraft.class_2940<java.lang.Integer> Y;
+  private static net.minecraft.class_2940<java.lang.Integer> Z;
+  private int damageTaken;
+  private final net.minecraft.class_3213 bossBar;
+  public void setCoords(int, int, int);
+  public int getCoordsX();
+  public int getCoordsY();
+  public int getCoordsZ();
+  public net._void.civilizations.entity.custom.BossWukongEntity(net.minecraft.class_1299<? extends net.minecraft.class_1429>, net.minecraft.class_1937);
+  private void setupAnimationStates();
+  protected void method_48565(float);
+  public void method_5773();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 createBossAttributes();
+  public void method_19540(boolean);
+  public boolean method_6510();
+  public void setSpelling(boolean);
+  public boolean isSpelling();
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  public void method_5837(net.minecraft.class_3222);
+  public void method_5742(net.minecraft.class_3222);
+  protected void method_5958();
+  protected void method_5693();
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+  public boolean method_5643(net.minecraft.class_1282, float);
+  public void method_6078(net.minecraft.class_1282);
+  public boolean method_5810();
+  public boolean method_5931(net.minecraft.class_1657);
+  static {};
+}
+Goal
+== net/_void/civilizations/entity/custom/BossArtemisEntity
+Compiled from "BossArtemisEntity.java"
+public class net._void.civilizations.entity.custom.BossArtemisEntity extends net.minecraft.class_1429 {
+  private static final net.minecraft.class_2940<java.lang.Boolean> SHOOTING;
+  public final net.minecraft.class_7094 idleAnimationState;
+  private int idleAnimationTimeout;
+  public final net.minecraft.class_7094 shootingAnimationState;
+  public int shootingAnimationTimeout;
+  private static net.minecraft.class_2940<java.lang.Integer> X;
+  private static net.minecraft.class_2940<java.lang.Integer> Y;
+  private static net.minecraft.class_2940<java.lang.Integer> Z;
+  private int damageTaken;
+  private static net.minecraft.class_2940<java.lang.Integer> MODE;
+  private final net.minecraft.class_3213 bossBar;
+  public void setCoords(int, int, int);
+  public int getCoordsX();
+  public int getCoordsY();
+  public int getCoordsZ();
+  public void setMode(int);
+  public int getMode();
+  public net._void.civilizations.entity.custom.BossArtemisEntity(net.minecraft.class_1299<? extends net.minecraft.class_1429>, net.minecraft.class_1937);
+  private void setupAnimationStates();
+  protected void method_48565(float);
+  public void method_5773();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 createBossAttributes();
+  public void setShooting(boolean);
+  public boolean isShooting();
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  public void method_5837(net.minecraft.class_3222);
+  public void method_5742(net.minecraft.class_3222);
+  protected void method_5958();
+  protected void method_5693();
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+  public boolean method_5643(net.minecraft.class_1282, float);
+  public void method_6078(net.minecraft.class_1282);
+  public boolean method_5810();
+  public boolean method_5931(net.minecraft.class_1657);
+  static {};
+}
+Goal
+== net/_void/civilizations/entity/custom/EgyptBossEntity
+Compiled from "EgyptBossEntity.java"
+public class net._void.civilizations.entity.custom.EgyptBossEntity extends net.minecraft.class_1429 {
+  private static final net.minecraft.class_2940<java.lang.Boolean> SHOOTING;
+  private static final net.minecraft.class_2940<java.lang.Boolean> ATTACKING;
+  public final net.minecraft.class_7094 idleAnimationState;
+  private int idleAnimationTimeout;
+  public final net.minecraft.class_7094 shootingAnimationState;
+  public int shootingAnimationTimeout;
+  public final net.minecraft.class_7094 attackAnimationState;
+  public int attackAnimationTimeout;
+  private final net.minecraft.class_3213 bossBar;
+  public net._void.civilizations.entity.custom.EgyptBossEntity(net.minecraft.class_1299<? extends net.minecraft.class_1429>, net.minecraft.class_1937);
+  private void setupAnimationStates();
+  protected void method_48565(float);
+  public void method_5773();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 createBossAttributes();
+  public void setShooting(boolean);
+  public boolean isShooting();
+  public void method_19540(boolean);
+  public boolean method_6510();
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  public void method_5837(net.minecraft.class_3222);
+  public void method_5742(net.minecraft.class_3222);
+  protected void method_5958();
+  protected void method_5693();
+  public boolean method_5643(net.minecraft.class_1282, float);
+  public void method_6078(net.minecraft.class_1282);
+  protected void method_6099(net.minecraft.class_1282, int, boolean);
+  public boolean method_5810();
+  public boolean method_5931(net.minecraft.class_1657);
+  static {};
+}
+Goal
+== net/_void/civilizations/entity/custom/NordicCivilianVariant
+Compiled from "NordicCivilianVariant.java"
+public final class net._void.civilizations.entity.custom.NordicCivilianVariant extends java.lang.Enum<net._void.civilizations.entity.custom.NordicCivilianVariant> {
+  public static final net._void.civilizations.entity.custom.NordicCivilianVariant CIVILIAN1;
+  public static final net._void.civilizations.entity.custom.NordicCivilianVariant CIVILIAN2;
+  public static final net._void.civilizations.entity.custom.NordicCivilianVariant CIVILIAN3;
+  public static final net._void.civilizations.entity.custom.NordicCivilianVariant CIVILIAN4;
+  private static final net._void.civilizations.entity.custom.NordicCivilianVariant[] BY_ID;
+  private final int id;
+  private static final net._void.civilizations.entity.custom.NordicCivilianVariant[] $VALUES;
+  public static net._void.civilizations.entity.custom.NordicCivilianVariant[] values();
+  public static net._void.civilizations.entity.custom.NordicCivilianVariant valueOf(java.lang.String);
+  private net._void.civilizations.entity.custom.NordicCivilianVariant(int);
+  public int getId();
+  public static net._void.civilizations.entity.custom.NordicCivilianVariant byId(int);
+  private static net._void.civilizations.entity.custom.NordicCivilianVariant[] lambda$static$0(int);
+  private static net._void.civilizations.entity.custom.NordicCivilianVariant[] $values();
+  static {};
+}
+== net/_void/civilizations/entity/custom/GreeceBossEntity
+Compiled from "GreeceBossEntity.java"
+public class net._void.civilizations.entity.custom.GreeceBossEntity extends net.minecraft.class_1429 {
+  private static final net.minecraft.class_2940<java.lang.Boolean> ATTACKING;
+  private static final net.minecraft.class_2940<java.lang.Boolean> DEFFENDING;
+  public final net.minecraft.class_7094 idleAnimationState;
+  private int idleAnimationTimeout;
+  public final net.minecraft.class_7094 attackAnimationState;
+  public int attackAnimationTimeout;
+  public final net.minecraft.class_7094 deffendAnimationState;
+  public int deffendAnimationTimeout;
+  private final net.minecraft.class_3213 bossBar;
+  public net._void.civilizations.entity.custom.GreeceBossEntity(net.minecraft.class_1299<? extends net.minecraft.class_1429>, net.minecraft.class_1937);
+  private void setupAnimationStates();
+  protected void method_48565(float);
+  public void method_5773();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 createBossAttributes();
+  public void method_19540(boolean);
+  public boolean method_6510();
+  public void setDeffending(boolean);
+  public boolean isDeffending();
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  public void method_5837(net.minecraft.class_3222);
+  public void method_5742(net.minecraft.class_3222);
+  protected void method_5958();
+  protected void method_5693();
+  public boolean method_5643(net.minecraft.class_1282, float);
+  public void method_6078(net.minecraft.class_1282);
+  protected void method_6099(net.minecraft.class_1282, int, boolean);
+  public boolean method_5810();
+  public boolean method_5931(net.minecraft.class_1657);
+  static {};
+}
+Goal
+== net/_void/civilizations/entity/custom/GreeceCivilianVariant
+Compiled from "GreeceCivilianVariant.java"
+public final class net._void.civilizations.entity.custom.GreeceCivilianVariant extends java.lang.Enum<net._void.civilizations.entity.custom.GreeceCivilianVariant> {
+  public static final net._void.civilizations.entity.custom.GreeceCivilianVariant CIVILIAN1;
+  public static final net._void.civilizations.entity.custom.GreeceCivilianVariant CIVILIAN2;
+  public static final net._void.civilizations.entity.custom.GreeceCivilianVariant CIVILIAN3;
+  public static final net._void.civilizations.entity.custom.GreeceCivilianVariant CIVILIAN4;
+  public static final net._void.civilizations.entity.custom.GreeceCivilianVariant CIVILIAN5;
+  public static final net._void.civilizations.entity.custom.GreeceCivilianVariant CIVILIAN6;
+  public static final net._void.civilizations.entity.custom.GreeceCivilianVariant CIVILIAN7;
+  public static final net._void.civilizations.entity.custom.GreeceCivilianVariant CIVILIAN8;
+  private static final net._void.civilizations.entity.custom.GreeceCivilianVariant[] BY_ID;
+  private final int id;
+  private static final net._void.civilizations.entity.custom.GreeceCivilianVariant[] $VALUES;
+  public static net._void.civilizations.entity.custom.GreeceCivilianVariant[] values();
+  public static net._void.civilizations.entity.custom.GreeceCivilianVariant valueOf(java.lang.String);
+  private net._void.civilizations.entity.custom.GreeceCivilianVariant(int);
+  public int getId();
+  public static net._void.civilizations.entity.custom.GreeceCivilianVariant byId(int);
+  private static net._void.civilizations.entity.custom.GreeceCivilianVariant[] lambda$static$0(int);
+  private static net._void.civilizations.entity.custom.GreeceCivilianVariant[] $values();
+  static {};
+}
+== net/_void/civilizations/entity/custom/GreeceCivilianEntity
+Compiled from "GreeceCivilianEntity.java"
+public class net._void.civilizations.entity.custom.GreeceCivilianEntity extends net.minecraft.class_1429 {
+  private static final net.minecraft.class_2940<java.lang.Boolean> ATTACKING;
+  public final net.minecraft.class_7094 idleAnimationState;
+  private int idleAnimationTimeout;
+  public final net.minecraft.class_7094 attackAnimationState;
+  public int attackAnimationTimeout;
+  net.minecraft.class_1297 trader;
+  int trading;
+  int tradingDuration;
+  java.util.Map<net.minecraft.class_1792, java.lang.Integer> farmItems;
+  java.util.Map<net.minecraft.class_1792, java.lang.Integer> flowerItems;
+  java.util.Map<net.minecraft.class_1792, java.lang.Integer> combatItems;
+  java.util.Map<net.minecraft.class_1792, java.lang.Integer> foodItems;
+  java.util.Map<net.minecraft.class_1792, java.lang.Integer> bookItems;
+  private static final net.minecraft.class_2940<java.lang.Integer> DATA_ID_TYPE_VARIANT;
+  public net._void.civilizations.entity.custom.GreeceCivilianEntity(net.minecraft.class_1299<? extends net.minecraft.class_1429>, net.minecraft.class_1937);
+  private void setupAnimationStates();
+  protected void method_48565(float);
+  public void method_5773();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 createCivilianAttributes();
+  public void method_19540(boolean);
+  public boolean method_6510();
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  protected void method_5693();
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+  public net.minecraft.class_1315 method_5943(net.minecraft.class_5425, net.minecraft.class_1266, net.minecraft.class_3730, net.minecraft.class_1315, net.minecraft.class_2487);
+  public net._void.civilizations.entity.custom.GreeceCivilianVariant getVariant();
+  private int getTypeVariant();
+  private void setVariant(net._void.civilizations.entity.custom.GreeceCivilianVariant);
+  protected void method_5958();
+  public net.minecraft.class_1269 method_5992(net.minecraft.class_1657, net.minecraft.class_1268);
+  public boolean method_5931(net.minecraft.class_1657);
+  static {};
+}
+Goal
+== net/_void/civilizations/entity/custom/NordicCivilianEntity
+Compiled from "NordicCivilianEntity.java"
+public class net._void.civilizations.entity.custom.NordicCivilianEntity extends net.minecraft.class_1429 {
+  private static final net.minecraft.class_2940<java.lang.Boolean> ATTACKING;
+  public final net.minecraft.class_7094 idleAnimationState;
+  private int idleAnimationTimeout;
+  public final net.minecraft.class_7094 attackAnimationState;
+  public int attackAnimationTimeout;
+  private static final net.minecraft.class_2940<java.lang.Integer> DATA_ID_TYPE_VARIANT;
+  public net._void.civilizations.entity.custom.NordicCivilianEntity(net.minecraft.class_1299<? extends net.minecraft.class_1429>, net.minecraft.class_1937);
+  private void setupAnimationStates();
+  protected void method_48565(float);
+  public void method_5773();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 createCivilianAttributes();
+  public void method_19540(boolean);
+  public boolean method_6510();
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  protected void method_5693();
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+  public net.minecraft.class_1315 method_5943(net.minecraft.class_5425, net.minecraft.class_1266, net.minecraft.class_3730, net.minecraft.class_1315, net.minecraft.class_2487);
+  public net._void.civilizations.entity.custom.NordicCivilianVariant getVariant();
+  private int getTypeVariant();
+  private void setVariant(net._void.civilizations.entity.custom.NordicCivilianVariant);
+  public boolean method_5931(net.minecraft.class_1657);
+  static {};
+}
+Goal
+== net/_void/civilizations/entity/custom/GreeceCivilianEntity$1
+Compiled from "GreeceCivilianEntity.java"
+class net._void.civilizations.entity.custom.GreeceCivilianEntity$1 extends java.util.HashMap<net.minecraft.class_1792, java.lang.Integer> {
+  final net._void.civilizations.entity.custom.GreeceCivilianEntity this$0;
+  net._void.civilizations.entity.custom.GreeceCivilianEntity$1(net._void.civilizations.entity.custom.GreeceCivilianEntity);
+}
+== net/_void/civilizations/entity/custom/EgyptCivilianVariant
+Compiled from "EgyptCivilianVariant.java"
+public final class net._void.civilizations.entity.custom.EgyptCivilianVariant extends java.lang.Enum<net._void.civilizations.entity.custom.EgyptCivilianVariant> {
+  public static final net._void.civilizations.entity.custom.EgyptCivilianVariant CIVILIAN1;
+  public static final net._void.civilizations.entity.custom.EgyptCivilianVariant CIVILIAN2;
+  public static final net._void.civilizations.entity.custom.EgyptCivilianVariant CIVILIAN3;
+  public static final net._void.civilizations.entity.custom.EgyptCivilianVariant CIVILIAN4;
+  public static final net._void.civilizations.entity.custom.EgyptCivilianVariant CIVILIAN5;
+  public static final net._void.civilizations.entity.custom.EgyptCivilianVariant CIVILIAN6;
+  public static final net._void.civilizations.entity.custom.EgyptCivilianVariant CIVILIAN7;
+  public static final net._void.civilizations.entity.custom.EgyptCivilianVariant CIVILIAN8;
+  private static final net._void.civilizations.entity.custom.EgyptCivilianVariant[] BY_ID;
+  private final int id;
+  private static final net._void.civilizations.entity.custom.EgyptCivilianVariant[] $VALUES;
+  public static net._void.civilizations.entity.custom.EgyptCivilianVariant[] values();
+  public static net._void.civilizations.entity.custom.EgyptCivilianVariant valueOf(java.lang.String);
+  private net._void.civilizations.entity.custom.EgyptCivilianVariant(int);
+  public int getId();
+  public static net._void.civilizations.entity.custom.EgyptCivilianVariant byId(int);
+  private static net._void.civilizations.entity.custom.EgyptCivilianVariant[] lambda$static$0(int);
+  private static net._void.civilizations.entity.custom.EgyptCivilianVariant[] $values();
+  static {};
+}
+== net/_void/civilizations/entity/custom/EgyptCivilianEntity$1
+Compiled from "EgyptCivilianEntity.java"
+class net._void.civilizations.entity.custom.EgyptCivilianEntity$1 extends java.util.HashMap<net.minecraft.class_1792, java.lang.Integer> {
+  final net._void.civilizations.entity.custom.EgyptCivilianEntity this$0;
+  net._void.civilizations.entity.custom.EgyptCivilianEntity$1(net._void.civilizations.entity.custom.EgyptCivilianEntity);
+}
+== net/_void/civilizations/entity/custom/ChinaBossEntity
+Compiled from "ChinaBossEntity.java"
+public class net._void.civilizations.entity.custom.ChinaBossEntity extends net.minecraft.class_1429 {
+  private static final net.minecraft.class_2940<java.lang.Boolean> ATTACKING;
+  public final net.minecraft.class_7094 idleAnimationState;
+  private int idleAnimationTimeout;
+  public final net.minecraft.class_7094 attackAnimationState;
+  public int attackAnimationTimeout;
+  int guardsSpawned;
+  int spawnTimer;
+  double spawnX;
+  double spawnY;
+  double spawnZ;
+  private final net.minecraft.class_3213 bossBar;
+  public net._void.civilizations.entity.custom.ChinaBossEntity(net.minecraft.class_1299<? extends net.minecraft.class_1429>, net.minecraft.class_1937);
+  private void setupAnimationStates();
+  protected void method_48565(float);
+  public void method_5773();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 createBossAttributes();
+  public void method_19540(boolean);
+  public boolean method_6510();
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  public void method_5837(net.minecraft.class_3222);
+  public void method_5742(net.minecraft.class_3222);
+  protected void method_5958();
+  protected void method_5693();
+  public boolean method_5643(net.minecraft.class_1282, float);
+  public void method_6078(net.minecraft.class_1282);
+  protected void method_6099(net.minecraft.class_1282, int, boolean);
+  public boolean method_5810();
+  public boolean method_5931(net.minecraft.class_1657);
+  static {};
+}
+Goal
+== net/_void/civilizations/entity/custom/EgyptNpcEntity
+Compiled from "EgyptNpcEntity.java"
+public class net._void.civilizations.entity.custom.EgyptNpcEntity extends net.minecraft.class_1429 {
+  public final net.minecraft.class_7094 idleAnimationState;
+  private int idleAnimationTimeout;
+  public net._void.civilizations.entity.custom.EgyptNpcEntity(net.minecraft.class_1299<? extends net.minecraft.class_1429>, net.minecraft.class_1937);
+  private void setupAnimationStates();
+  protected void method_48565(float);
+  public void method_5773();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 createNpcAttributes();
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  public boolean method_5931(net.minecraft.class_1657);
+}
+== net/_void/civilizations/entity/custom/RomeCivilianEntity
+Compiled from "RomeCivilianEntity.java"
+public class net._void.civilizations.entity.custom.RomeCivilianEntity extends net.minecraft.class_1429 {
+  private static final net.minecraft.class_2940<java.lang.Boolean> ATTACKING;
+  public final net.minecraft.class_7094 idleAnimationState;
+  private int idleAnimationTimeout;
+  public final net.minecraft.class_7094 attackAnimationState;
+  public int attackAnimationTimeout;
+  net.minecraft.class_1297 trader;
+  int trading;
+  int tradingDuration;
+  java.util.Map<net.minecraft.class_1792, java.lang.Integer> outputItems;
+  private static final net.minecraft.class_2940<java.lang.Integer> DATA_ID_TYPE_VARIANT;
+  public net._void.civilizations.entity.custom.RomeCivilianEntity(net.minecraft.class_1299<? extends net.minecraft.class_1429>, net.minecraft.class_1937);
+  private void setupAnimationStates();
+  protected void method_48565(float);
+  public void method_5773();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 createCivilianAttributes();
+  public void method_19540(boolean);
+  public boolean method_6510();
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  protected void method_5693();
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+  public net.minecraft.class_1315 method_5943(net.minecraft.class_5425, net.minecraft.class_1266, net.minecraft.class_3730, net.minecraft.class_1315, net.minecraft.class_2487);
+  public net._void.civilizations.entity.custom.RomeCivilianVariant getVariant();
+  private int getTypeVariant();
+  private void setVariant(net._void.civilizations.entity.custom.RomeCivilianVariant);
+  protected void method_5958();
+  public net.minecraft.class_1269 method_5992(net.minecraft.class_1657, net.minecraft.class_1268);
+  public boolean method_5931(net.minecraft.class_1657);
+  static {};
+}
+Goal
+== net/_void/civilizations/entity/custom/ChinaGuardEntity
+Compiled from "ChinaGuardEntity.java"
+public class net._void.civilizations.entity.custom.ChinaGuardEntity extends net.minecraft.class_1429 {
+  private static final net.minecraft.class_2940<java.lang.Boolean> SHOOTING;
+  public final net.minecraft.class_7094 idleAnimationState;
+  private int idleAnimationTimeout;
+  public final net.minecraft.class_7094 shootingAnimationState;
+  public int shootingAnimationTimeout;
+  public net._void.civilizations.entity.custom.ChinaGuardEntity(net.minecraft.class_1299<? extends net.minecraft.class_1429>, net.minecraft.class_1937);
+  private void setupAnimationStates();
+  protected void method_48565(float);
+  public void method_5773();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 createGuardAttributes();
+  public void setShooting(boolean);
+  public boolean isShooting();
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  protected void method_5693();
+  public boolean method_5643(net.minecraft.class_1282, float);
+  protected void method_6099(net.minecraft.class_1282, int, boolean);
+  public boolean method_5931(net.minecraft.class_1657);
+  static {};
+}
+Goal
+== net/_void/civilizations/entity/custom/BossAnubisEntity
+Compiled from "BossAnubisEntity.java"
+public class net._void.civilizations.entity.custom.BossAnubisEntity extends net.minecraft.class_1429 {
+  private static final net.minecraft.class_2940<java.lang.Boolean> ATTACK;
+  private static final net.minecraft.class_2940<java.lang.Boolean> SPELL;
+  public final net.minecraft.class_7094 idleAnimationState;
+  private int idleAnimationTimeout;
+  public final net.minecraft.class_7094 attackAnimationState;
+  public int attackAnimationTimeout;
+  public final net.minecraft.class_7094 spellAnimationState;
+  public int spellAnimationTimeout;
+  private static net.minecraft.class_2940<java.lang.Integer> X;
+  private static net.minecraft.class_2940<java.lang.Integer> Y;
+  private static net.minecraft.class_2940<java.lang.Integer> Z;
+  private final net.minecraft.class_3213 bossBar;
+  public void setCoords(int, int, int);
+  public int getCoordsX();
+  public int getCoordsY();
+  public int getCoordsZ();
+  public net._void.civilizations.entity.custom.BossAnubisEntity(net.minecraft.class_1299<? extends net.minecraft.class_1429>, net.minecraft.class_1937);
+  private void setupAnimationStates();
+  protected void method_48565(float);
+  public void method_5773();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 createBossAttributes();
+  public void method_19540(boolean);
+  public boolean method_6510();
+  public void setSpelling(boolean);
+  public boolean isSpelling();
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  public void method_5837(net.minecraft.class_3222);
+  public void method_5742(net.minecraft.class_3222);
+  protected void method_5958();
+  protected void method_5693();
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+  public boolean method_5643(net.minecraft.class_1282, float);
+  public void method_6078(net.minecraft.class_1282);
+  public boolean method_5810();
+  public boolean method_5931(net.minecraft.class_1657);
+  static {};
+}
+Goal
+== net/_void/civilizations/entity/custom/NordicBossEntity
+Compiled from "NordicBossEntity.java"
+public class net._void.civilizations.entity.custom.NordicBossEntity extends net.minecraft.class_1429 {
+  private static final net.minecraft.class_2940<java.lang.Boolean> ATTACKING;
+  public final net.minecraft.class_7094 idleAnimationState;
+  private int idleAnimationTimeout;
+  public final net.minecraft.class_7094 attackAnimationState;
+  public int attackAnimationTimeout;
+  private final net.minecraft.class_3213 bossBar;
+  public net._void.civilizations.entity.custom.NordicBossEntity(net.minecraft.class_1299<? extends net.minecraft.class_1429>, net.minecraft.class_1937);
+  private void setupAnimationStates();
+  protected void method_48565(float);
+  public void method_5773();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 createBossAttributes();
+  public void method_19540(boolean);
+  public boolean method_6510();
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  public void method_5837(net.minecraft.class_3222);
+  public void method_5742(net.minecraft.class_3222);
+  protected void method_5958();
+  protected void method_5693();
+  public boolean method_5643(net.minecraft.class_1282, float);
+  public void method_6078(net.minecraft.class_1282);
+  protected void method_6099(net.minecraft.class_1282, int, boolean);
+  public boolean method_5810();
+  public boolean method_5931(net.minecraft.class_1657);
+  static {};
+}
+Goal
+== net/_void/civilizations/entity/custom/BossLokiCloneEntity
+Compiled from "BossLokiCloneEntity.java"
+public class net._void.civilizations.entity.custom.BossLokiCloneEntity extends net.minecraft.class_1429 {
+  private static final net.minecraft.class_2940<java.lang.Boolean> ATTACK;
+  public final net.minecraft.class_7094 idleAnimationState;
+  private int idleAnimationTimeout;
+  public final net.minecraft.class_7094 attackAnimationState;
+  public int attackAnimationTimeout;
+  public net._void.civilizations.entity.custom.BossLokiCloneEntity(net.minecraft.class_1299<? extends net.minecraft.class_1429>, net.minecraft.class_1937);
+  private void setupAnimationStates();
+  protected void method_48565(float);
+  public void method_5773();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 createBossAttributes();
+  public void method_19540(boolean);
+  public boolean method_6510();
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  protected void method_5958();
+  protected void method_5693();
+  public boolean method_5643(net.minecraft.class_1282, float);
+  public boolean method_5810();
+  public boolean method_5931(net.minecraft.class_1657);
+  static {};
+}
+Goal
+== net/_void/civilizations/entity/custom/RomeCivilianVariant
+Compiled from "RomeCivilianVariant.java"
+public final class net._void.civilizations.entity.custom.RomeCivilianVariant extends java.lang.Enum<net._void.civilizations.entity.custom.RomeCivilianVariant> {
+  public static final net._void.civilizations.entity.custom.RomeCivilianVariant CIVILIAN1;
+  public static final net._void.civilizations.entity.custom.RomeCivilianVariant CIVILIAN2;
+  public static final net._void.civilizations.entity.custom.RomeCivilianVariant CIVILIAN3;
+  public static final net._void.civilizations.entity.custom.RomeCivilianVariant CIVILIAN4;
+  public static final net._void.civilizations.entity.custom.RomeCivilianVariant CIVILIAN5;
+  public static final net._void.civilizations.entity.custom.RomeCivilianVariant CIVILIAN6;
+  public static final net._void.civilizations.entity.custom.RomeCivilianVariant CIVILIAN7;
+  public static final net._void.civilizations.entity.custom.RomeCivilianVariant CIVILIAN8;
+  private static final net._void.civilizations.entity.custom.RomeCivilianVariant[] BY_ID;
+  private final int id;
+  private static final net._void.civilizations.entity.custom.RomeCivilianVariant[] $VALUES;
+  public static net._void.civilizations.entity.custom.RomeCivilianVariant[] values();
+  public static net._void.civilizations.entity.custom.RomeCivilianVariant valueOf(java.lang.String);
+  private net._void.civilizations.entity.custom.RomeCivilianVariant(int);
+  public int getId();
+  public static net._void.civilizations.entity.custom.RomeCivilianVariant byId(int);
+  private static net._void.civilizations.entity.custom.RomeCivilianVariant[] lambda$static$0(int);
+  private static net._void.civilizations.entity.custom.RomeCivilianVariant[] $values();
+  static {};
+}
+== net/_void/civilizations/entity/ModEntities
+Compiled from "ModEntities.java"
+public class net._void.civilizations.entity.ModEntities {
+  public static final net.minecraft.class_1299<net._void.civilizations.entity.custom.EgyptCivilianEntity> EGYPT_CIVILIAN;
+  public static final net.minecraft.class_1299<net._void.civilizations.entity.custom.EgyptNpcEntity> EGYPT_NPC;
+  public static final net.minecraft.class_1299<net._void.civilizations.entity.custom.EgyptBossEntity> EGYPT_BOSS;
+  public static final net.minecraft.class_1299<net._void.civilizations.entity.custom.ChinaCivilianEntity> CHINA_CIVILIAN;
+  public static final net.minecraft.class_1299<net._void.civilizations.entity.custom.ChinaGuardEntity> CHINA_GUARD;
+  public static final net.minecraft.class_1299<net._void.civilizations.entity.custom.ChinaBossEntity> CHINA_BOSS;
+  public static final net.minecraft.class_1299<net._void.civilizations.entity.custom.NordicCivilianEntity> NORDIC_CIVILIAN;
+  public static final net.minecraft.class_1299<net._void.civilizations.entity.custom.NordicBossEntity> NORDIC_BOSS;
+  public static final net.minecraft.class_1299<net._void.civilizations.entity.custom.GreeceCivilianEntity> GREECE_CIVILIAN;
+  public static final net.minecraft.class_1299<net._void.civilizations.entity.custom.GreeceBossEntity> GREECE_BOSS;
+  public static final net.minecraft.class_1299<net._void.civilizations.entity.custom.RomeCivilianEntity> ROME_CIVILIAN;
+  public static final net.minecraft.class_1299<net._void.civilizations.entity.custom.RomeBossEntity> ROME_BOSS;
+  public static final net.minecraft.class_1299<net._void.civilizations.entity.custom.RomeGuardEntity> ROME_GUARD;
+  public static final net.minecraft.class_1299<net._void.civilizations.entity.custom.BossArtemisEntity> BOSS_ARTEMIS;
+  public static final net.minecraft.class_1299<net._void.civilizations.entity.custom.BossAnubisEntity> BOSS_ANUBIS;
+  public static final net.minecraft.class_1299<net._void.civilizations.entity.custom.BossMercuryEntity> BOSS_MERCURY;
+  public static final net.minecraft.class_1299<net._void.civilizations.entity.custom.BossLokiEntity> BOSS_LOKI;
+  public static final net.minecraft.class_1299<net._void.civilizations.entity.custom.BossLokiCloneEntity> BOSS_LOKI_CLONE;
+  public static final net.minecraft.class_1299<net._void.civilizations.entity.custom.BossWukongEntity> BOSS_WUKONG;
+  public net._void.civilizations.entity.ModEntities();
+  static {};
+}
+== net/_void/civilizations/entity/animation/ModAnimations
+Compiled from "ModAnimations.java"
+public class net._void.civilizations.entity.animation.ModAnimations {
+  public static final net.minecraft.class_7184 EGYPT_CIVILIAN_ATTACK;
+  public static final net.minecraft.class_7184 EGYPT_CIVILIAN_MOVE;
+  public static final net.minecraft.class_7184 EGYPT_CIVILIAN_IDLE;
+  public static final net.minecraft.class_7184 EGYPT_BOSS_IDLE;
+  public static final net.minecraft.class_7184 EGYPT_BOSS_MOVE;
+  public static final net.minecraft.class_7184 EGYPT_BOSS_SHOOT;
+  public static final net.minecraft.class_7184 EGYPT_BOSS_ATTACK;
+  public static final net.minecraft.class_7184 CHINA_GUARD_WALK;
+  public static final net.minecraft.class_7184 CHINA_GUARD_SHOOT;
+  public static final net.minecraft.class_7184 CHINA_BOSS_MOVE;
+  public static final net.minecraft.class_7184 CHINA_BOSS_ATTACK;
+  public static final net.minecraft.class_7184 NORDIC_CIVILIAN_ATTACK;
+  public static final net.minecraft.class_7184 NORDIC_BOSS_ATTACK;
+  public static final net.minecraft.class_7184 GREECE_BOSS_ATTACK;
+  public static final net.minecraft.class_7184 GREECE_BOSS_DEFFEND;
+  public static final net.minecraft.class_7184 ROME_BOSS_ATTACK;
+  public static final net.minecraft.class_7184 ANUBIS_ATTACK;
+  public static final net.minecraft.class_7184 ANUBIS_SPELL;
+  public static final net.minecraft.class_7184 MERCURY_IDLE;
+  public static final net.minecraft.class_7184 MERCURY_ATTACK;
+  public static final net.minecraft.class_7184 LOKI_POTION;
+  public static final net.minecraft.class_7184 LOKI_ATTACK;
+  public static final net.minecraft.class_7184 LOKI_CLONE;
+  public static final net.minecraft.class_7184 LOKI_SUMMON;
+  public static final net.minecraft.class_7184 WUKONG_IDLE;
+  public static final net.minecraft.class_7184 WUKONG_ATTACK;
+  public static final net.minecraft.class_7184 WUKONG_SPELL;
+  public net._void.civilizations.entity.animation.ModAnimations();
+  static {};
+}
+== net/_void/civilizations/entity/client/RomeGuardRenderer
+Compiled from "RomeGuardRenderer.java"
+public class net._void.civilizations.entity.client.RomeGuardRenderer extends net.minecraft.class_927<net._void.civilizations.entity.custom.RomeGuardEntity, net._void.civilizations.entity.client.RomeGuardModel<net._void.civilizations.entity.custom.RomeGuardEntity>> {
+  public static final java.util.Map<net._void.civilizations.entity.custom.RomeGuardVariant, net.minecraft.class_2960> LOCATION_BY_VARIANT;
+  public net._void.civilizations.entity.client.RomeGuardRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(net._void.civilizations.entity.custom.RomeGuardEntity);
+  public void render(net._void.civilizations.entity.custom.RomeGuardEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_4072(net.minecraft.class_1308, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean method_4055(net.minecraft.class_1309);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  protected boolean method_3921(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  private static void lambda$static$0(java.util.EnumMap);
+  static {};
+}
+== net/_void/civilizations/entity/client/RomeGuardModel
+Compiled from "RomeGuardModel.java"
+public class net._void.civilizations.entity.client.RomeGuardModel<T extends net._void.civilizations.entity.custom.RomeGuardEntity> extends net.minecraft.class_5597<T> {
+  private final net.minecraft.class_630 body;
+  private final net.minecraft.class_630 head;
+  public net._void.civilizations.entity.client.RomeGuardModel(net.minecraft.class_630);
+  public static net.minecraft.class_5607 getTexturedModelData();
+  public void setAngles(net._void.civilizations.entity.custom.RomeGuardEntity, float, float, float, float, float);
+  private void setHeadAngles(float, float);
+  public void method_2828(net.minecraft.class_4587, net.minecraft.class_4588, int, int, float, float, float, float);
+  public net.minecraft.class_630 method_32008();
+  public void method_2819(net.minecraft.class_1297, float, float, float, float, float);
+}
+== net/_void/civilizations/entity/client/GreeceBossModel
+Compiled from "GreeceBossModel.java"
+public class net._void.civilizations.entity.client.GreeceBossModel<T extends net._void.civilizations.entity.custom.GreeceBossEntity> extends net.minecraft.class_5597<T> {
+  private final net.minecraft.class_630 body;
+  private final net.minecraft.class_630 head;
+  public net._void.civilizations.entity.client.GreeceBossModel(net.minecraft.class_630);
+  public static net.minecraft.class_5607 getTexturedModelData();
+  public void setAngles(net._void.civilizations.entity.custom.GreeceBossEntity, float, float, float, float, float);
+  private void setHeadAngles(float, float);
+  public void method_2828(net.minecraft.class_4587, net.minecraft.class_4588, int, int, float, float, float, float);
+  public net.minecraft.class_630 method_32008();
+  public void method_2819(net.minecraft.class_1297, float, float, float, float, float);
+}
+== net/_void/civilizations/entity/client/ChinaCivilianModel
+Compiled from "ChinaCivilianModel.java"
+public class net._void.civilizations.entity.client.ChinaCivilianModel<T extends net._void.civilizations.entity.custom.ChinaCivilianEntity> extends net.minecraft.class_5597<T> {
+  private final net.minecraft.class_630 body;
+  private final net.minecraft.class_630 head;
+  public net._void.civilizations.entity.client.ChinaCivilianModel(net.minecraft.class_630);
+  public static net.minecraft.class_5607 getTexturedModelData();
+  public void setAngles(net._void.civilizations.entity.custom.ChinaCivilianEntity, float, float, float, float, float);
+  private void setHeadAngles(float, float);
+  public void method_2828(net.minecraft.class_4587, net.minecraft.class_4588, int, int, float, float, float, float);
+  public net.minecraft.class_630 method_32008();
+  public void method_2819(net.minecraft.class_1297, float, float, float, float, float);
+}
+== net/_void/civilizations/entity/client/EgyptBossModel
+Compiled from "EgyptBossModel.java"
+public class net._void.civilizations.entity.client.EgyptBossModel<T extends net._void.civilizations.entity.custom.EgyptBossEntity> extends net.minecraft.class_5597<T> {
+  private final net.minecraft.class_630 body;
+  private final net.minecraft.class_630 head;
+  public net._void.civilizations.entity.client.EgyptBossModel(net.minecraft.class_630);
+  public static net.minecraft.class_5607 getTexturedModelData();
+  public void setAngles(net._void.civilizations.entity.custom.EgyptBossEntity, float, float, float, float, float);
+  private void setHeadAngles(float, float);
+  public void method_2828(net.minecraft.class_4587, net.minecraft.class_4588, int, int, float, float, float, float);
+  public net.minecraft.class_630 method_32008();
+  public void method_2819(net.minecraft.class_1297, float, float, float, float, float);
+}
+== net/_void/civilizations/entity/client/NordicCivilianModel
+Compiled from "NordicCivilianModel.java"
+public class net._void.civilizations.entity.client.NordicCivilianModel<T extends net._void.civilizations.entity.custom.NordicCivilianEntity> extends net.minecraft.class_5597<T> {
+  private final net.minecraft.class_630 body;
+  private final net.minecraft.class_630 head;
+  public net._void.civilizations.entity.client.NordicCivilianModel(net.minecraft.class_630);
+  public static net.minecraft.class_5607 getTexturedModelData();
+  public void setAngles(net._void.civilizations.entity.custom.NordicCivilianEntity, float, float, float, float, float);
+  private void setHeadAngles(float, float);
+  public void method_2828(net.minecraft.class_4587, net.minecraft.class_4588, int, int, float, float, float, float);
+  public net.minecraft.class_630 method_32008();
+  public void method_2819(net.minecraft.class_1297, float, float, float, float, float);
+}
+== net/_void/civilizations/entity/client/BossArtemisRenderer
+Compiled from "BossArtemisRenderer.java"
+public class net._void.civilizations.entity.client.BossArtemisRenderer extends net.minecraft.class_927<net._void.civilizations.entity.custom.BossArtemisEntity, net._void.civilizations.entity.client.BossArtemisModel<net._void.civilizations.entity.custom.BossArtemisEntity>> {
+  private static final net.minecraft.class_2960 TEXTURE;
+  public net._void.civilizations.entity.client.BossArtemisRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(net._void.civilizations.entity.custom.BossArtemisEntity);
+  public void render(net._void.civilizations.entity.custom.BossArtemisEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_4072(net.minecraft.class_1308, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean method_4055(net.minecraft.class_1309);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  protected boolean method_3921(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  static {};
+}
+== net/_void/civilizations/entity/client/EgyptCivilianModel
+Compiled from "EgyptCivilianModel.java"
+public class net._void.civilizations.entity.client.EgyptCivilianModel<T extends net._void.civilizations.entity.custom.EgyptCivilianEntity> extends net.minecraft.class_5597<T> {
+  private final net.minecraft.class_630 body;
+  private final net.minecraft.class_630 head;
+  public net._void.civilizations.entity.client.EgyptCivilianModel(net.minecraft.class_630);
+  public static net.minecraft.class_5607 getTexturedModelData();
+  public void setAngles(net._void.civilizations.entity.custom.EgyptCivilianEntity, float, float, float, float, float);
+  private void setHeadAngles(float, float);
+  public void method_2828(net.minecraft.class_4587, net.minecraft.class_4588, int, int, float, float, float, float);
+  public net.minecraft.class_630 method_32008();
+  public void method_2819(net.minecraft.class_1297, float, float, float, float, float);
+}
+== net/_void/civilizations/entity/client/NordicBossModel
+Compiled from "NordicBossModel.java"
+public class net._void.civilizations.entity.client.NordicBossModel<T extends net._void.civilizations.entity.custom.NordicBossEntity> extends net.minecraft.class_5597<T> {
+  private final net.minecraft.class_630 body;
+  private final net.minecraft.class_630 head;
+  public net._void.civilizations.entity.client.NordicBossModel(net.minecraft.class_630);
+  public static net.minecraft.class_5607 getTexturedModelData();
+  public void setAngles(net._void.civilizations.entity.custom.NordicBossEntity, float, float, float, float, float);
+  private void setHeadAngles(float, float);
+  public void method_2828(net.minecraft.class_4587, net.minecraft.class_4588, int, int, float, float, float, float);
+  public net.minecraft.class_630 method_32008();
+  public void method_2819(net.minecraft.class_1297, float, float, float, float, float);
+}
+== net/_void/civilizations/entity/client/BossWukongRenderer
+Compiled from "BossWukongRenderer.java"
+public class net._void.civilizations.entity.client.BossWukongRenderer extends net.minecraft.class_927<net._void.civilizations.entity.custom.BossWukongEntity, net._void.civilizations.entity.client.BossWukongModel<net._void.civilizations.entity.custom.BossWukongEntity>> {
+  private static final net.minecraft.class_2960 TEXTURE;
+  public net._void.civilizations.entity.client.BossWukongRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(net._void.civilizations.entity.custom.BossWukongEntity);
+  public void render(net._void.civilizations.entity.custom.BossWukongEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_4072(net.minecraft.class_1308, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean method_4055(net.minecraft.class_1309);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  protected boolean method_3921(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  static {};
+}
+== net/_void/civilizations/entity/client/ChinaBossRenderer
+Compiled from "ChinaBossRenderer.java"
+public class net._void.civilizations.entity.client.ChinaBossRenderer extends net.minecraft.class_927<net._void.civilizations.entity.custom.ChinaBossEntity, net._void.civilizations.entity.client.ChinaBossModel<net._void.civilizations.entity.custom.ChinaBossEntity>> {
+  private static final net.minecraft.class_2960 TEXTURE;
+  public net._void.civilizations.entity.client.ChinaBossRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(net._void.civilizations.entity.custom.ChinaBossEntity);
+  public void render(net._void.civilizations.entity.custom.ChinaBossEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_4072(net.minecraft.class_1308, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean method_4055(net.minecraft.class_1309);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  protected boolean method_3921(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  static {};
+}
+== net/_void/civilizations/entity/client/ChinaBossModel
+Compiled from "ChinaBossModel.java"
+public class net._void.civilizations.entity.client.ChinaBossModel<T extends net._void.civilizations.entity.custom.ChinaBossEntity> extends net.minecraft.class_5597<T> {
+  private final net.minecraft.class_630 body;
+  private final net.minecraft.class_630 head;
+  public net._void.civilizations.entity.client.ChinaBossModel(net.minecraft.class_630);
+  public static net.minecraft.class_5607 getTexturedModelData();
+  public void setAngles(net._void.civilizations.entity.custom.ChinaBossEntity, float, float, float, float, float);
+  private void setHeadAngles(float, float);
+  public void method_2828(net.minecraft.class_4587, net.minecraft.class_4588, int, int, float, float, float, float);
+  public net.minecraft.class_630 method_32008();
+  public void method_2819(net.minecraft.class_1297, float, float, float, float, float);
+}
+== net/_void/civilizations/entity/client/NordicCivilianRenderer
+Compiled from "NordicCivilianRenderer.java"
+public class net._void.civilizations.entity.client.NordicCivilianRenderer extends net.minecraft.class_927<net._void.civilizations.entity.custom.NordicCivilianEntity, net._void.civilizations.entity.client.NordicCivilianModel<net._void.civilizations.entity.custom.NordicCivilianEntity>> {
+  public static final java.util.Map<net._void.civilizations.entity.custom.NordicCivilianVariant, net.minecraft.class_2960> LOCATION_BY_VARIANT;
+  public net._void.civilizations.entity.client.NordicCivilianRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(net._void.civilizations.entity.custom.NordicCivilianEntity);
+  public void render(net._void.civilizations.entity.custom.NordicCivilianEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_4072(net.minecraft.class_1308, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean method_4055(net.minecraft.class_1309);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  protected boolean method_3921(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  private static void lambda$static$0(java.util.EnumMap);
+  static {};
+}
+== net/_void/civilizations/entity/client/GreeceBossRenderer
+Compiled from "GreeceBossRenderer.java"
+public class net._void.civilizations.entity.client.GreeceBossRenderer extends net.minecraft.class_927<net._void.civilizations.entity.custom.GreeceBossEntity, net._void.civilizations.entity.client.GreeceBossModel<net._void.civilizations.entity.custom.GreeceBossEntity>> {
+  private static final net.minecraft.class_2960 TEXTURE;
+  public net._void.civilizations.entity.client.GreeceBossRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(net._void.civilizations.entity.custom.GreeceBossEntity);
+  public void render(net._void.civilizations.entity.custom.GreeceBossEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_4072(net.minecraft.class_1308, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean method_4055(net.minecraft.class_1309);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  protected boolean method_3921(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  static {};
+}
+== net/_void/civilizations/entity/client/ChinaGuardModel
+Compiled from "ChinaGuardModel.java"
+public class net._void.civilizations.entity.client.ChinaGuardModel<T extends net._void.civilizations.entity.custom.ChinaGuardEntity> extends net.minecraft.class_5597<T> {
+  private final net.minecraft.class_630 body;
+  private final net.minecraft.class_630 head;
+  public net._void.civilizations.entity.client.ChinaGuardModel(net.minecraft.class_630);
+  public static net.minecraft.class_5607 getTexturedModelData();
+  public void setAngles(net._void.civilizations.entity.custom.ChinaGuardEntity, float, float, float, float, float);
+  private void setHeadAngles(float, float);
+  public void method_2828(net.minecraft.class_4587, net.minecraft.class_4588, int, int, float, float, float, float);
+  public net.minecraft.class_630 method_32008();
+  public void method_2819(net.minecraft.class_1297, float, float, float, float, float);
+}
+== net/_void/civilizations/entity/client/ChinaCivilianRenderer
+Compiled from "ChinaCivilianRenderer.java"
+public class net._void.civilizations.entity.client.ChinaCivilianRenderer extends net.minecraft.class_927<net._void.civilizations.entity.custom.ChinaCivilianEntity, net._void.civilizations.entity.client.ChinaCivilianModel<net._void.civilizations.entity.custom.ChinaCivilianEntity>> {
+  public static final java.util.Map<net._void.civilizations.entity.custom.ChinaCivilianVariant, net.minecraft.class_2960> LOCATION_BY_VARIANT;
+  public net._void.civilizations.entity.client.ChinaCivilianRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(net._void.civilizations.entity.custom.ChinaCivilianEntity);
+  public void render(net._void.civilizations.entity.custom.ChinaCivilianEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_4072(net.minecraft.class_1308, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean method_4055(net.minecraft.class_1309);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  protected boolean method_3921(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  private static void lambda$static$0(java.util.EnumMap);
+  static {};
+}
+== net/_void/civilizations/entity/client/BossAnubisModel
+Compiled from "BossAnubisModel.java"
+public class net._void.civilizations.entity.client.BossAnubisModel<T extends net._void.civilizations.entity.custom.BossAnubisEntity> extends net.minecraft.class_5597<T> {
+  private final net.minecraft.class_630 body;
+  private final net.minecraft.class_630 head;
+  public net._void.civilizations.entity.client.BossAnubisModel(net.minecraft.class_630);
+  public static net.minecraft.class_5607 getTexturedModelData();
+  public void setAngles(net._void.civilizations.entity.custom.BossAnubisEntity, float, float, float, float, float);
+  private void setHeadAngles(float, float);
+  public void method_2828(net.minecraft.class_4587, net.minecraft.class_4588, int, int, float, float, float, float);
+  public net.minecraft.class_630 method_32008();
+  public void method_2819(net.minecraft.class_1297, float, float, float, float, float);
+}
+== net/_void/civilizations/entity/client/BossAnubisRenderer
+Compiled from "BossAnubisRenderer.java"
+public class net._void.civilizations.entity.client.BossAnubisRenderer extends net.minecraft.class_927<net._void.civilizations.entity.custom.BossAnubisEntity, net._void.civilizations.entity.client.BossAnubisModel<net._void.civilizations.entity.custom.BossAnubisEntity>> {
+  private static final net.minecraft.class_2960 TEXTURE;
+  public net._void.civilizations.entity.client.BossAnubisRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(net._void.civilizations.entity.custom.BossAnubisEntity);
+  public void render(net._void.civilizations.entity.custom.BossAnubisEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_4072(net.minecraft.class_1308, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean method_4055(net.minecraft.class_1309);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  protected boolean method_3921(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  static {};
+}
+== net/_void/civilizations/entity/client/ModModelLayers
+Compiled from "ModModelLayers.java"
+public class net._void.civilizations.entity.client.ModModelLayers {
+  public static final net.minecraft.class_5601 EGYPT_CIVILIAN;
+  public static final net.minecraft.class_5601 EGYPT_NPC;
+  public static final net.minecraft.class_5601 EGYPT_BOSS;
+  public static final net.minecraft.class_5601 CHINA_CIVILIAN;
+  public static final net.minecraft.class_5601 CHINA_GUARD;
+  public static final net.minecraft.class_5601 CHINA_BOSS;
+  public static final net.minecraft.class_5601 NORDIC_CIVILIAN;
+  public static final net.minecraft.class_5601 NORDIC_BOSS;
+  public static final net.minecraft.class_5601 GREECE_CIVILIAN;
+  public static final net.minecraft.class_5601 GREECE_BOSS;
+  public static final net.minecraft.class_5601 ROME_CIVILIAN;
+  public static final net.minecraft.class_5601 ROME_BOSS;
+  public static final net.minecraft.class_5601 ROME_GUARD;
+  public static final net.minecraft.class_5601 BOSS_ARTEMIS;
+  public static final net.minecraft.class_5601 BOSS_ANUBIS;
+  public static final net.minecraft.class_5601 BOSS_MERCURY;
+  public static final net.minecraft.class_5601 BOSS_LOKI;
+  public static final net.minecraft.class_5601 BOSS_LOKI_CLONE;
+  public static final net.minecraft.class_5601 BOSS_WUKONG;
+  public net._void.civilizations.entity.client.ModModelLayers();
+  static {};
+}
+== net/_void/civilizations/entity/client/BossMercuryModel
+Compiled from "BossMercuryModel.java"
+public class net._void.civilizations.entity.client.BossMercuryModel<T extends net._void.civilizations.entity.custom.BossMercuryEntity> extends net.minecraft.class_5597<T> {
+  private final net.minecraft.class_630 body;
+  private final net.minecraft.class_630 head;
+  public net._void.civilizations.entity.client.BossMercuryModel(net.minecraft.class_630);
+  public static net.minecraft.class_5607 getTexturedModelData();
+  public void setAngles(net._void.civilizations.entity.custom.BossMercuryEntity, float, float, float, float, float);
+  private void setHeadAngles(float, float);
+  public void method_2828(net.minecraft.class_4587, net.minecraft.class_4588, int, int, float, float, float, float);
+  public net.minecraft.class_630 method_32008();
+  public void method_2819(net.minecraft.class_1297, float, float, float, float, float);
+}
+== net/_void/civilizations/entity/client/NordicBossRenderer
+Compiled from "NordicBossRenderer.java"
+public class net._void.civilizations.entity.client.NordicBossRenderer extends net.minecraft.class_927<net._void.civilizations.entity.custom.NordicBossEntity, net._void.civilizations.entity.client.NordicBossModel<net._void.civilizations.entity.custom.NordicBossEntity>> {
+  private static final net.minecraft.class_2960 TEXTURE;
+  public net._void.civilizations.entity.client.NordicBossRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(net._void.civilizations.entity.custom.NordicBossEntity);
+  public void render(net._void.civilizations.entity.custom.NordicBossEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_4072(net.minecraft.class_1308, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean method_4055(net.minecraft.class_1309);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  protected boolean method_3921(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  static {};
+}
+== net/_void/civilizations/entity/client/EgyptNpcModel
+Compiled from "EgyptNpcModel.java"
+public class net._void.civilizations.entity.client.EgyptNpcModel<T extends net._void.civilizations.entity.custom.EgyptNpcEntity> extends net.minecraft.class_5597<T> {
+  private final net.minecraft.class_630 body;
+  private final net.minecraft.class_630 head;
+  public net._void.civilizations.entity.client.EgyptNpcModel(net.minecraft.class_630);
+  public static net.minecraft.class_5607 getTexturedModelData();
+  public void setAngles(net._void.civilizations.entity.custom.EgyptNpcEntity, float, float, float, float, float);
+  private void setHeadAngles(float, float);
+  public void method_2828(net.minecraft.class_4587, net.minecraft.class_4588, int, int, float, float, float, float);
+  public net.minecraft.class_630 method_32008();
+  public void method_2819(net.minecraft.class_1297, float, float, float, float, float);
+}
+== net/_void/civilizations/entity/client/EgyptCivilianRenderer
+Compiled from "EgyptCivilianRenderer.java"
+public class net._void.civilizations.entity.client.EgyptCivilianRenderer extends net.minecraft.class_927<net._void.civilizations.entity.custom.EgyptCivilianEntity, net._void.civilizations.entity.client.EgyptCivilianModel<net._void.civilizations.entity.custom.EgyptCivilianEntity>> {
+  public static final java.util.Map<net._void.civilizations.entity.custom.EgyptCivilianVariant, net.minecraft.class_2960> LOCATION_BY_VARIANT;
+  public net._void.civilizations.entity.client.EgyptCivilianRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(net._void.civilizations.entity.custom.EgyptCivilianEntity);
+  public void render(net._void.civilizations.entity.custom.EgyptCivilianEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_4072(net.minecraft.class_1308, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean method_4055(net.minecraft.class_1309);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  protected boolean method_3921(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  private static void lambda$static$0(java.util.EnumMap);
+  static {};
+}
+== net/_void/civilizations/entity/client/RomeBossRenderer
+Compiled from "RomeBossRenderer.java"
+public class net._void.civilizations.entity.client.RomeBossRenderer extends net.minecraft.class_927<net._void.civilizations.entity.custom.RomeBossEntity, net._void.civilizations.entity.client.RomeBossModel<net._void.civilizations.entity.custom.RomeBossEntity>> {
+  private static final net.minecraft.class_2960 TEXTURE;
+  public net._void.civilizations.entity.client.RomeBossRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(net._void.civilizations.entity.custom.RomeBossEntity);
+  public void render(net._void.civilizations.entity.custom.RomeBossEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_4072(net.minecraft.class_1308, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean method_4055(net.minecraft.class_1309);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  protected boolean method_3921(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  static {};
+}
+== net/_void/civilizations/entity/client/RomeCivilianModel
+Compiled from "RomeCivilianModel.java"
+public class net._void.civilizations.entity.client.RomeCivilianModel<T extends net._void.civilizations.entity.custom.RomeCivilianEntity> extends net.minecraft.class_5597<T> {
+  private final net.minecraft.class_630 body;
+  private final net.minecraft.class_630 head;
+  public net._void.civilizations.entity.client.RomeCivilianModel(net.minecraft.class_630);
+  public static net.minecraft.class_5607 getTexturedModelData();
+  public void setAngles(net._void.civilizations.entity.custom.RomeCivilianEntity, float, float, float, float, float);
+  private void setHeadAngles(float, float);
+  public void method_2828(net.minecraft.class_4587, net.minecraft.class_4588, int, int, float, float, float, float);
+  public net.minecraft.class_630 method_32008();
+  public void method_2819(net.minecraft.class_1297, float, float, float, float, float);
+}
+== net/_void/civilizations/entity/client/RomeCivilianRenderer
+Compiled from "RomeCivilianRenderer.java"
+public class net._void.civilizations.entity.client.RomeCivilianRenderer extends net.minecraft.class_927<net._void.civilizations.entity.custom.RomeCivilianEntity, net._void.civilizations.entity.client.RomeCivilianModel<net._void.civilizations.entity.custom.RomeCivilianEntity>> {
+  public static final java.util.Map<net._void.civilizations.entity.custom.RomeCivilianVariant, net.minecraft.class_2960> LOCATION_BY_VARIANT;
+  public net._void.civilizations.entity.client.RomeCivilianRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(net._void.civilizations.entity.custom.RomeCivilianEntity);
+  public void render(net._void.civilizations.entity.custom.RomeCivilianEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_4072(net.minecraft.class_1308, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean method_4055(net.minecraft.class_1309);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  protected boolean method_3921(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  private static void lambda$static$0(java.util.EnumMap);
+  static {};
+}
+== net/_void/civilizations/entity/client/EgyptNpcRenderer
+Compiled from "EgyptNpcRenderer.java"
+public class net._void.civilizations.entity.client.EgyptNpcRenderer extends net.minecraft.class_927<net._void.civilizations.entity.custom.EgyptNpcEntity, net._void.civilizations.entity.client.EgyptNpcModel<net._void.civilizations.entity.custom.EgyptNpcEntity>> {
+  private static final net.minecraft.class_2960 TEXTURE;
+  public net._void.civilizations.entity.client.EgyptNpcRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(net._void.civilizations.entity.custom.EgyptNpcEntity);
+  public void render(net._void.civilizations.entity.custom.EgyptNpcEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_4072(net.minecraft.class_1308, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean method_4055(net.minecraft.class_1309);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  protected boolean method_3921(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  static {};
+}
+== net/_void/civilizations/entity/client/BossLokiCloneModel
+Compiled from "BossLokiCloneModel.java"
+public class net._void.civilizations.entity.client.BossLokiCloneModel<T extends net._void.civilizations.entity.custom.BossLokiCloneEntity> extends net.minecraft.class_5597<T> {
+  private final net.minecraft.class_630 body;
+  private final net.minecraft.class_630 head;
+  public net._void.civilizations.entity.client.BossLokiCloneModel(net.minecraft.class_630);
+  public static net.minecraft.class_5607 getTexturedModelData();
+  public void setAngles(net._void.civilizations.entity.custom.BossLokiCloneEntity, float, float, float, float, float);
+  private void setHeadAngles(float, float);
+  public void method_2828(net.minecraft.class_4587, net.minecraft.class_4588, int, int, float, float, float, float);
+  public net.minecraft.class_630 method_32008();
+  public void method_2819(net.minecraft.class_1297, float, float, float, float, float);
+}
+== net/_void/civilizations/entity/client/GreeceCivilianModel
+Compiled from "GreeceCivilianModel.java"
+public class net._void.civilizations.entity.client.GreeceCivilianModel<T extends net._void.civilizations.entity.custom.GreeceCivilianEntity> extends net.minecraft.class_5597<T> {
+  private final net.minecraft.class_630 body;
+  private final net.minecraft.class_630 head;
+  public net._void.civilizations.entity.client.GreeceCivilianModel(net.minecraft.class_630);
+  public static net.minecraft.class_5607 getTexturedModelData();
+  public void setAngles(net._void.civilizations.entity.custom.GreeceCivilianEntity, float, float, float, float, float);
+  private void setHeadAngles(float, float);
+  public void method_2828(net.minecraft.class_4587, net.minecraft.class_4588, int, int, float, float, float, float);
+  public net.minecraft.class_630 method_32008();
+  public void method_2819(net.minecraft.class_1297, float, float, float, float, float);
+}
+== net/_void/civilizations/entity/client/BossLokiRenderer
+Compiled from "BossLokiRenderer.java"
+public class net._void.civilizations.entity.client.BossLokiRenderer extends net.minecraft.class_927<net._void.civilizations.entity.custom.BossLokiEntity, net._void.civilizations.entity.client.BossLokiModel<net._void.civilizations.entity.custom.BossLokiEntity>> {
+  private static final net.minecraft.class_2960 TEXTURE;
+  public net._void.civilizations.entity.client.BossLokiRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(net._void.civilizations.entity.custom.BossLokiEntity);
+  public void render(net._void.civilizations.entity.custom.BossLokiEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_4072(net.minecraft.class_1308, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean method_4055(net.minecraft.class_1309);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  protected boolean method_3921(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  static {};
+}
+== net/_void/civilizations/entity/client/ChinaGuardRenderer
+Compiled from "ChinaGuardRenderer.java"
+public class net._void.civilizations.entity.client.ChinaGuardRenderer extends net.minecraft.class_927<net._void.civilizations.entity.custom.ChinaGuardEntity, net._void.civilizations.entity.client.ChinaGuardModel<net._void.civilizations.entity.custom.ChinaGuardEntity>> {
+  private static final net.minecraft.class_2960 TEXTURE;
+  public net._void.civilizations.entity.client.ChinaGuardRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(net._void.civilizations.entity.custom.ChinaGuardEntity);
+  public void render(net._void.civilizations.entity.custom.ChinaGuardEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_4072(net.minecraft.class_1308, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean method_4055(net.minecraft.class_1309);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  protected boolean method_3921(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  static {};
+}
+== net/_void/civilizations/entity/client/BossWukongModel
+Compiled from "BossWukongModel.java"
+public class net._void.civilizations.entity.client.BossWukongModel<T extends net._void.civilizations.entity.custom.BossWukongEntity> extends net.minecraft.class_5597<T> {
+  private final net.minecraft.class_630 body;
+  private final net.minecraft.class_630 head;
+  public net._void.civilizations.entity.client.BossWukongModel(net.minecraft.class_630);
+  public static net.minecraft.class_5607 getTexturedModelData();
+  public void setAngles(net._void.civilizations.entity.custom.BossWukongEntity, float, float, float, float, float);
+  private void setHeadAngles(float, float);
+  public void method_2828(net.minecraft.class_4587, net.minecraft.class_4588, int, int, float, float, float, float);
+  public net.minecraft.class_630 method_32008();
+  public void method_2819(net.minecraft.class_1297, float, float, float, float, float);
+}
+== net/_void/civilizations/entity/client/GreeceCivilianRenderer
+Compiled from "GreeceCivilianRenderer.java"
+public class net._void.civilizations.entity.client.GreeceCivilianRenderer extends net.minecraft.class_927<net._void.civilizations.entity.custom.GreeceCivilianEntity, net._void.civilizations.entity.client.GreeceCivilianModel<net._void.civilizations.entity.custom.GreeceCivilianEntity>> {
+  public static final java.util.Map<net._void.civilizations.entity.custom.GreeceCivilianVariant, net.minecraft.class_2960> LOCATION_BY_VARIANT;
+  public net._void.civilizations.entity.client.GreeceCivilianRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(net._void.civilizations.entity.custom.GreeceCivilianEntity);
+  public void render(net._void.civilizations.entity.custom.GreeceCivilianEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_4072(net.minecraft.class_1308, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean method_4055(net.minecraft.class_1309);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  protected boolean method_3921(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  private static void lambda$static$0(java.util.EnumMap);
+  static {};
+}
+== net/_void/civilizations/entity/client/BossMercuryRenderer
+Compiled from "BossMercuryRenderer.java"
+public class net._void.civilizations.entity.client.BossMercuryRenderer extends net.minecraft.class_927<net._void.civilizations.entity.custom.BossMercuryEntity, net._void.civilizations.entity.client.BossMercuryModel<net._void.civilizations.entity.custom.BossMercuryEntity>> {
+  private static final net.minecraft.class_2960 TEXTURE;
+  public net._void.civilizations.entity.client.BossMercuryRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(net._void.civilizations.entity.custom.BossMercuryEntity);
+  public void render(net._void.civilizations.entity.custom.BossMercuryEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_4072(net.minecraft.class_1308, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean method_4055(net.minecraft.class_1309);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  protected boolean method_3921(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  static {};
+}
+== net/_void/civilizations/entity/client/BossArtemisModel
+Compiled from "BossArtemisModel.java"
+public class net._void.civilizations.entity.client.BossArtemisModel<T extends net._void.civilizations.entity.custom.BossArtemisEntity> extends net.minecraft.class_5597<T> {
+  private final net.minecraft.class_630 body;
+  private final net.minecraft.class_630 head;
+  public net._void.civilizations.entity.client.BossArtemisModel(net.minecraft.class_630);
+  public static net.minecraft.class_5607 getTexturedModelData();
+  public void setAngles(net._void.civilizations.entity.custom.BossArtemisEntity, float, float, float, float, float);
+  private void setHeadAngles(float, float);
+  public void method_2828(net.minecraft.class_4587, net.minecraft.class_4588, int, int, float, float, float, float);
+  public net.minecraft.class_630 method_32008();
+  public void method_2819(net.minecraft.class_1297, float, float, float, float, float);
+}
+== net/_void/civilizations/entity/client/BossLokiModel
+Compiled from "BossLokiModel.java"
+public class net._void.civilizations.entity.client.BossLokiModel<T extends net._void.civilizations.entity.custom.BossLokiEntity> extends net.minecraft.class_5597<T> {
+  private final net.minecraft.class_630 body;
+  private final net.minecraft.class_630 head;
+  public net._void.civilizations.entity.client.BossLokiModel(net.minecraft.class_630);
+  public static net.minecraft.class_5607 getTexturedModelData();
+  public void setAngles(net._void.civilizations.entity.custom.BossLokiEntity, float, float, float, float, float);
+  private void setHeadAngles(float, float);
+  public void method_2828(net.minecraft.class_4587, net.minecraft.class_4588, int, int, float, float, float, float);
+  public net.minecraft.class_630 method_32008();
+  public void method_2819(net.minecraft.class_1297, float, float, float, float, float);
+}
+== net/_void/civilizations/entity/client/RomeBossModel
+Compiled from "RomeBossModel.java"
+public class net._void.civilizations.entity.client.RomeBossModel<T extends net._void.civilizations.entity.custom.RomeBossEntity> extends net.minecraft.class_5597<T> {
+  private final net.minecraft.class_630 body;
+  private final net.minecraft.class_630 head;
+  public net._void.civilizations.entity.client.RomeBossModel(net.minecraft.class_630);
+  public static net.minecraft.class_5607 getTexturedModelData();
+  public void setAngles(net._void.civilizations.entity.custom.RomeBossEntity, float, float, float, float, float);
+  private void setHeadAngles(float, float);
+  public void method_2828(net.minecraft.class_4587, net.minecraft.class_4588, int, int, float, float, float, float);
+  public net.minecraft.class_630 method_32008();
+  public void method_2819(net.minecraft.class_1297, float, float, float, float, float);
+}
+== net/_void/civilizations/entity/client/EgyptBossRenderer
+Compiled from "EgyptBossRenderer.java"
+public class net._void.civilizations.entity.client.EgyptBossRenderer extends net.minecraft.class_927<net._void.civilizations.entity.custom.EgyptBossEntity, net._void.civilizations.entity.client.EgyptBossModel<net._void.civilizations.entity.custom.EgyptBossEntity>> {
+  private static final net.minecraft.class_2960 TEXTURE;
+  public net._void.civilizations.entity.client.EgyptBossRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(net._void.civilizations.entity.custom.EgyptBossEntity);
+  public void render(net._void.civilizations.entity.custom.EgyptBossEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_4072(net.minecraft.class_1308, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean method_4055(net.minecraft.class_1309);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  protected boolean method_3921(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  static {};
+}
+== net/_void/civilizations/entity/client/BossLokiCloneRenderer
+Compiled from "BossLokiCloneRenderer.java"
+public class net._void.civilizations.entity.client.BossLokiCloneRenderer extends net.minecraft.class_927<net._void.civilizations.entity.custom.BossLokiCloneEntity, net._void.civilizations.entity.client.BossLokiCloneModel<net._void.civilizations.entity.custom.BossLokiCloneEntity>> {
+  private static final net.minecraft.class_2960 TEXTURE;
+  public net._void.civilizations.entity.client.BossLokiCloneRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(net._void.civilizations.entity.custom.BossLokiCloneEntity);
+  public void render(net._void.civilizations.entity.custom.BossLokiCloneEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_4072(net.minecraft.class_1308, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean method_4055(net.minecraft.class_1309);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  protected boolean method_3921(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  static {};
+}
+== net/_void/civilizations/entity/ai/GreeceCivilianAttackGoal
+Compiled from "GreeceCivilianAttackGoal.java"
+public class net._void.civilizations.entity.ai.GreeceCivilianAttackGoal extends net.minecraft.class_1366 {
+  private final net._void.civilizations.entity.custom.GreeceCivilianEntity entity;
+  private int attackDelay;
+  private int ticksUntilNextAttack;
+  private boolean shouldCountTillNextAttack;
+  public net._void.civilizations.entity.ai.GreeceCivilianAttackGoal(net.minecraft.class_1314, double, boolean);
+  public void method_6269();
+  protected void method_6288(net.minecraft.class_1309, double);
+  private boolean isEnemyWithinAttackDistance(net.minecraft.class_1309);
+  protected void resetAttackCooldown();
+  protected boolean isTimeToStartAttackAnimation();
+  protected boolean isTimeToAttack();
+  protected void performAttack(net.minecraft.class_1309);
+  public void method_6268();
+  public void method_6270();
+}
+Goal
+== net/_void/civilizations/entity/ai/BossAnubisAttackGoal
+Compiled from "BossAnubisAttackGoal.java"
+public class net._void.civilizations.entity.ai.BossAnubisAttackGoal extends net.minecraft.class_1366 {
+  private final net._void.civilizations.entity.custom.BossAnubisEntity entity;
+  private int attackDelay;
+  private int ticksUntilNextAttack;
+  private boolean shouldCountTillNextAttack;
+  public net._void.civilizations.entity.ai.BossAnubisAttackGoal(net.minecraft.class_1314, double, boolean);
+  public void method_6269();
+  protected void method_6288(net.minecraft.class_1309, double);
+  private boolean isEnemyWithinAttackDistance(net.minecraft.class_1309);
+  protected void resetAttackCooldown();
+  protected boolean isTimeToStartAttackAnimation();
+  protected boolean isTimeToAttack();
+  protected void performAttack(net.minecraft.class_1309);
+  public void method_6268();
+  public void method_6270();
+}
+Goal
+== net/_void/civilizations/entity/ai/BossWukongAttackGoal
+Compiled from "BossWukongAttackGoal.java"
+public class net._void.civilizations.entity.ai.BossWukongAttackGoal extends net.minecraft.class_1352 {
+  protected final net.minecraft.class_1314 mob;
+  private final net._void.civilizations.entity.custom.BossWukongEntity entity;
+  public int cooldown;
+  public int type;
+  public net._void.civilizations.entity.ai.BossWukongAttackGoal(net.minecraft.class_1314);
+  public boolean method_6264();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+}
+Goal
+== net/_void/civilizations/entity/ai/BossArtemisGoal
+Compiled from "BossArtemisGoal.java"
+public class net._void.civilizations.entity.ai.BossArtemisGoal extends net.minecraft.class_1352 {
+  private final net._void.civilizations.entity.custom.BossArtemisEntity entity;
+  public int cooldown;
+  public double shotsTaken;
+  public net._void.civilizations.entity.ai.BossArtemisGoal(net.minecraft.class_1314);
+  public boolean method_6264();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+}
+Goal
+== net/_void/civilizations/entity/ai/ChinaBossAttackGoal
+Compiled from "ChinaBossAttackGoal.java"
+public class net._void.civilizations.entity.ai.ChinaBossAttackGoal extends net.minecraft.class_1366 {
+  private final net._void.civilizations.entity.custom.ChinaBossEntity entity;
+  private int attackDelay;
+  private int ticksUntilNextAttack;
+  private boolean shouldCountTillNextAttack;
+  public net._void.civilizations.entity.ai.ChinaBossAttackGoal(net.minecraft.class_1314, double, boolean);
+  public void method_6269();
+  protected void method_6288(net.minecraft.class_1309, double);
+  private boolean isEnemyWithinAttackDistance(net.minecraft.class_1309);
+  protected void resetAttackCooldown();
+  protected boolean isTimeToStartAttackAnimation();
+  protected boolean isTimeToAttack();
+  protected void performAttack(net.minecraft.class_1309);
+  public void method_6268();
+  public void method_6270();
+}
+Goal
+== net/_void/civilizations/entity/ai/ChinaGuardShootGoal
+Compiled from "ChinaGuardShootGoal.java"
+public class net._void.civilizations.entity.ai.ChinaGuardShootGoal extends net.minecraft.class_1352 {
+  private final net._void.civilizations.entity.custom.ChinaGuardEntity entity;
+  public int cooldown;
+  public double shotsTaken;
+  public net._void.civilizations.entity.ai.ChinaGuardShootGoal(net.minecraft.class_1314);
+  public boolean method_6264();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+}
+Goal
+== net/_void/civilizations/entity/ai/RomeGuardAttackGoal
+Compiled from "RomeGuardAttackGoal.java"
+public class net._void.civilizations.entity.ai.RomeGuardAttackGoal extends net.minecraft.class_1366 {
+  private final net._void.civilizations.entity.custom.RomeGuardEntity entity;
+  private int attackDelay;
+  private int ticksUntilNextAttack;
+  private boolean shouldCountTillNextAttack;
+  public net._void.civilizations.entity.ai.RomeGuardAttackGoal(net.minecraft.class_1314, double, boolean);
+  public void method_6269();
+  protected void method_6288(net.minecraft.class_1309, double);
+  private boolean isEnemyWithinAttackDistance(net.minecraft.class_1309);
+  protected void resetAttackCooldown();
+  protected boolean isTimeToStartAttackAnimation();
+  protected boolean isTimeToAttack();
+  protected void performAttack(net.minecraft.class_1309);
+  public void method_6268();
+  public void method_6270();
+}
+Goal
+== net/_void/civilizations/entity/ai/NordicBossAttackGoal
+Compiled from "NordicBossAttackGoal.java"
+public class net._void.civilizations.entity.ai.NordicBossAttackGoal extends net.minecraft.class_1366 {
+  private final net._void.civilizations.entity.custom.NordicBossEntity entity;
+  private int attackDelay;
+  private int ticksUntilNextAttack;
+  private boolean shouldCountTillNextAttack;
+  public net._void.civilizations.entity.ai.NordicBossAttackGoal(net.minecraft.class_1314, double, boolean);
+  public void method_6269();
+  protected void method_6288(net.minecraft.class_1309, double);
+  private boolean isEnemyWithinAttackDistance(net.minecraft.class_1309);
+  protected void resetAttackCooldown();
+  protected boolean isTimeToStartAttackAnimation();
+  protected boolean isTimeToAttack();
+  protected void performAttack(net.minecraft.class_1309);
+  public void method_6268();
+  public void method_6270();
+}
+Goal
+== net/_void/civilizations/entity/ai/EgyptBossShootGoal
+Compiled from "EgyptBossShootGoal.java"
+public class net._void.civilizations.entity.ai.EgyptBossShootGoal extends net.minecraft.class_1352 {
+  private final net._void.civilizations.entity.custom.EgyptBossEntity entity;
+  public int cooldown;
+  public double shotsTaken;
+  public net._void.civilizations.entity.ai.EgyptBossShootGoal(net.minecraft.class_1314);
+  public boolean method_6264();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+}
+Goal
+== net/_void/civilizations/entity/ai/BossAnubisSpellGoal
+Compiled from "BossAnubisSpellGoal.java"
+public class net._void.civilizations.entity.ai.BossAnubisSpellGoal extends net.minecraft.class_1352 {
+  private final net._void.civilizations.entity.custom.BossAnubisEntity entity;
+  private int timer;
+  public net._void.civilizations.entity.ai.BossAnubisSpellGoal(net.minecraft.class_1314);
+  public boolean method_6264();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+}
+Goal
+== net/_void/civilizations/entity/ai/RomeCivilianAttackGoal
+Compiled from "RomeCivilianAttackGoal.java"
+public class net._void.civilizations.entity.ai.RomeCivilianAttackGoal extends net.minecraft.class_1366 {
+  private final net._void.civilizations.entity.custom.RomeCivilianEntity entity;
+  private int attackDelay;
+  private int ticksUntilNextAttack;
+  private boolean shouldCountTillNextAttack;
+  public net._void.civilizations.entity.ai.RomeCivilianAttackGoal(net.minecraft.class_1314, double, boolean);
+  public void method_6269();
+  protected void method_6288(net.minecraft.class_1309, double);
+  private boolean isEnemyWithinAttackDistance(net.minecraft.class_1309);
+  protected void resetAttackCooldown();
+  protected boolean isTimeToStartAttackAnimation();
+  protected boolean isTimeToAttack();
+  protected void performAttack(net.minecraft.class_1309);
+  public void method_6268();
+  public void method_6270();
+}
+Goal
+== net/_void/civilizations/entity/ai/GreeceBossAttackGoal
+Compiled from "GreeceBossAttackGoal.java"
+public class net._void.civilizations.entity.ai.GreeceBossAttackGoal extends net.minecraft.class_1366 {
+  private final net._void.civilizations.entity.custom.GreeceBossEntity entity;
+  private int attackDelay;
+  private int ticksUntilNextAttack;
+  private boolean shouldCountTillNextAttack;
+  public net._void.civilizations.entity.ai.GreeceBossAttackGoal(net.minecraft.class_1314, double, boolean);
+  public void method_6269();
+  protected void method_6288(net.minecraft.class_1309, double);
+  private boolean isEnemyWithinAttackDistance(net.minecraft.class_1309);
+  protected void resetAttackCooldown();
+  protected boolean isTimeToStartAttackAnimation();
+  protected boolean isTimeToAttack();
+  protected void performAttack(net.minecraft.class_1309);
+  public void method_6268();
+  public void method_6270();
+}
+Goal
+== net/_void/civilizations/entity/ai/GreeceBossDeffendGoal
+Compiled from "GreeceBossDeffendGoal.java"
+public class net._void.civilizations.entity.ai.GreeceBossDeffendGoal extends net.minecraft.class_1352 {
+  private final net._void.civilizations.entity.custom.GreeceBossEntity entity;
+  public int cooldown;
+  public net._void.civilizations.entity.ai.GreeceBossDeffendGoal(net.minecraft.class_1314);
+  public boolean method_6264();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+}
+Goal
+== net/_void/civilizations/entity/ai/BossLokiAttackGoal
+Compiled from "BossLokiAttackGoal.java"
+public class net._void.civilizations.entity.ai.BossLokiAttackGoal extends net.minecraft.class_1352 {
+  protected final net.minecraft.class_1314 mob;
+  private final net._void.civilizations.entity.custom.BossLokiEntity entity;
+  public int cooldown;
+  public int type;
+  public net._void.civilizations.entity.ai.BossLokiAttackGoal(net.minecraft.class_1314);
+  public boolean method_6264();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+}
+Goal
+== net/_void/civilizations/entity/ai/EgyptBossAttackGoal
+Compiled from "EgyptBossAttackGoal.java"
+public class net._void.civilizations.entity.ai.EgyptBossAttackGoal extends net.minecraft.class_1366 {
+  private final net._void.civilizations.entity.custom.EgyptBossEntity entity;
+  private int attackDelay;
+  private int ticksUntilNextAttack;
+  private boolean shouldCountTillNextAttack;
+  public net._void.civilizations.entity.ai.EgyptBossAttackGoal(net.minecraft.class_1314, double, boolean);
+  public void method_6269();
+  protected void method_6288(net.minecraft.class_1309, double);
+  private boolean isEnemyWithinAttackDistance(net.minecraft.class_1309);
+  protected void resetAttackCooldown();
+  protected boolean isTimeToStartAttackAnimation();
+  protected boolean isTimeToAttack();
+  protected void performAttack(net.minecraft.class_1309);
+  public void method_6268();
+  public void method_6270();
+}
+Goal
+== net/_void/civilizations/entity/ai/RomeBossAttackGoal
+Compiled from "RomeBossAttackGoal.java"
+public class net._void.civilizations.entity.ai.RomeBossAttackGoal extends net.minecraft.class_1366 {
+  private final net._void.civilizations.entity.custom.RomeBossEntity entity;
+  private int attackDelay;
+  private int ticksUntilNextAttack;
+  private boolean shouldCountTillNextAttack;
+  public net._void.civilizations.entity.ai.RomeBossAttackGoal(net.minecraft.class_1314, double, boolean);
+  public void method_6269();
+  protected void method_6288(net.minecraft.class_1309, double);
+  private boolean isEnemyWithinAttackDistance(net.minecraft.class_1309);
+  protected void resetAttackCooldown();
+  protected boolean isTimeToStartAttackAnimation();
+  protected boolean isTimeToAttack();
+  protected void performAttack(net.minecraft.class_1309);
+  public void method_6268();
+  public void method_6270();
+}
+Goal
+== net/_void/civilizations/entity/ai/NordicCivilianAttackGoal
+Compiled from "NordicCivilianAttackGoal.java"
+public class net._void.civilizations.entity.ai.NordicCivilianAttackGoal extends net.minecraft.class_1366 {
+  private final net._void.civilizations.entity.custom.NordicCivilianEntity entity;
+  private int attackDelay;
+  private int ticksUntilNextAttack;
+  private boolean shouldCountTillNextAttack;
+  public net._void.civilizations.entity.ai.NordicCivilianAttackGoal(net.minecraft.class_1314, double, boolean);
+  public void method_6269();
+  protected void method_6288(net.minecraft.class_1309, double);
+  private boolean isEnemyWithinAttackDistance(net.minecraft.class_1309);
+  protected void resetAttackCooldown();
+  protected boolean isTimeToStartAttackAnimation();
+  protected boolean isTimeToAttack();
+  protected void performAttack(net.minecraft.class_1309);
+  public void method_6268();
+  public void method_6270();
+}
+Goal
+== net/_void/civilizations/entity/ai/EgyptCivilianAttackGoal
+Compiled from "EgyptCivilianAttackGoal.java"
+public class net._void.civilizations.entity.ai.EgyptCivilianAttackGoal extends net.minecraft.class_1366 {
+  private final net._void.civilizations.entity.custom.EgyptCivilianEntity entity;
+  private int attackDelay;
+  private int ticksUntilNextAttack;
+  private boolean shouldCountTillNextAttack;
+  public net._void.civilizations.entity.ai.EgyptCivilianAttackGoal(net.minecraft.class_1314, double, boolean);
+  public void method_6269();
+  protected void method_6288(net.minecraft.class_1309, double);
+  private boolean isEnemyWithinAttackDistance(net.minecraft.class_1309);
+  protected void resetAttackCooldown();
+  protected boolean isTimeToStartAttackAnimation();
+  protected boolean isTimeToAttack();
+  protected void performAttack(net.minecraft.class_1309);
+  public void method_6268();
+  public void method_6270();
+}
+Goal
+== net/_void/civilizations/entity/ai/BossLokiCloneAttackGoal
+Compiled from "BossLokiCloneAttackGoal.java"
+public class net._void.civilizations.entity.ai.BossLokiCloneAttackGoal extends net.minecraft.class_1366 {
+  private final net._void.civilizations.entity.custom.BossLokiCloneEntity entity;
+  private int attackDelay;
+  private int ticksUntilNextAttack;
+  private boolean shouldCountTillNextAttack;
+  public net._void.civilizations.entity.ai.BossLokiCloneAttackGoal(net.minecraft.class_1314, double, boolean);
+  public void method_6269();
+  protected void method_6288(net.minecraft.class_1309, double);
+  private boolean isEnemyWithinAttackDistance(net.minecraft.class_1309);
+  protected void resetAttackCooldown();
+  protected boolean isTimeToStartAttackAnimation();
+  protected boolean isTimeToAttack();
+  protected void performAttack(net.minecraft.class_1309);
+  public void method_6268();
+  public void method_6270();
+}
+Goal
+== net/_void/civilizations/entity/ai/BossMercuryAttackGoal
+Compiled from "BossMercuryAttackGoal.java"
+public class net._void.civilizations.entity.ai.BossMercuryAttackGoal extends net.minecraft.class_1352 {
+  private final net._void.civilizations.entity.custom.BossMercuryEntity entity;
+  public int cooldown;
+  public net._void.civilizations.entity.ai.BossMercuryAttackGoal(net.minecraft.class_1314);
+  public boolean method_6264();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+}
+Goal
+== net/_void/civilizations/entity/ai/ChinaCivilianAttackGoal
+Compiled from "ChinaCivilianAttackGoal.java"
+public class net._void.civilizations.entity.ai.ChinaCivilianAttackGoal extends net.minecraft.class_1366 {
+  private final net._void.civilizations.entity.custom.ChinaCivilianEntity entity;
+  private int attackDelay;
+  private int ticksUntilNextAttack;
+  private boolean shouldCountTillNextAttack;
+  public net._void.civilizations.entity.ai.ChinaCivilianAttackGoal(net.minecraft.class_1314, double, boolean);
+  public void method_6269();
+  protected void method_6288(net.minecraft.class_1309, double);
+  private boolean isEnemyWithinAttackDistance(net.minecraft.class_1309);
+  protected void resetAttackCooldown();
+  protected boolean isTimeToStartAttackAnimation();
+  protected boolean isTimeToAttack();
+  protected void performAttack(net.minecraft.class_1309);
+  public void method_6268();
+  public void method_6270();
+}
+Goal
+== net/_void/civilizations/block/entity/TradingStationBlockEntity
+Compiled from "TradingStationBlockEntity.java"
+public class net._void.civilizations.block.entity.TradingStationBlockEntity extends net.minecraft.class_2586 implements net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory,net._void.civilizations.block.entity.ImplementedInventory {
+  private final net.minecraft.class_2371<net.minecraft.class_1799> inventory;
+  public static int TRADE;
+  private static final int TRADE_INPUT;
+  private static final int TRADE_OUTPUT;
+  private static final int QUEST_INPUT;
+  private static final int QUEST_OUTPUT;
+  protected final net.minecraft.class_3913 propertyDelegate;
+  private int reputation;
+  public net._void.civilizations.block.entity.TradingStationBlockEntity(net.minecraft.class_2338, net.minecraft.class_2680);
+  public void writeScreenOpeningData(net.minecraft.class_3222, net.minecraft.class_2540);
+  public net.minecraft.class_2561 method_5476();
+  public net.minecraft.class_2371<net.minecraft.class_1799> getItems();
+  protected void method_11007(net.minecraft.class_2487);
+  public void method_11014(net.minecraft.class_2487);
+  public net.minecraft.class_1703 createMenu(int, net.minecraft.class_1661, net.minecraft.class_1657);
+  public void tick(net.minecraft.class_1937, net.minecraft.class_2338, net.minecraft.class_2680);
+  private boolean isRightItemForTrade(int);
+  private void tradeResult(int, net.minecraft.class_1937, net.minecraft.class_2338, net.minecraft.class_2680);
+  private boolean isRightItemForQuest(int);
+  private void questResult(int, net.minecraft.class_1937, net.minecraft.class_2338, net.minecraft.class_2680);
+  static {};
+}
+== net/_void/civilizations/block/entity/TradingStationBlockEntity$1
+Compiled from "TradingStationBlockEntity.java"
+class net._void.civilizations.block.entity.TradingStationBlockEntity$1 implements net.minecraft.class_3913 {
+  final net._void.civilizations.block.entity.TradingStationBlockEntity this$0;
+  net._void.civilizations.block.entity.TradingStationBlockEntity$1(net._void.civilizations.block.entity.TradingStationBlockEntity);
+  public int method_17390(int);
+  public void method_17391(int, int);
+  public int method_17389();
+}
+== net/_void/civilizations/block/entity/ModBlockEntities
+Compiled from "ModBlockEntities.java"
+public class net._void.civilizations.block.entity.ModBlockEntities {
+  public static final net.minecraft.class_2591<net._void.civilizations.block.entity.TradingStationBlockEntity> TRADING_STATION_BLOCK_ENTITY;
+  public static final net.minecraft.class_2591<net._void.civilizations.block.entity.TombstoneBlockEntity> TOMBSTONE_BLOCK_ENTITY;
+  public net._void.civilizations.block.entity.ModBlockEntities();
+  public static void registerBlockEntities();
+  static {};
+}
+== net/_void/civilizations/block/entity/ImplementedInventory
+Compiled from "ImplementedInventory.java"
+public interface net._void.civilizations.block.entity.ImplementedInventory extends net.minecraft.class_1278 {
+  public abstract net.minecraft.class_2371<net.minecraft.class_1799> getItems();
+  public static net._void.civilizations.block.entity.ImplementedInventory of(net.minecraft.class_2371<net.minecraft.class_1799>);
+  public static net._void.civilizations.block.entity.ImplementedInventory ofSize(int);
+  public default int[] method_5494(net.minecraft.class_2350);
+  public default boolean method_5492(int, net.minecraft.class_1799, net.minecraft.class_2350);
+  public default boolean method_5493(int, net.minecraft.class_1799, net.minecraft.class_2350);
+  public default int method_5439();
+  public default boolean method_5442();
+  public default net.minecraft.class_1799 method_5438(int);
+  public default net.minecraft.class_1799 method_5434(int, int);
+  public default net.minecraft.class_1799 method_5441(int);
+  public default void method_5447(int, net.minecraft.class_1799);
+  public default void method_5448();
+  public default void method_5431();
+  public default boolean method_5443(net.minecraft.class_1657);
+  private static net.minecraft.class_2371 lambda$of$0(net.minecraft.class_2371);
+}
+== net/_void/civilizations/block/entity/TombstoneBlockEntity
+Compiled from "TombstoneBlockEntity.java"
+public class net._void.civilizations.block.entity.TombstoneBlockEntity extends net.minecraft.class_2586 implements net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory,net._void.civilizations.block.entity.ImplementedInventory {
+  private final net.minecraft.class_2371<net.minecraft.class_1799> inventory;
+  public net._void.civilizations.block.entity.TombstoneBlockEntity(net.minecraft.class_2338, net.minecraft.class_2680);
+  public void writeScreenOpeningData(net.minecraft.class_3222, net.minecraft.class_2540);
+  public net.minecraft.class_2561 method_5476();
+  public net.minecraft.class_2371<net.minecraft.class_1799> getItems();
+  protected void method_11007(net.minecraft.class_2487);
+  public void method_11014(net.minecraft.class_2487);
+  public net.minecraft.class_1703 createMenu(int, net.minecraft.class_1661, net.minecraft.class_1657);
+  public void tick(net.minecraft.class_1937, net.minecraft.class_2338, net.minecraft.class_2680);
+}

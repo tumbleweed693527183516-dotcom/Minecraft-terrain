@@ -1,0 +1,169 @@
+== earth/terrarium/heracles/api/tasks/defaults/EntityInteractTask
+Compiled from "EntityInteractTask.java"
+public final class earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask extends java.lang.Record implements earth.terrarium.heracles.api.tasks.QuestTask<net.minecraft.class_1297, net.minecraft.class_2514, earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask>, earth.terrarium.heracles.api.CustomizableQuestElement {
+  private final java.lang.String id;
+  private final java.lang.String title;
+  private final earth.terrarium.heracles.api.quests.QuestIcon<?> icon;
+  private final earth.terrarium.heracles.common.utils.RegistryValue<net.minecraft.class_1299<?>> entity;
+  private final com.teamresourceful.resourcefullib.common.codecs.predicates.NbtPredicate nbt;
+  public static final earth.terrarium.heracles.api.tasks.QuestTaskType<earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask> TYPE;
+  public earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask(java.lang.String, java.lang.String, earth.terrarium.heracles.api.quests.QuestIcon<?>, earth.terrarium.heracles.common.utils.RegistryValue<net.minecraft.class_1299<?>>, com.teamresourceful.resourcefullib.common.codecs.predicates.NbtPredicate);
+  public net.minecraft.class_2514 test(earth.terrarium.heracles.api.tasks.QuestTaskType<?>, net.minecraft.class_2514, net.minecraft.class_1297);
+  public float getProgress(net.minecraft.class_2514);
+  public earth.terrarium.heracles.api.tasks.storage.defaults.BooleanTaskStorage storage();
+  public earth.terrarium.heracles.api.tasks.QuestTaskType<earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask> type();
+  public final java.lang.String toString();
+  public final int hashCode();
+  public final boolean equals(java.lang.Object);
+  public java.lang.String id();
+  public java.lang.String title();
+  public earth.terrarium.heracles.api.quests.QuestIcon<?> icon();
+  public earth.terrarium.heracles.common.utils.RegistryValue<net.minecraft.class_1299<?>> entity();
+  public com.teamresourceful.resourcefullib.common.codecs.predicates.NbtPredicate nbt();
+  public earth.terrarium.heracles.api.tasks.storage.TaskStorage storage();
+  public float getProgress(net.minecraft.class_2520);
+  public net.minecraft.class_2520 test(earth.terrarium.heracles.api.tasks.QuestTaskType, net.minecraft.class_2520, java.lang.Object);
+  static {};
+}
+== earth/terrarium/heracles/api/tasks/defaults/EntityInteractTask$Type
+Compiled from "EntityInteractTask.java"
+class earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask$Type implements earth.terrarium.heracles.api.tasks.QuestTaskType<earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask> {
+  private earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask$Type();
+  public net.minecraft.class_2960 id();
+  public com.mojang.serialization.Codec<earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask> codec(java.lang.String);
+  private static com.mojang.datafixers.kinds.App lambda$codec$0(java.lang.String, com.mojang.serialization.codecs.RecordCodecBuilder$Instance);
+}
+== earth/terrarium/heracles/api/tasks/defaults/KillEntityQuestTask$Type
+Compiled from "KillEntityQuestTask.java"
+class earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask$Type implements earth.terrarium.heracles.api.tasks.QuestTaskType<earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask> {
+  private earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask$Type();
+  public net.minecraft.class_2960 id();
+  public com.mojang.serialization.Codec<earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask> codec(java.lang.String);
+  private static com.mojang.datafixers.kinds.App lambda$codec$0(java.lang.String, com.mojang.serialization.codecs.RecordCodecBuilder$Instance);
+}
+== earth/terrarium/heracles/api/tasks/defaults/KillEntityQuestTask
+Compiled from "KillEntityQuestTask.java"
+public final class earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask extends java.lang.Record implements earth.terrarium.heracles.api.tasks.QuestTask<net.minecraft.class_1309, net.minecraft.class_2514, earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask>, earth.terrarium.heracles.api.CustomizableQuestElement {
+  private final java.lang.String id;
+  private final java.lang.String title;
+  private final earth.terrarium.heracles.api.quests.QuestIcon<?> icon;
+  private final com.teamresourceful.resourcefullib.common.codecs.predicates.RestrictedEntityPredicate entity;
+  private final int target;
+  public static final earth.terrarium.heracles.api.tasks.QuestTaskType<earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask> TYPE;
+  public earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask(java.lang.String, java.lang.String, earth.terrarium.heracles.api.quests.QuestIcon<?>, com.teamresourceful.resourcefullib.common.codecs.predicates.RestrictedEntityPredicate, int);
+  public net.minecraft.class_2514 test(earth.terrarium.heracles.api.tasks.QuestTaskType<?>, net.minecraft.class_2514, net.minecraft.class_1309);
+  public float getProgress(net.minecraft.class_2514);
+  public earth.terrarium.heracles.api.tasks.storage.defaults.IntegerTaskStorage storage();
+  public earth.terrarium.heracles.api.tasks.QuestTaskType<earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask> type();
+  public final java.lang.String toString();
+  public final int hashCode();
+  public final boolean equals(java.lang.Object);
+  public java.lang.String id();
+  public java.lang.String title();
+  public earth.terrarium.heracles.api.quests.QuestIcon<?> icon();
+  public com.teamresourceful.resourcefullib.common.codecs.predicates.RestrictedEntityPredicate entity();
+  public int target();
+  public earth.terrarium.heracles.api.tasks.storage.TaskStorage storage();
+  public float getProgress(net.minecraft.class_2520);
+  public net.minecraft.class_2520 test(earth.terrarium.heracles.api.tasks.QuestTaskType, net.minecraft.class_2520, java.lang.Object);
+  static {};
+}
+== earth/terrarium/heracles/api/tasks/client/defaults/EntityInteractTaskWidget
+Compiled from "EntityInteractTaskWidget.java"
+public final class earth.terrarium.heracles.api.tasks.client.defaults.EntityInteractTaskWidget extends java.lang.Record implements earth.terrarium.heracles.api.client.DisplayWidget {
+  private final earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask task;
+  private final earth.terrarium.heracles.common.handlers.progress.TaskProgress<net.minecraft.class_2514> progress;
+  private final com.teamresourceful.resourcefullib.common.caches.CacheableFunction<net.minecraft.class_1299<?>, net.minecraft.class_1297> factory;
+  private static final java.lang.String DESC;
+  public earth.terrarium.heracles.api.tasks.client.defaults.EntityInteractTaskWidget(earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask, earth.terrarium.heracles.common.handlers.progress.TaskProgress<net.minecraft.class_2514>);
+  public earth.terrarium.heracles.api.tasks.client.defaults.EntityInteractTaskWidget(earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask, earth.terrarium.heracles.common.handlers.progress.TaskProgress<net.minecraft.class_2514>, com.teamresourceful.resourcefullib.common.caches.CacheableFunction<net.minecraft.class_1299<?>, net.minecraft.class_1297>);
+  public void render(net.minecraft.class_332, com.teamresourceful.resourcefullib.client.scissor.ScissorBoxStack, int, int, int, int, int, boolean, float);
+  public int getHeight(int);
+  private net.minecraft.class_1299<?> getType();
+  public final java.lang.String toString();
+  public final int hashCode();
+  public final boolean equals(java.lang.Object);
+  public earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask task();
+  public earth.terrarium.heracles.common.handlers.progress.TaskProgress<net.minecraft.class_2514> progress();
+  public com.teamresourceful.resourcefullib.common.caches.CacheableFunction<net.minecraft.class_1299<?>, net.minecraft.class_1297> factory();
+  private static net.minecraft.class_1299 lambda$getType$2(net.minecraft.class_6862);
+  private static net.minecraft.class_1299 lambda$getType$1(net.minecraft.class_1299);
+  private static net.minecraft.class_1297 lambda$new$0(earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask, net.minecraft.class_1299);
+}
+== earth/terrarium/heracles/api/tasks/client/defaults/KillEntityTaskWidget
+Compiled from "KillEntityTaskWidget.java"
+public final class earth.terrarium.heracles.api.tasks.client.defaults.KillEntityTaskWidget extends java.lang.Record implements earth.terrarium.heracles.api.client.DisplayWidget {
+  private final earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask task;
+  private final earth.terrarium.heracles.common.handlers.progress.TaskProgress<net.minecraft.class_2514> progress;
+  private final com.teamresourceful.resourcefullib.common.caches.CacheableFunction<net.minecraft.class_1299<?>, net.minecraft.class_1297> factory;
+  private static final java.lang.String DESC_SINGULAR;
+  private static final java.lang.String DESC_PLURAL;
+  public earth.terrarium.heracles.api.tasks.client.defaults.KillEntityTaskWidget(earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask, earth.terrarium.heracles.common.handlers.progress.TaskProgress<net.minecraft.class_2514>);
+  public earth.terrarium.heracles.api.tasks.client.defaults.KillEntityTaskWidget(earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask, earth.terrarium.heracles.common.handlers.progress.TaskProgress<net.minecraft.class_2514>, com.teamresourceful.resourcefullib.common.caches.CacheableFunction<net.minecraft.class_1299<?>, net.minecraft.class_1297>);
+  public void render(net.minecraft.class_332, com.teamresourceful.resourcefullib.client.scissor.ScissorBoxStack, int, int, int, int, int, boolean, float);
+  public int getHeight(int);
+  public final java.lang.String toString();
+  public final int hashCode();
+  public final boolean equals(java.lang.Object);
+  public earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask task();
+  public earth.terrarium.heracles.common.handlers.progress.TaskProgress<net.minecraft.class_2514> progress();
+  public com.teamresourceful.resourcefullib.common.caches.CacheableFunction<net.minecraft.class_1299<?>, net.minecraft.class_1297> factory();
+  private static net.minecraft.class_1297 lambda$new$0(earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask, net.minecraft.class_1299);
+}
+== earth/terrarium/heracles/api/client/settings/tasks/KillEntityTaskSettings
+Compiled from "KillEntityTaskSettings.java"
+public class earth.terrarium.heracles.api.client.settings.tasks.KillEntityTaskSettings implements earth.terrarium.heracles.api.client.settings.SettingInitializer<earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask>, earth.terrarium.heracles.api.client.settings.CustomizableQuestElementSettings<earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask> {
+  public static final earth.terrarium.heracles.api.client.settings.tasks.KillEntityTaskSettings INSTANCE;
+  public earth.terrarium.heracles.api.client.settings.tasks.KillEntityTaskSettings();
+  public earth.terrarium.heracles.api.client.settings.SettingInitializer$CreationData create(earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask);
+  public earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask create(java.lang.String, earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask, earth.terrarium.heracles.api.client.settings.SettingInitializer$Data);
+  private static net.minecraft.class_1299<?> getDefaultEntity(earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask);
+  private static int getDefaultAmount(earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask);
+  public java.lang.Object create(java.lang.String, java.lang.Object, earth.terrarium.heracles.api.client.settings.SettingInitializer$Data);
+  public earth.terrarium.heracles.api.client.settings.SettingInitializer$CreationData create(java.lang.Object);
+  public earth.terrarium.heracles.api.client.settings.SettingInitializer$CreationData create(earth.terrarium.heracles.api.CustomizableQuestElement);
+  private static net.minecraft.class_1299 lambda$getDefaultEntity$1(earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask);
+  private static earth.terrarium.heracles.api.tasks.defaults.KillEntityQuestTask lambda$create$0(java.lang.String, com.teamresourceful.resourcefullib.common.codecs.predicates.RestrictedEntityPredicate, earth.terrarium.heracles.api.client.settings.SettingInitializer$Data, java.lang.String, earth.terrarium.heracles.api.quests.QuestIcon);
+  static {};
+}
+== earth/terrarium/heracles/api/client/settings/tasks/EntityInteractTaskSettings
+Compiled from "EntityInteractTaskSettings.java"
+public class earth.terrarium.heracles.api.client.settings.tasks.EntityInteractTaskSettings implements earth.terrarium.heracles.api.client.settings.SettingInitializer<earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask>, earth.terrarium.heracles.api.client.settings.CustomizableQuestElementSettings<earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask> {
+  public static final earth.terrarium.heracles.api.client.settings.tasks.EntityInteractTaskSettings INSTANCE;
+  public earth.terrarium.heracles.api.client.settings.tasks.EntityInteractTaskSettings();
+  public earth.terrarium.heracles.api.client.settings.SettingInitializer$CreationData create(earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask);
+  public earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask create(java.lang.String, earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask, earth.terrarium.heracles.api.client.settings.SettingInitializer$Data);
+  private static earth.terrarium.heracles.common.utils.RegistryValue<net.minecraft.class_1299<?>> getDefaultEntity(earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask);
+  public java.lang.Object create(java.lang.String, java.lang.Object, earth.terrarium.heracles.api.client.settings.SettingInitializer$Data);
+  public earth.terrarium.heracles.api.client.settings.SettingInitializer$CreationData create(java.lang.Object);
+  public earth.terrarium.heracles.api.client.settings.SettingInitializer$CreationData create(earth.terrarium.heracles.api.CustomizableQuestElement);
+  private static earth.terrarium.heracles.api.tasks.defaults.EntityInteractTask lambda$create$0(java.lang.String, earth.terrarium.heracles.common.utils.RegistryValue, com.teamresourceful.resourcefullib.common.codecs.predicates.NbtPredicate, java.lang.String, earth.terrarium.heracles.api.quests.QuestIcon);
+  static {};
+}
+== earth/terrarium/heracles/common/blocks/BarrierBlockEntity
+Compiled from "BarrierBlockEntity.java"
+public class earth.terrarium.heracles.common.blocks.BarrierBlockEntity extends net.minecraft.class_2586 {
+  private final java.util.Set<java.lang.String> quests;
+  public earth.terrarium.heracles.common.blocks.BarrierBlockEntity(net.minecraft.class_2338, net.minecraft.class_2680);
+  public boolean canPassthrough(net.minecraft.class_1297);
+  public net.minecraft.class_2487 method_16887();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_38235();
+  public void method_11014(net.minecraft.class_2487);
+  protected void method_11007(net.minecraft.class_2487);
+}
+== _nested/earth/terrarium/hermes/api/defaults/EntityTagElement
+Compiled from "EntityTagElement.java"
+public class earth.terrarium.hermes.api.defaults.EntityTagElement extends earth.terrarium.hermes.api.defaults.FillAndBorderElement implements earth.terrarium.hermes.api.TagElement {
+  private final net.minecraft.class_1299<?> type;
+  private final net.minecraft.class_2487 tag;
+  private static final int BLOCK_HEIGHT;
+  private final float scale;
+  private float layoutBlocksHigh;
+  private final float vShift;
+  private final earth.terrarium.hermes.api.Alignment align;
+  private float layoutBlocksWide;
+  private net.minecraft.class_1297 entity;
+  public earth.terrarium.hermes.api.defaults.EntityTagElement(java.util.Map<java.lang.String, java.lang.String>);
+  public void render(earth.terrarium.hermes.api.themes.Theme, net.minecraft.class_332, int, int, int, int, int, boolean, float);
+  public int getHeight(int);
+}

@@ -1,0 +1,1741 @@
+== com/talhanation/smallships/mixin/zooming/client/EntityRenderDispatcherMixin
+Compiled from "EntityRenderDispatcherMixin.java"
+public abstract class com.talhanation.smallships.mixin.zooming.client.EntityRenderDispatcherMixin {
+  public com.talhanation.smallships.mixin.zooming.client.EntityRenderDispatcherMixin();
+  private void smallships$hideCrewWhileAiming(net.minecraft.class_1297, net.minecraft.class_4604, double, double, double, org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<java.lang.Boolean>);
+  private static boolean smallships$isInTheLineOfSight(net.minecraft.class_1297);
+}
+== com/talhanation/smallships/mixin/render/LivingEntityRendererMixin
+Compiled from "LivingEntityRendererMixin.java"
+public class com.talhanation.smallships.mixin.render.LivingEntityRendererMixin {
+  public com.talhanation.smallships.mixin.render.LivingEntityRendererMixin();
+  private void wrapRidingForGroundCannon(net.minecraft.class_583<?>, boolean, com.llamalad7.mixinextras.injector.wrapoperation.Operation<java.lang.Void>, net.minecraft.class_1309);
+}
+== com/talhanation/smallships/mixin/entity/EntityMixin
+Compiled from "EntityMixin.java"
+public abstract class com.talhanation.smallships.mixin.entity.EntityMixin implements com.talhanation.smallships.world.entity.IMixinEntity,com.talhanation.smallships.world.entity.projectile.ICannonProjectile {
+  private float prevXRot;
+  private float prevYRot;
+  private float field_5965;
+  private float field_6031;
+  private net.minecraft.class_1937 field_6002;
+  private boolean preventNextPassengerSyncTeleport;
+  private boolean preventDismountingToCoordinates;
+  public com.talhanation.smallships.mixin.entity.EntityMixin();
+  public abstract void method_5848();
+  public void turn(double, double, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  public float getPrevXRot();
+  public float getPrevYRot();
+  public void shootAndSpawn(com.talhanation.smallships.world.entity.cannon.Cannon, org.joml.Vector3d, org.joml.Vector3f, float, float, net.minecraft.class_1297);
+  public boolean doNotTeleportOnNextPassengerSync();
+  public void setPreventTeleportOnNextPassengerSync(boolean);
+  public boolean doNotDismountToCoordinates();
+  public void setPreventDismountToCoordinates(boolean);
+}
+== com/talhanation/smallships/mixin/entity/LivingEntityMixin
+Compiled from "LivingEntityMixin.java"
+public class com.talhanation.smallships.mixin.entity.LivingEntityMixin {
+  public com.talhanation.smallships.mixin.entity.LivingEntityMixin();
+  public boolean wrapDismountTo(net.minecraft.class_1309, double, double, double);
+}
+== com/talhanation/smallships/mixin/entity/ServerEntityMixin
+Compiled from "ServerEntityMixin.java"
+public class com.talhanation.smallships.mixin.entity.ServerEntityMixin {
+  public com.talhanation.smallships.mixin.entity.ServerEntityMixin();
+  public java.util.stream.Stream<net.minecraft.class_1297> filterRemovedPassengers(java.util.stream.Stream<net.minecraft.class_1297>);
+  private static boolean lambda$filterRemovedPassengers$0(net.minecraft.class_1297);
+}
+== com/talhanation/smallships/client/gui/screens/inventory/EntityInScreenRenderer
+Compiled from "EntityInScreenRenderer.java"
+public class com.talhanation.smallships.client.gui.screens.inventory.EntityInScreenRenderer {
+  public com.talhanation.smallships.client.gui.screens.inventory.EntityInScreenRenderer();
+  public static void renderEntityInInventoryRotating(net.minecraft.class_332, int, int, int, net.minecraft.class_1297, float, float);
+  public static void renderEntityInInventory(net.minecraft.class_332, int, int, int, org.joml.Quaternionf, net.minecraft.class_1297, float, float);
+  private static void lambda$renderEntityInInventory$0(net.minecraft.class_898, net.minecraft.class_1297, net.minecraft.class_332);
+}
+== com/talhanation/smallships/client/renderer/entity/ShipRenderer
+Compiled from "ShipRenderer.java"
+public abstract class com.talhanation.smallships.client.renderer.entity.ShipRenderer<T extends com.talhanation.smallships.world.entity.ship.Ship> extends net.minecraft.class_897<T> {
+  protected final java.util.Map<net.minecraft.class_1690$class_1692, com.mojang.datafixers.util.Pair<net.minecraft.class_2960, com.talhanation.smallships.client.model.ShipModel<T>>> boatResources;
+  private static final com.talhanation.smallships.client.model.CannonModel cannonModel;
+  private static int ghostCannonSlot;
+  private static final int GHOST_COLOR;
+  private static final net.minecraft.class_600 shieldModel;
+  private static final int LEASH_SEGMENTS;
+  public com.talhanation.smallships.client.renderer.entity.ShipRenderer(net.minecraft.class_5617$class_5618);
+  protected abstract com.talhanation.smallships.client.model.ShipModel<T> createBoatModel(net.minecraft.class_5617$class_5618, net.minecraft.class_1690$class_1692);
+  protected net.minecraft.class_2960 getTextureLocation(net.minecraft.class_1690$class_1692);
+  public net.minecraft.class_2960 getTextureLocation(T);
+  public void render(T, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public static void setGhostCannon(int);
+  public static void clearGhostCannon();
+  private void renderCannon(com.talhanation.smallships.world.entity.ship.abilities.Cannonable, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected float getCannonAngleOffset();
+  private void renderBanner(com.talhanation.smallships.world.entity.ship.abilities.Bannerable, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  private void renderShields(com.talhanation.smallships.world.entity.ship.abilities.Shieldable, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  private void renderVanillaShield(net.minecraft.class_1799, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  private void renderShieldItem(com.talhanation.smallships.world.entity.ship.abilities.Shieldable, net.minecraft.class_1799, net.minecraft.class_811, int, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  private void applySinkingPose(T, float, net.minecraft.class_4587);
+  protected float getSinkPivotOffset();
+  public net.minecraft.class_7833 getWaveAngleRotation();
+  private void renderPaddle(com.talhanation.smallships.world.entity.ship.abilities.Paddleable, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  private void renderSail(com.talhanation.smallships.world.entity.ship.abilities.Sailable, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  private void renderSailBanner(com.talhanation.smallships.world.entity.ship.abilities.Bannerable, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public static java.lang.String getNameFromType(net.minecraft.class_1690$class_1692);
+  private void renderLeash(T, float, net.minecraft.class_4587, net.minecraft.class_4597, net.minecraft.class_1297);
+  private static void renderLeashSide(net.minecraft.class_4588, org.joml.Matrix4f, float, float, float, int, int, int, int, float, float, float, float, boolean);
+  private static void addLeashVertexPair(net.minecraft.class_4588, org.joml.Matrix4f, float, float, float, int, int, int, int, float, float, int, boolean, float, float);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  private com.mojang.datafixers.util.Pair lambda$new$1(net.minecraft.class_5617$class_5618, net.minecraft.class_1690$class_1692);
+  private static net.minecraft.class_1690$class_1692 lambda$new$0(net.minecraft.class_1690$class_1692);
+  static {};
+}
+== com/talhanation/smallships/client/renderer/entity/BriggRenderer
+Compiled from "BriggRenderer.java"
+public class com.talhanation.smallships.client.renderer.entity.BriggRenderer extends com.talhanation.smallships.client.renderer.entity.ShipRenderer<com.talhanation.smallships.world.entity.ship.BriggEntity> {
+  public com.talhanation.smallships.client.renderer.entity.BriggRenderer(net.minecraft.class_5617$class_5618);
+  protected com.talhanation.smallships.client.model.BriggModel createBoatModel(net.minecraft.class_5617$class_5618, net.minecraft.class_1690$class_1692);
+  public void render(com.talhanation.smallships.world.entity.ship.BriggEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void render(com.talhanation.smallships.world.entity.ship.Ship, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected com.talhanation.smallships.client.model.ShipModel createBoatModel(net.minecraft.class_5617$class_5618, net.minecraft.class_1690$class_1692);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+}
+== com/talhanation/smallships/client/renderer/entity/CaravelRenderer
+Compiled from "CaravelRenderer.java"
+public class com.talhanation.smallships.client.renderer.entity.CaravelRenderer extends com.talhanation.smallships.client.renderer.entity.ShipRenderer<com.talhanation.smallships.world.entity.ship.CaravelEntity> {
+  public com.talhanation.smallships.client.renderer.entity.CaravelRenderer(net.minecraft.class_5617$class_5618);
+  protected com.talhanation.smallships.client.model.CaravelModel createBoatModel(net.minecraft.class_5617$class_5618, net.minecraft.class_1690$class_1692);
+  public void render(com.talhanation.smallships.world.entity.ship.CaravelEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void render(com.talhanation.smallships.world.entity.ship.Ship, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected com.talhanation.smallships.client.model.ShipModel createBoatModel(net.minecraft.class_5617$class_5618, net.minecraft.class_1690$class_1692);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+}
+== com/talhanation/smallships/client/renderer/entity/CannonBallRenderer
+Compiled from "CannonBallRenderer.java"
+public class com.talhanation.smallships.client.renderer.entity.CannonBallRenderer extends net.minecraft.class_897<com.talhanation.smallships.world.entity.projectile.CannonBallEntity> {
+  private final com.talhanation.smallships.client.model.projectile.CannonBallModel model;
+  public com.talhanation.smallships.client.renderer.entity.CannonBallRenderer(net.minecraft.class_5617$class_5618);
+  public void render(com.talhanation.smallships.world.entity.projectile.CannonBallEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public boolean shouldRender(com.talhanation.smallships.world.entity.projectile.CannonBallEntity, net.minecraft.class_4604, double, double, double);
+  public net.minecraft.class_2960 getTextureLocation(com.talhanation.smallships.world.entity.projectile.CannonBallEntity);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public boolean method_3933(net.minecraft.class_1297, net.minecraft.class_4604, double, double, double);
+}
+== com/talhanation/smallships/client/renderer/entity/DrakkarRenderer
+Compiled from "DrakkarRenderer.java"
+public class com.talhanation.smallships.client.renderer.entity.DrakkarRenderer extends com.talhanation.smallships.client.renderer.entity.ShipRenderer<com.talhanation.smallships.world.entity.ship.DrakkarEntity> {
+  public com.talhanation.smallships.client.renderer.entity.DrakkarRenderer(net.minecraft.class_5617$class_5618);
+  protected com.talhanation.smallships.client.model.DrakkarModel createBoatModel(net.minecraft.class_5617$class_5618, net.minecraft.class_1690$class_1692);
+  public void render(com.talhanation.smallships.world.entity.ship.DrakkarEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void render(com.talhanation.smallships.world.entity.ship.Ship, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected com.talhanation.smallships.client.model.ShipModel createBoatModel(net.minecraft.class_5617$class_5618, net.minecraft.class_1690$class_1692);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+}
+== com/talhanation/smallships/client/renderer/entity/GrapeShotRenderer
+Compiled from "GrapeShotRenderer.java"
+public class com.talhanation.smallships.client.renderer.entity.GrapeShotRenderer extends net.minecraft.class_897<com.talhanation.smallships.world.entity.projectile.GrapeShotEntity> {
+  private final com.talhanation.smallships.client.model.projectile.GrapeShotModel model;
+  private static final float SPIN_DEGREES_PER_TICK;
+  public com.talhanation.smallships.client.renderer.entity.GrapeShotRenderer(net.minecraft.class_5617$class_5618);
+  public void render(com.talhanation.smallships.world.entity.projectile.GrapeShotEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public boolean shouldRender(com.talhanation.smallships.world.entity.projectile.GrapeShotEntity, net.minecraft.class_4604, double, double, double);
+  public net.minecraft.class_2960 getTextureLocation(com.talhanation.smallships.world.entity.projectile.GrapeShotEntity);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public boolean method_3933(net.minecraft.class_1297, net.minecraft.class_4604, double, double, double);
+}
+== com/talhanation/smallships/client/renderer/entity/GroundCannonRenderer
+Compiled from "GroundCannonRenderer.java"
+public class com.talhanation.smallships.client.renderer.entity.GroundCannonRenderer extends net.minecraft.class_897<com.talhanation.smallships.world.entity.cannon.GroundCannonEntity> {
+  private final com.talhanation.smallships.client.model.CannonModel model;
+  public com.talhanation.smallships.client.renderer.entity.GroundCannonRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTextureLocation(com.talhanation.smallships.world.entity.cannon.GroundCannonEntity);
+  public void render(com.talhanation.smallships.world.entity.cannon.GroundCannonEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void renderCannonModel(com.talhanation.smallships.world.entity.cannon.Cannon, float, net.minecraft.class_2960, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+}
+== com/talhanation/smallships/client/renderer/entity/CogRenderer
+Compiled from "CogRenderer.java"
+public class com.talhanation.smallships.client.renderer.entity.CogRenderer extends com.talhanation.smallships.client.renderer.entity.ShipRenderer<com.talhanation.smallships.world.entity.ship.CogEntity> {
+  public com.talhanation.smallships.client.renderer.entity.CogRenderer(net.minecraft.class_5617$class_5618);
+  protected com.talhanation.smallships.client.model.CogModel createBoatModel(net.minecraft.class_5617$class_5618, net.minecraft.class_1690$class_1692);
+  public void render(com.talhanation.smallships.world.entity.ship.CogEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void render(com.talhanation.smallships.world.entity.ship.Ship, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected com.talhanation.smallships.client.model.ShipModel createBoatModel(net.minecraft.class_5617$class_5618, net.minecraft.class_1690$class_1692);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+}
+== com/talhanation/smallships/client/renderer/entity/DhowRenderer
+Compiled from "DhowRenderer.java"
+public class com.talhanation.smallships.client.renderer.entity.DhowRenderer extends com.talhanation.smallships.client.renderer.entity.ShipRenderer<com.talhanation.smallships.world.entity.ship.DhowEntity> {
+  public com.talhanation.smallships.client.renderer.entity.DhowRenderer(net.minecraft.class_5617$class_5618);
+  protected com.talhanation.smallships.client.model.DhowModel createBoatModel(net.minecraft.class_5617$class_5618, net.minecraft.class_1690$class_1692);
+  public void render(com.talhanation.smallships.world.entity.ship.DhowEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void render(com.talhanation.smallships.world.entity.ship.Ship, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected com.talhanation.smallships.client.model.ShipModel createBoatModel(net.minecraft.class_5617$class_5618, net.minecraft.class_1690$class_1692);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+}
+== com/talhanation/smallships/client/renderer/entity/ChainShotRenderer
+Compiled from "ChainShotRenderer.java"
+public class com.talhanation.smallships.client.renderer.entity.ChainShotRenderer extends net.minecraft.class_897<com.talhanation.smallships.world.entity.projectile.ChainShotEntity> {
+  private final com.talhanation.smallships.client.model.projectile.ChainShotModel model;
+  private static final float SPIN_DEGREES_PER_TICK;
+  public com.talhanation.smallships.client.renderer.entity.ChainShotRenderer(net.minecraft.class_5617$class_5618);
+  public void render(com.talhanation.smallships.world.entity.projectile.ChainShotEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public boolean shouldRender(com.talhanation.smallships.world.entity.projectile.ChainShotEntity, net.minecraft.class_4604, double, double, double);
+  public net.minecraft.class_2960 getTextureLocation(com.talhanation.smallships.world.entity.projectile.ChainShotEntity);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public boolean method_3933(net.minecraft.class_1297, net.minecraft.class_4604, double, double, double);
+}
+== com/talhanation/smallships/client/renderer/entity/ShipPartRenderer
+Compiled from "ShipPartRenderer.java"
+public class com.talhanation.smallships.client.renderer.entity.ShipPartRenderer extends net.minecraft.class_897<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity> {
+  public com.talhanation.smallships.client.renderer.entity.ShipPartRenderer(net.minecraft.class_5617$class_5618);
+  public void render(com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public boolean shouldRender(com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity, net.minecraft.class_4604, double, double, double);
+  public net.minecraft.class_2960 getTextureLocation(com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public boolean method_3933(net.minecraft.class_1297, net.minecraft.class_4604, double, double, double);
+}
+== com/talhanation/smallships/client/renderer/entity/GalleonRenderer
+Compiled from "GalleonRenderer.java"
+public class com.talhanation.smallships.client.renderer.entity.GalleonRenderer extends com.talhanation.smallships.client.renderer.entity.ShipRenderer<com.talhanation.smallships.world.entity.ship.GalleonEntity> {
+  public com.talhanation.smallships.client.renderer.entity.GalleonRenderer(net.minecraft.class_5617$class_5618);
+  protected com.talhanation.smallships.client.model.GalleonModel createBoatModel(net.minecraft.class_5617$class_5618, net.minecraft.class_1690$class_1692);
+  public void render(com.talhanation.smallships.world.entity.ship.GalleonEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void render(com.talhanation.smallships.world.entity.ship.Ship, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected com.talhanation.smallships.client.model.ShipModel createBoatModel(net.minecraft.class_5617$class_5618, net.minecraft.class_1690$class_1692);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+}
+== com/talhanation/smallships/client/renderer/entity/GalleyRenderer
+Compiled from "GalleyRenderer.java"
+public class com.talhanation.smallships.client.renderer.entity.GalleyRenderer extends com.talhanation.smallships.client.renderer.entity.ShipRenderer<com.talhanation.smallships.world.entity.ship.GalleyEntity> {
+  public com.talhanation.smallships.client.renderer.entity.GalleyRenderer(net.minecraft.class_5617$class_5618);
+  protected com.talhanation.smallships.client.model.GalleyModel createBoatModel(net.minecraft.class_5617$class_5618, net.minecraft.class_1690$class_1692);
+  public void render(com.talhanation.smallships.world.entity.ship.GalleyEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void render(com.talhanation.smallships.world.entity.ship.Ship, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected com.talhanation.smallships.client.model.ShipModel createBoatModel(net.minecraft.class_5617$class_5618, net.minecraft.class_1690$class_1692);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+}
+== com/talhanation/smallships/world/entity/ModEntityTypes
+Compiled from "ModEntityTypes.java"
+public class com.talhanation.smallships.world.entity.ModEntityTypes {
+  public static final net.minecraft.class_1299<com.talhanation.smallships.world.entity.projectile.CannonBallEntity> CANNON_BALL;
+  public static final net.minecraft.class_1299<com.talhanation.smallships.world.entity.projectile.ChainShotEntity> CHAIN_SHOT;
+  public static final net.minecraft.class_1299<com.talhanation.smallships.world.entity.projectile.GrapeShotEntity> GRAPE_SHOT;
+  public static final net.minecraft.class_1299<com.talhanation.smallships.world.entity.ship.CogEntity> COG;
+  public static final net.minecraft.class_1299<com.talhanation.smallships.world.entity.ship.BriggEntity> BRIGG;
+  public static final net.minecraft.class_1299<com.talhanation.smallships.world.entity.ship.GalleyEntity> GALLEY;
+  public static final net.minecraft.class_1299<com.talhanation.smallships.world.entity.ship.DhowEntity> DHOW;
+  public static final net.minecraft.class_1299<com.talhanation.smallships.world.entity.ship.DrakkarEntity> DRAKKAR;
+  public static final net.minecraft.class_1299<com.talhanation.smallships.world.entity.ship.GalleonEntity> GALLEON;
+  public static final net.minecraft.class_1299<com.talhanation.smallships.world.entity.ship.CaravelEntity> CARAVEL;
+  public static final net.minecraft.class_1299<com.talhanation.smallships.world.entity.cannon.GroundCannonEntity> GROUND_CANNON;
+  public static final net.minecraft.class_1299<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity> SHIP_PART;
+  public com.talhanation.smallships.world.entity.ModEntityTypes();
+  public static <T extends net.minecraft.class_1297> net.minecraft.class_1299<T> getEntityType(java.lang.Class<T>);
+  static {};
+}
+== com/talhanation/smallships/world/entity/projectile/CannonBallEntity
+Compiled from "CannonBallEntity.java"
+public class com.talhanation.smallships.world.entity.projectile.CannonBallEntity extends com.talhanation.smallships.world.entity.projectile.AbstractCannonBall {
+  public static final java.lang.String ID;
+  public static com.talhanation.smallships.world.entity.projectile.CannonBallEntity factory(net.minecraft.class_1299<? extends com.talhanation.smallships.world.entity.projectile.AbstractCannonBall>, net.minecraft.class_1937);
+  public com.talhanation.smallships.world.entity.projectile.CannonBallEntity(net.minecraft.class_1299<? extends com.talhanation.smallships.world.entity.projectile.AbstractCannonBall>, net.minecraft.class_1937);
+  public com.talhanation.smallships.world.entity.projectile.CannonBallEntity(net.minecraft.class_1937);
+  public com.talhanation.smallships.world.entity.projectile.CannonBallEntity(net.minecraft.class_1937, net.minecraft.class_1309, double, double, double);
+}
+== com/talhanation/smallships/world/entity/projectile/ICannonProjectile
+Compiled from "ICannonProjectile.java"
+public interface com.talhanation.smallships.world.entity.projectile.ICannonProjectile {
+  public abstract void shootAndSpawn(com.talhanation.smallships.world.entity.cannon.Cannon, org.joml.Vector3d, org.joml.Vector3f, float, float, net.minecraft.class_1297);
+  public default net.minecraft.class_2394 getAdditionalCannonShootParticles();
+  public default net.minecraft.class_2394 getAdditionalCannonShootParticles(boolean);
+}
+== com/talhanation/smallships/world/entity/projectile/ChainShotEntity
+Compiled from "ChainShotEntity.java"
+public class com.talhanation.smallships.world.entity.projectile.ChainShotEntity extends com.talhanation.smallships.world.entity.projectile.AbstractCannonBall {
+  public static final java.lang.String ID;
+  public static com.talhanation.smallships.world.entity.projectile.ChainShotEntity factory(net.minecraft.class_1299<? extends com.talhanation.smallships.world.entity.projectile.AbstractCannonBall>, net.minecraft.class_1937);
+  public com.talhanation.smallships.world.entity.projectile.ChainShotEntity(net.minecraft.class_1299<? extends com.talhanation.smallships.world.entity.projectile.AbstractCannonBall>, net.minecraft.class_1937);
+  public com.talhanation.smallships.world.entity.projectile.ChainShotEntity(net.minecraft.class_1937);
+  public com.talhanation.smallships.world.entity.projectile.ChainShotEntity(net.minecraft.class_1937, net.minecraft.class_1309, double, double, double);
+}
+== com/talhanation/smallships/world/entity/projectile/GrapeShotEntity
+Compiled from "GrapeShotEntity.java"
+public class com.talhanation.smallships.world.entity.projectile.GrapeShotEntity extends com.talhanation.smallships.world.entity.projectile.AbstractCannonBall {
+  public static final java.lang.String ID;
+  public static com.talhanation.smallships.world.entity.projectile.GrapeShotEntity factory(net.minecraft.class_1299<? extends com.talhanation.smallships.world.entity.projectile.AbstractCannonBall>, net.minecraft.class_1937);
+  public com.talhanation.smallships.world.entity.projectile.GrapeShotEntity(net.minecraft.class_1299<? extends com.talhanation.smallships.world.entity.projectile.AbstractCannonBall>, net.minecraft.class_1937);
+  public com.talhanation.smallships.world.entity.projectile.GrapeShotEntity(net.minecraft.class_1937);
+  public com.talhanation.smallships.world.entity.projectile.GrapeShotEntity(net.minecraft.class_1937, net.minecraft.class_1309, double, double, double);
+  protected com.talhanation.smallships.world.entity.projectile.AbstractCannonBall createSibling();
+}
+== com/talhanation/smallships/world/entity/projectile/AbstractCannonBall
+Compiled from "AbstractCannonBall.java"
+public abstract class com.talhanation.smallships.world.entity.projectile.AbstractCannonBall extends net.minecraft.class_1668 implements com.talhanation.smallships.world.entity.projectile.ICannonProjectile {
+  private static final net.minecraft.class_2940<java.lang.Byte> BALL_TYPE;
+  public static final int TAIL_PARTICLE_TICKS;
+  public static final double RENDER_RANGE;
+  private static final float MAST_DEBRIS_FACTOR;
+  public boolean inWater;
+  public boolean wasShot;
+  public int counter;
+  private static final double ACCELERATION_POWER;
+  public static final float DRAG;
+  public static final float GRAVITY;
+  public static final int SHIP_HIT_DAMAGE_MIN;
+  public static final int SHIP_HIT_DAMAGE_RANDOM;
+  public com.talhanation.smallships.world.entity.projectile.AbstractCannonBall(net.minecraft.class_1299<? extends com.talhanation.smallships.world.entity.projectile.AbstractCannonBall>, net.minecraft.class_1937);
+  public com.talhanation.smallships.world.entity.projectile.AbstractCannonBall(net.minecraft.class_1299<? extends com.talhanation.smallships.world.entity.projectile.AbstractCannonBall>, net.minecraft.class_1309, double, double, double, net.minecraft.class_1937);
+  protected void method_5693();
+  public com.talhanation.smallships.world.item.CannonBallItem$Type getBallType();
+  public void setBallType(com.talhanation.smallships.world.item.CannonBallItem$Type);
+  protected com.talhanation.smallships.world.entity.projectile.AbstractCannonBall createSibling();
+  public void shootAndSpawn(com.talhanation.smallships.world.entity.cannon.Cannon, org.joml.Vector3d, org.joml.Vector3f, float, float, net.minecraft.class_1297);
+  public net.minecraft.class_2394 getAdditionalCannonShootParticles();
+  public net.minecraft.class_2394 getAdditionalCannonShootParticles(boolean);
+  public void method_5773();
+  public void setWasShot(boolean);
+  public void setInWater(boolean);
+  protected void method_24920(net.minecraft.class_3965);
+  protected void method_7488(net.minecraft.class_239);
+  protected boolean method_26958(net.minecraft.class_1297);
+  protected void method_7454(net.minecraft.class_3966);
+  public void hitParticles();
+  public void waterParticles();
+  public void shootParticles();
+  public void tailParticles();
+  public boolean method_5640(double);
+  public net.minecraft.class_238 method_5830();
+  public boolean method_5863();
+  public boolean method_5643(net.minecraft.class_1282, float);
+  protected boolean method_7468();
+  protected net.minecraft.class_2394 method_7467();
+  static {};
+}
+== com/talhanation/smallships/world/entity/fabric/ModEntityTypesImpl
+Compiled from "ModEntityTypesImpl.java"
+public class com.talhanation.smallships.world.entity.fabric.ModEntityTypesImpl {
+  private static final java.util.Map<java.lang.Class<? extends net.minecraft.class_1297>, net.minecraft.class_1299<? extends net.minecraft.class_1297>> entries;
+  public com.talhanation.smallships.world.entity.fabric.ModEntityTypesImpl();
+  public static <T extends net.minecraft.class_1297> net.minecraft.class_1299<T> getEntityType(java.lang.Class<T>);
+  private static <T extends net.minecraft.class_1297> net.minecraft.class_1299<T> register(java.lang.String, net.minecraft.class_1299<T>);
+  static {};
+}
+== com/talhanation/smallships/world/entity/ship/Attributes
+Compiled from "Attributes.java"
+public class com.talhanation.smallships.world.entity.ship.Attributes {
+  public float maxHealth;
+  public float maxSpeed;
+  public float maxReverseSpeed;
+  public float maxRotationSpeed;
+  public float acceleration;
+  public float rotationAcceleration;
+  public float friction;
+  public com.talhanation.smallships.world.entity.ship.Attributes();
+  public void addSaveData(net.minecraft.class_2487);
+  public net.minecraft.class_2487 getSaveData();
+  public void loadSaveData(net.minecraft.class_2487);
+  public java.lang.String toString();
+}
+== com/talhanation/smallships/world/entity/ship/sail/SailDamage$State
+Compiled from "SailDamage.java"
+public final class com.talhanation.smallships.world.entity.ship.sail.SailDamage$State extends java.lang.Enum<com.talhanation.smallships.world.entity.ship.sail.SailDamage$State> {
+  public static final com.talhanation.smallships.world.entity.ship.sail.SailDamage$State INTACT;
+  public static final com.talhanation.smallships.world.entity.ship.sail.SailDamage$State TORN;
+  public static final com.talhanation.smallships.world.entity.ship.sail.SailDamage$State DESTROYED;
+  private static final com.talhanation.smallships.world.entity.ship.sail.SailDamage$State[] $VALUES;
+  public static com.talhanation.smallships.world.entity.ship.sail.SailDamage$State[] values();
+  public static com.talhanation.smallships.world.entity.ship.sail.SailDamage$State valueOf(java.lang.String);
+  private com.talhanation.smallships.world.entity.ship.sail.SailDamage$State();
+  private static com.talhanation.smallships.world.entity.ship.sail.SailDamage$State[] $values();
+  static {};
+}
+== com/talhanation/smallships/world/entity/ship/sail/SailDamage
+Compiled from "SailDamage.java"
+public final class com.talhanation.smallships.world.entity.ship.sail.SailDamage {
+  public static final float HEALTH_PER_SAIL;
+  public static final float TORN_FRACTION;
+  public static final float PATCH_LIMIT;
+  public static final int PATCH_MIN;
+  public static final int PATCH_RANDOM;
+  public static float getMaxHealth(com.talhanation.smallships.world.entity.ship.Ship);
+  public static float getTornThreshold(com.talhanation.smallships.world.entity.ship.Ship);
+  private com.talhanation.smallships.world.entity.ship.sail.SailDamage();
+  public static float getHealth(com.talhanation.smallships.world.entity.ship.Ship);
+  public static void setHealth(com.talhanation.smallships.world.entity.ship.Ship, float);
+  public static com.talhanation.smallships.world.entity.ship.sail.SailDamage$State getState(com.talhanation.smallships.world.entity.ship.Ship);
+  public static boolean canTakeDamage(com.talhanation.smallships.world.entity.ship.Ship);
+  public static void applyCannonHit(com.talhanation.smallships.world.entity.ship.Ship, float);
+  public static float getSpeedFactor(com.talhanation.smallships.world.entity.ship.Ship);
+  public static boolean interactPatch(com.talhanation.smallships.world.entity.ship.Ship, net.minecraft.class_1657, net.minecraft.class_1268);
+  public static boolean patchWith(com.talhanation.smallships.world.entity.ship.Ship, net.minecraft.class_1263);
+  private static void applyPatch(com.talhanation.smallships.world.entity.ship.Ship, net.minecraft.class_1657);
+  private static int findSlot(net.minecraft.class_1263, net.minecraft.class_1792);
+  public static void repair(com.talhanation.smallships.world.entity.ship.Ship);
+  public static void addSaveData(com.talhanation.smallships.world.entity.ship.Ship, net.minecraft.class_2487);
+  public static void readSaveData(com.talhanation.smallships.world.entity.ship.Ship, net.minecraft.class_2487);
+  private static boolean lambda$interactPatch$0(net.minecraft.class_1799);
+}
+== com/talhanation/smallships/world/entity/ship/hitbox/DeckEscape
+Compiled from "DeckEscape.java"
+public class com.talhanation.smallships.world.entity.ship.hitbox.DeckEscape {
+  public static final java.lang.String STAY_ON_DECK_TAG;
+  private static final float STILL_SPEED;
+  private static final float STILL_ROT_SPEED;
+  private static final int SCAN_INTERVAL;
+  private static final int ESCAPE_DELAY;
+  private static final int PUSH_AFTER;
+  private static final int RETARGET_INTERVAL;
+  private static final int SEARCH_DISTANCE;
+  private static final int SEARCH_ABOVE_WATERLINE;
+  private static final int CLEARANCE;
+  private static final double RESET_DISTANCE;
+  private static final float RESET_YAW;
+  private static final int EMPTY_REFRESH;
+  private static final double PUSH_SPEED;
+  private static final double PUSH_JUMP;
+  private static final int OFF_DECK_GRACE;
+  private static final double FEET_TOLERANCE;
+  private static final float[][] DIRECTIONS;
+  private final com.talhanation.smallships.world.entity.ship.Ship ship;
+  private final java.util.Map<java.lang.Integer, com.talhanation.smallships.world.entity.ship.hitbox.DeckEscape$Stranded> stranded;
+  private net.minecraft.class_243 landSpot;
+  private boolean landSearched;
+  private int landTick;
+  private double landX;
+  private double landZ;
+  private float landYaw;
+  private float halfLength;
+  private float halfBeam;
+  public com.talhanation.smallships.world.entity.ship.hitbox.DeckEscape(com.talhanation.smallships.world.entity.ship.Ship);
+  public void tick(java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity>);
+  private boolean isStill();
+  private void scan(java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity>);
+  private static boolean canEscape(net.minecraft.class_1308);
+  private boolean releaseCheck(net.minecraft.class_1308, com.talhanation.smallships.world.entity.ship.hitbox.DeckEscape$Stranded, java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity>);
+  private void steer(net.minecraft.class_1308, com.talhanation.smallships.world.entity.ship.hitbox.DeckEscape$Stranded);
+  private static boolean isOnDeck(net.minecraft.class_1308, java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity>);
+  private void checkLandSpot();
+  private net.minecraft.class_243 getLandSpot();
+  private net.minecraft.class_243 searchLandSpot();
+  private net.minecraft.class_243 findGround(int, int, int);
+  private void readHullSize();
+  private boolean lambda$scan$0(java.util.List, net.minecraft.class_1308);
+  static {};
+}
+== com/talhanation/smallships/world/entity/ship/hitbox/DeckEscape$Stranded
+Compiled from "DeckEscape.java"
+final class com.talhanation.smallships.world.entity.ship.hitbox.DeckEscape$Stranded {
+  private int ticksOnDeck;
+  private int escapeTicks;
+  private int walkTicks;
+  private int offDeckTicks;
+  private net.minecraft.class_243 target;
+  private com.talhanation.smallships.world.entity.ship.hitbox.DeckEscape$Stranded();
+}
+== com/talhanation/smallships/world/entity/ship/hitbox/ShipPartEntity
+Compiled from "ShipPartEntity.java"
+public class com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity extends net.minecraft.class_1297 implements net.minecraft.class_1263 {
+  public static final java.lang.String ID;
+  public static final float MAX_HEIGHT;
+  private static final net.minecraft.class_2940<java.lang.Integer> PARENT_ID;
+  private static final net.minecraft.class_2940<java.lang.Float> LOCAL_V;
+  private static final net.minecraft.class_2940<java.lang.Float> LOCAL_Y;
+  private static final net.minecraft.class_2940<java.lang.Float> LOCAL_H;
+  private static final net.minecraft.class_2940<java.lang.Float> PART_WIDTH;
+  private static final net.minecraft.class_2940<java.lang.Float> PART_HEIGHT;
+  private static final net.minecraft.class_2940<java.lang.Boolean> MAST;
+  private static final float STILL_SPEED;
+  private static final float STILL_ROT_SPEED;
+  private static final int TURN_STEPS;
+  private static final double EPSILON;
+  public com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity(net.minecraft.class_1299<? extends com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity>, net.minecraft.class_1937);
+  public static com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity factory(net.minecraft.class_1299<? extends com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity>, net.minecraft.class_1937);
+  public com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity(com.talhanation.smallships.world.entity.ship.Ship, com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition);
+  protected void method_5693();
+  public void method_5773();
+  public void follow(com.talhanation.smallships.world.entity.ship.Ship);
+  public void method_5759(double, double, double, float, float, int, boolean);
+  public com.talhanation.smallships.world.entity.ship.Ship getParent();
+  public boolean isMast();
+  public static net.minecraft.class_1297 resolve(net.minecraft.class_1297);
+  public static net.minecraft.class_1297 resolve(net.minecraft.class_239);
+  public net.minecraft.class_4048 method_18377(net.minecraft.class_4050);
+  public void method_5674(net.minecraft.class_2940<?>);
+  public boolean method_30948();
+  public boolean method_5810();
+  public boolean method_5863();
+  public boolean method_5643(net.minecraft.class_1282, float);
+  public net.minecraft.class_1269 method_5664(net.minecraft.class_1657, net.minecraft.class_243, net.minecraft.class_1268);
+  public net.minecraft.class_1269 method_5688(net.minecraft.class_1657, net.minecraft.class_1268);
+  public boolean method_5779(net.minecraft.class_1297);
+  public net.minecraft.class_1799 method_31480();
+  public net.minecraft.class_2561 method_5477();
+  protected boolean method_5818(net.minecraft.class_1297);
+  protected void method_5627(net.minecraft.class_1297);
+  private net.minecraft.class_1263 getParentContainer();
+  public int method_5439();
+  public boolean method_5442();
+  public net.minecraft.class_1799 method_5438(int);
+  public net.minecraft.class_1799 method_5434(int, int);
+  public net.minecraft.class_1799 method_5441(int);
+  public void method_5447(int, net.minecraft.class_1799);
+  public int method_5444();
+  public void method_5431();
+  public boolean method_5443(net.minecraft.class_1657);
+  public void method_5435(net.minecraft.class_1657);
+  public void method_5432(net.minecraft.class_1657);
+  public boolean method_5437(int, net.minecraft.class_1799);
+  public boolean method_49104(net.minecraft.class_1263, int, net.minecraft.class_1799);
+  public void method_5448();
+  public net.minecraft.class_5630 method_32318(int);
+  public boolean method_31746();
+  protected void method_5749(net.minecraft.class_2487);
+  protected void method_5652(net.minecraft.class_2487);
+  public static net.minecraft.class_243 collide(com.talhanation.smallships.world.entity.ship.Ship, net.minecraft.class_243);
+  public static float collideTurn(com.talhanation.smallships.world.entity.ship.Ship, float, float);
+  public static java.util.List<net.minecraft.class_238> hullBoxes(com.talhanation.smallships.world.entity.ship.Ship);
+  private static java.util.List<net.minecraft.class_238> boxesAt(java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition>, net.minecraft.class_243, float);
+  private static java.util.List<net.minecraft.class_238> moved(java.util.List<net.minecraft.class_238>, double, double);
+  private static net.minecraft.class_238 envelope(java.util.List<net.minecraft.class_238>);
+  private static double clamp(java.util.List<net.minecraft.class_238>, java.util.List<net.minecraft.class_265>, net.minecraft.class_2350$class_2351, double);
+  private static boolean overlaps(java.util.List<net.minecraft.class_238>, java.util.List<net.minecraft.class_265>);
+  public static java.util.List<net.minecraft.class_265> scanBlockers(com.talhanation.smallships.world.entity.ship.Ship, net.minecraft.class_238);
+  public static java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition> split(java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition>);
+  public static com.talhanation.smallships.world.entity.ship.Ship findRammedShip(com.talhanation.smallships.world.entity.ship.Ship, net.minecraft.class_243);
+  private static boolean isForeignPart(com.talhanation.smallships.world.entity.ship.Ship, net.minecraft.class_1297);
+  private static boolean isHull(com.talhanation.smallships.world.entity.ship.Ship, net.minecraft.class_1297);
+  private static boolean lambda$findRammedShip$2(com.talhanation.smallships.world.entity.ship.Ship, net.minecraft.class_1297);
+  private static boolean lambda$scanBlockers$1(com.talhanation.smallships.world.entity.ship.Ship, net.minecraft.class_1297);
+  private static net.minecraft.class_265 lambda$scanBlockers$0(com.talhanation.smallships.world.entity.ship.Ship, net.minecraft.class_1937, net.minecraft.class_2338$class_2339, net.minecraft.class_265);
+  static {};
+}
+== com/talhanation/smallships/world/entity/ship/hitbox/ShipPartEntity$Definition
+Compiled from "ShipPartEntity.java"
+public final class com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition extends java.lang.Record {
+  private final float v;
+  private final float y;
+  private final float h;
+  private final float width;
+  private final float height;
+  private final boolean mast;
+  public com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition(float, float, float, float, float, boolean);
+  public static com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition hull(float, float, float, float, float);
+  public static com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition mast(float, float, float, float);
+  public java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition> split();
+  public net.minecraft.class_238 boxAt(double, double, double, float);
+  public net.minecraft.class_238 boxAt(double, double, double, float, float);
+  public final java.lang.String toString();
+  public final int hashCode();
+  public final boolean equals(java.lang.Object);
+  public float v();
+  public float y();
+  public float h();
+  public float width();
+  public float height();
+  public boolean mast();
+}
+== com/talhanation/smallships/world/entity/ship/DrakkarEntity
+Compiled from "DrakkarEntity.java"
+public class com.talhanation.smallships.world.entity.ship.DrakkarEntity extends com.talhanation.smallships.world.entity.ship.ContainerShip implements com.talhanation.smallships.world.entity.ship.abilities.Bannerable,com.talhanation.smallships.world.entity.ship.abilities.Sailable,com.talhanation.smallships.world.entity.ship.abilities.Shieldable,com.talhanation.smallships.world.entity.ship.abilities.Paddleable,com.talhanation.smallships.world.entity.ship.abilities.IceBreakable,com.talhanation.smallships.world.entity.ship.abilities.Seatable,com.talhanation.smallships.world.entity.ship.abilities.Leashable,com.talhanation.smallships.world.entity.ship.abilities.Ability {
+  public static final java.lang.String ID;
+  private static final java.util.Map<com.talhanation.smallships.world.entity.ship.ShipUpgrade, java.lang.Integer> UPGRADE_COSTS;
+  private static final int ORIGINAL_CONTAINER_SIZE;
+  private static final java.util.List<com.talhanation.smallships.world.entity.ship.abilities.Shieldable$ShieldPosition> SHIELD_POSITIONS;
+  private static final java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition> PARTS;
+  private static final java.util.List<com.talhanation.smallships.world.entity.ship.seat.ShipSeat> SEATS;
+  public com.talhanation.smallships.world.entity.ship.DrakkarEntity(net.minecraft.class_1299<? extends net.minecraft.class_1690>, net.minecraft.class_1937);
+  private com.talhanation.smallships.world.entity.ship.DrakkarEntity(net.minecraft.class_1937, double, double, double);
+  public static com.talhanation.smallships.world.entity.ship.DrakkarEntity summon(net.minecraft.class_1937, double, double, double);
+  public java.util.Map<com.talhanation.smallships.world.entity.ship.ShipUpgrade, java.lang.Integer> getUpgradeCosts();
+  public com.talhanation.smallships.config.SmallShipsConfig$ShipAttributes getConfiguredAttributes();
+  public com.talhanation.smallships.world.entity.ship.Ship$BiomeModifierType getBiomeModifierType();
+  public java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition> getParts();
+  public java.util.List<com.talhanation.smallships.world.entity.ship.seat.ShipSeat> getSeats();
+  public void waterSplash();
+  public com.talhanation.smallships.world.entity.ship.abilities.Shieldable$ShieldPosition getShieldPosition(int);
+  public byte getMaxShieldsPerSide();
+  public net.minecraft.class_243 applyLeashOffset();
+  public float getHeadWindMultiplier();
+  public float getSideWindMultiplier();
+  public float getTailWindMultiplier();
+  public float getOarFactor();
+  public float getRenderPoseHeight();
+  public float getCannonHeightOffset();
+  static {};
+}
+== com/talhanation/smallships/world/entity/ship/ContainerShip$1
+Compiled from "ContainerShip.java"
+class com.talhanation.smallships.world.entity.ship.ContainerShip$1 implements net.minecraft.class_3913 {
+  final com.talhanation.smallships.world.entity.ship.ContainerShip this$0;
+  com.talhanation.smallships.world.entity.ship.ContainerShip$1(com.talhanation.smallships.world.entity.ship.ContainerShip);
+  public int method_17390(int);
+  public void method_17391(int, int);
+  public int method_17389();
+}
+== com/talhanation/smallships/world/entity/ship/GalleonEntity
+Compiled from "GalleonEntity.java"
+public class com.talhanation.smallships.world.entity.ship.GalleonEntity extends com.talhanation.smallships.world.entity.ship.ContainerShip implements com.talhanation.smallships.world.entity.ship.abilities.Bannerable,com.talhanation.smallships.world.entity.ship.abilities.Sailable,com.talhanation.smallships.world.entity.ship.abilities.Cannonable,com.talhanation.smallships.world.entity.ship.abilities.Seatable,com.talhanation.smallships.world.entity.ship.abilities.Leashable,com.talhanation.smallships.world.entity.ship.abilities.Ability {
+  public static final java.lang.String ID;
+  private static final java.util.Map<com.talhanation.smallships.world.entity.ship.ShipUpgrade, java.lang.Integer> UPGRADE_COSTS;
+  private static final int ORIGINAL_CONTAINER_SIZE;
+  private static final java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition> PARTS;
+  private static final float seatHeight;
+  float x;
+  private static final java.util.List<com.talhanation.smallships.world.entity.ship.seat.ShipSeat> SEATS;
+  public java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition> getParts();
+  public java.util.List<com.talhanation.smallships.world.entity.ship.seat.ShipSeat> getSeats();
+  public com.talhanation.smallships.world.entity.ship.GalleonEntity(net.minecraft.class_1299<? extends net.minecraft.class_1690>, net.minecraft.class_1937);
+  private com.talhanation.smallships.world.entity.ship.GalleonEntity(net.minecraft.class_1937, double, double, double);
+  public boolean isEffectedByCannonPenalty();
+  public static com.talhanation.smallships.world.entity.ship.GalleonEntity summon(net.minecraft.class_1937, double, double, double);
+  public java.util.Map<com.talhanation.smallships.world.entity.ship.ShipUpgrade, java.lang.Integer> getUpgradeCosts();
+  public com.talhanation.smallships.config.SmallShipsConfig$ShipAttributes getConfiguredAttributes();
+  public int method_42281();
+  public com.talhanation.smallships.world.entity.ship.Ship$BiomeModifierType getBiomeModifierType();
+  public void waterSplash();
+  public com.talhanation.smallships.world.entity.ship.abilities.Cannonable$CannonPosition getCannonPosition(int);
+  public double getCannonAimY();
+  public byte getMaxCannonPerSide();
+  public net.minecraft.class_243 applyLeashOffset();
+  public float getHeadWindMultiplier();
+  public float getSideWindMultiplier();
+  public float getTailWindMultiplier();
+  public float getRenderPoseHeight();
+  public float getCannonHeightOffset();
+  static {};
+}
+== com/talhanation/smallships/world/entity/ship/CogEntity
+Compiled from "CogEntity.java"
+public class com.talhanation.smallships.world.entity.ship.CogEntity extends com.talhanation.smallships.world.entity.ship.ContainerShip implements com.talhanation.smallships.world.entity.ship.abilities.Bannerable,com.talhanation.smallships.world.entity.ship.abilities.Sailable,com.talhanation.smallships.world.entity.ship.abilities.Cannonable,com.talhanation.smallships.world.entity.ship.abilities.Seatable,com.talhanation.smallships.world.entity.ship.abilities.Leashable,com.talhanation.smallships.world.entity.ship.abilities.Ability {
+  public static final java.lang.String ID;
+  private static final java.util.Map<com.talhanation.smallships.world.entity.ship.ShipUpgrade, java.lang.Integer> UPGRADE_COSTS;
+  private static final int ORIGINAL_CONTAINER_SIZE;
+  private static final java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition> PARTS;
+  private static final float tower;
+  private static final float deck;
+  private static final java.util.List<com.talhanation.smallships.world.entity.ship.seat.ShipSeat> SEATS;
+  public com.talhanation.smallships.world.entity.ship.CogEntity(net.minecraft.class_1299<? extends net.minecraft.class_1690>, net.minecraft.class_1937);
+  private com.talhanation.smallships.world.entity.ship.CogEntity(net.minecraft.class_1937, double, double, double);
+  public static com.talhanation.smallships.world.entity.ship.CogEntity summon(net.minecraft.class_1937, double, double, double);
+  public java.util.Map<com.talhanation.smallships.world.entity.ship.ShipUpgrade, java.lang.Integer> getUpgradeCosts();
+  public com.talhanation.smallships.config.SmallShipsConfig$ShipAttributes getConfiguredAttributes();
+  public com.talhanation.smallships.world.entity.ship.Ship$BiomeModifierType getBiomeModifierType();
+  public java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition> getParts();
+  public java.util.List<com.talhanation.smallships.world.entity.ship.seat.ShipSeat> getSeats();
+  public com.talhanation.smallships.world.entity.ship.abilities.Cannonable$CannonPosition getCannonPosition(int);
+  public double getCannonAimY();
+  public byte getMaxCannonPerSide();
+  public void waterSplash();
+  public net.minecraft.class_243 applyLeashOffset();
+  public float getHeadWindMultiplier();
+  public float getSideWindMultiplier();
+  public float getTailWindMultiplier();
+  public float getRenderPoseHeight();
+  public float getCannonHeightOffset();
+  static {};
+}
+== com/talhanation/smallships/world/entity/ship/ShipUpgrade
+Compiled from "ShipUpgrade.java"
+public abstract class com.talhanation.smallships.world.entity.ship.ShipUpgrade extends java.lang.Enum<com.talhanation.smallships.world.entity.ship.ShipUpgrade> {
+  public static final com.talhanation.smallships.world.entity.ship.ShipUpgrade IRON_SCANTLINGS;
+  public static final com.talhanation.smallships.world.entity.ship.ShipUpgrade COTTON_SAILS;
+  public static final com.talhanation.smallships.world.entity.ship.ShipUpgrade COPPER_PLATING;
+  private final java.lang.String tagKey;
+  private final java.util.function.Supplier<net.minecraft.class_1792> costItem;
+  private final int defaultCost;
+  private final int buildTime;
+  private static final com.talhanation.smallships.world.entity.ship.ShipUpgrade[] $VALUES;
+  public static com.talhanation.smallships.world.entity.ship.ShipUpgrade[] values();
+  public static com.talhanation.smallships.world.entity.ship.ShipUpgrade valueOf(java.lang.String);
+  private com.talhanation.smallships.world.entity.ship.ShipUpgrade(java.lang.String, java.util.function.Supplier<net.minecraft.class_1792>, int, int);
+  public java.lang.String getTagKey();
+  public net.minecraft.class_1792 getCostItem();
+  public int getDefaultCost();
+  public int getCostAmount(com.talhanation.smallships.world.entity.ship.Ship);
+  public net.minecraft.class_1799 getCost(com.talhanation.smallships.world.entity.ship.Ship);
+  public net.minecraft.class_1799 getCostIcon();
+  public int getBuildTime();
+  private static float percentOf(double);
+  private static int scaleTime(int);
+  public boolean isAvailable(com.talhanation.smallships.world.entity.ship.Ship);
+  public static float getRefundFraction();
+  public int getRefundAmount(com.talhanation.smallships.world.entity.ship.Ship);
+  public int getRemoveTime();
+  public java.lang.String getTranslationKey();
+  public java.lang.String getDescriptionTranslationKey();
+  public abstract void apply(com.talhanation.smallships.world.entity.ship.Attributes);
+  public abstract double getEffectPercent();
+  public java.lang.String getEffectPercentText();
+  public boolean isInstalled(com.talhanation.smallships.world.entity.ship.Ship);
+  public void setInstalled(com.talhanation.smallships.world.entity.ship.Ship, boolean);
+  public static void applyAll(com.talhanation.smallships.world.entity.ship.Ship, com.talhanation.smallships.world.entity.ship.Attributes);
+  public static com.talhanation.smallships.world.entity.ship.ShipUpgrade byOrdinal(int);
+  private static net.minecraft.class_1792 lambda$static$2();
+  private static net.minecraft.class_1792 lambda$static$1();
+  private static net.minecraft.class_1792 lambda$static$0();
+  private static com.talhanation.smallships.world.entity.ship.ShipUpgrade[] $values();
+  static {};
+}
+== com/talhanation/smallships/world/entity/ship/Ship$BiomeModifierType
+Compiled from "Ship.java"
+public final class com.talhanation.smallships.world.entity.ship.Ship$BiomeModifierType extends java.lang.Enum<com.talhanation.smallships.world.entity.ship.Ship$BiomeModifierType> {
+  public static final com.talhanation.smallships.world.entity.ship.Ship$BiomeModifierType NONE;
+  public static final com.talhanation.smallships.world.entity.ship.Ship$BiomeModifierType COLD;
+  public static final com.talhanation.smallships.world.entity.ship.Ship$BiomeModifierType NEUTRAL;
+  public static final com.talhanation.smallships.world.entity.ship.Ship$BiomeModifierType WARM;
+  private static final com.talhanation.smallships.world.entity.ship.Ship$BiomeModifierType[] $VALUES;
+  public static com.talhanation.smallships.world.entity.ship.Ship$BiomeModifierType[] values();
+  public static com.talhanation.smallships.world.entity.ship.Ship$BiomeModifierType valueOf(java.lang.String);
+  private com.talhanation.smallships.world.entity.ship.Ship$BiomeModifierType();
+  private static com.talhanation.smallships.world.entity.ship.Ship$BiomeModifierType[] $values();
+  static {};
+}
+== com/talhanation/smallships/world/entity/ship/sinking/SinkingAnimation
+Compiled from "SinkingAnimation.java"
+public class com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation extends java.lang.Enum<com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation> {
+  public static final com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation BOW_FIRST;
+  public static final com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation STERN_FIRST;
+  public static final com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation CAPSIZE;
+  public static final com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation EVEN_KEEL;
+  public static final float MAX_PITCH;
+  public static final float MAX_ROLL;
+  public static final float MAX_YAW;
+  private static final float TRIM;
+  private static final float HEEL;
+  private static final float SLEW;
+  private static final float CAPSIZE_SHARE;
+  private static final float START_SINK_SPEED;
+  private static final com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation[] VALUES;
+  private final int durationTicks;
+  private final float maxSinkSpeed;
+  private static final com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation[] $VALUES;
+  public static com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation[] values();
+  public static com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation valueOf(java.lang.String);
+  private com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation(int, float);
+  public int getDurationTicks();
+  public float getProgress(int, float);
+  public float getProgress(float);
+  public float getSinkSpeed(float);
+  public final float getPitch(float);
+  public final float getRoll(float);
+  public final float getYaw(float);
+  protected float pitch(float);
+  protected float roll(float);
+  protected float yaw(float);
+  protected static float easeIn(float);
+  protected static float smoothStep(float);
+  public byte getId();
+  public static com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation byId(byte);
+  public static com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation pick(net.minecraft.class_5819);
+  private static com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation[] $values();
+  static {};
+}
+== com/talhanation/smallships/world/entity/ship/sinking/SinkingAnimation$2
+Compiled from "SinkingAnimation.java"
+final class com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation$2 extends com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation {
+  private com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation$2(java.lang.String, int, int, float);
+  protected float pitch(float);
+  protected float roll(float);
+}
+== com/talhanation/smallships/world/entity/ship/sinking/SinkingAnimation$1
+Compiled from "SinkingAnimation.java"
+final class com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation$1 extends com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation {
+  private com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation$1(java.lang.String, int, int, float);
+  protected float pitch(float);
+  protected float roll(float);
+}
+== com/talhanation/smallships/world/entity/ship/sinking/SinkingAnimation$4
+Compiled from "SinkingAnimation.java"
+final class com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation$4 extends com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation {
+  private com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation$4(java.lang.String, int, int, float);
+  protected float pitch(float);
+  protected float roll(float);
+  protected float yaw(float);
+}
+== com/talhanation/smallships/world/entity/ship/sinking/SinkingAnimation$3
+Compiled from "SinkingAnimation.java"
+final class com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation$3 extends com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation {
+  private com.talhanation.smallships.world.entity.ship.sinking.SinkingAnimation$3(java.lang.String, int, int, float);
+  protected float pitch(float);
+  protected float roll(float);
+}
+== com/talhanation/smallships/world/entity/ship/DhowEntity
+Compiled from "DhowEntity.java"
+public class com.talhanation.smallships.world.entity.ship.DhowEntity extends com.talhanation.smallships.world.entity.ship.ContainerShip implements com.talhanation.smallships.world.entity.ship.abilities.Bannerable,com.talhanation.smallships.world.entity.ship.abilities.Sailable,com.talhanation.smallships.world.entity.ship.abilities.Cannonable,com.talhanation.smallships.world.entity.ship.abilities.Seatable,com.talhanation.smallships.world.entity.ship.abilities.Leashable,com.talhanation.smallships.world.entity.ship.abilities.Ability {
+  public static final java.lang.String ID;
+  private static final java.util.Map<com.talhanation.smallships.world.entity.ship.ShipUpgrade, java.lang.Integer> UPGRADE_COSTS;
+  private static final int ORIGINAL_CONTAINER_SIZE;
+  private static final java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition> PARTS;
+  static float deck;
+  private static final java.util.List<com.talhanation.smallships.world.entity.ship.seat.ShipSeat> SEATS;
+  public com.talhanation.smallships.world.entity.ship.DhowEntity(net.minecraft.class_1299<? extends net.minecraft.class_1690>, net.minecraft.class_1937);
+  private com.talhanation.smallships.world.entity.ship.DhowEntity(net.minecraft.class_1937, double, double, double);
+  public static com.talhanation.smallships.world.entity.ship.DhowEntity summon(net.minecraft.class_1937, double, double, double);
+  public boolean isEffectedByCargoPenalty();
+  public java.util.Map<com.talhanation.smallships.world.entity.ship.ShipUpgrade, java.lang.Integer> getUpgradeCosts();
+  public com.talhanation.smallships.config.SmallShipsConfig$ShipAttributes getConfiguredAttributes();
+  public com.talhanation.smallships.world.entity.ship.Ship$BiomeModifierType getBiomeModifierType();
+  public java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition> getParts();
+  public java.util.List<com.talhanation.smallships.world.entity.ship.seat.ShipSeat> getSeats();
+  public com.talhanation.smallships.world.entity.ship.abilities.Cannonable$CannonPosition getCannonPosition(int);
+  public byte getMaxCannonPerSide();
+  public double getCannonAimY();
+  public void waterSplash();
+  public net.minecraft.class_243 applyLeashOffset();
+  public float getHeadWindMultiplier();
+  public float getSideWindMultiplier();
+  public float getTailWindMultiplier();
+  public float getRenderPoseHeight();
+  public float getCannonHeightOffset();
+  static {};
+}
+== com/talhanation/smallships/world/entity/ship/abilities/Ability
+Compiled from "Ability.java"
+public interface com.talhanation.smallships.world.entity.ship.abilities.Ability {
+  public default com.talhanation.smallships.world.entity.ship.Ship self();
+}
+== com/talhanation/smallships/world/entity/ship/abilities/Shieldable
+Compiled from "Shieldable.java"
+public interface com.talhanation.smallships.world.entity.ship.abilities.Shieldable extends com.talhanation.smallships.world.entity.ship.abilities.Ability {
+  public abstract com.talhanation.smallships.world.entity.ship.abilities.Shieldable$ShieldPosition getShieldPosition(int);
+  public abstract byte getMaxShieldsPerSide();
+  public default void tickShieldShip();
+  public default void defineShieldShipSynchedData(net.minecraft.class_2945);
+  public default int getTotalShieldSlots();
+  public default net.minecraft.class_1799 getShieldInSlot(int);
+  public default void setShieldInSlot(int, net.minecraft.class_1799);
+  public default boolean isShieldInSlot(int);
+  public default int getShieldCount();
+  public default int getFreeShieldSlot();
+  public default int getLastOccupiedShieldSlot();
+  public static java.lang.String slotKey(int);
+  public default void readShieldShipSaveData(net.minecraft.class_2487);
+  public default void addShieldShipSaveData(net.minecraft.class_2487);
+  public default float getDamageModifier();
+  public default float getShieldProtection();
+  public default float getMaxShieldProtection();
+  public default boolean interactShield(net.minecraft.class_1657, net.minecraft.class_1268);
+}
+== com/talhanation/smallships/world/entity/ship/abilities/Paddleable
+Compiled from "Paddleable.java"
+public interface com.talhanation.smallships.world.entity.ship.abilities.Paddleable extends com.talhanation.smallships.world.entity.ship.abilities.Ability {
+  public default void tickPaddleShip();
+  public default float getPaddlingModifier();
+  public default void controlBoatPaddleShip();
+  public default void animatePaddle(com.talhanation.smallships.world.entity.ship.abilities.Paddleable$PaddleSide, net.minecraft.class_630, float);
+  private boolean shouldPaddleLeft();
+  private boolean shouldPaddleRight();
+}
+== com/talhanation/smallships/world/entity/ship/abilities/Shieldable$ShieldPosition
+Compiled from "Shieldable.java"
+public class com.talhanation.smallships.world.entity.ship.abilities.Shieldable$ShieldPosition {
+  public final double x;
+  public final double y;
+  public final double z;
+  public final boolean isRightSided;
+  public com.talhanation.smallships.world.entity.ship.abilities.Shieldable$ShieldPosition(double, double, double, boolean);
+}
+== com/talhanation/smallships/world/entity/ship/abilities/Cannonable
+Compiled from "Cannonable.java"
+public interface com.talhanation.smallships.world.entity.ship.abilities.Cannonable extends com.talhanation.smallships.world.entity.ship.abilities.Ability {
+  public static final float CANNON_ANGLE_MIN;
+  public static final float CANNON_ANGLE_MAX;
+  public static final float CANNON_ROTATION_MAX;
+  public abstract com.talhanation.smallships.world.entity.ship.abilities.Cannonable$CannonPosition getCannonPosition(int);
+  public abstract byte getMaxCannonPerSide();
+  public default boolean isEffectedByCannonPenalty();
+  public default boolean isCannonInSlot(int);
+  public default void setCannonInSlot(int, boolean);
+  public default int getTotalCannonSlots();
+  public default void tickCannonShip();
+  public default void triggerGunnerCannon(int);
+  public default void triggerCannon(com.talhanation.smallships.world.entity.cannon.ShipCannon);
+  public default void triggerCannons(net.minecraft.class_243, double, net.minecraft.class_1309, double, double);
+  public default void triggerCannonAdvanced(com.talhanation.smallships.world.entity.cannon.ShipCannon, net.minecraft.class_243, double, net.minecraft.class_1309, double, double);
+  public default float getCannonAngle(int, boolean);
+  public default float getCannonRotation(int, boolean);
+  public default boolean hasPerCannonAim(int);
+  public default void setCannonAim(int, boolean, float, float);
+  public default float getCannonAngle(boolean);
+  public default float getCannonRotation(boolean);
+  public default void setCannonAim(boolean, float, float);
+  public default void readCannonShipSaveData(net.minecraft.class_2487);
+  public default void addCannonShipSaveData(net.minecraft.class_2487);
+  public default float getCannonModifier();
+  public default void updateCannons();
+  private void clearOccupiedCarriages();
+  public default void updateCannonCount();
+  public default boolean canShoot();
+  public default com.talhanation.smallships.world.item.CannonBallItem getCannonBallToShoot();
+  public default com.talhanation.smallships.world.item.CannonBallItem getCannonBallToShoot(net.minecraft.class_1297);
+  private java.lang.Iterable<net.minecraft.class_1799> getShipAmmo();
+  private static java.lang.Iterable<net.minecraft.class_1799> getShooterAmmo(net.minecraft.class_1297);
+  public default boolean hasFineGrainPowder();
+  public default boolean hasFineGrainPowder(net.minecraft.class_1297);
+  public default float getShotSpeedMultiplier(boolean);
+  public default float getShotSpeedMultiplier(net.minecraft.class_1297, boolean);
+  public default void consumeCannonBall();
+  public default void consumeCannonBall(net.minecraft.class_1297);
+  public default boolean consumeFineGrainPowder();
+  public default boolean consumeFineGrainPowder(net.minecraft.class_1297);
+  public default net.minecraft.class_2960 getTextureLocation();
+  public default void setCannonCount(byte);
+  public default byte getCannonCount();
+  public default java.util.List<com.talhanation.smallships.world.entity.cannon.ShipCannon> getCannons();
+  public default void cannonShipDestroyed(net.minecraft.class_1937, com.talhanation.smallships.world.entity.ship.Ship);
+  public abstract double getCannonAimY();
+}
+== com/talhanation/smallships/world/entity/ship/abilities/Seatable
+Compiled from "Seatable.java"
+public interface com.talhanation.smallships.world.entity.ship.abilities.Seatable extends com.talhanation.smallships.world.entity.ship.abilities.Ability {
+  public static final double GUN_CLICK_RADIUS;
+  public abstract java.util.List<com.talhanation.smallships.world.entity.ship.seat.ShipSeat> getSeats();
+  private static java.lang.String key(int);
+  public default com.talhanation.smallships.world.entity.ship.seat.ShipSeat getSeatById(int);
+  public default com.talhanation.smallships.world.entity.ship.seat.ShipSeat getSeatOf(net.minecraft.class_1297);
+  public default net.minecraft.class_1297 getSeatOccupant(int);
+  public default boolean isSeatFree(int);
+  public default boolean isSeatBlocked(com.talhanation.smallships.world.entity.ship.seat.ShipSeat);
+  public default int getUsableSeatCount();
+  public default void assignSeat(net.minecraft.class_1297, int);
+  public default void freeSeatOf(net.minecraft.class_1297);
+  public default void validateSeatAssignments();
+  public default com.talhanation.smallships.world.entity.ship.seat.ShipSeat findNearestFreeSeat(net.minecraft.class_243, boolean);
+  public default com.talhanation.smallships.world.entity.ship.seat.ShipSeat findSeatAt(net.minecraft.class_243, boolean);
+  public default com.talhanation.smallships.world.entity.ship.seat.ShipSeat findGunnerSeatAt(net.minecraft.class_243);
+  private com.talhanation.smallships.world.entity.ship.seat.ShipSeat freeGunnerSeat(int);
+  private com.talhanation.smallships.world.entity.ship.seat.ShipSeat nearestFree(net.minecraft.class_243, java.util.function.Predicate<com.talhanation.smallships.world.entity.ship.seat.ShipSeat>);
+  public default net.minecraft.class_1657 getGunner(int);
+  private static boolean lambda$findSeatAt$3(boolean, com.talhanation.smallships.world.entity.ship.seat.ShipSeat);
+  private static boolean lambda$findNearestFreeSeat$2(com.talhanation.smallships.world.entity.ship.seat.ShipSeat);
+  private static boolean lambda$findNearestFreeSeat$1(com.talhanation.smallships.world.entity.ship.seat.ShipSeat);
+  private static boolean lambda$validateSeatAssignments$0(java.util.UUID, net.minecraft.class_1297);
+}
+== com/talhanation/smallships/world/entity/ship/abilities/IceBreakable
+Compiled from "IceBreakable.java"
+public interface com.talhanation.smallships.world.entity.ship.abilities.IceBreakable extends com.talhanation.smallships.world.entity.ship.abilities.Ability {
+  public static boolean isBreakableIce(net.minecraft.class_2680);
+}
+== com/talhanation/smallships/world/entity/ship/abilities/Sailable
+Compiled from "Sailable.java"
+public interface com.talhanation.smallships.world.entity.ship.abilities.Sailable extends com.talhanation.smallships.world.entity.ship.abilities.Ability {
+  public default int getSailCount();
+  public default void tickSailShip();
+  public default void readSailShipSaveData(net.minecraft.class_2487);
+  public default void addSailShipSaveData(net.minecraft.class_2487);
+  public default void controlBoatSailShip();
+  public default boolean interactSail(net.minecraft.class_1657, net.minecraft.class_1268);
+  public default void toggleSail();
+  public default void playSailSound(int);
+  public default int getSailStateCooldown();
+  public default void setSailState(byte);
+  public default byte getSailState();
+}
+== com/talhanation/smallships/world/entity/ship/abilities/Bannerable
+Compiled from "Bannerable.java"
+public interface com.talhanation.smallships.world.entity.ship.abilities.Bannerable extends com.talhanation.smallships.world.entity.ship.abilities.Ability {
+  public default void tickBannerShip();
+  public default void readBannerShipSaveData(net.minecraft.class_2487);
+  public default void addBannerShipSaveData(net.minecraft.class_2487);
+  public default boolean interactBanner(net.minecraft.class_1657, net.minecraft.class_1268);
+  public default float getBannerWaveFactor();
+  public default float getBannerWaveSpeed();
+  public default float getBannerWaveAngle(float);
+}
+== com/talhanation/smallships/world/entity/ship/abilities/Cannonable$CannonPosition
+Compiled from "Cannonable.java"
+public class com.talhanation.smallships.world.entity.ship.abilities.Cannonable$CannonPosition {
+  public final double x;
+  public final double y;
+  public final double z;
+  public final boolean isRightSided;
+  public com.talhanation.smallships.world.entity.ship.abilities.Cannonable$CannonPosition(double, double, double, boolean);
+}
+== com/talhanation/smallships/world/entity/ship/abilities/Leashable
+Compiled from "Leashable.java"
+public interface com.talhanation.smallships.world.entity.ship.abilities.Leashable extends com.talhanation.smallships.world.entity.ship.abilities.Ability {
+  public static final double LEASH_PULL_DISTANCE;
+  public static final double LEASH_BREAK_DISTANCE;
+  public static final double LEASH_PULL_STRENGTH;
+  public static final int LEASH_CAST_OFF_DELAY;
+  public abstract net.minecraft.class_243 applyLeashOffset();
+  public default boolean isShipLeashed();
+  public default net.minecraft.class_1297 getLeashHolder();
+  public default void setLeashedTo(net.minecraft.class_1297);
+  private boolean hasLeashHolder();
+  public default void dropLeash(boolean);
+  public default void tickLeashShip();
+  private void tickLostKnot();
+  private void restoreLeashHolder();
+  public default boolean interactLead(net.minecraft.class_1657, net.minecraft.class_1268);
+  public static boolean interactFence(net.minecraft.class_1657, net.minecraft.class_1937, net.minecraft.class_2338);
+  public default void readLeashShipSaveData(net.minecraft.class_2487);
+  public default void addLeashShipSaveData(net.minecraft.class_2487);
+  private static boolean lambda$interactFence$5(net.minecraft.class_1297, com.talhanation.smallships.world.entity.ship.Ship);
+  private static boolean lambda$interactFence$4(net.minecraft.class_1297, net.minecraft.class_1308);
+  private static boolean lambda$interactFence$3(net.minecraft.class_1937, com.talhanation.smallships.world.entity.ship.Ship);
+  private static boolean lambda$interactFence$2(net.minecraft.class_2338, com.talhanation.smallships.world.entity.ship.Ship);
+  private static boolean lambda$interactFence$1(net.minecraft.class_1657, net.minecraft.class_1308);
+  private static boolean lambda$interactFence$0(net.minecraft.class_1657, com.talhanation.smallships.world.entity.ship.Ship);
+}
+== com/talhanation/smallships/world/entity/ship/abilities/Paddleable$PaddleSide
+Compiled from "Paddleable.java"
+public final class com.talhanation.smallships.world.entity.ship.abilities.Paddleable$PaddleSide extends java.lang.Enum<com.talhanation.smallships.world.entity.ship.abilities.Paddleable$PaddleSide> {
+  public static final com.talhanation.smallships.world.entity.ship.abilities.Paddleable$PaddleSide LEFT;
+  public static final com.talhanation.smallships.world.entity.ship.abilities.Paddleable$PaddleSide RIGHT;
+  private static final com.talhanation.smallships.world.entity.ship.abilities.Paddleable$PaddleSide[] $VALUES;
+  public static com.talhanation.smallships.world.entity.ship.abilities.Paddleable$PaddleSide[] values();
+  public static com.talhanation.smallships.world.entity.ship.abilities.Paddleable$PaddleSide valueOf(java.lang.String);
+  private com.talhanation.smallships.world.entity.ship.abilities.Paddleable$PaddleSide();
+  private static com.talhanation.smallships.world.entity.ship.abilities.Paddleable$PaddleSide[] $values();
+  static {};
+}
+== com/talhanation/smallships/world/entity/ship/ShipUpgrade$2
+Compiled from "ShipUpgrade.java"
+final class com.talhanation.smallships.world.entity.ship.ShipUpgrade$2 extends com.talhanation.smallships.world.entity.ship.ShipUpgrade {
+  private com.talhanation.smallships.world.entity.ship.ShipUpgrade$2(java.lang.String, int, java.lang.String, java.util.function.Supplier, int, int);
+  public void apply(com.talhanation.smallships.world.entity.ship.Attributes);
+  public double getEffectPercent();
+}
+== com/talhanation/smallships/world/entity/ship/BriggEntity
+Compiled from "BriggEntity.java"
+public class com.talhanation.smallships.world.entity.ship.BriggEntity extends com.talhanation.smallships.world.entity.ship.ContainerShip implements com.talhanation.smallships.world.entity.ship.abilities.Bannerable,com.talhanation.smallships.world.entity.ship.abilities.Sailable,com.talhanation.smallships.world.entity.ship.abilities.Cannonable,com.talhanation.smallships.world.entity.ship.abilities.Seatable,com.talhanation.smallships.world.entity.ship.abilities.Leashable,com.talhanation.smallships.world.entity.ship.abilities.Ability {
+  public static final java.lang.String ID;
+  private static final java.util.Map<com.talhanation.smallships.world.entity.ship.ShipUpgrade, java.lang.Integer> UPGRADE_COSTS;
+  private static final int ORIGINAL_CONTAINER_SIZE;
+  private static final java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition> PARTS;
+  private static final float seatHeight;
+  private static final java.util.List<com.talhanation.smallships.world.entity.ship.seat.ShipSeat> SEATS;
+  public com.talhanation.smallships.world.entity.ship.BriggEntity(net.minecraft.class_1299<? extends net.minecraft.class_1690>, net.minecraft.class_1937);
+  private com.talhanation.smallships.world.entity.ship.BriggEntity(net.minecraft.class_1937, double, double, double);
+  public static com.talhanation.smallships.world.entity.ship.BriggEntity summon(net.minecraft.class_1937, double, double, double);
+  public java.util.Map<com.talhanation.smallships.world.entity.ship.ShipUpgrade, java.lang.Integer> getUpgradeCosts();
+  public com.talhanation.smallships.config.SmallShipsConfig$ShipAttributes getConfiguredAttributes();
+  public com.talhanation.smallships.world.entity.ship.Ship$BiomeModifierType getBiomeModifierType();
+  public java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition> getParts();
+  public java.util.List<com.talhanation.smallships.world.entity.ship.seat.ShipSeat> getSeats();
+  public void waterSplash();
+  public com.talhanation.smallships.world.entity.ship.abilities.Cannonable$CannonPosition getCannonPosition(int);
+  public double getCannonAimY();
+  public byte getMaxCannonPerSide();
+  public float getHeadWindMultiplier();
+  public float getSideWindMultiplier();
+  public float getTailWindMultiplier();
+  public net.minecraft.class_243 applyLeashOffset();
+  public float getRenderPoseHeight();
+  public float getCannonHeightOffset();
+  static {};
+}
+== com/talhanation/smallships/world/entity/ship/ShipUpgrade$1
+Compiled from "ShipUpgrade.java"
+final class com.talhanation.smallships.world.entity.ship.ShipUpgrade$1 extends com.talhanation.smallships.world.entity.ship.ShipUpgrade {
+  private com.talhanation.smallships.world.entity.ship.ShipUpgrade$1(java.lang.String, int, java.lang.String, java.util.function.Supplier, int, int);
+  public void apply(com.talhanation.smallships.world.entity.ship.Attributes);
+  public double getEffectPercent();
+}
+== com/talhanation/smallships/world/entity/ship/ContainerShip
+Compiled from "ContainerShip.java"
+public abstract class com.talhanation.smallships.world.entity.ship.ContainerShip extends com.talhanation.smallships.world.entity.ship.Ship implements net.minecraft.class_7248,net.minecraft.class_7265 {
+  public static final net.minecraft.class_2940<java.lang.Integer> CONTAINER_SIZE;
+  public static final net.minecraft.class_2940<java.lang.Byte> ROWS;
+  public static final net.minecraft.class_2940<java.lang.Byte> PAGES;
+  public static final net.minecraft.class_2940<java.lang.Byte> PAGE_INDEX;
+  public static final net.minecraft.class_2940<java.lang.Byte> CONTAINER_FILL_STATE;
+  public static final net.minecraft.class_2940<net.minecraft.class_2487> AMMO_IN_HOLD;
+  private final int originalContainerSize;
+  net.minecraft.class_2371<net.minecraft.class_1799> itemStacks;
+  private net.minecraft.class_2960 lootTable;
+  private long lootTableSeed;
+  public final net.minecraft.class_3913 containerData;
+  public boolean isEffectedByCargoPenalty();
+  public com.talhanation.smallships.world.entity.ship.ContainerShip(net.minecraft.class_1299<? extends net.minecraft.class_1690>, net.minecraft.class_1937, int);
+  protected void method_5693();
+  protected void method_5749(net.minecraft.class_2487);
+  protected void method_5652(net.minecraft.class_2487);
+  public void method_42279(net.minecraft.class_1282);
+  public void method_5650(net.minecraft.class_1297$class_5529);
+  public net.minecraft.class_1269 method_5688(net.minecraft.class_1657, net.minecraft.class_1268);
+  public void method_6722(net.minecraft.class_1657);
+  public net.minecraft.class_2960 method_42276();
+  public void method_42275(net.minecraft.class_2960);
+  public long method_42277();
+  public void method_42274(long);
+  public net.minecraft.class_2371<net.minecraft.class_1799> method_42278();
+  public void method_42273();
+  public int method_5439();
+  public net.minecraft.class_1799 method_5438(int);
+  public net.minecraft.class_1799 method_5434(int, int);
+  public net.minecraft.class_1799 method_5441(int);
+  public void method_5447(int, net.minecraft.class_1799);
+  public net.minecraft.class_5630 method_32318(int);
+  public void method_5431();
+  public boolean method_5443(net.minecraft.class_1657);
+  public void method_5448();
+  public net.minecraft.class_1703 createMenu(int, net.minecraft.class_1661, net.minecraft.class_1657);
+  public void method_42285(net.minecraft.class_2487);
+  public void method_42288(net.minecraft.class_2487);
+  public void readContainerSizeSaveData(net.minecraft.class_2487);
+  public void addContainerSizeSaveData(net.minecraft.class_2487);
+  private void updatePaging(int);
+  protected void updateContainerFillState();
+  protected void updateAmmoInHold();
+  public int getAmmoInHold(com.talhanation.smallships.world.item.CannonBallItem$Type);
+  public byte getInvFillState();
+  public double getInvFillStateInPercent();
+  public void resizeContainer(int);
+  private static net.minecraft.class_2371<net.minecraft.class_1799> resizeItemStacks(net.minecraft.class_7265, int);
+  public byte getContainerFillState();
+  public void setContainerFillState(byte);
+  public float getContainerModifier();
+  private static net.minecraft.class_1799[] lambda$resizeItemStacks$5(int);
+  private static boolean lambda$resizeItemStacks$4(net.minecraft.class_1799);
+  private static net.minecraft.class_1799[] lambda$resizeItemStacks$3(int);
+  private static java.lang.Double lambda$getInvFillStateInPercent$2(net.minecraft.class_1799);
+  private static net.minecraft.class_3222 lambda$readContainerSizeSaveData$1(net.minecraft.class_1657);
+  private boolean lambda$readContainerSizeSaveData$0(net.minecraft.class_1657);
+  static {};
+}
+== com/talhanation/smallships/world/entity/ship/CaravelEntity
+Compiled from "CaravelEntity.java"
+public class com.talhanation.smallships.world.entity.ship.CaravelEntity extends com.talhanation.smallships.world.entity.ship.ContainerShip implements com.talhanation.smallships.world.entity.ship.abilities.Bannerable,com.talhanation.smallships.world.entity.ship.abilities.Sailable,com.talhanation.smallships.world.entity.ship.abilities.Cannonable,com.talhanation.smallships.world.entity.ship.abilities.Seatable,com.talhanation.smallships.world.entity.ship.abilities.Leashable,com.talhanation.smallships.world.entity.ship.abilities.Ability {
+  public static final java.lang.String ID;
+  private static final java.util.Map<com.talhanation.smallships.world.entity.ship.ShipUpgrade, java.lang.Integer> UPGRADE_COSTS;
+  private static final int ORIGINAL_CONTAINER_SIZE;
+  private static final java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition> PARTS;
+  private static final java.util.List<com.talhanation.smallships.world.entity.ship.seat.ShipSeat> SEATS;
+  public com.talhanation.smallships.world.entity.ship.CaravelEntity(net.minecraft.class_1299<? extends net.minecraft.class_1690>, net.minecraft.class_1937);
+  private com.talhanation.smallships.world.entity.ship.CaravelEntity(net.minecraft.class_1937, double, double, double);
+  public static com.talhanation.smallships.world.entity.ship.CaravelEntity summon(net.minecraft.class_1937, double, double, double);
+  public java.util.Map<com.talhanation.smallships.world.entity.ship.ShipUpgrade, java.lang.Integer> getUpgradeCosts();
+  public com.talhanation.smallships.config.SmallShipsConfig$ShipAttributes getConfiguredAttributes();
+  public com.talhanation.smallships.world.entity.ship.Ship$BiomeModifierType getBiomeModifierType();
+  public java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition> getParts();
+  public java.util.List<com.talhanation.smallships.world.entity.ship.seat.ShipSeat> getSeats();
+  public com.talhanation.smallships.world.entity.ship.abilities.Cannonable$CannonPosition getCannonPosition(int);
+  public double getCannonAimY();
+  public byte getMaxCannonPerSide();
+  public void waterSplash();
+  public net.minecraft.class_243 applyLeashOffset();
+  public float getHeadWindMultiplier();
+  public float getSideWindMultiplier();
+  public float getTailWindMultiplier();
+  public float getRenderPoseHeight();
+  public float getCannonHeightOffset();
+  static {};
+}
+== com/talhanation/smallships/world/entity/ship/ModShipTypes
+Compiled from "ModShipTypes.java"
+public class com.talhanation.smallships.world.entity.ship.ModShipTypes {
+  public static final com.talhanation.smallships.api.ShipType COG;
+  public static final com.talhanation.smallships.api.ShipType BRIGG;
+  public static final com.talhanation.smallships.api.ShipType GALLEY;
+  public static final com.talhanation.smallships.api.ShipType DHOW;
+  public static final com.talhanation.smallships.api.ShipType DRAKKAR;
+  public static final com.talhanation.smallships.api.ShipType CARAVEL;
+  public static final com.talhanation.smallships.api.ShipType GALLEON;
+  public com.talhanation.smallships.world.entity.ship.ModShipTypes();
+  public static void init();
+  private static net.minecraft.class_2960 id(java.lang.String);
+  static {};
+}
+== com/talhanation/smallships/world/entity/ship/Ship$1
+Compiled from "Ship.java"
+class com.talhanation.smallships.world.entity.ship.Ship$1 {
+  static final int[] $SwitchMap$com$talhanation$smallships$world$wind$Wind$Zone;
+  static {};
+}
+== com/talhanation/smallships/world/entity/ship/GalleyEntity
+Compiled from "GalleyEntity.java"
+public class com.talhanation.smallships.world.entity.ship.GalleyEntity extends com.talhanation.smallships.world.entity.ship.ContainerShip implements com.talhanation.smallships.world.entity.ship.abilities.Bannerable,com.talhanation.smallships.world.entity.ship.abilities.Sailable,com.talhanation.smallships.world.entity.ship.abilities.Cannonable,com.talhanation.smallships.world.entity.ship.abilities.Paddleable,com.talhanation.smallships.world.entity.ship.abilities.Seatable,com.talhanation.smallships.world.entity.ship.abilities.Leashable,com.talhanation.smallships.world.entity.ship.abilities.Ability {
+  public static final java.lang.String ID;
+  private static final java.util.Map<com.talhanation.smallships.world.entity.ship.ShipUpgrade, java.lang.Integer> UPGRADE_COSTS;
+  private static final int ORIGINAL_CONTAINER_SIZE;
+  private static final java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition> PARTS;
+  private static final java.util.List<com.talhanation.smallships.world.entity.ship.seat.ShipSeat> SEATS;
+  public com.talhanation.smallships.world.entity.ship.GalleyEntity(net.minecraft.class_1299<? extends net.minecraft.class_1690>, net.minecraft.class_1937);
+  private com.talhanation.smallships.world.entity.ship.GalleyEntity(net.minecraft.class_1937, double, double, double);
+  public static com.talhanation.smallships.world.entity.ship.GalleyEntity summon(net.minecraft.class_1937, double, double, double);
+  public java.util.Map<com.talhanation.smallships.world.entity.ship.ShipUpgrade, java.lang.Integer> getUpgradeCosts();
+  public com.talhanation.smallships.config.SmallShipsConfig$ShipAttributes getConfiguredAttributes();
+  public com.talhanation.smallships.world.entity.ship.Ship$BiomeModifierType getBiomeModifierType();
+  public java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity$Definition> getParts();
+  public java.util.List<com.talhanation.smallships.world.entity.ship.seat.ShipSeat> getSeats();
+  public void waterSplash();
+  public com.talhanation.smallships.world.entity.ship.abilities.Cannonable$CannonPosition getCannonPosition(int);
+  public double getCannonAimY();
+  public byte getMaxCannonPerSide();
+  public net.minecraft.class_243 applyLeashOffset();
+  public float getHeadWindMultiplier();
+  public float getSideWindMultiplier();
+  public float getTailWindMultiplier();
+  public float getOarFactor();
+  public float getRamSelfDamageFactor();
+  public float getRamDamageFactor();
+  public float getRamCrewDamageFactor();
+  public float getRenderPoseHeight();
+  public float getCannonHeightOffset();
+  static {};
+}
+== com/talhanation/smallships/world/entity/ship/Ship
+Compiled from "Ship.java"
+public abstract class com.talhanation.smallships.world.entity.ship.Ship extends net.minecraft.class_1690 {
+  public static final net.minecraft.class_2940<java.lang.Float> SPEED;
+  private static final net.minecraft.class_2940<java.lang.Float> ROT_SPEED;
+  public static final net.minecraft.class_2940<java.lang.Byte> SAIL_STATE;
+  public static final net.minecraft.class_2940<java.lang.String> SAIL_COLOR;
+  public static final net.minecraft.class_2940<net.minecraft.class_1799> BANNER;
+  public static final net.minecraft.class_2940<net.minecraft.class_1799> SAIL_BANNER;
+  public static final net.minecraft.class_2940<java.lang.Float> CANNON_POWER;
+  public static final net.minecraft.class_2940<java.lang.Byte> CANNON_COUNT;
+  private static final net.minecraft.class_2940<java.lang.Boolean> FORWARD;
+  private static final net.minecraft.class_2940<java.lang.Boolean> BACKWARD;
+  private static final net.minecraft.class_2940<java.lang.Boolean> LEFT;
+  private static final net.minecraft.class_2940<java.lang.Boolean> RIGHT;
+  private static final net.minecraft.class_2940<java.lang.Boolean> SUNKEN;
+  private static final net.minecraft.class_2940<java.lang.Boolean> SINKING;
+  private static final net.minecraft.class_2940<java.lang.Byte> SINKING_TYPE;
+  private static final net.minecraft.class_2940<java.lang.Integer> SINKING_TIME;
+  private static final net.minecraft.class_2940<java.lang.Boolean> DOCKYARD_WORK;
+  private static final net.minecraft.class_2940<java.lang.Float> IMPULSE_X;
+  private static final net.minecraft.class_2940<java.lang.Float> IMPULSE_Z;
+  public static final net.minecraft.class_2940<java.lang.Integer> LEASH_HOLDER;
+  public static final net.minecraft.class_2940<net.minecraft.class_2487> SHIELD_DATA;
+  public static final net.minecraft.class_2940<net.minecraft.class_2487> CANNON_AIM;
+  public static final net.minecraft.class_2940<java.lang.Float> SAIL_HEALTH;
+  public static final net.minecraft.class_2940<net.minecraft.class_2487> UPGRADES;
+  public static final net.minecraft.class_2940<net.minecraft.class_2487> CANNON_SLOTS;
+  public static final net.minecraft.class_2940<net.minecraft.class_2487> SEAT_ASSIGNMENTS;
+  public static final net.minecraft.class_2940<net.minecraft.class_2487> REST_POSE;
+  public java.util.UUID leashHolderUuid;
+  public net.minecraft.class_2338 leashKnotPos;
+  public net.minecraft.class_1532 leashKnot;
+  public long leashTime;
+  private final java.util.List<com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity> parts;
+  private int partCount;
+  private final com.talhanation.smallships.world.entity.ship.hitbox.DeckEscape deckEscape;
+  public static final double RAM_MIN_CLOSING_KMH;
+  public static final double CRASH_MIN_SPEED_KMH;
+  private static final float HIT_SOUND_MIN_KMH;
+  private static final float HIT_SOUND_FULL_KMH;
+  private static final float RAM_BASE_DAMAGE;
+  private static final float RAM_DAMAGE_PER_KMH;
+  private static final float RAM_CREW_DAMAGE_SHARE;
+  private static final double RAM_MAX_SHOVE;
+  private static final float RAM_DECAY;
+  public static final double RAM_REARM_DISTANCE;
+  private static final double OBSTACLE_STOP_FRACTION;
+  private static final int OBSTACLE_HOLD_TICKS;
+  private static final double BREAK_THROUGH_REACH;
+  public static final float MANOEUVRE_SPEED;
+  private static final float SINKING_DRIFT_DECAY;
+  private static final float SINKING_CLOCK_SNAP;
+  private static final float SINKING_CLOCK_CATCHUP;
+  private static final int REST_POSE_DELAY;
+  private static final double REST_POSE_GLIDE_DISTANCE;
+  private static final float REST_POSE_GLIDE_TURN;
+  private static final float REST_POSE_GLIDE;
+  private static final double PART_SEARCH_RADIUS;
+  private net.minecraft.class_243 lastTickPosition;
+  private float lastTickYRot;
+  private int stillTicks;
+  private net.minecraft.class_243 restPosition;
+  private float restYRot;
+  private net.minecraft.class_243 ramRearmPos;
+  private int obstructedTicks;
+  private int obstructedDirection;
+  private int blockerTick;
+  private net.minecraft.class_238 blockerArea;
+  private java.util.List<net.minecraft.class_265> blockerCache;
+  private boolean isLocked;
+  private int sunkenTime;
+  private float clientSinkingTime;
+  private float clientSinkingTimeO;
+  private float prevWaveAngle;
+  private float waveAngle;
+  public float prevBannerWaveAngle;
+  public float bannerWaveAngle;
+  protected boolean cannonKeyPressed;
+  public int sailStateCooldown;
+  private float setPoint;
+  public final java.util.List<com.talhanation.smallships.world.entity.cannon.ShipCannon> CANNONS;
+  public final java.util.Stack<net.minecraft.class_1799> SHIELDS;
+  public float maxSpeed;
+  public static final float SPEED_ATTRIBUTE_DIVISOR;
+  private net.minecraft.class_5498 previousCameraType;
+  private boolean wasLocalDriver;
+  private net.minecraft.class_2338 servicingDockyardPos;
+  private long servicingDockyardTime;
+  private net.minecraft.class_243 pendingSeatHit;
+  private java.util.UUID pendingSeatHitFor;
+  private net.minecraft.class_243 dismountSeat;
+  private java.util.UUID dismountSeatFor;
+  public static final float HAND_REPAIR_LIMIT;
+  public static final int HAND_REPAIR_MIN;
+  public static final int HAND_REPAIR_RANDOM;
+  private long dockyardWorkTime;
+  private static final java.util.Map<com.talhanation.smallships.world.entity.ship.ShipUpgrade, java.lang.Integer> DEFAULT_UPGRADE_COSTS;
+  public static float toTickSpeed(float);
+  public static float toMaxRotSpeed(float);
+  public static float toRotStep(float);
+  public com.talhanation.smallships.world.entity.ship.Ship(net.minecraft.class_1299<? extends net.minecraft.class_1690>, net.minecraft.class_1937);
+  public void method_5773();
+  public void tickClientHull();
+  private void moveParts();
+  private void collectParts();
+  private void tickRestPose();
+  private void holdRestPose();
+  public void method_5674(net.minecraft.class_2940<?>);
+  protected void method_5693();
+  protected void method_5749(net.minecraft.class_2487);
+  protected void method_5652(net.minecraft.class_2487);
+  public void method_5700(boolean);
+  public void method_5764(boolean);
+  public <T> T getData(net.minecraft.class_2940<T>);
+  public boolean method_5818(net.minecraft.class_1297);
+  public boolean hasFreeSeatFor(net.minecraft.class_1297);
+  public boolean canDrive(net.minecraft.class_1297);
+  public boolean hasHelmsman();
+  public net.minecraft.class_1297 getHelmsman();
+  public boolean method_7556(int);
+== com/talhanation/smallships/world/entity/ship/seat/ShipSeat
+Compiled from "ShipSeat.java"
+public final class com.talhanation.smallships.world.entity.ship.seat.ShipSeat extends java.lang.Record {
+  private final int id;
+  private final float v;
+  private final float y;
+  private final float h;
+  private final com.talhanation.smallships.world.entity.ship.seat.SeatType type;
+  private final int mappedCannonSlot;
+  public com.talhanation.smallships.world.entity.ship.seat.ShipSeat(int, float, float, float, com.talhanation.smallships.world.entity.ship.seat.SeatType, int);
+  public static com.talhanation.smallships.world.entity.ship.seat.ShipSeat driver(int, float, float);
+  public static com.talhanation.smallships.world.entity.ship.seat.ShipSeat driver(int, float, float, float);
+  public static com.talhanation.smallships.world.entity.ship.seat.ShipSeat passenger(int, float, float);
+  public static com.talhanation.smallships.world.entity.ship.seat.ShipSeat passenger(int, float, float, float);
+  public static com.talhanation.smallships.world.entity.ship.seat.ShipSeat gunner(int, float, float, int);
+  public static com.talhanation.smallships.world.entity.ship.seat.ShipSeat gunner(int, float, float, float, int);
+  public static com.talhanation.smallships.world.entity.ship.seat.ShipSeat cannon(int, float, float, int);
+  public static com.talhanation.smallships.world.entity.ship.seat.ShipSeat cannon(int, float, float, float, int);
+  public net.minecraft.class_243 getAttachmentPoint(com.talhanation.smallships.world.entity.ship.Ship, net.minecraft.class_4048);
+  public net.minecraft.class_243 getWorldPosition(com.talhanation.smallships.world.entity.ship.Ship);
+  public final java.lang.String toString();
+  public final int hashCode();
+  public final boolean equals(java.lang.Object);
+  public int id();
+  public float v();
+  public float y();
+  public float h();
+  public com.talhanation.smallships.world.entity.ship.seat.SeatType type();
+  public int mappedCannonSlot();
+}
+== com/talhanation/smallships/world/entity/ship/seat/SeatType
+Compiled from "SeatType.java"
+public final class com.talhanation.smallships.world.entity.ship.seat.SeatType extends java.lang.Enum<com.talhanation.smallships.world.entity.ship.seat.SeatType> {
+  public static final com.talhanation.smallships.world.entity.ship.seat.SeatType DRIVER;
+  public static final com.talhanation.smallships.world.entity.ship.seat.SeatType PASSENGER;
+  public static final com.talhanation.smallships.world.entity.ship.seat.SeatType GUNNER;
+  public static final com.talhanation.smallships.world.entity.ship.seat.SeatType CANNON;
+  private static final com.talhanation.smallships.world.entity.ship.seat.SeatType[] $VALUES;
+  public static com.talhanation.smallships.world.entity.ship.seat.SeatType[] values();
+  public static com.talhanation.smallships.world.entity.ship.seat.SeatType valueOf(java.lang.String);
+  private com.talhanation.smallships.world.entity.ship.seat.SeatType();
+  private static com.talhanation.smallships.world.entity.ship.seat.SeatType[] $values();
+  static {};
+}
+== com/talhanation/smallships/world/entity/ship/ShipUpgrade$3
+Compiled from "ShipUpgrade.java"
+final class com.talhanation.smallships.world.entity.ship.ShipUpgrade$3 extends com.talhanation.smallships.world.entity.ship.ShipUpgrade {
+  private com.talhanation.smallships.world.entity.ship.ShipUpgrade$3(java.lang.String, int, java.lang.String, java.util.function.Supplier, int, int);
+  public void apply(com.talhanation.smallships.world.entity.ship.Attributes);
+  public double getEffectPercent();
+}
+== com/talhanation/smallships/world/entity/ship/ModBoatTypes
+Compiled from "ModBoatTypes.java"
+public class com.talhanation.smallships.world.entity.ship.ModBoatTypes {
+  public static final java.lang.String WARPED;
+  public static final java.lang.String CRIMSON;
+  public static final java.lang.String WARPED_CONSTANT;
+  public static final java.lang.String CRIMSON_CONSTANT;
+  public com.talhanation.smallships.world.entity.ship.ModBoatTypes();
+  public static java.lang.String getWoodName(net.minecraft.class_1690$class_1692);
+  public static boolean isNetherWood(net.minecraft.class_1690$class_1692);
+}
+== com/talhanation/smallships/world/entity/cannon/CannonGeometry
+Compiled from "CannonGeometry.java"
+public final class com.talhanation.smallships.world.entity.cannon.CannonGeometry {
+  public static final float TRUNNION_X;
+  public static final float TRUNNION_Y;
+  public static final float TRUNNION_Z;
+  public static final float BARREL_LENGTH;
+  public static final float MODEL_SCALE;
+  public static final float POSE_SCALE;
+  public static final float MODEL_ORIGIN_Y;
+  public static final float MUZZLE_CLEARANCE;
+  public static final float BARREL_RADIUS;
+  private com.talhanation.smallships.world.entity.cannon.CannonGeometry();
+  public static float toBlocks(float);
+  public static float toModelUnits(float);
+  public static float spawnLength();
+  public static float trunnionHeight(float);
+  public static float trunnionForward();
+  public static float muzzleDistance();
+  public static float spawnDistance();
+  public static float sightHeight();
+  public static float groundTrunnionHeight();
+  public static float shipTrunnionHeight();
+}
+== com/talhanation/smallships/world/entity/cannon/ICannon
+Compiled from "ICannon.java"
+public interface com.talhanation.smallships.world.entity.cannon.ICannon extends com.talhanation.smallships.world.entity.cannon.ICannonBallSource {
+  public abstract net.minecraft.class_2394 provideShootParticles();
+  public abstract void playSoundAt(net.minecraft.class_3414, float, float);
+  public abstract net.minecraft.class_1937 getLevel();
+}
+== com/talhanation/smallships/world/entity/cannon/GroundCannonEntity
+Compiled from "GroundCannonEntity.java"
+public class com.talhanation.smallships.world.entity.cannon.GroundCannonEntity extends net.minecraft.class_1297 implements com.talhanation.smallships.world.entity.cannon.ICannon {
+  public static final java.lang.String ID;
+  private static final net.minecraft.class_2940<java.util.Optional<java.util.UUID>> UUID;
+  private static final net.minecraft.class_2940<java.lang.String> DYE;
+  private static final net.minecraft.class_2940<java.lang.Boolean> FORWARD;
+  private static final net.minecraft.class_2940<java.lang.Boolean> BACKWARD;
+  private static final net.minecraft.class_2940<java.lang.Boolean> LEFT;
+  private static final net.minecraft.class_2940<java.lang.Boolean> RIGHT;
+  private static final net.minecraft.class_2940<java.lang.Boolean> BARREL_UP;
+  private static final net.minecraft.class_2940<java.lang.Boolean> BARREL_DOWN;
+  private static final net.minecraft.class_2940<java.lang.Boolean> AIMING;
+  private static final net.minecraft.class_2940<java.lang.Boolean> RECENTERING;
+  private static final net.minecraft.class_2940<java.lang.Float> CARRIAGE_YAW;
+  private static final net.minecraft.class_2940<java.lang.Float> SPEED;
+  private static final net.minecraft.class_2940<java.lang.Float> HEALTH;
+  private net.minecraft.class_2960 lootTable;
+  private long lootTableSeed;
+  private final com.talhanation.smallships.world.entity.cannon.Cannon cannon;
+  public float maxSpeedInKmH;
+  public static final float PITCH_MIN;
+  public static final float PITCH_MAX;
+  public static final float TRUNNION_HEIGHT;
+  public static final float TRUNNION_FORWARD;
+  public static final float MUZZLE_DISTANCE;
+  private static final float RECENTER_PITCH_SPEED;
+  private static final float RECENTER_YAW_SPEED;
+  private static final float RECENTER_EPSILON;
+  private static final float BARREL_PITCH_SPEED;
+  private static final float ACCELERATION;
+  private static final float DRIVER_STAND_DISTANCE;
+  private float maxSpeed;
+  private float wheelRotation;
+  private int steps;
+  private double clientX;
+  private double clientY;
+  private double clientZ;
+  private double clientYaw;
+  private double clientPitch;
+  protected float deltaRotation;
+  private boolean drivenPrevTick;
+  private boolean aimingPrevTick;
+  public net.minecraft.class_1277 inventory;
+  private static final double GRAVITY;
+  public com.talhanation.smallships.world.entity.cannon.GroundCannonEntity(net.minecraft.class_1937, net.minecraft.class_243);
+  public com.talhanation.smallships.world.entity.cannon.GroundCannonEntity(net.minecraft.class_1299<? extends net.minecraft.class_1297>, net.minecraft.class_1937);
+  public net.minecraft.class_1792 getDropItem();
+  public float method_49476();
+  protected void method_5693();
+  public java.util.Optional<java.util.UUID> getEntityInBarrelUUID();
+  protected final void setEntityInBarrelUUID(java.util.UUID);
+  public net.minecraft.class_1767 getDye();
+  protected final void setDye(net.minecraft.class_1767);
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+  public net.minecraft.class_1277 getInventory();
+  public com.talhanation.smallships.world.entity.cannon.Cannon getCannon();
+  public void method_5773();
+  protected void applyGravity();
+  public void recalculateBoundingBox();
+  public double getWidth();
+  public double getHeight();
+  protected void testEntityIntersection();
+  public net.minecraft.class_1269 method_5688(net.minecraft.class_1657, net.minecraft.class_1268);
+  protected boolean itemInteraction(net.minecraft.class_1657, net.minecraft.class_1268);
+  public void control(net.minecraft.class_1297, float, float);
+  private float getRollResistance();
+  public void updateControls(boolean, boolean, boolean, boolean, net.minecraft.class_1309);
+  public void setBarrelUp(boolean);
+  public void setBarrelDown(boolean);
+  public boolean isBarrelUp();
+  public boolean isBarrelDown();
+  public void setAiming(boolean);
+  public boolean isAiming();
+  public void updateAimingControl(boolean, net.minecraft.class_1309);
+  private void alignDriverToCannon(net.minecraft.class_1297);
+  private boolean isAimingRaw();
+  public void setRecentering(boolean);
+  public boolean isRecentering();
+  private boolean isRecenteringRaw();
+  public void setCarriageYaw(float);
+  public float getCarriageYaw();
+  public void triggerRecenter(net.minecraft.class_1309);
+  public void updateBarrelControls(boolean, boolean, net.minecraft.class_1309);
+  private boolean isBarrelUpRaw();
+  private boolean isBarrelDownRaw();
+  protected boolean tryRiding(net.minecraft.class_1297);
+  protected boolean tryPuttingIntoBarrel(net.minecraft.class_1297);
+  public void putEntityIntoBarrel(net.minecraft.class_1297);
+  protected boolean method_5818(net.minecraft.class_1297);
+  public void trigger(net.minecraft.class_1297);
+  public void method_24201(net.minecraft.class_1297);
+  protected net.minecraft.class_243 getBarrelPassengerAttachmentPoint();
+  public net.minecraft.class_243 method_24829(net.minecraft.class_1309);
+  private net.minecraft.class_243 findStandDismountSpot(net.minecraft.class_1309, net.minecraft.class_243);
+  public void method_5644(net.minecraft.class_1297);
+  public net.minecraft.class_1799 method_31480();
+  public net.minecraft.class_1297 getDriver();
+  public net.minecraft.class_1297 getPassengerInBarrel();
+  protected void cleanEntityInBarrelUUID();
+  public static com.talhanation.smallships.world.entity.cannon.GroundCannonEntity factory(net.minecraft.class_1299<? extends com.talhanation.smallships.world.entity.cannon.GroundCannonEntity>, net.minecraft.class_1937);
+  public void consumeCannonBall();
+  public boolean consumeFineGrainPowder();
+  public boolean hasFineGrainPowder();
+  public static net.minecraft.class_243 getMuzzleOffset(float, float);
+  public float getShotSpeedMultiplier(boolean);
+  public net.minecraft.class_2394 provideShootParticles();
+  public void playSoundAt(net.minecraft.class_3414, float, float);
+  public net.minecraft.class_1937 getLevel();
+  public com.talhanation.smallships.world.item.CannonBallItem getCannonBallToShoot();
+  public void setForward(boolean);
+  public void setBackward(boolean);
+  public void setLeft(boolean);
+  public void setRight(boolean);
+  public void setSpeed(float);
+  public float getSpeed();
+  public void setHealth(float);
+  public float getHealth();
+  public boolean isForward();
+  public boolean isBackward();
+== com/talhanation/smallships/world/entity/cannon/Cannon
+Compiled from "Cannon.java"
+public class com.talhanation.smallships.world.entity.cannon.Cannon {
+  private final net.minecraft.class_5819 random;
+  private int shootDelayTimer;
+  private com.mojang.datafixers.util.Pair<net.minecraft.class_1297, java.util.function.Supplier<com.talhanation.smallships.world.entity.projectile.ICannonProjectile>> cachedShoot;
+  private int coolDown;
+  private final net.minecraft.class_1937 level;
+  private final com.talhanation.smallships.world.entity.cannon.ICannon owner;
+  private float yaw;
+  private float prevYaw;
+  private float pitch;
+  private float prevPitch;
+  private org.joml.Vector3d pos;
+  private float barrelHeight;
+  private float barrelForwardOffset;
+  private float barrelLength;
+  public static final float BASE_SPEED;
+  public static final float FINE_GRAIN_SPEED_FACTOR;
+  public static final int FUZE_MIN_TICKS;
+  public static final int FUZE_RANDOM_TICKS;
+  private float speedMultiplier;
+  private boolean fineGrain;
+  private float pitchBoundUp;
+  private float pitchBoundDown;
+  public static final int COOL_DOWN_TICKS;
+  public com.talhanation.smallships.world.entity.cannon.Cannon(com.talhanation.smallships.world.entity.cannon.ICannon);
+  public float getYaw();
+  public float getPrevYaw();
+  public float getPitch();
+  public float getPrevPitch();
+  public void setYaw(float);
+  public void setPitch(float);
+  public org.joml.Vector3d getForward();
+  public org.joml.Vector3d getBarrelEndPoint();
+  public org.joml.Vector3d getBarrelEndPointLocal();
+  public org.joml.Vector3d getPos();
+  public void tick(double, double, double, double, double);
+  private void resetTimer();
+  private void setCoolDown();
+  public boolean isCooldown();
+  public boolean isFuzing();
+  public void triggerFuze(net.minecraft.class_1297, java.util.function.Supplier<com.talhanation.smallships.world.entity.projectile.ICannonProjectile>);
+  protected void shoot(net.minecraft.class_1297, com.talhanation.smallships.world.entity.projectile.ICannonProjectile);
+  public void shootAdvanced(net.minecraft.class_243, double, net.minecraft.class_1309, double, double);
+  private void playReloadedSound();
+  private void playCannonShotSound();
+  private void playFuzeSound();
+  public void setBarrelGeometry(float, float, float);
+  public void setPitchBounds(float, float);
+  public void setSpeedMultiplier(float);
+  public void setFineGrain(boolean);
+}
+== com/talhanation/smallships/world/entity/cannon/ShipCannon
+Compiled from "ShipCannon.java"
+public class com.talhanation.smallships.world.entity.cannon.ShipCannon implements com.talhanation.smallships.world.entity.cannon.ICannon {
+  private final com.talhanation.smallships.world.entity.ship.Ship ship;
+  private final net.minecraft.class_1937 level;
+  private final com.talhanation.smallships.world.entity.cannon.Cannon cannon;
+  private final int slotIndex;
+  private final double offsetX;
+  private final double offsetY;
+  private final double offsetZ;
+  private boolean isRightSided;
+  private boolean isLeftSided;
+  private double angle;
+  public com.talhanation.smallships.world.entity.cannon.ShipCannon(com.talhanation.smallships.world.entity.ship.Ship, com.talhanation.smallships.world.entity.ship.abilities.Cannonable$CannonPosition);
+  public com.talhanation.smallships.world.entity.cannon.ShipCannon(com.talhanation.smallships.world.entity.ship.Ship, com.talhanation.smallships.world.entity.ship.abilities.Cannonable$CannonPosition, int);
+  public void tick();
+  public net.minecraft.class_243 getGlobalPosition();
+  public net.minecraft.class_243 getGlobalPosition(double, double, double, float);
+  public void trigger();
+  public void trigger(net.minecraft.class_1297);
+  public static com.talhanation.smallships.world.entity.projectile.AbstractCannonBall createProjectile(com.talhanation.smallships.world.item.CannonBallItem$Type, net.minecraft.class_1937);
+  public void trigger(net.minecraft.class_243, double, net.minecraft.class_1309, double, double);
+  public boolean isCooldown();
+  public boolean isFuzing();
+  public com.talhanation.smallships.world.entity.cannon.Cannon getCannon();
+  public boolean canShootDirection();
+  public double getOffsetX();
+  public double getOffsetY();
+  public double getOffsetZ();
+  public float getAngle();
+  public void setLeftSided();
+  public void setRightSided();
+  public boolean isRightSided();
+  public int getSlotIndex();
+  public net.minecraft.class_2487 getData();
+  public net.minecraft.class_2394 provideShootParticles();
+  public void playSoundAt(net.minecraft.class_3414, float, float);
+  public net.minecraft.class_1937 getLevel();
+  public void consumeCannonBall();
+  public com.talhanation.smallships.world.item.CannonBallItem getCannonBallToShoot();
+  private com.talhanation.smallships.world.entity.projectile.ICannonProjectile lambda$trigger$0(com.talhanation.smallships.world.item.CannonBallItem$Type);
+}
+== com/talhanation/smallships/world/entity/cannon/ICannonBallSource
+Compiled from "ICannonBallSource.java"
+public interface com.talhanation.smallships.world.entity.cannon.ICannonBallSource {
+  public abstract void consumeCannonBall();
+  public abstract com.talhanation.smallships.world.item.CannonBallItem getCannonBallToShoot();
+}
+== com/talhanation/smallships/world/entity/IMixinEntity
+Compiled from "IMixinEntity.java"
+public interface com.talhanation.smallships.world.entity.IMixinEntity {
+  public abstract float getPrevXRot();
+  public abstract float getPrevYRot();
+  public abstract boolean doNotTeleportOnNextPassengerSync();
+  public abstract void setPreventTeleportOnNextPassengerSync(boolean);
+  public abstract boolean doNotDismountToCoordinates();
+  public abstract void setPreventDismountToCoordinates(boolean);
+}
+== com/talhanation/smallships/world/block/DockyardBlockEntity$1
+Compiled from "DockyardBlockEntity.java"
+class com.talhanation.smallships.world.block.DockyardBlockEntity$1 implements net.minecraft.class_3913 {
+  final com.talhanation.smallships.world.block.DockyardBlockEntity this$0;
+  com.talhanation.smallships.world.block.DockyardBlockEntity$1(com.talhanation.smallships.world.block.DockyardBlockEntity);
+  public int method_17390(int);
+  public void method_17391(int, int);
+  public int method_17389();
+}
+== com/talhanation/smallships/world/block/fabric/ModBlockEntityTypesImpl
+Compiled from "ModBlockEntityTypesImpl.java"
+public class com.talhanation.smallships.world.block.fabric.ModBlockEntityTypesImpl {
+  private static final java.util.Map<java.lang.String, net.minecraft.class_2591<?>> entries;
+  public com.talhanation.smallships.world.block.fabric.ModBlockEntityTypesImpl();
+  public static <T extends net.minecraft.class_2586> net.minecraft.class_2591<T> getBlockEntityType(java.lang.String);
+  static {};
+}
+== com/talhanation/smallships/world/block/DockyardBlockEntity$Task
+Compiled from "DockyardBlockEntity.java"
+public final class com.talhanation.smallships.world.block.DockyardBlockEntity$Task extends java.lang.Enum<com.talhanation.smallships.world.block.DockyardBlockEntity$Task> {
+  public static final com.talhanation.smallships.world.block.DockyardBlockEntity$Task NONE;
+  public static final com.talhanation.smallships.world.block.DockyardBlockEntity$Task BUILD_SHIP;
+  public static final com.talhanation.smallships.world.block.DockyardBlockEntity$Task REPAIR;
+  public static final com.talhanation.smallships.world.block.DockyardBlockEntity$Task MODIFY;
+  public final int id;
+  private static final com.talhanation.smallships.world.block.DockyardBlockEntity$Task[] $VALUES;
+  public static com.talhanation.smallships.world.block.DockyardBlockEntity$Task[] values();
+  public static com.talhanation.smallships.world.block.DockyardBlockEntity$Task valueOf(java.lang.String);
+  private com.talhanation.smallships.world.block.DockyardBlockEntity$Task(int);
+  public static com.talhanation.smallships.world.block.DockyardBlockEntity$Task byId(int);
+  private static com.talhanation.smallships.world.block.DockyardBlockEntity$Task[] $values();
+  static {};
+}
+== com/talhanation/smallships/world/block/ModBlockEntityTypes
+Compiled from "ModBlockEntityTypes.java"
+public class com.talhanation.smallships.world.block.ModBlockEntityTypes {
+  public static final net.minecraft.class_2591<com.talhanation.smallships.world.block.DockyardBlockEntity> DOCKYARD;
+  public com.talhanation.smallships.world.block.ModBlockEntityTypes();
+  public static <T extends net.minecraft.class_2586> net.minecraft.class_2591<T> getBlockEntityType(java.lang.String);
+  static {};
+}
+== com/talhanation/smallships/world/block/DockyardBlockEntity$2
+Compiled from "DockyardBlockEntity.java"
+class com.talhanation.smallships.world.block.DockyardBlockEntity$2 {
+  static final int[] $SwitchMap$com$talhanation$smallships$world$dockyard$DockyardAction$Kind;
+  static {};
+}
+== com/talhanation/smallships/world/block/DockyardBlockEntity
+Compiled from "DockyardBlockEntity.java"
+public class com.talhanation.smallships.world.block.DockyardBlockEntity extends net.minecraft.class_2586 implements net.minecraft.class_3908 {
+  public static final int SHIP_DETECTION_RANGE;
+  private com.talhanation.smallships.world.block.DockyardBlockEntity$Task task;
+  private int progress;
+  private int totalTime;
+  private net.minecraft.class_2960 shipTypeId;
+  private int woodTypeOrdinal;
+  private net.minecraft.class_2338 spawnSpot;
+  private final java.util.List<com.talhanation.smallships.world.dockyard.DockyardAction> pendingActions;
+  private final java.util.List<net.minecraft.class_1799> pendingRefunds;
+  private java.lang.String pendingDyeColor;
+  private net.minecraft.class_1799 pendingBanner;
+  private net.minecraft.class_1799 pendingSailBanner;
+  private final java.util.Map<java.lang.Integer, net.minecraft.class_1799> pendingShields;
+  private boolean repairHull;
+  private boolean repairSails;
+  private java.util.UUID targetShipUUID;
+  private java.util.UUID selectedShipUUID;
+  public final net.minecraft.class_3913 dataAccess;
+  public static final int CANNON_TIME;
+  public static final int STYLE_TIME;
+  public static final int SHIELD_TIME;
+  public static final float HULL_HP_PER_UNIT;
+  public static final float SAIL_HP_PER_WOOL;
+  public com.talhanation.smallships.world.block.DockyardBlockEntity(net.minecraft.class_2338, net.minecraft.class_2680);
+  public net.minecraft.class_2561 method_5476();
+  public net.minecraft.class_1703 createMenu(int, net.minecraft.class_1661, net.minecraft.class_1657);
+  public java.util.List<com.talhanation.smallships.world.entity.ship.Ship> findShipsInRange();
+  private boolean isServiceable(com.talhanation.smallships.world.entity.ship.Ship);
+  private static double hullDistanceSqr(com.talhanation.smallships.world.entity.ship.Ship, net.minecraft.class_243);
+  public com.talhanation.smallships.world.entity.ship.Ship getSelectedShip();
+  public void selectNearestShip();
+  public void cycleShip(int);
+  public boolean isBusy();
+  private static int workTime(net.minecraft.class_3222, int);
+  private static void syncInventory(net.minecraft.class_3222);
+  public void startBuildShip(net.minecraft.class_3222, com.talhanation.smallships.api.ShipType, net.minecraft.class_1690$class_1692);
+  public void startModifyTask(net.minecraft.class_3222, java.util.List<com.talhanation.smallships.world.dockyard.DockyardAction>);
+  private int freeShieldSlot(com.talhanation.smallships.world.entity.ship.abilities.Shieldable, java.util.Set<java.lang.Integer>);
+  private void finishModify(net.minecraft.class_1937, net.minecraft.class_2338);
+  private void clearModifyData();
+  public static java.util.List<com.talhanation.smallships.world.dockyard.DockyardRecipe$Ingredient> getRepairCosts(com.talhanation.smallships.world.entity.ship.Ship, boolean, boolean);
+  public static int getRepairTime(com.talhanation.smallships.world.entity.ship.Ship, boolean, boolean);
+  public void startRepairTask(net.minecraft.class_3222, boolean, boolean);
+  public boolean startRepairTask(com.talhanation.smallships.world.entity.ship.Ship, net.minecraft.class_1263, boolean, boolean);
+  private void beginRepair(com.talhanation.smallships.world.entity.ship.Ship, boolean, boolean, int);
+  private void finishRepair(net.minecraft.class_1937, net.minecraft.class_2338);
+  private net.minecraft.class_1799 itemAt(net.minecraft.class_1657, int);
+  private boolean canAfford(net.minecraft.class_1657, java.util.List<net.minecraft.class_1799>);
+  private int countItem(net.minecraft.class_1657, net.minecraft.class_1799);
+  private void consume(net.minecraft.class_1657, java.util.List<net.minecraft.class_1799>);
+  public static void serverTick(net.minecraft.class_1937, net.minecraft.class_2338, net.minecraft.class_2680, com.talhanation.smallships.world.block.DockyardBlockEntity);
+  private void finishTask(net.minecraft.class_1937, net.minecraft.class_2338);
+  private void finishBuildShip(net.minecraft.class_1937, net.minecraft.class_2338);
+  protected void method_11007(net.minecraft.class_2487);
+  public void method_11014(net.minecraft.class_2487);
+  private static double lambda$findShipsInRange$0(net.minecraft.class_243, com.talhanation.smallships.world.entity.ship.Ship);
+  static net.minecraft.class_2338 access$000(com.talhanation.smallships.world.block.DockyardBlockEntity);
+  static net.minecraft.class_2338 access$100(com.talhanation.smallships.world.block.DockyardBlockEntity);
+  static net.minecraft.class_2338 access$200(com.talhanation.smallships.world.block.DockyardBlockEntity);
+}

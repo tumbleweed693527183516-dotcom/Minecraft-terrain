@@ -1,0 +1,773 @@
+== _nested/de/dafuqs/additionalentityattributes/AdditionalEntityAttributes
+Compiled from "AdditionalEntityAttributes.java"
+public class de.dafuqs.additionalentityattributes.AdditionalEntityAttributes implements net.fabricmc.api.ModInitializer {
+  public static final java.lang.String MOD_ID;
+  public static final net.minecraft.class_1320 CRITICAL_BONUS_DAMAGE;
+  public static final net.minecraft.class_1320 WATER_SPEED;
+  public static final net.minecraft.class_1320 WATER_VISIBILITY;
+  public static final net.minecraft.class_1320 LUNG_CAPACITY;
+  public static final net.minecraft.class_1320 LAVA_SPEED;
+  public static final net.minecraft.class_1320 LAVA_VISIBILITY;
+  public static final net.minecraft.class_1320 DIG_SPEED;
+  public static final net.minecraft.class_1320 BONUS_LOOT_COUNT_ROLLS;
+  public static final net.minecraft.class_1320 BONUS_RARE_LOOT_ROLLS;
+  public static final net.minecraft.class_1320 JUMP_HEIGHT;
+  public static final net.minecraft.class_1320 DROPPED_EXPERIENCE;
+  public static final net.minecraft.class_1320 MAGIC_PROTECTION;
+  public static final net.minecraft.class_1320 COLLECTION_RANGE;
+  public de.dafuqs.additionalentityattributes.AdditionalEntityAttributes();
+  private static net.minecraft.class_1320 register(java.lang.String, double, double, double);
+  public void onInitialize();
+  static {};
+}
+== _nested/de/dafuqs/additionalentityattributes/mixin/client/BackgroundRendererMixin
+Compiled from "BackgroundRendererMixin.java"
+public abstract class de.dafuqs.additionalentityattributes.mixin.client.BackgroundRendererMixin {
+  public de.dafuqs.additionalentityattributes.mixin.client.BackgroundRendererMixin();
+  private static float additionalEntityAttributes$modifyLavaVisibilityMinWithoutFireResistance(float, net.minecraft.class_4184);
+  private static float additionalEntityAttributes$modifyLavaVisibilityMaxWithoutFireResistance(float, net.minecraft.class_4184);
+  private static float additionalEntityAttributes$modifyLavaVisibilityMinFireResistance(float, net.minecraft.class_4184);
+  private static float additionalEntityAttributes$modifyLavaVisibilityMaxWithFireResistance(float, net.minecraft.class_4184);
+  private static float additionalEntityAttributes$modifyWaterVisibility(float, net.minecraft.class_4184);
+}
+== _nested/de/dafuqs/additionalentityattributes/mixin/common/BlockMixin
+Compiled from "BlockMixin.java"
+public abstract class de.dafuqs.additionalentityattributes.mixin.common.BlockMixin {
+  private net.minecraft.class_1657 additionalEntityAttributes$breakingPlayer;
+  public de.dafuqs.additionalentityattributes.mixin.common.BlockMixin();
+  private int additionalEntityAttributes$modifyExperience(int);
+  public void additionalEntityAttributes$saveBreakingPlayer(net.minecraft.class_1937, net.minecraft.class_1657, net.minecraft.class_2338, net.minecraft.class_2680, net.minecraft.class_2586, net.minecraft.class_1799, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+}
+== _nested/de/dafuqs/additionalentityattributes/mixin/common/PlayerEntityMixin
+Compiled from "PlayerEntityMixin.java"
+public abstract class de.dafuqs.additionalentityattributes.mixin.common.PlayerEntityMixin {
+  public de.dafuqs.additionalentityattributes.mixin.common.PlayerEntityMixin();
+  private static void additionalEntityAttributes$addPlayerAttributes(org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<net.minecraft.class_5132$class_5133>);
+  public float additionalEntityAttributes$applyCriticalBonusDamage(float);
+  private float additionalEntityAttributes$adjustBlockBreakingSpeed(float);
+  private java.util.List<net.minecraft.class_1297> additionalEntityAttributes$adjustCollectionRange(java.util.List<net.minecraft.class_1297>);
+}
+== _nested/de/dafuqs/additionalentityattributes/mixin/common/EntityMixin
+Compiled from "EntityMixin.java"
+public abstract class de.dafuqs.additionalentityattributes.mixin.common.EntityMixin {
+  public de.dafuqs.additionalentityattributes.mixin.common.EntityMixin();
+  public int getMaxAir(int);
+}
+== _nested/de/dafuqs/additionalentityattributes/mixin/common/LivingEntityMixin
+Compiled from "LivingEntityMixin.java"
+public abstract class de.dafuqs.additionalentityattributes.mixin.common.LivingEntityMixin {
+  protected net.minecraft.class_1657 field_6258;
+  public de.dafuqs.additionalentityattributes.mixin.common.LivingEntityMixin();
+  private static void additionalEntityAttributes$addAttributes(org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<net.minecraft.class_5132$class_5133>);
+  public float additionalEntityAttributes$waterSpeed(float);
+  public double additionalEntityAttributes$modifyUpwardSwimming(double, net.minecraft.class_6862<net.minecraft.class_3611>);
+  public double additionalEntityAttributes$knockDownwards(double);
+  private double additionalEntityAttributes$increasedLavaSpeed(double);
+  protected int additionalEntityAttributes$modifyExperience(int);
+  private float additionalEntityAttributes$reduceMagicDamage(float, net.minecraft.class_1282);
+  public float additionalEntityAttributes$modifyJumpVelocity(float);
+}
+== _nested/de/dafuqs/additionalentityattributes/mixin/common/RandomChanceLootConditionMixin
+Compiled from "RandomChanceLootConditionMixin.java"
+public abstract class de.dafuqs.additionalentityattributes.mixin.common.RandomChanceLootConditionMixin {
+  float field_1296;
+  public de.dafuqs.additionalentityattributes.mixin.common.RandomChanceLootConditionMixin();
+  public void additionalEntityAttributes$applyBonusLoot(net.minecraft.class_47, org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<java.lang.Boolean>);
+}
+== _nested/de/dafuqs/additionalentityattributes/mixin/common/RandomChanceWithLootingLootConditionMixin
+Compiled from "RandomChanceWithLootingLootConditionMixin.java"
+public abstract class de.dafuqs.additionalentityattributes.mixin.common.RandomChanceWithLootingLootConditionMixin {
+  float field_1300;
+  public de.dafuqs.additionalentityattributes.mixin.common.RandomChanceWithLootingLootConditionMixin();
+  public void additionalEntityAttributes$applyBonusLoot(net.minecraft.class_47, org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<java.lang.Boolean>);
+}
+== _nested/de/dafuqs/additionalentityattributes/mixin/common/ApplyBonusLootFunctionMixin
+Compiled from "ApplyBonusLootFunctionMixin.java"
+public abstract class de.dafuqs.additionalentityattributes.mixin.common.ApplyBonusLootFunctionMixin {
+  net.minecraft.class_1887 field_1011;
+  net.minecraft.class_94$class_96 field_1009;
+  public de.dafuqs.additionalentityattributes.mixin.common.ApplyBonusLootFunctionMixin();
+  public int additionalEntityAttributes$applyBonusLoot(int, net.minecraft.class_1799, net.minecraft.class_47);
+}
+== _nested/de/dafuqs/additionalentityattributes/mixin/common/PlayerEntityMixin$1
+Compiled from "PlayerEntityMixin.java"
+class de.dafuqs.additionalentityattributes.mixin.common.PlayerEntityMixin$1 implements java.util.function.Predicate<net.minecraft.class_1297> {
+  final java.util.List val$original;
+  final de.dafuqs.additionalentityattributes.mixin.common.PlayerEntityMixin this$0;
+  de.dafuqs.additionalentityattributes.mixin.common.PlayerEntityMixin$1();
+  public boolean test(net.minecraft.class_1297);
+  public boolean test(java.lang.Object);
+}
+== _nested/de/dafuqs/additionalentityattributes/AdditionalEntityAttributesEntityTags
+Compiled from "AdditionalEntityAttributesEntityTags.java"
+public class de.dafuqs.additionalentityattributes.AdditionalEntityAttributesEntityTags {
+  public static final net.minecraft.class_6862<net.minecraft.class_1299<?>> AFFECTED_BY_COLLECTION_RANGE;
+  public de.dafuqs.additionalentityattributes.AdditionalEntityAttributesEntityTags();
+  static {};
+}
+== _nested/de/dafuqs/additionalentityattributes/Support
+Compiled from "Support.java"
+public class de.dafuqs.additionalentityattributes.Support {
+  public de.dafuqs.additionalentityattributes.Support();
+  public static float getExperienceMod(net.minecraft.class_1657);
+}
+== _nested/dev/onyxstudios/cca/api/v3/entity/EntityComponentFactoryRegistry
+Compiled from "EntityComponentFactoryRegistry.java"
+public interface dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry {
+  public abstract <C extends dev.onyxstudios.cca.api.v3.component.Component, E extends net.minecraft.class_1297> void registerFor(java.lang.Class<E>, dev.onyxstudios.cca.api.v3.component.ComponentKey<C>, dev.onyxstudios.cca.api.v3.component.ComponentFactory<E, ? extends C>);
+  public abstract <C extends dev.onyxstudios.cca.api.v3.component.Component> void registerFor(java.util.function.Predicate<java.lang.Class<? extends net.minecraft.class_1297>>, dev.onyxstudios.cca.api.v3.component.ComponentKey<C>, dev.onyxstudios.cca.api.v3.component.ComponentFactory<net.minecraft.class_1297, C>);
+  public abstract <C extends dev.onyxstudios.cca.api.v3.component.Component, E extends net.minecraft.class_1297> dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry$Registration<C, E> beginRegistration(java.lang.Class<E>, dev.onyxstudios.cca.api.v3.component.ComponentKey<C>);
+  public abstract <C extends dev.onyxstudios.cca.api.v3.entity.PlayerComponent<? super C>> void registerForPlayers(dev.onyxstudios.cca.api.v3.component.ComponentKey<? super C>, dev.onyxstudios.cca.api.v3.component.ComponentFactory<net.minecraft.class_1657, C>);
+  public abstract <C extends dev.onyxstudios.cca.api.v3.component.Component, P extends C> void registerForPlayers(dev.onyxstudios.cca.api.v3.component.ComponentKey<C>, dev.onyxstudios.cca.api.v3.component.ComponentFactory<net.minecraft.class_1657, P>, dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy<? super P>);
+}
+== _nested/dev/onyxstudios/cca/api/v3/entity/EntityComponentFactoryRegistry$Registration
+Compiled from "EntityComponentFactoryRegistry.java"
+public interface dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry$Registration<C extends dev.onyxstudios.cca.api.v3.component.Component, E extends net.minecraft.class_1297> {
+  public abstract dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry$Registration<C, E> filter(java.util.function.Predicate<java.lang.Class<? extends E>>);
+  public abstract dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry$Registration<C, E> after(dev.onyxstudios.cca.api.v3.component.ComponentKey<?>);
+  public abstract <I extends C> dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry$Registration<I, E> impl(java.lang.Class<I>);
+  public abstract dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry$Registration<C, E> respawnStrategy(dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy<? super C>);
+  public abstract void end(dev.onyxstudios.cca.api.v3.component.ComponentFactory<E, C>);
+}
+== _nested/dev/onyxstudios/cca/api/v3/entity/RespawnCopyStrategy
+Compiled from "RespawnCopyStrategy.java"
+public interface dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy<C extends dev.onyxstudios.cca.api.v3.component.Component> {
+  public static final dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy<dev.onyxstudios.cca.api.v3.component.Component> ALWAYS_COPY;
+  public static final dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy<dev.onyxstudios.cca.api.v3.component.Component> CHARACTER;
+  public static final dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy<dev.onyxstudios.cca.api.v3.component.Component> INVENTORY;
+  public static final dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy<dev.onyxstudios.cca.api.v3.component.Component> LOSSLESS_ONLY;
+  public static final dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy<dev.onyxstudios.cca.api.v3.component.Component> NEVER_COPY;
+  public static <C extends dev.onyxstudios.cca.api.v3.component.Component> dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy<? super C> get(dev.onyxstudios.cca.api.v3.component.ComponentKey<C>);
+  public static <C extends dev.onyxstudios.cca.api.v3.component.Component> void copy(C, C);
+  public abstract void copyForRespawn(C, C, boolean, boolean, boolean);
+  private static void lambda$static$4(dev.onyxstudios.cca.api.v3.component.Component, dev.onyxstudios.cca.api.v3.component.Component, boolean, boolean, boolean);
+  private static void lambda$static$3(dev.onyxstudios.cca.api.v3.component.Component, dev.onyxstudios.cca.api.v3.component.Component, boolean, boolean, boolean);
+  private static void lambda$static$2(dev.onyxstudios.cca.api.v3.component.Component, dev.onyxstudios.cca.api.v3.component.Component, boolean, boolean, boolean);
+  private static void lambda$static$1(dev.onyxstudios.cca.api.v3.component.Component, dev.onyxstudios.cca.api.v3.component.Component, boolean, boolean, boolean);
+  private static void lambda$static$0(dev.onyxstudios.cca.api.v3.component.Component, dev.onyxstudios.cca.api.v3.component.Component, boolean, boolean, boolean);
+  static {};
+}
+== _nested/dev/onyxstudios/cca/api/v3/entity/TrackingStartCallback
+Compiled from "TrackingStartCallback.java"
+public interface dev.onyxstudios.cca.api.v3.entity.TrackingStartCallback {
+  public static final net.fabricmc.fabric.api.event.Event<dev.onyxstudios.cca.api.v3.entity.TrackingStartCallback> EVENT;
+  public abstract void onPlayerStartTracking(net.minecraft.class_3222, net.minecraft.class_1297);
+  private static dev.onyxstudios.cca.api.v3.entity.TrackingStartCallback lambda$static$2(dev.onyxstudios.cca.api.v3.entity.TrackingStartCallback[]);
+  private static void lambda$static$1(dev.onyxstudios.cca.api.v3.entity.TrackingStartCallback[], net.minecraft.class_3222, net.minecraft.class_1297);
+  private static void lambda$static$0(net.minecraft.class_3222, net.minecraft.class_1297);
+  static {};
+}
+== _nested/dev/onyxstudios/cca/api/v3/entity/EntityComponentInitializer
+Compiled from "EntityComponentInitializer.java"
+public interface dev.onyxstudios.cca.api.v3.entity.EntityComponentInitializer extends dev.onyxstudios.cca.internal.base.ComponentRegistrationInitializer {
+  public abstract void registerEntityComponentFactories(dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry);
+}
+== _nested/dev/onyxstudios/cca/api/v3/entity/PlayerSyncCallback
+Compiled from "PlayerSyncCallback.java"
+public interface dev.onyxstudios.cca.api.v3.entity.PlayerSyncCallback {
+  public static final net.fabricmc.fabric.api.event.Event<dev.onyxstudios.cca.api.v3.entity.PlayerSyncCallback> EVENT;
+  public abstract void onPlayerSync(net.minecraft.class_3222);
+  private static dev.onyxstudios.cca.api.v3.entity.PlayerSyncCallback lambda$static$2(dev.onyxstudios.cca.api.v3.entity.PlayerSyncCallback[]);
+  private static void lambda$static$1(dev.onyxstudios.cca.api.v3.entity.PlayerSyncCallback[], net.minecraft.class_3222);
+  private static void lambda$static$0(net.minecraft.class_3222);
+  static {};
+}
+== _nested/dev/onyxstudios/cca/api/v3/entity/PlayerCopyCallback
+Compiled from "PlayerCopyCallback.java"
+public interface dev.onyxstudios.cca.api.v3.entity.PlayerCopyCallback {
+  public static final net.fabricmc.fabric.api.event.Event<dev.onyxstudios.cca.api.v3.entity.PlayerCopyCallback> EVENT;
+  public abstract void copyData(net.minecraft.class_3222, net.minecraft.class_3222, boolean);
+  private static dev.onyxstudios.cca.api.v3.entity.PlayerCopyCallback lambda$static$1(dev.onyxstudios.cca.api.v3.entity.PlayerCopyCallback[]);
+  private static void lambda$static$0(dev.onyxstudios.cca.api.v3.entity.PlayerCopyCallback[], net.minecraft.class_3222, net.minecraft.class_3222, boolean);
+  static {};
+}
+== _nested/dev/onyxstudios/cca/api/v3/entity/PlayerComponent
+Compiled from "PlayerComponent.java"
+public interface dev.onyxstudios.cca.api.v3.entity.PlayerComponent<C extends dev.onyxstudios.cca.api.v3.component.Component> extends dev.onyxstudios.cca.api.v3.component.Component, dev.onyxstudios.cca.api.v3.component.CopyableComponent<C> {
+  public default boolean shouldCopyForRespawn(boolean, boolean, boolean);
+  public default void copyForRespawn(C, boolean, boolean, boolean);
+  public default void copyFrom(C);
+}
+== _nested/dev/onyxstudios/cca/api/v3/entity/package-info
+Compiled from "package-info.java"
+interface dev.onyxstudios.cca.api.v3.entity.package-info {
+}
+== _nested/dev/onyxstudios/cca/internal/entity/StaticEntityComponentPlugin$RegistrationImpl
+Compiled from "StaticEntityComponentPlugin.java"
+final class dev.onyxstudios.cca.internal.entity.StaticEntityComponentPlugin$RegistrationImpl<C extends dev.onyxstudios.cca.api.v3.component.Component, E extends net.minecraft.class_1297> implements dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry$Registration<C, E> {
+  private final java.lang.Class<E> target;
+  private final dev.onyxstudios.cca.api.v3.component.ComponentKey<? super C> key;
+  private final java.util.Set<dev.onyxstudios.cca.api.v3.component.ComponentKey<?>> dependencies;
+  private java.lang.Class<C> componentClass;
+  private java.util.function.Predicate<java.lang.Class<? extends E>> test;
+  final dev.onyxstudios.cca.internal.entity.StaticEntityComponentPlugin this$0;
+  dev.onyxstudios.cca.internal.entity.StaticEntityComponentPlugin$RegistrationImpl(java.lang.Class<E>, dev.onyxstudios.cca.api.v3.component.ComponentKey<C>);
+  public dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry$Registration<C, E> filter(java.util.function.Predicate<java.lang.Class<? extends E>>);
+  public dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry$Registration<C, E> after(dev.onyxstudios.cca.api.v3.component.ComponentKey<?>);
+  public <I extends C> dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry$Registration<I, E> impl(java.lang.Class<I>);
+  public dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry$Registration<C, E> respawnStrategy(dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy<? super C>);
+  public void end(dev.onyxstudios.cca.api.v3.component.ComponentFactory<E, C>);
+  private dev.onyxstudios.cca.api.v3.component.Component lambda$end$1(dev.onyxstudios.cca.api.v3.component.ComponentFactory, net.minecraft.class_1297);
+  private boolean lambda$end$0(java.lang.Class);
+}
+== _nested/dev/onyxstudios/cca/internal/entity/CardinalComponentsEntity
+Compiled from "CardinalComponentsEntity.java"
+public final class dev.onyxstudios.cca.internal.entity.CardinalComponentsEntity {
+  public static final net.minecraft.class_2960 PACKET_ID;
+  public dev.onyxstudios.cca.internal.entity.CardinalComponentsEntity();
+  public static void init();
+  private static void copyData(net.minecraft.class_3222, net.minecraft.class_3222, boolean);
+  private static <C extends dev.onyxstudios.cca.api.v3.component.Component> void copyData(net.minecraft.class_3222, net.minecraft.class_3222, boolean, boolean, dev.onyxstudios.cca.api.v3.component.ComponentKey<C>, boolean);
+  private static void syncEntityComponents(net.minecraft.class_3222, net.minecraft.class_1297);
+  private static void lambda$init$0(net.minecraft.class_3222);
+  static {};
+}
+== _nested/dev/onyxstudios/cca/internal/entity/StaticEntityComponentPlugin
+Compiled from "StaticEntityComponentPlugin.java"
+public final class dev.onyxstudios.cca.internal.entity.StaticEntityComponentPlugin extends dev.onyxstudios.cca.internal.base.LazyDispatcher implements dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry {
+  public static final dev.onyxstudios.cca.internal.entity.StaticEntityComponentPlugin INSTANCE;
+  private final java.util.List<dev.onyxstudios.cca.internal.entity.StaticEntityComponentPlugin$PredicatedComponentFactory<?>> dynamicFactories;
+  private final java.util.Map<java.lang.Class<? extends net.minecraft.class_1297>, java.util.Map<dev.onyxstudios.cca.api.v3.component.ComponentKey<?>, dev.onyxstudios.cca.internal.base.QualifiedComponentFactory<dev.onyxstudios.cca.api.v3.component.ComponentFactory<? extends net.minecraft.class_1297, ?>>>> componentFactories;
+  private dev.onyxstudios.cca.internal.entity.StaticEntityComponentPlugin();
+  private static java.lang.String getSuffix(java.lang.Class<?>);
+  public boolean requiresStaticFactory(java.lang.Class<? extends net.minecraft.class_1297>);
+  public dev.onyxstudios.cca.api.v3.component.ComponentContainer$Factory<net.minecraft.class_1297> buildDedicatedFactory(java.lang.Class<? extends net.minecraft.class_1297>);
+  private <C extends dev.onyxstudios.cca.api.v3.component.Component> void addToBuilder(dev.onyxstudios.cca.api.v3.component.ComponentContainer$Factory$Builder<net.minecraft.class_1297>, java.util.Map$Entry<dev.onyxstudios.cca.api.v3.component.ComponentKey<?>, dev.onyxstudios.cca.internal.base.QualifiedComponentFactory<dev.onyxstudios.cca.api.v3.component.ComponentFactory<? extends net.minecraft.class_1297, ?>>>);
+  protected void init();
+  public <C extends dev.onyxstudios.cca.api.v3.component.Component, E extends net.minecraft.class_1297> void registerFor(java.lang.Class<E>, dev.onyxstudios.cca.api.v3.component.ComponentKey<C>, dev.onyxstudios.cca.api.v3.component.ComponentFactory<E, ? extends C>);
+  public <C extends dev.onyxstudios.cca.api.v3.component.Component> void registerFor(java.util.function.Predicate<java.lang.Class<? extends net.minecraft.class_1297>>, dev.onyxstudios.cca.api.v3.component.ComponentKey<C>, dev.onyxstudios.cca.api.v3.component.ComponentFactory<net.minecraft.class_1297, C>);
+  public <C extends dev.onyxstudios.cca.api.v3.component.Component, E extends net.minecraft.class_1297> dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry$Registration<C, E> beginRegistration(java.lang.Class<E>, dev.onyxstudios.cca.api.v3.component.ComponentKey<C>);
+  public <C extends dev.onyxstudios.cca.api.v3.entity.PlayerComponent<? super C>> void registerForPlayers(dev.onyxstudios.cca.api.v3.component.ComponentKey<? super C>, dev.onyxstudios.cca.api.v3.component.ComponentFactory<net.minecraft.class_1657, C>);
+  public <C extends dev.onyxstudios.cca.api.v3.component.Component, P extends C> void registerForPlayers(dev.onyxstudios.cca.api.v3.component.ComponentKey<C>, dev.onyxstudios.cca.api.v3.component.ComponentFactory<net.minecraft.class_1657, P>, dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy<? super P>);
+  private <C extends dev.onyxstudios.cca.api.v3.component.Component, F extends C, E extends net.minecraft.class_1297> void register0(java.lang.Class<? extends E>, dev.onyxstudios.cca.api.v3.component.ComponentKey<? super C>, dev.onyxstudios.cca.internal.base.QualifiedComponentFactory<dev.onyxstudios.cca.api.v3.component.ComponentFactory<E, F>>);
+  private static java.util.Map lambda$register0$1(java.lang.Class);
+  private void lambda$init$0(dev.onyxstudios.cca.api.v3.entity.EntityComponentInitializer);
+  static {};
+}
+== _nested/dev/onyxstudios/cca/internal/entity/CardinalEntityInternals
+Compiled from "CardinalEntityInternals.java"
+public final class dev.onyxstudios.cca.internal.entity.CardinalEntityInternals {
+  public static final dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy<dev.onyxstudios.cca.api.v3.component.Component> DEFAULT_COPY_STRATEGY;
+  private static final java.util.Map<java.lang.Class<? extends net.minecraft.class_1297>, dev.onyxstudios.cca.api.v3.component.ComponentContainer$Factory<net.minecraft.class_1297>> entityContainerFactories;
+  private static final java.util.Map<dev.onyxstudios.cca.api.v3.component.ComponentKey<?>, dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy<?>> respawnCopyStrategies;
+  private static final java.lang.Object factoryMutex;
+  static final boolean $assertionsDisabled;
+  private dev.onyxstudios.cca.internal.entity.CardinalEntityInternals();
+  public static dev.onyxstudios.cca.api.v3.component.ComponentContainer createEntityComponentContainer(net.minecraft.class_1297);
+  private static synchronized dev.onyxstudios.cca.api.v3.component.ComponentContainer$Factory<net.minecraft.class_1297> getEntityFactory(java.lang.Class<? extends net.minecraft.class_1297>);
+  public static <C extends dev.onyxstudios.cca.api.v3.component.Component> void registerRespawnCopyStrat(dev.onyxstudios.cca.api.v3.component.ComponentKey<? super C>, dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy<? super C>);
+  public static <C extends dev.onyxstudios.cca.api.v3.component.Component> dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy<? super C> getRespawnCopyStrategy(dev.onyxstudios.cca.api.v3.component.ComponentKey<C>);
+  private static void defaultCopyStrategy(dev.onyxstudios.cca.api.v3.component.Component, dev.onyxstudios.cca.api.v3.component.Component, boolean, boolean, boolean);
+  private static <C extends dev.onyxstudios.cca.api.v3.component.Component> void playerComponentCopy(dev.onyxstudios.cca.api.v3.component.Component, dev.onyxstudios.cca.api.v3.entity.PlayerComponent<C>, boolean, boolean, boolean);
+  public static <C extends dev.onyxstudios.cca.api.v3.component.Component> void copyAsCopyable(dev.onyxstudios.cca.api.v3.component.Component, dev.onyxstudios.cca.api.v3.component.CopyableComponent<C>);
+  private static dev.onyxstudios.cca.api.v3.component.ComponentContainer$Factory lambda$createEntityComponentContainer$0(java.lang.Class);
+  static {};
+}
+== _nested/dev/onyxstudios/cca/internal/entity/package-info
+Compiled from "package-info.java"
+interface dev.onyxstudios.cca.internal.entity.package-info {
+}
+== _nested/dev/onyxstudios/cca/internal/entity/CcaEntityClientNw
+Compiled from "CcaEntityClientNw.java"
+public final class dev.onyxstudios.cca.internal.entity.CcaEntityClientNw {
+  public dev.onyxstudios.cca.internal.entity.CcaEntityClientNw();
+  public static void initClient();
+  private static void lambda$initClient$3(net.minecraft.class_310, net.minecraft.class_634, net.minecraft.class_2540, net.fabricmc.fabric.api.networking.v1.PacketSender);
+  private static void lambda$initClient$2(dev.onyxstudios.cca.api.v3.component.ComponentKey, net.minecraft.class_310, int, net.minecraft.class_2540);
+  private static void lambda$initClient$1(net.minecraft.class_2540, dev.onyxstudios.cca.api.v3.component.Component);
+  private static boolean lambda$initClient$0(dev.onyxstudios.cca.api.v3.component.Component);
+}
+== _nested/dev/onyxstudios/cca/internal/entity/StaticEntityComponentPlugin$PredicatedComponentFactory
+Compiled from "StaticEntityComponentPlugin.java"
+final class dev.onyxstudios.cca.internal.entity.StaticEntityComponentPlugin$PredicatedComponentFactory<C extends dev.onyxstudios.cca.api.v3.component.Component> {
+  private final java.util.function.Predicate<java.lang.Class<? extends net.minecraft.class_1297>> predicate;
+  private final dev.onyxstudios.cca.api.v3.component.ComponentKey<? super C> type;
+  private final dev.onyxstudios.cca.internal.base.QualifiedComponentFactory<dev.onyxstudios.cca.api.v3.component.ComponentFactory<net.minecraft.class_1297, C>> factory;
+  final dev.onyxstudios.cca.internal.entity.StaticEntityComponentPlugin this$0;
+  public dev.onyxstudios.cca.internal.entity.StaticEntityComponentPlugin$PredicatedComponentFactory(java.util.function.Predicate<java.lang.Class<? extends net.minecraft.class_1297>>, dev.onyxstudios.cca.api.v3.component.ComponentKey<? super C>, dev.onyxstudios.cca.internal.base.QualifiedComponentFactory<dev.onyxstudios.cca.api.v3.component.ComponentFactory<net.minecraft.class_1297, C>>);
+  public void tryRegister(java.lang.Class<? extends net.minecraft.class_1297>);
+}
+== _nested/dev/onyxstudios/cca/internal/entity/SwitchablePlayerEntity
+Compiled from "SwitchablePlayerEntity.java"
+public interface dev.onyxstudios.cca.internal.entity.SwitchablePlayerEntity {
+  public abstract void cca$markAsSwitchingCharacter();
+  public abstract boolean cca$isSwitchingCharacter();
+}
+== _nested/dev/onyxstudios/cca/mixin/entity/client/MixinClientWorld
+Compiled from "MixinClientWorld.java"
+public abstract class dev.onyxstudios.cca.mixin.entity.client.MixinClientWorld {
+  public dev.onyxstudios.cca.mixin.entity.client.MixinClientWorld();
+  private void tick(net.minecraft.class_1297, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  private void tickRiding(net.minecraft.class_1297, net.minecraft.class_1297, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+}
+== _nested/dev/onyxstudios/cca/mixin/entity/common/BucketableMixin
+Compiled from "BucketableMixin.java"
+public interface dev.onyxstudios.cca.mixin.entity.common.BucketableMixin {
+  private static void writeComponentsToStack(net.minecraft.class_1308, net.minecraft.class_1799, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  private static void readComponentsFromStack(net.minecraft.class_1308, net.minecraft.class_2487, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+}
+== _nested/dev/onyxstudios/cca/mixin/entity/common/MixinServerPlayerEntity
+Compiled from "MixinServerPlayerEntity.java"
+public abstract class dev.onyxstudios.cca.mixin.entity.common.MixinServerPlayerEntity implements dev.onyxstudios.cca.internal.entity.SwitchablePlayerEntity {
+  private transient boolean switchingCharacter;
+  public dev.onyxstudios.cca.mixin.entity.common.MixinServerPlayerEntity();
+  public void cca$markAsSwitchingCharacter();
+  public boolean cca$isSwitchingCharacter();
+  private void copyDataFrom(net.minecraft.class_3222, boolean, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+}
+== _nested/dev/onyxstudios/cca/mixin/entity/common/MixinEntityTrackerEntry
+Compiled from "MixinEntityTrackerEntry.java"
+public abstract class dev.onyxstudios.cca.mixin.entity.common.MixinEntityTrackerEntry {
+  private net.minecraft.class_1297 field_14049;
+  public dev.onyxstudios.cca.mixin.entity.common.MixinEntityTrackerEntry();
+  private void onStartedTracking(net.minecraft.class_3222, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+}
+== _nested/dev/onyxstudios/cca/mixin/entity/common/MixinEntity
+Compiled from "MixinEntity.java"
+public abstract class dev.onyxstudios.cca.mixin.entity.common.MixinEntity implements dev.onyxstudios.cca.api.v3.component.ComponentProvider {
+  private dev.onyxstudios.cca.api.v3.component.ComponentContainer components;
+  public net.minecraft.class_1937 field_6002;
+  public dev.onyxstudios.cca.mixin.entity.common.MixinEntity();
+  public abstract int method_5628();
+  private void initDataTracker(org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  private void toTag(net.minecraft.class_2487, org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<net.minecraft.class_2487>);
+  private void fromTag(net.minecraft.class_2487, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  public dev.onyxstudios.cca.api.v3.component.ComponentContainer getComponentContainer();
+  public java.lang.Iterable<net.minecraft.class_3222> getRecipientsForComponentSync();
+  public <C extends dev.onyxstudios.cca.api.v3.component.sync.AutoSyncedComponent> net.minecraft.class_2658 toComponentPacket(dev.onyxstudios.cca.api.v3.component.ComponentKey<? super C>, dev.onyxstudios.cca.api.v3.component.sync.ComponentPacketWriter, net.minecraft.class_3222);
+}
+== _nested/dev/onyxstudios/cca/mixin/entity/common/MixinServerWorld
+Compiled from "MixinServerWorld.java"
+public abstract class dev.onyxstudios.cca.mixin.entity.common.MixinServerWorld {
+  public dev.onyxstudios.cca.mixin.entity.common.MixinServerWorld();
+  private void tick(net.minecraft.class_1297, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  private void tickRiding(net.minecraft.class_1297, net.minecraft.class_1297, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+}
+== _nested/dev/onyxstudios/cca/mixin/entity/common/MixinPlayerManager
+Compiled from "MixinPlayerManager.java"
+public abstract class dev.onyxstudios.cca.mixin.entity.common.MixinPlayerManager {
+  public dev.onyxstudios.cca.mixin.entity.common.MixinPlayerManager();
+  private void onPlayerLogIn(net.minecraft.class_2535, net.minecraft.class_3222, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  private void sendPlayerStatus(net.minecraft.class_3222, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  private void respawnPlayer(net.minecraft.class_3222, boolean, org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<net.minecraft.class_3222>);
+}
+== _nested/dev/onyxstudios/cca/mixin/entity/common/package-info
+Compiled from "package-info.java"
+interface dev.onyxstudios.cca.mixin.entity.common.package-info {
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/ForgingScreenHandlerMixin
+Compiled from "ForgingScreenHandlerMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.ForgingScreenHandlerMixin extends net.minecraft.class_1703 {
+  com.jamieswhiteshirt.reachentityattributes.mixin.ForgingScreenHandlerMixin(net.minecraft.class_3917<?>, int);
+  private double getActualReachDistance(double, net.minecraft.class_1657);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/VehicleInventoryValidationMixin
+Compiled from "VehicleInventoryValidationMixin.java"
+interface com.jamieswhiteshirt.reachentityattributes.mixin.VehicleInventoryValidationMixin {
+  private static double getActualReachDistance(double, net.minecraft.class_1657);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/PlayerEntityMixin
+Compiled from "PlayerEntityMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.PlayerEntityMixin extends net.minecraft.class_1309 {
+  com.jamieswhiteshirt.reachentityattributes.mixin.PlayerEntityMixin(net.minecraft.class_1299<? extends net.minecraft.class_1309>, net.minecraft.class_1937);
+  private double getActualAttackRange(double);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/PlayerEntityInteractionHandlerMixin
+Compiled from "PlayerEntityInteractionHandlerMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.PlayerEntityInteractionHandlerMixin implements net.minecraft.class_2824$class_5908 {
+  private net.minecraft.class_3244 field_28963;
+  private net.minecraft.class_1297 field_28962;
+  com.jamieswhiteshirt.reachentityattributes.mixin.PlayerEntityInteractionHandlerMixin();
+  private void ensureWithinAttackRange(org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/ItemMixin
+Compiled from "ItemMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.ItemMixin implements net.minecraft.class_1935 {
+  com.jamieswhiteshirt.reachentityattributes.mixin.ItemMixin();
+  private static double getActualReachDistance(double, net.minecraft.class_1937, net.minecraft.class_1657);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/LivingEntityMixin
+Compiled from "LivingEntityMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.LivingEntityMixin extends net.minecraft.class_1297 {
+  com.jamieswhiteshirt.reachentityattributes.mixin.LivingEntityMixin(net.minecraft.class_1299<?>, net.minecraft.class_1937);
+  private static void addAttributes(org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<net.minecraft.class_5132$class_5133>);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/ChestStateManagerMixin
+Compiled from "ChestStateManagerMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.ChestStateManagerMixin {
+  com.jamieswhiteshirt.reachentityattributes.mixin.ChestStateManagerMixin();
+  protected abstract boolean method_31679(net.minecraft.class_1657);
+  private int getReachAccountingOpenCount(net.minecraft.class_5561, net.minecraft.class_1937, net.minecraft.class_2338);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/client/GameRendererMixin
+Compiled from "GameRendererMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.client.GameRendererMixin implements net.minecraft.class_4013 {
+  net.minecraft.class_310 field_4015;
+  com.jamieswhiteshirt.reachentityattributes.mixin.client.GameRendererMixin();
+  private double getActualReachDistance(double);
+  private double getActualAttackRange0(double);
+  private double getActualAttackRange1(double);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/client/ClientPlayerInteractionManagerMixin
+Compiled from "ClientPlayerInteractionManagerMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.client.ClientPlayerInteractionManagerMixin {
+  private net.minecraft.class_310 field_3712;
+  com.jamieswhiteshirt.reachentityattributes.mixin.client.ClientPlayerInteractionManagerMixin();
+  private float getActualReachDistance(float);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/InventoryValidationMixin
+Compiled from "InventoryValidationMixin.java"
+interface com.jamieswhiteshirt.reachentityattributes.mixin.InventoryValidationMixin {
+  private static void checkWithinActualReach(net.minecraft.class_2586, net.minecraft.class_1657, int, org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<java.lang.Boolean>, net.minecraft.class_1937, net.minecraft.class_2338);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/ScreenHandlerMixin
+Compiled from "ScreenHandlerMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.ScreenHandlerMixin {
+  com.jamieswhiteshirt.reachentityattributes.mixin.ScreenHandlerMixin();
+  private static double getActualReachDistance(double, net.minecraft.class_2248, net.minecraft.class_1657);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/ServerPlayNetworkHandlerMixin
+Compiled from "ServerPlayNetworkHandlerMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.ServerPlayNetworkHandlerMixin implements net.minecraft.class_2792 {
+  public net.minecraft.class_3222 field_14140;
+  com.jamieswhiteshirt.reachentityattributes.mixin.ServerPlayNetworkHandlerMixin();
+  private double getActualAttackRange();
+  private double getActualReachDistance();
+  private double getActualReachDistance(double);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/ServerPlayerInteractionManagerMixin
+Compiled from "ServerPlayerInteractionManagerMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.ServerPlayerInteractionManagerMixin {
+  protected net.minecraft.class_3222 field_14008;
+  com.jamieswhiteshirt.reachentityattributes.mixin.ServerPlayerInteractionManagerMixin();
+  private double getActualReachDistance();
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/ReachEntityAttributes
+Compiled from "ReachEntityAttributes.java"
+public final class com.jamieswhiteshirt.reachentityattributes.ReachEntityAttributes implements net.fabricmc.api.ModInitializer {
+  public static final java.lang.String MOD_ID;
+  public static final net.minecraft.class_1320 REACH;
+  public static final net.minecraft.class_1320 ATTACK_RANGE;
+  public com.jamieswhiteshirt.reachentityattributes.ReachEntityAttributes();
+  public static double getReachDistance(net.minecraft.class_1309, double);
+  public static double getSquaredReachDistance(net.minecraft.class_1309, double);
+  public static double getAttackRange(net.minecraft.class_1309, double);
+  public static double getSquaredAttackRange(net.minecraft.class_1309, double);
+  public static java.util.List<net.minecraft.class_1657> getPlayersWithinReach(net.minecraft.class_1937, int, int, int, double);
+  public static java.util.List<net.minecraft.class_1657> getPlayersWithinReach(java.util.function.Predicate<net.minecraft.class_1657>, net.minecraft.class_1937, int, int, int, double);
+  public static boolean isWithinAttackRange(net.minecraft.class_1657, net.minecraft.class_1297);
+  private static net.minecraft.class_1320 make(java.lang.String, double, double, double);
+  public void onInitialize();
+  private static boolean lambda$getPlayersWithinReach$0(net.minecraft.class_1657);
+  static {};
+}
+== nourl/mythicmetals/entity/BanglumNukeEntity
+Compiled from "BanglumNukeEntity.java"
+public class nourl.mythicmetals.entity.BanglumNukeEntity extends nourl.mythicmetals.entity.BanglumTntEntity {
+  private static final int DEFAULT_FUSE;
+  private static final io.wispforest.owo.nbt.NbtKey<net.minecraft.class_2248> CORE_BLOCK_KEY;
+  private net.minecraft.class_2248 coreBlock;
+  public nourl.mythicmetals.entity.BanglumNukeEntity(net.minecraft.class_1299<? extends nourl.mythicmetals.entity.BanglumNukeEntity>, net.minecraft.class_1937);
+  public nourl.mythicmetals.entity.BanglumNukeEntity(net.minecraft.class_1937, double, double, double, net.minecraft.class_1309, net.minecraft.class_2248);
+  protected void method_5749(net.minecraft.class_2487);
+  protected void method_5652(net.minecraft.class_2487);
+  public double getSmokeParticleHeight();
+  protected void explode();
+  private static boolean lambda$explode$2(net.minecraft.class_2680);
+  private static boolean lambda$explode$1(net.minecraft.class_2680);
+  private static boolean lambda$explode$0(net.minecraft.class_2680);
+  static {};
+}
+== nourl/mythicmetals/entity/MythicEntities
+Compiled from "MythicEntities.java"
+public class nourl.mythicmetals.entity.MythicEntities {
+  public static final net.minecraft.class_1299<nourl.mythicmetals.entity.BanglumTntEntity> BANGLUM_TNT_ENTITY_TYPE;
+  public static final net.minecraft.class_1299<nourl.mythicmetals.entity.BanglumNukeEntity> BANGLUM_NUKE_ENTITY_TYPE;
+  public static final net.minecraft.class_1299<nourl.mythicmetals.entity.StarPlatinumArrowEntity> STAR_PLATINUM_ARROW_ENTITY_TYPE;
+  public static final net.minecraft.class_1299<nourl.mythicmetals.entity.RuniteArrowEntity> RUNITE_ARROW_ENTITY_TYPE;
+  public static final net.minecraft.class_1299<nourl.mythicmetals.entity.BanglumTntMinecartEntity> BANGLUM_TNT_MINECART_ENTITY_TYPE;
+  public nourl.mythicmetals.entity.MythicEntities();
+  public static void init();
+  static {};
+}
+== nourl/mythicmetals/entity/RuniteArrowEntity
+Compiled from "RuniteArrowEntity.java"
+public class nourl.mythicmetals.entity.RuniteArrowEntity extends net.minecraft.class_1665 {
+  private static final net.minecraft.class_2940<java.lang.Integer> COLOR;
+  private net.minecraft.class_1842 potion;
+  private final java.util.Set<net.minecraft.class_1293> effects;
+  private boolean colorSet;
+  public nourl.mythicmetals.entity.RuniteArrowEntity(net.minecraft.class_1299<nourl.mythicmetals.entity.RuniteArrowEntity>, net.minecraft.class_1937);
+  public nourl.mythicmetals.entity.RuniteArrowEntity(net.minecraft.class_1309, net.minecraft.class_1937);
+  public void initFromStack(net.minecraft.class_1799);
+  protected void initColor();
+  protected void setColor(int);
+  protected net.minecraft.class_1799 method_7445();
+  protected void method_7454(net.minecraft.class_3966);
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+  protected void method_7450(net.minecraft.class_1309);
+  public void addEffect(net.minecraft.class_1293);
+  public int getColor();
+  protected void method_5693();
+  public void method_5773();
+  private void spawnParticles(int);
+  public void method_5711(byte);
+  static {};
+}
+== nourl/mythicmetals/entity/CombustionCooldown
+Compiled from "CombustionCooldown.java"
+public class nourl.mythicmetals.entity.CombustionCooldown implements dev.onyxstudios.cca.api.v3.component.Component,dev.onyxstudios.cca.api.v3.component.sync.AutoSyncedComponent {
+  private int cooldown;
+  public nourl.mythicmetals.entity.CombustionCooldown(net.minecraft.class_1309);
+  public void readFromNbt(net.minecraft.class_2487);
+  public void writeToNbt(net.minecraft.class_2487);
+  public void setCooldown(int);
+  public boolean isCombustible();
+  public void tickCooldown();
+}
+== nourl/mythicmetals/entity/BanglumTntEntity
+Compiled from "BanglumTntEntity.java"
+public class nourl.mythicmetals.entity.BanglumTntEntity extends net.minecraft.class_1297 {
+  private static final net.minecraft.class_2940<java.lang.Integer> FUSE;
+  private static final int DEFAULT_FUSE;
+  protected net.minecraft.class_1309 causingEntity;
+  public nourl.mythicmetals.entity.BanglumTntEntity(net.minecraft.class_1299<? extends nourl.mythicmetals.entity.BanglumTntEntity>, net.minecraft.class_1937);
+  public nourl.mythicmetals.entity.BanglumTntEntity(net.minecraft.class_1937, double, double, double, net.minecraft.class_1309);
+  protected void method_5693();
+  public void method_5773();
+  public double getSmokeParticleHeight();
+  protected void method_5749(net.minecraft.class_2487);
+  protected void method_5652(net.minecraft.class_2487);
+  protected void explode();
+  protected float method_18378(net.minecraft.class_4050, net.minecraft.class_4048);
+  public int getFuse();
+  public void setFuse(int);
+  public net.minecraft.class_1309 getCausingEntity();
+  static {};
+}
+== nourl/mythicmetals/entity/BanglumTntMinecartEntity
+Compiled from "BanglumTntMinecartEntity.java"
+public class nourl.mythicmetals.entity.BanglumTntMinecartEntity extends net.minecraft.class_1701 {
+  private static final double MAX_POWER;
+  private int fuseTicks;
+  public nourl.mythicmetals.entity.BanglumTntMinecartEntity(net.minecraft.class_1299<? extends net.minecraft.class_1701>, net.minecraft.class_1937);
+  public nourl.mythicmetals.entity.BanglumTntMinecartEntity(net.minecraft.class_1937, double, double, double);
+  public net.minecraft.class_2680 method_7517();
+  protected net.minecraft.class_1792 method_42670();
+  protected void method_7576(net.minecraft.class_1282, double);
+  public void method_5773();
+  public void method_7506(int, int, int, boolean);
+  public void method_7516(net.minecraft.class_1282);
+  public int method_7577();
+  public boolean method_7578();
+  public void method_7575();
+  public net.minecraft.class_1688$class_1689 method_7518();
+}
+== nourl/mythicmetals/entity/StarPlatinumArrowEntity
+Compiled from "StarPlatinumArrowEntity.java"
+public class nourl.mythicmetals.entity.StarPlatinumArrowEntity extends net.minecraft.class_1665 {
+  public nourl.mythicmetals.entity.StarPlatinumArrowEntity(net.minecraft.class_1309, net.minecraft.class_1937);
+  public nourl.mythicmetals.entity.StarPlatinumArrowEntity(net.minecraft.class_1299<nourl.mythicmetals.entity.StarPlatinumArrowEntity>, net.minecraft.class_1937);
+  protected net.minecraft.class_1799 method_7445();
+  protected void method_7454(net.minecraft.class_3966);
+  protected void method_7450(net.minecraft.class_1309);
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+}
+== nourl/mythicmetals/registry/RegisterBlockEntityTypes
+Compiled from "RegisterBlockEntityTypes.java"
+public class nourl.mythicmetals.registry.RegisterBlockEntityTypes implements io.wispforest.owo.registration.reflect.BlockEntityRegistryContainer {
+  public static final net.minecraft.class_2591<nourl.mythicmetals.blocks.EnchantedMidasGoldBlockEntity> ENCHANTED_MIDAS_GOLD_BLOCK;
+  public nourl.mythicmetals.registry.RegisterBlockEntityTypes();
+  public boolean shouldProcessField(net.minecraft.class_2591<?>, java.lang.String, java.lang.reflect.Field);
+  public boolean shouldProcessField(java.lang.Object, java.lang.String, java.lang.reflect.Field);
+  static {};
+}
+== nourl/mythicmetals/registry/RegisterEntityAttributes
+Compiled from "RegisterEntityAttributes.java"
+public class nourl.mythicmetals.registry.RegisterEntityAttributes {
+  public static final net.minecraft.class_1320 ELYTRA_ROCKET_SPEED;
+  public static final net.minecraft.class_1320 FIRE_VULNERABILITY;
+  public nourl.mythicmetals.registry.RegisterEntityAttributes();
+  public static void init();
+  static {};
+}
+== nourl/mythicmetals/blocks/EnchantedMidasGoldBlockEntity
+Compiled from "EnchantedMidasGoldBlockEntity.java"
+public class nourl.mythicmetals.blocks.EnchantedMidasGoldBlockEntity extends net.minecraft.class_2586 {
+  public nourl.mythicmetals.blocks.EnchantedMidasGoldBlockEntity(net.minecraft.class_2338, net.minecraft.class_2680);
+}
+== nourl/mythicmetals/blocks/AquariumResonatorBlockEntity
+Compiled from "AquariumResonatorBlockEntity.java"
+public class nourl.mythicmetals.blocks.AquariumResonatorBlockEntity {
+  public nourl.mythicmetals.blocks.AquariumResonatorBlockEntity();
+}
+== nourl/mythicmetals/blocks/AquariumStewardBlockEntity
+Compiled from "AquariumStewardBlockEntity.java"
+public class nourl.mythicmetals.blocks.AquariumStewardBlockEntity {
+  public nourl.mythicmetals.blocks.AquariumStewardBlockEntity();
+}
+== nourl/mythicmetals/mixin/PlayerEntityMixin
+Compiled from "PlayerEntityMixin.java"
+public abstract class nourl.mythicmetals.mixin.PlayerEntityMixin extends net.minecraft.class_1309 {
+  private net.minecraft.class_1796 field_7484;
+  protected nourl.mythicmetals.mixin.PlayerEntityMixin(net.minecraft.class_1299<? extends net.minecraft.class_1309>, net.minecraft.class_1937);
+  public abstract net.minecraft.class_1661 method_31548();
+  public abstract java.lang.Iterable<net.minecraft.class_1799> method_5661();
+  public abstract void method_7259(net.minecraft.class_3445<?>);
+  private void slowBreak(net.minecraft.class_2680, org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<java.lang.Float>);
+  private void tickCarmotShield(org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  public float carmotShieldCancel(float);
+  private void mythicmetals$damageShield(float, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  private void mythicmetals$setShieldCooldown(boolean, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  private static void lambda$mythicmetals$damageShield$0(net.minecraft.class_1268, nourl.mythicmetals.mixin.PlayerEntityMixin);
+}
+== nourl/mythicmetals/mixin/EntityModelLayersAccessor
+Compiled from "EntityModelLayersAccessor.java"
+public interface nourl.mythicmetals.mixin.EntityModelLayersAccessor {
+  public static java.util.Set<net.minecraft.class_5601> getLAYERS();
+}
+== nourl/mythicmetals/mixin/LivingEntityMixin
+Compiled from "LivingEntityMixin.java"
+public abstract class nourl.mythicmetals.mixin.LivingEntityMixin extends net.minecraft.class_1297 {
+  private net.minecraft.class_1309 field_6274;
+  java.util.Random r;
+  public abstract java.lang.Iterable<net.minecraft.class_1799> method_5661();
+  public abstract boolean method_32316();
+  public abstract int method_6096();
+  public abstract net.minecraft.class_1799 method_6047();
+  public abstract boolean method_5643(net.minecraft.class_1282, float);
+  public abstract boolean method_6059(net.minecraft.class_1291);
+  public abstract boolean method_6016(net.minecraft.class_1291);
+  public abstract net.minecraft.class_1293 method_6112(net.minecraft.class_1291);
+  public abstract boolean method_6092(net.minecraft.class_1293);
+  public abstract double method_26825(net.minecraft.class_1320);
+  public abstract boolean method_6049(net.minecraft.class_1293);
+  public abstract net.minecraft.class_1799 method_5998(net.minecraft.class_1268);
+  public abstract net.minecraft.class_1799 method_6079();
+  public abstract void method_5848();
+  public nourl.mythicmetals.mixin.LivingEntityMixin(net.minecraft.class_1299<?>, net.minecraft.class_1937);
+  private static void mythicmetals$addAttributes(org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<net.minecraft.class_5132$class_5133>);
+  private boolean mythicmetals$bypassFireResistance(boolean);
+  private float mythicmetals$changeFireDamage(float, net.minecraft.class_1282);
+  private void mythicmetals$tick(org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  private void mythicmetals$tickCombustion();
+  private void mythicmetals$handleCombustion(nourl.mythicmetals.entity.CombustionCooldown);
+  private void mythicmetals$addArmorEffects();
+  private void mythicmetals$carmotParticle();
+  private void mythicmetals$copperParticle();
+  private void mythicmetals$palladiumParticles();
+  private void mythicmetals$grantAdvancementOnStatusEffectFromCreepers(net.minecraft.class_1293, net.minecraft.class_1297, org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<java.lang.Boolean>);
+  private void mythicmetals$cancelSwingOnActiveMythrilDrill(net.minecraft.class_1268, boolean, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+}
+== nourl/mythicmetals/mixin/FireworkRocketEntityMixin
+Compiled from "FireworkRocketEntityMixin.java"
+public abstract class nourl.mythicmetals.mixin.FireworkRocketEntityMixin extends net.minecraft.class_1676 {
+  private net.minecraft.class_1309 field_7616;
+  public nourl.mythicmetals.mixin.FireworkRocketEntityMixin(net.minecraft.class_1299<? extends net.minecraft.class_1671>, net.minecraft.class_1937);
+  private net.minecraft.class_243 mythicmetals$crabVec3D(net.minecraft.class_243);
+  private net.minecraft.class_243 mythicmetals$increaseRocketSpeed(net.minecraft.class_243, double, double, double);
+}
+== nourl/mythicmetals/mixin/CreeperEntityMixin
+Compiled from "CreeperEntityMixin.java"
+public class nourl.mythicmetals.mixin.CreeperEntityMixin {
+  public nourl.mythicmetals.mixin.CreeperEntityMixin();
+  private net.minecraft.class_1295 mythicmetals$assignDataToCloud(net.minecraft.class_1295);
+}
+== nourl/mythicmetals/mixin/AreaEffectCloudEntityMixin
+Compiled from "AreaEffectCloudEntityMixin.java"
+public abstract class nourl.mythicmetals.mixin.AreaEffectCloudEntityMixin implements nourl.mythicmetals.misc.WasSpawnedFromCreeper {
+  private boolean mythicmetals$ownerWasCreeper;
+  public nourl.mythicmetals.mixin.AreaEffectCloudEntityMixin();
+  public void mythicmetals$setSpawnedFromCreeper(boolean);
+  public boolean mythicmetals$isSpawnedFromCreeper();
+}
+== nourl/mythicmetals/mixin/PlayerEntityRendererMixin
+Compiled from "PlayerEntityRendererMixin.java"
+public class nourl.mythicmetals.mixin.PlayerEntityRendererMixin {
+  private static final net.minecraft.class_2960 WORLD_BORDER;
+  public nourl.mythicmetals.mixin.PlayerEntityRendererMixin();
+  private void mythicmetals$renderShieldArm(net.minecraft.class_4587, net.minecraft.class_4597, int, net.minecraft.class_742, net.minecraft.class_630, net.minecraft.class_630, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  private void mythicmetals$renderRainbowShield(net.minecraft.class_742, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  private static void mythicmetals$mythrilDrillPose(net.minecraft.class_742, net.minecraft.class_1268, org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<net.minecraft.class_572$class_573>);
+  static {};
+}
+== nourl/mythicmetals/mixin/AbstractMinecartEntityTypeMixin
+Compiled from "AbstractMinecartEntityTypeMixin.java"
+public abstract class nourl.mythicmetals.mixin.AbstractMinecartEntityTypeMixin {
+  private static net.minecraft.class_1688$class_1689[] field_7673;
+  private static final net.minecraft.class_1688$class_1689 BANGLUM_TNT;
+  public nourl.mythicmetals.mixin.AbstractMinecartEntityTypeMixin();
+  public static net.minecraft.class_1688$class_1689 mythicmetals$init(java.lang.String, int);
+  private static net.minecraft.class_1688$class_1689 mythicmetals$addType(java.lang.String);
+  static {};
+}
+== nourl/mythicmetals/mixin/AbstractMinecartEntityMixin
+Compiled from "AbstractMinecartEntityMixin.java"
+public class nourl.mythicmetals.mixin.AbstractMinecartEntityMixin {
+  public nourl.mythicmetals.mixin.AbstractMinecartEntityMixin();
+  private static void mythicmetals$createBanglumTntMinecart(net.minecraft.class_1937, double, double, double, net.minecraft.class_1688$class_1689, org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<net.minecraft.class_1688>);
+}
+== nourl/mythicmetals/mixin/ConduitBlockEntityMixin
+Compiled from "ConduitBlockEntityMixin.java"
+public class nourl.mythicmetals.mixin.ConduitBlockEntityMixin {
+  private static net.minecraft.class_2248[] field_11931;
+  public nourl.mythicmetals.mixin.ConduitBlockEntityMixin();
+  private static void mythicmetals$extendConduitArray(org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+}
+== nourl/mythicmetals/client/rendering/BanglumTntMinecartEntityRenderer
+Compiled from "BanglumTntMinecartEntityRenderer.java"
+public class nourl.mythicmetals.client.rendering.BanglumTntMinecartEntityRenderer extends net.minecraft.class_925<nourl.mythicmetals.entity.BanglumTntMinecartEntity> {
+  private final net.minecraft.class_776 tntBlockRenderManager;
+  public nourl.mythicmetals.client.rendering.BanglumTntMinecartEntityRenderer(net.minecraft.class_5617$class_5618);
+  protected void renderBlock(net.minecraft.class_1701, float, net.minecraft.class_2680, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public static void renderFlashingBlock(net.minecraft.class_776, net.minecraft.class_2680, net.minecraft.class_4587, net.minecraft.class_4597, int, boolean);
+}
+== nourl/mythicmetals/client/rendering/RuniteArrowEntityRenderer
+Compiled from "RuniteArrowEntityRenderer.java"
+public class nourl.mythicmetals.client.rendering.RuniteArrowEntityRenderer extends net.minecraft.class_876<nourl.mythicmetals.entity.RuniteArrowEntity> {
+  public static final net.minecraft.class_2960 TEXTURE;
+  public static final net.minecraft.class_2960 TIPPED_TEXTURE;
+  public nourl.mythicmetals.client.rendering.RuniteArrowEntityRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(nourl.mythicmetals.entity.RuniteArrowEntity);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  static {};
+}
+== nourl/mythicmetals/client/rendering/BanglumNukeEntityRenderer
+Compiled from "BanglumNukeEntityRenderer.java"
+public class nourl.mythicmetals.client.rendering.BanglumNukeEntityRenderer extends net.minecraft.class_897<nourl.mythicmetals.entity.BanglumNukeEntity> {
+  private final net.minecraft.class_776 blockRenderManager;
+  public nourl.mythicmetals.client.rendering.BanglumNukeEntityRenderer(net.minecraft.class_5617$class_5618);
+  public void render(nourl.mythicmetals.entity.BanglumNukeEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 getTexture(nourl.mythicmetals.entity.BanglumNukeEntity);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+}
+== nourl/mythicmetals/client/rendering/EnchantedMidasBlockEntityRenderer
+Compiled from "EnchantedMidasBlockEntityRenderer.java"
+public class nourl.mythicmetals.client.rendering.EnchantedMidasBlockEntityRenderer implements net.minecraft.class_827<nourl.mythicmetals.blocks.EnchantedMidasGoldBlockEntity> {
+  private final net.minecraft.class_776 blockRenderManager;
+  public nourl.mythicmetals.client.rendering.EnchantedMidasBlockEntityRenderer(net.minecraft.class_5614$class_5615);
+  public void render(nourl.mythicmetals.blocks.EnchantedMidasGoldBlockEntity, float, net.minecraft.class_4587, net.minecraft.class_4597, int, int);
+  public void method_3569(net.minecraft.class_2586, float, net.minecraft.class_4587, net.minecraft.class_4597, int, int);
+}
+== nourl/mythicmetals/client/rendering/StarPlatinumArrowEntityRenderer
+Compiled from "StarPlatinumArrowEntityRenderer.java"
+public class nourl.mythicmetals.client.rendering.StarPlatinumArrowEntityRenderer extends net.minecraft.class_876<nourl.mythicmetals.entity.StarPlatinumArrowEntity> {
+  public static final net.minecraft.class_2960 TEXTURE;
+  public nourl.mythicmetals.client.rendering.StarPlatinumArrowEntityRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTexture(nourl.mythicmetals.entity.StarPlatinumArrowEntity);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  static {};
+}
+== nourl/mythicmetals/client/rendering/BanglumTntEntityRenderer
+Compiled from "BanglumTntEntityRenderer.java"
+public class nourl.mythicmetals.client.rendering.BanglumTntEntityRenderer extends net.minecraft.class_897<nourl.mythicmetals.entity.BanglumTntEntity> {
+  private final net.minecraft.class_776 blockRenderManager;
+  public nourl.mythicmetals.client.rendering.BanglumTntEntityRenderer(net.minecraft.class_5617$class_5618);
+  public void render(nourl.mythicmetals.entity.BanglumTntEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public net.minecraft.class_2960 getTexture(nourl.mythicmetals.entity.BanglumTntEntity);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+}

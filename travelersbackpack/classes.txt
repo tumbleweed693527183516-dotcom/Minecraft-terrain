@@ -1,0 +1,415 @@
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/ForgingScreenHandlerMixin
+Compiled from "ForgingScreenHandlerMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.ForgingScreenHandlerMixin extends net.minecraft.class_1703 {
+  com.jamieswhiteshirt.reachentityattributes.mixin.ForgingScreenHandlerMixin(net.minecraft.class_3917<?>, int);
+  private double getActualReachDistance(double, net.minecraft.class_1657);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/VehicleInventoryValidationMixin
+Compiled from "VehicleInventoryValidationMixin.java"
+interface com.jamieswhiteshirt.reachentityattributes.mixin.VehicleInventoryValidationMixin {
+  private static double getActualReachDistance(double, net.minecraft.class_1657);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/PlayerEntityMixin
+Compiled from "PlayerEntityMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.PlayerEntityMixin extends net.minecraft.class_1309 {
+  com.jamieswhiteshirt.reachentityattributes.mixin.PlayerEntityMixin(net.minecraft.class_1299<? extends net.minecraft.class_1309>, net.minecraft.class_1937);
+  private double getActualAttackRange(double);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/PlayerEntityInteractionHandlerMixin
+Compiled from "PlayerEntityInteractionHandlerMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.PlayerEntityInteractionHandlerMixin implements net.minecraft.class_2824$class_5908 {
+  private net.minecraft.class_3244 field_28963;
+  private net.minecraft.class_1297 field_28962;
+  com.jamieswhiteshirt.reachentityattributes.mixin.PlayerEntityInteractionHandlerMixin();
+  private void ensureWithinAttackRange(org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/ItemMixin
+Compiled from "ItemMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.ItemMixin implements net.minecraft.class_1935 {
+  com.jamieswhiteshirt.reachentityattributes.mixin.ItemMixin();
+  private static double getActualReachDistance(double, net.minecraft.class_1937, net.minecraft.class_1657);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/LivingEntityMixin
+Compiled from "LivingEntityMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.LivingEntityMixin extends net.minecraft.class_1297 {
+  com.jamieswhiteshirt.reachentityattributes.mixin.LivingEntityMixin(net.minecraft.class_1299<?>, net.minecraft.class_1937);
+  private static void addAttributes(org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<net.minecraft.class_5132$class_5133>);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/ChestStateManagerMixin
+Compiled from "ChestStateManagerMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.ChestStateManagerMixin {
+  com.jamieswhiteshirt.reachentityattributes.mixin.ChestStateManagerMixin();
+  protected abstract boolean method_31679(net.minecraft.class_1657);
+  private int getReachAccountingOpenCount(net.minecraft.class_5561, net.minecraft.class_1937, net.minecraft.class_2338);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/client/GameRendererMixin
+Compiled from "GameRendererMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.client.GameRendererMixin implements net.minecraft.class_4013 {
+  net.minecraft.class_310 field_4015;
+  com.jamieswhiteshirt.reachentityattributes.mixin.client.GameRendererMixin();
+  private double getActualReachDistance(double);
+  private double getActualAttackRange0(double);
+  private double getActualAttackRange1(double);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/client/ClientPlayerInteractionManagerMixin
+Compiled from "ClientPlayerInteractionManagerMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.client.ClientPlayerInteractionManagerMixin {
+  private net.minecraft.class_310 field_3712;
+  com.jamieswhiteshirt.reachentityattributes.mixin.client.ClientPlayerInteractionManagerMixin();
+  private float getActualReachDistance(float);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/InventoryValidationMixin
+Compiled from "InventoryValidationMixin.java"
+interface com.jamieswhiteshirt.reachentityattributes.mixin.InventoryValidationMixin {
+  private static void checkWithinActualReach(net.minecraft.class_2586, net.minecraft.class_1657, int, org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<java.lang.Boolean>, net.minecraft.class_1937, net.minecraft.class_2338);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/ScreenHandlerMixin
+Compiled from "ScreenHandlerMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.ScreenHandlerMixin {
+  com.jamieswhiteshirt.reachentityattributes.mixin.ScreenHandlerMixin();
+  private static double getActualReachDistance(double, net.minecraft.class_2248, net.minecraft.class_1657);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/ServerPlayNetworkHandlerMixin
+Compiled from "ServerPlayNetworkHandlerMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.ServerPlayNetworkHandlerMixin implements net.minecraft.class_2792 {
+  public net.minecraft.class_3222 field_14140;
+  com.jamieswhiteshirt.reachentityattributes.mixin.ServerPlayNetworkHandlerMixin();
+  private double getActualAttackRange();
+  private double getActualReachDistance();
+  private double getActualReachDistance(double);
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/mixin/ServerPlayerInteractionManagerMixin
+Compiled from "ServerPlayerInteractionManagerMixin.java"
+abstract class com.jamieswhiteshirt.reachentityattributes.mixin.ServerPlayerInteractionManagerMixin {
+  protected net.minecraft.class_3222 field_14008;
+  com.jamieswhiteshirt.reachentityattributes.mixin.ServerPlayerInteractionManagerMixin();
+  private double getActualReachDistance();
+}
+== _nested/com/jamieswhiteshirt/reachentityattributes/ReachEntityAttributes
+Compiled from "ReachEntityAttributes.java"
+public final class com.jamieswhiteshirt.reachentityattributes.ReachEntityAttributes implements net.fabricmc.api.ModInitializer {
+  public static final java.lang.String MOD_ID;
+  public static final net.minecraft.class_1320 REACH;
+  public static final net.minecraft.class_1320 ATTACK_RANGE;
+  public com.jamieswhiteshirt.reachentityattributes.ReachEntityAttributes();
+  public static double getReachDistance(net.minecraft.class_1309, double);
+  public static double getSquaredReachDistance(net.minecraft.class_1309, double);
+  public static double getAttackRange(net.minecraft.class_1309, double);
+  public static double getSquaredAttackRange(net.minecraft.class_1309, double);
+  public static java.util.List<net.minecraft.class_1657> getPlayersWithinReach(net.minecraft.class_1937, int, int, int, double);
+  public static java.util.List<net.minecraft.class_1657> getPlayersWithinReach(java.util.function.Predicate<net.minecraft.class_1657>, net.minecraft.class_1937, int, int, int, double);
+  public static boolean isWithinAttackRange(net.minecraft.class_1657, net.minecraft.class_1297);
+  private static net.minecraft.class_1320 make(java.lang.String, double, double, double);
+  public void onInitialize();
+  private static boolean lambda$getPlayersWithinReach$0(net.minecraft.class_1657);
+  static {};
+}
+== com/tiviacz/travelersbackpack/blockentity/BackpackBlockEntity
+Compiled from "BackpackBlockEntity.java"
+public class com.tiviacz.travelersbackpack.blockentity.BackpackBlockEntity extends net.minecraft.class_2586 implements net.minecraft.class_3908,net.minecraft.class_1275,net.fabricmc.fabric.api.blockview.v2.RenderDataBlockEntity {
+  private com.tiviacz.travelersbackpack.inventory.BackpackWrapper wrapper;
+  private boolean isSleepingBagDeployed;
+  public java.util.List<java.lang.Integer> infiniteAccessUsers;
+  public int settingsUser;
+  public net.minecraft.class_2561 customName;
+  public net.minecraft.class_1657 player;
+  public static final java.lang.String BACKPACK;
+  public static final java.lang.String SLEEPING_BAG;
+  public static final java.lang.String SETTINGS_USER;
+  public static final java.lang.String CUSTOM_NAME;
+  private static final java.lang.String TIER;
+  private static final java.lang.String INVENTORY;
+  private static final java.lang.String TOOLS_INVENTORY;
+  private static final java.lang.String LEFT_TANK;
+  private static final java.lang.String RIGHT_TANK;
+  public com.tiviacz.travelersbackpack.blockentity.BackpackBlockEntity(net.minecraft.class_2338, net.minecraft.class_2680);
+  public com.tiviacz.travelersbackpack.inventory.BackpackWrapper getWrapper();
+  public void method_11007(net.minecraft.class_2487);
+  public void method_11014(net.minecraft.class_2487);
+  public void setBackpack(net.minecraft.class_1799);
+  private void setBackpackFromNbt(net.minecraft.class_2487);
+  public void method_31662(net.minecraft.class_1937);
+  private void writeBackpack(net.minecraft.class_2487);
+  public void removeWrapper();
+  public net.minecraft.class_2350 getBlockDirection();
+  public boolean isSleepingBagDeployed();
+  public void setSleepingBagDeployed(boolean);
+  public static boolean canPlaceSleepingBag(net.minecraft.class_2338, net.minecraft.class_1937);
+  public boolean deploySleepingBag(net.minecraft.class_1937, net.minecraft.class_2338);
+  public boolean removeSleepingBag(net.minecraft.class_1937, net.minecraft.class_2350);
+  public boolean isThereSleepingBag(net.minecraft.class_2350);
+  public static net.minecraft.class_2680 getProperSleepingBag(int);
+  public net.minecraft.class_1799 toItemStack(net.minecraft.class_1799);
+  private void notifyBlockUpdate();
+  public static void tick(net.minecraft.class_1937, net.minecraft.class_2338, net.minecraft.class_2680, com.tiviacz.travelersbackpack.blockentity.BackpackBlockEntity);
+  public net.minecraft.class_2561 method_5477();
+  public net.minecraft.class_2561 method_5797();
+  public net.minecraft.class_2561 method_5476();
+  public net.minecraft.class_2561 getDefaultName();
+  public void setCustomName(net.minecraft.class_2561);
+  public void setSettingsUser(net.minecraft.class_1657);
+  public int getSettingsUser();
+  public void removeSettingsUser();
+  public boolean canOpenSettings(net.minecraft.class_1657);
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_38235();
+  public net.minecraft.class_2487 method_16887();
+  public net.minecraft.class_1703 createMenu(int, net.minecraft.class_1661, net.minecraft.class_1657);
+  public boolean shouldCloseCurrentScreen();
+  public static net.minecraft.class_2540 saveSettingsExtraData(net.minecraft.class_2540, net.minecraft.class_2338);
+  public void openBackpack(net.minecraft.class_1657, net.minecraft.class_3908, net.minecraft.class_2338);
+  public void openBackpackFromCommand(net.minecraft.class_1657, net.minecraft.class_3908, net.minecraft.class_2338);
+  public void openSettings(net.minecraft.class_1657, net.minecraft.class_3908, net.minecraft.class_2338);
+  public java.lang.Object getRenderData();
+  public net.minecraft.class_1799 getOldDataBackpack(net.minecraft.class_2487);
+  private void lambda$setBackpack$1();
+  private void lambda$setBackpack$0();
+}
+== com/tiviacz/travelersbackpack/blockentity/BackpackBlockEntity$2
+Compiled from "BackpackBlockEntity.java"
+class com.tiviacz.travelersbackpack.blockentity.BackpackBlockEntity$2 implements net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory {
+  final net.minecraft.class_3908 val$containerSupplier;
+  final net.minecraft.class_2338 val$pos;
+  final com.tiviacz.travelersbackpack.blockentity.BackpackBlockEntity this$0;
+  com.tiviacz.travelersbackpack.blockentity.BackpackBlockEntity$2();
+  public boolean shouldCloseCurrentScreen();
+  public void writeScreenOpeningData(net.minecraft.class_3222, net.minecraft.class_2540);
+  public net.minecraft.class_2561 method_5476();
+  public net.minecraft.class_1703 createMenu(int, net.minecraft.class_1661, net.minecraft.class_1657);
+}
+== com/tiviacz/travelersbackpack/blockentity/BackpackBlockEntity$1
+Compiled from "BackpackBlockEntity.java"
+class com.tiviacz.travelersbackpack.blockentity.BackpackBlockEntity$1 implements net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory {
+  final net.minecraft.class_3908 val$containerSupplier;
+  final net.minecraft.class_2338 val$pos;
+  final com.tiviacz.travelersbackpack.blockentity.BackpackBlockEntity this$0;
+  com.tiviacz.travelersbackpack.blockentity.BackpackBlockEntity$1();
+  public boolean shouldCloseCurrentScreen();
+  public void writeScreenOpeningData(net.minecraft.class_3222, net.minecraft.class_2540);
+  public net.minecraft.class_2561 method_5476();
+  public net.minecraft.class_1703 createMenu(int, net.minecraft.class_1661, net.minecraft.class_1657);
+}
+== com/tiviacz/travelersbackpack/blockentity/BackpackBlockEntity$BackpackRenderData
+Compiled from "BackpackBlockEntity.java"
+public final class com.tiviacz.travelersbackpack.blockentity.BackpackBlockEntity$BackpackRenderData extends java.lang.Record {
+  private final com.tiviacz.travelersbackpack.components.RenderInfo info;
+  private final int dyeColor;
+  private final boolean isSleepingBagDeployed;
+  private final int sleepingBagColor;
+  public com.tiviacz.travelersbackpack.blockentity.BackpackBlockEntity$BackpackRenderData(com.tiviacz.travelersbackpack.components.RenderInfo, int, boolean, int);
+  public final java.lang.String toString();
+  public final int hashCode();
+  public final boolean equals(java.lang.Object);
+  public com.tiviacz.travelersbackpack.components.RenderInfo info();
+  public int dyeColor();
+  public boolean isSleepingBagDeployed();
+  public int sleepingBagColor();
+}
+== com/tiviacz/travelersbackpack/blockentity/BackpackBlockEntity$3
+Compiled from "BackpackBlockEntity.java"
+class com.tiviacz.travelersbackpack.blockentity.BackpackBlockEntity$3 implements net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory {
+  final net.minecraft.class_3908 val$containerSupplier;
+  final net.minecraft.class_2338 val$pos;
+  final com.tiviacz.travelersbackpack.blockentity.BackpackBlockEntity this$0;
+  com.tiviacz.travelersbackpack.blockentity.BackpackBlockEntity$3();
+  public boolean shouldCloseCurrentScreen();
+  public void writeScreenOpeningData(net.minecraft.class_3222, net.minecraft.class_2540);
+  public net.minecraft.class_2561 method_5476();
+  public net.minecraft.class_1703 createMenu(int, net.minecraft.class_1661, net.minecraft.class_1657);
+}
+== com/tiviacz/travelersbackpack/entity/BackpackItemEntity
+Compiled from "BackpackItemEntity.java"
+public class com.tiviacz.travelersbackpack.entity.BackpackItemEntity extends net.minecraft.class_1542 {
+  public boolean wasFloatingUp;
+  public boolean fireResistant;
+  public boolean explosionResistant;
+  public boolean invulnerableBackpack;
+  public int backpackAge;
+  public com.tiviacz.travelersbackpack.entity.BackpackItemEntity(net.minecraft.class_1299<? extends net.minecraft.class_1542>, net.minecraft.class_1937);
+  public void method_5773();
+  public boolean method_5799();
+  public boolean method_5753();
+  public boolean method_5659();
+  public boolean method_5679(net.minecraft.class_1282);
+  protected void method_5825();
+  public int method_6985();
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+}
+== com/tiviacz/travelersbackpack/mixin/ShulkerBoxBlockEntityMixin
+Compiled from "ShulkerBoxBlockEntityMixin.java"
+public abstract class com.tiviacz.travelersbackpack.mixin.ShulkerBoxBlockEntityMixin {
+  public com.tiviacz.travelersbackpack.mixin.ShulkerBoxBlockEntityMixin();
+  public void canInsert(int, net.minecraft.class_1799, net.minecraft.class_2350, org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<java.lang.Boolean>);
+}
+== com/tiviacz/travelersbackpack/mixin/MobEntityMixin
+Compiled from "MobEntityMixin.java"
+public abstract class com.tiviacz.travelersbackpack.mixin.MobEntityMixin extends net.minecraft.class_1309 {
+  protected com.tiviacz.travelersbackpack.mixin.MobEntityMixin(net.minecraft.class_1299<? extends net.minecraft.class_1309>, net.minecraft.class_1937);
+  protected void initialize(net.minecraft.class_5425, net.minecraft.class_1266, net.minecraft.class_3730, net.minecraft.class_1315, net.minecraft.class_2487, org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<net.minecraft.class_1315>);
+}
+== com/tiviacz/travelersbackpack/mixin/entity/item/ItemEntityMixin
+Compiled from "ItemEntityMixin.java"
+public abstract class com.tiviacz.travelersbackpack.mixin.entity.item.ItemEntityMixin extends net.minecraft.class_1297 {
+  public int field_7202;
+  private boolean travelersbackpack$wasFloatingUp;
+  public com.tiviacz.travelersbackpack.mixin.entity.item.ItemEntityMixin(net.minecraft.class_1299<?>, net.minecraft.class_1937);
+  public abstract net.minecraft.class_1799 method_6983();
+  public abstract void method_6979(net.minecraft.class_1799);
+  public abstract void method_35190();
+  private void playerTouch(net.minecraft.class_1657, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  private boolean travelersbackpack$isBackpack();
+  private void travelersbackpack$onSetItem(net.minecraft.class_1799, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  private void travelersbackpack$onTick(org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  private void travelersbackpack$fireImmune(org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<java.lang.Boolean>);
+  private void lambda$playerTouch$0(net.minecraft.class_1937, net.minecraft.class_1657, org.spongepowered.asm.mixin.injection.callback.CallbackInfo, com.tiviacz.travelersbackpack.inventory.upgrades.pickup.AutoPickupUpgrade);
+}
+== com/tiviacz/travelersbackpack/mixin/entity/item/EntityMixin
+Compiled from "EntityMixin.java"
+public abstract class com.tiviacz.travelersbackpack.mixin.entity.item.EntityMixin {
+  public com.tiviacz.travelersbackpack.mixin.entity.item.EntityMixin();
+  private boolean travelersbackpack$isBackpack();
+  private void travelersbackpack$isInWater(org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<java.lang.Boolean>);
+  private void travelersbackpack$isInvulnerable(org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<java.lang.Boolean>);
+  private void travelersbackpack$onBelowWorld(org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+  private void travelersbackpack$ignoreExplosion(org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<java.lang.Boolean>);
+}
+== com/tiviacz/travelersbackpack/mixin/abilities/EndermanEntityMixin
+Compiled from "EndermanEntityMixin.java"
+public class com.tiviacz.travelersbackpack.mixin.abilities.EndermanEntityMixin extends net.minecraft.class_1588 {
+  protected com.tiviacz.travelersbackpack.mixin.abilities.EndermanEntityMixin(net.minecraft.class_1299<? extends net.minecraft.class_1588>, net.minecraft.class_1937);
+  public void isPlayerStaring(net.minecraft.class_1657, org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable<java.lang.Boolean>);
+}
+== com/tiviacz/travelersbackpack/mixin/abilities/ExperienceOrbEntityMixin
+Compiled from "ExperienceOrbEntityMixin.java"
+public class com.tiviacz.travelersbackpack.mixin.abilities.ExperienceOrbEntityMixin {
+  private int field_6159;
+  public com.tiviacz.travelersbackpack.mixin.abilities.ExperienceOrbEntityMixin();
+  public void onPlayerCollision(net.minecraft.class_1657, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+}
+== com/tiviacz/travelersbackpack/mixin/abilities/SmallFireballEntityMixin
+Compiled from "SmallFireballEntityMixin.java"
+public class com.tiviacz.travelersbackpack.mixin.abilities.SmallFireballEntityMixin extends net.minecraft.class_3855 {
+  public com.tiviacz.travelersbackpack.mixin.abilities.SmallFireballEntityMixin(net.minecraft.class_1299<? extends net.minecraft.class_3855>, net.minecraft.class_1937);
+  public void onEntityHit(net.minecraft.class_3966, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+}
+== com/tiviacz/travelersbackpack/mixin/abilities/GhastEntityMixin
+Compiled from "GhastEntityMixin.java"
+public abstract class com.tiviacz.travelersbackpack.mixin.abilities.GhastEntityMixin extends net.minecraft.class_1309 {
+  protected com.tiviacz.travelersbackpack.mixin.abilities.GhastEntityMixin(net.minecraft.class_1299<? extends net.minecraft.class_1309>, net.minecraft.class_1937);
+  public void setTarget(net.minecraft.class_1309, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+}
+== com/tiviacz/travelersbackpack/mixin/LivingEntityPriorityMixin
+Compiled from "LivingEntityPriorityMixin.java"
+public class com.tiviacz.travelersbackpack.mixin.LivingEntityPriorityMixin {
+  public com.tiviacz.travelersbackpack.mixin.LivingEntityPriorityMixin();
+  private void drop(net.minecraft.class_1282, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+}
+== com/tiviacz/travelersbackpack/inventory/menu/BackpackBlockEntityMenu
+Compiled from "BackpackBlockEntityMenu.java"
+public class com.tiviacz.travelersbackpack.inventory.menu.BackpackBlockEntityMenu extends com.tiviacz.travelersbackpack.inventory.menu.BackpackBaseMenu {
+  private final net.minecraft.class_3914 access;
+  private final net.minecraft.class_2248 backpackBlock;
+  private final int infniteAccessUser;
+  public com.tiviacz.travelersbackpack.inventory.menu.BackpackBlockEntityMenu(int, net.minecraft.class_1661, net.minecraft.class_2540);
+  public com.tiviacz.travelersbackpack.inventory.menu.BackpackBlockEntityMenu(int, net.minecraft.class_1661, int, com.tiviacz.travelersbackpack.inventory.BackpackWrapper);
+  private static int isInfiniteAccess(net.minecraft.class_2540);
+  private static com.tiviacz.travelersbackpack.inventory.BackpackWrapper getBlockEntity(net.minecraft.class_1661, net.minecraft.class_2540);
+  public boolean method_7597(net.minecraft.class_1657);
+  public void method_7595(net.minecraft.class_1657);
+  private java.lang.Boolean lambda$stillValid$0(net.minecraft.class_1657, net.minecraft.class_1937, net.minecraft.class_2338);
+}
+== com/tiviacz/travelersbackpack/client/renderer/BackpackEntityLayer
+Compiled from "BackpackEntityLayer.java"
+public class com.tiviacz.travelersbackpack.client.renderer.BackpackEntityLayer extends net.minecraft.class_3887<net.minecraft.class_1309, net.minecraft.class_572<net.minecraft.class_1309>> {
+  public com.tiviacz.travelersbackpack.client.renderer.BackpackEntityLayer(net.minecraft.class_3883<net.minecraft.class_1309, net.minecraft.class_572<net.minecraft.class_1309>>);
+  public void render(net.minecraft.class_4587, net.minecraft.class_4597, int, net.minecraft.class_1309, float, float, float, float, float, float);
+  public void method_4199(net.minecraft.class_4587, net.minecraft.class_4597, int, net.minecraft.class_1297, float, float, float, float, float, float);
+}
+== com/tiviacz/travelersbackpack/compat/lambdynamiclight/BackpackEntityLuminance
+Compiled from "BackpackEntityLuminance.java"
+public class com.tiviacz.travelersbackpack.compat.lambdynamiclight.BackpackEntityLuminance implements dev.lambdaurora.lambdynlights.api.entity.luminance.EntityLuminance {
+  public static final com.tiviacz.travelersbackpack.compat.lambdynamiclight.BackpackEntityLuminance INSTANCE;
+  private com.tiviacz.travelersbackpack.compat.lambdynamiclight.BackpackEntityLuminance();
+  public dev.lambdaurora.lambdynlights.api.entity.luminance.EntityLuminance$Type type();
+  public int getLuminance(dev.lambdaurora.lambdynlights.api.item.ItemLightSourceManager, net.minecraft.class_1297);
+  static {};
+}
+== com/tiviacz/travelersbackpack/compat/jei/BlockEntityTransferInfo
+Compiled from "BlockEntityTransferInfo.java"
+public class com.tiviacz.travelersbackpack.compat.jei.BlockEntityTransferInfo implements mezz.jei.api.recipe.transfer.IRecipeTransferInfo<com.tiviacz.travelersbackpack.inventory.menu.BackpackBlockEntityMenu, net.minecraft.class_3955> {
+  public com.tiviacz.travelersbackpack.compat.jei.BlockEntityTransferInfo();
+  public java.lang.Class<? extends com.tiviacz.travelersbackpack.inventory.menu.BackpackBlockEntityMenu> getContainerClass();
+  public java.util.Optional<net.minecraft.class_3917<com.tiviacz.travelersbackpack.inventory.menu.BackpackBlockEntityMenu>> getMenuType();
+  public mezz.jei.api.recipe.RecipeType<net.minecraft.class_3955> getRecipeType();
+  public boolean canHandle(com.tiviacz.travelersbackpack.inventory.menu.BackpackBlockEntityMenu, net.minecraft.class_3955);
+  public java.util.List<net.minecraft.class_1735> getRecipeSlots(com.tiviacz.travelersbackpack.inventory.menu.BackpackBlockEntityMenu, net.minecraft.class_3955);
+  public java.util.List<net.minecraft.class_1735> getInventorySlots(com.tiviacz.travelersbackpack.inventory.menu.BackpackBlockEntityMenu, net.minecraft.class_3955);
+  public java.util.List getInventorySlots(net.minecraft.class_1703, java.lang.Object);
+  public java.util.List getRecipeSlots(net.minecraft.class_1703, java.lang.Object);
+  public boolean canHandle(net.minecraft.class_1703, java.lang.Object);
+}
+== com/tiviacz/travelersbackpack/compat/jei/BlockEntityTransferHandler
+Compiled from "BlockEntityTransferHandler.java"
+public class com.tiviacz.travelersbackpack.compat.jei.BlockEntityTransferHandler extends mezz.jei.library.transfer.BasicRecipeTransferHandler<com.tiviacz.travelersbackpack.inventory.menu.BackpackBlockEntityMenu, net.minecraft.class_3955> {
+  public com.tiviacz.travelersbackpack.compat.jei.BlockEntityTransferHandler(mezz.jei.common.network.IConnectionToServer, mezz.jei.api.helpers.IStackHelper, mezz.jei.api.recipe.transfer.IRecipeTransferHandlerHelper, mezz.jei.api.recipe.transfer.IRecipeTransferInfo<com.tiviacz.travelersbackpack.inventory.menu.BackpackBlockEntityMenu, net.minecraft.class_3955>);
+  public mezz.jei.api.recipe.transfer.IRecipeTransferError transferRecipe(com.tiviacz.travelersbackpack.inventory.menu.BackpackBlockEntityMenu, net.minecraft.class_3955, mezz.jei.api.gui.ingredient.IRecipeSlotsView, net.minecraft.class_1657, boolean, boolean);
+  public mezz.jei.api.recipe.transfer.IRecipeTransferError transferRecipe(net.minecraft.class_1703, java.lang.Object, mezz.jei.api.gui.ingredient.IRecipeSlotsView, net.minecraft.class_1657, boolean, boolean);
+}
+== com/tiviacz/travelersbackpack/handlers/EntityItemHandler
+Compiled from "EntityItemHandler.java"
+public class com.tiviacz.travelersbackpack.handlers.EntityItemHandler {
+  public com.tiviacz.travelersbackpack.handlers.EntityItemHandler();
+  public static void registerListeners();
+  private static void lambda$registerListeners$0(net.minecraft.class_1297, net.minecraft.class_3218);
+}
+== com/tiviacz/travelersbackpack/init/ModBlockEntityTypes$BackpackStorage
+Compiled from "ModBlockEntityTypes.java"
+public class com.tiviacz.travelersbackpack.init.ModBlockEntityTypes$BackpackStorage extends net.fabricmc.fabric.api.transfer.v1.transaction.base.SnapshotParticipant<net.minecraft.class_1799[]> implements net.fabricmc.fabric.api.transfer.v1.storage.SlottedStorage<net.fabricmc.fabric.api.transfer.v1.item.ItemVariant> {
+  private final net.fabricmc.fabric.api.transfer.v1.storage.SlottedStorage<net.fabricmc.fabric.api.transfer.v1.item.ItemVariant> storage;
+  private final com.tiviacz.travelersbackpack.inventory.handler.StorageAccessWrapper backingStorage;
+  public com.tiviacz.travelersbackpack.init.ModBlockEntityTypes$BackpackStorage(com.tiviacz.travelersbackpack.inventory.handler.StorageAccessWrapper);
+  public int getSlotCount();
+  public net.fabricmc.fabric.api.transfer.v1.storage.base.SingleSlotStorage<net.fabricmc.fabric.api.transfer.v1.item.ItemVariant> getSlot(int);
+  public long insert(net.fabricmc.fabric.api.transfer.v1.item.ItemVariant, long, net.fabricmc.fabric.api.transfer.v1.transaction.TransactionContext);
+  public long extract(net.fabricmc.fabric.api.transfer.v1.item.ItemVariant, long, net.fabricmc.fabric.api.transfer.v1.transaction.TransactionContext);
+  public java.util.Iterator<net.fabricmc.fabric.api.transfer.v1.storage.StorageView<net.fabricmc.fabric.api.transfer.v1.item.ItemVariant>> iterator();
+  protected net.minecraft.class_1799[] createSnapshot();
+  protected void readSnapshot(net.minecraft.class_1799[]);
+  protected void readSnapshot(java.lang.Object);
+  protected java.lang.Object createSnapshot();
+  public long extract(java.lang.Object, long, net.fabricmc.fabric.api.transfer.v1.transaction.TransactionContext);
+  public long insert(java.lang.Object, long, net.fabricmc.fabric.api.transfer.v1.transaction.TransactionContext);
+  private net.fabricmc.fabric.api.transfer.v1.storage.StorageView lambda$iterator$0(int);
+}
+== com/tiviacz/travelersbackpack/init/ModBlockEntityTypes$BackpackStorage$BackpackStorageView
+Compiled from "ModBlockEntityTypes.java"
+class com.tiviacz.travelersbackpack.init.ModBlockEntityTypes$BackpackStorage$BackpackStorageView implements net.fabricmc.fabric.api.transfer.v1.storage.base.SingleSlotStorage<net.fabricmc.fabric.api.transfer.v1.item.ItemVariant> {
+  private final int slotIndex;
+  final com.tiviacz.travelersbackpack.init.ModBlockEntityTypes$BackpackStorage this$0;
+  public com.tiviacz.travelersbackpack.init.ModBlockEntityTypes$BackpackStorage$BackpackStorageView(com.tiviacz.travelersbackpack.init.ModBlockEntityTypes$BackpackStorage, int);
+  public long insert(net.fabricmc.fabric.api.transfer.v1.item.ItemVariant, long, net.fabricmc.fabric.api.transfer.v1.transaction.TransactionContext);
+  public long extract(net.fabricmc.fabric.api.transfer.v1.item.ItemVariant, long, net.fabricmc.fabric.api.transfer.v1.transaction.TransactionContext);
+  public boolean isResourceBlank();
+  public net.fabricmc.fabric.api.transfer.v1.item.ItemVariant getResource();
+  public long getAmount();
+  public long getCapacity();
+  public long extract(java.lang.Object, long, net.fabricmc.fabric.api.transfer.v1.transaction.TransactionContext);
+  public long insert(java.lang.Object, long, net.fabricmc.fabric.api.transfer.v1.transaction.TransactionContext);
+  public java.lang.Object getResource();
+}
+== com/tiviacz/travelersbackpack/init/ModBlockEntityTypes
+Compiled from "ModBlockEntityTypes.java"
+public class com.tiviacz.travelersbackpack.init.ModBlockEntityTypes {
+  public static net.minecraft.class_2591<com.tiviacz.travelersbackpack.blockentity.BackpackBlockEntity> BACKPACK;
+  public com.tiviacz.travelersbackpack.init.ModBlockEntityTypes();
+  public static void init();
+  public static void initSidedStorage();
+  public static net.fabricmc.fabric.api.transfer.v1.storage.base.SingleVariantStorage<net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant> getProperTank(com.tiviacz.travelersbackpack.blockentity.BackpackBlockEntity, net.minecraft.class_2350);
+  public static net.fabricmc.fabric.api.transfer.v1.storage.Storage<net.fabricmc.fabric.api.transfer.v1.item.ItemVariant> getProperInventory(com.tiviacz.travelersbackpack.blockentity.BackpackBlockEntity, net.minecraft.class_2350);
+}
+== com/tiviacz/travelersbackpack/init/ModBlockEntityTypes$1
+Compiled from "ModBlockEntityTypes.java"
+class com.tiviacz.travelersbackpack.init.ModBlockEntityTypes$1 {
+  static final int[] $SwitchMap$net$minecraft$core$Direction;
+  static {};
+}

@@ -1,0 +1,2175 @@
+== net/mebahelcreaturesdraugr/util/ManagedBlockEntityTickManager$WorldState
+Compiled from "ManagedBlockEntityTickManager.java"
+final class net.mebahelcreaturesdraugr.util.ManagedBlockEntityTickManager$WorldState {
+  private final java.util.Set<net.mebahelcreaturesdraugr.block.entity.custom.base.AbstractSpellCasterTrapBlockEntity> activeTraps;
+  private final java.util.Set<net.mebahelcreaturesdraugr.block.entity.custom.DraugrAltarBlockEntity> activeAltars;
+  private final java.util.Set<net.mebahelcreaturesdraugr.block.entity.custom.base.AbstractSpellCasterTrapBlockEntity> pendingTrapAdds;
+  private final java.util.Set<net.mebahelcreaturesdraugr.block.entity.custom.base.AbstractSpellCasterTrapBlockEntity> pendingTrapRemovals;
+  private final java.util.Set<net.mebahelcreaturesdraugr.block.entity.custom.DraugrAltarBlockEntity> pendingAltarAdds;
+  private final java.util.Set<net.mebahelcreaturesdraugr.block.entity.custom.DraugrAltarBlockEntity> pendingAltarRemovals;
+  private net.mebahelcreaturesdraugr.util.ManagedBlockEntityTickManager$WorldState();
+  private void queueAddTrap(net.mebahelcreaturesdraugr.block.entity.custom.base.AbstractSpellCasterTrapBlockEntity);
+  private void queueRemoveTrap(net.mebahelcreaturesdraugr.block.entity.custom.base.AbstractSpellCasterTrapBlockEntity);
+  private void queueAddAltar(net.mebahelcreaturesdraugr.block.entity.custom.DraugrAltarBlockEntity);
+  private void queueRemoveAltar(net.mebahelcreaturesdraugr.block.entity.custom.DraugrAltarBlockEntity);
+  private void applyPendingRemovals();
+  private void applyPendingAdds(net.minecraft.class_3218);
+  private void tickTraps(net.minecraft.class_3218);
+  private void tickAltars(net.minecraft.class_3218);
+  private boolean isEmpty();
+}
+== net/mebahelcreaturesdraugr/util/ManagedBlockEntityTickManager
+Compiled from "ManagedBlockEntityTickManager.java"
+public final class net.mebahelcreaturesdraugr.util.ManagedBlockEntityTickManager {
+  private static final java.util.Map<net.minecraft.class_3218, net.mebahelcreaturesdraugr.util.ManagedBlockEntityTickManager$WorldState> WORLD_STATES;
+  private static boolean registered;
+  private net.mebahelcreaturesdraugr.util.ManagedBlockEntityTickManager();
+  public static void register();
+  private static net.mebahelcreaturesdraugr.util.ManagedBlockEntityTickManager$WorldState getOrCreateState(net.minecraft.class_3218);
+  private static void tickWorld(net.minecraft.class_3218);
+  private static <T> java.util.Set<T> createIdentitySet();
+  private static net.mebahelcreaturesdraugr.util.ManagedBlockEntityTickManager$WorldState lambda$getOrCreateState$4(net.minecraft.class_3218);
+  private static void lambda$register$3(net.minecraft.server.MinecraftServer);
+  private static void lambda$register$2(net.minecraft.server.MinecraftServer, net.minecraft.class_3218);
+  private static void lambda$register$1(net.minecraft.class_2586, net.minecraft.class_3218);
+  private static void lambda$register$0(net.minecraft.class_2586, net.minecraft.class_3218);
+  static {};
+}
+== net/mebahelcreaturesdraugr/entity/custom/FlameAtronachEntity$ConditionalGoal
+Compiled from "FlameAtronachEntity.java"
+class net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity$ConditionalGoal extends net.minecraft.class_1352 {
+  private final net.minecraft.class_1352 wrapped;
+  private final java.util.function.BooleanSupplier enabled;
+  private net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity$ConditionalGoal(net.minecraft.class_1352, java.util.function.BooleanSupplier);
+  public boolean method_6264();
+  public boolean method_6266();
+  public void method_6269();
+  public void method_6270();
+  public void method_6268();
+  public boolean method_38846();
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/custom/FlameAtronachEntity
+Compiled from "FlameAtronachEntity.java"
+public class net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity extends net.minecraft.class_1588 implements software.bernie.geckolib.animatable.GeoEntity {
+  public static final net.minecraft.class_2940<java.util.Optional<java.util.UUID>> OWNER_UUID;
+  public static final net.minecraft.class_2940<java.lang.Integer> SUMMON_TICKS;
+  public static final net.minecraft.class_2940<java.lang.Boolean> HAS_SPAWNED;
+  public static final net.minecraft.class_2940<java.lang.Integer> SPAWN_TIMER;
+  public static final net.minecraft.class_2940<java.lang.Integer> DATA_ID_TYPE_VARIANT;
+  public static final net.minecraft.class_2940<java.lang.String> ATTACK_NAME;
+  public static final net.minecraft.class_2940<java.lang.Float> SCALE;
+  public static final net.minecraft.class_2940<java.lang.Boolean> SHOOTING;
+  public static final net.minecraft.class_2940<java.lang.Integer> COOLDOWN;
+  private static final int SPAWN_FREEZE_UNTIL_AGE;
+  private final software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache factory;
+  private double baseMoveSpeed;
+  private static final float FIRE_MULT;
+  private static final float FROST_MULT;
+  private static final float WATER_MULT;
+  private static final net.mebahelcreaturesdraugr.util.DamageElementUtil$ElementConfig ELEMENT_CFG;
+  public net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity(net.minecraft.class_1299<? extends net.minecraft.class_1588>, net.minecraft.class_1937);
+  public software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache getAnimatableInstanceCache();
+  public void setSummonData(java.util.UUID, int);
+  public void setOwnerUuid(java.util.UUID);
+  public java.util.UUID getOwnerUuid();
+  public void setSummonTicks(int);
+  public int getSummonTicks();
+  public boolean isSummoned();
+  public boolean isOwner(net.minecraft.class_1297);
+  public net.minecraft.class_1309 getOwnerEntity();
+  public boolean getHasSpawned();
+  public void setHasSpawned(boolean);
+  private int getSpawnTimer();
+  private void ensureBaseSpeedCaptured();
+  private void freezeForSpawn();
+  private void unfreezeAfterSpawn();
+  public boolean shouldDespawnInPeaceful();
+  public boolean method_5974(double);
+  public boolean method_17326();
+  public boolean method_6121(net.minecraft.class_1297);
+  public boolean method_18395(net.minecraft.class_1309);
+  public boolean method_5722(net.minecraft.class_1297);
+  public void method_5980(net.minecraft.class_1309);
+  public boolean isShooting();
+  public void setShooting(boolean);
+  public void setCooldown(int);
+  public int getCooldown();
+  public void setAttackName(java.lang.String);
+  public java.lang.String getAttackName();
+  public float getScale();
+  public void setScale(float);
+  public boolean hasLivingOwner();
+  public boolean isOwnedByPlayer();
+  public boolean isOwnedByNonPlayer();
+  public boolean isWild();
+  public boolean shouldTargetPlayers();
+  public boolean shouldTargetOverworldTargets();
+  protected void method_5693();
+  protected void method_5959();
+  public boolean method_26319(net.minecraft.class_3610);
+  public boolean method_5753();
+  private net.minecraft.class_2338 getWaterBlockUnderFeet();
+  public static net.minecraft.class_5132$class_5133 setAttributes();
+  private software.bernie.geckolib.core.object.PlayState mainPredicate(software.bernie.geckolib.core.animation.AnimationState);
+  private software.bernie.geckolib.core.object.PlayState spawnPredicate(software.bernie.geckolib.core.animation.AnimationState);
+  public void registerControllers(software.bernie.geckolib.core.animation.AnimatableManager$ControllerRegistrar);
+  public net.mebahelcreaturesdraugr.entity.variant.DraugrVariant getVariant();
+  public int getTypeVariant();
+  private void setVariant(net.mebahelcreaturesdraugr.entity.variant.DraugrVariant);
+  public net.minecraft.class_1315 method_5943(net.minecraft.class_5425, net.minecraft.class_1266, net.minecraft.class_3730, net.minecraft.class_1315, net.minecraft.class_2487);
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  protected net.minecraft.class_3414 method_5994();
+  public void method_5966();
+  public int method_5970();
+  public boolean method_5643(net.minecraft.class_1282, float);
+  public void method_5773();
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+  private void spawnGroundFlameBurst();
+  protected void method_5712(net.minecraft.class_2338, net.minecraft.class_2680);
+  public boolean method_5747(float, float, net.minecraft.class_1282);
+  public boolean method_29503();
+  public static boolean canMobSpawnWithRate(net.minecraft.class_1299<? extends net.minecraft.class_1588>, net.minecraft.class_5425, net.minecraft.class_3730, net.minecraft.class_2338, net.minecraft.class_5819);
+  protected void method_16077(net.minecraft.class_1282, boolean);
+  protected void method_6099(net.minecraft.class_1282, int, boolean);
+  protected void method_23883();
+  private boolean lambda$initGoals$4(net.minecraft.class_1309);
+  private boolean lambda$initGoals$3(net.minecraft.class_1309);
+  private boolean lambda$initGoals$2(net.minecraft.class_1309);
+  private boolean lambda$initGoals$1(net.minecraft.class_1309);
+  private boolean lambda$initGoals$0(net.minecraft.class_1309);
+  static {};
+}
+Goal
+Goals$
+== net/mebahelcreaturesdraugr/entity/custom/DraugrArcherEntity
+Compiled from "DraugrArcherEntity.java"
+public class net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity extends net.mebahelcreaturesdraugr.entity.custom.DraugrEntity implements software.bernie.geckolib.animatable.GeoEntity {
+  private final software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache factory;
+  public static final net.minecraft.class_2940<java.lang.Integer> COOLDOWN;
+  public static final net.minecraft.class_2940<java.lang.Boolean> SHOOTING;
+  public static final net.minecraft.class_2940<java.lang.Integer> DATA_ID_TYPE_VARIANT;
+  private boolean lockYawToTarget;
+  public net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity(net.minecraft.class_1299<? extends net.minecraft.class_1588>, net.minecraft.class_1937);
+  public software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache getAnimatableInstanceCache();
+  public void setLockYawToTarget(boolean);
+  public boolean isLockYawToTarget();
+  protected net.minecraft.class_1330 method_5963();
+  public void setShooting(boolean);
+  public int getCooldown();
+  public void setCooldown(int);
+  public boolean isShooting();
+  private void setVariant(net.mebahelcreaturesdraugr.entity.variant.DraugrArcherVariant);
+  public int getTypeVariant();
+  public net.mebahelcreaturesdraugr.entity.variant.DraugrArcherVariant getArcherVariant();
+  protected void method_5693();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 setAttributes();
+  private <E extends software.bernie.geckolib.core.animatable.GeoAnimatable> software.bernie.geckolib.core.object.PlayState predicate(software.bernie.geckolib.core.animation.AnimationState<E>);
+  private <E extends software.bernie.geckolib.core.animatable.GeoAnimatable> software.bernie.geckolib.core.object.PlayState spawnPredicate(software.bernie.geckolib.core.animation.AnimationState<E>);
+  public void registerControllers(software.bernie.geckolib.core.animation.AnimatableManager$ControllerRegistrar);
+  public net.minecraft.class_1315 method_5943(net.minecraft.class_5425, net.minecraft.class_1266, net.minecraft.class_3730, net.minecraft.class_1315, net.minecraft.class_2487);
+  public static boolean canMobSpawnWithRate(net.minecraft.class_1299<? extends net.minecraft.class_1588>, net.minecraft.class_5425, net.minecraft.class_3730, net.minecraft.class_2338, net.minecraft.class_5819, java.lang.Boolean);
+  private software.bernie.geckolib.core.object.PlayState lambda$registerControllers$0(software.bernie.geckolib.core.animation.AnimationState);
+  static {};
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/custom/DraugrWightEntity
+Compiled from "DraugrWightEntity.java"
+public class net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity extends net.mebahelcreaturesdraugr.entity.custom.DraugrEntity implements software.bernie.geckolib.animatable.GeoEntity {
+  private final software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache factory;
+  public static final net.minecraft.class_2940<java.lang.Integer> COOLDOWN;
+  public static final net.minecraft.class_2940<java.lang.Boolean> SHOOTING;
+  public static final net.minecraft.class_2940<java.lang.Integer> DATA_ID_TYPE_VARIANT;
+  public net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity(net.minecraft.class_1299<? extends net.minecraft.class_1588>, net.minecraft.class_1937);
+  public software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache getAnimatableInstanceCache();
+  public boolean isShooting();
+  public void setShooting(boolean);
+  public void setCooldown(int);
+  public int getCooldown();
+  public int getTypeVariant();
+  private void setVariant(net.mebahelcreaturesdraugr.entity.variant.DraugrWightVariant);
+  public net.mebahelcreaturesdraugr.entity.variant.DraugrWightVariant getWightVariant();
+  protected void method_5693();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 setAttributes();
+  private <E extends software.bernie.geckolib.core.animatable.GeoAnimatable> software.bernie.geckolib.core.object.PlayState predicate(software.bernie.geckolib.core.animation.AnimationState<E>);
+  private <E extends software.bernie.geckolib.core.animatable.GeoAnimatable> software.bernie.geckolib.core.object.PlayState spawnPredicate(software.bernie.geckolib.core.animation.AnimationState<E>);
+  public void registerControllers(software.bernie.geckolib.core.animation.AnimatableManager$ControllerRegistrar);
+  public net.minecraft.class_1315 method_5943(net.minecraft.class_5425, net.minecraft.class_1266, net.minecraft.class_3730, net.minecraft.class_1315, net.minecraft.class_2487);
+  public void method_5773();
+  private void generateLeftHandParticles();
+  public static boolean canMobSpawnWithRate(net.minecraft.class_1299<? extends net.minecraft.class_1588>, net.minecraft.class_5425, net.minecraft.class_3730, net.minecraft.class_2338, net.minecraft.class_5819, java.lang.Boolean);
+  private software.bernie.geckolib.core.object.PlayState lambda$registerControllers$1(software.bernie.geckolib.core.animation.AnimationState);
+  private static software.bernie.geckolib.core.object.PlayState lambda$registerControllers$0(software.bernie.geckolib.core.animation.AnimationState);
+  static {};
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/custom/DraugrOverlordEntity
+Compiled from "DraugrOverlordEntity.java"
+public class net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity extends net.mebahelcreaturesdraugr.entity.custom.DraugrEntity implements software.bernie.geckolib.animatable.GeoEntity {
+  private final net.minecraft.class_3213 bossBar;
+  private final software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache factory;
+  private int attackTick;
+  private boolean wantsSpin;
+  private float damageWindowAmount;
+  private int damageWindowTicks;
+  private int blockReactionCooldownTicks;
+  private static final int DAMAGE_WINDOW_MAX_TICKS;
+  private static final float DAMAGE_WINDOW_THRESHOLD_FRACTION;
+  public static final net.minecraft.class_2940<java.lang.Integer> SPECIAL_COOLDOWN;
+  public static final net.minecraft.class_2940<java.lang.Boolean> SPECIAL;
+  public static final net.minecraft.class_2940<java.lang.Boolean> SPINNING;
+  private int movementLockTicks;
+  private java.lang.Double savedMoveSpeedBase;
+  public net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity(net.minecraft.class_1299<? extends net.minecraft.class_1588>, net.minecraft.class_1937);
+  public boolean wantsSpin();
+  public void requestSpin();
+  public void clearSpinRequest();
+  public int incrementAttackTick();
+  public void resetAttackTick();
+  public boolean getSpecial();
+  public void setSpecial(boolean);
+  public int getSpecialCooldown();
+  public void setSpecialCooldown(int);
+  public boolean isSpinning();
+  public void setSpinning(boolean);
+  protected void method_5693();
+  public software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache getAnimatableInstanceCache();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 setAttributes();
+  private software.bernie.geckolib.core.object.PlayState predicate(software.bernie.geckolib.core.animation.AnimationState);
+  public void registerControllers(software.bernie.geckolib.core.animation.AnimatableManager$ControllerRegistrar);
+  public net.mebahelcreaturesdraugr.entity.variant.DraugrOverlordVariant getOverlordVariant();
+  private void setVariant();
+  public net.minecraft.class_1315 method_5943(net.minecraft.class_5425, net.minecraft.class_1266, net.minecraft.class_3730, net.minecraft.class_1315, net.minecraft.class_2487);
+  public void method_5773();
+  private void updateBossBar();
+  public void method_5742(net.minecraft.class_3222);
+  public void spawnSwordDraggingParticles();
+  public static void AreaCrackedGround(net.minecraft.class_1309, net.minecraft.class_1937, net.minecraft.class_2338, int);
+  public static void spawnBlockScanEntity(net.minecraft.class_1937, net.minecraft.class_2338, net.minecraft.class_2680, net.minecraft.class_5819);
+  protected net.mebahelcreaturesdraugr.util.PreDamageResult preDamage(net.minecraft.class_1282, float, net.minecraft.class_1297, net.minecraft.class_1297);
+  private void handleBurstDamage(float);
+  public void lockMovement(int);
+  private void tickMovementLock();
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+  private software.bernie.geckolib.core.object.PlayState lambda$registerControllers$0(software.bernie.geckolib.core.animation.AnimationState);
+  static {};
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/custom/DraugrArcherEntity$TargetLockBodyControl
+Compiled from "DraugrArcherEntity.java"
+final class net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity$TargetLockBodyControl extends net.minecraft.class_1330 {
+  private final net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity mob;
+  private net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity$TargetLockBodyControl(net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity);
+  public void method_6224();
+}
+== net/mebahelcreaturesdraugr/entity/custom/FlameAtronachEntity$ConditionalTargetGoal
+Compiled from "FlameAtronachEntity.java"
+class net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity$ConditionalTargetGoal<T extends net.minecraft.class_1352> extends net.minecraft.class_1352 {
+  private final T wrapped;
+  private final java.util.function.BooleanSupplier enabled;
+  private net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity$ConditionalTargetGoal(T, java.util.function.BooleanSupplier);
+  public boolean method_6264();
+  public boolean method_6266();
+  public void method_6269();
+  public void method_6270();
+  public void method_6268();
+  public boolean method_38846();
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/custom/SkeletonWarriorHeadEntity
+Compiled from "SkeletonWarriorHeadEntity.java"
+public class net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorHeadEntity extends net.mebahelcreaturesdraugr.entity.custom.DraugrEntity implements software.bernie.geckolib.animatable.GeoEntity {
+  public boolean shouldDespawn;
+  private int lifeTickCounter;
+  private boolean stoppedMoving;
+  private final software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache factory;
+  public static final net.minecraft.class_2940<java.lang.Integer> DATA_ID_TYPE_VARIANT;
+  public static final net.minecraft.class_2940<java.lang.Boolean> SWINGING;
+  public static final net.minecraft.class_2940<java.lang.Boolean> SHOULD_RESPAWN;
+  public static final net.minecraft.class_2940<java.lang.String> ATTACK_NAME;
+  public static final net.minecraft.class_2940<java.lang.Boolean> HAS_SPAWNED;
+  public net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorHeadEntity(net.minecraft.class_1299<? extends net.mebahelcreaturesdraugr.entity.custom.DraugrEntity>, net.minecraft.class_1937);
+  public software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache getAnimatableInstanceCache();
+  public void setSwinging(boolean);
+  public boolean isSwinging();
+  public void setAttackName(java.lang.String);
+  public java.lang.String getAttackName();
+  public boolean getHasSpawned();
+  public void setHasSpawned(boolean);
+  protected void method_5693();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 setAttributes();
+  private software.bernie.geckolib.core.object.PlayState predicate(software.bernie.geckolib.core.animation.AnimationState);
+  private software.bernie.geckolib.core.object.PlayState spawnPredicate(software.bernie.geckolib.core.animation.AnimationState);
+  public void registerControllers(software.bernie.geckolib.core.animation.AnimatableManager$ControllerRegistrar);
+  public net.mebahelcreaturesdraugr.entity.variant.DraugrVariant getVariant();
+  public int getTypeVariant();
+  private void setVariant(net.mebahelcreaturesdraugr.entity.variant.DraugrVariant);
+  public net.minecraft.class_1315 method_5943(net.minecraft.class_5425, net.minecraft.class_1266, net.minecraft.class_3730, net.minecraft.class_1315, net.minecraft.class_2487);
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  protected void method_5712(net.minecraft.class_2338, net.minecraft.class_2680);
+  protected net.mebahelcreaturesdraugr.util.PreDamageResult preDamage(net.minecraft.class_1282, float, net.minecraft.class_1297, net.minecraft.class_1297);
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+  public void method_5773();
+  private void spawnSkeletonWarrior(net.minecraft.class_1937);
+  private static software.bernie.geckolib.core.object.PlayState lambda$registerControllers$0(software.bernie.geckolib.core.animation.AnimationState);
+  static {};
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/custom/InfernalDraugrEntity
+Compiled from "InfernalDraugrEntity.java"
+public class net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity extends net.mebahelcreaturesdraugr.entity.custom.DraugrEntity implements software.bernie.geckolib.animatable.GeoEntity {
+  private final software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache factory;
+  public static final net.minecraft.class_2940<java.lang.Integer> COOLDOWN;
+  public static final net.minecraft.class_2940<java.lang.Boolean> SHOOTING;
+  public static final net.minecraft.class_2940<java.lang.Integer> DATA_ID_TYPE_VARIANT;
+  public static final net.minecraft.class_2940<java.util.Optional<java.util.UUID>> SUMMONED_ATRONACH_UUID;
+  private static final net.minecraft.class_2940<java.lang.Boolean> DODGING;
+  public net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity(net.minecraft.class_1299<? extends net.minecraft.class_1588>, net.minecraft.class_1937);
+  public software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache getAnimatableInstanceCache();
+  public boolean isShooting();
+  public void setShooting(boolean);
+  public void setCooldown(int);
+  public int getCooldown();
+  public void setSummonedAtronachUuid(java.util.UUID);
+  public java.util.UUID getSummonedAtronachUuid();
+  public boolean isDodging();
+  public void setDodging(boolean);
+  public boolean canTriggerDodge();
+  public int getTypeVariant();
+  private void setVariant(net.mebahelcreaturesdraugr.entity.variant.InfernalDraugrVariant);
+  public net.mebahelcreaturesdraugr.entity.variant.InfernalDraugrVariant getWightVariant();
+  protected void method_5693();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 setAttributes();
+  private <E extends software.bernie.geckolib.core.animatable.GeoAnimatable> software.bernie.geckolib.core.object.PlayState predicate(software.bernie.geckolib.core.animation.AnimationState<E>);
+  private <E extends software.bernie.geckolib.core.animatable.GeoAnimatable> software.bernie.geckolib.core.object.PlayState spawnPredicate(software.bernie.geckolib.core.animation.AnimationState<E>);
+  public void registerControllers(software.bernie.geckolib.core.animation.AnimatableManager$ControllerRegistrar);
+  public net.minecraft.class_1315 method_5943(net.minecraft.class_5425, net.minecraft.class_1266, net.minecraft.class_3730, net.minecraft.class_1315, net.minecraft.class_2487);
+  public void method_5773();
+  protected net.mebahelcreaturesdraugr.util.PreDamageResult preDamage(net.minecraft.class_1282, float, net.minecraft.class_1297, net.minecraft.class_1297);
+  public static boolean canMobSpawnWithRate(net.minecraft.class_1299<? extends net.minecraft.class_1588>, net.minecraft.class_5425, net.minecraft.class_3730, net.minecraft.class_2338, net.minecraft.class_5819);
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+  private void lambda$registerControllers$1(software.bernie.geckolib.core.keyframe.event.SoundKeyframeEvent);
+  private static software.bernie.geckolib.core.object.PlayState lambda$registerControllers$0(software.bernie.geckolib.core.animation.AnimationState);
+  static {};
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/custom/DraugrEntity
+Compiled from "DraugrEntity.java"
+public class net.mebahelcreaturesdraugr.entity.custom.DraugrEntity extends net.minecraft.class_1588 implements software.bernie.geckolib.animatable.GeoEntity {
+  boolean raidSpawnIntro;
+  private final software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache factory;
+  public static final net.minecraft.class_2940<java.lang.Integer> POTION_TYPE;
+  public static final int POTION_NONE;
+  public static final int POTION_HEAL;
+  public static final int POTION_STRENGTH;
+  public static final int POTION_RESISTANCE;
+  public static final int POTION_SPEED;
+  public static final int POTION_INVISIBILITY;
+  private boolean wantsToDrinkPotion;
+  private boolean wantsToBlock;
+  public static final net.minecraft.class_2940<java.lang.Integer> DATA_ID_TYPE_VARIANT;
+  public static final net.minecraft.class_2940<java.lang.Boolean> SWINGING;
+  public static final net.minecraft.class_2940<java.lang.Boolean> IS_PART_OF_RAID;
+  public static final net.minecraft.class_2940<java.lang.String> ATTACK_NAME;
+  public static final net.minecraft.class_2940<java.lang.Boolean> HAS_SPAWNED;
+  public static final net.minecraft.class_2940<java.lang.Boolean> BLOCKING;
+  public static final net.minecraft.class_2940<java.lang.Boolean> HAS_HEAL_POTION;
+  public static final net.minecraft.class_2940<java.lang.Boolean> USING_POTION;
+  public static final net.minecraft.class_2940<java.lang.Integer> HEAL_TICKS;
+  public static final net.minecraft.class_2940<java.lang.Float> SCALE;
+  public double speed;
+  public net.mebahelcreaturesdraugr.entity.custom.DraugrEntity(net.minecraft.class_1299<? extends net.minecraft.class_1588>, net.minecraft.class_1937);
+  public void setRaidSpawnIntro(boolean);
+  public boolean isInSpawnIntro();
+  public software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache getAnimatableInstanceCache();
+  public void setPotionType(int);
+  public int getPotionType();
+  public void setHasPotion(boolean);
+  public boolean hasPotion();
+  public boolean wantsToDrinkPotion();
+  public void requestPotionUse();
+  public void clearPotionUseRequest();
+  public boolean wantsToBlock();
+  public void requestBlock();
+  public void clearBlockRequest();
+  public boolean shouldDespawnInPeaceful();
+  public void setHealTicks(int);
+  public int getHealTicks();
+  public boolean isUsingPotion();
+  public void setUsingPotion(boolean);
+  public void setBlocking(boolean);
+  public boolean method_6039();
+  public boolean getHasSpawned();
+  public void setHasSpawned(boolean);
+  public boolean isPartOfRaid();
+  public void setPartOfRaid(java.lang.Boolean);
+  public void setSwinging(boolean);
+  public boolean isSwinging();
+  public void setAttackName(java.lang.String);
+  public java.lang.String getAttackName();
+  protected void method_5693();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 setAttributes();
+  private software.bernie.geckolib.core.object.PlayState predicate(software.bernie.geckolib.core.animation.AnimationState);
+  public void registerControllers(software.bernie.geckolib.core.animation.AnimatableManager$ControllerRegistrar);
+  public net.mebahelcreaturesdraugr.entity.variant.DraugrVariant getVariant();
+  public int getTypeVariant();
+  private void setVariant(net.mebahelcreaturesdraugr.entity.variant.DraugrVariant);
+  public net.minecraft.class_1315 method_5943(net.minecraft.class_5425, net.minecraft.class_1266, net.minecraft.class_3730, net.minecraft.class_1315, net.minecraft.class_2487);
+  public float getDraugrScale();
+  public void setDraugrScale(float);
+  public void giveRandomMeleePotion();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  protected net.minecraft.class_3414 method_5994();
+  public void method_5966();
+  public int method_5970();
+  public final boolean method_5643(net.minecraft.class_1282, float);
+  protected net.mebahelcreaturesdraugr.util.PreDamageResult preDamage(net.minecraft.class_1282, float, net.minecraft.class_1297, net.minecraft.class_1297);
+  public void method_5773();
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+  public void method_6078(net.minecraft.class_1282);
+  public static boolean canMobSpawnWithRate(net.minecraft.class_1299<? extends net.minecraft.class_1588>, net.minecraft.class_5425, net.minecraft.class_3730, net.minecraft.class_2338, net.minecraft.class_5819, java.lang.Boolean);
+  void spawnHoveringParticles();
+  public void giveRandomRangedPotion();
+  public net.minecraft.class_1310 method_6046();
+  protected void method_5712(net.minecraft.class_2338, net.minecraft.class_2680);
+  private software.bernie.geckolib.core.object.PlayState lambda$registerControllers$1(software.bernie.geckolib.core.animation.AnimationState);
+  private static software.bernie.geckolib.core.object.PlayState lambda$registerControllers$0(software.bernie.geckolib.core.animation.AnimationState);
+  static {};
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/custom/SkeletonWarriorEntity
+Compiled from "SkeletonWarriorEntity.java"
+public class net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorEntity extends net.mebahelcreaturesdraugr.entity.custom.DraugrEntity implements software.bernie.geckolib.animatable.GeoEntity {
+  private final software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache factory;
+  double rand;
+  public static final net.minecraft.class_2940<java.lang.Integer> DATA_ID_TYPE_VARIANT;
+  public static final net.minecraft.class_2940<java.lang.Boolean> SWINGING;
+  public static final net.minecraft.class_2940<java.lang.String> ATTACK_NAME;
+  public static final net.minecraft.class_2940<java.lang.Boolean> HAS_SPAWNED;
+  public static final net.minecraft.class_2940<java.lang.Boolean> CAN_DROP_HEAD;
+  public net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorEntity(net.minecraft.class_1299<? extends net.mebahelcreaturesdraugr.entity.custom.DraugrEntity>, net.minecraft.class_1937);
+  public software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache getAnimatableInstanceCache();
+  public boolean shouldDespawnInPeaceful();
+  public boolean getHasSpawned();
+  public void setHasSpawned(boolean);
+  public void setSwinging(boolean);
+  public boolean isSwinging();
+  public void setAttackName(java.lang.String);
+  public java.lang.String getAttackName();
+  public boolean canDropHead();
+  public void setCanDropHead(boolean);
+  protected void method_5693();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 setAttributes();
+  private software.bernie.geckolib.core.object.PlayState predicate(software.bernie.geckolib.core.animation.AnimationState);
+  public void registerControllers(software.bernie.geckolib.core.animation.AnimatableManager$ControllerRegistrar);
+  public net.mebahelcreaturesdraugr.entity.variant.SkeletonWarriorVariant getSkeletonWarriorVariant();
+  public int getTypeVariant();
+  private void setVariant(net.mebahelcreaturesdraugr.entity.variant.SkeletonWarriorVariant);
+  public net.minecraft.class_1315 method_5943(net.minecraft.class_5425, net.minecraft.class_1266, net.minecraft.class_3730, net.minecraft.class_1315, net.minecraft.class_2487);
+  public static boolean canMobSpawnWithRate(net.minecraft.class_1299<? extends net.minecraft.class_1588>, net.minecraft.class_5425, net.minecraft.class_3730, net.minecraft.class_2338, net.minecraft.class_5819, java.lang.Boolean);
+  protected net.minecraft.class_3414 method_5994();
+  protected net.minecraft.class_3414 method_6011(net.minecraft.class_1282);
+  protected net.minecraft.class_3414 method_6002();
+  protected void method_5712(net.minecraft.class_2338, net.minecraft.class_2680);
+  protected net.mebahelcreaturesdraugr.util.PreDamageResult preDamage(net.minecraft.class_1282, float, net.minecraft.class_1297, net.minecraft.class_1297);
+  public void method_6078(net.minecraft.class_1282);
+  private software.bernie.geckolib.core.object.PlayState spawnPredicate(software.bernie.geckolib.core.animation.AnimationState);
+  public void method_5652(net.minecraft.class_2487);
+  public void method_5749(net.minecraft.class_2487);
+  private software.bernie.geckolib.core.object.PlayState lambda$registerControllers$1(software.bernie.geckolib.core.animation.AnimationState);
+  private static software.bernie.geckolib.core.object.PlayState lambda$registerControllers$0(software.bernie.geckolib.core.animation.AnimationState);
+  static {};
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/custom/DraugrScourgeEntity
+Compiled from "DraugrScourgeEntity.java"
+public class net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity extends net.mebahelcreaturesdraugr.entity.custom.DraugrEntity implements software.bernie.geckolib.animatable.GeoEntity {
+  private final software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache factory;
+  public static final net.minecraft.class_2940<java.lang.Integer> COOLDOWN;
+  public static final net.minecraft.class_2940<java.lang.Boolean> SHOOTING;
+  public static final net.minecraft.class_2940<java.lang.String> ATTACK_NAME;
+  public static final net.minecraft.class_2940<java.lang.Integer> DATA_ID_TYPE_VARIANT;
+  public net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity(net.minecraft.class_1299<? extends net.minecraft.class_1588>, net.minecraft.class_1937);
+  public software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache getAnimatableInstanceCache();
+  public void setShooting(boolean);
+  public boolean isShooting();
+  public void setCooldown(int);
+  public int getCooldown();
+  public void setAttackName(java.lang.String);
+  public java.lang.String getAttackName();
+  public int getTypeVariant();
+  private void setVariant(net.mebahelcreaturesdraugr.entity.variant.DraugrScourgeVariant);
+  public net.mebahelcreaturesdraugr.entity.variant.DraugrScourgeVariant getScourgeVariant();
+  protected void method_5693();
+  protected void method_5959();
+  public static net.minecraft.class_5132$class_5133 setAttributes();
+  private <E extends software.bernie.geckolib.core.animatable.GeoAnimatable> software.bernie.geckolib.core.object.PlayState predicate(software.bernie.geckolib.core.animation.AnimationState<E>);
+  private <E extends software.bernie.geckolib.core.animatable.GeoAnimatable> software.bernie.geckolib.core.object.PlayState spawnPredicate(software.bernie.geckolib.core.animation.AnimationState<E>);
+  public void registerControllers(software.bernie.geckolib.core.animation.AnimatableManager$ControllerRegistrar);
+  public net.minecraft.class_1315 method_5943(net.minecraft.class_5425, net.minecraft.class_1266, net.minecraft.class_3730, net.minecraft.class_1315, net.minecraft.class_2487);
+  public void method_5773();
+  public static boolean canMobSpawnWithRate(net.minecraft.class_1299<? extends net.minecraft.class_1588>, net.minecraft.class_5425, net.minecraft.class_3730, net.minecraft.class_2338, net.minecraft.class_5819, java.lang.Boolean);
+  public void generateShoulderSnowFlakeParticles();
+  private software.bernie.geckolib.core.object.PlayState lambda$registerControllers$1(software.bernie.geckolib.core.animation.AnimationState);
+  private static software.bernie.geckolib.core.object.PlayState lambda$registerControllers$0(software.bernie.geckolib.core.animation.AnimationState);
+  static {};
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/skeleton_warrior/SkeletonWarriorHeadModel
+Compiled from "SkeletonWarriorHeadModel.java"
+public class net.mebahelcreaturesdraugr.entity.skeleton_warrior.SkeletonWarriorHeadModel extends software.bernie.geckolib.model.GeoModel<net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorHeadEntity> {
+  public net.mebahelcreaturesdraugr.entity.skeleton_warrior.SkeletonWarriorHeadModel();
+  public net.minecraft.class_2960 getModelResource(net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorHeadEntity);
+  public net.minecraft.class_2960 getTextureResource(net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorHeadEntity);
+  public net.minecraft.class_2960 getAnimationResource(net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorHeadEntity);
+  public net.minecraft.class_2960 getAnimationResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_2960 getTextureResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_2960 getModelResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+}
+== net/mebahelcreaturesdraugr/entity/skeleton_warrior/SkeletonWarriorRenderer
+Compiled from "SkeletonWarriorRenderer.java"
+public class net.mebahelcreaturesdraugr.entity.skeleton_warrior.SkeletonWarriorRenderer extends software.bernie.geckolib.renderer.GeoEntityRenderer<net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorEntity> {
+  public net.mebahelcreaturesdraugr.entity.skeleton_warrior.SkeletonWarriorRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_1921 getRenderType(net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorEntity, net.minecraft.class_2960, net.minecraft.class_4597, float);
+  public void preRender(net.minecraft.class_4587, net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorEntity, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public float getMotionAnimThreshold(net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorEntity);
+  public void preRender(net.minecraft.class_4587, net.minecraft.class_1297, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public void preRender(net.minecraft.class_4587, software.bernie.geckolib.core.animatable.GeoAnimatable, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public float getMotionAnimThreshold(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_1921 getRenderType(software.bernie.geckolib.core.animatable.GeoAnimatable, net.minecraft.class_2960, net.minecraft.class_4597, float);
+}
+== net/mebahelcreaturesdraugr/entity/skeleton_warrior/SkeletonWarriorHeadRenderer
+Compiled from "SkeletonWarriorHeadRenderer.java"
+public class net.mebahelcreaturesdraugr.entity.skeleton_warrior.SkeletonWarriorHeadRenderer extends software.bernie.geckolib.renderer.GeoEntityRenderer<net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorHeadEntity> {
+  public net.mebahelcreaturesdraugr.entity.skeleton_warrior.SkeletonWarriorHeadRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_1921 getRenderType(net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorHeadEntity, net.minecraft.class_2960, net.minecraft.class_4597, float);
+  public float getMotionAnimThreshold(net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorHeadEntity);
+  public float getMotionAnimThreshold(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_1921 getRenderType(software.bernie.geckolib.core.animatable.GeoAnimatable, net.minecraft.class_2960, net.minecraft.class_4597, float);
+}
+== net/mebahelcreaturesdraugr/entity/skeleton_warrior/SkeletonWarriorModel
+Compiled from "SkeletonWarriorModel.java"
+public class net.mebahelcreaturesdraugr.entity.skeleton_warrior.SkeletonWarriorModel extends software.bernie.geckolib.model.GeoModel<net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorEntity> {
+  public static final java.util.Map<net.mebahelcreaturesdraugr.entity.variant.SkeletonWarriorVariant, net.minecraft.class_2960> LOCATION_BY_VARIANT;
+  public net.mebahelcreaturesdraugr.entity.skeleton_warrior.SkeletonWarriorModel();
+  public net.minecraft.class_2960 getModelResource(net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorEntity);
+  public net.minecraft.class_2960 getTextureResource(net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorEntity);
+  public net.minecraft.class_2960 getAnimationResource(net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorEntity);
+  public void setCustomAnimations(net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorEntity, long, software.bernie.geckolib.core.animation.AnimationState<net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorEntity>);
+  public net.minecraft.class_2960 getAnimationResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_2960 getTextureResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_2960 getModelResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public void setCustomAnimations(software.bernie.geckolib.core.animatable.GeoAnimatable, long, software.bernie.geckolib.core.animation.AnimationState);
+  private static void lambda$static$0(java.util.EnumMap);
+  static {};
+}
+== net/mebahelcreaturesdraugr/entity/draugr_archer/DraugrArcherPotionLayer
+Compiled from "DraugrArcherPotionLayer.java"
+public class net.mebahelcreaturesdraugr.entity.draugr_archer.DraugrArcherPotionLayer extends software.bernie.geckolib.renderer.layer.BlockAndItemGeoLayer<net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity> {
+  public net.mebahelcreaturesdraugr.entity.draugr_archer.DraugrArcherPotionLayer(software.bernie.geckolib.renderer.GeoRenderer<net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity>);
+  protected net.minecraft.class_1799 getStackForBone(software.bernie.geckolib.cache.object.GeoBone, net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity);
+  protected net.minecraft.class_811 getTransformTypeForStack(software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity);
+  protected void renderStackForBone(net.minecraft.class_4587, software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity, net.minecraft.class_4597, float, int, int);
+  protected void renderStackForBone(net.minecraft.class_4587, software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, software.bernie.geckolib.core.animatable.GeoAnimatable, net.minecraft.class_4597, float, int, int);
+  protected net.minecraft.class_811 getTransformTypeForStack(software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, software.bernie.geckolib.core.animatable.GeoAnimatable);
+  protected net.minecraft.class_1799 getStackForBone(software.bernie.geckolib.cache.object.GeoBone, software.bernie.geckolib.core.animatable.GeoAnimatable);
+}
+== net/mebahelcreaturesdraugr/entity/draugr_archer/DraugrArcherRenderer
+Compiled from "DraugrArcherRenderer.java"
+public class net.mebahelcreaturesdraugr.entity.draugr_archer.DraugrArcherRenderer extends software.bernie.geckolib.renderer.GeoEntityRenderer<net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity> {
+  public net.mebahelcreaturesdraugr.entity.draugr_archer.DraugrArcherRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_1921 getRenderType(net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity, net.minecraft.class_2960, net.minecraft.class_4597, float);
+  public void preRender(net.minecraft.class_4587, net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public float getMotionAnimThreshold(net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity);
+  public void preRender(net.minecraft.class_4587, net.minecraft.class_1297, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public void preRender(net.minecraft.class_4587, software.bernie.geckolib.core.animatable.GeoAnimatable, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public float getMotionAnimThreshold(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_1921 getRenderType(software.bernie.geckolib.core.animatable.GeoAnimatable, net.minecraft.class_2960, net.minecraft.class_4597, float);
+}
+== net/mebahelcreaturesdraugr/entity/draugr_archer/DraugrArcherModel
+Compiled from "DraugrArcherModel.java"
+public class net.mebahelcreaturesdraugr.entity.draugr_archer.DraugrArcherModel extends software.bernie.geckolib.model.GeoModel<net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity> {
+  public static final java.util.Map<net.mebahelcreaturesdraugr.entity.variant.DraugrArcherVariant, net.minecraft.class_2960> LOCATION_BY_VARIANT;
+  public net.mebahelcreaturesdraugr.entity.draugr_archer.DraugrArcherModel();
+  public net.minecraft.class_2960 getModelResource(net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity);
+  public net.minecraft.class_2960 getTextureResource(net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity);
+  public net.minecraft.class_2960 getAnimationResource(net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity);
+  public void setCustomAnimations(net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity, long, software.bernie.geckolib.core.animation.AnimationState<net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity>);
+  public net.minecraft.class_2960 getAnimationResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_2960 getTextureResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_2960 getModelResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public void setCustomAnimations(software.bernie.geckolib.core.animatable.GeoAnimatable, long, software.bernie.geckolib.core.animation.AnimationState);
+  private static void lambda$static$0(java.util.EnumMap);
+  static {};
+}
+== net/mebahelcreaturesdraugr/entity/projectile/EbonyArrowEntity
+Compiled from "EbonyArrowEntity.java"
+public class net.mebahelcreaturesdraugr.entity.projectile.EbonyArrowEntity extends net.minecraft.class_1667 implements software.bernie.geckolib.animatable.GeoEntity {
+  private static final double EBONY_BONUS_DAMAGE;
+  private boolean ebonyDamageApplied;
+  private final software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache factory;
+  public software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache getAnimatableInstanceCache();
+  private software.bernie.geckolib.core.object.PlayState predicate(software.bernie.geckolib.core.animation.AnimationState);
+  public void registerControllers(software.bernie.geckolib.core.animation.AnimatableManager$ControllerRegistrar);
+  public net.mebahelcreaturesdraugr.entity.projectile.EbonyArrowEntity(net.minecraft.class_1299<? extends net.mebahelcreaturesdraugr.entity.projectile.EbonyArrowEntity>, net.minecraft.class_1937);
+  public net.mebahelcreaturesdraugr.entity.projectile.EbonyArrowEntity(net.minecraft.class_1299<? extends net.mebahelcreaturesdraugr.entity.projectile.EbonyArrowEntity>, net.minecraft.class_1937, net.minecraft.class_1309);
+  public void method_5773();
+  protected net.minecraft.class_1799 method_7445();
+}
+== net/mebahelcreaturesdraugr/entity/projectile/FrostSpikeEntity
+Compiled from "FrostSpikeEntity.java"
+public class net.mebahelcreaturesdraugr.entity.projectile.FrostSpikeEntity extends net.minecraft.class_3857 implements software.bernie.geckolib.animatable.GeoEntity {
+  float damage;
+  private int ticksExisted;
+  private final software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache factory;
+  public net.mebahelcreaturesdraugr.entity.projectile.FrostSpikeEntity(net.minecraft.class_1299<? extends net.mebahelcreaturesdraugr.entity.projectile.FrostSpikeEntity>, net.minecraft.class_1937);
+  public software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache getAnimatableInstanceCache();
+  private software.bernie.geckolib.core.object.PlayState predicate(software.bernie.geckolib.core.animation.AnimationState);
+  public void registerControllers(software.bernie.geckolib.core.animation.AnimatableManager$ControllerRegistrar);
+  public net.mebahelcreaturesdraugr.entity.projectile.FrostSpikeEntity(net.minecraft.class_1937, net.minecraft.class_1309, float);
+  public net.mebahelcreaturesdraugr.entity.projectile.FrostSpikeEntity(net.minecraft.class_1937, float);
+  protected net.minecraft.class_1792 method_16942();
+  protected void method_7488(net.minecraft.class_239);
+  private void breakShield(net.minecraft.class_1309);
+  protected void method_7454(net.minecraft.class_3966);
+  public void method_5711(byte);
+  protected void method_24920(net.minecraft.class_3965);
+  private void generateParticles();
+  private void generateBreakParticles();
+  public void method_5773();
+  private void freezeWater(net.minecraft.class_1937, net.minecraft.class_2338);
+  private void playIceBreakSound();
+  private static boolean lambda$tick$0(net.mebahelcreaturesdraugr.entity.projectile.FrostSpikeEntity, net.minecraft.class_1297);
+}
+== net/mebahelcreaturesdraugr/entity/projectile/FrostbiteProjectileEntity
+Compiled from "FrostbiteProjectileEntity.java"
+public class net.mebahelcreaturesdraugr.entity.projectile.FrostbiteProjectileEntity extends net.minecraft.class_3857 implements software.bernie.geckolib.animatable.GeoEntity {
+  float damage;
+  private int ticksExisted;
+  private net.minecraft.class_243 previousPosition;
+  private final software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache factory;
+  public net.mebahelcreaturesdraugr.entity.projectile.FrostbiteProjectileEntity(net.minecraft.class_1937, net.minecraft.class_1309, float);
+  public net.mebahelcreaturesdraugr.entity.projectile.FrostbiteProjectileEntity(net.minecraft.class_1937, float);
+  public net.mebahelcreaturesdraugr.entity.projectile.FrostbiteProjectileEntity(net.minecraft.class_1299<? extends net.mebahelcreaturesdraugr.entity.projectile.FrostbiteProjectileEntity>, net.minecraft.class_1937);
+  public software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache getAnimatableInstanceCache();
+  private software.bernie.geckolib.core.object.PlayState predicate(software.bernie.geckolib.core.animation.AnimationState);
+  public void registerControllers(software.bernie.geckolib.core.animation.AnimatableManager$ControllerRegistrar);
+  protected net.minecraft.class_1792 method_16942();
+  protected void method_7454(net.minecraft.class_3966);
+  private void generateParticles(net.minecraft.class_243);
+  public void method_5773();
+  private void freezeWater(net.minecraft.class_1937, net.minecraft.class_2338);
+  protected void method_24920(net.minecraft.class_3965);
+  private static boolean lambda$tick$0(net.mebahelcreaturesdraugr.entity.projectile.FrostbiteProjectileEntity, net.minecraft.class_1297);
+}
+== net/mebahelcreaturesdraugr/entity/projectile/FireboltEntity
+Compiled from "FireboltEntity.java"
+public class net.mebahelcreaturesdraugr.entity.projectile.FireboltEntity extends net.minecraft.class_3857 implements software.bernie.geckolib.animatable.GeoEntity {
+  float damage;
+  private final software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache factory;
+  public net.mebahelcreaturesdraugr.entity.projectile.FireboltEntity(net.minecraft.class_1937, net.minecraft.class_1309, float);
+  public net.mebahelcreaturesdraugr.entity.projectile.FireboltEntity(net.minecraft.class_1299<? extends net.mebahelcreaturesdraugr.entity.projectile.FireboltEntity>, net.minecraft.class_1937);
+  public net.mebahelcreaturesdraugr.entity.projectile.FireboltEntity(net.minecraft.class_1937, float);
+  public software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache getAnimatableInstanceCache();
+  private software.bernie.geckolib.core.object.PlayState predicate(software.bernie.geckolib.core.animation.AnimationState);
+  public void registerControllers(software.bernie.geckolib.core.animation.AnimatableManager$ControllerRegistrar);
+  protected net.minecraft.class_1792 method_16942();
+  protected void method_7488(net.minecraft.class_239);
+  protected void method_7454(net.minecraft.class_3966);
+  public void method_5711(byte);
+  protected void method_24920(net.minecraft.class_3965);
+  private void generateParticles();
+  private void generateBreakParticles();
+  public void method_5773();
+  private void freezeWater(net.minecraft.class_1937, net.minecraft.class_2338);
+  private void playIceBreakSound();
+  protected float method_7490();
+  private static boolean lambda$tick$0(net.mebahelcreaturesdraugr.entity.projectile.FireboltEntity, net.minecraft.class_1297);
+}
+== net/mebahelcreaturesdraugr/entity/draugr/DraugrRenderer
+Compiled from "DraugrRenderer.java"
+public class net.mebahelcreaturesdraugr.entity.draugr.DraugrRenderer extends software.bernie.geckolib.renderer.GeoEntityRenderer<net.mebahelcreaturesdraugr.entity.custom.DraugrEntity> {
+  public net.mebahelcreaturesdraugr.entity.draugr.DraugrRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_1921 getRenderType(net.mebahelcreaturesdraugr.entity.custom.DraugrEntity, net.minecraft.class_2960, net.minecraft.class_4597, float);
+  public void preRender(net.minecraft.class_4587, net.mebahelcreaturesdraugr.entity.custom.DraugrEntity, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public float getMotionAnimThreshold(net.mebahelcreaturesdraugr.entity.custom.DraugrEntity);
+  public void preRender(net.minecraft.class_4587, net.minecraft.class_1297, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public void preRender(net.minecraft.class_4587, software.bernie.geckolib.core.animatable.GeoAnimatable, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public float getMotionAnimThreshold(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_1921 getRenderType(software.bernie.geckolib.core.animatable.GeoAnimatable, net.minecraft.class_2960, net.minecraft.class_4597, float);
+}
+== net/mebahelcreaturesdraugr/entity/draugr/DraugrModel
+Compiled from "DraugrModel.java"
+public class net.mebahelcreaturesdraugr.entity.draugr.DraugrModel extends software.bernie.geckolib.model.GeoModel<net.mebahelcreaturesdraugr.entity.custom.DraugrEntity> {
+  public static final java.util.Map<net.mebahelcreaturesdraugr.entity.variant.DraugrVariant, net.minecraft.class_2960> LOCATION_BY_VARIANT;
+  public net.mebahelcreaturesdraugr.entity.draugr.DraugrModel();
+  public net.minecraft.class_2960 getModelResource(net.mebahelcreaturesdraugr.entity.custom.DraugrEntity);
+  public net.minecraft.class_2960 getTextureResource(net.mebahelcreaturesdraugr.entity.custom.DraugrEntity);
+  public net.minecraft.class_2960 getAnimationResource(net.mebahelcreaturesdraugr.entity.custom.DraugrEntity);
+  public void setCustomAnimations(net.mebahelcreaturesdraugr.entity.custom.DraugrEntity, long, software.bernie.geckolib.core.animation.AnimationState<net.mebahelcreaturesdraugr.entity.custom.DraugrEntity>);
+  public net.minecraft.class_2960 getAnimationResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_2960 getTextureResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_2960 getModelResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public void setCustomAnimations(software.bernie.geckolib.core.animatable.GeoAnimatable, long, software.bernie.geckolib.core.animation.AnimationState);
+  private static void lambda$static$0(java.util.EnumMap);
+  static {};
+}
+== net/mebahelcreaturesdraugr/entity/draugr/DraugrPotionLayer
+Compiled from "DraugrPotionLayer.java"
+public class net.mebahelcreaturesdraugr.entity.draugr.DraugrPotionLayer extends software.bernie.geckolib.renderer.layer.BlockAndItemGeoLayer<net.mebahelcreaturesdraugr.entity.custom.DraugrEntity> {
+  public net.mebahelcreaturesdraugr.entity.draugr.DraugrPotionLayer(software.bernie.geckolib.renderer.GeoRenderer<net.mebahelcreaturesdraugr.entity.custom.DraugrEntity>);
+  protected net.minecraft.class_1799 getStackForBone(software.bernie.geckolib.cache.object.GeoBone, net.mebahelcreaturesdraugr.entity.custom.DraugrEntity);
+  protected net.minecraft.class_811 getTransformTypeForStack(software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, net.mebahelcreaturesdraugr.entity.custom.DraugrEntity);
+  protected void renderStackForBone(net.minecraft.class_4587, software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, net.mebahelcreaturesdraugr.entity.custom.DraugrEntity, net.minecraft.class_4597, float, int, int);
+  protected void renderStackForBone(net.minecraft.class_4587, software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, software.bernie.geckolib.core.animatable.GeoAnimatable, net.minecraft.class_4597, float, int, int);
+  protected net.minecraft.class_811 getTransformTypeForStack(software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, software.bernie.geckolib.core.animatable.GeoAnimatable);
+  protected net.minecraft.class_1799 getStackForBone(software.bernie.geckolib.cache.object.GeoBone, software.bernie.geckolib.core.animatable.GeoAnimatable);
+}
+== net/mebahelcreaturesdraugr/entity/infernal_draugr/InfernalDraugrRenderer
+Compiled from "InfernalDraugrRenderer.java"
+public class net.mebahelcreaturesdraugr.entity.infernal_draugr.InfernalDraugrRenderer extends software.bernie.geckolib.renderer.GeoEntityRenderer<net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity> {
+  public net.mebahelcreaturesdraugr.entity.infernal_draugr.InfernalDraugrRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_1921 getRenderType(net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity, net.minecraft.class_2960, net.minecraft.class_4597, float);
+  public void preRender(net.minecraft.class_4587, net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public float getMotionAnimThreshold(net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity);
+  public void preRender(net.minecraft.class_4587, net.minecraft.class_1297, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public void preRender(net.minecraft.class_4587, software.bernie.geckolib.core.animatable.GeoAnimatable, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public float getMotionAnimThreshold(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_1921 getRenderType(software.bernie.geckolib.core.animatable.GeoAnimatable, net.minecraft.class_2960, net.minecraft.class_4597, float);
+}
+== net/mebahelcreaturesdraugr/entity/infernal_draugr/InfernalDraugrFlameParticleLayer
+Compiled from "InfernalDraugrFlameParticleLayer.java"
+public class net.mebahelcreaturesdraugr.entity.infernal_draugr.InfernalDraugrFlameParticleLayer extends software.bernie.geckolib.renderer.layer.GeoRenderLayer<net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity> {
+  private static final java.lang.String BONE_RIGHT_HAND;
+  private static final java.lang.String BONE_SUMMON_HAND;
+  private static final float NORMAL_SPAWN_CHANCE_PER_TICK;
+  private static final double NORMAL_OFFSET_RADIUS_XZ;
+  private static final double NORMAL_OFFSET_RADIUS_Y;
+  private static final int NORMAL_PARTICLE_COUNT_MIN;
+  private static final int NORMAL_PARTICLE_COUNT_MAX;
+  private static final float SUMMON_SPAWN_CHANCE_PER_TICK;
+  private static final double SUMMON_OFFSET_RADIUS_XZ;
+  private static final double SUMMON_OFFSET_RADIUS_Y;
+  private static final int SUMMON_PARTICLE_COUNT_MIN;
+  private static final int SUMMON_PARTICLE_COUNT_MAX;
+  private static final double NORMAL_DRIFT_XZ;
+  private static final double SUMMON_DRIFT_XZ;
+  private static final double NORMAL_FALL_MIN;
+  private static final double NORMAL_FALL_VAR;
+  private static final double SUMMON_FALL_MIN;
+  private static final double SUMMON_FALL_VAR;
+  private final java.util.Map<java.lang.Long, java.lang.Integer> lastTickProcessed;
+  public net.mebahelcreaturesdraugr.entity.infernal_draugr.InfernalDraugrFlameParticleLayer(software.bernie.geckolib.renderer.GeoRenderer<net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity>);
+  public void renderForBone(net.minecraft.class_4587, net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity, software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1921, net.minecraft.class_4597, net.minecraft.class_4588, float, int, int);
+  private boolean isSummoning(net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity);
+  private void spawnFlamesAroundBone(net.minecraft.class_1937, net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity, double, double, double, boolean);
+  public void renderForBone(net.minecraft.class_4587, software.bernie.geckolib.core.animatable.GeoAnimatable, software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1921, net.minecraft.class_4597, net.minecraft.class_4588, float, int, int);
+  private static boolean lambda$renderForBone$0(int, java.util.Map$Entry);
+}
+== net/mebahelcreaturesdraugr/entity/infernal_draugr/InfernalDraugrModel
+Compiled from "InfernalDraugrModel.java"
+public class net.mebahelcreaturesdraugr.entity.infernal_draugr.InfernalDraugrModel extends software.bernie.geckolib.model.GeoModel<net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity> {
+  public static final java.util.Map<net.mebahelcreaturesdraugr.entity.variant.InfernalDraugrVariant, net.minecraft.class_2960> LOCATION_BY_VARIANT;
+  public net.mebahelcreaturesdraugr.entity.infernal_draugr.InfernalDraugrModel();
+  public net.minecraft.class_2960 getModelResource(net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity);
+  public net.minecraft.class_2960 getTextureResource(net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity);
+  public net.minecraft.class_2960 getAnimationResource(net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity);
+  public void setCustomAnimations(net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity, long, software.bernie.geckolib.core.animation.AnimationState<net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity>);
+  public net.minecraft.class_2960 getAnimationResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_2960 getTextureResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_2960 getModelResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public void setCustomAnimations(software.bernie.geckolib.core.animatable.GeoAnimatable, long, software.bernie.geckolib.core.animation.AnimationState);
+  private static void lambda$static$0(java.util.EnumMap);
+  static {};
+}
+== net/mebahelcreaturesdraugr/entity/infernal_draugr/InfernalDraugrPotionLayer
+Compiled from "InfernalDraugrPotionLayer.java"
+public class net.mebahelcreaturesdraugr.entity.infernal_draugr.InfernalDraugrPotionLayer extends software.bernie.geckolib.renderer.layer.BlockAndItemGeoLayer<net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity> {
+  public net.mebahelcreaturesdraugr.entity.infernal_draugr.InfernalDraugrPotionLayer(software.bernie.geckolib.renderer.GeoRenderer<net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity>);
+  protected net.minecraft.class_1799 getStackForBone(software.bernie.geckolib.cache.object.GeoBone, net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity);
+  protected net.minecraft.class_811 getTransformTypeForStack(software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity);
+  protected void renderStackForBone(net.minecraft.class_4587, software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity, net.minecraft.class_4597, float, int, int);
+  protected void renderStackForBone(net.minecraft.class_4587, software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, software.bernie.geckolib.core.animatable.GeoAnimatable, net.minecraft.class_4597, float, int, int);
+  protected net.minecraft.class_811 getTransformTypeForStack(software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, software.bernie.geckolib.core.animatable.GeoAnimatable);
+  protected net.minecraft.class_1799 getStackForBone(software.bernie.geckolib.cache.object.GeoBone, software.bernie.geckolib.core.animatable.GeoAnimatable);
+}
+== net/mebahelcreaturesdraugr/entity/ModEntities
+Compiled from "ModEntities.java"
+public class net.mebahelcreaturesdraugr.entity.ModEntities {
+  public static final net.minecraft.class_1299<net.mebahelcreaturesdraugr.entity.projectile.EbonyArrowEntity> EBONY_ARROW;
+  public static final net.minecraft.class_1299<net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity> INFERNAL_DRAUGR;
+  public static final net.minecraft.class_1299<net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity> FLAME_ATRONACH;
+  public static final net.minecraft.class_1299<net.mebahelcreaturesdraugr.block.entity.custom.BlockScanEntity> BLOCK_SCAN_ENTITY;
+  public static final net.minecraft.class_1299<net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity> DRAUGR_OVERLORD;
+  public static final net.minecraft.class_1299<net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorHeadEntity> SKELETON_WARRIOR_HEAD;
+  public static final net.minecraft.class_1299<net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorEntity> SKELETON_WARRIOR;
+  public static final net.minecraft.class_1299<net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity> DRAUGR_SCOURGE;
+  public static final net.minecraft.class_1299<net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity> DRAUGR_WIGHT;
+  public static final net.minecraft.class_1299<net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity> DRAUGR_ARCHER;
+  public static final net.minecraft.class_1299<net.mebahelcreaturesdraugr.entity.custom.DraugrEntity> DRAUGR;
+  public static final net.minecraft.class_1299<net.mebahelcreaturesdraugr.entity.projectile.FrostSpikeEntity> FROST_SPIKE_PROJECTILE;
+  public static final net.minecraft.class_1299<net.mebahelcreaturesdraugr.entity.projectile.FireboltEntity> FIREBOLT_PROJECTILE;
+  public static final net.minecraft.class_1299<net.mebahelcreaturesdraugr.entity.projectile.FrostbiteProjectileEntity> FROSTBITE_PROJECTILE;
+  public net.mebahelcreaturesdraugr.entity.ModEntities();
+  static {};
+}
+== net/mebahelcreaturesdraugr/entity/draugr_overlord/DraugrOverlordModel
+Compiled from "DraugrOverlordModel.java"
+public class net.mebahelcreaturesdraugr.entity.draugr_overlord.DraugrOverlordModel extends software.bernie.geckolib.model.GeoModel<net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity> {
+  public static final java.util.Map<net.mebahelcreaturesdraugr.entity.variant.DraugrOverlordVariant, net.minecraft.class_2960> LOCATION_BY_VARIANT;
+  public net.mebahelcreaturesdraugr.entity.draugr_overlord.DraugrOverlordModel();
+  public net.minecraft.class_2960 getModelResource(net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity);
+  public net.minecraft.class_2960 getTextureResource(net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity);
+  public net.minecraft.class_2960 getAnimationResource(net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity);
+  public void setCustomAnimations(net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity, long, software.bernie.geckolib.core.animation.AnimationState<net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity>);
+  public net.minecraft.class_2960 getAnimationResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_2960 getTextureResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_2960 getModelResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public void setCustomAnimations(software.bernie.geckolib.core.animatable.GeoAnimatable, long, software.bernie.geckolib.core.animation.AnimationState);
+  private static void lambda$static$0(java.util.EnumMap);
+  static {};
+}
+== net/mebahelcreaturesdraugr/entity/draugr_overlord/DraugrOverlordRenderer
+Compiled from "DraugrOverlordRenderer.java"
+public class net.mebahelcreaturesdraugr.entity.draugr_overlord.DraugrOverlordRenderer extends software.bernie.geckolib.renderer.GeoEntityRenderer<net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity> {
+  public net.mebahelcreaturesdraugr.entity.draugr_overlord.DraugrOverlordRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_1921 getRenderType(net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity, net.minecraft.class_2960, net.minecraft.class_4597, float);
+  public float getMotionAnimThreshold(net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity);
+  public float getMotionAnimThreshold(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_1921 getRenderType(software.bernie.geckolib.core.animatable.GeoAnimatable, net.minecraft.class_2960, net.minecraft.class_4597, float);
+}
+== net/mebahelcreaturesdraugr/entity/variant/DraugrWightVariant
+Compiled from "DraugrWightVariant.java"
+public final class net.mebahelcreaturesdraugr.entity.variant.DraugrWightVariant extends java.lang.Enum<net.mebahelcreaturesdraugr.entity.variant.DraugrWightVariant> {
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrWightVariant TEMPERATE;
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrWightVariant COLD;
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrWightVariant HOT;
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrWightVariant TEMPERATE_AXE;
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrWightVariant COLD_AXE;
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrWightVariant HOT_AXE;
+  private static final net.mebahelcreaturesdraugr.entity.variant.DraugrWightVariant[] BY_ID;
+  private final int id;
+  private static final net.mebahelcreaturesdraugr.entity.variant.DraugrWightVariant[] $VALUES;
+  public static net.mebahelcreaturesdraugr.entity.variant.DraugrWightVariant[] values();
+  public static net.mebahelcreaturesdraugr.entity.variant.DraugrWightVariant valueOf(java.lang.String);
+  private net.mebahelcreaturesdraugr.entity.variant.DraugrWightVariant(int);
+  public int getId();
+  public static net.mebahelcreaturesdraugr.entity.variant.DraugrWightVariant byId(int);
+  private static net.mebahelcreaturesdraugr.entity.variant.DraugrWightVariant[] lambda$static$0(int);
+  private static net.mebahelcreaturesdraugr.entity.variant.DraugrWightVariant[] $values();
+  static {};
+}
+== net/mebahelcreaturesdraugr/entity/variant/DraugrArcherVariant
+Compiled from "DraugrArcherVariant.java"
+public final class net.mebahelcreaturesdraugr.entity.variant.DraugrArcherVariant extends java.lang.Enum<net.mebahelcreaturesdraugr.entity.variant.DraugrArcherVariant> {
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrArcherVariant TEMPERATE;
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrArcherVariant COLD;
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrArcherVariant HOT;
+  private static final net.mebahelcreaturesdraugr.entity.variant.DraugrArcherVariant[] BY_ID;
+  private final int id;
+  private static final net.mebahelcreaturesdraugr.entity.variant.DraugrArcherVariant[] $VALUES;
+  public static net.mebahelcreaturesdraugr.entity.variant.DraugrArcherVariant[] values();
+  public static net.mebahelcreaturesdraugr.entity.variant.DraugrArcherVariant valueOf(java.lang.String);
+  private net.mebahelcreaturesdraugr.entity.variant.DraugrArcherVariant(int);
+  public int getId();
+  public static net.mebahelcreaturesdraugr.entity.variant.DraugrArcherVariant byId(int);
+  private static net.mebahelcreaturesdraugr.entity.variant.DraugrArcherVariant[] lambda$static$0(int);
+  private static net.mebahelcreaturesdraugr.entity.variant.DraugrArcherVariant[] $values();
+  static {};
+}
+== net/mebahelcreaturesdraugr/entity/variant/DraugrVariant
+Compiled from "DraugrVariant.java"
+public final class net.mebahelcreaturesdraugr.entity.variant.DraugrVariant extends java.lang.Enum<net.mebahelcreaturesdraugr.entity.variant.DraugrVariant> {
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrVariant TEMPERATE;
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrVariant COLD;
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrVariant HOT;
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrVariant TEMPERATE_AXE;
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrVariant COLD_AXE;
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrVariant HOT_AXE;
+  private static final net.mebahelcreaturesdraugr.entity.variant.DraugrVariant[] BY_ID;
+  private final int id;
+  private static final net.mebahelcreaturesdraugr.entity.variant.DraugrVariant[] $VALUES;
+  public static net.mebahelcreaturesdraugr.entity.variant.DraugrVariant[] values();
+  public static net.mebahelcreaturesdraugr.entity.variant.DraugrVariant valueOf(java.lang.String);
+  private net.mebahelcreaturesdraugr.entity.variant.DraugrVariant(int);
+  public int getId();
+  public static net.mebahelcreaturesdraugr.entity.variant.DraugrVariant byId(int);
+  private static net.mebahelcreaturesdraugr.entity.variant.DraugrVariant[] lambda$static$0(int);
+  private static net.mebahelcreaturesdraugr.entity.variant.DraugrVariant[] $values();
+  static {};
+}
+== net/mebahelcreaturesdraugr/entity/variant/InfernalDraugrVariant
+Compiled from "InfernalDraugrVariant.java"
+public final class net.mebahelcreaturesdraugr.entity.variant.InfernalDraugrVariant extends java.lang.Enum<net.mebahelcreaturesdraugr.entity.variant.InfernalDraugrVariant> {
+  public static final net.mebahelcreaturesdraugr.entity.variant.InfernalDraugrVariant VARIANT_1;
+  public static final net.mebahelcreaturesdraugr.entity.variant.InfernalDraugrVariant VARIANT_2;
+  private static final net.mebahelcreaturesdraugr.entity.variant.InfernalDraugrVariant[] BY_ID;
+  private final int id;
+  private static final net.mebahelcreaturesdraugr.entity.variant.InfernalDraugrVariant[] $VALUES;
+  public static net.mebahelcreaturesdraugr.entity.variant.InfernalDraugrVariant[] values();
+  public static net.mebahelcreaturesdraugr.entity.variant.InfernalDraugrVariant valueOf(java.lang.String);
+  private net.mebahelcreaturesdraugr.entity.variant.InfernalDraugrVariant(int);
+  public int getId();
+  public static net.mebahelcreaturesdraugr.entity.variant.InfernalDraugrVariant byId(int);
+  private static net.mebahelcreaturesdraugr.entity.variant.InfernalDraugrVariant[] lambda$static$0(int);
+  private static net.mebahelcreaturesdraugr.entity.variant.InfernalDraugrVariant[] $values();
+  static {};
+}
+== net/mebahelcreaturesdraugr/entity/variant/SkeletonWarriorVariant
+Compiled from "SkeletonWarriorVariant.java"
+public final class net.mebahelcreaturesdraugr.entity.variant.SkeletonWarriorVariant extends java.lang.Enum<net.mebahelcreaturesdraugr.entity.variant.SkeletonWarriorVariant> {
+  public static final net.mebahelcreaturesdraugr.entity.variant.SkeletonWarriorVariant ONE;
+  public static final net.mebahelcreaturesdraugr.entity.variant.SkeletonWarriorVariant TWO;
+  public static final net.mebahelcreaturesdraugr.entity.variant.SkeletonWarriorVariant THREE;
+  private static final net.mebahelcreaturesdraugr.entity.variant.SkeletonWarriorVariant[] BY_ID;
+  private final int id;
+  private static final net.mebahelcreaturesdraugr.entity.variant.SkeletonWarriorVariant[] $VALUES;
+  public static net.mebahelcreaturesdraugr.entity.variant.SkeletonWarriorVariant[] values();
+  public static net.mebahelcreaturesdraugr.entity.variant.SkeletonWarriorVariant valueOf(java.lang.String);
+  private net.mebahelcreaturesdraugr.entity.variant.SkeletonWarriorVariant(int);
+  public int getId();
+  public static net.mebahelcreaturesdraugr.entity.variant.SkeletonWarriorVariant byId(int);
+  private static net.mebahelcreaturesdraugr.entity.variant.SkeletonWarriorVariant[] lambda$static$0(int);
+  private static net.mebahelcreaturesdraugr.entity.variant.SkeletonWarriorVariant[] $values();
+  static {};
+}
+== net/mebahelcreaturesdraugr/entity/variant/DraugrScourgeVariant
+Compiled from "DraugrScourgeVariant.java"
+public final class net.mebahelcreaturesdraugr.entity.variant.DraugrScourgeVariant extends java.lang.Enum<net.mebahelcreaturesdraugr.entity.variant.DraugrScourgeVariant> {
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrScourgeVariant TEMPERATE;
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrScourgeVariant COLD;
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrScourgeVariant HOT;
+  private static final net.mebahelcreaturesdraugr.entity.variant.DraugrScourgeVariant[] BY_ID;
+  private final int id;
+  private static final net.mebahelcreaturesdraugr.entity.variant.DraugrScourgeVariant[] $VALUES;
+  public static net.mebahelcreaturesdraugr.entity.variant.DraugrScourgeVariant[] values();
+  public static net.mebahelcreaturesdraugr.entity.variant.DraugrScourgeVariant valueOf(java.lang.String);
+  private net.mebahelcreaturesdraugr.entity.variant.DraugrScourgeVariant(int);
+  public int getId();
+  public static net.mebahelcreaturesdraugr.entity.variant.DraugrScourgeVariant byId(int);
+  private static net.mebahelcreaturesdraugr.entity.variant.DraugrScourgeVariant[] lambda$static$0(int);
+  private static net.mebahelcreaturesdraugr.entity.variant.DraugrScourgeVariant[] $values();
+  static {};
+}
+== net/mebahelcreaturesdraugr/entity/variant/DraugrOverlordVariant
+Compiled from "DraugrOverlordVariant.java"
+public final class net.mebahelcreaturesdraugr.entity.variant.DraugrOverlordVariant extends java.lang.Enum<net.mebahelcreaturesdraugr.entity.variant.DraugrOverlordVariant> {
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrOverlordVariant GREATSWORD;
+  public static final net.mebahelcreaturesdraugr.entity.variant.DraugrOverlordVariant BOW;
+  private static final net.mebahelcreaturesdraugr.entity.variant.DraugrOverlordVariant[] BY_ID;
+  private final int id;
+  private static final net.mebahelcreaturesdraugr.entity.variant.DraugrOverlordVariant[] $VALUES;
+  public static net.mebahelcreaturesdraugr.entity.variant.DraugrOverlordVariant[] values();
+  public static net.mebahelcreaturesdraugr.entity.variant.DraugrOverlordVariant valueOf(java.lang.String);
+  private net.mebahelcreaturesdraugr.entity.variant.DraugrOverlordVariant(int);
+  public int getId();
+  public static net.mebahelcreaturesdraugr.entity.variant.DraugrOverlordVariant byId(int);
+  private static net.mebahelcreaturesdraugr.entity.variant.DraugrOverlordVariant[] lambda$static$0(int);
+  private static net.mebahelcreaturesdraugr.entity.variant.DraugrOverlordVariant[] $values();
+  static {};
+}
+== net/mebahelcreaturesdraugr/entity/draugr_scourge/DraugrScourgeRenderer
+Compiled from "DraugrScourgeRenderer.java"
+public class net.mebahelcreaturesdraugr.entity.draugr_scourge.DraugrScourgeRenderer extends software.bernie.geckolib.renderer.GeoEntityRenderer<net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity> {
+  public net.mebahelcreaturesdraugr.entity.draugr_scourge.DraugrScourgeRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_1921 getRenderType(net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity, net.minecraft.class_2960, net.minecraft.class_4597, float);
+  public void preRender(net.minecraft.class_4587, net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public float getMotionAnimThreshold(net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity);
+  public void preRender(net.minecraft.class_4587, net.minecraft.class_1297, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public void preRender(net.minecraft.class_4587, software.bernie.geckolib.core.animatable.GeoAnimatable, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public float getMotionAnimThreshold(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_1921 getRenderType(software.bernie.geckolib.core.animatable.GeoAnimatable, net.minecraft.class_2960, net.minecraft.class_4597, float);
+}
+== net/mebahelcreaturesdraugr/entity/draugr_scourge/DraugrScourgePotionLayer
+Compiled from "DraugrScourgePotionLayer.java"
+public class net.mebahelcreaturesdraugr.entity.draugr_scourge.DraugrScourgePotionLayer extends software.bernie.geckolib.renderer.layer.BlockAndItemGeoLayer<net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity> {
+  public net.mebahelcreaturesdraugr.entity.draugr_scourge.DraugrScourgePotionLayer(software.bernie.geckolib.renderer.GeoRenderer<net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity>);
+  protected net.minecraft.class_1799 getStackForBone(software.bernie.geckolib.cache.object.GeoBone, net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity);
+  protected net.minecraft.class_811 getTransformTypeForStack(software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity);
+  protected void renderStackForBone(net.minecraft.class_4587, software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity, net.minecraft.class_4597, float, int, int);
+  protected void renderStackForBone(net.minecraft.class_4587, software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, software.bernie.geckolib.core.animatable.GeoAnimatable, net.minecraft.class_4597, float, int, int);
+  protected net.minecraft.class_811 getTransformTypeForStack(software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, software.bernie.geckolib.core.animatable.GeoAnimatable);
+  protected net.minecraft.class_1799 getStackForBone(software.bernie.geckolib.cache.object.GeoBone, software.bernie.geckolib.core.animatable.GeoAnimatable);
+}
+== net/mebahelcreaturesdraugr/entity/draugr_scourge/DraugrScourgeModel
+Compiled from "DraugrScourgeModel.java"
+public class net.mebahelcreaturesdraugr.entity.draugr_scourge.DraugrScourgeModel extends software.bernie.geckolib.model.GeoModel<net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity> {
+  public static final java.util.Map<net.mebahelcreaturesdraugr.entity.variant.DraugrScourgeVariant, net.minecraft.class_2960> LOCATION_BY_VARIANT;
+  public net.mebahelcreaturesdraugr.entity.draugr_scourge.DraugrScourgeModel();
+  public net.minecraft.class_2960 getModelResource(net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity);
+  public net.minecraft.class_2960 getTextureResource(net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity);
+  public net.minecraft.class_2960 getAnimationResource(net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity);
+  public void setCustomAnimations(net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity, long, software.bernie.geckolib.core.animation.AnimationState<net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity>);
+  public net.minecraft.class_2960 getAnimationResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_2960 getTextureResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_2960 getModelResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public void setCustomAnimations(software.bernie.geckolib.core.animatable.GeoAnimatable, long, software.bernie.geckolib.core.animation.AnimationState);
+  private static void lambda$static$0(java.util.EnumMap);
+  static {};
+}
+== net/mebahelcreaturesdraugr/entity/ai/SkeletonWarriorMeleeAttackGoal
+Compiled from "SkeletonWarriorMeleeAttackGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.SkeletonWarriorMeleeAttackGoal extends net.minecraft.class_1352 {
+  protected final net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorEntity mob;
+  private final double speed;
+  private final int max_cooldown;
+  private final int damage_time;
+  private final int dash_time;
+  private int cooldown;
+  private boolean hasDashed;
+  private boolean hasHit;
+  private final double originalSpeed;
+  private int attackTicks;
+  private net.mebahelcreaturesdraugr.entity.ai.SkeletonWarriorMeleeAttackGoal$AttackVariant currentAttack;
+  private static final int SIMPLE_DURATION;
+  private static final int SIMPLE_HIT_TICK;
+  private static final int SIMPLE_DASH_TICK;
+  private static final double ATTACK_RANGE;
+  public net.mebahelcreaturesdraugr.entity.ai.SkeletonWarriorMeleeAttackGoal(net.mebahelcreaturesdraugr.entity.custom.SkeletonWarriorEntity, double, int, int, int);
+  public boolean method_6264();
+  public boolean method_6266();
+  public void method_6269();
+  public void method_6270();
+  private void resetAttackState();
+  public boolean method_38846();
+  public void method_6268();
+  protected void attack(net.minecraft.class_1309);
+  private void startNewAttackPattern();
+  private void handleSimpleAttack(net.minecraft.class_1309);
+  private void endAttack(net.minecraft.class_1309);
+  private void playSwingSound();
+  private void dashToward(net.minecraft.class_1309, double);
+}
+Goal
+Goal$AttackVariant
+== net/mebahelcreaturesdraugr/entity/ai/DraugrOverlordBlockGoal
+Compiled from "DraugrOverlordBlockGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordBlockGoal extends net.minecraft.class_1352 {
+  private final net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity mob;
+  private final net.mebahelsapi.util.MovementUtil movementUtil;
+  private static final int BLOCK_DURATION_TICKS;
+  private static final int STRAFE_DISTANCE;
+  private static final float SPIN_TRIGGER_CHANCE;
+  private int blockTicks;
+  public net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordBlockGoal(net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity);
+  public boolean method_6264();
+  public boolean method_6266();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/ai/util/FleeTargetGoal
+Compiled from "FleeTargetGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.util.FleeTargetGoal extends net.minecraft.class_1352 {
+  private final net.minecraft.class_1308 entity;
+  private final double speed;
+  public net.mebahelcreaturesdraugr.entity.ai.util.FleeTargetGoal(net.minecraft.class_1308, double);
+  public boolean method_6264();
+  public void method_6269();
+  public void method_6268();
+  public boolean method_6266();
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/ai/util/CustomRevengeGoal
+Compiled from "CustomRevengeGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.util.CustomRevengeGoal extends net.minecraft.class_1399 {
+  private final java.lang.Class<?> classToIgnore;
+  public net.mebahelcreaturesdraugr.entity.ai.util.CustomRevengeGoal(net.minecraft.class_1314, java.lang.Class<?>);
+  private boolean shouldIgnore(net.minecraft.class_1309);
+  public boolean method_6264();
+  public void method_6269();
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/ai/util/ConditionalWanderAroundFarGoal
+Compiled from "ConditionalWanderAroundFarGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.util.ConditionalWanderAroundFarGoal extends net.minecraft.class_1394 {
+  public net.mebahelcreaturesdraugr.entity.ai.util.ConditionalWanderAroundFarGoal(net.minecraft.class_1314, double, float);
+  public boolean method_6264();
+  public boolean method_6266();
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/ai/util/GroupRevengeGoal
+Compiled from "GroupRevengeGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.util.GroupRevengeGoal extends net.minecraft.class_1399 {
+  private final java.lang.Class<?>[] helperTypes;
+  public net.mebahelcreaturesdraugr.entity.ai.util.GroupRevengeGoal(net.minecraft.class_1314, java.lang.Class<?>...);
+  protected void method_6317();
+  private boolean isHelperType(net.minecraft.class_1309);
+  protected void method_6319(net.minecraft.class_1308, net.minecraft.class_1309);
+  private boolean lambda$callSameTypeForRevenge$0(net.minecraft.class_1308, net.minecraft.class_1308);
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/ai/util/CappedMoveControl
+Compiled from "CappedMoveControl.java"
+public class net.mebahelcreaturesdraugr.entity.ai.util.CappedMoveControl extends net.minecraft.class_1335 {
+  private final net.minecraft.class_1308 mob;
+  private double maxSpeedModifier;
+  private double maxHorizontalSpeed;
+  public net.mebahelcreaturesdraugr.entity.ai.util.CappedMoveControl(net.minecraft.class_1308, double);
+  public void setCaps(double, double);
+  public double getMaxSpeedModifier();
+  public double getMaxHorizontalSpeed();
+  public void method_6239(double, double, double, double);
+  public void method_6240();
+  private void clampHorizontalVelocity();
+}
+== net/mebahelcreaturesdraugr/entity/ai/DraugrSpellGoal
+Compiled from "DraugrSpellGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.DraugrSpellGoal extends net.minecraft.class_1352 {
+  private final net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity draugr;
+  private final float damage;
+  private static final int COOLDOWN_TICKS;
+  private static final int SHOOT_START;
+  private static final int SHOOT_END;
+  private static final int SHOOT_INTERVAL;
+  private final net.mebahelcreaturesdraugr.util.ProjectileUtil projectileUtil;
+  public net.mebahelcreaturesdraugr.entity.ai.DraugrSpellGoal(net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity, float);
+  public boolean method_6264();
+  public void method_6269();
+  public boolean method_6266();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+  private void moveBackwardFromTarget(net.minecraft.class_1309);
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/ai/InfernalDraugrMeleeAttackGoal
+Compiled from "InfernalDraugrMeleeAttackGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.InfernalDraugrMeleeAttackGoal extends net.minecraft.class_1352 {
+  protected final net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity mob;
+  private final double speed;
+  private final int max_cooldown;
+  private final int damage_time;
+  private int cooldown;
+  private final double originalSpeed;
+  private int attackTicks;
+  private final net.mebahelsapi.util.MovementUtil movementUtil;
+  private static final int STRAFE_DISTANCE;
+  private net.mebahelcreaturesdraugr.entity.ai.InfernalDraugrMeleeAttackGoal$AttackVariant currentAttack;
+  private static final int COMBO1_DURATION;
+  private static final int COMBO1_HIT_1_TICK;
+  private static final int COMBO1_HIT_2_TICK;
+  private static final int COMBO2_DURATION;
+  private static final int COMBO2_HIT_1_TICK;
+  private static final int COMBO2_HIT_2_TICK;
+  private static final double ATTACK_RANGE;
+  public net.mebahelcreaturesdraugr.entity.ai.InfernalDraugrMeleeAttackGoal(net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity, double, int, int);
+  public boolean method_6264();
+  public boolean method_6266();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+  protected void attack(net.minecraft.class_1309);
+  private void startNewAttackPattern();
+  private void handleSimpleAttack(net.minecraft.class_1309);
+  private void handleCombo1(net.minecraft.class_1309);
+  private void handleCombo2(net.minecraft.class_1309);
+  private void endAttack(net.minecraft.class_1309);
+  private void tryStartBlockAfterAttack(net.minecraft.class_1309);
+  private boolean shouldRequestPotion(float);
+  private void playSwingSound();
+  private void dashToward(net.minecraft.class_1309, double);
+}
+Goal
+Goal$AttackVariant
+== net/mebahelcreaturesdraugr/entity/ai/InfernalDraugrMeleeAttackGoal$AttackVariant
+Compiled from "InfernalDraugrMeleeAttackGoal.java"
+final class net.mebahelcreaturesdraugr.entity.ai.InfernalDraugrMeleeAttackGoal$AttackVariant extends java.lang.Enum<net.mebahelcreaturesdraugr.entity.ai.InfernalDraugrMeleeAttackGoal$AttackVariant> {
+  public static final net.mebahelcreaturesdraugr.entity.ai.InfernalDraugrMeleeAttackGoal$AttackVariant NONE;
+  public static final net.mebahelcreaturesdraugr.entity.ai.InfernalDraugrMeleeAttackGoal$AttackVariant SIMPLE1;
+  public static final net.mebahelcreaturesdraugr.entity.ai.InfernalDraugrMeleeAttackGoal$AttackVariant SIMPLE2;
+  public static final net.mebahelcreaturesdraugr.entity.ai.InfernalDraugrMeleeAttackGoal$AttackVariant COMBO1;
+  public static final net.mebahelcreaturesdraugr.entity.ai.InfernalDraugrMeleeAttackGoal$AttackVariant COMBO2;
+  private static final net.mebahelcreaturesdraugr.entity.ai.InfernalDraugrMeleeAttackGoal$AttackVariant[] $VALUES;
+  public static net.mebahelcreaturesdraugr.entity.ai.InfernalDraugrMeleeAttackGoal$AttackVariant[] values();
+  public static net.mebahelcreaturesdraugr.entity.ai.InfernalDraugrMeleeAttackGoal$AttackVariant valueOf(java.lang.String);
+  private net.mebahelcreaturesdraugr.entity.ai.InfernalDraugrMeleeAttackGoal$AttackVariant();
+  private static net.mebahelcreaturesdraugr.entity.ai.InfernalDraugrMeleeAttackGoal$AttackVariant[] $values();
+  static {};
+}
+Goal
+Goal$AttackVariant
+== net/mebahelcreaturesdraugr/entity/ai/DraugrArcherShootingGoal
+Compiled from "DraugrArcherShootingGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.DraugrArcherShootingGoal extends net.minecraft.class_1352 {
+  private final net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity actor;
+  private final net.mebahelsapi.util.MovementUtil movementUtil;
+  private static final int CYCLE_COOLDOWN;
+  private static final int ANIM_TICK;
+  private static final int SHOOT_TICK;
+  private static final int STRAFE_DISTANCE;
+  private static final double PROJECTILE_FORWARD_OFFSET;
+  private static final double PROJECTILE_LEFT_OFFSET;
+  private static final double PROJECTILE_FORWARD_BONUS;
+  public net.mebahelcreaturesdraugr.entity.ai.DraugrArcherShootingGoal(net.mebahelcreaturesdraugr.entity.custom.DraugrArcherEntity);
+  public boolean method_6264();
+  public boolean method_6266();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/ai/DraugrIceSpikeSpellGoal
+Compiled from "DraugrIceSpikeSpellGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.DraugrIceSpikeSpellGoal extends net.minecraft.class_1352 {
+  private final net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity actor;
+  private final float iceSpikeDamage;
+  private final float frostBiteDamage;
+  private final net.mebahelcreaturesdraugr.util.ProjectileUtil projectileUtil;
+  private final net.mebahelsapi.util.MovementUtil movementUtil;
+  private boolean castIceSpike;
+  private static final int COOLDOWN_TICKS;
+  private static final int SHOOT_START;
+  private static final int SHOOT_END;
+  private static final int SHOOT_INTERVAL;
+  public net.mebahelcreaturesdraugr.entity.ai.DraugrIceSpikeSpellGoal(net.mebahelcreaturesdraugr.entity.custom.DraugrScourgeEntity, float, float);
+  public boolean method_6264();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public boolean method_6266();
+  public void method_6268();
+  private void handleIceSpike(net.minecraft.class_1309, int);
+  private void handleFrostbite(net.minecraft.class_1309, int);
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/ai/DraugrWightMeleeAttackGoal$AttackVariant
+Compiled from "DraugrWightMeleeAttackGoal.java"
+final class net.mebahelcreaturesdraugr.entity.ai.DraugrWightMeleeAttackGoal$AttackVariant extends java.lang.Enum<net.mebahelcreaturesdraugr.entity.ai.DraugrWightMeleeAttackGoal$AttackVariant> {
+  public static final net.mebahelcreaturesdraugr.entity.ai.DraugrWightMeleeAttackGoal$AttackVariant NONE;
+  public static final net.mebahelcreaturesdraugr.entity.ai.DraugrWightMeleeAttackGoal$AttackVariant SIMPLE1;
+  public static final net.mebahelcreaturesdraugr.entity.ai.DraugrWightMeleeAttackGoal$AttackVariant SIMPLE2;
+  public static final net.mebahelcreaturesdraugr.entity.ai.DraugrWightMeleeAttackGoal$AttackVariant COMBO1;
+  public static final net.mebahelcreaturesdraugr.entity.ai.DraugrWightMeleeAttackGoal$AttackVariant COMBO2;
+  private static final net.mebahelcreaturesdraugr.entity.ai.DraugrWightMeleeAttackGoal$AttackVariant[] $VALUES;
+  public static net.mebahelcreaturesdraugr.entity.ai.DraugrWightMeleeAttackGoal$AttackVariant[] values();
+  public static net.mebahelcreaturesdraugr.entity.ai.DraugrWightMeleeAttackGoal$AttackVariant valueOf(java.lang.String);
+  private net.mebahelcreaturesdraugr.entity.ai.DraugrWightMeleeAttackGoal$AttackVariant();
+  private static net.mebahelcreaturesdraugr.entity.ai.DraugrWightMeleeAttackGoal$AttackVariant[] $values();
+  static {};
+}
+Goal
+Goal$AttackVariant
+== net/mebahelcreaturesdraugr/entity/ai/InfernalDraugrDodgeFireboltGoal
+Compiled from "InfernalDraugrDodgeFireboltGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.InfernalDraugrDodgeFireboltGoal extends net.minecraft.class_1352 {
+  private final net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity mob;
+  private final net.mebahelcreaturesdraugr.util.ProjectileUtil projectileUtil;
+  private static final int DODGE_TOTAL_TICKS;
+  private static final int JUMP_TICK;
+  private static final int FIRE_TICK;
+  private static final double BACKSTEP_POWER;
+  private static final double JUMP_Y;
+  private int ticks;
+  private boolean jumped;
+  private boolean fired;
+  private float damage;
+  public net.mebahelcreaturesdraugr.entity.ai.InfernalDraugrDodgeFireboltGoal(net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity, float);
+  public boolean method_6264();
+  public boolean method_6266();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+  private void backstepJumpFrom(net.minecraft.class_1309);
+  private void playShootingSound(net.minecraft.class_3414);
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/ai/DraugrWightMeleeAttackGoal
+Compiled from "DraugrWightMeleeAttackGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.DraugrWightMeleeAttackGoal extends net.minecraft.class_1352 {
+  protected final net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity mob;
+  private final double speed;
+  private final int max_cooldown;
+  private final int damage_time;
+  private int cooldown;
+  private final double originalSpeed;
+  private int attackTicks;
+  private final net.mebahelsapi.util.MovementUtil movementUtil;
+  private static final int STRAFE_DISTANCE;
+  private net.mebahelcreaturesdraugr.entity.ai.DraugrWightMeleeAttackGoal$AttackVariant currentAttack;
+  private static final int COMBO1_DURATION;
+  private static final int COMBO1_HIT_1_TICK;
+  private static final int COMBO1_HIT_2_TICK;
+  private static final int COMBO2_DURATION;
+  private static final int COMBO2_HIT_1_TICK;
+  private static final int COMBO2_HIT_2_TICK;
+  private static final double ATTACK_RANGE;
+  public net.mebahelcreaturesdraugr.entity.ai.DraugrWightMeleeAttackGoal(net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity, double, int, int);
+  public boolean method_6264();
+  public boolean method_6266();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+  protected void attack(net.minecraft.class_1309);
+  private void startNewAttackPattern();
+  private void handleSimpleAttack(net.minecraft.class_1309);
+  private void handleCombo1(net.minecraft.class_1309);
+  private void handleCombo2(net.minecraft.class_1309);
+  private void endAttack(net.minecraft.class_1309);
+  private void tryStartBlockAfterAttack(net.minecraft.class_1309);
+  private boolean shouldRequestPotion(float);
+  private void playSwingSound();
+  private void dashToward(net.minecraft.class_1309, double);
+}
+Goal
+Goal$AttackVariant
+== net/mebahelcreaturesdraugr/entity/ai/SkeletonWarriorMeleeAttackGoal$AttackVariant
+Compiled from "SkeletonWarriorMeleeAttackGoal.java"
+final class net.mebahelcreaturesdraugr.entity.ai.SkeletonWarriorMeleeAttackGoal$AttackVariant extends java.lang.Enum<net.mebahelcreaturesdraugr.entity.ai.SkeletonWarriorMeleeAttackGoal$AttackVariant> {
+  public static final net.mebahelcreaturesdraugr.entity.ai.SkeletonWarriorMeleeAttackGoal$AttackVariant NONE;
+  public static final net.mebahelcreaturesdraugr.entity.ai.SkeletonWarriorMeleeAttackGoal$AttackVariant ATTACK1;
+  public static final net.mebahelcreaturesdraugr.entity.ai.SkeletonWarriorMeleeAttackGoal$AttackVariant ATTACK2;
+  private static final net.mebahelcreaturesdraugr.entity.ai.SkeletonWarriorMeleeAttackGoal$AttackVariant[] $VALUES;
+  public static net.mebahelcreaturesdraugr.entity.ai.SkeletonWarriorMeleeAttackGoal$AttackVariant[] values();
+  public static net.mebahelcreaturesdraugr.entity.ai.SkeletonWarriorMeleeAttackGoal$AttackVariant valueOf(java.lang.String);
+  private net.mebahelcreaturesdraugr.entity.ai.SkeletonWarriorMeleeAttackGoal$AttackVariant();
+  private static net.mebahelcreaturesdraugr.entity.ai.SkeletonWarriorMeleeAttackGoal$AttackVariant[] $values();
+  static {};
+}
+Goal
+Goal$AttackVariant
+== net/mebahelcreaturesdraugr/entity/ai/DraugrMeleeAttackGoal$AttackVariant
+Compiled from "DraugrMeleeAttackGoal.java"
+final class net.mebahelcreaturesdraugr.entity.ai.DraugrMeleeAttackGoal$AttackVariant extends java.lang.Enum<net.mebahelcreaturesdraugr.entity.ai.DraugrMeleeAttackGoal$AttackVariant> {
+  public static final net.mebahelcreaturesdraugr.entity.ai.DraugrMeleeAttackGoal$AttackVariant NONE;
+  public static final net.mebahelcreaturesdraugr.entity.ai.DraugrMeleeAttackGoal$AttackVariant SIMPLE1;
+  public static final net.mebahelcreaturesdraugr.entity.ai.DraugrMeleeAttackGoal$AttackVariant SIMPLE2;
+  public static final net.mebahelcreaturesdraugr.entity.ai.DraugrMeleeAttackGoal$AttackVariant COMBO1;
+  public static final net.mebahelcreaturesdraugr.entity.ai.DraugrMeleeAttackGoal$AttackVariant COMBO2;
+  private static final net.mebahelcreaturesdraugr.entity.ai.DraugrMeleeAttackGoal$AttackVariant[] $VALUES;
+  public static net.mebahelcreaturesdraugr.entity.ai.DraugrMeleeAttackGoal$AttackVariant[] values();
+  public static net.mebahelcreaturesdraugr.entity.ai.DraugrMeleeAttackGoal$AttackVariant valueOf(java.lang.String);
+  private net.mebahelcreaturesdraugr.entity.ai.DraugrMeleeAttackGoal$AttackVariant();
+  private static net.mebahelcreaturesdraugr.entity.ai.DraugrMeleeAttackGoal$AttackVariant[] $values();
+  static {};
+}
+Goal
+Goal$AttackVariant
+== net/mebahelcreaturesdraugr/entity/ai/DraugrDrinkPotionGoal
+Compiled from "DraugrDrinkPotionGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.DraugrDrinkPotionGoal extends net.minecraft.class_1352 {
+  private final net.mebahelcreaturesdraugr.entity.custom.DraugrEntity mob;
+  private final net.mebahelsapi.util.MovementUtil movementUtil;
+  private static final int STRAFE_DISTANCE;
+  private static final int DRINK_DURATION_TICKS;
+  private int drinkTicks;
+  public net.mebahelcreaturesdraugr.entity.ai.DraugrDrinkPotionGoal(net.mebahelcreaturesdraugr.entity.custom.DraugrEntity);
+  private void log(java.lang.String);
+  public boolean method_6264();
+  public boolean method_6266();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+  private void applyPotionEffect();
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/ai/InfernalDraugrSummonAtronachGoal
+Compiled from "InfernalDraugrSummonAtronachGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.InfernalDraugrSummonAtronachGoal extends net.minecraft.class_1352 {
+  private final net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity draugr;
+  private static final int CAST_START;
+  private static final int SUMMON_TICK;
+  private static final int RESUMMON_DELAY_TICKS;
+  private static final double MIN_DIST;
+  private static final double MAX_DIST;
+  private static final double CONE_DEGREES;
+  private boolean summonedThisCycle;
+  private boolean casting;
+  public net.mebahelcreaturesdraugr.entity.ai.InfernalDraugrSummonAtronachGoal(net.mebahelcreaturesdraugr.entity.custom.InfernalDraugrEntity);
+  public boolean method_6264();
+  public boolean method_6266();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+  private boolean hasLivingAtronach();
+  private boolean summonAtronach();
+  private net.minecraft.class_243 pickConeSpawnPos(net.minecraft.class_3218);
+  private net.minecraft.class_243 findSafeSpawnPos(net.minecraft.class_3218, net.minecraft.class_243, float);
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/ai/DraugrOverlordMeleeAttackGoal$AttackType
+Compiled from "DraugrOverlordMeleeAttackGoal.java"
+final class net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordMeleeAttackGoal$AttackType extends java.lang.Enum<net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordMeleeAttackGoal$AttackType> {
+  public static final net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordMeleeAttackGoal$AttackType NONE;
+  public static final net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordMeleeAttackGoal$AttackType RUSH;
+  public static final net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordMeleeAttackGoal$AttackType DOUBLE1;
+  public static final net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordMeleeAttackGoal$AttackType DOUBLE2;
+  public static final net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordMeleeAttackGoal$AttackType TRIPLE;
+  private static final net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordMeleeAttackGoal$AttackType[] $VALUES;
+  public static net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordMeleeAttackGoal$AttackType[] values();
+  public static net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordMeleeAttackGoal$AttackType valueOf(java.lang.String);
+  private net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordMeleeAttackGoal$AttackType();
+  private static net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordMeleeAttackGoal$AttackType[] $values();
+  static {};
+}
+Goal
+Goal$AttackType
+== net/mebahelcreaturesdraugr/entity/ai/DraugrBlockGoal
+Compiled from "DraugrBlockGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.DraugrBlockGoal extends net.minecraft.class_1352 {
+  private final net.mebahelcreaturesdraugr.entity.custom.DraugrEntity mob;
+  private final net.mebahelsapi.util.MovementUtil movementUtil;
+  private static final int BLOCK_DURATION_TICKS;
+  private static final int STRAFE_DISTANCE;
+  private int blockTicks;
+  public net.mebahelcreaturesdraugr.entity.ai.DraugrBlockGoal(net.mebahelcreaturesdraugr.entity.custom.DraugrEntity);
+  private void log(java.lang.String);
+  public boolean method_6264();
+  public boolean method_6266();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/ai/DraugrOverlordSpecialAttackGoal
+Compiled from "DraugrOverlordSpecialAttackGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordSpecialAttackGoal extends net.minecraft.class_1352 {
+  private static final float GROUND_STRIKE_DAMAGE_MULTIPLIER;
+  private final net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity overlord;
+  public net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordSpecialAttackGoal(net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity);
+  public boolean method_6264();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_6266();
+  public void method_6268();
+  private void executeSpecialAttack(int, float, float);
+  private void spawnReinforcements(int);
+  private static boolean lambda$executeSpecialAttack$0(net.minecraft.class_1309);
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/ai/DraugrOverlordSpinGoal
+Compiled from "DraugrOverlordSpinGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordSpinGoal extends net.minecraft.class_1352 {
+  private final net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity mob;
+  private static final int SPIN_TOTAL_TICKS;
+  private static final int SPIN_DASH_TICK;
+  private static final double MIN_DASH_DISTANCE;
+  private static final double MAX_DASH_DISTANCE;
+  private static final double MIN_INITIAL_DASH_POWER;
+  private static final double MAX_INITIAL_DASH_POWER;
+  private static final double MIN_EXTRA_DASH_POWER;
+  private static final double MAX_EXTRA_DASH_POWER;
+  private static final int MIN_DASH_END_TICK;
+  private static final int MAX_DASH_END_TICK;
+  private static final double STOP_EXTRA_DASH_DISTANCE;
+  private static final double MAX_HORIZONTAL_VELOCITY;
+  private static final int AOE_T1;
+  private static final int AOE_T2;
+  private static final int AOE_T3;
+  private static final int AOE_T4;
+  private static final int AOE_T5;
+  private int spinTicks;
+  private final double originalSpeed;
+  private boolean hasDashed;
+  private net.minecraft.class_243 dashDirection;
+  private double currentExtraDashPower;
+  private int currentDashEndTick;
+  public net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordSpinGoal(net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity);
+  public boolean method_6264();
+  public boolean method_6266();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+  private void dashTowardLastKnownPosition(net.minecraft.class_1309);
+  private void freezeMovement();
+  private double getHorizontalDistanceTo(net.minecraft.class_1309);
+  private void clampHorizontalVelocity(double);
+  private void performSpinAoe(double, float);
+  private void lambda$performSpinAoe$1(net.minecraft.class_1937, float, net.minecraft.class_1297);
+  private boolean lambda$performSpinAoe$0(net.minecraft.class_1297);
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/ai/flame_atronach/OwnerHurtByTargetGoal
+Compiled from "OwnerHurtByTargetGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.flame_atronach.OwnerHurtByTargetGoal extends net.minecraft.class_1352 {
+  private final net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity mob;
+  private net.minecraft.class_1309 cachedAttacker;
+  private int lastAttackedTime;
+  public net.mebahelcreaturesdraugr.entity.ai.flame_atronach.OwnerHurtByTargetGoal(net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity);
+  private net.minecraft.class_1309 getOwner();
+  public boolean method_6264();
+  public void method_6269();
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/ai/flame_atronach/FollowOwnerGoal
+Compiled from "FollowOwnerGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.flame_atronach.FollowOwnerGoal extends net.minecraft.class_1352 {
+  private final net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity mob;
+  private final double speed;
+  private final float startDist;
+  private final float stopDist;
+  private final float teleportDist;
+  public net.mebahelcreaturesdraugr.entity.ai.flame_atronach.FollowOwnerGoal(net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity, double, float, float, float);
+  private net.minecraft.class_1309 getOwner();
+  public boolean method_6264();
+  public boolean method_6266();
+  public void method_6269();
+  public void method_6270();
+  public void method_6268();
+  public boolean method_38846();
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/ai/flame_atronach/OwnerHurtTargetGoal
+Compiled from "OwnerHurtTargetGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.flame_atronach.OwnerHurtTargetGoal extends net.minecraft.class_1352 {
+  private final net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity mob;
+  private net.minecraft.class_1309 cachedTarget;
+  private int lastAttackTime;
+  public net.mebahelcreaturesdraugr.entity.ai.flame_atronach.OwnerHurtTargetGoal(net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity);
+  private net.minecraft.class_1309 getOwner();
+  public boolean method_6264();
+  public void method_6269();
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/ai/flame_atronach/FlameAtronachShootingGoal
+Compiled from "FlameAtronachShootingGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.flame_atronach.FlameAtronachShootingGoal extends net.minecraft.class_1352 {
+  private final net.mebahelcreaturesdraugr.util.ProjectileUtil projectileUtil;
+  private final net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity actor;
+  private final net.mebahelsapi.util.MovementUtil movementUtil;
+  private final int STRAFE_DISTANCE;
+  private java.lang.String chosenAnim;
+  private int ATTACK_COOLDOWN;
+  private float damage;
+  private static final java.lang.String[] ATTACK_ANIMS;
+  public net.mebahelcreaturesdraugr.entity.ai.flame_atronach.FlameAtronachShootingGoal(net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity, float);
+  private boolean isValidTarget(net.minecraft.class_1309);
+  public boolean method_6264();
+  public boolean method_6266();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+  private java.lang.String pickRandomAttackAnim();
+  private void playShootingSound(net.minecraft.class_3414);
+  static {};
+}
+Goal
+== net/mebahelcreaturesdraugr/entity/ai/DraugrOverlordMeleeAttackGoal
+Compiled from "DraugrOverlordMeleeAttackGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordMeleeAttackGoal extends net.minecraft.class_1352 {
+  protected final net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity mob;
+  private final double speed;
+  private int cooldown;
+  private boolean hasDashed;
+  private final double originalSpeed;
+  private net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordMeleeAttackGoal$AttackType currentAttack;
+  private net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordMeleeAttackGoal$AttackType nextAttack;
+  private static final int ATTACK_RANGE;
+  private static final int RUSH_DURATION;
+  private static final int DOUBLE_DURATION;
+  private static final int TRIPLE_DURATION;
+  private static final int RUSH_DASH_TICK;
+  private static final int DOUBLE_HIT_T1;
+  private static final int DOUBLE_HIT_T2;
+  private static final int TRIPLE_HIT_T1;
+  private static final int TRIPLE_HIT_T2;
+  private static final int TRIPLE_HIT_T3;
+  private int distanceTickCounter;
+  private static final int RUSH_TRIGGER_TICKS;
+  private static final double RUSH_MIN_RANGE;
+  private static final double RUSH_MAX_RANGE;
+  static final boolean $assertionsDisabled;
+  public net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordMeleeAttackGoal(net.mebahelcreaturesdraugr.entity.custom.DraugrOverlordEntity, double);
+  public boolean method_6264();
+  public boolean method_6266();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+  private void handleAttack(net.minecraft.class_1309);
+  private void tryStartBlockAfterAttack(net.minecraft.class_1309);
+  private void attackRush(net.minecraft.class_1309);
+  private void attackDouble(net.minecraft.class_1309);
+  private void attackTriple(net.minecraft.class_1309);
+  private net.mebahelcreaturesdraugr.entity.ai.DraugrOverlordMeleeAttackGoal$AttackType pickRandomAttack();
+  private void startAttackAnimation();
+  private void freezeMovement();
+  private void endAttack();
+  private void dashToward(net.minecraft.class_1309, double);
+  private void performAoeAttack(net.minecraft.class_1309, double, float);
+  private void playSwingSound(int);
+  private void lambda$performAoeAttack$1(net.minecraft.class_1937, float, net.minecraft.class_1297);
+  private boolean lambda$performAoeAttack$0(net.minecraft.class_1309, net.minecraft.class_1297);
+  static {};
+}
+Goal
+Goal$AttackType
+== net/mebahelcreaturesdraugr/entity/ai/DraugrMeleeAttackGoal
+Compiled from "DraugrMeleeAttackGoal.java"
+public class net.mebahelcreaturesdraugr.entity.ai.DraugrMeleeAttackGoal extends net.minecraft.class_1352 {
+  protected final net.mebahelcreaturesdraugr.entity.custom.DraugrEntity mob;
+  private final double speed;
+  private final int max_cooldown;
+  private final int damage_time;
+  private final int dash_time;
+  private int cooldown;
+  private boolean hasDashed;
+  private final double originalSpeed;
+  private int attackTicks;
+  private net.mebahelcreaturesdraugr.entity.ai.DraugrMeleeAttackGoal$AttackVariant currentAttack;
+  private static final int COMBO1_DURATION;
+  private static final int COMBO1_HIT_1_TICK;
+  private static final int COMBO1_HIT_2_TICK;
+  private static final int COMBO2_DURATION;
+  private static final int COMBO2_HIT_1_TICK;
+  private static final int COMBO2_HIT_2_TICK;
+  private static final double ATTACK_RANGE;
+  public net.mebahelcreaturesdraugr.entity.ai.DraugrMeleeAttackGoal(net.mebahelcreaturesdraugr.entity.custom.DraugrEntity, double, int, int, int);
+  public boolean method_6264();
+  public boolean method_6266();
+  public void method_6269();
+  public void method_6270();
+  public boolean method_38846();
+  public void method_6268();
+  protected void attack(net.minecraft.class_1309);
+  private void startNewAttackPattern();
+  private void handleSimpleAttack(net.minecraft.class_1309);
+  private void handleCombo1(net.minecraft.class_1309);
+  private void handleCombo2(net.minecraft.class_1309);
+  private void endAttack(net.minecraft.class_1309);
+  private void tryStartBlockAfterAttack(net.minecraft.class_1309);
+  private boolean shouldRequestPotion(float);
+  private void playSwingSound();
+  private void dashToward(net.minecraft.class_1309, double);
+}
+Goal
+Goal$AttackVariant
+== net/mebahelcreaturesdraugr/entity/flame_atronach/FlameAtronachModel
+Compiled from "FlameAtronachModel.java"
+public class net.mebahelcreaturesdraugr.entity.flame_atronach.FlameAtronachModel extends software.bernie.geckolib.model.GeoModel<net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity> {
+  public net.mebahelcreaturesdraugr.entity.flame_atronach.FlameAtronachModel();
+  public net.minecraft.class_2960 getModelResource(net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity);
+  public net.minecraft.class_2960 getTextureResource(net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity);
+  public net.minecraft.class_2960 getAnimationResource(net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity);
+  public void setCustomAnimations(net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity, long, software.bernie.geckolib.core.animation.AnimationState<net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity>);
+  public net.minecraft.class_2960 getAnimationResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_2960 getTextureResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_2960 getModelResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public void setCustomAnimations(software.bernie.geckolib.core.animatable.GeoAnimatable, long, software.bernie.geckolib.core.animation.AnimationState);
+}
+== net/mebahelcreaturesdraugr/entity/flame_atronach/FlameAtronachRenderer
+Compiled from "FlameAtronachRenderer.java"
+public class net.mebahelcreaturesdraugr.entity.flame_atronach.FlameAtronachRenderer extends software.bernie.geckolib.renderer.GeoEntityRenderer<net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity> {
+  public net.mebahelcreaturesdraugr.entity.flame_atronach.FlameAtronachRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_1921 getRenderType(net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity, net.minecraft.class_2960, net.minecraft.class_4597, float);
+  public void preRender(net.minecraft.class_4587, net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public float getMotionAnimThreshold(net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity);
+  public void preRender(net.minecraft.class_4587, net.minecraft.class_1297, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public void preRender(net.minecraft.class_4587, software.bernie.geckolib.core.animatable.GeoAnimatable, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public float getMotionAnimThreshold(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_1921 getRenderType(software.bernie.geckolib.core.animatable.GeoAnimatable, net.minecraft.class_2960, net.minecraft.class_4597, float);
+}
+== net/mebahelcreaturesdraugr/entity/flame_atronach/FlameAtronachFlameParticleLayer
+Compiled from "FlameAtronachFlameParticleLayer.java"
+public class net.mebahelcreaturesdraugr.entity.flame_atronach.FlameAtronachFlameParticleLayer extends software.bernie.geckolib.renderer.layer.GeoRenderLayer<net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity> {
+  private static final java.lang.String BONE_RIGHT_ARM;
+  private static final java.lang.String BONE_LEFT_ARM;
+  private static final java.lang.String BONE_LEGS_1;
+  private static final java.lang.String BONE_LEGS_2;
+  private static final float SPAWN_CHANCE_PER_TICK;
+  private static final double OFFSET_RADIUS_XZ;
+  private static final double OFFSET_RADIUS_Y;
+  private static final int LOG_EVERY_N_TICKS;
+  private final java.util.Map<java.lang.Long, java.lang.Integer> lastTickProcessed;
+  public net.mebahelcreaturesdraugr.entity.flame_atronach.FlameAtronachFlameParticleLayer(software.bernie.geckolib.renderer.GeoRenderer<net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity>);
+  public void renderForBone(net.minecraft.class_4587, net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity, software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1921, net.minecraft.class_4597, net.minecraft.class_4588, float, int, int);
+  private void spawnSoftFallingFlameAroundBone(net.minecraft.class_1937, net.mebahelcreaturesdraugr.entity.custom.FlameAtronachEntity, double, double, double, java.lang.String);
+  private static double round3(double);
+  public void renderForBone(net.minecraft.class_4587, software.bernie.geckolib.core.animatable.GeoAnimatable, software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1921, net.minecraft.class_4597, net.minecraft.class_4588, float, int, int);
+  private static boolean lambda$renderForBone$0(int, java.util.Map$Entry);
+}
+== net/mebahelcreaturesdraugr/entity/draugr_wight/DraugrWightPotionLayer
+Compiled from "DraugrWightPotionLayer.java"
+public class net.mebahelcreaturesdraugr.entity.draugr_wight.DraugrWightPotionLayer extends software.bernie.geckolib.renderer.layer.BlockAndItemGeoLayer<net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity> {
+  public net.mebahelcreaturesdraugr.entity.draugr_wight.DraugrWightPotionLayer(software.bernie.geckolib.renderer.GeoRenderer<net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity>);
+  protected net.minecraft.class_1799 getStackForBone(software.bernie.geckolib.cache.object.GeoBone, net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity);
+  protected net.minecraft.class_811 getTransformTypeForStack(software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity);
+  protected void renderStackForBone(net.minecraft.class_4587, software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity, net.minecraft.class_4597, float, int, int);
+  protected void renderStackForBone(net.minecraft.class_4587, software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, software.bernie.geckolib.core.animatable.GeoAnimatable, net.minecraft.class_4597, float, int, int);
+  protected net.minecraft.class_811 getTransformTypeForStack(software.bernie.geckolib.cache.object.GeoBone, net.minecraft.class_1799, software.bernie.geckolib.core.animatable.GeoAnimatable);
+  protected net.minecraft.class_1799 getStackForBone(software.bernie.geckolib.cache.object.GeoBone, software.bernie.geckolib.core.animatable.GeoAnimatable);
+}
+== net/mebahelcreaturesdraugr/entity/draugr_wight/DraugrWightRenderer
+Compiled from "DraugrWightRenderer.java"
+public class net.mebahelcreaturesdraugr.entity.draugr_wight.DraugrWightRenderer extends software.bernie.geckolib.renderer.GeoEntityRenderer<net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity> {
+  public net.mebahelcreaturesdraugr.entity.draugr_wight.DraugrWightRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_1921 getRenderType(net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity, net.minecraft.class_2960, net.minecraft.class_4597, float);
+  public void preRender(net.minecraft.class_4587, net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public float getMotionAnimThreshold(net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity);
+  public void preRender(net.minecraft.class_4587, net.minecraft.class_1297, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public void preRender(net.minecraft.class_4587, software.bernie.geckolib.core.animatable.GeoAnimatable, software.bernie.geckolib.cache.object.BakedGeoModel, net.minecraft.class_4597, net.minecraft.class_4588, boolean, float, int, int, float, float, float, float);
+  public float getMotionAnimThreshold(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_1921 getRenderType(software.bernie.geckolib.core.animatable.GeoAnimatable, net.minecraft.class_2960, net.minecraft.class_4597, float);
+}
+== net/mebahelcreaturesdraugr/entity/draugr_wight/DraugrWightModel
+Compiled from "DraugrWightModel.java"
+public class net.mebahelcreaturesdraugr.entity.draugr_wight.DraugrWightModel extends software.bernie.geckolib.model.GeoModel<net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity> {
+  public static final java.util.Map<net.mebahelcreaturesdraugr.entity.variant.DraugrWightVariant, net.minecraft.class_2960> LOCATION_BY_VARIANT;
+  public net.mebahelcreaturesdraugr.entity.draugr_wight.DraugrWightModel();
+  public net.minecraft.class_2960 getModelResource(net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity);
+  public net.minecraft.class_2960 getTextureResource(net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity);
+  public net.minecraft.class_2960 getAnimationResource(net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity);
+  public void setCustomAnimations(net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity, long, software.bernie.geckolib.core.animation.AnimationState<net.mebahelcreaturesdraugr.entity.custom.DraugrWightEntity>);
+  public net.minecraft.class_2960 getAnimationResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_2960 getTextureResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public net.minecraft.class_2960 getModelResource(software.bernie.geckolib.core.animatable.GeoAnimatable);
+  public void setCustomAnimations(software.bernie.geckolib.core.animatable.GeoAnimatable, long, software.bernie.geckolib.core.animation.AnimationState);
+  private static void lambda$static$0(java.util.EnumMap);
+  static {};
+}
+== net/mebahelcreaturesdraugr/mixin/ConnectorEntityAttributeMixin
+Compiled from "ConnectorEntityAttributeMixin.java"
+public abstract class net.mebahelcreaturesdraugr.mixin.ConnectorEntityAttributeMixin {
+  public net.mebahelcreaturesdraugr.mixin.ConnectorEntityAttributeMixin();
+  private static void mebahelcreaturesdraugr$registerAttributes(org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+}
+== net/mebahelcreaturesdraugr/mixin/accessor/MobEntityAccessor
+Compiled from "MobEntityAccessor.java"
+public interface net.mebahelcreaturesdraugr.mixin.accessor.MobEntityAccessor {
+  public abstract net.minecraft.class_1355 getTargetSelector();
+}
+== net/mebahelcreaturesdraugr/block/entity/custom/base/AbstractSpellCasterTrapBlockEntity
+Compiled from "AbstractSpellCasterTrapBlockEntity.java"
+public abstract class net.mebahelcreaturesdraugr.block.entity.custom.base.AbstractSpellCasterTrapBlockEntity extends net.minecraft.class_2586 implements software.bernie.geckolib.animatable.GeoBlockEntity,net.minecraft.class_1263,net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory {
+  protected final java.util.List<net.mebahelcreaturesdraugr.block.entity.custom.base.AbstractSpellCasterTrapBlockEntity$ScheduledTrapShot> scheduledShots;
+  protected static final double CRYSTAL_Y;
+  protected static final double MUZZLE_FORWARD_OFFSET;
+  protected static final int LOOK_SYNC_INTERVAL;
+  protected static final float LOOK_SYNC_THRESHOLD_DEGREES;
+  private static final int NO_TARGET_RESET_TICKS;
+  protected static final double CRYSTAL_BOX_MIN_X;
+  protected static final double CRYSTAL_BOX_MIN_Y;
+  protected static final double CRYSTAL_BOX_MIN_Z;
+  protected static final double CRYSTAL_BOX_MAX_X;
+  protected static final double CRYSTAL_BOX_MAX_Y;
+  protected static final double CRYSTAL_BOX_MAX_Z;
+  protected final software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache cache;
+  protected boolean broken;
+  protected boolean casting;
+  protected int attackCooldown;
+  protected int castTicksRemaining;
+  protected int noTargetTicks;
+  protected float crystalYawContinuous;
+  protected float crystalYawDegrees;
+  protected float crystalPitchDegrees;
+  protected float lastSyncedCrystalYawDegrees;
+  protected float lastSyncedCrystalPitchDegrees;
+  protected int lookSyncCooldown;
+  protected boolean channeling;
+  protected int channelTicksRemaining;
+  protected int channelShotCooldown;
+  private boolean visualStateInitialized;
+  protected final net.minecraft.class_2371<net.minecraft.class_1799> inventory;
+  protected net.mebahelcreaturesdraugr.block.entity.custom.base.AbstractSpellCasterTrapBlockEntity(net.minecraft.class_2591<?>, net.minecraft.class_2338, net.minecraft.class_2680);
+  protected java.util.Set<net.minecraft.class_1792> getAllowedSoulGems();
+  public boolean isBroken();
+  public boolean isPlayerOwned();
+  public boolean hasTrapInventory();
+  public boolean canCrystalBeBrokenByProjectile();
+  public boolean hasVisibleCrystal();
+  public float getCrystalYawDegrees();
+  public float getCrystalPitchDegrees();
+  protected abstract double getRange();
+  protected abstract int getAttackIntervalTicks();
+  protected abstract int getCastWindupTicks();
+  protected abstract int getLostSightResetTicks();
+  protected abstract int getSoulCostPerShot();
+  protected boolean usesChannelingAttack();
+  protected int getChannelDurationTicks();
+  protected int getChannelShotIntervalTicks();
+  protected void onChannelStarted();
+  protected void onChannelStopped();
+  protected void stopChanneling();
+  protected abstract boolean isValidTarget(net.minecraft.class_1309);
+  protected abstract void spawnProjectile(net.minecraft.class_3218, net.minecraft.class_1309, net.minecraft.class_243);
+  protected abstract void playFireSound(net.minecraft.class_3218, net.minecraft.class_243);
+  protected float getMaxLookPitch();
+  protected void scheduleExtraShot(net.minecraft.class_1309, int);
+  protected void tickScheduledShots();
+  protected void spawnSecondaryProjectile(net.minecraft.class_3218, net.minecraft.class_1309, net.minecraft.class_243);
+  protected java.lang.String getIdleAnimationName();
+  public void breakCrystal();
+  public static void tick(net.minecraft.class_1937, net.minecraft.class_2338, net.minecraft.class_2680, net.mebahelcreaturesdraugr.block.entity.custom.base.AbstractSpellCasterTrapBlockEntity);
+  protected int getRemainingGemCharge();
+  protected boolean canPayShotCost();
+  protected void consumeShotCost();
+  public boolean isGemDepleted();
+  private void checkCrystalProjectileHit();
+  private net.minecraft.class_238 getCrystalWorldBox();
+  private boolean hitsCrystal(net.minecraft.class_1676, net.minecraft.class_238);
+  protected net.minecraft.class_1309 findVisibleTarget();
+  protected boolean canSee(net.minecraft.class_1309);
+  protected void fireAt(net.minecraft.class_1309);
+  protected net.minecraft.class_243 getCrystalCenterPos();
+  protected net.minecraft.class_243 getDynamicMuzzlePos(net.minecraft.class_1309);
+  protected void resetCrystalLook();
+  protected void updateCrystalLook(net.minecraft.class_1309);
+  protected float getBlockBaseYawDegrees();
+  protected float wrapDegrees(float);
+  protected void syncLookIfNeeded();
+  protected void forceSyncLook();
+  private int getVisualGemType();
+  private void syncVisualGemState();
+  protected void sync();
+  public void onUseServer(net.minecraft.class_1657);
+  public net.minecraft.class_2561 method_5476();
+  public net.minecraft.class_1703 createMenu(int, net.minecraft.class_1661, net.minecraft.class_1657);
+  public void writeScreenOpeningData(net.minecraft.class_3222, net.minecraft.class_2540);
+  public void registerControllers(software.bernie.geckolib.core.animation.AnimatableManager$ControllerRegistrar);
+  public software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache getAnimatableInstanceCache();
+  public double getTick(java.lang.Object);
+  protected void method_11007(net.minecraft.class_2487);
+  public void method_11014(net.minecraft.class_2487);
+  public net.minecraft.class_2487 method_16887();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_38235();
+  public int method_5439();
+  public boolean method_5442();
+  public net.minecraft.class_1799 method_5438(int);
+  public net.minecraft.class_1799 method_5434(int, int);
+  public net.minecraft.class_1799 method_5441(int);
+  public void method_5447(int, net.minecraft.class_1799);
+  public boolean method_5443(net.minecraft.class_1657);
+  public void method_5448();
+  public boolean method_5437(int, net.minecraft.class_1799);
+  public int method_5444();
+  public net.minecraft.class_1799 getDisplayedGemStack();
+  public boolean hasGemInserted();
+  public void playGemSocketSound(boolean);
+  protected void returnCrystalLookToIdle();
+  protected float lerpLinear(float, float, float);
+  protected float lerpAngle(float, float, float);
+  protected net.minecraft.class_1799 getInsertedSoulGem();
+  protected boolean hasValidSoulGem();
+  protected float getSoulGemBaseDamageMultiplier();
+  protected float getTrapSpellDamageMultiplier();
+  protected int getModifiedAttackIntervalTicks();
+  protected int getModifiedCastWindupTicks();
+  protected float applyGemSpellDamageMultiplier(float);
+  private software.bernie.geckolib.core.object.PlayState lambda$registerControllers$2(software.bernie.geckolib.core.animation.AnimationState);
+  private boolean lambda$findVisibleTarget$1(net.minecraft.class_1309);
+  private static boolean lambda$checkCrystalProjectileHit$0(net.minecraft.class_1676);
+}
+== net/mebahelcreaturesdraugr/block/entity/custom/base/AbstractSpellCasterTrapBlockEntity$ScheduledTrapShot
+Compiled from "AbstractSpellCasterTrapBlockEntity.java"
+public class net.mebahelcreaturesdraugr.block.entity.custom.base.AbstractSpellCasterTrapBlockEntity$ScheduledTrapShot {
+  private final net.minecraft.class_1309 target;
+  private int ticksRemaining;
+  protected net.mebahelcreaturesdraugr.block.entity.custom.base.AbstractSpellCasterTrapBlockEntity$ScheduledTrapShot(net.minecraft.class_1309, int);
+}
+== net/mebahelcreaturesdraugr/block/entity/custom/base/AbstractSpellCasterTrapBlockEntity$1
+Compiled from "AbstractSpellCasterTrapBlockEntity.java"
+class net.mebahelcreaturesdraugr.block.entity.custom.base.AbstractSpellCasterTrapBlockEntity$1 {
+  static final int[] $SwitchMap$net$minecraft$util$math$Direction;
+  static {};
+}
+== net/mebahelcreaturesdraugr/block/entity/custom/FireboltTrapBlockEntity
+Compiled from "FireboltTrapBlockEntity.java"
+public class net.mebahelcreaturesdraugr.block.entity.custom.FireboltTrapBlockEntity extends net.mebahelcreaturesdraugr.block.entity.custom.base.AbstractSpellCasterTrapBlockEntity {
+  private static final int CAST_WINDUP_TICKS;
+  private static final int LOST_SIGHT_RESET_TICKS;
+  private final net.mebahelcreaturesdraugr.util.ProjectileUtil projectileUtil;
+  public net.mebahelcreaturesdraugr.block.entity.custom.FireboltTrapBlockEntity(net.minecraft.class_2338, net.minecraft.class_2680);
+  protected double getRange();
+  protected int getAttackIntervalTicks();
+  protected int getCastWindupTicks();
+  protected int getLostSightResetTicks();
+  protected int getSoulCostPerShot();
+  protected boolean isValidTarget(net.minecraft.class_1309);
+  protected void spawnProjectile(net.minecraft.class_3218, net.minecraft.class_1309, net.minecraft.class_243);
+  protected void spawnSecondaryProjectile(net.minecraft.class_3218, net.minecraft.class_1309, net.minecraft.class_243);
+  protected void playFireSound(net.minecraft.class_3218, net.minecraft.class_243);
+  public net.minecraft.class_2561 method_5476();
+  private net.mebahelcreaturesdraugr.config.ModTrapConfig$TrapSettings settings();
+}
+== net/mebahelcreaturesdraugr/block/entity/custom/DraugrAltarBlockEntity
+Compiled from "DraugrAltarBlockEntity.java"
+public class net.mebahelcreaturesdraugr.block.entity.custom.DraugrAltarBlockEntity extends net.minecraft.class_2586 implements software.bernie.geckolib.animatable.GeoBlockEntity {
+  private static final int UNLOCK_ANIMATION_DURATION_TICKS;
+  private final software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache cache;
+  private boolean unlocking;
+  private boolean unlocked;
+  private boolean bossSpawned;
+  private boolean bossDefeated;
+  private int unlockTicks;
+  private java.util.UUID activatorUuid;
+  private java.util.UUID bossUuid;
+  private net.minecraft.class_2338 bossSpawnPos;
+  private boolean clientUnlockAnimStarted;
+  public net.mebahelcreaturesdraugr.block.entity.custom.DraugrAltarBlockEntity(net.minecraft.class_2338, net.minecraft.class_2680);
+  public boolean isUnlocking();
+  public boolean isUnlocked();
+  public boolean isBossDefeated();
+  public boolean isProtectionActive();
+  public void startUnlock(net.minecraft.class_1657);
+  public static void tick(net.minecraft.class_1937, net.minecraft.class_2338, net.minecraft.class_2680, net.mebahelcreaturesdraugr.block.entity.custom.DraugrAltarBlockEntity);
+  private void onBossDefeated(net.minecraft.class_3218);
+  private void spawnRewardChest(net.minecraft.class_3218);
+  private boolean summonBoss(net.minecraft.class_3218, net.minecraft.class_2338, net.minecraft.class_2680);
+  private net.minecraft.class_2338 findValidSpawnBlock(net.minecraft.class_3218, net.minecraft.class_2338);
+  private boolean isValidSpawnBlock(net.minecraft.class_3218, net.minecraft.class_2338);
+  private boolean hasTwoAirAbove(net.minecraft.class_3218, net.minecraft.class_2338);
+  private void sync();
+  public void registerControllers(software.bernie.geckolib.core.animation.AnimatableManager$ControllerRegistrar);
+  public software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache getAnimatableInstanceCache();
+  public double getTick(java.lang.Object);
+  public void method_11007(net.minecraft.class_2487);
+  public void method_11014(net.minecraft.class_2487);
+  public net.minecraft.class_2487 method_16887();
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_38235();
+  private static void startBossFightSound(net.minecraft.class_3218, net.minecraft.class_2338);
+  private void endBossFightSound(net.minecraft.class_3218);
+  private software.bernie.geckolib.core.object.PlayState lambda$registerControllers$0(software.bernie.geckolib.core.animation.AnimationState);
+}
+== net/mebahelcreaturesdraugr/block/entity/custom/FrostSpikeTrapBlockEntity
+Compiled from "FrostSpikeTrapBlockEntity.java"
+public class net.mebahelcreaturesdraugr.block.entity.custom.FrostSpikeTrapBlockEntity extends net.mebahelcreaturesdraugr.block.entity.custom.base.AbstractSpellCasterTrapBlockEntity {
+  private static final int CAST_WINDUP_TICKS;
+  private static final int LOST_SIGHT_RESET_TICKS;
+  private final net.mebahelcreaturesdraugr.util.ProjectileUtil projectileUtil;
+  public net.mebahelcreaturesdraugr.block.entity.custom.FrostSpikeTrapBlockEntity(net.minecraft.class_2338, net.minecraft.class_2680);
+  protected double getRange();
+  protected int getAttackIntervalTicks();
+  protected int getCastWindupTicks();
+  protected int getLostSightResetTicks();
+  protected int getSoulCostPerShot();
+  protected boolean isValidTarget(net.minecraft.class_1309);
+  protected void spawnProjectile(net.minecraft.class_3218, net.minecraft.class_1309, net.minecraft.class_243);
+  protected void spawnSecondaryProjectile(net.minecraft.class_3218, net.minecraft.class_1309, net.minecraft.class_243);
+  protected void playFireSound(net.minecraft.class_3218, net.minecraft.class_243);
+  public net.minecraft.class_2561 method_5476();
+  private net.mebahelcreaturesdraugr.config.ModTrapConfig$TrapSettings settings();
+}
+== net/mebahelcreaturesdraugr/block/entity/custom/DraugrChestBlockEntity
+Compiled from "DraugrChestBlockEntity.java"
+public class net.mebahelcreaturesdraugr.block.entity.custom.DraugrChestBlockEntity extends net.mebahelsapi.block.entity.base.BaseChestBlockEntity {
+  public net.mebahelcreaturesdraugr.block.entity.custom.DraugrChestBlockEntity(net.minecraft.class_2338, net.minecraft.class_2680);
+  protected net.minecraft.class_2561 getChestTitle();
+  protected java.lang.String getLogPrefix();
+}
+== net/mebahelcreaturesdraugr/block/entity/custom/FrostBiteTrapBlockEntity
+Compiled from "FrostBiteTrapBlockEntity.java"
+public class net.mebahelcreaturesdraugr.block.entity.custom.FrostBiteTrapBlockEntity extends net.mebahelcreaturesdraugr.block.entity.custom.base.AbstractSpellCasterTrapBlockEntity {
+  private static final int CAST_WINDUP_TICKS;
+  private static final int LOST_SIGHT_RESET_TICKS;
+  private static final int CHANNEL_DURATION_TICKS;
+  private static final int CHANNEL_SHOT_INTERVAL_TICKS;
+  private static final double PROJECTILE_Y_OFFSET;
+  private static final double PROJECTILE_FORWARD_OFFSET;
+  private final net.mebahelcreaturesdraugr.util.ProjectileUtil projectileUtil;
+  public net.mebahelcreaturesdraugr.block.entity.custom.FrostBiteTrapBlockEntity(net.minecraft.class_2338, net.minecraft.class_2680);
+  protected double getRange();
+  protected int getAttackIntervalTicks();
+  protected int getCastWindupTicks();
+  protected int getLostSightResetTicks();
+  protected int getSoulCostPerShot();
+  protected boolean usesChannelingAttack();
+  protected int getChannelDurationTicks();
+  protected int getChannelShotIntervalTicks();
+  protected boolean isValidTarget(net.minecraft.class_1309);
+  protected void spawnProjectile(net.minecraft.class_3218, net.minecraft.class_1309, net.minecraft.class_243);
+  protected void playFireSound(net.minecraft.class_3218, net.minecraft.class_243);
+  protected void onChannelStarted();
+  protected void onChannelStopped();
+  private void sendFrostSoundPacket(net.minecraft.class_3218, boolean);
+  public net.minecraft.class_2561 method_5476();
+  private net.mebahelcreaturesdraugr.config.ModTrapConfig$TrapSettings settings();
+}
+== net/mebahelcreaturesdraugr/block/entity/custom/BlockScanEntity
+Compiled from "BlockScanEntity.java"
+public class net.mebahelcreaturesdraugr.block.entity.custom.BlockScanEntity extends net.minecraft.class_1297 implements software.bernie.geckolib.core.animatable.GeoAnimatable {
+  private final software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache factory;
+  private net.minecraft.class_2680 blockState;
+  private boolean blockStateSet;
+  private int timerTodespawn;
+  public net.mebahelcreaturesdraugr.block.entity.custom.BlockScanEntity(net.minecraft.class_1299<?>, net.minecraft.class_1937);
+  public void setBlockState(net.minecraft.class_2680);
+  public void method_5773();
+  public net.minecraft.class_2680 getBlockState();
+  protected void method_5693();
+  protected void method_5749(net.minecraft.class_2487);
+  protected void method_5652(net.minecraft.class_2487);
+  public void registerControllers(software.bernie.geckolib.core.animation.AnimatableManager$ControllerRegistrar);
+  public software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache getAnimatableInstanceCache();
+  public double getTick(java.lang.Object);
+}
+== net/mebahelcreaturesdraugr/block/entity/ticker/DraugrAltarTicker
+Compiled from "DraugrAltarTicker.java"
+public final class net.mebahelcreaturesdraugr.block.entity.ticker.DraugrAltarTicker implements net.minecraft.class_5558<net.minecraft.class_2586> {
+  public static final net.mebahelcreaturesdraugr.block.entity.ticker.DraugrAltarTicker INSTANCE;
+  private net.mebahelcreaturesdraugr.block.entity.ticker.DraugrAltarTicker();
+  public void tick(net.minecraft.class_1937, net.minecraft.class_2338, net.minecraft.class_2680, net.minecraft.class_2586);
+  static {};
+}
+== net/mebahelcreaturesdraugr/block/entity/ticker/SpellCasterTrapTicker
+Compiled from "SpellCasterTrapTicker.java"
+public final class net.mebahelcreaturesdraugr.block.entity.ticker.SpellCasterTrapTicker implements net.minecraft.class_5558<net.minecraft.class_2586> {
+  public static final net.mebahelcreaturesdraugr.block.entity.ticker.SpellCasterTrapTicker INSTANCE;
+  private net.mebahelcreaturesdraugr.block.entity.ticker.SpellCasterTrapTicker();
+  public void tick(net.minecraft.class_1937, net.minecraft.class_2338, net.minecraft.class_2680, net.minecraft.class_2586);
+  static {};
+}
+== net/mebahelcreaturesdraugr/block/entity/ModBlockEntities
+Compiled from "ModBlockEntities.java"
+public class net.mebahelcreaturesdraugr.block.entity.ModBlockEntities {
+  public static final net.minecraft.class_2591<net.mebahelcreaturesdraugr.block.entity.custom.FrostSpikeTrapBlockEntity> FIREBOLT_TRAP_BLOCK_ENTITY;
+  public static final net.minecraft.class_2591<net.mebahelcreaturesdraugr.block.entity.custom.FrostSpikeTrapBlockEntity> FROST_SPIKE_TRAP_BLOCK_ENTITY;
+  public static final net.minecraft.class_2591<net.mebahelcreaturesdraugr.block.entity.custom.FrostBiteTrapBlockEntity> FROSTBITE_TRAP_BLOCK_ENTITY;
+  public static final net.minecraft.class_2591<net.mebahelcreaturesdraugr.block.entity.custom.DraugrAltarBlockEntity> DRAUGR_ALTAR_BLOCK_ENTITY;
+  public static final net.minecraft.class_2591<net.mebahelcreaturesdraugr.block.entity.custom.DraugrChestBlockEntity> DRAUGR_CHEST_ENTITY;
+  public net.mebahelcreaturesdraugr.block.entity.ModBlockEntities();
+  public static void registerModBlockEntities();
+  static {};
+}
+== net/mebahelcreaturesdraugr/world/gen/ModEntitySpawn
+Compiled from "ModEntitySpawn.java"
+public class net.mebahelcreaturesdraugr.world.gen.ModEntitySpawn {
+  public net.mebahelcreaturesdraugr.world.gen.ModEntitySpawn();
+  public static void addEntitySpawn();
+  private static boolean lambda$addEntitySpawn$4(net.minecraft.class_1299, net.minecraft.class_5425, net.minecraft.class_3730, net.minecraft.class_2338, net.minecraft.class_5819);
+  private static boolean lambda$addEntitySpawn$3(net.minecraft.class_1299, net.minecraft.class_5425, net.minecraft.class_3730, net.minecraft.class_2338, net.minecraft.class_5819);
+  private static boolean lambda$addEntitySpawn$2(net.minecraft.class_1299, net.minecraft.class_5425, net.minecraft.class_3730, net.minecraft.class_2338, net.minecraft.class_5819);
+  private static boolean lambda$addEntitySpawn$1(net.minecraft.class_1299, net.minecraft.class_5425, net.minecraft.class_3730, net.minecraft.class_2338, net.minecraft.class_5819);
+  private static boolean lambda$addEntitySpawn$0(net.minecraft.class_1299, net.minecraft.class_5425, net.minecraft.class_3730, net.minecraft.class_2338, net.minecraft.class_5819);
+}
+== net/mebahelcreaturesdraugr/config/ModEntityHealthConfig
+Compiled from "ModEntityHealthConfig.java"
+public class net.mebahelcreaturesdraugr.config.ModEntityHealthConfig {
+  private static final java.lang.String CONFIG_FILE_NAME;
+  private static final com.google.gson.Gson GSON;
+  public static int draugrEntityHealth;
+  public static int draugrArcherEntityHealth;
+  public static int draugrWightEntityHealth;
+  public static int draugrScourgeEntityHealth;
+  public static int draugrOverlordEntityHealth;
+  public static int skeletonWarriorEntityHealth;
+  public static int skeletonWarriorHeadEntityHealth;
+  public static int flameAtronachEntityHealth;
+  public static int infernalDraugrEntityHealth;
+  private static final int MIN;
+  private static final int MAX;
+  public net.mebahelcreaturesdraugr.config.ModEntityHealthConfig();
+  public static void loadConfig(java.io.File);
+  public static void saveConfig(java.io.File);
+  static {};
+}
+== net/mebahelcreaturesdraugr/config/ModEntityDamageConfig
+Compiled from "ModEntityDamageConfig.java"
+public class net.mebahelcreaturesdraugr.config.ModEntityDamageConfig {
+  private static final java.lang.String CONFIG_FILE_NAME;
+  private static final com.google.gson.Gson GSON;
+  public static float draugrEntityMeleeDamage;
+  public static float draugrArcherEntityBonusArrowDamage;
+  public static float draugrWightEntityMeleeDamage;
+  public static float draugrWightEntityFrostbiteDamage;
+  public static float draugrScourgeEntityFrostbiteDamage;
+  public static float draugrScourgeEntityIceSpikeDamage;
+  public static float draugrOverlordEntityMeleeDamage;
+  public static float draugrOverlordEntitySpinDamage;
+  public static float draugrOverlordEntityGroundStrikeDamage;
+  public static float skeletonWarriorEntityMeleeDamage;
+  public static float flameAtronachEntityDamage;
+  public static float infernalDraugrEntityMeleeDamage;
+  public static float infernalDraugrEntityFireBoltDamage;
+  private static final float MIN;
+  private static final float MAX;
+  public net.mebahelcreaturesdraugr.config.ModEntityDamageConfig();
+  public static void loadConfig(java.io.File);
+  public static void saveConfig(java.io.File);
+  private static boolean outOfRange(float);
+  static {};
+}
+== net/mebahelcreaturesdraugr/config/ModEntityArmorConfig$ConfigData
+Compiled from "ModEntityArmorConfig.java"
+class net.mebahelcreaturesdraugr.config.ModEntityArmorConfig$ConfigData {
+  java.lang.Integer draugrEntityArmor;
+  java.lang.Integer draugrArcherEntityArmor;
+  java.lang.Integer draugrWightEntityArmor;
+  java.lang.Integer draugrScourgeEntityArmor;
+  java.lang.Integer draugrOverlordEntityArmor;
+  java.lang.Integer skeletonWarriorEntityArmor;
+  java.lang.Integer skeletonWarriorHeadEntityArmor;
+  java.lang.Integer flameAtronachEntityArmor;
+  java.lang.Integer infernalDraugrEntityArmor;
+  net.mebahelcreaturesdraugr.config.ModEntityArmorConfig$ConfigData(int, int, int, int, int, int, int, int, int);
+}
+== net/mebahelcreaturesdraugr/config/ModEntityDamageConfig$ConfigData
+Compiled from "ModEntityDamageConfig.java"
+class net.mebahelcreaturesdraugr.config.ModEntityDamageConfig$ConfigData {
+  float draugrEntityMeleeDamage;
+  float draugrArcherEntityBonusArrowDamage;
+  float draugrWightEntityMeleeDamage;
+  float draugrWightEntityFrostbiteDamage;
+  float draugrScourgeEntityFrostbiteDamage;
+  float draugrScourgeEntityIceSpikeDamage;
+  float draugrOverlordEntityMeleeDamage;
+  float draugrOverlordEntitySpinDamage;
+  float draugrOverlordEntityGroundStrikeDamage;
+  float skeletonWarriorEntityMeleeDamage;
+  float flameAtronachEntityDamage;
+  float infernalDraugrEntityMeleeDamage;
+  float infernalDraugrEntityFireBoltDamage;
+  net.mebahelcreaturesdraugr.config.ModEntityDamageConfig$ConfigData();
+  net.mebahelcreaturesdraugr.config.ModEntityDamageConfig$ConfigData(float, float, float, float, float, float, float, float, float, float, float, float, float);
+}
+== net/mebahelcreaturesdraugr/config/ModEntityArmorConfig
+Compiled from "ModEntityArmorConfig.java"
+public class net.mebahelcreaturesdraugr.config.ModEntityArmorConfig {
+  private static final java.lang.String CONFIG_FILE_NAME;
+  private static final com.google.gson.Gson GSON;
+  public static int draugrEntityArmor;
+  public static int draugrArcherEntityArmor;
+  public static int draugrWightEntityArmor;
+  public static int draugrScourgeEntityArmor;
+  public static int draugrOverlordEntityArmor;
+  public static int skeletonWarriorEntityArmor;
+  public static int skeletonWarriorHeadEntityArmor;
+  public static int flameAtronachEntityArmor;
+  public static int infernalDraugrEntityArmor;
+  private static final int MIN;
+  private static final int MAX;
+  public net.mebahelcreaturesdraugr.config.ModEntityArmorConfig();
+  public static void loadConfig(java.io.File);
+  public static void saveConfig(java.io.File);
+  static {};
+}
+== net/mebahelcreaturesdraugr/config/ModEntityHealthConfig$ConfigData
+Compiled from "ModEntityHealthConfig.java"
+class net.mebahelcreaturesdraugr.config.ModEntityHealthConfig$ConfigData {
+  java.lang.Integer draugrEntityHealth;
+  java.lang.Integer draugrArcherEntityHealth;
+  java.lang.Integer draugrWightEntityHealth;
+  java.lang.Integer draugrScourgeEntityHealth;
+  java.lang.Integer draugrOverlordEntityHealth;
+  java.lang.Integer skeletonWarriorEntityHealth;
+  java.lang.Integer skeletonWarriorHeadEntityHealth;
+  java.lang.Integer flameAtronachEntityHealth;
+  java.lang.Integer infernalDraugrEntityHealth;
+  net.mebahelcreaturesdraugr.config.ModEntityHealthConfig$ConfigData(int, int, int, int, int, int, int, int, int);
+}

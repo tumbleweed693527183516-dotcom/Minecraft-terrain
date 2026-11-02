@@ -1,0 +1,86 @@
+== assets/mebahelcreaturesdraugr/animations/venom_entity.animation.json
+idle
+== assets/mebahelcreaturesdraugr/animations/spellcaster_trap.animation.json
+idle
+broken
+== assets/mebahelcreaturesdraugr/animations/infernal_draugr.animation.json
+spawn
+walk
+transition_walk
+idle
+attack
+attack2
+drink_potion
+attack_combo1
+attack_combo2
+summoning
+jumpback_shoot
+== assets/mebahelcreaturesdraugr/animations/flame_atronach.animation.json
+idle
+walk
+walk2
+walk_back
+spawn
+attack1
+attack2
+attackrotate
+attackdual
+== assets/mebahelcreaturesdraugr/animations/flame_atronach_projectile.animation.json
+idle
+== assets/mebahelcreaturesdraugr/animations/draugr_chest.animation.json
+idle
+spawn
+open
+isOpened
+close
+isClosed
+== assets/mebahelcreaturesdraugr/animations/draugr_overlord.animation.json
+idle
+spawn
+block_attack
+walk
+walk_back
+walk_transition
+sl_attack_rush
+sl_attack_double2
+sl_attack_double1
+sl_attack_quake
+sl_attack_triple
+defend_hit
+sl_block_spin
+sl_block_spin2
+== assets/mebahelcreaturesdraugr/animations/draugr_altar.animation.json
+golden_claw_unlock
+unlock_finished
+idle
+== assets/mebahelcreaturesdraugr/animations/draugr.animation.json
+spawn
+ice_spike
+spell
+frostbite
+walk
+transition_walk
+idle
+attack
+attack2
+shoot
+block_attack
+drink_potion
+attack_combo1
+attack_combo2
+summoning
+jumpback_shoot
+== assets/mebahelcreaturesdraugr/animations/firebolt_projectile.animation.json
+idle
+== assets/mebahelcreaturesdraugr/animations/skeleton_warrior_head.animation.json
+spawn
+respawn
+walk
+idle
+== assets/mebahelcreaturesdraugr/animations/skeleton_warrior.animation.json
+transition_walk
+spawn
+attack
+attack2
+idle
+walk
