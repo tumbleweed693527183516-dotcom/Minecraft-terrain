@@ -64,7 +64,16 @@ for a, b, ward, stage in BANDS:
                      "trophy": {"trophies/act1": "Act I trophy", "trophies/act2": "Act II trophy", "trophies/act3": "Act III trophy",
                                 "trophies/act4": "Act IV trophy"}.get(tr, tr.replace("_", " ")), "dye": dye.replace("_dye", "").replace("_", " ")})
     armor["bands"].append({"ward": ward, "stage": stage, "sets": sets})
-data = json.dumps({"armor": armor, "chapters": chapters, "icons": icons, "portraits": portraits}, ensure_ascii=False)
+# classes guide, read from NorseClass.java
+nc = (ROOT / "ragnarok/src/main/java/com/vividlands/ragnarok/classes/NorseClass.java").read_text()
+classes = []
+for m in re.finditer(r'(\w+)\("(\w+)", "([^"]+)", 0x([0-9A-F]+), "([^"]+)", "([^"]+)",\s*List\.of\((.*?)\)\)\)', nc, re.S):
+    abil = [{"name": a[0], "level": int(a[1]), "cd": int(a[2]), "text": a[3]}
+            for a in re.findall(r'new Ability\("([^"]+)", (\d+), (\d+), "([^"]+)"', m.group(7))]
+    icons[f"{m.group(2)}_rune"] = b64(ITEMS / f"{m.group(2)}_rune.png")
+    classes.append({"id": m.group(2), "title": m.group(3), "color": "#" + m.group(4), "passive": m.group(5),
+                    "passiveText": m.group(6), "abilities": abil})
+data = json.dumps({"classes": classes, "armor": armor, "chapters": chapters, "icons": icons, "portraits": portraits}, ensure_ascii=False)
 html = (Path(__file__).parent / "preview_template.html").read_text().replace("/*DATA*/null", data)
 OUT.write_text(html)
 print(OUT, len(html) // 1024, "KB")

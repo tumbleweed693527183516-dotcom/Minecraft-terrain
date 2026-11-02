@@ -210,6 +210,50 @@ final class RenderTest {
         steps.add(mc::stop);
     }
 
+    /** The five classes: each casts its four abilities at a row of zombies, with the HUD visible. */
+    private static void planClasses(Minecraft mc) {
+        steps.add(() -> {
+            for (String c : new String[]{"gamerule doDaylightCycle false", "time set 6000", "weather clear", "gamerule doMobSpawning false",
+                    "gamerule vividlandsBossSpawning false", "difficulty normal", "gamemode creative @a",
+                    "fill -16 199 -8 16 199 24 minecraft:grass_block", "fill -16 200 -8 16 215 24 minecraft:air",
+                    "tp @a 0.5 200 0.5 0 12"}) cmd(mc, c);
+            mc.options.hideGui = false;
+        });
+        steps.add(() -> { cmd(mc, "execute as @p run ragnarok class set huntsman 12"); nextWait = 20; });
+        steps.add(() -> shot(mc, "class_hud_level12"));
+        String[] ids = {"berserker", "valkyrie", "huntsman", "volva", "ulfhednar"};
+        for (String id : ids) {
+            steps.add(() -> {
+                cmd(mc, "kill @e[type=minecraft:zombie]");
+                cmd(mc, "kill @e[type=minecraft:wolf]");
+                cmd(mc, "kill @e[type=minecraft:arrow]");
+                for (int i = 0; i < 6; i++) {
+                    cmd(mc, String.format(java.util.Locale.ROOT,
+                            "summon minecraft:zombie %.1f 200 %.1f {NoAI:1b,PersistenceRequired:1b,Health:200f,Attributes:[{Name:\"generic.max_health\",Base:200d}]}",
+                            -5.0 + i * 2, 7.5 + (i % 2)));
+                }
+                cmd(mc, "tp @a 0.5 200 0.5 0 12");
+                cmd(mc, "execute as @p run ragnarok class set " + id + " 50");
+                cmd(mc, "execute as @p run ragnarok class ready");
+                nextWait = 20;
+            });
+            steps.add(() -> shot(mc, "class_" + id + "_hud"));
+            for (int slot = 1; slot <= 4; slot++) {
+                int s = slot;
+                steps.add(() -> {
+                    cmd(mc, "tp @a 0.5 200 0.5 0 12");
+                    cmd(mc, "execute as @p at @s anchored eyes facing 0.5 201 8 run ragnarok class cast " + s);
+                    nextWait = s == 2 && (id.equals("berserker") || id.equals("valkyrie")) ? 8 : 6;
+                });
+                steps.add(() -> shot(mc, "class_" + id + "_" + s));
+            }
+            steps.add(() -> { nextWait = 30; });
+            steps.add(() -> shot(mc, "class_" + id + "_after"));
+            steps.add(() -> cmd(mc, "data get entity @e[type=minecraft:zombie,limit=1,sort=nearest] Health"));
+        }
+        steps.add(mc::stop);
+    }
+
     private static void plan(Minecraft mc) {
         steps.add(() -> {
             for (String c : new String[]{"gamerule doDaylightCycle false", "time set 6000", "weather clear",
@@ -336,6 +380,7 @@ final class RenderTest {
                 String scene = System.getProperty("vividlands.rendertest.scene", "armor");
                 if ("bosses".equals(scene)) planBosses(mc);
                 else if ("ancient".equals(scene)) planAncient(mc);
+                else if ("classes".equals(scene)) planClasses(mc);
                 else plan(mc);
                 Ragnarok.LOG.info("render test: in world, {} steps", steps.size());
             }

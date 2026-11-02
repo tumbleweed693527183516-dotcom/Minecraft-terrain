@@ -285,34 +285,41 @@ def path(prefix, name, god, items):
             for i, (t, r, line, tasks, lv, k) in enumerate(items)]
 
 
-PATHS = build("paths", "Paths of the Einherjar", "Spell Engine classes, Better Combat, Simply Swords, Fantasy Weapons", "Tyr, god of war", "Combat & Gear", [
+CLASSES = [
+    ("berserker", "Berserker", "Tyr", "bone", ["Bloodrage", "Cleaving Leap", "Bear Shirt", "Undying Rage"],
+     ["Rage is a weapon. Learn to hold it.", "Leap and crash down.", "Wear the bear.", "Death will have to wait."]),
+    ("valkyrie", "Valkyrie", "Freyja", "feather", ["Spear of the Slain", "Ascent", "Freyja's Aegis", "Choose the Slain"],
+     ["Throw true.", "Take to the sky.", "Shield your sisters.", "Choose who falls."]),
+    ("huntsman", "Huntsman", "Skadi", "arrow", ["Volley", "Frost Snare", "Hunter's Mark", "Skadi's Hailstorm"],
+     ["Many arrows.", "Let them walk into it.", "Nothing hides from you.", "Make it rain."]),
+    ("volva", "Volva", "Freyja", "amethyst shard", ["Kenaz, the Torch", "Isa, the Ice", "Algiz, the Ward", "Thurisaz, the Thunder"],
+     ["Fire from a rune.", "Ice from a rune.", "Protection from a rune.", "Thunder from a rune."]),
+    ("ulfhednar", "Ulfhednar", "Odin", "leather", ["Call the Pack", "Howl", "Wolf Form", "Fenrir's Hunger"],
+     ["Never hunt alone.", "Let them hear you.", "Become the wolf.", "Feed on the fight."]),
+]
+
+
+def class_branch(cid, title, god, mat, abil, lines):
+    out = [(f"{cid}_rune", f"Path of the {title}", I(f"{cid}_rune"), f"{god}: \"Carve the rune and walk the path.\"",
+            [f"Craft the {title} Rune Stone (2 cobblestone + {mat})", "Use it"], P(1))]
+    for lv, name, line, tier in zip((1, 10, 20, 35), abil, lines, (1, 2, 3, 4)):
+        out.append((f"{cid}_{lv}", f"{name}", I(f"{cid}_rune"), f"{god}: \"{line}\"",
+                    [f"Reach {title} level {lv}", f"Use {name}" if not (cid == "berserker" and lv == 35) else "Survive a killing blow with Undying Rage"], P(tier)))
+    out.append((f"{cid}_50", f"{title} Master", I(f"{cid}_rune"), f"{god}: \"Level 50. There is no more to teach you.\"",
+                [f"Reach {title} level 50"], [f"Title: {title} Master", *P(5)], "gift"))
+    return out
+
+
+PATHS = build("paths", "Paths of the Einherjar", "the five classes, Better Combat, Simply Swords, Fantasy Weapons", "Tyr, god of war", "Combat & Gear", [
     ("Choose a Path", None, "chain", [
-        ("choose", "Choose Your Path", R("ᛏ"), "Tyr: \"Archer, rogue or warrior. Every einherjar fights their own way.\"", ["Craft any class armor piece"], ["Class starter kit"]),
-        ("spell", "Your First Skill", R("ᛏ"), "Tyr: \"Every class has secrets.\"", ["Use a class skill"], P(1)),
-        ("three", "Three Skills", R("ᛏ"), "Tyr: \"Learn them all.\"", ["Use 3 different class skills"], P(2)),
+        ("choose", "Five Paths", R("ᛏ"), "Tyr: \"Berserker, Valkyrie, Huntsman, Volva or Ulfhednar. Every einherjar fights their own way.\"",
+         ["Use any class rune stone"], ["Class starter kit"]),
+        ("lv5", "First Blood", R("ᛏ"), "Tyr: \"Every kill teaches. Bosses teach the most.\"", ["Reach level 5 in any class"], P(1)),
+        ("two", "A Second Path", R("ᛏ"), "Tyr: \"Switch any time. Each path keeps its own level.\"", ["Reach level 10 in two classes"], P(2)),
+        ("all5", "All Five Paths", R("ᛏ"), "Tyr: \"Few walk them all.\"", ["Reach level 20 in all five classes"], ["Title: Einherjar of Five Paths", *P(5)], "gift"),
     ]),
-    ("Archer", "choose", "chain", path("ar", "Archer", "Ullr", [
-        ("Archer Armor", "ᚢ", "Light and quiet.", ["Craft a full archer armor set"], 2, None),
-        ("Power Shot", "ᚢ", "One arrow, all your strength.", ["Kill a mob with Power Shot"], 2, None),
-        ("Barrage", "ᚢ", "Many arrows.", ["Hit 3 mobs with one Barrage"], 3, None),
-        ("Ranger", "ᚢ", "The better armor.", ["Craft a full ranger armor set"], 3, None),
-        ("Master Archer", "ᚢ", "Few draw as you do.", ["Kill a boss with arrows only"], 5, "gift"),
-    ])),
-    ("Rogue", "choose", "chain", path("ro", "Rogue", "Loki", [
-        ("Rogue Armor", "ᛚ", "Quiet feet.", ["Craft a full rogue armor set"], 2, None),
-        ("Daggers", "ᛚ", "Close and fast.", ["Kill 20 mobs with daggers"], 2, None),
-        ("Shadow Step", "ᛚ", "Be behind them.", ["Use a rogue movement skill"], 3, None),
-        ("Assassin", "ᛚ", "The better armor.", ["Craft a full assassin armor set"], 3, None),
-        ("Unseen", "ᛚ", "Even the saber-tooth did not see you.", ["Kill the Saber-tooth"], 5, "gift"),
-    ])),
-    ("Warrior", "choose", "chain", path("wa", "Warrior", "Tyr", [
-        ("Warrior Armor", "ᛏ", "Iron and nerve.", ["Craft a full warrior armor set"], 2, None),
-        ("Double Axes", "ᛏ", "Two blades.", ["Kill 20 mobs with a double axe"], 2, None),
-        ("Shout", "ᛏ", "Make them flinch.", ["Use a warrior shout"], 3, None),
-        ("Berserker", "ᛏ", "The better armor.", ["Craft a full berserker armor set"], 3, None),
-        ("Unbreakable", "ᛏ", "Tyr gave his hand. You gave nothing.", ["Kill a boss without drinking a potion"], 5, "gift"),
-    ])),
-    ("Weapon Master", "spell", "chain", [
+    *[(title, "choose", "chain", class_branch(cid, title, god, mat, abil, lines)) for cid, title, god, mat, abil, lines in CLASSES],
+    ("Weapon Master", "lv5", "chain", [
         ("ss1", "Simply Swords", R("ᛏ"), "Tyr: \"A new blade for every hand.\"", ["Craft a Simply Swords weapon"], P(1)),
         ("ss5", "Five Shapes", R("ᛏ"), "Tyr: \"Longsword, rapier, katana, glaive, scythe.\"", ["Craft 5 different Simply Swords weapon types"], P(2)),
         ("unique", "A Named Blade", R("ᛏ"), "Tyr: \"Some swords have names.\"", ["Find a Simply Swords unique weapon"], P(3)),

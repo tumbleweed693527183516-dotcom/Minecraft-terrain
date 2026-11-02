@@ -131,10 +131,10 @@ RESOLVE = [
     ("simply-swords", True),               # new weapon types and unique legendary weapons
     ("better-combat", True),               # weapon swing animations and combos
     ("combat-roll", True),                 # dodge roll
-    ("rogues-and-warriors", True),         # berserker-style warrior and rogue class gear and skills
+    # rogues-and-warriors removed (v0.28): the pack has its own five Norse classes
     ("mythicmetals", True),                # many new ores, each with tools, weapons and armor
     # --- bows ---
-    ("archers", True),                     # RPG Series archer: longbows, crossbows, archer armor, arrow skills
+    # archers removed (v0.28): replaced by the Huntsman class
     ("more-bows-and-arrows", True),        # ~50 bows and arrows with special effects, new bow enchantments
     ("too-many-bows", True),               # 30+ bows, each with its own effect; Ricochet and Spectral enchantments
     ("progressive-archery", True),         # tiered bows and arrows (better bows as you progress)

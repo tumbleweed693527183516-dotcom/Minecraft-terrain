@@ -170,7 +170,9 @@ function renderNav() {
       nav.append(b);
     }
   }
-  nav.append(el("div", { class: "navhead" }, "Reference"), ab);
+  const cb = el("button", { class: "chap", "aria-current": String(cur && cur.id === "classes") }, el("span", { class: "n" }, "Classes"), el("span", { class: "c" }, "5"), el("span", { class: "s" }, "Abilities, levels, XP"));
+  cb.onclick = () => { location.hash = "classes"; };
+  nav.append(el("div", { class: "navhead" }, "Reference"), cb, ab);
 }
 
 function renderMap() {
@@ -286,8 +288,34 @@ function renderArmor() {
     el("p", { class: "sub" }, "With the right set, a boss's normal hit takes about 6 to 8 hits to kill you. One stage behind, about 3. Vanilla gear counts too: full iron is ward 1, diamond 2, netherite 3."),
     list("Full-set bonuses", DATA.armor.traits.map(t => `${t.title}: ${t.text}`), "var(--frost)"));
 }
+
+function renderClasses() {
+  document.getElementById("chTitle").textContent = "Classes";
+  document.getElementById("chSub").textContent = "Five paths, levels 1 to 50; every ability grows evenly with level";
+  const cv = document.getElementById("canvas"); cv.textContent = ""; cv.style.width = ""; cv.style.height = "";
+  const g = el("div", { class: "guide" });
+  for (const c of DATA.classes) {
+    const tb = el("tbody");
+    for (const a of c.abilities) tb.append(el("tr", {},
+      el("td", { class: "num" }, String(a.level)), el("td", {}, el("b", {}, a.name)), el("td", {}, a.text),
+      el("td", { class: "num" }, `${a.cd} s → ${Math.round(a.cd * 0.6)} s`)));
+    g.append(el("section", { class: "band" },
+      el("h3", { style: `color:${c.color}` }, el("img", { src: DATA.icons[c.id + "_rune"], alt: "", style: "width:24px;height:24px;image-rendering:pixelated;vertical-align:-5px;margin-right:8px" }), c.title),
+      el("p", {}, `Passive, ${c.passive}: ${c.passiveText}.`),
+      el("div", { class: "tw" }, el("table", { class: "sets" },
+        el("thead", {}, el("tr", {}, ...["Unlocks at level", "Ability", "What it does (level 1 to level 50)", "Cooldown"].map(h => el("th", {}, h)))), tb))));
+  }
+  cv.append(g);
+  const box = document.getElementById("detail"); box.textContent = ""; box.style.setProperty("--k", "var(--gold)");
+  box.append(el("div", { class: "kind" }, "Reference"), el("h3", {}, "How classes work"),
+    el("p", {}, "Craft a rune stone (2 cobblestone and one item) and use it to take that class. You have one class at a time, but switching is instant and every class keeps its own level."),
+    list("Earning XP", ["Any kill: a quarter of the mob's health", "A boss: its full reward (300 to 6,000) to everyone within 48 blocks", "Main quest steps: a share when the quest book is in"]),
+    list("Levels", ["Level 1 to 50", "Each level needs 25 more XP than the last (100 at level 1)", "Abilities unlock at 1, 10, 20 and 35", "Every number grows evenly from level 1 to level 50; cooldowns shrink to 60%"]),
+    list("Keys", ["Z, X, C, V cast abilities 1 to 4 (change them in Controls)", "The HUD right of the hotbar shows level, XP and cooldowns"], "var(--frost)"));
+}
 function route() {
   sel = null;
+  if (location.hash === "#classes") { cur = { id: "classes" }; renderNav(); renderClasses(); document.getElementById("map").scrollTo(0, 0); return; }
   if (location.hash === "#armor") { cur = { id: "armor" }; renderNav(); renderArmor(); document.getElementById("map").scrollTo(0, 0); return; }
   cur = chapter(location.hash.slice(1));
   renderNav(); renderMap(); renderDetail();
