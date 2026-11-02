@@ -1,0 +1,248 @@
+<title>Vivid Lands Quest Book</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Noto+Sans+Runic&display=swap">
+<style>
+/* Layout: a quest book screen. Chapter list | quest map | quest page. One dark world (night over a fjord), on purpose. */
+:root {
+  --night: #111922;
+  --slate: #18222e;
+  --slate2: #202d3b;
+  --rule: #31435a;
+  --bone: #ece3cf;
+  --mist: #94a6b8;
+  --gold: #e0b65a;
+  --ember: #d9653f;
+  --frost: #7fc8d6;
+  --done: #7cc28c;
+  --display: "Pixelify Sans", "Courier New", monospace;
+  --body: "Alegreya Sans", "Segoe UI", system-ui, sans-serif;
+  --rune: "Noto Sans Runic", "Segoe UI Historic", serif;
+  color-scheme: dark;
+}
+html, body { height: 100%; }
+body { background: var(--night); color: var(--bone); font-family: var(--body); font-size: 16px; line-height: 1.45; }
+.wrap { height: 100%; display: flex; flex-direction: column; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 16px; gap: 14px; box-sizing: border-box; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.brand { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.brand h1 { font-family: var(--display); font-weight: 700; font-size: 26px; margin: 0; letter-spacing: 0.02em; text-wrap: balance; }
+.brand .runes { font-family: var(--rune); color: var(--gold); font-size: 18px; letter-spacing: 0.3em; }
+.controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.btn { font: inherit; font-size: 14px; background: var(--slate2); color: var(--bone); border: 1px solid var(--rule); border-radius: 4px; padding: 6px 12px; cursor: pointer; }
+.btn:hover { border-color: var(--mist); }
+.btn:focus-visible, .chap:focus-visible, .node:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.btn[aria-pressed="true"] { background: var(--gold); color: var(--night); border-color: var(--gold); }
+.book { flex: 1; display: grid; grid-template-columns: 230px minmax(0, 1fr) 360px; gap: 14px; min-height: 0; }
+.book > .panel { min-height: 0; }
+.panel { background: var(--slate); border: 1px solid var(--rule); border-radius: 6px; min-width: 0; }
+nav.panel { padding: 10px 8px; overflow-y: auto; }
+.navhead { font-family: var(--display); font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--mist); padding: 10px 10px 6px; }
+.chap { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 8px; width: 100%; text-align: left; font: inherit; color: var(--bone); background: none; border: 0; border-left: 3px solid transparent; border-radius: 3px; padding: 7px 10px; cursor: pointer; }
+.chap:hover { background: var(--slate2); }
+.chap[aria-current="true"] { background: var(--slate2); border-left-color: var(--gold); }
+.chap .n { font-weight: 700; font-size: 15px; }
+.chap .s { grid-column: 1 / -1; font-size: 13px; color: var(--mist); }
+.chap .c { font-size: 12px; color: var(--mist); font-variant-numeric: tabular-nums; }
+.mapbox { display: flex; flex-direction: column; overflow: hidden; }
+.maphead { padding: 14px 18px 10px; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.maphead h2 { font-family: var(--display); font-size: 22px; margin: 0; font-weight: 700; }
+.maphead p { margin: 2px 0 0; color: var(--mist); font-size: 14px; }
+.legend { display: flex; gap: 14px; font-size: 13px; color: var(--mist); flex-wrap: wrap; }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; border: 2px solid var(--c); }
+.map { position: relative; overflow: auto; flex: 1; min-height: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(148,166,184,0.13) 1px, transparent 0); background-size: 24px 24px; }
+.canvas { position: relative; }
+.canvas svg { position: absolute; inset: 0; overflow: visible; pointer-events: none; }
+.act { position: absolute; font-family: var(--display); font-size: 13px; color: var(--gold); letter-spacing: 0.06em; white-space: nowrap; }
+.node { position: absolute; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px; background: none; border: 0; padding: 0; cursor: pointer; color: var(--bone); font: inherit; width: 116px; }
+.tile { width: 52px; height: 52px; display: grid; place-items: center; background: var(--slate2); border: 2px solid var(--frost); border-radius: 6px; box-shadow: 0 0 0 3px var(--night); position: relative; }
+.node.boss .tile { width: 64px; height: 64px; border-color: var(--ember); border-radius: 50%; }
+.node.boss2 .tile { border-color: var(--ember); }
+.node.gift .tile { border-color: var(--gold); transform: rotate(45deg); border-radius: 4px; width: 46px; height: 46px; }
+.node.gift .tile > * { transform: rotate(-45deg); }
+.tile img { width: 32px; height: 32px; image-rendering: pixelated; }
+.node.boss .tile img { width: 36px; height: 36px; }
+.tile .r { font-family: var(--rune); font-size: 26px; line-height: 1; color: var(--frost); }
+.node.gift .tile .r { color: var(--gold); }
+.node .lbl { font-size: 13px; line-height: 1.2; text-align: center; text-wrap: balance; text-shadow: 0 1px 0 var(--night), 0 0 6px var(--night); }
+.node:hover .tile, .node[aria-pressed="true"] .tile { box-shadow: 0 0 0 3px var(--night), 0 0 0 5px var(--bone); }
+.node.locked { opacity: 0.38; }
+.node.isdone .tile::after { content: ""; position: absolute; right: -7px; bottom: -7px; width: 16px; height: 16px; border-radius: 50%; background: var(--done); border: 2px solid var(--night); }
+.node.gift.isdone .tile::after { transform: rotate(-45deg); }
+aside.panel { overflow-y: auto; padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+.kind { font-family: var(--display); font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--k, var(--frost)); }
+aside h3 { font-family: var(--display); font-size: 22px; line-height: 1.15; margin: 2px 0 0; font-weight: 700; text-wrap: balance; }
+.sub { color: var(--mist); font-size: 14px; margin-top: 2px; }
+.portrait { background: radial-gradient(ellipse at 50% 60%, #2b3b4e 0%, var(--slate) 70%); border: 1px solid var(--rule); border-radius: 6px; display: grid; place-items: center; padding: 6px; }
+.portrait img { width: 100%; max-width: 280px; aspect-ratio: 1; image-rendering: pixelated; }
+blockquote { margin: 0; padding: 10px 14px; border-left: 3px solid var(--gold); background: var(--slate2); font-style: italic; border-radius: 0 4px 4px 0; }
+.sect h4 { font-family: var(--display); font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--mist); margin: 0 0 6px; font-weight: 500; }
+.sect ul { margin: 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.sect li { display: flex; gap: 8px; align-items: baseline; }
+.sect li::before { content: "▪"; color: var(--k, var(--frost)); }
+dl.stats { display: grid; grid-template-columns: auto 1fr; gap: 5px 14px; margin: 0; font-size: 15px; }
+dl.stats dt { color: var(--mist); }
+dl.stats dd { margin: 0; font-variant-numeric: tabular-nums; }
+.tip { font-size: 15px; background: rgba(217,101,63,0.12); border: 1px solid rgba(217,101,63,0.45); border-radius: 4px; padding: 8px 12px; }
+.empty { color: var(--mist); }
+.foot { color: var(--mist); font-size: 13px; }
+@media (max-width: 1100px) { .wrap { height: auto; min-height: 100%; } .book { grid-template-columns: 200px minmax(0, 1fr); } nav.panel { max-height: 80vh; } .mapbox { height: 80vh; } aside.panel { grid-column: 1 / -1; } }
+@media (max-width: 720px) {
+  .book { grid-template-columns: minmax(0, 1fr); }
+  nav.panel { display: flex; overflow-x: auto; padding: 6px; gap: 4px; }
+  .navhead { display: none; }
+  .chap { flex: 0 0 auto; width: auto; border-left: 0; border-bottom: 3px solid transparent; }
+  .chap[aria-current="true"] { border-bottom-color: var(--gold); }
+  .chap .s, .chap .c { display: none; }
+  nav.panel { max-height: none; } .mapbox { height: auto; max-height: 72vh; }
+}
+@media (prefers-reduced-motion: no-preference) { .tile { transition: box-shadow 120ms; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="brand"><h1>Vivid Lands Quest Book</h1><span class="runes" aria-hidden="true">ᚱᚨᚷᚾᚨᚱᛟᚲ</span></div>
+    <div class="controls">
+      <button class="btn" id="mode" aria-pressed="false">Play through</button>
+      <button class="btn" id="reset" hidden>Reset progress</button>
+    </div>
+  </header>
+  <div class="book">
+    <nav class="panel" id="nav" aria-label="Chapters"></nav>
+    <section class="panel mapbox">
+      <div class="maphead">
+        <div><h2 id="chTitle"></h2><p id="chSub"></p></div>
+        <div class="legend"><span style="--c: var(--frost)">Quest</span><span style="--c: var(--ember)">Boss</span><span style="--c: var(--gold)">Gift or reward</span></div>
+      </div>
+      <div class="map" id="map"><div class="canvas" id="canvas"></div></div>
+    </section>
+    <aside class="panel" id="detail" aria-live="polite"></aside>
+  </div>
+  <p class="foot">A preview of the quest lines planned for the pack. Nothing here is in the game yet. "Play through" locks quests until the ones before them are done, as the quest book will in the game.</p>
+</div>
+
+<script>
+const DATA = /*DATA*/null;
+const CX = 132, CY = 112, PAD = 70;
+const ACTS = [["Act I · The Forest's Teeth", 0], ["Act II · Rivers and Plains", 2.6], ["Act III · The Far Lands", 5.2], ["Act IV · The Titans", 7.8], ["Act V · The Roof of the World", 10.4]];
+const KIND = { quest: ["Quest", "var(--frost)"], boss: ["Boss trial", "var(--ember)"], boss2: ["Boss fight (Civilizations)", "var(--ember)"], gift: ["Gift", "var(--gold)"] };
+const store = { get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
+let play = store.get("vl-play", false), done = new Set(store.get("vl-done", [])), cur = null, sel = null;
+
+const el = (t, a = {}, ...kids) => { const e = document.createElement(t); for (const [k, v] of Object.entries(a)) { if (k === "class") e.className = v; else if (k === "style") e.style.cssText = v; else e.setAttribute(k, v); } for (const c of kids) if (c != null) e.append(c); return e; };
+const chapter = id => DATA.chapters.find(c => c.id === id) || DATA.chapters[0];
+const locked = (ch, q) => play && q.deps.some(d => !done.has(d));
+const shift = ch => ch.acts ? 0.6 : 0;
+const ay = (ch, y) => ch.acts ? y + 0.4 * Math.floor((y + 0.1) / 2.2) : y;
+
+function iconFor(q) {
+  if (q.icon.startsWith("item:")) return el("img", { src: DATA.icons[q.icon.slice(5)], alt: "" });
+  return el("span", { class: "r", "aria-hidden": "true" }, q.icon.slice(5));
+}
+
+function renderNav() {
+  const nav = document.getElementById("nav"); nav.textContent = "";
+  for (const g of [["main", "Main quest"], ["side", "Side lines"]]) {
+    nav.append(el("div", { class: "navhead" }, g[1]));
+    for (const ch of DATA.chapters.filter(c => c.group === g[0])) {
+      const n = ch.quests.filter(q => done.has(q.id)).length;
+      const b = el("button", { class: "chap", "aria-current": String(cur && cur.id === ch.id) },
+        el("span", { class: "n" }, ch.name), el("span", { class: "c" }, play ? `${n}/${ch.quests.length}` : `${ch.quests.length}`), el("span", { class: "s" }, ch.sub));
+      b.onclick = () => { location.hash = ch.id; };
+      nav.append(b);
+    }
+  }
+}
+
+function renderMap() {
+  const ch = cur, cv = document.getElementById("canvas"); cv.textContent = "";
+  document.getElementById("chTitle").textContent = ch.name + (ch.group === "main" ? `: ${ch.sub}` : "");
+  document.getElementById("chSub").textContent = ch.group === "side" ? `${ch.sub}${ch.patron ? " · patron: " + ch.patron : ""}` : `${ch.quests.length} quests`;
+  const off = shift(ch);
+  const pos = q => [PAD + q.x * CX, PAD + (ay(ch, q.y) + off) * CY];
+  const maxX = Math.max(...ch.quests.map(q => q.x)), maxY = Math.max(...ch.quests.map(q => ay(ch, q.y))) + off;
+  const W = PAD * 2 + maxX * CX + 40, H = PAD * 2 + maxY * CY + 30;
+  cv.style.width = W + "px"; cv.style.height = H + "px";
+  const ns = "http://www.w3.org/2000/svg", svg = document.createElementNS(ns, "svg");
+  svg.setAttribute("width", W); svg.setAttribute("height", H);
+  const byId = Object.fromEntries(ch.quests.map(q => [q.id, q]));
+  for (const q of ch.quests) for (const d of q.deps) {
+    const a = byId[d]; if (!a) continue;
+    const [x1, y1] = pos(a), [x2, y2] = pos(q), mx = (x1 + x2) / 2;
+    const p = document.createElementNS(ns, "path");
+    p.setAttribute("d", Math.abs(x2 - x1) < 2 ? `M${x1} ${y1}L${x2} ${y2}` : `M${x1} ${y1}C${mx} ${y1} ${mx} ${y2} ${x2} ${y2}`);
+    p.setAttribute("fill", "none");
+    p.setAttribute("stroke", done.has(d) && play ? "var(--done)" : "var(--rule)");
+    p.setAttribute("stroke-width", "2.5");
+    svg.append(p);
+  }
+  cv.append(svg);
+  if (ch.acts) for (const [t, y] of ACTS) cv.append(el("div", { class: "act", style: `left:${PAD - 50}px;top:${PAD + y * CY - 16}px` }, t));
+  for (const q of ch.quests) {
+    const [x, y] = pos(q);
+    const b = el("button", { class: `node ${q.kind}${locked(ch, q) ? " locked" : ""}${done.has(q.id) ? " isdone" : ""}`, style: `left:${x}px;top:${y + 14}px`, "aria-pressed": String(sel === q.id), "aria-label": q.title },
+      el("span", { class: "tile" }, iconFor(q)), el("span", { class: "lbl" }, q.title));
+    b.onclick = () => { sel = q.id; renderMap(); renderDetail(); };
+    cv.append(b);
+  }
+}
+
+function list(title, items, color) {
+  return el("div", { class: "sect", style: color ? `--k:${color}` : "" }, el("h4", {}, title), el("ul", {}, ...items.map(t => el("li", {}, t))));
+}
+
+function renderDetail() {
+  const box = document.getElementById("detail"); box.textContent = "";
+  const q = cur.quests.find(x => x.id === sel);
+  if (!q) {
+    box.append(el("div", { class: "kind" }, cur.group === "main" ? "Main quest" : "Side line"), el("h3", {}, cur.name), el("div", { class: "sub" }, cur.sub),
+      el("p", { class: "empty" }, "Pick a quest on the map to read it."),
+      el("p", { class: "empty" }, cur.group === "main" ? "Bosses are round and red, gifts are gold diamonds, ordinary quests are blue squares." : `Optional. Patron: ${cur.patron}.`));
+    return;
+  }
+  const [kname, kcol] = KIND[q.kind];
+  box.style.setProperty("--k", kcol);
+  box.append(el("div", { class: "kind" }, kname), el("h3", {}, q.kind === "boss" ? q.full : q.title));
+  if (q.kind === "boss") {
+    box.append(el("div", { class: "portrait" }, el("img", { src: DATA.portraits[q.id], alt: `${q.title}, the boss model` })));
+    box.append(el("blockquote", {}, q.text));
+    box.append(el("dl", { class: "stats" },
+      el("dt", {}, "Health"), el("dd", {}, `${q.hp.toLocaleString("en-US")} HP`),
+      el("dt", {}, "Where"), el("dd", {}, q.where),
+      el("dt", {}, "Spawns after"), el("dd", {}, q.unlock),
+      el("dt", {}, "Drops"), el("dd", {}, q.drop)));
+    box.append(list("Moves", q.moves.split(", ").map(m => m[0].toUpperCase() + m.slice(1)), "var(--ember)"));
+    box.append(list("Phase 2, below half health", [q.phase2], "var(--ember)"));
+    box.append(el("div", { class: "tip" }, q.tip));
+    box.append(list("Task", [`Defeat ${q.title}`]));
+  } else {
+    box.append(el("blockquote", {}, q.text));
+    box.append(list(q.tasks.length > 1 ? "Tasks" : "Task", q.tasks));
+    box.append(list("Rewards", q.rewards, "var(--gold)"));
+  }
+  if (q.deps.length) {
+    const names = q.deps.map(d => (cur.quests.find(x => x.id === d) || {}).title).filter(Boolean);
+    box.append(el("div", { class: "sub" }, "Opens after: " + names.join(", ")));
+  }
+  if (play) {
+    const lk = locked(cur, q), isDone = done.has(q.id);
+    const b = el("button", { class: "btn" }, isDone ? "Mark not done" : lk ? "Locked: finish the quests before it" : "Complete quest");
+    if (lk && !isDone) b.disabled = true;
+    b.onclick = () => { isDone ? done.delete(q.id) : done.add(q.id); store.set("vl-done", [...done]); renderNav(); renderMap(); renderDetail(); };
+    box.append(b);
+  }
+}
+
+function route() {
+  cur = chapter(location.hash.slice(1)); sel = null;
+  renderNav(); renderMap(); renderDetail();
+  document.getElementById("map").scrollTo(0, 0);
+}
+const modeBtn = document.getElementById("mode"), resetBtn = document.getElementById("reset");
+function syncMode() { modeBtn.setAttribute("aria-pressed", String(play)); resetBtn.hidden = !play; }
+modeBtn.onclick = () => { play = !play; store.set("vl-play", play); syncMode(); renderNav(); renderMap(); renderDetail(); };
+resetBtn.onclick = () => { done.clear(); store.set("vl-done", []); renderNav(); renderMap(); renderDetail(); };
+window.addEventListener("hashchange", route);
+syncMode(); route();
+</script>
