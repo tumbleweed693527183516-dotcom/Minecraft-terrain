@@ -530,3 +530,12 @@ the same linear scale. Own creative tab: Ancient Armor.
   - Rune Pouches are `/loot give` command rewards; class XP is `/ragnarok class xp`. Boss kill tasks show the boss's trophy.
 - **Theme:** the built-in Norse resource pack now carries an FTB theme (ftb_quests_theme.txt) and new shape textures: slate background with a dot grid, bronze borders, gold text; quests slate when locked, bronze when ready, gold in progress, green when done; bosses ember-red. Unlike before, the chapter list and buttons are themed too.
 - **Tests:** pack test `mode=quests`: "Loaded 3 chapter groups, 16 chapters, 419 quests" and "QUESTCHECK loaded 419 quests in 16 chapters, 631 tasks, 807 rewards, unknown types=0". Render test `scene=quests` opens chapters and quests by id.
+
+## v0.30: the story is whole (2026-11-02)
+
+- **Loki's Betrayal gates Chapter 2:** killing the Civilizations bosses Loki (`civilizations:boss_loki`) and Björn Ironside (`nordic_boss`) is saved as story progress for everyone within 64 blocks. Sleipnir now needs the Mammoth *and* Loki. Loki's death tells the player Chapter 2 has opened.
+- **Twilight Broken:** killing Fenrir unseals the Nether and the End for the whole world (saved in the world's boss progress). Every online player gets a "Twilight Broken" title. Portals light, eyes of ender fit frames, and travel works from then on. The epilogue quest "Enter the Nether" tracks the vanilla advancement.
+- **Admin commands:** `/ragnarok realms status|open|seal`, `/ragnarok boss defeat <player> <id>`.
+- **Boss bar:** stagger meter and ward text are full-size ("Ward: matched / 1 behind / too weak").
+- **Blockbench sources:** tools/geo_to_bbmodel.py rebuilds a set's .bbmodel from the game model and texture. It reproduces the existing files exactly. Agamemnon refreshed (101 cubes, with the sculpted mask).
+- **Tests:** pack test `mode=quests` also checks a portal stays unlit while sealed and lights after `/ragnarok realms open`.
