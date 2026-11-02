@@ -29,6 +29,25 @@ public final class QuestHooks {
             Registry.register(BuiltInRegistries.CUSTOM_STAT, id, id);
             Stats.CUSTOM.get(id, StatFormatter.DEFAULT);
         }
+        // "/ragnarok questcheck": how many quests and chapters the quest book loaded (for the pack test)
+        net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback.EVENT.register((dispatcher, ctx, env) -> dispatcher.register(
+                net.minecraft.commands.Commands.literal("ragnarok").then(net.minecraft.commands.Commands.literal("questcheck")
+                        .requires(s -> s.hasPermission(2)).executes(c -> {
+                            String msg;
+                            try {
+                                Class<?> h = Class.forName("earth.terrarium.heracles.common.handlers.quests.QuestHandler");
+                                java.util.Map<?, ?> quests = (java.util.Map<?, ?>) h.getMethod("quests").invoke(null);
+                                java.util.List<?> groups = (java.util.List<?>) h.getMethod("groups").invoke(null);
+                                boolean failed = h.getField("failedToLoad").getBoolean(null);
+                                msg = "QUESTCHECK loaded " + quests.size() + " quests in " + groups.size() + " chapters, failed=" + failed;
+                            } catch (ReflectiveOperationException | RuntimeException e) {
+                                msg = "QUESTCHECK no quest book: " + e;
+                            }
+                            String m = msg;
+                            c.getSource().sendSuccess(() -> net.minecraft.network.chat.Component.literal(m), true);
+                            Ragnarok.LOG.info(m);
+                            return 1;
+                        }))));
     }
 
     /** Grants vividlands_ragnarok:quest/<path> (no toast: the advancements have no display). */
