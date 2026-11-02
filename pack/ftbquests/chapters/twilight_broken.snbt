@@ -53,6 +53,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:fenrir"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:fenrirs_fang"
+					}
 					id: "D5FF494E4DEFF37B"
 					title: "Defeat Fenrir"
 					type: "kill"

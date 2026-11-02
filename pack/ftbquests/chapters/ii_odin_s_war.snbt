@@ -108,6 +108,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:sleipnir"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:sleipnir_hair"
+					}
 					id: "996E6C0A210727CB"
 					title: "Defeat the Sleipnir"
 					type: "kill"
@@ -210,6 +214,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:garmr"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:hel_key"
+					}
 					id: "F6FA9E4A09E4D919"
 					title: "Defeat the Garmr"
 					type: "kill"
@@ -313,6 +321,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:fafnir"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:dragon_gold"
+					}
 					id: "E6858CF98E076D85"
 					title: "Defeat the Fafnir"
 					type: "kill"
@@ -411,6 +423,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:jormungandr"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:serpent_scale"
+					}
 					id: "FBB6D05D3F7F94DE"
 					title: "Defeat the Jormungandr"
 					type: "kill"
@@ -509,6 +525,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:fenrir"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:fenrirs_fang"
+					}
 					id: "F18CEF6B93D0A3F6"
 					title: "Defeat the Fenrir"
 					type: "kill"

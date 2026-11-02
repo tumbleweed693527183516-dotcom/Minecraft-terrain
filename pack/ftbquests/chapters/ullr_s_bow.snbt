@@ -1420,6 +1420,10 @@
 				}
 				{
 					entity: "vividlands_ragnarok:haast_eagle"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:eagle_feather"
+					}
 					id: "53F60DEF61C9BC20"
 					title: "Defeat Haast's Eagle"
 					type: "kill"

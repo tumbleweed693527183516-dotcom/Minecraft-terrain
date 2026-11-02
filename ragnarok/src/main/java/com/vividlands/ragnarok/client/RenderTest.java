@@ -325,7 +325,7 @@ final class RenderTest {
             mc.options.hideGui = false;
             nextWait = 60;
         });
-        steps.add(() -> { cmd(mc, "gamemode survival @a"); nextWait = 20; });
+        steps.add(() -> { cmd(mc, "fill -2 198 -2 2 198 2 minecraft:stone"); cmd(mc, "gamemode survival @a"); nextWait = 40; });
         String[] views = {"chapter/prologue", "quest/p1", "chapter/chapter1", "quest/cave_bear", "chapter/chapter2", "chapter/forge",
                 "chapter/armory", "chapter/paths", "chapter/hall"};
         for (String v : views) {

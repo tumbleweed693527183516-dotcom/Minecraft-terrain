@@ -167,7 +167,8 @@ def task_for(text, ch, q, i):
         n = 2 if m.group(3) == " twice" else 1
         if who in BOSS_NAMES or f"the {who}" in BOSS_NAMES:
             b = BOSS_NAMES.get(who) or BOSS_NAMES[f"the {who}"]
-            return f"{NS}:{BOSS[b][5].split('/')[-1]}", [dict(base, type=H + "kill_entity", entity={"type": f"{NS}:{b}"}, amount=n)]
+            return f"{NS}:{BOSS[b][5].split('/')[-1]}", [dict(base, type=H + "kill_entity", entity={"type": f"{NS}:{b}"}, amount=n,
+                                                              icon=f"{NS}:{BOSS[b][5].split('/')[-1]}")]
         if who in CIV_KILLS:
             return None, [dict(base, type=H + "kill_entity", entity={"type": f"civilizations:{CIV_KILLS[who]}"}, amount=n)]
         if who == "draugr overlord":
@@ -307,6 +308,8 @@ def ftb_task(key, t):
                 out["consume_items"] = True
     elif ty == "kill_entity":
         out.update(type="kill", entity=t["entity"]["type"], value=L(t["amount"]))
+        if t.get("icon"):
+            out["icon"] = stack(t["icon"])
     elif ty == "biome":
         out.update(type="biome", biome=t["biomes"])
     elif ty == "structure":
@@ -437,6 +440,7 @@ def build():
                 if q["kind"] == "boss":
                     tasks.append(ftb_task(f"{q['id']}/kill", {"type": H + "kill_entity", "title": f"Defeat the {q['title']}",
                                                              "entity": {"type": f"{NS}:{q['id']}"}, "amount": 1}))
+                    tasks[-1]["icon"] = stack(f"{NS}:{BOSS[q['id']][5].split('/')[-1]}")  # bosses have no spawn egg
                 for i, t in enumerate(q["tasks"]):
                     item, ts = task_for(t, ch["id"], q, i)
                     main_item = main_item or item

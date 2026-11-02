@@ -152,6 +152,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:cave_bear"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:bear_pelt"
+					}
 					id: "AB75A3FDDC322FBB"
 					title: "Defeat the Cave Bear"
 					type: "kill"
@@ -206,6 +210,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:dire_wolf"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:wolf_pelt"
+					}
 					id: "BB452FCD3C695E1B"
 					title: "Defeat the Dire Wolf Alpha"
 					type: "kill"
@@ -260,6 +268,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:irish_elk"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:great_antlers"
+					}
 					id: "EF980A7FD39DB138"
 					title: "Defeat the Great Irish Elk"
 					type: "kill"
@@ -314,6 +326,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:terror_bird"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:terror_claw"
+					}
 					id: "5648F66CFE03DAF3"
 					title: "Defeat the Terror Bird"
 					type: "kill"
@@ -368,6 +384,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:steppe_bison"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:bison_horn"
+					}
 					id: "F9096AD9037F95D7"
 					title: "Defeat the Steppe Bison"
 					type: "kill"
@@ -570,6 +590,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:hippo"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:hippo_hide"
+					}
 					id: "1C674167D5A4CAA2"
 					title: "Defeat the Hippopotamus"
 					type: "kill"
@@ -624,6 +648,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:komodo"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:komodo_venom"
+					}
 					id: "433E20EC93536A07"
 					title: "Defeat the Komodo Dragon"
 					type: "kill"
@@ -678,6 +706,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:crocodile"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:croc_scales"
+					}
 					id: "53D76FF140A7E537"
 					title: "Defeat the Giant Crocodile"
 					type: "kill"
@@ -732,6 +764,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:cave_lion"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:lion_mane"
+					}
 					id: "FB49EE612EE5F1FC"
 					title: "Defeat the Cave Lion"
 					type: "kill"
@@ -786,6 +822,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:saber_tooth"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:saber_fang"
+					}
 					id: "69ADAEED3169CB05"
 					title: "Defeat the Saber-tooth"
 					type: "kill"
@@ -998,6 +1038,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:haast_eagle"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:eagle_feather"
+					}
 					id: "559A485677B231C4"
 					title: "Defeat the Haast's Eagle"
 					type: "kill"
@@ -1052,6 +1096,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:anaconda"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:anaconda_skin"
+					}
 					id: "C3076C003B6EEB66"
 					title: "Defeat the Giant Anaconda"
 					type: "kill"
@@ -1106,6 +1154,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:silverback"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:silverback_fist"
+					}
 					id: "3E942F2A6AFF1327"
 					title: "Defeat the Silverback"
 					type: "kill"
@@ -1160,6 +1212,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:glyptodon"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:glyptodon_plate"
+					}
 					id: "6527C52BDFF050B8"
 					title: "Defeat the Glyptodon"
 					type: "kill"
@@ -1214,6 +1270,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:walrus"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:walrus_tusk"
+					}
 					id: "78520F846E973B10"
 					title: "Defeat the Walrus Bull"
 					type: "kill"
@@ -1419,6 +1479,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:ground_sloth"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:sloth_claw"
+					}
 					id: "F72A71B48D9E7EC1"
 					title: "Defeat the Giant Ground Sloth"
 					type: "kill"
@@ -1473,6 +1537,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:bull_shark"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:shark_tooth"
+					}
 					id: "1F8F24402846DF69"
 					title: "Defeat the Giant Bull Shark"
 					type: "kill"
@@ -1527,6 +1595,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:woolly_rhino"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:rhino_horn"
+					}
 					id: "CE08FDD0A637709E"
 					title: "Defeat the Woolly Rhinoceros"
 					type: "kill"
@@ -1581,6 +1653,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:elephant"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:ivory"
+					}
 					id: "8791F74C8ED1796B"
 					title: "Defeat the Bull Elephant"
 					type: "kill"
@@ -1638,6 +1714,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:mammoth"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:mammoth_tusk"
+					}
 					id: "88922891EDCE3DA2"
 					title: "Defeat the Woolly Mammoth"
 					type: "kill"

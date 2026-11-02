@@ -1579,6 +1579,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:dire_wolf"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:wolf_pelt"
+					}
 					id: "6F77A86CBC69C4DA"
 					title: "Defeat the Dire Wolf Alpha with a tamed wolf alive"
 					type: "kill"

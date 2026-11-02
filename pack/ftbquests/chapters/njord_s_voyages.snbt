@@ -661,6 +661,10 @@
 			tasks: [
 				{
 					entity: "vividlands_ragnarok:bull_shark"
+					icon: {
+						Count: 1b
+						id: "vividlands_ragnarok:shark_tooth"
+					}
 					id: "ED849167D1751965"
 					title: "Defeat the Giant Bull Shark from a ship"
 					type: "kill"
