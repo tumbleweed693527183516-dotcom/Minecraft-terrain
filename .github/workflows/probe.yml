@@ -1,0 +1,50 @@
+name: Modrinth probe
+
+# Looks up Modrinth slugs and prints their Fabric 1.20.1 versions and dependencies. Results: probe branch.
+on:
+  workflow_dispatch:
+    inputs:
+      slugs:
+        description: "Modrinth slugs, or search: text"
+        default: "ftb-quests"
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe
+        run: |
+          mkdir out
+          python3 - <<'EOF2' > out/probe.txt 2>&1
+          import json, urllib.request, urllib.parse
+          H = {"User-Agent": "vividlands-probe"}
+          def get(u):
+              try:
+                  return json.loads(urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=60).read())
+              except Exception as e:
+                  return {"error": str(e)}
+          for s in "${{ inputs.slugs }}".split():
+              if s.startswith("search:"):
+                  q = urllib.parse.quote(s[7:].replace("+", " "))
+                  r = get(f"https://api.modrinth.com/v2/search?query={q}&facets=" + urllib.parse.quote('[["categories:fabric"],["versions:1.20.1"]]') + "&limit=10")
+                  print("SEARCH", s, [(h["slug"], h["title"], h.get("license")) for h in r.get("hits", [])])
+                  continue
+              p = get(f"https://api.modrinth.com/v2/project/{s}")
+              print("PROJECT", s, p.get("error") or (p.get("title"), p.get("license", {}).get("id"), p.get("client_side"), p.get("server_side")))
+              v = get(f"https://api.modrinth.com/v2/project/{s}/version?loaders=" + urllib.parse.quote('["fabric"]') + "&game_versions=" + urllib.parse.quote('["1.20.1"]'))
+              if isinstance(v, list):
+                  for x in v[:2]:
+                      print("  ", x["version_number"], x["id"], [f["filename"] for f in x["files"]][:1],
+                            [(d.get("project_id"), d["dependency_type"]) for d in x["dependencies"]])
+              else:
+                  print("  ", v)
+          EOF2
+          cat out/probe.txt
+      - name: Publish
+        run: |
+          cd out && git init -q && git checkout -q -b probe
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -qm probe && git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:probe
