@@ -15,9 +15,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class ServerPlayerDimensionMixin {
     @Inject(method = "changeDimension", at = @At("HEAD"), cancellable = true)
     private void ragnarok$closed(ServerLevel destination, CallbackInfoReturnable<Entity> cir) {
-        if (Ragnarok.closed(destination.dimension())) {
+        if (Ragnarok.closed(destination.dimension(), destination.getServer())) {
             ((ServerPlayer) (Object) this).displayClientMessage(
-                    Component.literal("That realm is sealed until Ragnarok."), true);
+                    Component.literal("That realm is sealed until Fenrir falls."), true);
             cir.setReturnValue(null);
         }
     }

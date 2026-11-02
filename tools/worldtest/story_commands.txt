@@ -1,0 +1,19 @@
+say QUESTCHECK server up
+ragnarok questcheck
+forceload add 0 0 48 48
+ragnarok realms status
+fill 0 200 0 3 204 0 minecraft:obsidian
+fill 1 201 0 2 203 0 minecraft:air
+setblock 1 201 0 minecraft:fire
+execute if block 1 201 0 minecraft:nether_portal run say RULECHECK sealed: nether portal LIT (bad)
+execute unless block 1 201 0 minecraft:nether_portal run say RULECHECK sealed: nether portal blocked (good)
+ragnarok realms open
+fill 10 200 0 13 204 0 minecraft:obsidian
+fill 11 201 0 12 203 0 minecraft:air
+setblock 11 201 0 minecraft:fire
+execute if block 11 201 0 minecraft:nether_portal run say RULECHECK unsealed: nether portal LIT (good)
+execute unless block 11 201 0 minecraft:nether_portal run say RULECHECK unsealed: nether portal blocked (bad)
+ragnarok realms seal
+ragnarok realms status
+sleep 5
+say QUESTCHECK done

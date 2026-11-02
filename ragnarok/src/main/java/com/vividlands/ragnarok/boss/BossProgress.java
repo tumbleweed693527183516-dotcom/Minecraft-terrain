@@ -21,6 +21,7 @@ public final class BossProgress extends SavedData {
     private static final String NAME = "vividlands_ragnarok_bosses";
     private final Map<UUID, Set<String>> defeated = new HashMap<>();
     private final Set<String> spawned = new HashSet<>();
+    private boolean realmsOpen;                                   // Fenrir has fallen: Nether and End unsealed
 
     public static BossProgress get(MinecraftServer server) {
         return server.overworld().getDataStorage().computeIfAbsent(BossProgress::load, BossProgress::new, NAME);
@@ -39,6 +40,7 @@ public final class BossProgress extends SavedData {
             }
         }
         for (Tag t : tag.getList("spawned", Tag.TAG_STRING)) p.spawned.add(t.getAsString());
+        p.realmsOpen = tag.getBoolean("realmsOpen");
         return p;
     }
 
@@ -54,6 +56,7 @@ public final class BossProgress extends SavedData {
         ListTag s = new ListTag();
         spawned.forEach(x -> s.add(StringTag.valueOf(x)));
         tag.put("spawned", s);
+        tag.putBoolean("realmsOpen", realmsOpen);
         return tag;
     }
 
@@ -67,6 +70,17 @@ public final class BossProgress extends SavedData {
 
     public void forget(UUID player) {
         if (defeated.remove(player) != null) setDirty();
+    }
+
+    public boolean realmsOpen() {
+        return realmsOpen;
+    }
+
+    public void setRealmsOpen(boolean open) {
+        if (realmsOpen != open) {
+            realmsOpen = open;
+            setDirty();
+        }
     }
 
     public boolean spawnedAt(String key) {

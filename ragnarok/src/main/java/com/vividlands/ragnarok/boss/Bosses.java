@@ -335,7 +335,7 @@ public final class Bosses {
                 .ability(() -> new Leap(160, 14, 4, 16, 1.5, 0.6, false, null))
                 .ability(() -> new Shockwave(300, 20, 14, 0.5, 1.0))
                 .phase2(() -> new HazardRain(320, 3, 5, 22, 2.5, 8, 1.0, HazardRain.Kind.LIGHTNING))   // Odin's storm
-                .drop("vividlands_ragnarok:sleipnir_hair", 4).xp(1500).after("mammoth")
+                .drop("vividlands_ragnarok:sleipnir_hair", 4).xp(1500).after("mammoth", "loki")
                 .biomes("vividlands:endless_steppe", "vividlands:wildflower_prairie", "minecraft:plains");
 
         def2("garmr").on("vividlands_ragnarok:garmr")
@@ -627,6 +627,47 @@ public final class Bosses {
         }
     }
 
+    /** Civilizations bosses the story counts: their kills unlock Chapter 2 (Sleipnir waits for Loki). */
+    static final Map<String, String> STORY_KILLS = Map.of("civilizations:boss_loki", "loki", "civilizations:nordic_boss", "bjorn");
+
+    private static void storyKill(Mob mob, net.minecraft.world.damagesource.DamageSource source, String id) {
+        ServerLevel level = (ServerLevel) mob.level();
+        BossProgress progress = BossProgress.get(level.getServer());
+        Set<ServerPlayer> winners = new HashSet<>();
+        if (source.getEntity() instanceof ServerPlayer killer) winners.add(killer);
+        for (ServerPlayer p : level.players()) if (p.distanceTo(mob) < 64) winners.add(p);
+        for (ServerPlayer p : winners) {
+            boolean first = !progress.defeated(p.getUUID()).contains(id);
+            progress.defeat(p.getUUID(), id);
+            if (first && id.equals("loki")) {
+                p.sendSystemMessage(Component.literal("Loki falls, laughing. His children are loose: Ragnarok has begun.")
+                        .withStyle(ChatFormatting.GOLD));
+                p.sendSystemMessage(Component.literal("Chapter 2 opens: Sleipnir now roams the steppe and prairie.")
+                        .withStyle(ChatFormatting.AQUA));
+                level.playSound(null, p.getX(), p.getY(), p.getZ(), SoundEvents.UI_TOAST_CHALLENGE_COMPLETE, SoundSource.PLAYERS, 1f, 1f);
+            }
+        }
+    }
+
+    /** Fenrir is dead: the prophecy is broken and the Nether and the End open for everyone in the world. */
+    static void unsealRealms(ServerLevel level) {
+        BossProgress progress = BossProgress.get(level.getServer());
+        if (progress.realmsOpen()) return;
+        progress.setRealmsOpen(true);
+        var server = level.getServer();
+        for (ServerPlayer p : server.getPlayerList().getPlayers()) {
+            p.connection.send(new net.minecraft.network.protocol.game.ClientboundSetTitlesAnimationPacket(10, 100, 30));
+            p.connection.send(new net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket(
+                    Component.literal("Twilight Broken").withStyle(ChatFormatting.GOLD)));
+            p.connection.send(new net.minecraft.network.protocol.game.ClientboundSetSubtitleTextPacket(
+                    Component.literal("The Nether and the End are unsealed").withStyle(ChatFormatting.AQUA)));
+            p.sendSystemMessage(Component.literal("Mimir: \"The seals were tied to the prophecy. You broke it, so they broke too.\"")
+                    .withStyle(ChatFormatting.GRAY));
+            p.playNotifySound(SoundEvents.END_PORTAL_SPAWN, SoundSource.MASTER, 0.8f, 1f);
+        }
+        Ragnarok.LOG.info("Fenrir has fallen: the Nether and the End are unsealed");
+    }
+
     public static int chapterOneCount() {
         return (int) DEFS.values().stream().filter(d -> d.chapter == 1).count();
     }
@@ -712,10 +753,13 @@ public final class Bosses {
         });
         ServerLivingEntityEvents.AFTER_DEATH.register((entity, source) -> {
             if (!(entity instanceof Mob mob)) return;
+            String story = STORY_KILLS.get(BuiltInRegistries.ENTITY_TYPE.getKey(mob.getType()).toString());
+            if (story != null) storyKill(mob, source, story);
             BossDef def = defOf(mob);
             if (def == null) return;
             debug("{} died ({})", def.id, source.getMsgId());
             reward(mob, def);
+            if (def.id.equals("fenrir")) unsealRealms((ServerLevel) mob.level());
             BossFight f = FIGHTS.remove(mob);
             if (f != null) f.close();
         });

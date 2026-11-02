@@ -59,29 +59,22 @@ public final class NorseBossBar {
         int by = y + 12;
         NorseUI.bar(g, x, by, bw, 5, event.getProgress(), NorseUI.BLOOD, NorseUI.BRONZE);
         g.fill(x + bw / 2, by - 3, x + bw / 2 + 1, by + 8, NorseUI.GOLD);     // phase-2 notch
-        // stagger and ward
+        // stagger (left) and ward (right), full-size text
         int ry = by + 10;
         if (s.stunned()) {
             g.drawString(f, "Staggered!", x, ry, NorseUI.GOLD, true);
         } else {
-            g.pose().pushPose();
-            g.pose().translate(x, ry + 1, 0);
-            g.pose().scale(0.5f, 0.5f, 1);
-            g.drawString(f, "STAGGER", 0, 0, 0xFFC9D4DE, true);
-            g.pose().popPose();
-            NorseUI.bar(g, x + 24, ry + 1, 50, 2, s.poise(), NorseUI.GOLD, 0);
+            g.drawString(f, "Stagger", x, ry, 0xFFC9D4DE, true);
+            int sx = x + f.width("Stagger") + 4;
+            NorseUI.bar(g, sx, ry + 2, 40, 4, s.poise(), NorseUI.GOLD, 0);
         }
         Integer stage = ArmorTraits.BOSS_STAGE.get(s.boss());
         if (stage != null && mc.player != null) {
             int gap = stage - ArmorTraits.ward(mc.player);
-            String text = gap <= 0 ? "Ward matched · hits halved" : gap == 1 ? "Ward one stage behind" : "Ward too weak · hits hurt more";
+            String text = gap <= 0 ? "Ward: matched" : gap == 1 ? "Ward: 1 behind" : "Ward: too weak";
             int color = gap <= 0 ? NorseUI.GREEN : gap == 1 ? NorseUI.GOLD : 0xFFE07A66;
-            g.pose().pushPose();
-            g.pose().translate(x + bw, ry + 1, 0);
-            g.pose().scale(0.5f, 0.5f, 1);
-            g.drawString(f, text, -f.width(text), 0, color, true);
-            g.pose().popPose();
+            g.drawString(f, text, x + bw - f.width(text), ry, color, true);
         }
-        return 30;
+        return 34;
     }
 }

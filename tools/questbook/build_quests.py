@@ -146,6 +146,8 @@ def task_for(text, ch, q, i):
         return None, [dict(base, type=H + "biome", biomes=f"vividlands:{VIVID_NICE[m.group(1)]}")]
     if text == "Travel to a pine or boreal forest":
         return None, [dict(base, type=H + "biome", biomes="vividlands:boreal_snowwoods")]
+    if text == "Enter the Nether":
+        return None, [dict(base, type=H + "advancement", advancements=["minecraft:story/enter_the_nether"])]
     if text in ADVS:
         return None, [dict(base, type=H + "advancement", advancements=[f"{NS}:quest/{ADVS[text]}"])]
     m = re.match(r"Reach (\w+) level (\d+)$", text)

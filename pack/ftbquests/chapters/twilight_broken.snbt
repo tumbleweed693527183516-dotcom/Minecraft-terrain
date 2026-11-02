@@ -104,9 +104,11 @@
 			]
 			tasks: [
 				{
+					advancement: "minecraft:story/enter_the_nether"
+					criterion: ""
 					id: "D02EEA705DD35890"
-					title: "Light a Nether portal"
-					type: "checkmark"
+					title: "Enter the Nether"
+					type: "advancement"
 				}
 			]
 			title: "The Realms Open"

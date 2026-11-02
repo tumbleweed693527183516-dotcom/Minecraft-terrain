@@ -66,7 +66,28 @@ final class BossCommands {
                                     BossProgress.get(c.getSource().getServer()).clearSpawned();
                                     c.getSource().sendSuccess(() -> Component.literal("Every boss can appear again"), true);
                                     return 1;
-                                })))));
+                                }))
+                                .then(Commands.literal("defeat")      // mark a boss (or "loki", "bjorn") as beaten
+                                        .then(Commands.argument("player", EntityArgument.player())
+                                                .then(Commands.argument("id", StringArgumentType.word()).executes(c -> {
+                                                    ServerPlayer p = EntityArgument.getPlayer(c, "player");
+                                                    String id = StringArgumentType.getString(c, "id");
+                                                    BossProgress.get(c.getSource().getServer()).defeat(p.getUUID(), id);
+                                                    c.getSource().sendSuccess(() -> Component.literal("BOSSCHECK " + p.getScoreboardName() + " has beaten " + id), true);
+                                                    return 1;
+                                                })))))
+                        .then(Commands.literal("realms")
+                                .then(Commands.literal("status").executes(c -> realms(c, null)))
+                                .then(Commands.literal("open").executes(c -> realms(c, true)))
+                                .then(Commands.literal("seal").executes(c -> realms(c, false))))));
+    }
+
+    private static int realms(com.mojang.brigadier.context.CommandContext<net.minecraft.commands.CommandSourceStack> c, Boolean open) {
+        BossProgress p = BossProgress.get(c.getSource().getServer());
+        if (open != null) p.setRealmsOpen(open);
+        boolean now = p.realmsOpen();
+        c.getSource().sendSuccess(() -> Component.literal("RULECHECK realms " + (now ? "open" : "sealed")), true);
+        return now ? 1 : 0;
     }
 
     private static int summon(CommandContext<CommandSourceStack> c, Vec3 pos) {

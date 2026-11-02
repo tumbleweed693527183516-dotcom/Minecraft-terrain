@@ -13,14 +13,22 @@ import org.slf4j.LoggerFactory;
  *  - no Warden: sculk shriekers never summon one (they still shriek and give Darkness)
  *  - the Nether is closed: obsidian frames never light, nothing travels there
  *  - the End is closed: eyes of ender can't be placed in portal frames, nothing travels there
+ *  - both open for the whole world once Fenrir is killed (the epilogue, "Twilight Broken")
  * Everything those dimensions give is made with Create instead (data/vividlands_ragnarok/recipes).
  */
 public class Ragnarok implements ModInitializer {
     public static final String MOD_ID = "vividlands_ragnarok";
     public static final Logger LOG = LoggerFactory.getLogger(MOD_ID);
 
-    public static boolean closed(ResourceKey<Level> dimension) {
-        return dimension == Level.NETHER || dimension == Level.END;
+    /** The Nether and the End stay sealed until someone kills Fenrir (no server known: sealed). */
+    public static boolean closed(ResourceKey<Level> dimension, net.minecraft.server.MinecraftServer server) {
+        if (dimension != Level.NETHER && dimension != Level.END) return false;
+        return server == null || !com.vividlands.ragnarok.boss.BossProgress.get(server).realmsOpen();
+    }
+
+    /** Whether the realms are still sealed in this level's world. */
+    public static boolean sealed(net.minecraft.world.level.LevelAccessor level) {
+        return closed(Level.NETHER, level.getServer());
     }
 
     @Override

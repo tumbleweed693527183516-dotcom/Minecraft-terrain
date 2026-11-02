@@ -93,7 +93,7 @@ jobs:
         run: cp tools/worldtest/boss_commands.txt server/commands.txt
       - name: Quest test commands
         if: inputs.mode == 'quests'
-        run: printf "say QUESTCHECK server up\nragnarok questcheck\nsleep 5\nsay QUESTCHECK done\n" > server/commands.txt
+        run: cp tools/worldtest/story_commands.txt server/commands.txt   # quest book + the Fenrir unsealing
       - name: Structure ids added by the pack's mods
         run: |
           cd server/mods

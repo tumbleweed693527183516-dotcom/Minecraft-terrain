@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class EntityDimensionMixin {
     @Inject(method = "changeDimension", at = @At("HEAD"), cancellable = true)
     private void ragnarok$closed(ServerLevel destination, CallbackInfoReturnable<Entity> cir) {
-        if (Ragnarok.closed(destination.dimension())) {
+        if (Ragnarok.closed(destination.dimension(), destination.getServer())) {
             cir.setReturnValue(null);
         }
     }
