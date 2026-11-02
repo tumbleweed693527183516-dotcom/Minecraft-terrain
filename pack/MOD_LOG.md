@@ -519,3 +519,14 @@ the same linear scale. Own creative tab: Ancient Armor.
   - pack test `mode=quests`: `/ragnarok questcheck` reports 419 quests in 16 chapters, failed=false
   - render test `scene=quests`: screenshots of chapters and quest pages
 - **Civilizations content confirmed:** leaders Björn Ironside, Julius Caesar, Alexander the Great, Pharaoh Khufu and Qin Shi Huang; gods Loki, Mercury, Artemis, Anubis and Sun Wukong. Kings of Midgard now has 20 quests.
+
+## v0.29: the quest book moves to FTB Quests (2026-11-02)
+
+- **Quest mod:** FTB Quests 2001.4.22 with FTB Library 2001.2.13 and FTB Teams 2001.3.2 (Fabric 1.20.1). They are CurseForge-only, so players drop the 3 jars into `mods` once (README); the tests fetch them from the FTB maven (tools/ftb_jars.py). Architectury is now listed explicitly. Odyssey Quests is removed.
+- **Quests:** tools/questbook/build_quests.py now writes FTB's SNBT format to pack/ftbquests (data.snbt, chapter_groups.snbt, one file per chapter); the modpack ships it as config/ftbquests/quests. Ids are stable hashes of the quest ids, so player progress survives rebuilds.
+  - Chapter groups "Main Quest" and "Side Lines". Bosses are large circles, gifts diamonds, the rest squares. Grid chapters hide their dependency lines.
+  - Section labels (Act I to IV, each side line's branches) are pixel-font images drawn on the chapter maps (assets/vividlands_ragnarok/textures/gui/quest_labels).
+  - "Any item of a tag" tasks (beds, Small Ships boats, Simply Swords weapons) use small advancements (`quest/has/...`), since FTB item tasks can't take a tag without another mod.
+  - Rune Pouches are `/loot give` command rewards; class XP is `/ragnarok class xp`. Boss kill tasks show the boss's trophy.
+- **Theme:** the built-in Norse resource pack now carries an FTB theme (ftb_quests_theme.txt) and new shape textures: slate background with a dot grid, bronze borders, gold text; quests slate when locked, bronze when ready, gold in progress, green when done; bosses ember-red. Unlike before, the chapter list and buttons are themed too.
+- **Tests:** pack test `mode=quests`: "Loaded 3 chapter groups, 16 chapters, 419 quests" and "QUESTCHECK loaded 419 quests in 16 chapters, 631 tasks, 807 rewards, unknown types=0". Render test `scene=quests` opens chapters and quests by id.
