@@ -1,0 +1,57 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:nether_wart"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Nether Wart",
+    "subtitle": "",
+    "description": [
+      "Sindri: \"Every brewer needs it.\"",
+      ""
+    ],
+    "groups": {
+      "The Dwarves' Forge": {
+        "position": [
+          144,
+          436
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "forge_soul"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Mix nether wart",
+      "type": "heracles:item",
+      "item": "minecraft:nether_wart",
+      "amount": 1
+    },
+    "t1": {
+      "title": "Grow 16 nether wart",
+      "type": "heracles:item",
+      "item": "minecraft:nether_wart",
+      "amount": 16
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:item",
+      "item": {
+        "id": "minecraft:brewing_stand",
+        "count": 1
+      }
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

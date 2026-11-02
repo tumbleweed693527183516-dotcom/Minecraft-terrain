@@ -1,0 +1,49 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "create:andesite_alloy"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Andesite Alloy",
+    "subtitle": "",
+    "description": [
+      "Brokkr: \"Iron nuggets and andesite. The stone every machine is made of.\"",
+      ""
+    ],
+    "groups": {
+      "The Dwarves' Forge": {
+        "position": [
+          0,
+          26
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [],
+  "tasks": {
+    "t0": {
+      "title": "Craft 32 andesite alloy",
+      "type": "heracles:item",
+      "item": "create:andesite_alloy",
+      "amount": 32
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:item",
+      "item": {
+        "id": "create:wrench",
+        "count": 1
+      }
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

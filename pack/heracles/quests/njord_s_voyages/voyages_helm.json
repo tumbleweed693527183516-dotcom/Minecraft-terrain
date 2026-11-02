@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "smallships:oak_cog"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "The Helm",
+    "subtitle": "",
+    "description": [
+      "Njord: \"Some dwarves say a ship can sail the sky.\"",
+      ""
+    ],
+    "groups": {
+      "Njord's Voyages": {
+        "position": [
+          0,
+          334
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "voyages_drakkar"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Craft a ship helm (Eureka)",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/common"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

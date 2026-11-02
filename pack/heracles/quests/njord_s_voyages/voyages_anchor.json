@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "smallships:oak_cog"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Anchor",
+    "subtitle": "",
+    "description": [
+      "Njord: \"Stay where you are.\"",
+      ""
+    ],
+    "groups": {
+      "Njord's Voyages": {
+        "position": [
+          192,
+          334
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "voyages_balloon"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Anchor a flying ship",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/uncommon"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 120"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:serpent_scale"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/diamonds.png",
+    "title": "Warship",
+    "subtitle": "",
+    "description": [
+      "Njord: \"Big enough for the World Serpent? Nothing is. Build it anyway.\"",
+      "",
+      "",
+      "Also: Counts for Chapter 2: A Warship"
+    ],
+    "groups": {
+      "Njord's Voyages": {
+        "position": [
+          192,
+          163
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": true
+  },
+  "dependencies": [
+    "voyages_shark"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "A ship with 4 or more cannons and 2 or more crew",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r1": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/epic"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 450"
+    }
+  }
+}

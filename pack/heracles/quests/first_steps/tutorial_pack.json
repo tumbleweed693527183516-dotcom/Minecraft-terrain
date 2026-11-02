@@ -1,0 +1,50 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "travelersbackpack:standard"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "A Traveler's Backpack",
+    "subtitle": "",
+    "description": [
+      "Bosses are far away. Bring more than your pockets hold.",
+      "",
+      "",
+      "Also: Sleeping bag"
+    ],
+    "groups": {
+      "First Steps": {
+        "position": [
+          96,
+          112
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "tutorial_carry"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Craft a Traveler's Backpack",
+      "type": "heracles:item",
+      "item": "travelersbackpack:standard",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r1": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/common"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

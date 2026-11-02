@@ -1,0 +1,48 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:item_frame"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Ten Hunts",
+    "subtitle": "",
+    "description": [
+      "Odin: \"Ten is skill.\"",
+      ""
+    ],
+    "groups": {
+      "Hall of Trophies": {
+        "position": [
+          48,
+          436
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "hall_v1"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Defeat 10 bosses in total",
+      "type": "heracles:stat",
+      "stat": "vividlands_ragnarok:bosses_killed",
+      "target": 10
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/rare"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 250"
+    }
+  }
+}

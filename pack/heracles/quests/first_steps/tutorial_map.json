@@ -1,0 +1,53 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:book"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "The World Map",
+    "subtitle": "",
+    "description": [
+      "Xaero's map remembers everywhere you have been.",
+      ""
+    ],
+    "groups": {
+      "First Steps": {
+        "position": [
+          144,
+          26
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "tutorial_jade"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Open the world map (M)",
+      "type": "heracles:check"
+    },
+    "t1": {
+      "title": "Set a waypoint",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:item",
+      "item": {
+        "id": "minecraft:compass",
+        "count": 1
+      }
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

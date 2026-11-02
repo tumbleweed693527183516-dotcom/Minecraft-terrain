@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:compass"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Sky Walker",
+    "subtitle": "",
+    "description": [
+      "Odin: \"Three of them.\"",
+      ""
+    ],
+    "groups": {
+      "The Wanderer's Saga": {
+        "position": [
+          144,
+          249
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "saga_sky"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Reach 3 floating islands",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/rare"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 250"
+    }
+  }
+}

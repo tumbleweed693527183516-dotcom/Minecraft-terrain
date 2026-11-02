@@ -1,0 +1,72 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:agamemnon_helmet"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/diamonds.png",
+    "title": "Hall of the Einherjar",
+    "subtitle": "",
+    "description": [
+      "Odin: \"A seat in Valhalla. And a king's armor for the one who would not kneel to fate.\"",
+      "",
+      "",
+      "Also: Agamemnon's set; Title: Einherjar; Credits"
+    ],
+    "groups": {
+      "Epilogue - The Twilight Broken": {
+        "position": [
+          96,
+          0
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": true
+  },
+  "dependencies": [
+    "e2"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Hand in all 25 boss trophies",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0helmet": {
+      "type": "heracles:item",
+      "item": {
+        "id": "vividlands_ragnarok:agamemnon_helmet",
+        "count": 1
+      }
+    },
+    "r0chestplate": {
+      "type": "heracles:item",
+      "item": {
+        "id": "vividlands_ragnarok:agamemnon_chestplate",
+        "count": 1
+      }
+    },
+    "r0leggings": {
+      "type": "heracles:item",
+      "item": {
+        "id": "vividlands_ragnarok:agamemnon_leggings",
+        "count": 1
+      }
+    },
+    "r0boots": {
+      "type": "heracles:item",
+      "item": {
+        "id": "vividlands_ragnarok:agamemnon_boots",
+        "count": 1
+      }
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 300"
+    }
+  }
+}

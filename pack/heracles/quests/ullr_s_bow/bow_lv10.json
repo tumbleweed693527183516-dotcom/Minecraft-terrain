@@ -1,0 +1,49 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:bow"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Archery 10",
+    "subtitle": "",
+    "description": [
+      "Ullr: \"Hold steadier.\"",
+      ""
+    ],
+    "groups": {
+      "Ullr's Bow": {
+        "position": [
+          48,
+          370
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "bow_lv5"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Reach archery level 10",
+      "type": "heracles:advancement",
+      "advancements": [
+        "vividlands_ragnarok:quest/class/archery_10"
+      ]
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/uncommon"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 120"
+    }
+  }
+}

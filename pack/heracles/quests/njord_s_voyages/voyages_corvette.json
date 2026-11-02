@@ -1,0 +1,47 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "smallships:oak_cog"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "The Corsair Corvette",
+    "subtitle": "",
+    "description": [
+      "Njord: \"Fast and mean.\"",
+      ""
+    ],
+    "groups": {
+      "Njord's Voyages": {
+        "position": [
+          144,
+          249
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "voyages_junk"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Loot a Corsair Corvette",
+      "type": "heracles:structure",
+      "structures": "dungeons_arise_seven_seas:corsair_corvette"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/uncommon"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 120"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:babylonian_helmet"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Babylonian",
+    "subtitle": "",
+    "description": [
+      "Tier 12.",
+      ""
+    ],
+    "groups": {
+      "The Ancient Armory": {
+        "position": [
+          0,
+          249
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "armory_first"
+  ],
+  "tasks": {
+    "t0_0": {
+      "title": "Babylonian helmet",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:babylonian_helmet",
+      "amount": 1
+    },
+    "t0_1": {
+      "title": "Babylonian chestplate",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:babylonian_chestplate",
+      "amount": 1
+    },
+    "t0_2": {
+      "title": "Babylonian leggings",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:babylonian_leggings",
+      "amount": 1
+    },
+    "t0_3": {
+      "title": "Babylonian boots",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:babylonian_boots",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/uncommon"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 120"
+    }
+  }
+}

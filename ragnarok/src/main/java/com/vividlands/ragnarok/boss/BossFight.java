@@ -266,6 +266,10 @@ public final class BossFight {
                 staggerCooldown = 500;
                 stun(70);
                 animate("stagger");
+                if (attacker instanceof ServerPlayer sp) {
+                    com.vividlands.ragnarok.quest.QuestHooks.award(sp, "boss/staggered");
+                    com.vividlands.ragnarok.quest.QuestHooks.stat(sp, com.vividlands.ragnarok.quest.QuestHooks.BOSS_STAGGERS);
+                }
                 sound(net.minecraft.sounds.SoundEvents.RAVAGER_STUNNED, 2f, 0.7f);
                 for (ServerPlayer p : bar.getPlayers()) {
                     p.displayClientMessage(Component.translatable("boss.vividlands_ragnarok.staggered", Component.translatable(def.nameKey())), true);

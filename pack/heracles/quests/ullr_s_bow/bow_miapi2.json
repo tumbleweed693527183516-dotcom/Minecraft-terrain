@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:bow"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/diamonds.png",
+    "title": "Your Best Bow",
+    "subtitle": "",
+    "description": [
+      "Ullr: \"Make one better than any in a chest.\"",
+      ""
+    ],
+    "groups": {
+      "Ullr's Bow": {
+        "position": [
+          144,
+          284
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": true
+  },
+  "dependencies": [
+    "bow_miapi"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Build a modular bow from a Mythic Metal",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/epic"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 450"
+    }
+  }
+}

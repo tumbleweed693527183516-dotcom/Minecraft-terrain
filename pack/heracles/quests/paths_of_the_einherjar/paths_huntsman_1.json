@@ -1,0 +1,56 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:huntsman_rune"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Volley",
+    "subtitle": "",
+    "description": [
+      "Skadi: \"Many arrows.\"",
+      ""
+    ],
+    "groups": {
+      "Paths of the Einherjar": {
+        "position": [
+          48,
+          284
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "paths_huntsman_rune"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Reach Huntsman level 1",
+      "type": "heracles:advancement",
+      "advancements": [
+        "vividlands_ragnarok:quest/class/huntsman_1"
+      ]
+    },
+    "t1": {
+      "title": "Use Volley",
+      "type": "heracles:advancement",
+      "advancements": [
+        "vividlands_ragnarok:quest/class/huntsman_ability_1"
+      ]
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/common"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

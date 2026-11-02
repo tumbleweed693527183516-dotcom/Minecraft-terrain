@@ -1,0 +1,55 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "smallships:cannon"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Cannons",
+    "subtitle": "",
+    "description": [
+      "Njord: \"The sea is not friendly. Neither should you be.\"",
+      ""
+    ],
+    "groups": {
+      "Njord's Voyages": {
+        "position": [
+          0,
+          163
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "voyages_brigg"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Craft a ship cannon",
+      "type": "heracles:item",
+      "item": "smallships:cannon",
+      "amount": 1
+    },
+    "t1": {
+      "title": "Mount it on a ship",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:item",
+      "item": {
+        "id": "smallships:cannon_ball",
+        "count": 16
+      }
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

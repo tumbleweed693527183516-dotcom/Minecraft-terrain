@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "smallships:oak_cog"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/diamonds.png",
+    "title": "Harbor in the Clouds",
+    "subtitle": "",
+    "description": [
+      "Njord: \"Dock at a floating island.\"",
+      ""
+    ],
+    "groups": {
+      "Njord's Voyages": {
+        "position": [
+          0,
+          385
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": true
+  },
+  "dependencies": [
+    "voyages_sky"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Land a flying ship on a Soaring Structures island",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/epic"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 450"
+    }
+  }
+}

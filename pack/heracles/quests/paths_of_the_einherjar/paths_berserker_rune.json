@@ -1,0 +1,55 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:berserker_rune"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Path of the Berserker",
+    "subtitle": "",
+    "description": [
+      "Tyr: \"Carve the rune and walk the path.\"",
+      ""
+    ],
+    "groups": {
+      "Paths of the Einherjar": {
+        "position": [
+          0,
+          112
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "paths_choose"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Craft the Berserker Rune Stone (2 cobblestone + bone)",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:berserker_rune",
+      "amount": 1
+    },
+    "t1": {
+      "title": "Use it",
+      "type": "heracles:advancement",
+      "advancements": [
+        "vividlands_ragnarok:quest/class/use_rune"
+      ]
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/common"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

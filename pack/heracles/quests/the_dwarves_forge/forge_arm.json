@@ -1,0 +1,48 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "create:mechanical_arm"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Mechanical Arm",
+    "subtitle": "",
+    "description": [
+      "Sindri: \"It picks, it places, it never complains.\"",
+      ""
+    ],
+    "groups": {
+      "The Dwarves' Forge": {
+        "position": [
+          96,
+          299
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "forge_funnel"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Craft a mechanical arm",
+      "type": "heracles:item",
+      "item": "create:mechanical_arm",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/uncommon"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 120"
+    }
+  }
+}

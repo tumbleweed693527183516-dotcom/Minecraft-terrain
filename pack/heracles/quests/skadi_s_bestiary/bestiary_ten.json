@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:lead"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Ten Kinds",
+    "subtitle": "",
+    "description": [
+      "Skadi: \"Keep looking.\"",
+      ""
+    ],
+    "groups": {
+      "Skadi's Bestiary": {
+        "position": [
+          96,
+          26
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "bestiary_net"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Find 10 Naturalist animals",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/uncommon"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 120"
+    }
+  }
+}

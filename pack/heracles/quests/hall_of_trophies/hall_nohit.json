@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:item_frame"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Untouched",
+    "subtitle": "",
+    "description": [
+      "Odin: \"Kill a boss without taking a hit.\"",
+      ""
+    ],
+    "groups": {
+      "Hall of Trophies": {
+        "position": [
+          192,
+          436
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "hall_stagger"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Defeat a boss without taking damage",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/legendary"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 800"
+    }
+  }
+}

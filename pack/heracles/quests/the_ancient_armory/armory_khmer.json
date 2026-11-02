@@ -1,0 +1,66 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:khmer_helmet"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Khmer",
+    "subtitle": "",
+    "description": [
+      "Tier 42.",
+      ""
+    ],
+    "groups": {
+      "The Ancient Armory": {
+        "position": [
+          0,
+          658
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "armory_first"
+  ],
+  "tasks": {
+    "t0_0": {
+      "title": "Khmer helmet",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:khmer_helmet",
+      "amount": 1
+    },
+    "t0_1": {
+      "title": "Khmer chestplate",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:khmer_chestplate",
+      "amount": 1
+    },
+    "t0_2": {
+      "title": "Khmer leggings",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:khmer_leggings",
+      "amount": 1
+    },
+    "t0_3": {
+      "title": "Khmer boots",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:khmer_boots",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/legendary"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 800"
+    }
+  }
+}

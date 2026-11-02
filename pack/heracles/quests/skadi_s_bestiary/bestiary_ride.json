@@ -1,0 +1,48 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:dragon_gold"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/diamonds.png",
+    "title": "Wings Before Fafnir",
+    "subtitle": "",
+    "description": [
+      "Skadi: \"Fight a dragon from the back of a dragon.\"",
+      "",
+      "",
+      "Also: Counts for Chapter 2: Dragon-Slayer"
+    ],
+    "groups": {
+      "Skadi's Bestiary": {
+        "position": [
+          192,
+          521
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": true
+  },
+  "dependencies": [
+    "bestiary_saddle"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Ride a grown dragon",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r1": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/legendary"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 800"
+    }
+  }
+}

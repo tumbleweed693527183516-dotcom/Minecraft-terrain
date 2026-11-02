@@ -1,0 +1,61 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:writable_book"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "A Raven's Message",
+    "subtitle": "",
+    "description": [
+      "Mimir: \"The Norns have seen the end of the world, mortal. They have also seen you standing in it. Read on.\"",
+      ""
+    ],
+    "groups": {
+      "Prologue": {
+        "position": [
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [],
+  "tasks": {
+    "t0": {
+      "title": "Open the quest book",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:item",
+      "item": {
+        "id": "minecraft:map",
+        "count": 1
+      }
+    },
+    "r1": {
+      "type": "heracles:item",
+      "item": {
+        "id": "minecraft:bread",
+        "count": 8
+      }
+    },
+    "r2": {
+      "type": "heracles:item",
+      "item": {
+        "id": "vividlands_ragnarok:glamour_template",
+        "count": 1
+      }
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

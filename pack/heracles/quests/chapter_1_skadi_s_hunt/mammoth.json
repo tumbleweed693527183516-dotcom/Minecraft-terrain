@@ -1,0 +1,56 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:mammoth_tusk"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/circles.png",
+    "title": "Woolly Mammoth",
+    "subtitle": "Skadi's Last Trial",
+    "description": [
+      "Skadi: \"Bring me its frozen heart, and I will tell the All-Father your name.\"",
+      "",
+      "Where: glaciers",
+      "Health: 1000",
+      "Spawns after: every other Chapter 1 trial",
+      "Moves: Tusk sweep, trumpet shockwave, charge, fling, stomp",
+      "Phase 2: Icicle rain, frost breath",
+      "",
+      "Tip: Skadi's final test. Bring everything you have learned."
+    ],
+    "groups": {
+      "Chapter 1 - Skadi's Hunt": {
+        "position": [
+          144,
+          392
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": true
+  },
+  "dependencies": [
+    "ground_sloth",
+    "bull_shark",
+    "woolly_rhino",
+    "elephant"
+  ],
+  "tasks": {
+    "kill": {
+      "type": "heracles:kill_entity",
+      "title": "Defeat the Woolly Mammoth",
+      "entity": {
+        "type": "vividlands_ragnarok:mammoth"
+      },
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 200"
+    }
+  }
+}

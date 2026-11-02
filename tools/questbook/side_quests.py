@@ -371,18 +371,27 @@ armory_branches.append(("The Collector", "ward", "chain", [
 ARMORY = build("armory", "The Ancient Armory", "the 49 ancient sets and the other armor mods", "Mimir", "Combat & Gear", armory_branches)
 
 # ======================================================================================== KINGS OF MIDGARD
-KINGS = build("kings", "Kings of Midgard", "Civilizations", "Odin", "Exploration", [
+CIVS = [("nordic", "The Northmen", "nordic_boss", "King Bjorn Ironside", "boss_loki", "Loki", "Your own people. For now."),
+        ("rome", "Rome", "rome_boss", "General Julius Caesar", "boss_mercury", "Mercury", "Legions in neat squares."),
+        ("greece", "Greece", "greece_boss", "Alexander the Great", "boss_artemis", "Artemis", "Marble, olives and spears."),
+        ("egypt", "Egypt", "egypt_boss", "Pharaoh Khufu", "boss_anubis", "Anubis", "Kings who built mountains for their tombs."),
+        ("china", "China", "china_boss", "Emperor Qin Shi Huang", "boss_wukong", "Sun Wukong", "An empire behind a great wall.")]
+
+KINGS = build("kings", "Kings of Midgard", "Civilizations: five peoples, their leaders and their gods", "Odin", "Exploration", [
     ("Many Peoples", None, "chain", [
         ("visit", "Strangers", R("ᛗ"), "Mimir: \"Midgard has many kings. Most of them want your head.\"", ["Visit a Civilizations settlement"], P(1)),
         ("visit3", "Three Peoples", R("ᛗ"), "Mimir: \"Learn who rules where.\"", ["Visit 3 different Civilizations settlements"], P(2)),
-        ("norse", "The Northmen", R("ᛗ"), "Mimir: \"Your own people. For now.\"", ["Visit the Norse settlement"], P(1)),
-        ("all", "Every Banner", R("ᛗ"), "Mimir: \"You have seen every people in Midgard.\"", ["Visit every Civilizations people"], P(4), "gift"),
+        ("all", "Every Banner", R("ᛗ"), "Mimir: \"You have seen every people in Midgard.\"", ["Visit all five Civilizations settlements"], P(4), "gift"),
     ]),
-    ("Crowns and Gods", "visit", "chain", [
-        ("leader", "A Fallen Crown", R("ᛞ"), "Mimir: \"Their leaders fight for their people. So will you.\"", ["Defeat a Civilizations leader"], P(2), "boss2"),
-        ("leader3", "Three Crowns", R("ᛞ"), "Mimir: \"Kingslayer, they will call you.\"", ["Defeat 3 Civilizations leaders"], P(3)),
-        ("god", "Gods of Other Lands", R("ᛞ"), "Mimir: \"Odin is not the only god who walks Midgard.\"", ["Defeat a Civilizations god"], P(4), "boss2"),
-        ("gods", "Twilight of Many Gods", R("ᛞ"), "Mimir: \"Ragnarok is not only ours.\"", ["Defeat every Civilizations god"], ["Title: Godslayer", *P(5)], "gift"),
+    ("Settlements", "visit", "grid", [(f"v_{c}", name, R("ᛗ"), f"Mimir: \"{line}\"", [f"Visit the {name} settlement"], P(1))
+                                     for c, name, _, _, _, _, line in CIVS]),
+    ("Leaders", "visit3", "grid", [(f"l_{c}", leader, R("ᛞ"), f"Mimir: \"{leader} leads {name}. Leads, for now.\"",
+                                    [f"Defeat {leader}"], P(3), "boss2") for c, name, _, leader, _, _, _ in CIVS]),
+    ("Gods of Other Lands", "visit3", "grid", [(f"g_{c}", god, R("ᛞ"), f"Mimir: \"Odin is not the only god who walks Midgard. {god} does too.\"",
+                                               [f"Defeat {god}"], P(4), "boss2") for c, _, _, _, _, god, _ in CIVS]),
+    ("Crowns and Gods", "all", "chain", [
+        ("leaders", "Kingslayer", R("ᛞ"), "Mimir: \"Five crowns. Midgard will remember your name.\"", ["Defeat all five leaders"], ["Title: Kingslayer", *P(4)], "gift"),
+        ("gods", "Twilight of Many Gods", R("ᛞ"), "Mimir: \"Ragnarok is not only ours.\"", ["Defeat all five gods"], ["Title: Godslayer", *P(5)], "gift"),
     ]),
 ])
 

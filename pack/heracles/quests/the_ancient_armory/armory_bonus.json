@@ -1,0 +1,49 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:iron_chestplate"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Set Bonus",
+    "subtitle": "",
+    "description": [
+      "Mimir: \"A full set gives its people's gift.\"",
+      ""
+    ],
+    "groups": {
+      "The Ancient Armory": {
+        "position": [
+          96,
+          26
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "armory_glam"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Have a full-set bonus active",
+      "type": "heracles:advancement",
+      "advancements": [
+        "vividlands_ragnarok:quest/armor/full_set"
+      ]
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/uncommon"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 120"
+    }
+  }
+}

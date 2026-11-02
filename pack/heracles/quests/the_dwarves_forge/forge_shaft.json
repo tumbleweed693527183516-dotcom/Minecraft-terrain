@@ -1,0 +1,52 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "create:shaft"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Shafts and Cogs",
+    "subtitle": "",
+    "description": [
+      "Sindri: \"Rotation is the forge's breath. Carry it.\"",
+      ""
+    ],
+    "groups": {
+      "The Dwarves' Forge": {
+        "position": [
+          48,
+          26
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "forge_andesite"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Craft 16 shafts",
+      "type": "heracles:item",
+      "item": "create:shaft",
+      "amount": 16
+    },
+    "t1": {
+      "title": "Craft 8 cogwheels and 4 large cogwheels",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/common"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

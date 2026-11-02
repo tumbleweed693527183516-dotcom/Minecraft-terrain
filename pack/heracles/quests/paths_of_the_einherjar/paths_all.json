@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:ragnarok"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/diamonds.png",
+    "title": "Master of Arms",
+    "subtitle": "",
+    "description": [
+      "Tyr: \"Swing every weapon the way it was meant to be swung.\"",
+      ""
+    ],
+    "groups": {
+      "Paths of the Einherjar": {
+        "position": [
+          240,
+          541
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": true
+  },
+  "dependencies": [
+    "paths_ancient"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Kill a mob with 10 different weapon types",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/legendary"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 800"
+    }
+  }
+}

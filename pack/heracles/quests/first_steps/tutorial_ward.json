@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:berserker_helmet"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Boss Ward",
+    "subtitle": "",
+    "description": [
+      "Armor made for a boss's act halves its hits. Armor from two acts back makes them hurt more.",
+      ""
+    ],
+    "groups": {
+      "First Steps": {
+        "position": [
+          96,
+          198
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "tutorial_swing"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Read the armor guide (check this box)",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/uncommon"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 120"
+    }
+  }
+}

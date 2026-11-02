@@ -13,7 +13,7 @@ on:
         description: Radius to generate, in blocks (1024 = the earlier 16,641-chunk benchmark)
         default: "1024"
       mode:
-        description: "full = generation timing + pack rules; bosses = summon and fight every boss against a dummy"
+        description: "full = generation timing + pack rules; bosses = summon and fight every boss against a dummy; quests = load the quest book and report bad quests"
         default: "full"
 
 permissions:
@@ -58,9 +58,14 @@ jobs:
               print("download", f["path"])
               req = urllib.request.Request(f["downloads"][0], headers={"User-Agent": "vividlands-packtest"})
               open(f["path"], "wb").write(urllib.request.urlopen(req, timeout=120).read())
+          import os
           for n in z.namelist():
               if n.startswith("overrides/mods/") and n.endswith(".jar"):
                   open("mods/" + n.split("/")[-1], "wb").write(z.read(n))
+              elif n.startswith("overrides/config/") and not n.endswith("/"):
+                  dest = n[len("overrides/"):]
+                  os.makedirs(os.path.dirname(dest), exist_ok=True)
+                  open(dest, "wb").write(z.read(n))
           EOF
           ls mods | tee ../out/server_mods.txt
           curl -fsSL -o server.jar "https://meta.fabricmc.net/v2/versions/loader/1.20.1/$(cat loader.txt)/1.0.1/server/jar"
@@ -85,6 +90,9 @@ jobs:
       - name: Boss test commands
         if: inputs.mode == 'bosses'
         run: cp tools/worldtest/boss_commands.txt server/commands.txt
+      - name: Quest test commands
+        if: inputs.mode == 'quests'
+        run: printf "say QUESTCHECK server up\nsleep 5\nsay QUESTCHECK done\n" > server/commands.txt
       - name: Structure ids added by the pack's mods
         run: |
           cd server/mods
@@ -100,6 +108,9 @@ jobs:
           if [ "${{ inputs.mode }}" = "bosses" ]; then
             export CMD_GAP=2 JAVA_OPTS="-Dvividlands.bossdebug=true"
             bash tools/worldtest/run_server.sh 32
+          elif [ "${{ inputs.mode }}" = "quests" ]; then
+            export CMD_GAP=2
+            bash tools/worldtest/run_server.sh 16
           else
             bash tools/worldtest/run_server.sh "${{ inputs.radius }}"
           fi
@@ -109,7 +120,7 @@ jobs:
         run: |
           cp server/server.log out/ 2>/dev/null || true
           grep -iE "chunky|Done \(" server/server.log | tail -n 8 >> out/timing.txt 2>/dev/null || true
-          grep -E "RULECHECK|BOSSCHECK|BOSS |\[boss\]|Ragnarok|has the following block data|has the following entity data|Changed the block at 3[02]|Summoned|None of|No boss" server/server.log > out/rules.txt 2>/dev/null || true
+          grep -E "RULECHECK|BOSSCHECK|QUESTCHECK|[Hh]eracles|[Qq]uest|BOSS |\[boss\]|Ragnarok|has the following block data|has the following entity data|Changed the block at 3[02]|Summoned|None of|No boss" server/server.log > out/rules.txt 2>/dev/null || true
           grep -nE "ERROR|Exception|Caused by|Failed to|Mixin.*(fail|error)|Parsing error" server/server.log > out/problems.txt 2>/dev/null || true
           wc -l out/problems.txt || true
           cat out/rules.txt out/timing.txt || true

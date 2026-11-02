@@ -1,0 +1,53 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:sloth_claw"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/circles.png",
+    "title": "Giant Ground Sloth",
+    "subtitle": "the Gentle Titan",
+    "description": [
+      "Skadi: \"Gentle, they call it. Until it stands up.\"",
+      "",
+      "Where: cloud forest, redwoods",
+      "Health: 640",
+      "Spawns after: all 5 Act III trials",
+      "Moves: Claw combo, bear hug, slam",
+      "Phase 2: Shakes rocks loose",
+      "",
+      "Tip: Slow but huge reach. Dodge-roll through the combo."
+    ],
+    "groups": {
+      "Chapter 1 - Skadi's Hunt": {
+        "position": [
+          48,
+          370
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": true
+  },
+  "dependencies": [
+    "a4"
+  ],
+  "tasks": {
+    "kill": {
+      "type": "heracles:kill_entity",
+      "title": "Defeat the Giant Ground Sloth",
+      "entity": {
+        "type": "vividlands_ragnarok:ground_sloth"
+      },
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 200"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:netherite_sword"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "A Warship",
+    "subtitle": "",
+    "description": [
+      "Mimir: \"The World Serpent circles all of Midgard. You will need a bigger boat.\"",
+      "",
+      "",
+      "Also: Jormungandr surfaces"
+    ],
+    "groups": {
+      "Chapter 2 - Odin's War": {
+        "position": [
+          144,
+          0
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "fafnir"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Build a warship (Njord's Voyages line)",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

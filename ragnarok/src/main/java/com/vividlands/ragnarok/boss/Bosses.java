@@ -615,6 +615,9 @@ public final class Bosses {
             }
             ServerPlayer p = level.getServer().getPlayerList().getPlayer(u);
             if (p == null) continue;
+            com.vividlands.ragnarok.quest.QuestHooks.stat(p, com.vividlands.ragnarok.quest.QuestHooks.BOSSES_KILLED);
+            Integer st = com.vividlands.ragnarok.armor.ArmorTraits.BOSS_STAGE.get(def.id);
+            if (st != null && st - com.vividlands.ragnarok.armor.ArmorTraits.ward(p) >= 2) com.vividlands.ragnarok.quest.QuestHooks.award(p, "boss/underdressed");
             p.sendSystemMessage(Component.translatable("boss.vividlands_ragnarok.slain", name));
             if (def.chapter == 1) {
                 p.sendSystemMessage(Component.translatable("boss.vividlands_ragnarok.trials",
@@ -694,6 +697,9 @@ public final class Bosses {
                 if (environment || isBoss(attacker) || isMinion(attacker)) return false;
                 BossFight f = FIGHTS.get(entity);
                 if (f != null) f.onDamaged(amount, attacker);
+                if (attacker instanceof ServerPlayer sp && com.vividlands.ragnarok.armor.ArmorTraits.wardMultiplier(sp, bossId(entity)) <= 0.5f) {
+                    com.vividlands.ragnarok.quest.QuestHooks.award(sp, "armor/ward_matched");
+                }
             } else if (isMinion(entity) && (environment || isBoss(attacker) || isMinion(attacker))) {
                 return false;
             }

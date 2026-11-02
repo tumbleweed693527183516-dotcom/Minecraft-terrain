@@ -1,0 +1,44 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:book"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "What Is That?",
+    "subtitle": "",
+    "description": [
+      "Jade names whatever block or creature you look at, and which mod it comes from.",
+      "",
+      "",
+      "Also: 4 torches"
+    ],
+    "groups": {
+      "First Steps": {
+        "position": [
+          96,
+          26
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "tutorial_emi"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Look at a modded block with Jade",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

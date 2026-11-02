@@ -1,0 +1,53 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:fenrirs_fang"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Twilight Broken",
+    "subtitle": "",
+    "description": [
+      "Odin: \"The wolf was meant to swallow me. Instead, you stand here.\"",
+      ""
+    ],
+    "groups": {
+      "Epilogue - The Twilight Broken": {
+        "position": [
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "fenrir"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Defeat Fenrir",
+      "type": "heracles:kill_entity",
+      "entity": {
+        "type": "vividlands_ragnarok:fenrir"
+      },
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:item",
+      "item": {
+        "id": "vividlands_ragnarok:fenrirs_fang",
+        "count": 1
+      }
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

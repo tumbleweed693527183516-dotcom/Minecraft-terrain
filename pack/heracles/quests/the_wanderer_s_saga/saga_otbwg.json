@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:compass"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Oh The Biomes",
+    "subtitle": "",
+    "description": [
+      "Odin: \"Even stranger lands.\"",
+      ""
+    ],
+    "groups": {
+      "The Wanderer's Saga": {
+        "position": [
+          96,
+          623
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "saga_b20"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Visit 10 Oh The Biomes We've Gone biomes",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/rare"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 250"
+    }
+  }
+}

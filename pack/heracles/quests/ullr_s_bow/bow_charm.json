@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:bow"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Bow Charms",
+    "subtitle": "",
+    "description": [
+      "Ullr: \"A charm on the string.\"",
+      ""
+    ],
+    "groups": {
+      "Ullr's Bow": {
+        "position": [
+          192,
+          112
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "bow_tmb10"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Craft a bow charm",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/uncommon"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 120"
+    }
+  }
+}

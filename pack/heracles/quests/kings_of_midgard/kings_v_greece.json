@@ -1,0 +1,47 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:golden_helmet"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Greece",
+    "subtitle": "",
+    "description": [
+      "Mimir: \"Marble, olives and spears.\"",
+      ""
+    ],
+    "groups": {
+      "Kings of Midgard": {
+        "position": [
+          96,
+          112
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "kings_visit"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Visit the Greece settlement",
+      "type": "heracles:structure",
+      "structures": "civilizations:greece"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/common"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

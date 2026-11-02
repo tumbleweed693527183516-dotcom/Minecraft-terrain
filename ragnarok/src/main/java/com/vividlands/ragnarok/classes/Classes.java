@@ -195,6 +195,7 @@ public final class Classes {
             case ULFHEDNAR -> ulfhednar(p, slot);
         };
         if (done) {
+            com.vividlands.ragnarok.quest.QuestHooks.award(p, "class/" + d.active.id + "_ability_" + (slot + 1));
             d.readyAt[slot] = t + cooldownTicks(p, slot);
             sync(p);
         }
@@ -489,6 +490,7 @@ public final class Classes {
         int before = d.level();
         d.xp.merge(d.active, amount, Integer::sum);
         int after = d.level();
+        com.vividlands.ragnarok.quest.QuestHooks.classLevels(p, d);
         if (after > before) {
             sound(p, SoundEvents.PLAYER_LEVELUP, 0.8f, 0.8f);
             FriendlyByteBuf t = PacketByteBufs.create();
@@ -551,6 +553,8 @@ public final class Classes {
         }
         d.active = c;
         java.util.Arrays.fill(d.readyAt, 0);
+        com.vividlands.ragnarok.quest.QuestHooks.award(p, "class/use_rune");
+        com.vividlands.ragnarok.quest.QuestHooks.classLevels(p, d);
         applyPassives(p);
         p.displayClientMessage(Component.literal("You walk the path of the " + c.title + " (level " + d.level(c) + ")")
                 .withStyle(s -> s.withColor(c.color)), false);
@@ -657,6 +661,7 @@ public final class Classes {
             sound(p, SoundEvents.TOTEM_USE, 1f, 0.7f);
             particles(p, RED, p.position().add(0, 1, 0), 40, 0.6, 0);
             p.displayClientMessage(Component.literal("Undying Rage!").withStyle(ChatFormatting.DARK_RED), true);
+            com.vividlands.ragnarok.quest.QuestHooks.award(p, "class/berserker_ability_4");
             return false;
         });
         ServerPlayerEvents.COPY_FROM.register((oldP, newP, alive) -> data(newP).copyFrom(data(oldP)));

@@ -1,0 +1,66 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:spartan_helmet"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Spartan",
+    "subtitle": "",
+    "description": [
+      "Tier 19.",
+      ""
+    ],
+    "groups": {
+      "The Ancient Armory": {
+        "position": [
+          144,
+          334
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "armory_first"
+  ],
+  "tasks": {
+    "t0_0": {
+      "title": "Spartan helmet",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:spartan_helmet",
+      "amount": 1
+    },
+    "t0_1": {
+      "title": "Spartan chestplate",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:spartan_chestplate",
+      "amount": 1
+    },
+    "t0_2": {
+      "title": "Spartan leggings",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:spartan_leggings",
+      "amount": 1
+    },
+    "t0_3": {
+      "title": "Spartan boots",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:spartan_boots",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/rare"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 250"
+    }
+  }
+}

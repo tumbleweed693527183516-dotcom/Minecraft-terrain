@@ -1,0 +1,56 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:ulfhednar_rune"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Wolf Form",
+    "subtitle": "",
+    "description": [
+      "Odin: \"Become the wolf.\"",
+      ""
+    ],
+    "groups": {
+      "Paths of the Einherjar": {
+        "position": [
+          144,
+          455
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "paths_ulfhednar_10"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Reach Ulfhednar level 20",
+      "type": "heracles:advancement",
+      "advancements": [
+        "vividlands_ragnarok:quest/class/ulfhednar_20"
+      ]
+    },
+    "t1": {
+      "title": "Use Wolf Form",
+      "type": "heracles:advancement",
+      "advancements": [
+        "vividlands_ragnarok:quest/class/ulfhednar_ability_3"
+      ]
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/rare"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 250"
+    }
+  }
+}

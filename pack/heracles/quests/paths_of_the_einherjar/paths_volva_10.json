@@ -1,0 +1,56 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:volva_rune"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Isa, the Ice",
+    "subtitle": "",
+    "description": [
+      "Freyja: \"Ice from a rune.\"",
+      ""
+    ],
+    "groups": {
+      "Paths of the Einherjar": {
+        "position": [
+          96,
+          370
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "paths_volva_1"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Reach Volva level 10",
+      "type": "heracles:advancement",
+      "advancements": [
+        "vividlands_ragnarok:quest/class/volva_10"
+      ]
+    },
+    "t1": {
+      "title": "Use Isa, the Ice",
+      "type": "heracles:advancement",
+      "advancements": [
+        "vividlands_ragnarok:quest/class/volva_ability_2"
+      ]
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/uncommon"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 120"
+    }
+  }
+}

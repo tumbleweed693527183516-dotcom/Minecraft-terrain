@@ -1,0 +1,49 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:glamour_template"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Wear What You Like",
+    "subtitle": "",
+    "description": [
+      "Mimir: \"Strength from one set, looks from another.\"",
+      ""
+    ],
+    "groups": {
+      "The Ancient Armory": {
+        "position": [
+          48,
+          26
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "armory_first"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Glamour an armor piece",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:item",
+      "item": {
+        "id": "vividlands_ragnarok:glamour_template",
+        "count": 4
+      }
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

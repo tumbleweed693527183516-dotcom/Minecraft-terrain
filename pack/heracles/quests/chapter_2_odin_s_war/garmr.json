@@ -1,0 +1,53 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:hel_key"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/circles.png",
+    "title": "Garmr",
+    "subtitle": "Hound of Hel",
+    "description": [
+      "Mimir: \"The hound of Hel guards the gate under the stronghold. Do not let it see you run.\"",
+      "",
+      "Where: the portal room of a stronghold",
+      "Health: 1600",
+      "Spawns after: Sleipnir",
+      "Moves: Shadow breath, bite combo, Hel's hounds, leap (wither)",
+      "Phase 2: Soul fire rains down",
+      "",
+      "Tip: The shadow breath is a cone. Get behind it."
+    ],
+    "groups": {
+      "Chapter 2 - Odin's War": {
+        "position": [
+          48,
+          44
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": true
+  },
+  "dependencies": [
+    "c2"
+  ],
+  "tasks": {
+    "kill": {
+      "type": "heracles:kill_entity",
+      "title": "Defeat the Garmr",
+      "entity": {
+        "type": "vividlands_ragnarok:garmr"
+      },
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 200"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:writable_book"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Read the Land",
+    "subtitle": "",
+    "description": [
+      "Mimir: \"Pine, steppe, fen, glacier. Each land has its own beast. Walk them.\"",
+      ""
+    ],
+    "groups": {
+      "Prologue": {
+        "position": [
+          48,
+          44
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "p4"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Visit 3 different Vivid Lands biomes",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:item",
+      "item": {
+        "id": "minecraft:spyglass",
+        "count": 1
+      }
+    },
+    "r1": {
+      "type": "heracles:item",
+      "item": {
+        "id": "minecraft:arrow",
+        "count": 16
+      }
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 50"
+    }
+  }
+}

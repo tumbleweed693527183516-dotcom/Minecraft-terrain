@@ -1,0 +1,66 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:thracian_helmet"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Thracian",
+    "subtitle": "",
+    "description": [
+      "Tier 16.",
+      ""
+    ],
+    "groups": {
+      "The Ancient Armory": {
+        "position": [
+          0,
+          334
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "armory_first"
+  ],
+  "tasks": {
+    "t0_0": {
+      "title": "Thracian helmet",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:thracian_helmet",
+      "amount": 1
+    },
+    "t0_1": {
+      "title": "Thracian chestplate",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:thracian_chestplate",
+      "amount": 1
+    },
+    "t0_2": {
+      "title": "Thracian leggings",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:thracian_leggings",
+      "amount": 1
+    },
+    "t0_3": {
+      "title": "Thracian boots",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:thracian_boots",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/rare"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 250"
+    }
+  }
+}

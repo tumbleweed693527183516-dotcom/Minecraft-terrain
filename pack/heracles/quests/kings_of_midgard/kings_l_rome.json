@@ -1,0 +1,50 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:golden_helmet"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/circles.png",
+    "title": "General Julius Caesar",
+    "subtitle": "",
+    "description": [
+      "Mimir: \"General Julius Caesar leads Rome. Leads, for now.\"",
+      ""
+    ],
+    "groups": {
+      "Kings of Midgard": {
+        "position": [
+          48,
+          198
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "kings_visit3"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Defeat General Julius Caesar",
+      "type": "heracles:kill_entity",
+      "entity": {
+        "type": "civilizations:rome_boss"
+      },
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/rare"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 250"
+    }
+  }
+}

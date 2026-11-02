@@ -1,0 +1,45 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "minecraft:writable_book"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/diamonds.png",
+    "title": "Skadi's Summons",
+    "subtitle": "",
+    "description": [
+      "Skadi: \"So Odin's ravens chose a mortal. We will see. The bear of the pines is your first trial.\"",
+      "",
+      "",
+      "Also: Chapter 1 opens"
+    ],
+    "groups": {
+      "Prologue": {
+        "position": [
+          0,
+          44
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": true
+  },
+  "dependencies": [
+    "p5"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Travel to a pine or boreal forest",
+      "type": "heracles:biome",
+      "biomes": "vividlands:boreal_snowwoods"
+    }
+  },
+  "rewards": {
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 300"
+    }
+  }
+}

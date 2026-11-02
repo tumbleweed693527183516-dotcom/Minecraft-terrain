@@ -211,6 +211,7 @@ public final class ArmorTraits {
             }
         }
         if (t == null) return;
+        com.vividlands.ragnarok.quest.QuestHooks.award(p, "armor/full_set");
         switch (t) {
             case BUILDER -> effect(p, MobEffects.DIG_SPEED, 0);
             case SUN -> effect(p, MobEffects.FIRE_RESISTANCE, 0);

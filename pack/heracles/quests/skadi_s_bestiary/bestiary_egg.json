@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:dragon_gold"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Dragon's Egg",
+    "subtitle": "",
+    "description": [
+      "Mimir: \"Not every dragon is Fafnir. Some can be raised.\"",
+      ""
+    ],
+    "groups": {
+      "Skadi's Bestiary": {
+        "position": [
+          0,
+          521
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "bestiary_ten"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Find a dragon egg (Saint's Dragons)",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/uncommon"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 120"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:raven_feather"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/diamonds.png",
+    "title": "Wings Without a City",
+    "subtitle": "",
+    "description": [
+      "Sindri: \"No End City, no problem.\"",
+      ""
+    ],
+    "groups": {
+      "The Dwarves' Forge": {
+        "position": [
+          48,
+          486
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": true
+  },
+  "dependencies": [
+    "forge_pearl"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Craft an elytra (pack recipe)",
+      "type": "heracles:item",
+      "item": "minecraft:elytra",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:item",
+      "item": {
+        "id": "minecraft:elytra",
+        "count": 1
+      }
+    },
+    "r1": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/epic"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 450"
+    }
+  }
+}

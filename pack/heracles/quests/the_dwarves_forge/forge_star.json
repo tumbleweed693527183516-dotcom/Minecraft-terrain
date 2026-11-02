@@ -1,0 +1,48 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "mythicmetals:star_platinum"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Star Platinum",
+    "subtitle": "",
+    "description": [
+      "Brokkr: \"The rarest thing we have ever forged.\"",
+      ""
+    ],
+    "groups": {
+      "The Dwarves' Forge": {
+        "position": [
+          144,
+          623
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "forge_celestium"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Forge star platinum",
+      "type": "heracles:item",
+      "item": "mythicmetals:star_platinum",
+      "amount": 1
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/epic"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 450"
+    }
+  }
+}

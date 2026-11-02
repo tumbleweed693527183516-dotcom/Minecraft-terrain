@@ -1,0 +1,49 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:sloth_claw"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/circles.png",
+    "title": "Ground Sloth",
+    "subtitle": "",
+    "description": [
+      "Hand in the trophy.",
+      ""
+    ],
+    "groups": {
+      "Hall of Trophies": {
+        "position": [
+          144,
+          213
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "hall_open"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Hand in 1 Sloth Claw",
+      "type": "heracles:item",
+      "item": "vividlands_ragnarok:sloth_claw",
+      "amount": 1,
+      "collection": "MANUAL"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/uncommon"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 200"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "display": {
+    "icon": {
+      "type": "heracles:item",
+      "item": "create:crushing_wheel"
+    },
+    "icon_background": "heracles:textures/gui/quest_backgrounds/default.png",
+    "title": "Crushing Wheels",
+    "subtitle": "",
+    "description": [
+      "Sindri: \"Ore is just stone that has not been asked nicely.\"",
+      ""
+    ],
+    "groups": {
+      "The Dwarves' Forge": {
+        "position": [
+          96,
+          163
+        ]
+      }
+    }
+  },
+  "settings": {
+    "hidden": "LOCKED",
+    "unlockNotification": false
+  },
+  "dependencies": [
+    "forge_press"
+  ],
+  "tasks": {
+    "t0": {
+      "title": "Build a pair of crushing wheels",
+      "type": "heracles:item",
+      "item": "create:crushing_wheel",
+      "amount": 2
+    },
+    "t1": {
+      "title": "Crush 32 raw ore",
+      "type": "heracles:check"
+    }
+  },
+  "rewards": {
+    "r0": {
+      "type": "heracles:loottable",
+      "loot_table": "vividlands_ragnarok:rune_pouch/uncommon"
+    },
+    "class_xp": {
+      "type": "heracles:command",
+      "command": "ragnarok class xp 120"
+    }
+  }
+}
